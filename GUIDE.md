@@ -24,19 +24,25 @@ That's it. That's a complete first result.
 
 ## Steps, in order
 
-- [ ] `git init` in this folder
-- [ ] Pick the 10 tasks (already drafted — see below)
-- [ ] Write the English version of each task (plain description, no ambiguity)
+- [x] `git init` in this folder — done, branch renamed to `main`
+- [x] Pick the 10 tasks (drafted — see below; also built out as full specs,
+      prompts, and test suites in `spike/`)
+- [x] Write the English version of each task — see `spike/prompts-en.md`
 - [ ] Write the Japanese version yourself, from the English spec (not a
-      translation of your own English prompt — write it fresh in Japanese)
-- [ ] Get one local model running, confirm you can see its reasoning + token
-      counts
-- [ ] Run 5 samples × 10 tasks × 4 conditions, save every raw output
-- [ ] Put pass/fail + token counts in a spreadsheet
+      translation of your own English prompt — write it fresh in Japanese,
+      calibrated against real Japanese coding-problem sources like AtCoder/
+      Qiita first). Fill into `spike/prompts.json` under `ja_raw`.
+- [ ] Add `ja_directive` and `mt_en` versions to `spike/prompts.json` once
+      `ja_raw` is settled
+- [ ] Get local models running, confirm GPU use and reasoning traces —
+      see "PC setup" below
+- [ ] Run 5 samples × 10 tasks × 4 conditions, save every raw output —
+      `spike/run_generations.py` does this automatically
+- [ ] Grade the outputs — `spike/grade_generations.py` does this automatically
 - [ ] Look at it. Does a gap exist? Does anything close it?
 
-If step 8 shows nothing interesting, that's fine — see "if it doesn't work"
-below.
+If the last step shows nothing interesting, that's fine — see "if it doesn't
+work" below.
 
 ## The 10 tasks (draft, locked for the spike)
 
@@ -64,6 +70,77 @@ Add them only after the basic loop above works.
 - Citing/reading every related paper in full
 - Web app / iOS / server tasks (a different project — see CLAUDE.md)
 - Deciding on a venue
+
+## PC setup and running the pipeline
+
+The research files live in this repo (edited via Mac/Claude Code). The actual
+model generation runs on the separate PC with the RTX 4060 Ti — that machine
+needs its own setup. Do these steps there.
+
+### 1. Get the repo onto the PC
+
+If pushing to a private GitHub repo (ask first if you'd rather transfer some
+other way — network share, USB):
+```bash
+gh repo create research --private --source=. --remote=origin
+git commit -m "Initial spike setup"
+git push -u origin main
+```
+Then on the PC:
+```bash
+git clone <the-repo-url>
+cd research
+```
+
+### 2. Ollama
+
+```bash
+ollama pull qwen3.5:9b
+ollama pull deepseek-r1:14b
+ollama pull gemma4:12b
+```
+Verify GPU use — run a model, then in another terminal:
+```bash
+ollama ps
+```
+Should show ~100% GPU, not split with CPU. Also watch `nvidia-smi` VRAM usage
+during generation — some of these are "tight fits" on 8GB VRAM and may spill
+under a long reasoning trace even if they load fine.
+
+### 3. Docker
+
+Install Docker Desktop (needs WSL2 backend on Windows). Verify:
+```bash
+docker run --rm python:3.11-slim python -c "print('ok')"
+```
+
+### 4. Python environment
+
+```bash
+cd research
+python -m venv .venv
+.venv\Scripts\activate     # Windows
+pip install requests
+```
+
+### 5. Run it
+
+```bash
+cd spike
+python run_generations.py
+```
+Note: any condition still `null` in `prompts.json` is skipped automatically.
+Until the Japanese prompts are filled in, this only generates **EN-human** —
+useful for testing the harness, not yet the real result.
+
+Then grade:
+```bash
+python grade_generations.py
+```
+Check results:
+```bash
+cat ../data/raw/*.grade.json | grep all_passed
+```
 
 ## If it doesn't work
 
