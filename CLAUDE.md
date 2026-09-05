@@ -14,8 +14,25 @@ weak, say so and say why.
 ## Status
 
 **Topic settled 2026-08-04.** Three earlier framings were abandoned; this one is
-committed. The pivot budget is spent. Next commitments: the verification
-searches, then the feasibility spike, then preregistration.
+committed. The pivot budget is spent.
+
+**2026-09-06 — presentation deadline (2 days from 2026-09-05), spike scoped
+down to fit it.** A presentation is due showing in-progress, non-final
+results — explicitly **not** required to be fully accurate or the final
+research result. This does not change the paper's eventual rigor bar (still
+preregister before the real study, still needs the full arms/budget/N
+eventually) — it only changes what the *next 48 hours* optimize for: a
+working pipeline and real (if small/preliminary) numbers, not statistical
+power or completeness. Deviations from the original spike design, all
+reversible for the real study later:
+- Task count: 10 → **6** (3 simple, 3 complex) — see task list below
+- Samples per cell: 5 → **3**
+- Local models: primary run is **`qwen3.5:9b` only**; `deepseek-r1:14b` and
+  `gemma4:12b` are bonus-only if time remains (both are "tight fit" on 8GB
+  VRAM per CanIRun.ai — slower, don't let them block the deadline)
+- All 6 tasks now have all 4 conditions (en_human, ja_raw, ja_directive,
+  mt_en) fully authored and filled into `spike/prompts.json` — pipeline is
+  unblocked, ready to run
 
 A parked program on evaluating AI-generated *design* quality (Japanese
 typographic conformance, JLReq-based) lives at `parked/design-program.md`. It is
@@ -54,6 +71,17 @@ Same task, four pipelines:
 
 EN-human is the ceiling, not a recommendation. The paper's value is in whether
 JA+directive or MT-EN recovers most of the distance to it, and at what cost.
+
+**Resolved (was ambiguous, flagged 2026-09-05):** the directive itself must be
+written **in Japanese**, not English — otherwise "available to a monolingual"
+in the table above is false, since a monolingual couldn't add an English
+sentence to their own prompt. Directive text used: 英語で考えてから回答してください。
+("please think in English before answering"), same sentence appended to every
+task's ja_raw text, unedited beyond that append. MT-EN direction is **JA→EN**
+only — the population (monolingual Japanese developers) has no English
+original to translate from; there is no ja-from-en path anywhere in the
+pipeline. MT system used: Google Translate (translate.google.com), raw/verbatim
+output, not polished — see Threats to Validity.
 
 ## Positioning against prior work
 
@@ -226,9 +254,20 @@ One to two days. The go/no-go for the whole project.
 Everything depends on H1. If Japanese prompts don't underperform on small local
 models and the tasks available, there is nothing to close and the project stops.
 
-**Setup:** ~10 tasks from an existing benchmark. Japanese prompts authored by
-me, back-translation verified. One local reasoning model with a visible trace.
-All four conditions. 5 samples per task per condition.
+**Setup (as actually run, 2026-09-06):** 6 original tasks (not from an existing
+benchmark — self-authored, see task list below), 3 simple / 3 complex. Japanese
+prompts authored by the researcher (bilingual), calibrated against AtCoder/
+Qiita register, not yet back-translation-verified by a second reader (cut for
+the 2-day deadline, flag as a limitation on this round). Primary model:
+`qwen3.5:9b` (visible reasoning trace). All four conditions, all 6 tasks, fully
+authored. 3 samples per task per condition (reduced from 5 for time).
+
+**The 6 tasks:**
+- Simple: business-days, currency-format, reverse-list-elements
+- Complex: eval-expression, shortest-path, bank-rollback
+(Originally 10 — dedupe-sort, valid-email, lru-ttl-cache, meeting-rooms cut for
+ceiling risk / redundancy / reduced grading scope. Full 10 still in
+`spike/task-specs-en.md` if useful for the real study later.)
 
 **Record per sample:** condition, pass/fail, input/output/reasoning tokens,
 language of the reasoning trace.
@@ -389,22 +428,41 @@ NLP), MSR, or an SE workshop. Name one and work backward from its deadline.
 
 ## Open decisions
 
-- [ ] Target venue and deadline
-- [ ] Benchmark and task set; existing Japanese variants
-- [ ] Whether task descriptions can be sourced natively in Japanese
-      (see translationese trap)
-- [ ] Operationalization of simple vs. complex
-- [ ] Exact wording of the reason-in-English directive
-- [ ] MT system(s)
-- [ ] Local model set; which expose reasoning traces
-- [ ] Frontier model set and reasoning coverage within budget
-- [ ] pass@k value and samples per cell
+- [ ] Target venue and deadline (still open for the *paper*; the 2026-09-06
+      presentation deadline above is separate and already resolved)
+- [ ] Benchmark and task set for the **real study** — spike used 6
+      self-authored tasks, not an existing benchmark; still worth checking
+      existing Japanese-translated benchmark variants before finalizing
+- [x] Whether task descriptions can be sourced natively in Japanese — spike
+      used researcher-authored JA, not translated from EN; back-translation
+      verification by a second reader still outstanding (cut for time)
+- [x] Operationalization of simple vs. complex — 3 tasks each, see task list
+      in the spike section
+- [x] Exact wording of the reason-in-English directive — 英語で考えてから回答してください。
+- [x] MT system(s) — Google Translate (translate.google.com), JA→EN, one
+      system only so far
+- [x] Local model set for the spike — `qwen3.5:9b` primary;
+      `deepseek-r1:14b`/`gemma4:12b` bonus-only. Real study may want more
+      models and non-Chinese-lab diversity (Gemma/Llama) per earlier discussion
+- [ ] Frontier model set and reasoning coverage within budget — not touched yet,
+      budget still fully unspent
+- [x] Samples per cell for the spike — 3 (reduced from 5 for the deadline)
+- [ ] pass@k value — not yet decided, spike is just recording raw pass/fail
 
 ## Repository conventions
 
-- Working directory: `/Users/rios/research` — **not yet a git repository; make it
-  one before any data collection**
+- Working directory: `/Users/rios/research` — git repo initialized 2026-09-05,
+  branch `main`, pushed to GitHub (smartfoloo/research, private)
 - Raw model outputs archived verbatim, never edited in place
 - Prompts, task sets, and analysis code versioned alongside the data
 - Every generation records: model label, date, arm, condition, all factor
   levels, full prompt text, all sampling parameters, full token accounting
+- Pipeline: `spike/run_generations.py` (Ollama → raw JSON per generation,
+  resumable, skips completed/missing) → `spike/grade_generations.py` (Docker,
+  isolated, network-disabled → pass/fail per generation). Ollama's
+  `/api/generate` response includes `prompt_eval_count`/`eval_count`
+  (input/output tokens) automatically — captured for free, no extra
+  instrumentation needed. Whether reasoning-trace tokens are separated from
+  answer tokens in the response, or bundled together (e.g. inside
+  `<think>...</think>` in the text), is unverified — check the first real
+  `qwen3.5:9b` output before trusting any reasoning-token breakdown.

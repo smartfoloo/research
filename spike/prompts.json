@@ -1,64 +1,40 @@
 {
-  "_readme": "One entry per task. 'en_human' is filled from prompts-en.md. Fill in 'ja_raw', 'ja_directive', 'mt_en' as you write/generate them — the runner skips any condition that's still null, so you can start generating on EN-human alone right now and add conditions as they're ready.",
+  "_readme": "6-task set for the 2-day deadline. All 4 conditions filled for all 6 tasks as of 2026-09-06. en_human: human-authored, see prompts-en.md. ja_raw: human-authored (bilingual researcher), see prompts-ja.md. ja_directive: ja_raw plus one fixed appended sentence — 英語で考えてから回答してください。(please think in English before answering) — same sentence for every task. mt_en: ja_raw run through Google Translate (translate.google.com, ja->en), verbatim/unedited output, not polished, per CLAUDE.md's rule against smoothing MT text. run_generations.py skips any condition that is null; none currently are.",
 
-  "reverse-list-elements": {
-    "en_human": "Write a Python function named reverse_list_elements(elements, punctuation) that reverses the order of elements, keeping each punctuation mark in punctuation attached to its original element, and returns (new_elements, new_punctuation). Example: elements=[\"Hello\", \"world\"], punctuation=[\"\", \"!\"] -> ([\"world\", \"Hello\"], [\"!\", \"\"]).",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
-  },
-  "dedupe-sort": {
-    "en_human": "Write a Python function named dedupe_sort(numbers) that returns the unique values in numbers, sorted ascending. Example: [3, 1, 2, 3, 1] -> [1, 2, 3].",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
-  },
   "business-days": {
-    "en_human": "Write a Python function named business_days(date1, date2) where both dates are strings in \"YYYY-MM-DD\" format. Return the number of business days (Mon-Fri) strictly between the two dates, not including either date itself. Ignore holidays. Example: \"2024-01-01\", \"2024-01-08\" -> 4.",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
-  },
-  "valid-email": {
-    "en_human": "Write a Python function named is_valid_email(s) that returns True if s is a valid email: exactly one @, non-empty text before it, and the part after it contains at least one ., with no spaces anywhere. Otherwise return False. Example: \"user@example.com\" -> True; \"no-at-symbol.com\" -> False.",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
+    "en_human": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Ignore holidays. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "ja_raw": "2つの日付の間の営業日（月曜日から金曜日）の数を返す `business_days(date1, date2)` という Python 関数を作ってください。日付はどちらも `YYYY-MM-DD` 形式です。祝日は考慮しなくて大丈夫です。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" -> 4）。",
+    "ja_directive": "2つの日付の間の営業日（月曜日から金曜日）の数を返す `business_days(date1, date2)` という Python 関数を作ってください。日付はどちらも `YYYY-MM-DD` 形式です。祝日は考慮しなくて大丈夫です。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" -> 4）。英語で考えてから回答してください。",
+    "mt_en": "Create a Python function called business_days(date1, date2) that returns the number of business days (Monday to Friday) between two dates. Both dates are in YYYY-MM-DD format. You don't have to take holidays into account. However, please do not include the two dates themselves. (Example: \"2024-01-01\", \"2024-01-08\" -> 4)."
   },
   "currency-format": {
-    "en_human": "Write a Python function named format_currency(n) that returns n formatted as a string with a leading $ and comma separators every 3 digits. Negative numbers: minus sign before the dollar sign. Example: 1234567 -> \"$1,234,567\"; -1234 -> \"-$1,234\".",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
+    "en_human": "Write a Python function named format_currency(n) that returns n formatted as a string with a $ in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. 4640039 -> \"$4,640,039\")",
+    "ja_raw": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "ja_directive": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）英語で考えてから回答してください。",
+    "mt_en": "Create a Python function called format_currency(n) that returns n with $ at the beginning and separated by commas every three digits. For negative numbers, be sure to include a minus sign before the dollar sign. (Example: 4640039 -> \"$4,640,039\")"
+  },
+  "reverse-list-elements": {
+    "en_human": "Write a Python function named reverse_list_elements(elements, punctuation) that reverses the order of elements. Make sure it keeps each punctuation mark in punctuation attached to its original element, and returns (new_elements, new_punctuation). (Ex. elements=[\"Hello\", \"world\"], punctuation=[\"\", \"!\"] -> ([\"world\", \"Hello\"], [\"!\", \"\"]))",
+    "ja_raw": "`elements` の順序を反転させる `reverse_list_elements(elements, punctuation)` という Python 関数を作ってください。その際、`punctuation` に含まれる記号を元の単語とセットにして `(new_elements, new_punctuation)` を返すようにしてください。（例: `elements=[\"Hello\", \"world\"]`, `punctuation=[\"\", \"!\"]` -> `([\"world\", \"Hello\"], [\"!\", \"\"])`）",
+    "ja_directive": "`elements` の順序を反転させる `reverse_list_elements(elements, punctuation)` という Python 関数を作ってください。その際、`punctuation` に含まれる記号を元の単語とセットにして `(new_elements, new_punctuation)` を返すようにしてください。（例: `elements=[\"Hello\", \"world\"]`, `punctuation=[\"\", \"!\"]` -> `([\"world\", \"Hello\"], [\"!\", \"\"])`）英語で考えてから回答してください。",
+    "mt_en": "Create a Python function called reverse_list_elements(elements, punctuation) that reverses the order of elements. At that time, please return (new_elements, new_punctuation) with the symbols included in punctuation as a set with the original word. (Example: elements=[\"Hello\", \"world\"], punctuation=[\"\", \"!\"] -> ([\"world\", \"Hello\"], [\"!\", \"\"]))"
   },
   "eval-expression": {
-    "en_human": "Write a Python function named eval_expression(expr) that evaluates the arithmetic expression string expr, respecting standard operator precedence and parentheses, and supporting unary minus. If there is a division by zero, raise a ZeroDivisionError. Example: \"3 + 4 * (2 - 1)\" -> 7.",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
-  },
-  "lru-ttl-cache": {
-    "en_human": "Write a Python class named LRUTTLCache with __init__(self, capacity), put(self, key, value, ttl_seconds), and get(self, key). Both put and get count as recent use for LRU eviction. Entries also expire after their ttl_seconds regardless of use; get returns None for an expired entry even if not yet evicted. When full, evict the least-recently-used entry to make room. Example: cache = LRUTTLCache(2); cache.put(\"a\", 1, 100); cache.get(\"a\") -> 1.",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
+    "en_human": "Write a Python function named eval_expression(expr) that evaluates the expression in expr. Make sure to follow the order of operations with parenthesis and support negative numbers. If there is a division by zero, raise a ZeroDivisionError. (Ex. \"3 + 4 * (2 - 1)\" -> 7)",
+    "ja_raw": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）",
+    "ja_directive": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）英語で考えてから回答してください。",
+    "mt_en": "Create a Python function called eval_expression(expr) that computes the expression in expr. Be sure to consider the order of operations and be able to calculate negative numbers. When dividing by zero, raise ZeroDivisionError. (Example: \"3 + 4 * (2 - 1)\" -> 7)"
   },
   "shortest-path": {
-    "en_human": "Write a Python function named shortest_path(edges, start, end) where edges is a list of (from_node, to_node, weight) tuples for a directed graph. Return (distance, path), the shortest total distance and the ordered list of nodes on that path. If any edge weight is negative, raise a ValueError. If no path exists, return (None, None). Example: edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]).",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
+    "en_human": "Write a Python function named shortest_path(edges, start, end) where edges is a list of (from_node, to_node, weight) tuples representing one-way roads. The function should return (distance, path), the shortest total distance and an ordered list of nodes on that path. If start and end are the same node, return (0, [start]). If any edge weight is negative, give a ValueError. If no path exists, just return (None, None). (Ex. edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]))",
+    "ja_raw": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "ja_directive": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）英語で考えてから回答してください。",
+    "mt_en": "Create a Python function called shortest_path(edges, start, end) that returns the shortest total distance and a list of nodes along the path (distance, path). edges is a list of tuples (from_node, to_node, weight) representing one-way streets. If start and end are the same node, return (0, [start]). If the weight of any edge is negative, raise a ValueError. If the route does not exist, return (None, None). (Example: edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]))"
   },
   "bank-rollback": {
-    "en_human": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered list of signed integers. Apply them in order as a single batch. If any transaction would make the balance negative, reject the entire batch and return (balance, False) - the original balance, unchanged. Otherwise return (final_balance, True). Example: balance=100, transactions=[50, -30, -200] -> (100, False).",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
-  },
-  "meeting-rooms": {
-    "en_human": "Write a Python function named min_meeting_rooms(intervals) where intervals is a list of (start, end) integer tuples. Return the minimum number of rooms needed so no two meetings in the same room overlap. A meeting ending exactly when another starts does not count as overlapping. Example: [(9,10), (9,11), (10,12)] -> 2.",
-    "ja_raw": null,
-    "ja_directive": null,
-    "mt_en": null
+    "en_human": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return (balance, False) where balance is the original balance. Otherwise return (final_balance, True). (Ex. balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "ja_raw": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "ja_directive": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）英語で考えてから回答してください。",
+    "mt_en": "Create a Python function called bank_rollback(balance, transactions). transactions is a list of numbers with transaction amounts. Try to apply the given transactions in order and return the calculated final balance. If the balance becomes negative even during calculation, stop the calculation and return (balance, False) using the original balance, balance. Otherwise, return (final_balance, True). (Example: balance=100, transactions=[50, -30, -200] -> (100, False))"
   }
 }

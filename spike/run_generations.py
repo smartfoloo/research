@@ -23,12 +23,12 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 
 MODELS = [
     "qwen3.5:9b",
-    "deepseek-r1:14b",
-    "gemma4:12b",
+    # "deepseek-r1:14b",  # bonus-only if time remains — slower, tight VRAM fit
+    # "gemma4:12b",       # bonus-only if time remains — slower, tight VRAM fit
 ]
 
 CONDITIONS = ["en_human", "ja_raw", "ja_directive", "mt_en"]
-SAMPLES_PER_CELL = 5
+SAMPLES_PER_CELL = 3  # reduced from 5 for the 2-day deadline
 
 ROOT = Path(__file__).resolve().parent.parent
 PROMPTS_FILE = ROOT / "spike" / "prompts.json"
