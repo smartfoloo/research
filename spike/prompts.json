@@ -1,0 +1,64 @@
+{
+  "_readme": "One entry per task. 'en_human' is filled from prompts-en.md. Fill in 'ja_raw', 'ja_directive', 'mt_en' as you write/generate them — the runner skips any condition that's still null, so you can start generating on EN-human alone right now and add conditions as they're ready.",
+
+  "reverse-list-elements": {
+    "en_human": "Write a Python function named reverse_list_elements(elements, punctuation) that reverses the order of elements, keeping each punctuation mark in punctuation attached to its original element, and returns (new_elements, new_punctuation). Example: elements=[\"Hello\", \"world\"], punctuation=[\"\", \"!\"] -> ([\"world\", \"Hello\"], [\"!\", \"\"]).",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "dedupe-sort": {
+    "en_human": "Write a Python function named dedupe_sort(numbers) that returns the unique values in numbers, sorted ascending. Example: [3, 1, 2, 3, 1] -> [1, 2, 3].",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "business-days": {
+    "en_human": "Write a Python function named business_days(date1, date2) where both dates are strings in \"YYYY-MM-DD\" format. Return the number of business days (Mon-Fri) strictly between the two dates, not including either date itself. Ignore holidays. Example: \"2024-01-01\", \"2024-01-08\" -> 4.",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "valid-email": {
+    "en_human": "Write a Python function named is_valid_email(s) that returns True if s is a valid email: exactly one @, non-empty text before it, and the part after it contains at least one ., with no spaces anywhere. Otherwise return False. Example: \"user@example.com\" -> True; \"no-at-symbol.com\" -> False.",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "currency-format": {
+    "en_human": "Write a Python function named format_currency(n) that returns n formatted as a string with a leading $ and comma separators every 3 digits. Negative numbers: minus sign before the dollar sign. Example: 1234567 -> \"$1,234,567\"; -1234 -> \"-$1,234\".",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "eval-expression": {
+    "en_human": "Write a Python function named eval_expression(expr) that evaluates the arithmetic expression string expr, respecting standard operator precedence and parentheses, and supporting unary minus. If there is a division by zero, raise a ZeroDivisionError. Example: \"3 + 4 * (2 - 1)\" -> 7.",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "lru-ttl-cache": {
+    "en_human": "Write a Python class named LRUTTLCache with __init__(self, capacity), put(self, key, value, ttl_seconds), and get(self, key). Both put and get count as recent use for LRU eviction. Entries also expire after their ttl_seconds regardless of use; get returns None for an expired entry even if not yet evicted. When full, evict the least-recently-used entry to make room. Example: cache = LRUTTLCache(2); cache.put(\"a\", 1, 100); cache.get(\"a\") -> 1.",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "shortest-path": {
+    "en_human": "Write a Python function named shortest_path(edges, start, end) where edges is a list of (from_node, to_node, weight) tuples for a directed graph. Return (distance, path), the shortest total distance and the ordered list of nodes on that path. If any edge weight is negative, raise a ValueError. If no path exists, return (None, None). Example: edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]).",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "bank-rollback": {
+    "en_human": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered list of signed integers. Apply them in order as a single batch. If any transaction would make the balance negative, reject the entire batch and return (balance, False) - the original balance, unchanged. Otherwise return (final_balance, True). Example: balance=100, transactions=[50, -30, -200] -> (100, False).",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  },
+  "meeting-rooms": {
+    "en_human": "Write a Python function named min_meeting_rooms(intervals) where intervals is a list of (start, end) integer tuples. Return the minimum number of rooms needed so no two meetings in the same room overlap. A meeting ending exactly when another starts does not count as overlapping. Example: [(9,10), (9,11), (10,12)] -> 2.",
+    "ja_raw": null,
+    "ja_directive": null,
+    "mt_en": null
+  }
+}
