@@ -52,6 +52,11 @@ def build_test_script(task: str, extracted_code: str) -> str:
     lines = [
         extracted_code,
         "",
+        "def _norm(v):",
+        "    # top-level tuple/list are graded as equivalent: the prompts say",
+        "    # 'returns (a, b)' in prose, not 'must return a Python tuple'.",
+        "    return list(v) if isinstance(v, tuple) else v",
+        "",
         "passed = 0",
         f"total = {len(spec['cases'])}",
         "",
@@ -71,7 +76,7 @@ def build_test_script(task: str, extracted_code: str) -> str:
             expected_repr = repr(case["expected"])
             lines.append(f"try:")
             lines.append(f"    result = {fn}({args_repr})")
-            lines.append(f"    if result == {expected_repr}:")
+            lines.append(f"    if _norm(result) == _norm({expected_repr}):")
             lines.append(f"        passed += 1")
             lines.append(f"    else:")
             lines.append(f"        print(f'FAIL case {i}: expected {expected_repr}, got {{result!r}}')")
