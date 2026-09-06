@@ -28,7 +28,9 @@ MODELS = [
 ]
 
 CONDITIONS = ["en_human", "ja_raw", "ja_directive", "mt_en"]
-SAMPLES_PER_CELL = 3  # reduced from 5 for the 2-day deadline
+SAMPLES_PER_CELL = 6  # bumped from 3: initial N=3 result was fragile/counter to
+# H1, doubling to check whether it holds or was sampling noise. Still a spike,
+# not the preregistered real study — say so in the presentation.
 
 ROOT = Path(__file__).resolve().parent.parent
 PROMPTS_FILE = ROOT / "spike" / "prompts.json"
@@ -51,7 +53,20 @@ def out_path(model, task, condition, sample_idx):
 def generate(model, prompt):
     resp = requests.post(
         OLLAMA_URL,
-        json={"model": model, "prompt": prompt, "stream": False},
+        json={
+            "model": model,
+            "prompt": prompt,
+            "stream": False,
+            # Ollama defaults to a 4096-token context if unset. ja_directive's
+            # induced English reasoning traces alone were observed running
+            # ~4000 tokens, leaving no room for the answer and truncating
+            # (done_reason: "length") before any code was written. 8192
+            # fixed all but one outlier sample, which needed more still;
+            # 16384 is a no-op for every sample that never approached the
+            # ceiling (num_ctx doesn't change sampling below it), so raising
+            # it doesn't affect the 71 samples already generated under 8192.
+            "options": {"num_ctx": 16384},
+        },
         timeout=600,
     )
     resp.raise_for_status()
