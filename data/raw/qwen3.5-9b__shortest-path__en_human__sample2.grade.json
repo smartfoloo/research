@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__en_human__sample2.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path between start and end nodes.\n    \n    Args:\n        edges: List of (from_node, to_node, weight) tuples\n        start: Starting node (string or hashable)\n        end: Ending node (string or hashable)\n    \n    Returns:\n        (distance, path) tuple where distance is the shortest total weight\n        and path is a list of nodes from start to end.\n    \n    Raises:\n        ValueError: If any edge has a negative weight\n    \n    Returns:\n        (None, None): If no path exists or nodes are not in graph\n    \"\"\"\n    # Check for negative edge weights first\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weight is not allowed\")\n    \n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list graph\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Check if start node exists in graph\n    if start not in graph:\n        return (None, None)\n    \n    # Dijkstra's algorithm with priority queue\n    distances = {start: 0}\n    previous = {start: None}\n    pq = [(0, start)]  # (distance, node)\n    \n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n        \n        # Skip if we've already found a shorter path to this node\n        if current_dist > distances.get(current_node, float('inf')):\n            continue\n        \n        # If we reached the destination, break early\n        if current_node == end:\n            break\n        \n        # Explore neighbors\n        if current_node in graph:\n            for neighbor, weight in graph[current_node]:\n                distance = current_dist + weight\n                \n                # Only update if we found a shorter path\n                if distance < distances.get(neighbor, float('inf')):\n                    distances[neighbor] = distance\n                    previous[neighbor] = current_node\n                    heapq.heappush(pq, (distance, neighbor))\n    \n    # Check if end is reachable\n    if end not in distances:\n        return (None, None)\n    \n    # Reconstruct path from end to start using previous node tracking\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = previous.get(current)\n    \n    path.reverse()\n    \n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 153,
+  "eval_count": 1691,
+  "graded_at": "2026-09-05T21:40:37"
+}

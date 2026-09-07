@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__mt_en__sample1.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1, date2):\n    # Parse the string dates into datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n\n    # Ensure d1 is the earlier date and d2 is the later date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # Move start_date and end_date inward to exclude the boundary dates themselves\n    start_date += timedelta(days=1)\n    end_date -= timedelta(days=1)\n\n    # If start_date is now after end_date, there are 0 business days in between\n    if start_date > end_date:\n        return 0\n\n    # Calculate total days in the inclusive range\n    total_days = (end_date - start_date).days + 1\n\n    # Calculate full weeks and remaining days\n    full_weeks, remaining_days = divmod(total_days, 7)\n\n    # Each full week contains exactly 5 business days\n    business_days_count = full_weeks * 5\n\n    # Check the remaining days of the week\n    current_day = start_date\n    for _ in range(remaining_days):\n        # weekday(): 0 = Monday, ..., 4 = Friday, 5 = Saturday, 6 = Sunday\n        if current_day.weekday() < 5:\n            business_days_count += 1\n        current_day += timedelta(days=1)\n\n    return business_days_count\n\n\n# Example usage:\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 112,
+  "candidates_token_count": 612,
+  "thoughts_token_count": null,
+  "total_token_count": 724,
+  "graded_at": "2026-09-06T06:53:04"
+}

@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_raw__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    単語リストと記号リストの順序を反転させる関数\n    \n    引数:\n        elements: 文字列のリスト（単語やフレーズなど）\n        punctuation: 記号または空文字などのリスト\n    \n    戻り値:\n        (反転後のelements, 反転後のpunctuation) のタプル\n    \n    例:\n        >>> elements = [\"Hello\", \"world\"]\n        >>> punctuation = [\"\", \"!\"]\n        >>> reverse_list_elements(elements, punctuation)\n        (['world', 'Hello'], ['!', ''])\n    \"\"\"\n    return (elements[::-1], punctuation[::-1])\n\n\n# テスト例\nif __name__ == \"__main__\":\n    # 例1: 基本的な使い方\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n    result = reverse_list_elements(elements, punctuation)\n    print(result)  # (['world', 'Hello'], ['!', ''])\n    \n    # 例2: 空リストの場合\n    empty_elements = []\n    empty_punctuation = []\n    result2 = reverse_list_elements(empty_elements, empty_punctuation)\n    print(result2)  # ([], [])\n    \n    # 例3: より複雑なデータ\n    sentences = [\"Python\", \"is\", \"amazing\"]\n    symbols = [\".\", \"?\", \"!\"]\n    result3 = reverse_list_elements(sentences, symbols)\n    print(result3)  # (['amazing', 'is', 'Python'], ['!', '?', '.'])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\n([], [])\n(['amazing', 'is', 'Python'], ['!', '?', '.'])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 100,
+  "eval_count": 971,
+  "graded_at": "2026-09-05T21:40:36"
+}

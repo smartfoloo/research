@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__currency-format__mt_en__sample4.json",
+  "task": "currency-format",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "def format_currency(n):\n    # Check if the number is negative to handle the minus sign separately\n    is_negative = n < 0\n    n = abs(n)\n\n    # Format the number with commas for thousands and \n    # convert it to a string (using :, format specifier)\n    formatted_number = f\"{n:,}\"\n\n    # Add the dollar sign and the minus sign if applicable\n    if is_negative:\n        return f\"-${formatted_number}\"\n    else:\n        return f\"${formatted_number}\"\n\n\n# --- Examples ---\nprint(format_currency(4640039))  # Output: $4,640,039\nprint(format_currency(-123456789))  # Output: -$123,456,789\nprint(format_currency(500))  # Output: $500",
+  "stdout": "$4,640,039\n-$123,456,789\n$500\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 352,
+  "thoughts_token_count": null,
+  "total_token_count": 418,
+  "graded_at": "2026-09-06T06:53:13"
+}

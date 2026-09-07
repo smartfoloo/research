@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonの標準ライブラリである `datetime` を使用して、ご要望の条件を満たす関数を作成しました。\n\n祝日を考慮せず、2つの日付の**間**（両端の日付を含まない）にある営業日（月〜金）を計算します。\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\")\n\n    # 順序が逆になっていても対応できるようにする\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # 基準となる開始日の翌日から、終了日の前日までを対象にする\n    current_date = start_date + timedelta(days=1)\n\n    count = 0\n    while current_date < end_date:\n        # weekday()は月曜日が0、日曜日が6を返す\n        # 0〜4が月曜日から金曜日\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\n# 2024-01-01 (月) から 2024-01-08 (月) の間\n# 含まれる日: 1/2(火), 1/3(水), 1/4(木), 1/5(金), 1/6(土), 1/7(日)\n# 営業日 (月〜金): 1/2, 1/3, 1/4, 1/5 の 4日間\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n\n# 金曜日と月曜日の間（週末を挟む場合、間には営業日がない）\nprint(business_days(\"2024-01-05\", \"2024-01-08\"))  # 出力: 0\n```\n\n### 関数のポイント\n1. **日付の順序の考慮**: `min` と `max` を使っているため、`business_days(\"2024-01-08\", \"2024-01-01\")` のように順序が逆でも正しく計算できます。\n2. **両端を含まない処理**: `start_date + timedelta(days=1)` からループを開始し、`current_date < end_date` で終了することで、指定された2つの日付自体を除外しています。\n3. **曜日の判定**: `weekday()` メソッドを使用し、値が `5` 未満（0〜4、つまり月〜金）の場合のみカウントを増やしています。",
+              "thoughtSignature": "El4KXAERTTIP2kcA1g2lpGWmRU5EdhvLHSIV6QkbcGNNKBsnTK6sIYke8QJtRAPl/tQ4DbM4X0/zddo/H6GsGciSn3+50dTow1ytX9zhuYnRQ2jcPZzN3VhyXndUvA+1"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 672,
+      "totalTokenCount": 772,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "EVCdaueVNJSj9tMPgcKC0A8"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonの標準ライブラリである `datetime` を使用して、ご要望の条件を満たす関数を作成しました。\n\n祝日を考慮せず、2つの日付の**間**（両端の日付を含まない）にある営業日（月〜金）を計算します。\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\")\n\n    # 順序が逆になっていても対応できるようにする\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # 基準となる開始日の翌日から、終了日の前日までを対象にする\n    current_date = start_date + timedelta(days=1)\n\n    count = 0\n    while current_date < end_date:\n        # weekday()は月曜日が0、日曜日が6を返す\n        # 0〜4が月曜日から金曜日\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\n# 2024-01-01 (月) から 2024-01-08 (月) の間\n# 含まれる日: 1/2(火), 1/3(水), 1/4(木), 1/5(金), 1/6(土), 1/7(日)\n# 営業日 (月〜金): 1/2, 1/3, 1/4, 1/5 の 4日間\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n\n# 金曜日と月曜日の間（週末を挟む場合、間には営業日がない）\nprint(business_days(\"2024-01-05\", \"2024-01-08\"))  # 出力: 0\n```\n\n### 関数のポイント\n1. **日付の順序の考慮**: `min` と `max` を使っているため、`business_days(\"2024-01-08\", \"2024-01-01\")` のように順序が逆でも正しく計算できます。\n2. **両端を含まない処理**: `start_date + timedelta(days=1)` からループを開始し、`current_date < end_date` で終了することで、指定された2つの日付自体を除外しています。\n3. **曜日の判定**: `weekday()` メソッドを使用し、値が `5` 未満（0〜4、つまり月〜金）の場合のみカウントを増やしています。",
+  "prompt_token_count": 100,
+  "candidates_token_count": 672,
+  "thoughts_token_count": null,
+  "total_token_count": 772,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 5,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 7.420893430709839,
+    "generated_at": "2026-09-06T06:35:48"
+  }
+}

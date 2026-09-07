@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__en_human__sample2.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Convert the string dates into datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date for the loop to work\n    start, end = min(d1, d2), max(d1, d2)\n    \n    business_count = 0\n    # Start from the day after the first date\n    current_date = start + timedelta(days=1)\n    \n    # Loop until we reach the end date (exclusive)\n    while current_date < end:\n        # .weekday() returns 0 for Monday and 6 for Sunday\n        # 0-4 are Monday through Friday\n        if current_date.weekday() < 5:\n            business_count += 1\n        current_date += timedelta(days=1)\n        \n    return business_count\n\n# Test the example provided\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 101,
+  "candidates_token_count": 545,
+  "thoughts_token_count": 1017,
+  "total_token_count": 1663,
+  "graded_at": "2026-09-06T05:08:03"
+}

@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_raw__sample5.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    与えられたグラフにおいて、start ノードから end ノードへの最短経路を求めます。\n    \n    引数:\n        edges: (from_node, to_node, weight) のタプルのリスト。\n        start: 出発ノード。\n        end: 目的地ノード。\n\n    戻り値:\n        (distance, path) タプル。\n        distance は最短経路の総距離、path は経由するノードのリストです。\n        経路が不存在な場合は (None, None) を返します。\n\n    例外:\n        ValueErrors: edges のいずれかに負の重みがある場合。\n    \"\"\"\n    \n    # 1. 重みが負の場合にエラーを発生させるチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edges cannot have negative weights.\")\n\n    # 2. 出発地点と目的地が同じ場合の特殊処理\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフを表す隣接リストを作成する\n    adj = {}\n    for u, v, w in edges:\n        if u not in adj:\n            adj[u] = []\n        adj[u].append((v, w))\n\n    # 4. ダイクストラ法の初期化\n    distances = {start: 0}          # 各ノードまでの現在の最短距離 (infinity がデフォルト)\n    predecessors = {}                # 経路再構築のための親ノードマップ\n    \n    # プライオリティキュー (優先度付きヒープ)。要素は (現在の距離，ノード名) の形式。\n    heap = [(0, start)]\n    \n    while heap:\n        dist, node = heapq.heappop(heap)\n\n        # ヒープから取得した距離が、すでに発見された最短距離より大きければ古い情報なのでスキップ\n        if distances.get(node, float('inf')) < dist:\n            continue\n        \n        # ノードの隣接するノードを探索\n        if node in adj:\n            for neighbor, weight in adj[node]:\n                new_dist = dist + weight\n                # 発見された最短距離を更新する場合\n                if new_dist < distances.get(neighbor, float('inf')):\n                    distances[neighbor] = new_dist\n                    predecessors[neighbor] = node\n                    heapq.heappush(heap, (new_dist, neighbor))\n\n    # 5. 目的地に到達したか確認する\n    if end not in distances:\n        return (None, None)\n\n    # 6. 最短距離と経路の再構築\n    path = []\n    curr = end\n    \n    # 先祖ノードを追跡して start に戻る\n    while curr != start:\n        path.append(curr)\n        curr = predecessors[curr]\n    \n    path.append(start)\n    path.reverse()\n\n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 186,
+  "eval_count": 6162,
+  "graded_at": "2026-09-06T03:04:33"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__ja_directive__sample3.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # 1. Check for negative weights\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n            \n    # 2. Base case: start and end are the same\n    if start == end:\n        return (0, [start])\n        \n    # 3. Build the adjacency list\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n        # Ensure 'end' or nodes with no outgoing edges are in the graph representation\n        if v not in graph:\n            graph[v] = []\n\n    # If start is not in the graph, no path exists\n    if start not in graph:\n        return (None, None)\n\n    # 4. Priority queue for Dijkstra's algorithm: stores (distance, current_node, path)\n    pq = [(0, start, [start])]\n    \n    # 5. Visited set\n    visited = set()\n\n    # 6. Algorithm Execution\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n\n        for neighbor, weight in graph.get(current_node, []):\n            if neighbor not in visited:\n                heapq.heappush(pq, (current_distance + weight, neighbor, path + [neighbor]))\n\n    # 7. If the loop finishes without reaching 'end', no path exists\n    return (None, None)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 185,
+  "candidates_token_count": 802,
+  "thoughts_token_count": null,
+  "total_token_count": 987,
+  "graded_at": "2026-09-06T06:53:31"
+}

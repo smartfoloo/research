@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_directive__sample4.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    要素の順序を反転させる関数です。\n\n    引数:\n        elements (list): 元の単語やトークンのリスト。\n        punctuation (list): 句読点などの記号のリスト。\n    \n    戻り値:\n        tuple: 反転後の単語リストと、句読点リストのタプル \n               ((new_elements, new_punctuation)) を返します。\n\n    挙動の例:\n        elements=[\"Hello\", \"world\"]\n        punctuation=[\"\", \"!\"]\n        結果 -> ([\"world\", \"Hello\"], [\"!\", \"\"])\n\n    注釈:\n        両方のリストは並列しており、位置情報に基づいて一緒に逆順化されます。\n        length(elements) == len(punctuation) が想定されています。\n    \"\"\"\n    # elements リストを逆順に反転する\n    new_elements = elements[::-1]\n    \n    # punctuation リストも同じく逆順に反転する\n    # 元の単語とセットで移動させるため、リスト同士を別々に逆順処理します\n    new_punctuation = punctuation[::-1]\n    \n    return (new_elements, new_punctuation)\n\n# 使用例\nif __name__ == \"__main__\":\n    elems = [\"Hello\", \"world\"]\n    puncts = [\"\", \"!\"]\n    \n    reversed_tuple = reverse_list_elements(elems, puncts)\n    print(reversed_tuple) \n    # 出力: (['world', 'Hello'], ['!', ''])\n\n# 別の例\nelems2 = [\"A\", \"B\", \"C\"]\npuncts2 = [\",\", \".\", \"!\"]\nresult2 = reverse_list_elements(elems2, puncts2)\nprint(result2) \n# 出力: (['C', 'B', 'A'], ['!', '.', ','])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\n(['C', 'B', 'A'], ['!', '.', ','])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 107,
+  "eval_count": 5311,
+  "graded_at": "2026-09-06T03:04:28"
+}

@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_raw__sample1.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "def eval_expression(expr):\n    \"\"\"\n    数学的式を計算する関数。演算順序や優先順位を考慮し、負の数もサポート。\n    ゼロで割った場合は ZeroDivisionError を発生させます。\n\n    Args:\n        expr (str): 計算対象の式（例：\"3 + 4 * (2 - 1)\"）\n\n    Returns:\n        int または float: 計算結果\n\n    Raises:\n        ZeroDivisionError: 零で割られた場合、またはゼロ除算を意図的に触発された場合\n        ValueError: 無効な式の形式や非数値的入力の場合\n    \"\"\"\n    import math\n    from numbers import Number\n    \n    def is_numeric(expr):\n        try:\n            float(eval(expr))\n            return True\n        except Exception:\n            return False\n    \n    # 文字列の空白を整理\n    expr = expr.strip()\n    \n    if not expr or not isinstance(expr, str):\n        raise ValueError(\"Invalid input\")\n\n    try:\n        result = eval(expr)\n        \n        # 数値型の結果のみ許容\n        if isinstance(result, Number):\n            return result\n        else:\n            raise ValueError(\"Result must be a numeric value\")\n    \n    except ZeroDivisionError:\n        raise ZeroDivisionError(f\"Cannot divide by zero in expression: {expr}\")\n    \n    except (NameError, SyntaxError, TypeError, ValueError) as e:\n        raise ValueError(f\"Invalid expression: {e}\")\n    \n    except Exception as e:\n        raise ValueError(f\"Unexpected error evaluating '{expr}': {type(e).__name__}: {e}\")\n\n\n# 使用例\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))   # 出力: 7\nprint(eval_expression(\"-5 + 3 * 4\"))         # 出力: 7\nprint(eval_expression(\"10 / 2\"))             # 出力: 5.0\ntry:\n    print(eval_expression(\"10 / 0\"))         # ZeroDivisionError を発生させる\nexcept ZeroDivisionError as e:\n    print(f\"ZeroDivisionError caught: {e}\")",
+  "stdout": "7\n7\n5.0\nZeroDivisionError caught: Cannot divide by zero in expression: 10 / 0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 82,
+  "eval_count": 1623,
+  "graded_at": "2026-09-05T21:40:32"
+}

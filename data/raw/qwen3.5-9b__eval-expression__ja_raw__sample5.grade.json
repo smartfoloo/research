@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_raw__sample5.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "import ast\nimport operator\n\ndef eval_expression(expr):\n    # 引数チェック\n    if not isinstance(expr, str):\n        raise TypeError(\"引数は文字列である必要があります\")\n    \n    try:\n        tree = ast.parse(expr)\n        \n        class ExpressionEvaluator(ast.NodeVisitor):\n            def __init__(self):\n                self.result = None\n\n            def visit_Constant(self, node):\n                self.result = node.value\n\n            def visit_BinOp(self, node):\n                left = self.visit(node.left)\n                right = self.visit(node.right)\n                \n                if isinstance(node.op, ast.Mod):\n                    if right == 0:\n                        raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                \n                op_map = {\n                    ast.Add: operator.add,\n                    ast.Sub: operator.sub,\n                    ast.Mult: operator.mul,\n                    ast.Div: operator.truediv,\n                    ast.FloorDiv: operator.floordiv,\n                    ast.Pow: operator.pow,\n                    ast.Mod: lambda x, y: x % y,  # 自前で実装（安全のため）\n                }\n                \n                if type(node.op) not in op_map:\n                    raise ValueError(f\"サポートされていない演算子: {type(node.op)}\")\n                \n                self.result = op_map[type(node.op)](left, right)\n\n            def visit_UnaryOp(self, node):\n                operand = self.visit(node.operand)\n                \n                if isinstance(node.op, ast.USub):\n                    self.result = -operand\n                elif isinstance(node.op, ast.UAdd):\n                    self.result = +operand\n                elif isinstance(node.op, ast.Not):\n                    # 論理演算子 NOT はサポートしないため raise\n                    raise ValueError(\"NOT演算はサポートされていません\")\n\n            def visit_Compare(self, node):\n                raise ValueError(\"比較演算はサポートされていません\")\n\n            def generic_visit(self, node):\n                raise TypeError(f\"サポートされていない AST ノード: {type(node)}\")\n\n        # 式解析と評価の実行\n        evaluator = ExpressionEvaluator()\n        evaluator.visit(tree)\n\n        if evaluator.result is None:\n            raise ValueError(\"有効な計算式ではありません\")\n        \n        return evaluator.result\n    \n    except ZeroDivisionError:\n        raise\n    except Exception as e:\n        raise RuntimeError(f\"式の計算中にエラーが発生しました: {e}\")",
+  "stdout": "FAIL case 0: raised RuntimeError: 式の計算中にエラーが発生しました: サポートされていない AST ノード: <class 'ast.Module'>\nFAIL case 1: raised RuntimeError: 式の計算中にエラーが発生しました: サポートされていない AST ノード: <class 'ast.Module'>\nFAIL case 2: raised RuntimeError: 式の計算中にエラーが発生しました: サポートされていない AST ノード: <class 'ast.Module'>\nFAIL case 3: expected ZeroDivisionError, got RuntimeError\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 82,
+  "eval_count": 1512,
+  "graded_at": "2026-09-06T03:04:26"
+}

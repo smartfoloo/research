@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_raw__sample1.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import date, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    2 つの日付の間の営業日（月曜日から金曜日）の数を返します。\n    \n    Args:\n        date1 (str): YYYY-MM-DD 形式の日付文字列\n        date2 (str): YYYY-MM-DD 形式の日付文字列\n        \n    Returns:\n        int: 間の営業日の数（両端は含まない）\n        \n    Raises:\n        ValueError: 有効な日付が指定されていない場合\n    \"\"\"\n    # 1. 入力文字列を datetime.date オブジェクトに変換する\n    # strptime を使用することで、ISO フォーマットに対応したパースを行います。\n    try:\n        d1 = date.fromisoformat(date1)\n    except ValueError:\n        # fromisoformat が利用できない古いバージョンや形式の扱いのため\n        # 代替方法 (strptime) で補う場合もありますが、fromisoformat は推奨されます。\n        pass\n    \n    # より汎用的な strptime の使い方 (Python 3.7+)\n    import datetime as dt\n    d1 = dt.date.strptime(date1, \"%Y-%m-%d\").replace(year=dt.datetime.now().year if False else d1.year) # これは冗長\n    # 単純に以下のように strptime でパースするのが最も安全です。\n    # ただし、日付文字列が YYYY-MM-DD のことを前提としています。\n    \n    # より簡潔な実装例 (Python 3.7+ が推奨環境なら fromisoformat)\n    try:\n        start_date = date.fromisoformat(date1)\n        end_date = date.fromisoformat(date2)\n    except ValueError:\n        # フォーマットエラーに備え、フォールバック処理や例外スローを想定\n        raise ValueError(\"日付の形式は 'YYYY-MM-DD' で指定してください。\")\n\n    # 2. 日付の順序を整える（先に開始する日付、後から終了する日付）\n    if start_date > end_date:\n        start_date, end_date = end_date, start_date\n    \n    # 3. 営業日をカウントするループ\n    # 条件：端点自体は含まないため、start + 1 から end - 1 の範囲をチェック（または while で制御）\n    count = 0\n    current_date = start_date + timedelta(days=1)\n    \n    while current_date < end_date:\n        # .weekday() は 月曜が 0 、金曜が 4 、土日が 5、日曜が 6\n        if current_date.weekday() < 5:\n            count += 1\n        \n        current_date += timedelta(days=1)\n        \n    return count\n\n# テスト例\nif __name__ == \"__main__\":\n    # 2024-01-01 (月) から 2024-01-08 (月) の間\n    print(business_days(\"2024-01-01\", \"2024-01-08\")) # 期待：4\n    \n    # 2024-01-01 から 2024-01-07 (日) の間 (土日も含まれず、0 営業日になるか？)\n    # 範囲内が平日のみなら。\n    print(business_days(\"2024-01-05\", \"2024-01-08\")) # 5(金), 6(土), 7(日) -> 0",
+  "stdout": "(non-fatal) submitted code raised at top level: AttributeError(\"type object 'datetime.date' has no attribute 'strptime'\")\nFAIL case 0: raised AttributeError: type object 'datetime.date' has no attribute 'strptime'\nFAIL case 1: raised AttributeError: type object 'datetime.date' has no attribute 'strptime'\nFAIL case 2: raised AttributeError: type object 'datetime.date' has no attribute 'strptime'\nFAIL case 3: raised AttributeError: type object 'datetime.date' has no attribute 'strptime'\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 107,
+  "eval_count": 6077,
+  "graded_at": "2026-09-06T03:04:16"
+}

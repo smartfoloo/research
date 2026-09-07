@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_raw__sample1.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # 負の重みのチェック（全てのエッジ）\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Weight cannot be negative\")\n\n    # グラフを邻接リストに変換\n    graph = defaultdict(list)\n    nodes = set()\n    for u, v, w in edges:\n        graph[u].append((v, w))\n        nodes.add(u)\n        nodes.add(v)\n\n    if start == end:\n        return (0, [start])\n\n    # 初期化：各ノードまでの距離を無限大、親ノードの記録は未定義\n    distances = {node: float('inf') for node in nodes}\n    parent = {}\n    distances[start] = 0\n\n    # プライオリティキュー：(距離, ノード)\n    pq = [(0, start)]\n    \n    visited = set()\n\n    while pq:\n        dist, node = heapq.heappop(pq)\n        \n        if node in visited:\n            continue\n        visited.add(node)\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph[node]:\n            new_dist = dist + weight\n            if new_dist < distances[neighbor] and neighbor not in visited:\n                distances[neighbor] = new_dist\n                parent[neighbor] = node\n                heapq.heappush(pq, (new_dist, neighbor))\n\n    # 最短経路の確認\n    if distances[end] == float('inf') or end not in parent:\n        return (None, None)\n\n    # 経路の復元\n    path = []\n    current = end\n    while current != start and current is not None:\n        path.append(current)\n        current = parent.get(current)\n    path.append(start)\n    path.reverse()\n\n    return (distances[end], path)",
+  "stdout": "FAIL case 2: raised KeyError: 'C'\nPASSED 3/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 3,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 186,
+  "eval_count": 1558,
+  "graded_at": "2026-09-05T21:40:39"
+}

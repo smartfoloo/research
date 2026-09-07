@@ -65,7 +65,7 @@ def generate(model, prompt):
             # 16384 is a no-op for every sample that never approached the
             # ceiling (num_ctx doesn't change sampling below it), so raising
             # it doesn't affect the 71 samples already generated under 8192.
-            "options": {"num_ctx": 16384},
+            "options": {"num_ctx": 32768},
         },
         timeout=600,
     )

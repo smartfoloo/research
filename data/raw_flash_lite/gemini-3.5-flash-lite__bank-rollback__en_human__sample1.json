@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function `bank_rollback` that implements the required logic:\n\n```python\ndef bank_rollback(balance, transactions):\n    # Keep a copy of the original balance in case we need to roll back\n    original_balance = balance\n    current_balance = balance\n    \n    # Simulate applying each transaction in order\n    for tx in transactions:\n        current_balance += tx\n        # If the balance drops below zero, reject all transactions\n        if current_balance < 0:\n            return (original_balance, False)\n            \n    # If all transactions are applied successfully without a negative balance\n    return (current_balance, True)\n```\n\n### Explanation:\n1. **Store Original Balance**: We save the initial `balance` into `original_balance` so we can return it if a negative balance is encountered.\n2. **Iterate and Simulate**: We loop through each transaction in the `transactions` list, adding it to `current_balance`.\n3. **Check Condition**: Immediately after applying a transaction, we check if `current_balance < 0`. If it is, we abort and return `(original_balance, False)`.\n4. **Success**: If the loop finishes without the balance ever dropping below zero, we return the final computed balance and `True`.",
+              "thoughtSignature": "El4KXAERTTIP6qnHoSPUjIsc/l/8eyUoO9j+32O9y2JmRxrPWGxuhN91Gx7C6kdmG5V7a7UnvEG5Nmm+XNEWEDxbXafgYB/fgA+Tm3Chr4mnpBBSG8vvtLn3rTS9NN3s"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 280,
+      "totalTokenCount": 380,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "XFOdaqb5DaHbvr0Px7KFiQ8"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function `bank_rollback` that implements the required logic:\n\n```python\ndef bank_rollback(balance, transactions):\n    # Keep a copy of the original balance in case we need to roll back\n    original_balance = balance\n    current_balance = balance\n    \n    # Simulate applying each transaction in order\n    for tx in transactions:\n        current_balance += tx\n        # If the balance drops below zero, reject all transactions\n        if current_balance < 0:\n            return (original_balance, False)\n            \n    # If all transactions are applied successfully without a negative balance\n    return (current_balance, True)\n```\n\n### Explanation:\n1. **Store Original Balance**: We save the initial `balance` into `original_balance` so we can return it if a negative balance is encountered.\n2. **Iterate and Simulate**: We loop through each transaction in the `transactions` list, adding it to `current_balance`.\n3. **Check Condition**: Immediately after applying a transaction, we check if `current_balance < 0`. If it is, we abort and return `(original_balance, False)`.\n4. **Success**: If the loop finishes without the balance ever dropping below zero, we return the final computed balance and `True`.",
+  "prompt_token_count": 100,
+  "candidates_token_count": 280,
+  "thoughts_token_count": null,
+  "total_token_count": 380,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 1,
+    "prompt_text": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return (balance, False) where balance is the original balance. Otherwise return (final_balance, True). (Ex. balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 6.173117637634277,
+    "generated_at": "2026-09-06T06:49:49"
+  }
+}

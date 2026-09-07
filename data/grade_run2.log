@@ -1,0 +1,76 @@
+qwen3.5-9b__bank-rollback__ja_directive__sample1.json: FAIL (None/None)
+Exception in thread Thread-4 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 90: character maps to <undefined>
+qwen3.5-9b__bank-rollback__ja_directive__sample2.json: FAIL (None/None)
+qwen3.5-9b__business-days__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__business-days__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__currency-format__en_human__sample1.json: PASS (4/4)
+qwen3.5-9b__currency-format__en_human__sample2.json: FAIL (3/4)
+qwen3.5-9b__currency-format__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__currency-format__ja_raw__sample1.json: FAIL (0/4)
+qwen3.5-9b__currency-format__ja_raw__sample2.json: PASS (4/4)
+qwen3.5-9b__currency-format__ja_raw__sample3.json: PASS (4/4)
+qwen3.5-9b__currency-format__mt_en__sample1.json: FAIL (3/4)
+qwen3.5-9b__currency-format__mt_en__sample2.json: FAIL (0/4)
+qwen3.5-9b__currency-format__mt_en__sample3.json: FAIL (3/4)
+qwen3.5-9b__eval-expression__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__en_human__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_directive__sample3.json: FAIL (None/None)
+Exception in thread Thread-34 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 592: character maps to <undefined>
+qwen3.5-9b__eval-expression__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_raw__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__en_human__sample1.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__en_human__sample2.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__en_human__sample3.json: FAIL (None/None)
+Exception in thread Thread-49 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 4: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\riosa\research\spike\grade_generations.py", line 196, in <module>
+    main()
+  File "C:\Users\riosa\research\spike\grade_generations.py", line 163, in main
+    passed, total = parse_pass_count(stdout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\riosa\research\spike\grade_generations.py", line 121, in parse_pass_count
+    m = re.search(r"PASSED (\d+)/(\d+)", stdout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'

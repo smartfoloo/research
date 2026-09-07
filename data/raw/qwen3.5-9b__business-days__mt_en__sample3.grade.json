@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__mt_en__sample3.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import date, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculate the number of business days (Monday through Friday) between two dates.\n    \n    Args:\n        date1: First date in \"YYYY-MM-DD\" format\n        date2: Second date in \"YYYY-MM-DD\" format\n    \n    Returns:\n        Number of business days between the two dates (exclusive of both dates)\n    \"\"\"\n    # Parse input dates using ISO format\n    d1 = date.fromisoformat(date1)\n    d2 = date.fromisoformat(date2)\n    \n    # Determine start and end dates\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    # Calculate the number of days between them (exclusive of both endpoints)\n    if (end_date - start_date).days < 2:\n        return 0\n    \n    # Count business days\n    current = start_date + timedelta(days=1)\n    count = 0\n    \n    while current < end_date:\n        if current.weekday() < 5:  # Monday (0) to Friday (4) are business days\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n\n# Example usage and test cases\nif __name__ == \"__main__\":\n    # Test case from problem description\n    print(business_days(\"2024-01-01\", \"2024-01-08\"))  # Expected: 4\n    \n    # Test with different dates\n    print(business_days(\"2024-01-02\", \"2024-01-10\"))  # Should be 5 business days\n    print(business_days(\"2024-01-08\", \"2024-01-01\"))  # Should handle reversed order: 4\n    \n    # Test with same date\n    print(business_days(\"2024-01-01\", \"2024-01-01\"))  # Expected: 0\n    \n    # Test with adjacent dates\n    print(business_days(\"2024-01-08\", \"2024-01-09\"))  # Expected: 0 (Mon to Tue)",
+  "stdout": "4\n5\n4\n0\n0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 117,
+  "eval_count": 2430,
+  "graded_at": "2026-09-06T03:04:19"
+}

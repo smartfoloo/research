@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__shortest-path__ja_raw__sample4.json",
+  "task": "shortest-path",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_raw",
+  "sample_idx": 4,
+  "extracted_code": "from queue import PriorityQueue\nimport heapq\n\n\ndef shortest_path(edges, start, end):\n    # Check for negative weights\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n    \n    # If start is same as end\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n    \n    # Dijkstra's algorithm\n    # dist[node] = shortest distance from start to node\n    dist = {start: 0}\n    prev = {}  # predecessor node for each node\n    \n    # Priority queue: (distance, node)\n    pq = [(0, start)]\n    visited = set()\n    \n    while pq:\n        d, u = heapq.heappop(pq)\n        \n        if u in visited:\n            continue\n        \n        visited.add(u)\n        \n        # If we reached the end node, we can stop early\n        if u == end:\n            break\n        \n        if u not in graph:\n            continue\n        \n        for v, w in graph[u]:\n            new_dist = d + w\n            if v not in dist or new_dist < dist[v]:\n                dist[v] = new_dist\n                prev[v] = u\n                heapq.heappush(pq, (new_dist, v))\n    \n    if end not in dist:\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = prev[current]\n    path.append(start)\n    path.reverse()\n    \n    return (dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 188,
+  "completion_tokens": 412,
+  "total_tokens": 600,
+  "groq_seed": 1213597086,
+  "graded_at": "2026-09-06T09:09:03"
+}

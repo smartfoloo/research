@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_raw__sample6.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    反转 elements 和 punctuation 列表中的元素顺序。\n\n    :param elements: 包含单词或其他文本内容的列表\n    :param punctuation: 与 elements 一一对应的标点符号列表\n    :return: 包含反转后的元素和对应收标点符号的元组 (new_elements, new_punctuation)\n    \"\"\"\n    return elements[::-1], punctuation[::-1]",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 100,
+  "eval_count": 446,
+  "graded_at": "2026-09-06T03:04:30"
+}

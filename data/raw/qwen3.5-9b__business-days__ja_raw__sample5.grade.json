@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_raw__sample5.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    2 つの日付の間の営業日数（月曜日から金曜日）を計算する関数。\n    \n    引数:\n        date1 (str): YYYY-MM-DD 形式の日付文字列\n        date2 (str): YYYY-MM-DD 形式の日付文字列\n\n    戻り値:\n        int: 日付間（両端含まず）に含まれる営業日の数（月曜〜金曜）\n    \n    注意:\n        - 祝日は考慮されません。\n        - 両端の日付は含みません。\n        - 両日付が同一の場合は 0 を返します。\n        - 日付の順序を入れ替えても正常に動作します。\n    \"\"\"\n    # 文字列を datetime 型に変換\n    start_date = datetime.strptime(date1, \"%Y-%m-%d\")\n    end_date = datetime.strptime(date2, \"%Y-%m-%d\")\n\n    # 両端同日の場合、営業日数は 0\n    if start_date == end_date:\n        return 0\n\n    # 初期設定：開始日が先に、終了日が後にくるように整える\n    first_date, last_date = (start_date, end_date) if start_date < end_date else (end_date, start_date)\n\n    # 初日の直日から前日の直日までの範囲をループ\n    count = 0\n    current_date = first_date + timedelta(days=1)\n\n    while current_date < last_date:\n        weekday_num = current_date.weekday()  # 0 (月)〜4 (金), 5 (土), 6 (日)\n        if weekday_num < 5:  # 週末日外の日曜日を除く\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 107,
+  "eval_count": 1864,
+  "graded_at": "2026-09-06T03:04:18"
+}

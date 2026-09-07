@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "To solve this problem, we can use **Dijkstra's Algorithm**, which is efficient for finding the shortest path in a graph with non-negative edge weights. \n\nHere is the complete implementation in Python, including the required checks for negative edge weights, identical start and end nodes, and unreachable destinations.\n\n```python\nimport heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Finds the shortest path between a start and end node in a weighted directed graph.\n    \n    Parameters:\n    - edges: list of tuples (from_node, to_node, weight)\n    - start: the starting node\n    - end: the target node\n    \n    Returns:\n    - (distance, path): A tuple containing the total weight and a list of nodes.\n      Returns (0, [start]) if start == end.\n      Returns (None, None) if no path exists.\n    - Raises:\n    - ValueError: if any edge has a negative weight.\n    \"\"\"\n    # Check for identical start and end nodes\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list and check for negative weights\n    graph = defaultdict(list)\n    for u, v, weight in edges:\n        if weight < 0:\n            raise ValueError(f\"Negative edge weight detected: ({u}, {v}, {weight}). Dijkstra's algorithm does not support negative weights.\")\n        graph[u].append((v, weight))\n\n    # Priority queue stores tuples of (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n    \n    # Dictionary to store the shortest distance found to each node\n    shortest_distances = {start: 0}\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the target, return the distance and path\n        if current_node == end:\n            return (current_distance, path)\n\n        # If a shorter path to current_node has already been processed, skip\n        if current_distance > shortest_distances.get(current_node, float('inf')):\n            continue\n\n        # Explore neighbors\n        for neighbor, weight in graph[current_node]:\n            distance = current_distance + weight\n\n            # If a shorter path to the neighbor is found\n            if distance < shortest_distances.get(neighbor, float('inf')):\n                shortest_distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor, path + [neighbor]))\n\n    # If the priority queue is exhausted and 'end' was not reached\n    return (None, None)\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # Output: (3, ['A', 'B', 'C'])\n    print(shortest_path(edges, \"A\", \"A\"))  # Output: (0, ['A'])\n    print(shortest_path(edges, \"C\", \"A\"))  # Output: (None, None)\n```\n\n### Explanation of the Algorithm:\n1. **Edge Cases**: If `start == end`, it immediately returns `(0, [start])`.\n2. **Negative Weight Validation**: It loops through all edges before running the algorithm. If any `weight < 0`, it raises a `ValueError`.\n3. **Graph Representation**: It uses a dictionary (`defaultdict`) to map each node to a list of its outgoing neighbors and respective weights.\n4. **Priority Queue (`heapq`)**: Dijkstra's algorithm uses a min-heap to always expand the node with the currently known shortest distance.\n5. **Path Tracking**: Along with the distance, the path (`list of nodes`) is carried inside the priority queue so it can be returned directly once the `end` node is popped.",
+              "thoughtSignature": "El4KXAERTTIPNaDBue+wzrUUN8wusZanR6ujEJUWFYjc+7mkL1Ii2nEFbTtU9FWPeWJIRuztkbBEM63c2Gn/S0mMSzNyvOsJnyzp3q+RGyfuCGzRWdeG/RGMAVnESLt8"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 146,
+      "candidatesTokenCount": 900,
+      "totalTokenCount": 1046,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 146
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "PlOdapG_IsDN1e8PvrrcgQ8"
+  },
+  "thinking_text": "",
+  "final_text": "To solve this problem, we can use **Dijkstra's Algorithm**, which is efficient for finding the shortest path in a graph with non-negative edge weights. \n\nHere is the complete implementation in Python, including the required checks for negative edge weights, identical start and end nodes, and unreachable destinations.\n\n```python\nimport heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Finds the shortest path between a start and end node in a weighted directed graph.\n    \n    Parameters:\n    - edges: list of tuples (from_node, to_node, weight)\n    - start: the starting node\n    - end: the target node\n    \n    Returns:\n    - (distance, path): A tuple containing the total weight and a list of nodes.\n      Returns (0, [start]) if start == end.\n      Returns (None, None) if no path exists.\n    - Raises:\n    - ValueError: if any edge has a negative weight.\n    \"\"\"\n    # Check for identical start and end nodes\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list and check for negative weights\n    graph = defaultdict(list)\n    for u, v, weight in edges:\n        if weight < 0:\n            raise ValueError(f\"Negative edge weight detected: ({u}, {v}, {weight}). Dijkstra's algorithm does not support negative weights.\")\n        graph[u].append((v, weight))\n\n    # Priority queue stores tuples of (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n    \n    # Dictionary to store the shortest distance found to each node\n    shortest_distances = {start: 0}\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the target, return the distance and path\n        if current_node == end:\n            return (current_distance, path)\n\n        # If a shorter path to current_node has already been processed, skip\n        if current_distance > shortest_distances.get(current_node, float('inf')):\n            continue\n\n        # Explore neighbors\n        for neighbor, weight in graph[current_node]:\n            distance = current_distance + weight\n\n            # If a shorter path to the neighbor is found\n            if distance < shortest_distances.get(neighbor, float('inf')):\n                shortest_distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor, path + [neighbor]))\n\n    # If the priority queue is exhausted and 'end' was not reached\n    return (None, None)\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # Output: (3, ['A', 'B', 'C'])\n    print(shortest_path(edges, \"A\", \"A\"))  # Output: (0, ['A'])\n    print(shortest_path(edges, \"C\", \"A\"))  # Output: (None, None)\n```\n\n### Explanation of the Algorithm:\n1. **Edge Cases**: If `start == end`, it immediately returns `(0, [start])`.\n2. **Negative Weight Validation**: It loops through all edges before running the algorithm. If any `weight < 0`, it raises a `ValueError`.\n3. **Graph Representation**: It uses a dictionary (`defaultdict`) to map each node to a list of its outgoing neighbors and respective weights.\n4. **Priority Queue (`heapq`)**: Dijkstra's algorithm uses a min-heap to always expand the node with the currently known shortest distance.\n5. **Path Tracking**: Along with the distance, the path (`list of nodes`) is carried inside the priority queue so it can be returned directly once the `end` node is popped.",
+  "prompt_token_count": 146,
+  "candidates_token_count": 900,
+  "thoughts_token_count": null,
+  "total_token_count": 1046,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "shortest-path",
+    "condition": "mt_en",
+    "sample_idx": 3,
+    "prompt_text": "Create a Python function called shortest_path(edges, start, end) that returns the shortest total distance and a list of nodes along the path (distance, path). edges is a list of tuples (from_node, to_node, weight) representing one-way streets. If start and end are the same node, return (0, [start]). If the weight of any edge is negative, raise a ValueError. If the route does not exist, return (None, None). (Example: edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]))",
+    "elapsed_seconds": 8.024010419845581,
+    "generated_at": "2026-09-06T06:49:21"
+  }
+}

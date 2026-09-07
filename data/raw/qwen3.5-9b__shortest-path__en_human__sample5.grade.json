@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__en_human__sample5.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "def shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path from start to end in a directed graph with weighted edges.\n    \n    Parameters:\n        edges (list of tuple): List of (from_node, to_node, weight) tuples\n        start (hashable): Starting node\n        end (hashable): Ending node\n    \n    Returns:\n        tuple: (distance, path) where path is a list of nodes from start to end\n    \n    Raises:\n        ValueError: If any edge has a negative weight\n    \"\"\"\n    # Handle the case when start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # Build adjacency list and validate non-negative weights\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weight not allowed\")\n        if from_node not in graph:\n            graph[from_node] = {}\n        graph[from_node][to_node] = weight\n\n    # Initialize distance dictionary and previous node mapping\n    dist = {start: 0}\n    prev = {}\n    pq = [(0, start)]\n    visited = set()\n\n    # Dijkstra's algorithm using a min-heap\n    import heapq\n    while pq:\n        d, current = heapq.heappop(pq)\n\n        if current in visited:\n            continue\n        visited.add(current)\n\n        if current == end:\n            break\n\n        if current not in graph:\n            continue\n\n        for neighbor, weight in graph[current].items():\n            new_dist = d + weight\n            if neighbor not in dist or new_dist < dist[neighbor]:\n                dist[neighbor] = new_dist\n                prev[neighbor] = current\n                heapq.heappush(pq, (new_dist, neighbor))\n\n    # If end is unreachable\n    if end not in dist:\n        return (None, None)\n\n    # Reconstruct the path from start to end\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = prev.get(current)\n        if current is None:\n            break  # Should not occur if end is reachable\n    path.append(start)\n    path.reverse()\n\n    return (dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 153,
+  "eval_count": 1338,
+  "graded_at": "2026-09-06T03:04:31"
+}

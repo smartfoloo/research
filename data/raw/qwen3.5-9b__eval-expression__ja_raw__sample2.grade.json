@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_raw__sample2.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import ast\nimport operator\n\n# 辞書で演算子を定義\nOPERATORS = {\n    ast.Expression: lambda args: args[0],\n    ast.BinOp: lambda args, ops: {\n        '+': operator.add, '-': operator.sub,\n        '*': operator.mul, '/': operator.truediv,\n        '//': operator.floordiv, '%': operator.mod, '**': operator.pow\n    }[args[0].op.__name__] if hasattr(args[0].op, '__name__') else args[1],  # 乗算演算子のみサポート\n    ast.UnaryOp: lambda args, ops: {\n        '+': lambda x: x, '-': operator.neg,\n    }[args[0].op.__name__](ast.literal_eval(ops[0]))\n}\n\n# 式を Python AST に変換し、評価する関数\ndef eval_expression(expr):\n    try:\n        tree = ast.parse(f'({expr})')\n        code = compile(tree, '<string>', 'eval')\n        return eval(code)\n    except ZeroDivisionError as e:\n        raise ZeroDivisionError(\"ゼロで割ることはできません。\") from e\n    except SyntaxError as e:\n        raise SyntaxError(\"無効な数学式の形式です。\") from e\n    except RecursionError as e:\n        raise RecursionError(\"式が深すぎます（再帰制限）。\") from e\n    except Exception as e:\n        raise ValueError(f\"計算エラーが発生しました：{e}\") from e",
+  "stdout": "FAIL case 0: raised ValueError: 計算エラーが発生しました：expected Expression node, got Module\nFAIL case 1: raised ValueError: 計算エラーが発生しました：expected Expression node, got Module\nFAIL case 2: raised ValueError: 計算エラーが発生しました：expected Expression node, got Module\nFAIL case 3: expected ZeroDivisionError, got ValueError\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 82,
+  "eval_count": 1013,
+  "graded_at": "2026-09-05T21:40:32"
+}

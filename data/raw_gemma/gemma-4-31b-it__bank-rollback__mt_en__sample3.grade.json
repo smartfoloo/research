@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__bank-rollback__mt_en__sample3.json",
+  "task": "bank-rollback",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    # Store the starting balance to keep track of the original state\n    original_balance = balance\n    current_balance = balance\n    \n    for amount in transactions:\n        current_balance += amount\n        # If the balance becomes negative at any point, \n        # stop and return the original balance and False\n        if current_balance < 0:\n            return (original_balance, False)\n            \n    # If all transactions are processed successfully, \n    # return the final balance and True\n    return (current_balance, True)\n\n# Test cases\nprint(bank_rollback(100, [50, -30, -200]))  # Expected: (100, False)\nprint(bank_rollback(100, [50, -30, -20]))   # Expected: (120, True)\nprint(bank_rollback(10, [-20]))             # Expected: (10, False)\nprint(bank_rollback(50, []))                # Expected: (50, True)",
+  "stdout": "(100, False)\n(100, True)\n(10, False)\n(50, True)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 105,
+  "candidates_token_count": 424,
+  "thoughts_token_count": 571,
+  "total_token_count": 1100,
+  "graded_at": "2026-09-06T05:08:02"
+}

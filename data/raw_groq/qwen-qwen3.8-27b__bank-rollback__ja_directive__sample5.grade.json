@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__bank-rollback__ja_directive__sample5.json",
+  "task": "bank-rollback",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Applies a list of transactions to an initial balance.\n    \n    If the balance becomes negative at any point during the process,\n    it returns the original balance and False. Otherwise, it returns\n    the final balance and True.\n    \n    Args:\n        balance (number): The starting balance.\n        transactions (list): A list of numeric values representing transactions.\n                             Positive values are deposits, negative values are withdrawals.\n                             \n    Returns:\n        tuple: (current_balance, success_flag)\n               - success_flag is True if all transactions could be applied successfully.\n               - success_flag is False if the balance went negative at any point.\n               - current_balance is the final balance if successful, or the original\n                 balance if failed.\n    \"\"\"\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        \n        # Check if the balance has gone negative\n        if current_balance < 0:\n            return (balance, False)\n            \n    # If we get here, all transactions were applied without going negative\n    return (current_balance, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 151,
+  "completion_tokens": 435,
+  "total_tokens": 586,
+  "groq_seed": 1144494374,
+  "graded_at": "2026-09-06T09:08:24"
+}

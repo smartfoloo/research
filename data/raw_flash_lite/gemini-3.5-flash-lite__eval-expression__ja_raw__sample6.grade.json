@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_raw__sample6.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "import ast\nimport operator\n\nclass SafeEvaluator(ast.NodeVisitor):\n    # 使用を許可する演算子\n    operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n        ast.FloorDiv: operator.floordiv,\n        ast.Mod: operator.mod,\n        ast.Pow: operator.pow,\n        ast.UAdd: operator.pos,\n        ast.USub: operator.neg,\n    }\n\n    def visit(self, node):\n        if isinstance(node, ast.Expression):\n            return self.visit(node.body)\n        elif isinstance(node, ast.Constant):  # 数値リテラル (Python 3.8+)\n            if isinstance(node.value, (int, float)):\n                return node.value\n            raise TypeError(f\"サポートされていない型です: {type(node.value)}\")\n        elif isinstance(node, ast.BinOp):  # 二項演算 (例: a + b)\n            left = self.visit(node.left)\n            right = self.visit(node.right)\n            op_type = type(node.op)\n            if op_type in self.operators:\n                return self.operators[op_type](left, right)\n            raise TypeError(f\"サポートされていない演算子です: {op_type}\")\n        elif isinstance(node, ast.UnaryOp):  # 単項演算 (例: -1, +5)\n            operand = self.visit(node.operand)\n            op_type = type(node.op)\n            if op_type in self.operators:\n                return self.operators[op_type](operand)\n            raise TypeError(f\"サポートされていない単項演算子です: {op_type}\")\n        else:\n            raise TypeError(f\"サポートされていない構文です: {type(node)}\")\n\ndef eval_expression(expr: str):\n    \"\"\"\n    文字列の数式を安全に計算する関数。\n    演算の順序、カッコ、負の数を考慮し、ゼロ除算の場合は ZeroDivisionError を送出する。\n    \"\"\"\n    try:\n        # 文字列を抽象構文木(AST)にパースする\n        tree = ast.parse(expr, mode='eval')\n    SyntaxError:\n        raise ValueError(f\"無効な数式です: {expr}\")\n    \n    evaluator = SafeEvaluator()\n    return evaluator.visit(tree)\n\n# --- 使用例・テスト ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))       # 出力: 7.0 (または 7)\n    print(eval_expression(\"-5 + 3 * -2\"))          # 出力: -11\n    print(eval_expression(\"(10 - 2) / (2 + 2)\"))   # 出力: 2.0\n    \n    # ゼロ除算のテスト\n    try:\n        print(eval_expression(\"5 / 0\"))\n    except ZeroDivisionError:\n        print(\"ZeroDivisionError が正しく捕捉されました。\")",
+  "stdout": "",
+  "stderr": "  File \"/app/test_script.py\", line 50\n    SyntaxError:\n    ^^^^^^^^^^^\nSyntaxError: expected 'except' or 'finally' block\n",
+  "docker_returncode": 1,
+  "passed_cases": null,
+  "total_cases": null,
+  "all_passed": false,
+  "prompt_token_count": 73,
+  "candidates_token_count": 1027,
+  "thoughts_token_count": null,
+  "total_token_count": 1100,
+  "graded_at": "2026-09-06T06:53:19"
+}

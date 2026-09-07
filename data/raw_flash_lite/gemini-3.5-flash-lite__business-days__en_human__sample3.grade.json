@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__en_human__sample3.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date and d2 is the later date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    count = 0\n    # Start checking from the day *after* start_date\n    current_date = start_date + timedelta(days=1)\n    \n    # Loop until we reach end_date (exclusive)\n    while current_date < end_date:\n        # weekday() returns 0-4 for Monday-Friday, and 5-6 for Saturday-Sunday\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# Example usage:\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 101,
+  "candidates_token_count": 488,
+  "thoughts_token_count": null,
+  "total_token_count": 589,
+  "graded_at": "2026-09-06T06:52:58"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__reverse-list-elements__ja_raw__sample1.json",
+  "task": "reverse-list-elements",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    # 1. elements と punctuation をペアにする -> [(\"Hello\", \"\"), (\"world\", \"!\")]\n    combined = list(zip(elements, punctuation))\n    \n    # 2. ペアのリストを反転させる -> [(\"world\", \"!\"), (\"Hello\", \"\")]\n    combined.reverse()\n    \n    # 3. 反転させたペアを再び2つのリストに分ける\n    # zip(*...) を使うことで、ペアを分解して元の形式に戻せます\n    if not combined:\n        return [], []\n        \n    new_elements, new_punctuation = zip(*combined)\n    \n    # zip の結果はタプルになるため、リスト形式に変換して返す\n    return list(new_elements), list(new_punctuation)\n\n# --- 動作確認 ---\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\nresult = reverse_list_elements(elements, punctuation)\n\nprint(f\"Elements: {result[0]}\")    # ['world', 'Hello']\nprint(f\"Punctuation: {result[1]}\") # ['!', '']\nprint(f\"Result: {result}\")         # (['world', 'Hello'], ['!', ''])",
+  "stdout": "Elements: ['world', 'Hello']\nPunctuation: ['!', '']\nResult: (['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 92,
+  "candidates_token_count": 613,
+  "thoughts_token_count": 666,
+  "total_token_count": 1371,
+  "graded_at": "2026-09-06T05:08:30"
+}

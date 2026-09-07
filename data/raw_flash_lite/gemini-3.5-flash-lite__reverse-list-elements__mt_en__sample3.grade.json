@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__reverse-list-elements__mt_en__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements and pairs them with the reversed punctuation.\n\n    Example:\n    elements = [\"Hello\", \"world\"], punctuation = [\"\", \"!\"]\n    Returns: ([\"world\", \"Hello\"], [\"!\", \"\"])\n    \"\"\"\n    # Reverse both lists\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n\n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n    print((new_elements, new_punctuation))\n    # Output: (['world', 'Hello'], ['!', ''])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 78,
+  "candidates_token_count": 342,
+  "thoughts_token_count": null,
+  "total_token_count": 420,
+  "graded_at": "2026-09-06T06:53:27"
+}

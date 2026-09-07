@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__mt_en__sample4.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date\n    start, end = (d1, d2) if d1 < d2 else (d2, d1)\n    \n    count = 0\n    # Start from the day after the start date\n    current_date = start + timedelta(days=1)\n    \n    # Iterate until the day before the end date\n    while current_date < end:\n        # weekday() returns 0 for Monday and 6 for Sunday\n        # 0-4 are Monday through Friday\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# Testing the example provided\nprint(f\"Business days between 2024-01-01 and 2024-01-08: {business_days('2024-01-01', '2024-01-08')}\") \n# Expected Output: 4 (Tue, Wed, Thu, Fri)\n\n# Additional test cases\nprint(f\"Same date: {business_days('2024-01-01', '2024-01-01')}\") # Expected: 0\nprint(f\"Consecutive dates: {business_days('2024-01-01', '2024-01-02')}\") # Expected: 0\nprint(f\"Weekend gap: {business_days('2024-01-05', '2024-01-08')}\") # Expected: 0 (Sat/Sun are skipped)",
+  "stdout": "Business days between 2024-01-01 and 2024-01-08: 4\nSame date: 0\nConsecutive dates: 0\nWeekend gap: 0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 112,
+  "candidates_token_count": 699,
+  "thoughts_token_count": 627,
+  "total_token_count": 1438,
+  "graded_at": "2026-09-06T05:08:11"
+}

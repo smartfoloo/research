@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__reverse-list-elements__en_human__sample1.json",
+  "task": "reverse-list-elements",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements while keeping each punctuation mark\n    attached to its original element.\n    \n    Args:\n        elements: List of string elements.\n        punctuation: List of punctuation strings, same length as elements.\n                     Each punctuation[i] is attached to elements[i].\n    \n    Returns:\n        A tuple (new_elements, new_punctuation) where:\n        - new_elements is the reversed list of elements\n        - new_punctuation is the reversed list of punctuation (still attached\n          to the same elements, so it's reordered in the same way)\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"lists must have the same length\")\n    \n    # Reverse both lists together so that each punctuation stays with its element\n    new_elements = list(reversed(elements))\n    new_punctuation = list(reversed(punctuation))\n    \n    return (new_elements, new_punctuation)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 84,
+  "completion_tokens": 216,
+  "total_tokens": 300,
+  "groq_seed": 1773463406,
+  "graded_at": "2026-09-06T09:08:51"
+}

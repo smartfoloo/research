@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_directive__sample4.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def eval_expression(expr):\n    # Remove all whitespace from the expression\n    expr = expr.replace(\" \", \"\")\n    pos = 0\n\n    def peek():\n        return expr[pos] if pos < len(expr) else None\n\n    def consume(expected=None):\n        nonlocal pos\n        if pos >= len(expr):\n            raise ValueError(\"Unexpected end of expression\")\n        if expected and expr[pos] != expected:\n            raise ValueError(f\"Expected '{expected}' at position {pos}\")\n        char = expr[pos]\n        pos += 1\n        return char\n\n    def parse_factor():\n        nonlocal pos\n        if peek() == \"+\":\n            consume(\"+\")\n            return parse_factor()\n        if peek() == \"-\":\n            consume(\"-\")\n            return -parse_factor()  # Handle unary minus for negative numbers\n        \n        # Parentheses\n        if peek() == \"(\":\n            consume(\"(\")\n            val = parse_expression()\n            consume(\")\")\n            return val\n        \n        # Number (integer or float)\n        start = pos\n        while peek() and (peek().isdigit() or peek() == \".\"):\n            pos += 1\n        if start == pos:\n            raise ValueError(f\"Unexpected character '{peek()}' at position {pos}\")\n        \n        num_str = expr[start:pos]\n        return float(num_str) if \".\" in num_str else int(num_str)\n\n    def parse_term():\n        val = parse_factor()\n        while peek() in (\"*\", \"/\"):\n            op = consume()\n            next_val = parse_factor()\n            if op == \"*\":\n                val *= next_val\n            elif op == \"/\":\n                if next_val == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                val /= next_val\n        return val\n\n    def parse_expression():\n        val = parse_term()\n        while peek() in (\"+\", \"-\"):\n            op = consume()\n            next_val = parse_term()\n            if op == \"+\":\n                val += next_val\n            elif op == \"-\":\n                val -= next_val\n        return val\n\n    result = parse_expression()\n    if pos < len(expr):\n        raise ValueError(f\"Unexpected character '{peek()}' at position {pos}\")\n    \n    # Return as int if it's a whole number, else float\n    if isinstance(result, float) and result.is_integer():\n        return int(result)\n    return result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))       # Output: 7\n    print(eval_expression(\"-5 + 3 * ( -2 + 4 )\"))   # Output: 1 (Negative numbers handled)\n    print(eval_expression(\"10 / (5 - 5)\"))          # Raises ZeroDivisionError",
+  "stdout": "7\n1\n(non-fatal) submitted code raised at top level: ZeroDivisionError('division by zero')\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 80,
+  "candidates_token_count": 1313,
+  "thoughts_token_count": null,
+  "total_token_count": 1393,
+  "graded_at": "2026-09-06T06:53:16"
+}

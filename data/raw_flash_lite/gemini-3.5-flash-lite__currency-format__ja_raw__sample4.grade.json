@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__currency-format__ja_raw__sample4.json",
+  "task": "currency-format",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 4,
+  "extracted_code": "def format_currency(n):\n    # 負の数の場合を考慮し、絶対値を3桁区切りにしてドル記号を付与し、\n    # 元が負の数だった場合は先頭にマイナスをつける\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"\n\n\n# テスト例\nprint(format_currency(4640039))  # 出力: $4,640,039\nprint(format_currency(-4640039))  # 出力: -$4,640,039\nprint(format_currency(123))  # 出力: $123\nprint(format_currency(0))  # 出力: $0",
+  "stdout": "$4,640,039\n-$4,640,039\n$123\n$0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 79,
+  "candidates_token_count": 302,
+  "thoughts_token_count": null,
+  "total_token_count": 381,
+  "graded_at": "2026-09-06T06:53:11"
+}

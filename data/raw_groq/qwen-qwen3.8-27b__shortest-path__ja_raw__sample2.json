@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-90481cd0-d8e6-41c6-bd04-3491f171e3e1",
+    "object": "chat.completion",
+    "created": 1788701495,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport heapq\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短路問題をDijkstraアルゴリズムで解く関数。\n    \n    Parameters:\n    edges: (from_node, to_node, weight) タプルのリスト\n    start: 始点ノード\n    end: 終点ノード\n    \n    Returns:\n    (distance, path) のタプル。負のエッジがある場合はValueErrorを送出。\n    経路が存在しない場合は (None, None)。\n    start == end の場合は (0, [start])。\n    \"\"\"\n    # 負のエッジをチェック\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative edge weight found\")\n    \n    # start と end が同じ場合\n    if start == end:\n        return (0, [start])\n    \n    # アジャセンスリストの構築\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n    \n    # Dijkstraアルゴリズム\n    # d[node] = startからの最短距離\n    d = {}\n    # prev[node] = 最短経路上での前ノード\n    prev = {}\n    \n    # ユーティリティノードをすべて初期化\n    all_nodes = set()\n    for u, v, _ in edges:\n        all_nodes.add(u)\n        all_nodes.add(v)\n    all_nodes.add(start)\n    all_nodes.add(end)\n    \n    for node in all_nodes:\n        d[node] = float('inf')\n        prev[node] = None\n    \n    d[start] = 0\n    \n    # ヒープ: (distance, node)\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        dist, u = heapq.heappop(heap)\n        \n        # すでに訪問済みならスキップ\n        if u in visited:\n            continue\n        \n        visited.add(u)\n        \n        # end に到達したら早期終了\n        if u == end:\n            break\n        \n        # 隣接ノードを探索\n        if u in graph:\n            for v, w in graph[u]:\n                if w < 0:\n                    raise ValueError(\"Negative edge weight found\")\n                new_dist = dist + w\n                if new_dist < d[v]:\n                    d[v] = new_dist\n                    prev[v] = u\n                    heapq.heappush(heap, (new_dist, v))\n    \n    # 経路が存在しない場合\n    if d[end] == float('inf'):\n        return (None, None)\n    \n    # 経路を逆方向にトレース\n    path = []\n    node = end\n    while node is not None:\n        path.append(node)\n        node = prev[node]\n    path.reverse()\n    \n    return (d[end], path)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022537615,
+      "prompt_tokens": 188,
+      "prompt_time": 0.014820414,
+      "completion_tokens": 659,
+      "completion_time": 1.2886570050000001,
+      "total_tokens": 847,
+      "total_time": 1.303477419
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1venjesen99vj9tv7gx0v9g",
+      "seed": 13713831
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\nimport heapq\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短路問題をDijkstraアルゴリズムで解く関数。\n    \n    Parameters:\n    edges: (from_node, to_node, weight) タプルのリスト\n    start: 始点ノード\n    end: 終点ノード\n    \n    Returns:\n    (distance, path) のタプル。負のエッジがある場合はValueErrorを送出。\n    経路が存在しない場合は (None, None)。\n    start == end の場合は (0, [start])。\n    \"\"\"\n    # 負のエッジをチェック\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative edge weight found\")\n    \n    # start と end が同じ場合\n    if start == end:\n        return (0, [start])\n    \n    # アジャセンスリストの構築\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n    \n    # Dijkstraアルゴリズム\n    # d[node] = startからの最短距離\n    d = {}\n    # prev[node] = 最短経路上での前ノード\n    prev = {}\n    \n    # ユーティリティノードをすべて初期化\n    all_nodes = set()\n    for u, v, _ in edges:\n        all_nodes.add(u)\n        all_nodes.add(v)\n    all_nodes.add(start)\n    all_nodes.add(end)\n    \n    for node in all_nodes:\n        d[node] = float('inf')\n        prev[node] = None\n    \n    d[start] = 0\n    \n    # ヒープ: (distance, node)\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        dist, u = heapq.heappop(heap)\n        \n        # すでに訪問済みならスキップ\n        if u in visited:\n            continue\n        \n        visited.add(u)\n        \n        # end に到達したら早期終了\n        if u == end:\n            break\n        \n        # 隣接ノードを探索\n        if u in graph:\n            for v, w in graph[u]:\n                if w < 0:\n                    raise ValueError(\"Negative edge weight found\")\n                new_dist = dist + w\n                if new_dist < d[v]:\n                    d[v] = new_dist\n                    prev[v] = u\n                    heapq.heappush(heap, (new_dist, v))\n    \n    # 経路が存在しない場合\n    if d[end] == float('inf'):\n        return (None, None)\n    \n    # 経路を逆方向にトレース\n    path = []\n    node = end\n    while node is not None:\n        path.append(node)\n        node = prev[node]\n    path.reverse()\n    \n    return (d[end], path)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 188,
+  "completion_tokens": 659,
+  "total_tokens": 847,
+  "groq_seed": 13713831,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "elapsed_seconds": 13.694082736968994,
+    "generated_at": "2026-09-06T08:31:34"
+  }
+}

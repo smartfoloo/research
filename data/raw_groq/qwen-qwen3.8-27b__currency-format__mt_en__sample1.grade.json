@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__mt_en__sample1.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Format a number as currency with $ at the beginning and commas every three digits.\n    For negative numbers, the minus sign comes before the dollar sign.\n    \n    Example:\n        format_currency(4640039) -> \"$4,640,039\"\n        format_currency(-4640039) -> \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        sign = \"-\"\n        abs_n = -n\n    else:\n        sign = \"\"\n        abs_n = n\n    \n    # Format the absolute value with commas\n    formatted = f\"{abs_n:,}\"\n    \n    return f\"{sign}${formatted}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 76,
+  "completion_tokens": 170,
+  "total_tokens": 246,
+  "groq_seed": 1167255735,
+  "graded_at": "2026-09-06T09:08:42"
+}

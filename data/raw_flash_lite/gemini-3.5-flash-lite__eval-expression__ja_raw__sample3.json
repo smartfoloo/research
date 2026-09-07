@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Python の組み込み関数 `eval()` を使わずに、演算の順序と負の数を考慮した式を安全に評価する関数を実装するには、通常 **構文解析（パーサー）** を行います。\n\nここでは、**再帰下降構文解析（Recursive Descent Parser）** というアルゴリズムを用いて `eval_expression(expr)` 関数を作成します。\n\nこのパーサーは以下の文法（優先順位の低い順）に基づいています：\n1. `expr`: 加算 `+` と 減算 `-`\n2. `term`: 乗算 `*` と 除算 `/`\n3. `factor`: 括弧 `(...)` および単項マイナス（負の数）、数値\n\n### Python コード\n\n```python\nimport re\n\n\ndef eval_expression(expr):\n    # 空白を削除\n    expr = expr.replace(\" \", \"\")\n\n    # トークナイザー（数値、演算子、括弧に分解）\n    # 負の数に対応するため、マイナスが演算子として働くか符号として働くかを考慮します\n    tokens = re.findall(r\"(?:\\d+(?:\\.\\d*)?|\\.\\d+|[+\\-*/()]?)\", expr)\n    tokens = [t for t in tokens if t != \"\"]\n\n    class Parser:\n\n        def __init__(self, tokens):\n            self.tokens = tokens\n            self.pos = 0\n\n        def peek(self):\n            if self.pos < len(self.tokens):\n                return self.tokens[self.pos]\n            return None\n\n        def consume(self, expected=None):\n            token = self.peek()\n            if expected and token != expected:\n                raise ValueError(f\"Expected '{expected}', got '{token}'\")\n            self.pos += 1\n            return token\n\n        def parse(self):\n            if not self.tokens:\n                return 0\n            result = self.expr()\n            if self.pos < len(self.tokens):\n                raise ValueError(f\"Unexpected token: {self.peek()}\")\n            return result\n\n        # 加算・減算 (優先順位 低)\n        def expr(self):\n            result = self.term()\n            while self.peek() in (\"+\", \"-\"):\n                op = self.consume()\n                if op == \"+\":\n                    result += self.term()\n                elif op == \"-\":\n                    result -= self.term()\n            return result\n\n        # 乗算・除算 (優先順位 中)\n        def term(self):\n            result = self.factor()\n            while self.peek() in (\"*\", \"/\"):\n                op = self.consume()\n                if op == \"*\":\n                    result *= self.factor()\n                elif op == \"/\":\n                    divisor = self.factor()\n                    if divisor == 0:\n                        raise ZeroDivisionError(\"division by zero\")\n                    result /= divisor\n            return result\n\n        # 括弧、単項マイナス、数値 (優先順位 高)\n        def factor(self):\n            token = self.peek()\n\n            # 単項マイナス（負の数）の処理\n            if token == \"-\":\n                self.consume(\"-\")\n                return -self.factor()\n            if token == \"+\":\n                self.consume(\"+\")\n                return self.factor()\n\n            # 括弧の処理\n            if token == \"(\":\n                self.consume(\"(\")\n                result = self.expr()\n                self.consume(\")\")\n                return result\n\n            # 数値の処理\n            if token is not None:\n                self.consume()\n                try:\n                    # 小数点が含まれていれば float、なければ int に変換\n                    if \".\" in token:\n                        return float(token)\n                    else:\n                        return int(token)\n                except ValueError:\n                    raise ValueError(f\"Invalid number: {token}\")\n\n            raise ValueError(\"Unexpected end of expression\")\n\n    parser = Parser(tokens)\n    return parser.parse()\n\n\n# --- 使用例・テスト ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 3 * (-2)\"))  # 出力: -11 (負の数に対応)\n    print(eval_expression(\"10 / (5 - 5)\"))  # ZeroDivisionError が発生\n```\n\n### 特徴\n1. **演算子の優先順位**: 数学のルール通り、括弧内が最優先され、次に掛け算・割り算、最後に足し算・引き算が行われます。\n2. **負の数のサポート**: `-5` や `(-2)` のような単項のマイナスを正しく解釈します。\n3. **ゼロ除算の検出**: 割り算の分母が `0` になった場合、意図通り `ZeroDivisionError` を発生させます。\n4. **外部ライブラリ不使用**: 標準ライブラリの `re` のみを使用しているため、追加のインストールは不要です。",
+              "thoughtSignature": "El4KXAERTTIPGfB2ZY5Bh/ASqQQX4k0sQnSVWZzf3ZCJNlzvc2cRW6qYwRd8rHeHpHS2hyDWwhE6izQJAACTPLyHa1KiWPelUu9hDfGi6rW23Nk4pW2GZ8rItYZFpyKq"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 73,
+      "candidatesTokenCount": 1135,
+      "totalTokenCount": 1208,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 73
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "ClKdavn7LqOVvr0P-dC4kA8"
+  },
+  "thinking_text": "",
+  "final_text": "Python の組み込み関数 `eval()` を使わずに、演算の順序と負の数を考慮した式を安全に評価する関数を実装するには、通常 **構文解析（パーサー）** を行います。\n\nここでは、**再帰下降構文解析（Recursive Descent Parser）** というアルゴリズムを用いて `eval_expression(expr)` 関数を作成します。\n\nこのパーサーは以下の文法（優先順位の低い順）に基づいています：\n1. `expr`: 加算 `+` と 減算 `-`\n2. `term`: 乗算 `*` と 除算 `/`\n3. `factor`: 括弧 `(...)` および単項マイナス（負の数）、数値\n\n### Python コード\n\n```python\nimport re\n\n\ndef eval_expression(expr):\n    # 空白を削除\n    expr = expr.replace(\" \", \"\")\n\n    # トークナイザー（数値、演算子、括弧に分解）\n    # 負の数に対応するため、マイナスが演算子として働くか符号として働くかを考慮します\n    tokens = re.findall(r\"(?:\\d+(?:\\.\\d*)?|\\.\\d+|[+\\-*/()]?)\", expr)\n    tokens = [t for t in tokens if t != \"\"]\n\n    class Parser:\n\n        def __init__(self, tokens):\n            self.tokens = tokens\n            self.pos = 0\n\n        def peek(self):\n            if self.pos < len(self.tokens):\n                return self.tokens[self.pos]\n            return None\n\n        def consume(self, expected=None):\n            token = self.peek()\n            if expected and token != expected:\n                raise ValueError(f\"Expected '{expected}', got '{token}'\")\n            self.pos += 1\n            return token\n\n        def parse(self):\n            if not self.tokens:\n                return 0\n            result = self.expr()\n            if self.pos < len(self.tokens):\n                raise ValueError(f\"Unexpected token: {self.peek()}\")\n            return result\n\n        # 加算・減算 (優先順位 低)\n        def expr(self):\n            result = self.term()\n            while self.peek() in (\"+\", \"-\"):\n                op = self.consume()\n                if op == \"+\":\n                    result += self.term()\n                elif op == \"-\":\n                    result -= self.term()\n            return result\n\n        # 乗算・除算 (優先順位 中)\n        def term(self):\n            result = self.factor()\n            while self.peek() in (\"*\", \"/\"):\n                op = self.consume()\n                if op == \"*\":\n                    result *= self.factor()\n                elif op == \"/\":\n                    divisor = self.factor()\n                    if divisor == 0:\n                        raise ZeroDivisionError(\"division by zero\")\n                    result /= divisor\n            return result\n\n        # 括弧、単項マイナス、数値 (優先順位 高)\n        def factor(self):\n            token = self.peek()\n\n            # 単項マイナス（負の数）の処理\n            if token == \"-\":\n                self.consume(\"-\")\n                return -self.factor()\n            if token == \"+\":\n                self.consume(\"+\")\n                return self.factor()\n\n            # 括弧の処理\n            if token == \"(\":\n                self.consume(\"(\")\n                result = self.expr()\n                self.consume(\")\")\n                return result\n\n            # 数値の処理\n            if token is not None:\n                self.consume()\n                try:\n                    # 小数点が含まれていれば float、なければ int に変換\n                    if \".\" in token:\n                        return float(token)\n                    else:\n                        return int(token)\n                except ValueError:\n                    raise ValueError(f\"Invalid number: {token}\")\n\n            raise ValueError(\"Unexpected end of expression\")\n\n    parser = Parser(tokens)\n    return parser.parse()\n\n\n# --- 使用例・テスト ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 3 * (-2)\"))  # 出力: -11 (負の数に対応)\n    print(eval_expression(\"10 / (5 - 5)\"))  # ZeroDivisionError が発生\n```\n\n### 特徴\n1. **演算子の優先順位**: 数学のルール通り、括弧内が最優先され、次に掛け算・割り算、最後に足し算・引き算が行われます。\n2. **負の数のサポート**: `-5` や `(-2)` のような単項のマイナスを正しく解釈します。\n3. **ゼロ除算の検出**: 割り算の分母が `0` になった場合、意図通り `ZeroDivisionError` を発生させます。\n4. **外部ライブラリ不使用**: 標準ライブラリの `re` のみを使用しているため、追加のインストールは不要です。",
+  "prompt_token_count": 73,
+  "candidates_token_count": 1135,
+  "thoughts_token_count": null,
+  "total_token_count": 1208,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "eval-expression",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）",
+    "elapsed_seconds": 8.690440654754639,
+    "generated_at": "2026-09-06T06:44:14"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__mt_en__sample3.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1, date2):\n    \"\"\"Calculates the number of business days (Monday-Friday) between two dates,\n\n    excluding the start and end dates. Dates should be in \"YYYY-MM-DD\" format.\n    \"\"\"\n    # Parse the date strings into datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Ensure start_date is earlier than end_date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # The problem specifies that the two dates themselves should not be included.\n    # Therefore, we shift the window exclusively.\n    start_date += timedelta(days=1)\n    end_date -= timedelta(days=1)\n\n    # If the adjusted start date is after the end date, there are 0 business days.\n    if start_date > end_date:\n        return 0\n\n    # Calculate total days between the adjusted dates (inclusive)\n    total_days = (end_date - start_date).days + 1\n\n    # Calculate full weeks and remaining days\n    full_weeks, remaining_days = divmod(total_days, 7)\n\n    # Each full week contains 5 business days\n    business_days_count = full_weeks * 5\n\n    # Check the remaining days\n    current_day_of_week = start_date.weekday()  # Monday is 0, Sunday is 6\n    for i in range(remaining_days):\n        day = (current_day_of_week + i) % 7\n        if day < 5:  # Monday (0) through Friday (4)\n            business_days_count += 1\n\n    return business_days_count\n\n\n# --- Example usage ---\nprint(\n    business_days(\"2024-01-01\", \"2024-01-08\")\n)  # Output: 4 (Jan 2, 3, 4, 5)",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 112,
+  "candidates_token_count": 682,
+  "thoughts_token_count": null,
+  "total_token_count": 794,
+  "graded_at": "2026-09-06T06:53:05"
+}

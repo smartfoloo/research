@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__currency-format__ja_raw__sample3.json",
+  "task": "currency-format",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def format_currency(n):\n    # 絶対値に対してカンマ区切りのフォーマットを適用し、先頭に $ を付ける\n    formatted_abs = f\"${abs(n):,}\"\n    \n    # 元の数が負の場合のみ、先頭にマイナスを付ける\n    return f\"-{formatted_abs}\" if n < 0 else formatted_abs\n\n# テスト\nprint(format_currency(4640039))    # 出力: $4,640,039\nprint(format_currency(-4640039))   # 出力: -$4,640,039\nprint(format_currency(1234))       # 出力: $1,234\nprint(format_currency(-1234))      # 出力: -$1,234\nprint(format_currency(0))          # 出力: $0",
+  "stdout": "$4,640,039\n-$4,640,039\n$1,234\n-$1,234\n$0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 79,
+  "candidates_token_count": 493,
+  "thoughts_token_count": 698,
+  "total_token_count": 1270,
+  "graded_at": "2026-09-06T05:08:16"
+}

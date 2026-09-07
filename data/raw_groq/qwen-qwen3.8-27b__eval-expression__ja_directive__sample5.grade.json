@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__eval-expression__ja_directive__sample5.json",
+  "task": "eval-expression",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "import ast\nimport operator\n\ndef eval_expression(expr: str):\n    \"\"\"\n    Evaluate a mathematical expression string safely.\n    \n    Args:\n        expr: A string representing a mathematical expression.\n        \n    Returns:\n        The numerical result of the expression.\n        \n    Raises:\n        ZeroDivisionError: If the expression contains a division by zero.\n        ValueError: If the expression is invalid.\n    \"\"\"\n    \n    # Define the operations we support\n    operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n        ast.FloorDiv: operator.floordiv,\n        ast.Pow: operator.pow,\n        ast.Mod: operator.mod,\n        ast.USub: operator.neg,\n        ast.UAdd: operator.pos,\n    }\n    \n    def _eval(node):\n        # Handle integers and floats\n        if isinstance(node, ast.Constant):\n            if isinstance(node.value, (int, float)):\n                return node.value\n            else:\n                raise ValueError(f\"Unsupported constant: {node.value}\")\n        \n        # Handle binary operations (e.g., +, -, *, /)\n        elif isinstance(node, ast.BinOp):\n            left = _eval(node.left)\n            right = _eval(node.right)\n            op = operators.get(type(node.op))\n            if op is None:\n                raise ValueError(f\"Unsupported operator: {type(node.op).__name__}\")\n            \n            # Special check for division by zero\n            if isinstance(node.op, (ast.Div, ast.FloorDiv, ast.Mod)):\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                \n            return op(left, right)\n            \n        # Handle unary operations (e.g., -x, +x)\n        elif isinstance(node, ast.UnaryOp):\n            operand = _eval(node.operand)\n            op = operators.get(type(node.op))\n            if op is None:\n                raise ValueError(f\"Unsupported unary operator: {type(node.op).__name__}\")\n            return op(operand)\n            \n        else:\n            raise ValueError(f\"Unsupported expression: {type(node).__name__}\")\n\n    # Parse the expression into an AST\n    try:\n        tree = ast.parse(expr, mode='eval')\n    except SyntaxError as e:\n        raise ValueError(f\"Invalid expression: {expr}\") from e\n        \n    return _eval(tree.body)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 91,
+  "completion_tokens": 749,
+  "total_tokens": 840,
+  "groq_seed": 2106155129,
+  "graded_at": "2026-09-06T09:08:47"
+}

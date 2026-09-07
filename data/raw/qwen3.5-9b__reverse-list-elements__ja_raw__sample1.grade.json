@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_raw__sample1.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements の順序を反転させる関数です。\n    同時に punctuation も反転して (new_elements, new_punctuation) を返します。\n\n    引数:\n        elements (List[str]): 元々の文字列リスト\n        punctuation (List[str]): 元の标点記号のリスト\n    \n    戻り値:\n        Tuple[List[str], List[str]]: 反転された要素リストと標点符号リストのタプル\n    \"\"\"\n    reversed_elements = elements[::-1]\n    reversed_punctuation = punctuation[::-1]\n\n    return reversed_elements, reversed_punctuation\n\n\n# 使用例\nif __name__ == \"__main__\":\n    # 基本例\n    elements1 = [\"Hello\", \"world\"]\n    punctuation1 = [\"\", \"!\"]\n    result1 = reverse_list_elements(elements1, punctuation1)\n    print(f\"例1: {result1}\")\n\n    # もう一つの例\n    elements2 = [\"A\", \"B\", \"C\"]\n    punctuation2 = [\"?\", \"-\", \".\"]\n    result2 = reverse_list_elements(elements2, punctuation2)\n    print(f\"例2: {result2}\")\n\n    # 空リストの場合も正常に動作します\n    elements3 = []\n    punctuation3 = []\n    result3 = reverse_list_elements(elements3, punctuation3)\n    print(f\"例3（空リスト）: {result3}\")",
+  "stdout": "例1: (['world', 'Hello'], ['!', ''])\n例2: (['C', 'B', 'A'], ['.', '-', '?'])\n例3（空リスト）: ([], [])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 100,
+  "eval_count": 671,
+  "graded_at": "2026-09-05T21:40:35"
+}

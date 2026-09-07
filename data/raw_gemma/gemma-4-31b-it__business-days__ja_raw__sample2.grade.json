@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__ja_raw__sample2.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # date1が常に古い日付になるように順序を整える\n    start, end = min(d1, d2), max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current = start + timedelta(days=1)\n    while current < end:\n        # weekday() は 月曜=0, 火曜=1, ..., 金曜=4, 土曜=5, 日曜=6 を返す\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n        \n    return count\n\n# テスト\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 結果: 4\nprint(business_days(\"2024-01-05\", \"2024-01-12\"))  # 結果: 4 (6,7,11,12は土日、5と12は除外)",
+  "stdout": "4\n4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 100,
+  "candidates_token_count": 758,
+  "thoughts_token_count": 723,
+  "total_token_count": 1581,
+  "graded_at": "2026-09-06T05:08:08"
+}

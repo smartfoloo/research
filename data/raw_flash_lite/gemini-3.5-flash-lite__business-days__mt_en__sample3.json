@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function using the built-in `datetime` module. \n\nTo ensure the function works regardless of which date is passed first, it automatically determines the start and end dates. It then uses `numpy`-like logic via pure Python to efficiently count the business days without looping through every single day.\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1, date2):\n    \"\"\"Calculates the number of business days (Monday-Friday) between two dates,\n\n    excluding the start and end dates. Dates should be in \"YYYY-MM-DD\" format.\n    \"\"\"\n    # Parse the date strings into datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Ensure start_date is earlier than end_date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # The problem specifies that the two dates themselves should not be included.\n    # Therefore, we shift the window exclusively.\n    start_date += timedelta(days=1)\n    end_date -= timedelta(days=1)\n\n    # If the adjusted start date is after the end date, there are 0 business days.\n    if start_date > end_date:\n        return 0\n\n    # Calculate total days between the adjusted dates (inclusive)\n    total_days = (end_date - start_date).days + 1\n\n    # Calculate full weeks and remaining days\n    full_weeks, remaining_days = divmod(total_days, 7)\n\n    # Each full week contains 5 business days\n    business_days_count = full_weeks * 5\n\n    # Check the remaining days\n    current_day_of_week = start_date.weekday()  # Monday is 0, Sunday is 6\n    for i in range(remaining_days):\n        day = (current_day_of_week + i) % 7\n        if day < 5:  # Monday (0) through Friday (4)\n            business_days_count += 1\n\n    return business_days_count\n\n\n# --- Example usage ---\nprint(\n    business_days(\"2024-01-01\", \"2024-01-08\")\n)  # Output: 4 (Jan 2, 3, 4, 5)\n```\n\n### How it works:\n1. **Date Parsing:** Converts the string inputs into `datetime.date` objects.\n2. **Exclusive Range Adjustment:** It moves `date1` forward by 1 day and `date2` back by 1 day to strictly exclude the boundary dates from the count.\n3. **Efficient Counting:** Instead of a slow `while` loop that checks every day, it calculates the number of full 7-day weeks (multiplying them by 5) and then iterates only over the remaining days (at most 6 days) to add any extra weekdays.",
+              "thoughtSignature": "El4KXAERTTIP8MCAn8OvXL5nCogVtcRHRUILrKxbJql61CZBdIk1XxXVNoDwcvXsvPqzWrv+pH49oc40SsX6RSk+WuxRCkivaG/2W7yeGJJmhPVIaOpjw8Q0SMJPrZvJ"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 112,
+      "candidatesTokenCount": 682,
+      "totalTokenCount": 794,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 112
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "ZlCdau2cA8q7vr0Pn-Gs8A8"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function using the built-in `datetime` module. \n\nTo ensure the function works regardless of which date is passed first, it automatically determines the start and end dates. It then uses `numpy`-like logic via pure Python to efficiently count the business days without looping through every single day.\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1, date2):\n    \"\"\"Calculates the number of business days (Monday-Friday) between two dates,\n\n    excluding the start and end dates. Dates should be in \"YYYY-MM-DD\" format.\n    \"\"\"\n    # Parse the date strings into datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Ensure start_date is earlier than end_date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # The problem specifies that the two dates themselves should not be included.\n    # Therefore, we shift the window exclusively.\n    start_date += timedelta(days=1)\n    end_date -= timedelta(days=1)\n\n    # If the adjusted start date is after the end date, there are 0 business days.\n    if start_date > end_date:\n        return 0\n\n    # Calculate total days between the adjusted dates (inclusive)\n    total_days = (end_date - start_date).days + 1\n\n    # Calculate full weeks and remaining days\n    full_weeks, remaining_days = divmod(total_days, 7)\n\n    # Each full week contains 5 business days\n    business_days_count = full_weeks * 5\n\n    # Check the remaining days\n    current_day_of_week = start_date.weekday()  # Monday is 0, Sunday is 6\n    for i in range(remaining_days):\n        day = (current_day_of_week + i) % 7\n        if day < 5:  # Monday (0) through Friday (4)\n            business_days_count += 1\n\n    return business_days_count\n\n\n# --- Example usage ---\nprint(\n    business_days(\"2024-01-01\", \"2024-01-08\")\n)  # Output: 4 (Jan 2, 3, 4, 5)\n```\n\n### How it works:\n1. **Date Parsing:** Converts the string inputs into `datetime.date` objects.\n2. **Exclusive Range Adjustment:** It moves `date1` forward by 1 day and `date2` back by 1 day to strictly exclude the boundary dates from the count.\n3. **Efficient Counting:** Instead of a slow `while` loop that checks every day, it calculates the number of full 7-day weeks (multiplying them by 5) and then iterates only over the remaining days (at most 6 days) to add any extra weekdays.",
+  "prompt_token_count": 112,
+  "candidates_token_count": 682,
+  "thoughts_token_count": null,
+  "total_token_count": 794,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 3,
+    "prompt_text": "Please create a Python function named `business_days(date1, date2)` that returns the number of business days (Monday through Friday) between two dates. Both dates should be in the format \"YYYY-MM-DD\". The calculation should be based solely on the day of the week, without accounting for public holidays. Note that the two dates themselves should not be included in the count (e.g., \"2024-01-01\", \"2024-01-08\" → 4).",
+    "elapsed_seconds": 7.461898326873779,
+    "generated_at": "2026-09-06T06:37:12"
+  }
+}

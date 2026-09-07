@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__en_human__sample1.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # Remove all whitespace from the expression\n    expr = expr.replace(\" \", \"\")\n    pos = 0\n\n    def parse_expression():\n        \"\"\"Handles addition and subtraction (lowest precedence)\"\"\"\n        nonlocal pos\n        left = parse_term()\n        \n        while pos < len(expr) and expr[pos] in ('+', '-'):\n            op = expr[pos]\n            pos += 1\n            right = parse_term()\n            if op == '+':\n                left += right\n            else:\n                left -= right\n        return left\n\n    def parse_term():\n        \"\"\"Handles multiplication and division\"\"\"\n        nonlocal pos\n        left = parse_factor()\n        \n        while pos < len(expr) and expr[pos] in ('*', '/'):\n            op = expr[pos]\n            pos += 1\n            right = parse_factor()\n            if op == '*':\n                left *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                left /= right\n        return left\n\n    def parse_factor():\n        \"\"\"Handles parentheses, unary minus, and numbers (highest precedence)\"\"\"\n        nonlocal pos\n        \n        # Handle negative numbers (Unary Minus)\n        if pos < len(expr) and expr[pos] == '-':\n            pos += 1\n            return -parse_factor()\n        \n        # Handle parentheses\n        if pos < len(expr) and expr[pos] == '(':\n            pos += 1  # skip '('\n            result = parse_expression()\n            if pos < len(expr) and expr[pos] == ')':\n                pos += 1  # skip ')'\n            return result\n        \n        # Handle numbers\n        start_pos = pos\n        # Match digits and optional decimal point\n        while pos < len(expr) and (expr[pos].isdigit() or expr[pos] == '.'):\n            pos += 1\n        \n        try:\n            return float(expr[start_pos:pos])\n        except ValueError:\n            raise SyntaxError(f\"Invalid number at position {start_pos}\")\n\n    # Start parsing from the top-level expression\n    result = parse_expression()\n    \n    # If we didn't consume the whole string, there's a syntax error\n    if pos < len(expr):\n        raise SyntaxError(f\"Unexpected character at position {pos}\")\n        \n    # Return integer if there is no decimal remainder, otherwise return float\n    return int(result) if result.is_integer() else result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    tests = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 3\", 16),\n        (\"(10 + 2) * 3\", 36),\n        (\"-5 + 2\", -3),\n        (\"-(3 + 2) * 2\", -10),\n        (\"10 / 2 + 3\", 8),\n        (\"2.5 * 2\", 5),\n    ]\n\n    for expression, expected in tests:\n        actual = eval_expression(expression)\n        print(f\"'{expression}' -> Expected: {expected}, Actual: {actual}\")\n\n    # Test Division by Zero\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"'10 / 0' -> Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> Expected: 7, Actual: 7\n'10 + 2 * 3' -> Expected: 16, Actual: 16\n'(10 + 2) * 3' -> Expected: 36, Actual: 36\n'-5 + 2' -> Expected: -3, Actual: -3\n'-(3 + 2) * 2' -> Expected: -10, Actual: -10\n'10 / 2 + 3' -> Expected: 8, Actual: 8\n'2.5 * 2' -> Expected: 5, Actual: 5\n'10 / 0' -> Caught expected error: division by zero\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 1204,
+  "thoughts_token_count": 843,
+  "total_token_count": 2113,
+  "graded_at": "2026-09-06T05:08:19"
+}

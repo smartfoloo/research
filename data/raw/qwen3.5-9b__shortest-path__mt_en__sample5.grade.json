@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__mt_en__sample5.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list from edges\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = {}\n        graph[from_node][to_node] = weight\n    \n    # Check for negative edge weights\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n    \n    # If either start or end node doesn't appear in the graph, return None path\n    if start not in graph:\n        return (None, None)\n\n    # Use a set of reachable nodes for validation of 'end'\n    reachable_nodes = set()\n    for from_node in graph:\n        reachable_nodes.add(from_node)\n        reachable_nodes.update(graph[from_node].keys())\n\n    if end not in reachable_nodes:\n        return (None, None)\n    \n    # Initialize Dijkstra's algorithm\n    distances = {node: float('inf') for node in reachable_nodes}\n    distances[start] = 0\n    previous = {node: None for node in reachable_nodes}\n    \n    priority_queue = [(0, start)]\n    visited = set()\n    \n    while priority_queue:\n        current_distance, current_node = heapq.heappop(priority_queue)\n        \n        # Skip if already visited\n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n        \n        # If we've reached the target node, stop early\n        if current_node == end:\n            break\n        \n        # Explore neighbors if they exist\n        if current_node in graph:\n            for neighbor, weight in graph[current_node].items():\n                distance = current_distance + weight\n                if not (neighbor in visited) and distance < distances[neighbor]:\n                    distances[neighbor] = distance\n                    previous[neighbor] = current_node\n                    heapq.heappush(priority_queue, (distance, neighbor))\n    \n    # Check if path exists to end node\n    if distances[end] == float('inf'):\n        return (None, None)\n    \n    # Reconstruct the path from end to start\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = previous[current]\n    \n    path.reverse()\n    \n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 151,
+  "eval_count": 1553,
+  "graded_at": "2026-09-06T03:04:34"
+}

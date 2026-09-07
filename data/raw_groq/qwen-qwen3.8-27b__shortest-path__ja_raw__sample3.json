@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-95973634-2677-4426-9439-c952d76653da",
+    "object": "chat.completion",
+    "created": 1788701538,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport heapq\n\n\ndef shortest_path(edges, start, end):\n    # Check for negative weights\n    for _, _, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative weight detected\")\n    \n    # If start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for frm, to, w in edges:\n        if frm not in graph:\n            graph[frm] = []\n        graph[frm].append((to, w))\n    \n    # Dijkstra's algorithm\n    dist = {start: 0}\n    prev = {start: None}\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        current_dist, u = heapq.heappop(heap)\n        if u in visited:\n            continue\n        visited.add(u)\n        \n        if u == end:\n            # Reconstruct path\n            path = []\n            node = end\n            while node is not None:\n                path.append(node)\n                node = prev[node]\n            path.reverse()\n            return (current_dist, path)\n        \n        for v, w in graph.get(u, []):\n            if v in visited:\n                continue\n            new_dist = current_dist + w\n            if v not in dist or new_dist < dist[v]:\n                dist[v] = new_dist\n                prev[v] = u\n                heapq.heappush(heap, (new_dist, v))\n    \n    # No path found\n    return (None, None)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.020540713,
+      "prompt_tokens": 188,
+      "prompt_time": 0.014878126,
+      "completion_tokens": 356,
+      "completion_time": 0.696176802,
+      "total_tokens": 544,
+      "total_time": 0.711054928
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_57c7e760a9",
+    "x_groq": {
+      "id": "req_01m1vepxg4e7fr1t1qjwwwqvr8",
+      "seed": 383197269
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\nimport heapq\n\n\ndef shortest_path(edges, start, end):\n    # Check for negative weights\n    for _, _, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative weight detected\")\n    \n    # If start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for frm, to, w in edges:\n        if frm not in graph:\n            graph[frm] = []\n        graph[frm].append((to, w))\n    \n    # Dijkstra's algorithm\n    dist = {start: 0}\n    prev = {start: None}\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        current_dist, u = heapq.heappop(heap)\n        if u in visited:\n            continue\n        visited.add(u)\n        \n        if u == end:\n            # Reconstruct path\n            path = []\n            node = end\n            while node is not None:\n                path.append(node)\n                node = prev[node]\n            path.reverse()\n            return (current_dist, path)\n        \n        for v, w in graph.get(u, []):\n            if v in visited:\n                continue\n            new_dist = current_dist + w\n            if v not in dist or new_dist < dist[v]:\n                dist[v] = new_dist\n                prev[v] = u\n                heapq.heappush(heap, (new_dist, v))\n    \n    # No path found\n    return (None, None)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 188,
+  "completion_tokens": 356,
+  "total_tokens": 544,
+  "groq_seed": 383197269,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "elapsed_seconds": 43.46332049369812,
+    "generated_at": "2026-09-06T08:32:18"
+  }
+}

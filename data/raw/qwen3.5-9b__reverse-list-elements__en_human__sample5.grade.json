@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__en_human__sample5.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements while keeping their associated punctuation marks intact.\n\n    Args:\n        elements (list): List of string elements to reverse.\n        punctuation (list): List of punctuation marks corresponding to each element.\n\n    Returns:\n        tuple: A tuple containing (reversed_elements, reversed_punctuation).\n    \"\"\"\n    # Reverse both the elements and punctuation lists\n    reversed_elements = list(reversed(elements))\n    reversed_punctuation = list(reversed(punctuation))\n    \n    return (reversed_elements, reversed_punctuation)\n\n\n# Example usage:\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\nresult = reverse_list_elements(elements, punctuation)\nprint(result)  # Output: (['world', 'Hello'], ['!', ''])\n\n# More test cases:\nprint(reverse_list_elements([\"a\", \"b\", \"c\"], [\".\", \",\", \"!\"]))  \n# Output: (['c', 'b', 'a'], ['!', ',', '.'])\n\nprint(reverse_list_elements([], []))  \n# Output: ([], [])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\n(['c', 'b', 'a'], ['!', ',', '.'])\n([], [])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 82,
+  "eval_count": 673,
+  "graded_at": "2026-09-06T03:04:28"
+}

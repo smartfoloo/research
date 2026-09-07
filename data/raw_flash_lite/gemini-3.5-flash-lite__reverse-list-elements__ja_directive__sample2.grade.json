@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__reverse-list-elements__ja_directive__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n        \"\"\"\n        Reverses the order of elements and punctuation lists.\n        \"\"\"\n        new_elements = elements[::-1]\n        new_punctuation = punctuation[::-1]\n        return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 99,
+  "candidates_token_count": 1013,
+  "thoughts_token_count": null,
+  "total_token_count": 1112,
+  "graded_at": "2026-09-06T06:53:23"
+}

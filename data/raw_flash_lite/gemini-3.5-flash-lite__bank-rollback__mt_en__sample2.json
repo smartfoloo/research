@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function `bank_rollback` that fulfills your requirements:\n\n```python\ndef bank_rollback(balance, transactions):\n    original_balance = balance\n    \n    for tx in transactions:\n        balance += tx\n        if balance < 0:\n            return (original_balance, False)\n            \n    return (balance, True)\n```\n\n### Explanation:\n1. We store the initial `balance` in a variable `original_balance` so we can return it if the balance drops below zero.\n2. We iterate through each transaction in the `transactions` list and update the `balance`.\n3. After each transaction, we check if the `balance` is strictly less than `0`. If it is, we immediately stop and return `(original_balance, False)`.\n4. If the loop completes without the balance ever becoming negative, we return the final `balance` along with `True`.",
+              "thoughtSignature": "El4KXAERTTIPy/0igbWjP7kqm11Kgo7/4gHChTxJ4h39FdhZPyDFqgkgxv1SMkBHkEGOfTQZaYEst+Wt35ioI2vp9zQ1DLJ84y2C3A3LyZYmpPD8wwPbzKQwAT+Y9omP"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 105,
+      "candidatesTokenCount": 198,
+      "totalTokenCount": 303,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 105
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "4VOdao_KGJC-vr0P1MHQoQ8"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function `bank_rollback` that fulfills your requirements:\n\n```python\ndef bank_rollback(balance, transactions):\n    original_balance = balance\n    \n    for tx in transactions:\n        balance += tx\n        if balance < 0:\n            return (original_balance, False)\n            \n    return (balance, True)\n```\n\n### Explanation:\n1. We store the initial `balance` in a variable `original_balance` so we can return it if the balance drops below zero.\n2. We iterate through each transaction in the `transactions` list and update the `balance`.\n3. After each transaction, we check if the `balance` is strictly less than `0`. If it is, we immediately stop and return `(original_balance, False)`.\n4. If the loop completes without the balance ever becoming negative, we return the final `balance` along with `True`.",
+  "prompt_token_count": 105,
+  "candidates_token_count": 198,
+  "thoughts_token_count": null,
+  "total_token_count": 303,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "bank-rollback",
+    "condition": "mt_en",
+    "sample_idx": 2,
+    "prompt_text": "Create a Python function called bank_rollback(balance, transactions). transactions is a list of numbers with transaction amounts. Try to apply the given transactions in order and return the calculated final balance. If the balance becomes negative even during calculation, stop the calculation and return (balance, False) using the original balance, balance. Otherwise, return (final_balance, True). (Example: balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 6.010566473007202,
+    "generated_at": "2026-09-06T06:52:02"
+  }
+}

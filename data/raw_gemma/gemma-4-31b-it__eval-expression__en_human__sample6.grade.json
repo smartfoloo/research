@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__en_human__sample6.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # Precedence levels for operators\n    precedence = {'+': 1, '-': 1, '*': 2, '/': 2}\n    \n    def apply_op(operators, values):\n        operator = operators.pop()\n        right = values.pop()\n        left = values.pop()\n        \n        if operator == '+': values.append(left + right)\n        elif operator == '-': values.append(left - right)\n        elif operator == '*': values.append(left * right)\n        elif operator == '/':\n            if right == 0:\n                raise ZeroDivisionError(\"Division by zero is not allowed.\")\n            values.append(left / right)\n\n    # Tokenize the expression into numbers and operators\n    # This regex finds floats/integers or single characters like +, -, *, /, (, )\n    tokens = re.findall(r'\\d+\\.?\\d*|[+\\-*/()]', expr)\n    \n    values = []    # Stack for numbers\n    operators = [] # Stack for operators\n    \n    i = 0\n    while i < len(tokens):\n        token = tokens[i]\n        \n        # 1. Handle negative numbers (Unary Minus)\n        # A minus is unary if it's the first token or follows an opening parenthesis\n        if token == '-' and (i == 0 or tokens[i-1] == '('):\n            values.append(0) # Treat -x as 0 - x\n            \n        if token == '(':\n            operators.append(token)\n        elif token == ')':\n            # Solve everything inside the parentheses\n            while operators and operators[-1] != '(':\n                apply_op(operators, values)\n            operators.pop() # Remove '('\n        elif token in precedence:\n            # While the top of 'operators' has same or higher precedence, apply it\n            while (operators and operators[-1] in precedence and \n                   precedence[operators[-1]] >= precedence[token]):\n                apply_op(operators, values)\n            operators.append(token)\n        else:\n            # Token is a number\n            values.append(float(token))\n            \n        i += 1\n    \n    # Apply remaining operators in the stack\n    while operators:\n        apply_op(operators, values)\n        \n    result = values[0]\n    \n    # Return as integer if it's a whole number, otherwise float\n    return int(result) if result.is_integer() else result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 6\", 22),\n        (\"100 * ( 2 + 12 ) / 14\", 100),\n        (\"-3 + 4\", 1),\n        (\"5 * (-2 + 5)\", 15),\n        (\"10 / 2 + 3\", 8),\n        (\"-10 * (2 + 3)\", -50),\n    ]\n\n    for expression, expected in test_cases:\n        res = eval_expression(expression)\n        print(f\"'{expression}' -> {res} (Expected: {expected})\")\n\n    # Test Division by Zero\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'10 + 2 * 6' -> 22 (Expected: 22)\n'100 * ( 2 + 12 ) / 14' -> 100 (Expected: 100)\n'-3 + 4' -> 1 (Expected: 1)\n'5 * (-2 + 5)' -> 15 (Expected: 15)\n'10 / 2 + 3' -> 8 (Expected: 8)\n'-10 * (2 + 3)' -> -50 (Expected: -50)\nCaught expected error: Division by zero is not allowed.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 1218,
+  "thoughts_token_count": 1085,
+  "total_token_count": 2369,
+  "graded_at": "2026-09-06T05:08:20"
+}

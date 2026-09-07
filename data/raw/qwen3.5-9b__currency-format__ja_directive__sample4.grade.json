@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_directive__sample4.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def format_currency(n):\n    # n の絶対値を用いて通貨フォーマットを作成する\n    # {:.2f} で最低 2 桁確保しつつ、後で不要な 0 を削除することで例に合わせる\n    formatted_val = f\"{abs(n):,.2f}\".rstrip('0').rstrip('.')\n    \n    # 負の場合にはマイナス記号をドル記号の前に追加\n    if n < 0:\n        return f\"-${formatted_val}\"\n    else:\n        return f\"${formatted_val}\"\n\n# テスト例\nprint(format_currency(4640039))      # $4,640,039\nprint(format_currency(-1234567890))  # -$1,234,567,890\nprint(format_currency(50.5))         # $50.5 (例：小数点ありの形)\nprint(format_currency(100))          # $100",
+  "stdout": "$4,640,039\n-$1,234,567,890\n$50.5\n$100\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 94,
+  "eval_count": 9401,
+  "graded_at": "2026-09-06T03:04:21"
+}

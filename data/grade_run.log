@@ -1,0 +1,100 @@
+qwen3.5-9b__bank-rollback__en_human__sample1.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__en_human__sample2.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__en_human__sample3.json: FAIL (3/4)
+qwen3.5-9b__bank-rollback__ja_directive__sample1.json: FAIL (None/None)
+Exception in thread Thread-10 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 90: character maps to <undefined>
+qwen3.5-9b__bank-rollback__ja_directive__sample2.json: FAIL (None/None)
+qwen3.5-9b__bank-rollback__ja_directive__sample3.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__ja_raw__sample1.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__ja_raw__sample2.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__ja_raw__sample3.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__mt_en__sample1.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__mt_en__sample2.json: PASS (4/4)
+qwen3.5-9b__bank-rollback__mt_en__sample3.json: PASS (4/4)
+qwen3.5-9b__business-days__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__business-days__en_human__sample2.json: FAIL (0/4)
+qwen3.5-9b__business-days__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__business-days__ja_directive__sample2.json: PASS (4/4)
+qwen3.5-9b__business-days__ja_raw__sample1.json: PASS (4/4)
+qwen3.5-9b__business-days__ja_raw__sample2.json: PASS (4/4)
+qwen3.5-9b__business-days__ja_raw__sample3.json: FAIL (3/4)
+qwen3.5-9b__business-days__mt_en__sample1.json: FAIL (3/4)
+qwen3.5-9b__business-days__mt_en__sample2.json: FAIL (1/4)
+qwen3.5-9b__business-days__mt_en__sample3.json: PASS (4/4)
+qwen3.5-9b__currency-format__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__currency-format__en_human__sample2.json: FAIL (None/None)
+qwen3.5-9b__currency-format__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__currency-format__ja_raw__sample1.json: FAIL (None/None)
+qwen3.5-9b__currency-format__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__currency-format__ja_raw__sample3.json: FAIL (None/None)
+qwen3.5-9b__currency-format__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__currency-format__mt_en__sample2.json: FAIL (None/None)
+qwen3.5-9b__currency-format__mt_en__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__en_human__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__en_human__sample3.json: FAIL (0/4)
+qwen3.5-9b__eval-expression__ja_directive__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_raw__sample1.json: PASS (4/4)
+Exception in thread Thread-74 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\riosa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 592: character maps to <undefined>
+qwen3.5-9b__eval-expression__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_raw__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__en_human__sample2.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_directive__sample1.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_directive__sample2.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_directive__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_raw__sample1.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_raw__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__mt_en__sample2.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__mt_en__sample3.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__ja_raw__sample1.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__ja_raw__sample3.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__mt_en__sample2.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__mt_en__sample3.json: FAIL (None/None)
+
+graded: 61, already done: 0, errors: 11
+  ERROR qwen3.5-9b__business-days__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__business-days__ja_directive__sample3.json: no code extracted
+  ERROR qwen3.5-9b__currency-format__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__currency-format__ja_directive__sample2.json: no code extracted
+  ERROR qwen3.5-9b__currency-format__ja_directive__sample3.json: no code extracted
+  ERROR qwen3.5-9b__eval-expression__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__eval-expression__ja_directive__sample2.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__en_human__sample2.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__ja_directive__sample2.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__ja_directive__sample3.json: no code extracted

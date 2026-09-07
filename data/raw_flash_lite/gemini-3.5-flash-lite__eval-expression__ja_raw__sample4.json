@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Python の標準ライブラリ（`eval()` や `ast.literal_eval` など）を直接使わず、演算子の優先順位と負の数を考慮した計算を行う関数を実装する場合、**再帰下降パーサー（Recursive Descent Parser）**を作成するのが一般的です。\n\n以下に、四則演算（`+`, `-`, `*`, `/`）、カッコ、および単項のマイナス（負の数）をサポートした `eval_expression(expr)` の実装を示します。\n\n```python\nimport re\n\n\ndef eval_expression(expr):\n    # 空白を除去\n    expr = \"\".join(expr.split())\n    if not expr:\n        raise ValueError(\"Empty expression\")\n\n    # 字句解析（トークナイザー）\n    # 数値、演算子、カッコに分解する（負の数や小数にも対応）\n    token_pattern = re.compile(r\"\\d+(?:\\.\\d+)?|[+\\-*/()]\")\n    tokens = token_pattern.findall(expr)\n\n    # トークン化された文字列が元の式と完全に一致するか検証（不正な文字のチェック）\n    if \"\".join(tokens) != expr:\n        raise ValueError(f\"Invalid characters in expression: {expr}\")\n\n    pos = 0\n\n    def peek():\n        return tokens[pos] if pos < len(tokens) else None\n\n    def consume():\n        nonlocal pos\n        pos += 1\n\n    def parse_expression():\n        # 足し算と引き算\n        node = parse_term()\n        while peek() in (\"+\", \"-\"):\n            op = peek()\n            consume()\n            right = parse_term()\n            if op == \"+\":\n                node += right\n            else:\n                node -= right\n        return node\n\n    def parse_term():\n        # 掛け算と割り算\n        node = parse_factor()\n        while peek() in (\"*\", \"/\"):\n            op = peek()\n            consume()\n            right = parse_factor()\n            if op == \"*\":\n                node *= right\n            elif op == \"/\":\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n        return node\n\n    def parse_factor():\n        # 単項演算子（負の数など）とカッコ、および数値\n        token = peek()\n        if token is None:\n            raise ValueError(\"Unexpected end of expression\")\n\n        # 単項のマイナス（例: -3, (-5)）\n        if token == \"-\":\n            consume()\n            return -parse_factor()\n        # 単項のプラス（例: +3）はそのままスルー\n        if token == \"+\":\n            consume()\n            return parse_factor()\n\n        # カッコの処理\n        if token == \"(\":\n            consume()\n            node = parse_expression()\n            if peek() != \")\":\n                raise ValueError(\"Missing closing parenthesis\")\n            consume()  # ')' をスキップ\n            return node\n\n        # 数値の処理\n        if re.match(r\"^\\d+(?:\\.\\d+)?$\", token):\n            consume()\n            # 整数または浮動小数点数として返す\n            return float(token) if \".\" in token else int(token)\n\n        raise ValueError(f\"Unexpected token: {token}\")\n\n    result = parse_expression()\n\n    # すべてのトークンを消費したかチェック\n    if pos < len(tokens):\n        raise ValueError(f\"Unexpected token at the end: {peek()}\")\n\n    return result\n\n\n# --- テストと使用例 ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 3\"))  # 出力: -2\n    print(eval_expression(\"-(3 + 4) * 2\"))  # 出力: -14\n    print(eval_expression(\"10 / (5 - 5)\"))  # ZeroDivisionError が発生\n```\n\n### この実装の特徴：\n1. **演算子の優先順位**: \n   - `parse_expression` (加減算) -> `parse_term` (乗除算) -> `parse_factor` (単項・カッコ・数値) の順に階層構造を持つことで、数学的な演算順序を正しく処理します。\n2. **負の数のサポート**: \n   - `parse_factor` 内で `-` トークンを検知した場合、再帰的に次の因数を評価して負数（単項マイナス）として処理します（例: `-5`, `(-3)` など）。\n3. **ゼロ除算の検出**: \n   - 割り算を行う際に分母が `0` であった場合、明示的に `ZeroDivisionError` を発生させます。\n4. **安全性**: \n   - Python の `eval()`関数を使用していないため、任意のコードが実行されるセキュリティ上のリスク（インジェクション攻撃など）がありません。",
+              "thoughtSignature": "El4KXAERTTIPPK/wC0HmHzvAopRtlaGGrMLpWgxCBO9J8yiK3c0Pq7zSDPW7DLDEzRn0VZJYNa15pfioWXX6DNkMGDlGZ9jG7Oyy4gNbgkDxXTbjVr7/Gb66yhRweaIp"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 73,
+      "candidatesTokenCount": 1125,
+      "totalTokenCount": 1198,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 73
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "E1KdatnSG8DN1e8PvrrcgQ8"
+  },
+  "thinking_text": "",
+  "final_text": "Python の標準ライブラリ（`eval()` や `ast.literal_eval` など）を直接使わず、演算子の優先順位と負の数を考慮した計算を行う関数を実装する場合、**再帰下降パーサー（Recursive Descent Parser）**を作成するのが一般的です。\n\n以下に、四則演算（`+`, `-`, `*`, `/`）、カッコ、および単項のマイナス（負の数）をサポートした `eval_expression(expr)` の実装を示します。\n\n```python\nimport re\n\n\ndef eval_expression(expr):\n    # 空白を除去\n    expr = \"\".join(expr.split())\n    if not expr:\n        raise ValueError(\"Empty expression\")\n\n    # 字句解析（トークナイザー）\n    # 数値、演算子、カッコに分解する（負の数や小数にも対応）\n    token_pattern = re.compile(r\"\\d+(?:\\.\\d+)?|[+\\-*/()]\")\n    tokens = token_pattern.findall(expr)\n\n    # トークン化された文字列が元の式と完全に一致するか検証（不正な文字のチェック）\n    if \"\".join(tokens) != expr:\n        raise ValueError(f\"Invalid characters in expression: {expr}\")\n\n    pos = 0\n\n    def peek():\n        return tokens[pos] if pos < len(tokens) else None\n\n    def consume():\n        nonlocal pos\n        pos += 1\n\n    def parse_expression():\n        # 足し算と引き算\n        node = parse_term()\n        while peek() in (\"+\", \"-\"):\n            op = peek()\n            consume()\n            right = parse_term()\n            if op == \"+\":\n                node += right\n            else:\n                node -= right\n        return node\n\n    def parse_term():\n        # 掛け算と割り算\n        node = parse_factor()\n        while peek() in (\"*\", \"/\"):\n            op = peek()\n            consume()\n            right = parse_factor()\n            if op == \"*\":\n                node *= right\n            elif op == \"/\":\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n        return node\n\n    def parse_factor():\n        # 単項演算子（負の数など）とカッコ、および数値\n        token = peek()\n        if token is None:\n            raise ValueError(\"Unexpected end of expression\")\n\n        # 単項のマイナス（例: -3, (-5)）\n        if token == \"-\":\n            consume()\n            return -parse_factor()\n        # 単項のプラス（例: +3）はそのままスルー\n        if token == \"+\":\n            consume()\n            return parse_factor()\n\n        # カッコの処理\n        if token == \"(\":\n            consume()\n            node = parse_expression()\n            if peek() != \")\":\n                raise ValueError(\"Missing closing parenthesis\")\n            consume()  # ')' をスキップ\n            return node\n\n        # 数値の処理\n        if re.match(r\"^\\d+(?:\\.\\d+)?$\", token):\n            consume()\n            # 整数または浮動小数点数として返す\n            return float(token) if \".\" in token else int(token)\n\n        raise ValueError(f\"Unexpected token: {token}\")\n\n    result = parse_expression()\n\n    # すべてのトークンを消費したかチェック\n    if pos < len(tokens):\n        raise ValueError(f\"Unexpected token at the end: {peek()}\")\n\n    return result\n\n\n# --- テストと使用例 ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 3\"))  # 出力: -2\n    print(eval_expression(\"-(3 + 4) * 2\"))  # 出力: -14\n    print(eval_expression(\"10 / (5 - 5)\"))  # ZeroDivisionError が発生\n```\n\n### この実装の特徴：\n1. **演算子の優先順位**: \n   - `parse_expression` (加減算) -> `parse_term` (乗除算) -> `parse_factor` (単項・カッコ・数値) の順に階層構造を持つことで、数学的な演算順序を正しく処理します。\n2. **負の数のサポート**: \n   - `parse_factor` 内で `-` トークンを検知した場合、再帰的に次の因数を評価して負数（単項マイナス）として処理します（例: `-5`, `(-3)` など）。\n3. **ゼロ除算の検出**: \n   - 割り算を行う際に分母が `0` であった場合、明示的に `ZeroDivisionError` を発生させます。\n4. **安全性**: \n   - Python の `eval()`関数を使用していないため、任意のコードが実行されるセキュリティ上のリスク（インジェクション攻撃など）がありません。",
+  "prompt_token_count": 73,
+  "candidates_token_count": 1125,
+  "thoughts_token_count": null,
+  "total_token_count": 1198,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "eval-expression",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）",
+    "elapsed_seconds": 8.566784381866455,
+    "generated_at": "2026-09-06T06:44:23"
+  }
+}

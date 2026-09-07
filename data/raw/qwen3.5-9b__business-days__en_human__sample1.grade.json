@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__en_human__sample1.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "import datetime\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculate the number of business days (Monday to Friday) between two dates.\n    Both dates are strings in 'YYYY-MM-DD' format.\n    The result excludes both input dates and does not account for holidays.\n\n    Args:\n        date1 (str): Start date in YYYY-MM-DD format\n        date2 (str): End date in YYYY-MM-DD format\n\n    Returns:\n        int: Number of business days between the two dates (exclusive)\n    \"\"\"\n    start = datetime.datetime.strptime(date1, '%Y-%m-%d').date()\n    end = datetime.datetime.strptime(date2, '%Y-%m-%d').date()\n\n    # Handle reversed date order by recursively swapping\n    if start > end:\n        return business_days(date2, date1)\n\n    count = 0\n    current = start + datetime.timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday is 0, Friday is 4\n            count += 1\n        current += datetime.timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 104,
+  "eval_count": 1382,
+  "graded_at": "2026-09-06T03:04:12"
+}

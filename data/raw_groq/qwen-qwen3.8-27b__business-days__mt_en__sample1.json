@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-41a6e8a1-7bda-4794-96aa-751d611ba2aa",
+    "object": "chat.completion",
+    "created": 1788697488,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Returns the number of business days (Monday through Friday) between two dates.\n    The dates are given in \"YYYY-MM-DD\" format.\n    The two dates themselves are not included in the count.\n    Only days of the week are considered (no holidays).\n    \n    Example: business_days(\"2024-01-01\", \"2024-01-08\") returns 4\n    (Jan 2, 3, 4, 5 are Mon-Thu? Let's check: 2024-01-01 is Monday.\n     So between Jan 1 and Jan 8 (exclusive), the dates are Jan 2,3,4,5,6,7.\n     Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri) = 4 business days.\n     Jan 6 (Sat), Jan 7 (Sun) are not business days. So 4. Correct.)\n    \"\"\"\n    # Parse the dates\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is before d2\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    current = d1 + timedelta(days=1)\n    while current < d2:\n        # weekday(): Monday=0, Tuesday=1, ..., Sunday=6\n        if current.weekday() < 5:  # Monday through Friday\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.004043156,
+      "prompt_tokens": 119,
+      "prompt_time": 0.009850247,
+      "completion_tokens": 404,
+      "completion_time": 0.819693193,
+      "total_tokens": 523,
+      "total_time": 0.82954344
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_1944680867",
+    "x_groq": {
+      "id": "req_01m1vavag7ennrpghkfn329pya",
+      "seed": 1950554534
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Returns the number of business days (Monday through Friday) between two dates.\n    The dates are given in \"YYYY-MM-DD\" format.\n    The two dates themselves are not included in the count.\n    Only days of the week are considered (no holidays).\n    \n    Example: business_days(\"2024-01-01\", \"2024-01-08\") returns 4\n    (Jan 2, 3, 4, 5 are Mon-Thu? Let's check: 2024-01-01 is Monday.\n     So between Jan 1 and Jan 8 (exclusive), the dates are Jan 2,3,4,5,6,7.\n     Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri) = 4 business days.\n     Jan 6 (Sat), Jan 7 (Sun) are not business days. So 4. Correct.)\n    \"\"\"\n    # Parse the dates\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is before d2\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    current = d1 + timedelta(days=1)\n    while current < d2:\n        # weekday(): Monday=0, Tuesday=1, ..., Sunday=6\n        if current.weekday() < 5:  # Monday through Friday\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 119,
+  "completion_tokens": 404,
+  "total_tokens": 523,
+  "groq_seed": 1950554534,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 1,
+    "prompt_text": "Please create a Python function named `business_days(date1, date2)` that returns the number of business days (Monday through Friday) between two dates. Both dates should be in the format \"YYYY-MM-DD\". The calculation should be based solely on the day of the week, without accounting for public holidays. Note that the two dates themselves should not be included in the count (e.g., \"2024-01-01\", \"2024-01-08\" → 4).",
+    "elapsed_seconds": 94.70237112045288,
+    "generated_at": "2026-09-06T07:24:48"
+  }
+}

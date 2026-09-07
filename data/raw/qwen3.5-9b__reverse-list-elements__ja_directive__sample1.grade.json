@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_directive__sample1.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n        return elements[::-1], punctuation[::-1]",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 107,
+  "eval_count": 2278,
+  "graded_at": "2026-09-05T21:40:34"
+}

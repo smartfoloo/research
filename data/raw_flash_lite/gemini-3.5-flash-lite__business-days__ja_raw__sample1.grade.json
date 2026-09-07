@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__ja_raw__sample1.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\")\n\n    # date1 と date2 の順序が逆であっても正しく計算できるようにする\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    # 両端の日付を含まないため、開始日を翌日、終了日を前日に設定\n    start_date = d1 + timedelta(days=1)\n    end_date = d2 - timedelta(days=1)\n\n    # 期間が逆転している（もともと隣り合っていたなど）場合は0を返す\n    if start_date > end_date:\n        return 0\n\n    count = 0\n    current_date = start_date\n\n    # 1日ずつ進めながら曜日を判定\n    while current_date <= end_date:\n        # weekday() は 0(月) から 4(金) の場合に平日と判定\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4 (1/2, 1/3, 1/4, 1/5)\nprint(business_days(\"2024-01-05\", \"2024-01-08\"))  # 出力: 1 (1/6, 1/7は土日、1/8は含まないため 1/5の翌日1/6~1/7の間で営業日は0日...ではなく、1/5と1/8の間は1/6(土), 1/7(日)なので0)",
+  "stdout": "4\n0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 100,
+  "candidates_token_count": 665,
+  "thoughts_token_count": null,
+  "total_token_count": 765,
+  "graded_at": "2026-09-06T06:53:02"
+}

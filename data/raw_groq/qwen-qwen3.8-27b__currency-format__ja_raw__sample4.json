@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-e36b22a6-76ff-4c4f-a292-ed3d2ea52fbe",
+    "object": "chat.completion",
+    "created": 1788697860,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.019438106,
+      "prompt_tokens": 89,
+      "prompt_time": 0.00585637,
+      "completion_tokens": 42,
+      "completion_time": 0.08009471,
+      "total_tokens": 131,
+      "total_time": 0.08595108
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_b930cafd52",
+    "x_groq": {
+      "id": "req_01m1vb6ny1e8bbz3weh2q0nf7x",
+      "seed": 1017537693
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 89,
+  "completion_tokens": 42,
+  "total_tokens": 131,
+  "groq_seed": 1017537693,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "elapsed_seconds": 12.491123914718628,
+    "generated_at": "2026-09-06T07:30:59"
+  }
+}

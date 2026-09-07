@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_directive__sample1.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "import ast\n\n   def eval_expression(expr):\n       # Parse the expression into an AST\n       tree = ast.parse(expr, mode='eval')\n\n       def _eval(node):\n           if isinstance(node, ast.Expression):\n               return _eval(node.body)\n           elif isinstance(node, ast.Constant): # For Python 3.8+\n               return node.value\n           elif isinstance(node, ast.Num): # For older Python compatibility\n               return node.n\n           elif isinstance(node, ast.BinOp):\n               left = _eval(node.left)\n               right = _eval(node.right)\n               if isinstance(node.op, ast.Add):\n                   return left + right\n               elif isinstance(node.op, ast.Sub):\n                   return left - right\n               elif isinstance(node.op, ast.Mult):\n                   return left * right\n               elif isinstance(node.op, ast.Div):\n                   if right == 0:\n                       raise ZeroDivisionError(\"division by zero\")\n                   return left / right\n               else:\n                   raise TypeError(f\"Unsupported operator: {node.op}\")\n           elif isinstance(node, ast.UnaryOp):\n               operand = _eval(node.operand)\n               if isinstance(node.op, ast.UAdd):\n                   return +operand\n               elif isinstance(node.op, ast.USub):\n                   return -operand\n               else:\n                   raise TypeError(f\"Unsupported unary operator: {node.op}\")\n           else:\n               raise TypeError(f\"Unsupported syntax: {node}\")\n\n       return _eval(tree)",
+  "stdout": "",
+  "stderr": "  File \"/app/test_script.py\", line 4\n    def eval_expression(expr):\nIndentationError: unexpected indent\n",
+  "docker_returncode": 1,
+  "passed_cases": null,
+  "total_cases": null,
+  "all_passed": false,
+  "prompt_token_count": 80,
+  "candidates_token_count": 2053,
+  "thoughts_token_count": null,
+  "total_token_count": 2133,
+  "graded_at": "2026-09-06T06:53:15"
+}

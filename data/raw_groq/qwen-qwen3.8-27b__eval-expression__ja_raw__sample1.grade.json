@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__eval-expression__ja_raw__sample1.json",
+  "task": "eval-expression",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "def eval_expression(expr: str) -> int:\n    \"\"\"\n    四則演算式を計算する関数。\n    - 演算の優先順位（括弧 > 掛け算/割り算 > 加算/減算）を考慮\n    - 負の数をサポート\n    - ゼロで割る場合は ZeroDivisionError を引き起こす\n    \n    Args:\n        expr (str): 計算したい数式。例: \"3 + 4 * (2 - 1)\"\n    \n    Returns:\n        int: 計算結果\n    \"\"\"\n    # 余分な空白を除去\n    expr = expr.strip()\n    if not expr:\n        raise ValueError(\"empty expression\")\n    \n    pos = [0]  # 現在の位置を保持するための可変オブジェクト\n    \n    def parse_expression():\n        \"\"\"加算・減算の処理\"\"\"\n        left = parse_term()\n        while pos[0] < len(expr):\n            ch = expr[pos[0]]\n            if ch == '+':\n                pos[0] += 1\n                right = parse_term()\n                left = left + right\n            elif ch == '-':\n                pos[0] += 1\n                right = parse_term()\n                left = left - right\n            else:\n                break\n        return left\n    \n    def parse_term():\n        \"\"\"乗算・除算の処理\"\"\"\n        left = parse_factor()\n        while pos[0] < len(expr):\n            ch = expr[pos[0]]\n            if ch == '*':\n                pos[0] += 1\n                right = parse_factor()\n                left = left * right\n            elif ch == '/':\n                pos[0] += 1\n                right = parse_factor()\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                left = left // right  # 整数割り算\n            else:\n                break\n        return left\n    \n    def parse_factor():\n        \"\"\"単項演算子、括弧、数の処理\"\"\"\n        if pos[0] >= len(expr):\n            raise ValueError(\"unexpected end of expression\")\n        \n        ch = expr[pos[0]]\n        \n        # 単項演算子（+/-）の処理\n        if ch == '+':\n            pos[0] += 1\n            return parse_factor()\n        elif ch == '-':\n            pos[0] += 1\n            return -parse_factor()\n        \n        # 括弧の処理\n        if ch == '(':\n            pos[0] += 1  # '(' をスキップ\n            result = parse_expression()\n            if pos[0] >= len(expr) or expr[pos[0]] != ')':\n                raise ValueError(\"missing closing parenthesis\")\n            pos[0] += 1  # ')' をスキップ\n            return result\n        \n        # 数の処理\n        if ch.isdigit():\n            start = pos[0]\n            while pos[0] < len(expr) and expr[pos[0]].isdigit():\n                pos[0] += 1\n            return int(expr[start:pos[0]])\n        \n        raise ValueError(f\"unexpected character at position {pos[0]}: {ch}\")\n    \n    result = parse_expression()\n    \n    # 完全に読み取れたか確認\n    if pos[0] != len(expr):\n        raise ValueError(f\"incomplete expression at position {pos[0]}: '{expr[pos[0]]}'\")\n    \n    return result",
+  "stdout": "FAIL case 0: raised ValueError: incomplete expression at position 1: ' '\nFAIL case 1: raised ValueError: incomplete expression at position 2: ' '\nFAIL case 2: raised ValueError: missing closing parenthesis\nFAIL case 3: expected ZeroDivisionError, got ValueError\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_tokens": 84,
+  "completion_tokens": 1351,
+  "total_tokens": 1435,
+  "groq_seed": 2021647721,
+  "graded_at": "2026-09-06T09:08:47"
+}

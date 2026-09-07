@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__bank-rollback__ja_directive__sample5.json",
+  "task": "bank-rollback",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "from typing import List, Tuple\n\ndef bank_rollback(balance: int, transactions: List[int]) -> Tuple[int, bool]:\n    \"\"\"\n    取引を順次適用して最終的な残高を計算する関数。\n    途中で残高がマイナスになった場合は、元の残高と失敗フラグを返す。\n    \n    Args:\n        balance (int): 初期の口座残高\n        transactions (List[int]): 取引履歴のリスト (正：入金, 負：出金)\n    \n    Returns:\n        Tuple[int, bool]: (最終的な残高または元の残高，成功/失敗フラグ)\n    \"\"\"\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        \n        # 残高がマイナスになった場合、計算を中断して元の状態を返す\n        if current_balance < 0:\n            return (balance, False)\n            \n    # すべての取引を処理し、マイナスにならなかった場合\n    return (current_balance, True)\n\n# --- 実行例 ---\n\n# 例 1: 途中で負残高になる場合 (問題文の例に準拠)\n# balance=100, transactions=[50, -30, -200] \n# 計算経路: 100 -> 150 -> 120 -> -80 (マイナス発生)\nresult = bank_rollback(100, [50, -30, -200])\nprint(result) # 出力: (100, False)\n\n# 例 2: 全ての取引が成功する場合\n# balance=100, transactions=[50, -30]\nresult = bank_rollback(100, [50, -30])\nprint(result) # 出力: (120, True)\n\n# 例 3: 取引がない場合（空リスト）\nresult = bank_rollback(100, [])\nprint(result) # 出力: (100, True)\n\n# 例 4: 最初の取引ですぐに負になる場合\n# balance=50, transactions=[-60] -> -10\nresult = bank_rollback(50, [-60])\nprint(result) # 出力: (50, False)",
+  "stdout": "(100, False)\n(120, True)\n(100, True)\n(50, False)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 149,
+  "eval_count": 4672,
+  "graded_at": "2026-09-06T03:04:10"
+}

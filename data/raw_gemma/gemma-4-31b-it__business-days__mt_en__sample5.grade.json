@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__mt_en__sample5.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculates the number of business days (Mon-Fri) between two dates,\n    excluding the start and end dates.\n    \"\"\"\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date to handle any input order\n    start_date, end_date = min(d1, d2), max(d1, d2)\n    \n    business_day_count = 0\n    # Start from the day after the start_date\n    current_date = start_date + timedelta(days=1)\n    \n    # Loop until we reach the end_date (exclusive)\n    while current_date < end_date:\n        # .weekday() returns 0 for Monday and 6 for Sunday\n        # 0, 1, 2, 3, 4 are Mon, Tue, Wed, Thu, Fri\n        if current_date.weekday() < 5:\n            business_day_count += 1\n        \n        current_date += timedelta(days=1)\n        \n    return business_day_count\n\n# Testing the function with the provided example\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Expected output: 4\nprint(business_days(\"2024-01-01\", \"2024-01-02\"))  # Expected output: 0 (no days between)\nprint(business_days(\"2024-01-01\", \"2024-01-15\"))  # Expected output: 10",
+  "stdout": "4\n0\n9\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 112,
+  "candidates_token_count": 689,
+  "thoughts_token_count": 764,
+  "total_token_count": 1565,
+  "graded_at": "2026-09-06T05:08:11"
+}

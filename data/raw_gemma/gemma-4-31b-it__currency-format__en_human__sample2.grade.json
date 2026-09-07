@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__currency-format__en_human__sample2.json",
+  "task": "currency-format",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def format_currency(n):\n    # Determine if the number is negative\n    sign = \"-\" if n < 0 else \"\"\n    \n    # Use abs() to get the positive version of the number for formatting\n    # The :, format specifier adds commas every 3 digits\n    formatted_number = f\"{abs(n):,}\"\n    \n    # Combine the sign, dollar sign, and the formatted number\n    return f\"{sign}${formatted_number}\"\n\n# --- Test Cases ---\nprint(format_currency(4640039))    # Output: $4,640,039\nprint(format_currency(-4640039))   # Output: -$4,640,039\nprint(format_currency(1000))       # Output: $1,000\nprint(format_currency(-50))        # Output: -$50\nprint(format_currency(0))          # Output: $0",
+  "stdout": "$4,640,039\n-$4,640,039\n$1,000\n-$50\n$0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 68,
+  "candidates_token_count": 457,
+  "thoughts_token_count": 692,
+  "total_token_count": 1217,
+  "graded_at": "2026-09-06T05:08:12"
+}

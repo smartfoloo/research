@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__ja_raw__sample2.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdateオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\").date()\n\n    # 順番が逆であっても対応できるようにする\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # 日付自体は含まないため、開始日の翌日から終了日の前日までを対象とする\n    current_date = start_date + timedelta(days=1)\n\n    count = 0\n    while current_date < end_date:\n        # weekday() は月曜日が 0、日曜日が 6 を返す\n        # 0〜4 が月曜日から金曜日\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n# 内訳: 1月2日(火), 3日(水), 4日(木), 5日(金) の計4日",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 100,
+  "candidates_token_count": 583,
+  "thoughts_token_count": null,
+  "total_token_count": 683,
+  "graded_at": "2026-09-06T06:53:02"
+}

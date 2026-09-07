@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_raw__sample2.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import ast\nimport operator\n\ndef eval_expression(expr):\n    \"\"\"\n    文字列の数式を計算する関数。\n    演算の順序、括弧、負の数を考慮し、ゼロ除算時は ZeroDivisionError を送出する。\n    \"\"\"\n    # サポートする演算子のマッピング\n    operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n        ast.UAdd: operator.pos,\n        ast.USub: operator.neg,\n    }\n\n    def _eval(node):\n        if isinstance(node, ast.Constant):  # Python 3.8以降の数値リテラル\n            if isinstance(node.value, (int, float)):\n                return node.value\n            raise TypeError(f\"サポートされていない定数です: {node.value}\")\n        \n        elif isinstance(node, ast.Num):  # 古いPythonバージョン用互換\n            return node.n\n\n        elif isinstance(node, ast.BinOp):  # 二項演算 (例: A + B)\n            op_type = type(node.op)\n            if op_type in operators:\n                left = _eval(node.left)\n                right = _eval(node.right)\n                # ゼロ除算のチェック (PythonのtruedivはZeroDivisionErrorを出すが明示的にも対応)\n                if op_type == ast.Div and right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                return operators[op_type](left, right)\n            raise TypeError(f\"サポートされていない演算子です: {op_type}\")\n\n        elif isinstance(node, ast.UnaryOp):  # 単項演算 (例: -3, +3)\n            op_type = type(node.op)\n            if op_type in operators:\n                operand = _eval(node.operand)\n                return operators[op_type](operand)\n            raise TypeError(f\"サポートされていない単項演算子です: {op_type}\")\n\n        elif isinstance(node, ast.Expression):  # 式のルート\n            return _eval(node.body)\n\n        else:\n            raise TypeError(f\"サポートされていない構文です: {type(node)}\")\n\n    # 文字列を抽象構文木(AST)にパースする\n    try:\n        tree = ast.parse(expr, mode='eval')\n    except SyntaxError as e:\n        raise ValueError(f\"無効な数式です: {expr}\") from e\n\n    return _eval(tree)\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))       # 出力: 7.0\n    print(eval_expression(\"-5 + 3 * (-2) + 10\"))    # 出力: -1.0\n    print(eval_expression(\"10 / (5 - 5)\"))          # 出力: ZeroDivisionError",
+  "stdout": "7\n-1\n(non-fatal) submitted code raised at top level: ZeroDivisionError('division by zero')\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 73,
+  "candidates_token_count": 1032,
+  "thoughts_token_count": null,
+  "total_token_count": 1105,
+  "graded_at": "2026-09-06T06:53:18"
+}

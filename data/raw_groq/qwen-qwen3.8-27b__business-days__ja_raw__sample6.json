@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-2a3e906f-5482-41df-a80e-55bbab2cc3ae",
+    "object": "chat.completion",
+    "created": 1788697123,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Return the number of business days (Mon-Fri) strictly between two dates.\n    \n    Args:\n        date1: Start date in 'YYYY-MM-DD' format.\n        date2: End date in 'YYYY-MM-DD' format.\n        \n    Returns:\n        Number of business days (excluding weekends) in the range (date1, date2),\n        not including the endpoints.\n    \"\"\"\n    fmt = \"%Y-%m-%d\"\n    d1 = datetime.strptime(date1, fmt)\n    d2 = datetime.strptime(date2, fmt)\n    \n    # Ensure d1 is less than d2\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    # We want days strictly between d1 and d2, so start from d1 + 1 day\n    current = d1 + timedelta(days=1)\n    count = 0\n    \n    while current < d2:\n        if current.weekday() < 5:  # 0=Mon, 1=Tue, ..., 4=Fri, 5=Sat, 6=Sun\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022432676,
+      "prompt_tokens": 109,
+      "prompt_time": 0.007757789,
+      "completion_tokens": 296,
+      "completion_time": 0.562038461,
+      "total_tokens": 405,
+      "total_time": 0.56979625
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_fea14bdc83",
+    "x_groq": {
+      "id": "req_01m1vag66begw9amsaa3whj6et",
+      "seed": 67123462
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Return the number of business days (Mon-Fri) strictly between two dates.\n    \n    Args:\n        date1: Start date in 'YYYY-MM-DD' format.\n        date2: End date in 'YYYY-MM-DD' format.\n        \n    Returns:\n        Number of business days (excluding weekends) in the range (date1, date2),\n        not including the endpoints.\n    \"\"\"\n    fmt = \"%Y-%m-%d\"\n    d1 = datetime.strptime(date1, fmt)\n    d2 = datetime.strptime(date2, fmt)\n    \n    # Ensure d1 is less than d2\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    # We want days strictly between d1 and d2, so start from d1 + 1 day\n    current = d1 + timedelta(days=1)\n    count = 0\n    \n    while current < d2:\n        if current.weekday() < 5:  # 0=Mon, 1=Tue, ..., 4=Fri, 5=Sat, 6=Sun\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 109,
+  "completion_tokens": 296,
+  "total_tokens": 405,
+  "groq_seed": 67123462,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 6,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 3.5088701248168945,
+    "generated_at": "2026-09-06T07:18:43"
+  }
+}

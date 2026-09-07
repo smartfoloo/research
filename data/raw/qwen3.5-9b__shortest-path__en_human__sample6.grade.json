@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__en_human__sample6.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "from collections import defaultdict, deque\nimport heapq\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path between start and end nodes in a directed graph with weighted edges.\n    \n    Args:\n        edges: List of (from_node, to_node, weight) tuples representing one-way roads\n        start: Starting node (str or hashable)\n        end: Destination node (str or hashable)\n    \n    Returns:\n        (distance, path): A tuple where distance is the total weight and path is an ordered list of nodes.\n    \n    Raises:\n        ValueError: If any edge has a negative weight.\n        Returns None values: If no path exists between start and end.\n    \"\"\"\n    # Case when start == end\n    if start == end:\n        return (0, [start])\n\n    # Build adjacency list\n    graph = defaultdict(list)\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weight not allowed\")\n        graph[from_node].append((to_node, weight))\n\n    # Initialize Dijkstra's algorithm\n    distances = {start: 0}\n    predecessors = {}\n    pq = [(0, start)]\n\n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n\n        if current_dist > distances.get(current_node, float('inf')):\n            continue\n\n        for neighbor, weight in graph[current_node]:\n            new_dist = current_dist + weight\n            if neighbor not in distances or new_dist < distances[neighbor]:\n                distances[neighbor] = new_dist\n                predecessors[neighbor] = current_node\n                heapq.heappush(pq, (new_dist, neighbor))\n\n    # Check if end node is reachable\n    if end not in distances:\n        return (None, None)\n\n    # Reconstruct path from end to start using predecessors\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = predecessors.get(current)\n\n    path.reverse()\n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 153,
+  "eval_count": 1145,
+  "graded_at": "2026-09-06T03:04:32"
+}

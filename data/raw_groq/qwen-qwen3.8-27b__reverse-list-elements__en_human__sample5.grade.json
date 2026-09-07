@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__reverse-list-elements__en_human__sample5.json",
+  "task": "reverse-list-elements",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements while keeping each punctuation mark attached to its original element.\n    \n    Args:\n        elements: A list of strings (the core elements)\n        punctuation: A list of strings (punctuation marks, one per element)\n    \n    Returns:\n        A tuple (new_elements, new_punctuation) where both lists are reversed,\n        maintaining the association between each element and its punctuation.\n    \n    Example:\n        >>> reverse_list_elements([\"Hello\", \"world\"], [\"\", \"!\"])\n        ([\"world\", \"Hello\"], [\"!\", \"\"])\n    \"\"\"\n    # Zip elements with their corresponding punctuation, reverse, then unzip\n    paired = list(zip(elements, punctuation))\n    reversed_paired = list(reversed(paired))\n    \n    if not reversed_paired:\n        return ([], [])\n    \n    new_elements = [item[0] for item in reversed_paired]\n    new_punctuation = [item[1] for item in reversed_paired]\n    \n    return (new_elements, new_punctuation)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 84,
+  "completion_tokens": 243,
+  "total_tokens": 327,
+  "groq_seed": 1026082731,
+  "graded_at": "2026-09-06T09:08:52"
+}

@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-98a6ef7f-42db-45c1-8bbf-77aa35c9043c",
+    "object": "chat.completion",
+    "created": 1788697847,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n: int) -> str:\n    if n < 0:\n        sign = \"-\"\n        n = -n\n    else:\n        sign = \"\"\n    \n    # Convert to string and insert commas every 3 digits from the right\n    s = str(n)\n    if len(s) <= 3:\n        formatted = s\n    else:\n        # Split into groups of 3 from the right\n        groups = []\n        while len(s) > 3:\n            groups.append(s[-3:])\n            s = s[:-3]\n        groups.append(s)\n        groups.reverse()\n        formatted = \",\".join(groups)\n    \n    return f\"{sign}${formatted}\"\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.021451155,
+      "prompt_tokens": 89,
+      "prompt_time": 0.007098325,
+      "completion_tokens": 160,
+      "completion_time": 0.313219193,
+      "total_tokens": 249,
+      "total_time": 0.320317518
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1vb69gaem9sjprdmk9mqns6",
+      "seed": 1572208188
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n: int) -> str:\n    if n < 0:\n        sign = \"-\"\n        n = -n\n    else:\n        sign = \"\"\n    \n    # Convert to string and insert commas every 3 digits from the right\n    s = str(n)\n    if len(s) <= 3:\n        formatted = s\n    else:\n        # Split into groups of 3 from the right\n        groups = []\n        while len(s) > 3:\n            groups.append(s[-3:])\n            s = s[:-3]\n        groups.append(s)\n        groups.reverse()\n        formatted = \",\".join(groups)\n    \n    return f\"{sign}${formatted}\"\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 89,
+  "completion_tokens": 160,
+  "total_tokens": 249,
+  "groq_seed": 1572208188,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "elapsed_seconds": 12.701700210571289,
+    "generated_at": "2026-09-06T07:30:47"
+  }
+}

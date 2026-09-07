@@ -1,0 +1,53 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "\n*   Goal: Create a Python function `business_days(date1, date2)`.\n*   Input: Two dates in \"YYYY-MM-DD\" format.\n*   Output: Number of business days (Monday to Friday) *between* the two dates.\n*   Constraint 1: Exclude holidays (only consider day of the week).\n*   Constraint 2: Exclude the start and end dates themselves.\n*   Example: \"2024-01-01\" to \"2024-01-08\" should return 4.\n    *   Jan 1: Monday (Start - exclude)\n    *   Jan 2: Tuesday (1)\n    *   Jan 3: Wednesday (2)\n    *   Jan 4: Thursday (3)\n    *   Jan 5: Friday (4)\n    *   Jan 6: Saturday (Weekend)\n    *   Jan 7: Sunday (Weekend)\n    *   Jan 8: Monday (End - exclude)\n    *   Total: 4.\n\n    *   Parse strings into `datetime` objects.\n    *   Ensure `date1` is the earlier date (handle potential reversal of arguments).\n    *   Iterate from `date1 + 1 day` to `date2 - 1 day`.\n    *   For each date, check if the day of the week is between 0 (Monday) and 4 (Friday).\n    *   Increment a counter.\n\n    *   Using a loop is fine for short ranges, but for very long ranges, a mathematical approach is faster. However, for a general-purpose request, a loop is easiest to understand and implement correctly. Given the example is just a week, a loop is safe. But I should consider if there's a cleaner way using `numpy.busday_count` (though requiring an external library might be overkill). I'll stick to standard library `datetime`.\n\n    *   *Import:* `from datetime import datetime, timedelta`\n    *   *Parsing:* `d1 = datetime.strptime(date1, \"%Y-%m-%d\")`, `d2 = datetime.strptime(date2, \"%Y-%m-%d\")`\n    *   *Ordering:* `start, end = min(d1, d2), max(d1, d2)`\n    *   *Loop:*\n        ```python\n        count = 0\n        current = start + timedelta(days=1)\n        while current < end:\n            if current.weekday() < 5: # 0-4 is Mon-Fri\n                count += 1\n            current += timedelta(days=1)\n        ```\n\n    *   Example provided: \"2024-01-01\" (Mon), \"2024-01-08\" (Mon).\n    *   Dates in between: Jan 2(T), 3(W), 4(T), 5(F), 6(S), 7(S).\n    *   Weekdays: 2, 3, 4, 5.\n    *   Count: 4. Matches the example!\n\n    *   Explain the logic clearly.\n    *   Provide the code.\n    *   Include the test case.",
+              "thought": true
+            },
+            {
+              "text": "ご要望の通り、2つの日付の間の営業日（月〜金）を計算する関数を作成しました。\n\nPythonの標準ライブラリである`datetime`モジュールを使用して実装しています。\n\n### 実装コード\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # date1が常に古い日付になるように順序を整える\n    start, end = min(d1, d2), max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current = start + timedelta(days=1)\n    while current < end:\n        # weekday() は 月曜=0, 火曜=1, ..., 金曜=4, 土曜=5, 日曜=6 を返す\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n        \n    return count\n\n# テスト\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 結果: 4\nprint(business_days(\"2024-01-05\", \"2024-01-12\"))  # 結果: 4 (6,7,11,12は土日、5と12は除外)\n```\n\n### 解説\n\n1.  **`datetime.strptime`**: `\"YYYY-MM-DD\"` 形式の文字列を、日付計算が可能な `datetime` オブジェクトに変換しています。\n2.  **`min(d1, d2)` と `max(d1, d2)`**: 引数の順番が逆（`date2`の方が古い日付）で渡された場合でも正しく動作するように、小さい方を開始日、大きい方を終了日に設定しています。\n3.  **範囲の設定**: \n    *   `current = start + timedelta(days=1)` で開始日の翌日からカウントを開始します。\n    *   `while current < end` とすることで、終了日そのものはカウントに含まれないようにしています。\n4.  **`weekday()` メソッド**: \n    *   このメソッドは、月曜日を `0`、日曜日を `6` として数値を返します。\n    *   したがって、`current.weekday() < 5` であれば、その日は月曜日から金曜日のいずれかであると判定できます。\n\n### 計算例（\"2024-01-01\" から \"2024-01-08\" の場合）\n- 1月1日（月）：開始日のため除外\n- 1月2日（火）：**カウント（1）**\n- 1月3日（水）：**カウント（2）**\n- 1月4日（木）：**カウント（3）**\n- 1月5日（金）：**カウント（4）**\n- 1月6日（土）：土日のため除外\n- 1月7日（日）：土日のため除外\n- 1月8日（月）：終了日のため除外\n- **合計：4日**"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 758,
+      "totalTokenCount": 1581,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "thoughtsTokenCount": 723,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemma-4-31b-it",
+    "responseId": "lyGdaquQFqWR1e8P6NGW8Q4"
+  },
+  "thinking_text": "\n*   Goal: Create a Python function `business_days(date1, date2)`.\n*   Input: Two dates in \"YYYY-MM-DD\" format.\n*   Output: Number of business days (Monday to Friday) *between* the two dates.\n*   Constraint 1: Exclude holidays (only consider day of the week).\n*   Constraint 2: Exclude the start and end dates themselves.\n*   Example: \"2024-01-01\" to \"2024-01-08\" should return 4.\n    *   Jan 1: Monday (Start - exclude)\n    *   Jan 2: Tuesday (1)\n    *   Jan 3: Wednesday (2)\n    *   Jan 4: Thursday (3)\n    *   Jan 5: Friday (4)\n    *   Jan 6: Saturday (Weekend)\n    *   Jan 7: Sunday (Weekend)\n    *   Jan 8: Monday (End - exclude)\n    *   Total: 4.\n\n    *   Parse strings into `datetime` objects.\n    *   Ensure `date1` is the earlier date (handle potential reversal of arguments).\n    *   Iterate from `date1 + 1 day` to `date2 - 1 day`.\n    *   For each date, check if the day of the week is between 0 (Monday) and 4 (Friday).\n    *   Increment a counter.\n\n    *   Using a loop is fine for short ranges, but for very long ranges, a mathematical approach is faster. However, for a general-purpose request, a loop is easiest to understand and implement correctly. Given the example is just a week, a loop is safe. But I should consider if there's a cleaner way using `numpy.busday_count` (though requiring an external library might be overkill). I'll stick to standard library `datetime`.\n\n    *   *Import:* `from datetime import datetime, timedelta`\n    *   *Parsing:* `d1 = datetime.strptime(date1, \"%Y-%m-%d\")`, `d2 = datetime.strptime(date2, \"%Y-%m-%d\")`\n    *   *Ordering:* `start, end = min(d1, d2), max(d1, d2)`\n    *   *Loop:*\n        ```python\n        count = 0\n        current = start + timedelta(days=1)\n        while current < end:\n            if current.weekday() < 5: # 0-4 is Mon-Fri\n                count += 1\n            current += timedelta(days=1)\n        ```\n\n    *   Example provided: \"2024-01-01\" (Mon), \"2024-01-08\" (Mon).\n    *   Dates in between: Jan 2(T), 3(W), 4(T), 5(F), 6(S), 7(S).\n    *   Weekdays: 2, 3, 4, 5.\n    *   Count: 4. Matches the example!\n\n    *   Explain the logic clearly.\n    *   Provide the code.\n    *   Include the test case.",
+  "final_text": "ご要望の通り、2つの日付の間の営業日（月〜金）を計算する関数を作成しました。\n\nPythonの標準ライブラリである`datetime`モジュールを使用して実装しています。\n\n### 実装コード\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # date1が常に古い日付になるように順序を整える\n    start, end = min(d1, d2), max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current = start + timedelta(days=1)\n    while current < end:\n        # weekday() は 月曜=0, 火曜=1, ..., 金曜=4, 土曜=5, 日曜=6 を返す\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n        \n    return count\n\n# テスト\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 結果: 4\nprint(business_days(\"2024-01-05\", \"2024-01-12\"))  # 結果: 4 (6,7,11,12は土日、5と12は除外)\n```\n\n### 解説\n\n1.  **`datetime.strptime`**: `\"YYYY-MM-DD\"` 形式の文字列を、日付計算が可能な `datetime` オブジェクトに変換しています。\n2.  **`min(d1, d2)` と `max(d1, d2)`**: 引数の順番が逆（`date2`の方が古い日付）で渡された場合でも正しく動作するように、小さい方を開始日、大きい方を終了日に設定しています。\n3.  **範囲の設定**: \n    *   `current = start + timedelta(days=1)` で開始日の翌日からカウントを開始します。\n    *   `while current < end` とすることで、終了日そのものはカウントに含まれないようにしています。\n4.  **`weekday()` メソッド**: \n    *   このメソッドは、月曜日を `0`、日曜日を `6` として数値を返します。\n    *   したがって、`current.weekday() < 5` であれば、その日は月曜日から金曜日のいずれかであると判定できます。\n\n### 計算例（\"2024-01-01\" から \"2024-01-08\" の場合）\n- 1月1日（月）：開始日のため除外\n- 1月2日（火）：**カウント（1）**\n- 1月3日（水）：**カウント（2）**\n- 1月4日（木）：**カウント（3）**\n- 1月5日（金）：**カウント（4）**\n- 1月6日（土）：土日のため除外\n- 1月7日（日）：土日のため除外\n- 1月8日（月）：終了日のため除外\n- **合計：4日**",
+  "prompt_token_count": 100,
+  "candidates_token_count": 758,
+  "thoughts_token_count": 723,
+  "total_token_count": 1581,
+  "_meta": {
+    "model": "gemma-4-31b-it",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 44.945899963378906,
+    "generated_at": "2026-09-06T03:18:06"
+  }
+}

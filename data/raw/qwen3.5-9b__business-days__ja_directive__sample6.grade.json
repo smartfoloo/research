@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_directive__sample6.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "from datetime import date, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    日付文字列の間に存在する営業日（月曜日から金曜日）の数を計算します。\n    入力された2つの日付自体は含まれません。\n    \n    Args:\n        date1 (str): YYYY-MM-DD形式の日付\n        date2 (str): YYYY-MM-DD形式の日付\n        \n    Returns:\n        int: 営業日の数\n    \n    Example:\n        >>> business_days(\"2024-01-01\", \"2024-01-08\")\n        4\n    \"\"\"\n    # ISO format パース (Python 3.7+)\n    d1 = date.fromisoformat(date1)\n    d2 = date.fromisoformat(date2)\n    \n    # 日付の順序が正しいか確認し、必要に応じて反転させる\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    # 初日の翌日から終日前日までループ\n    current = d1 + timedelta(days=1)\n    \n    while current < d2:\n        # weekday(): 月曜日が0、日曜日が6\n        if current.weekday() < 5:  # 月~金 (0-4)\n            count += 1\n        \n        current += timedelta(days=1)\n        \n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 114,
+  "eval_count": 5557,
+  "graded_at": "2026-09-06T03:04:16"
+}

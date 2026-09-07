@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__ja_directive__sample2.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def format_currency(n):\n    # Check if negative\n    if n < 0:\n        prefix = \"-$\"\n        # Use absolute value for formatting\n        abs_n = -n\n    else:\n        prefix = \"$\"\n        abs_n = n\n    \n    # Format with commas\n    # We assume n is an integer based on the example. \n    # If n could be a float, we might need different precision, but the example is an integer.\n    # Let's stick to integer formatting as per the example.\n    # The format specifier \",d\" formats an integer with commas.\n    formatted_number = format(abs_n, ',d')\n    \n    return prefix + formatted_number",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 96,
+  "completion_tokens": 2048,
+  "total_tokens": 2144,
+  "groq_seed": 34445051,
+  "graded_at": "2026-09-06T09:08:38"
+}

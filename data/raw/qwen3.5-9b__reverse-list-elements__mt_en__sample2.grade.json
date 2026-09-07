@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__mt_en__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    # Reverse elements\n    new_elements = list(reversed(elements))\n    \n    # Determine associated punctuation for each element if provided separately per item\n    # For now, we'll treat punctuation as a separate list to be reversed as well\n    new_punctuation = list(reversed(punctuation))\n    \n    return (new_elements, new_punctuation)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 85,
+  "eval_count": 837,
+  "graded_at": "2026-09-05T21:40:36"
+}

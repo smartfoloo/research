@@ -34,6 +34,66 @@ reversible for the real study later:
   mt_en) fully authored and filled into `spike/prompts.json` — pipeline is
   unblocked, ready to run
 
+**2026-09-06 — spike run, bugs found and fixed, results in.** Full pipeline
+run on real hardware surfaced 5 real bugs before any result could be trusted
+(grading silently collapsed to 1 of 72 files via a pathlib bug; an f-string
+quote collision crashed the test script for any string-valued expected
+output; Windows subprocess decoding used cp1252 and crashed on non-ASCII
+model output, taking the whole batch down with it; naive join-all-fenced-
+code-blocks extraction let a broken revision silently override a correct
+one; Ollama's 4096-token default context silently truncated 61% of
+`ja_directive` generations before any answer was written). All fixed and
+verified. `business-days`'s English/Japanese wording ("Ignore holidays")
+turned out ambiguous — it invited unrequested holiday-exclusion logic that
+then had bugs in it — revised to "Don't account for holidays, calculate
+strictly based on day of the week" (both languages) and regenerated.
+
+N doubled 3→6/cell after the initial N=3 run showed `en_human` as the worst
+condition (looked backwards for H1) — turned out to be small-N noise: manual
+inspection of all 10 `en_human` failures found generic coding mistakes
+(over-engineering, typos, misreads), not English-comprehension problems. At
+N=6 the picture is sane again: en_human 67%, ja_raw 64%, **ja_directive 94%**,
+mt_en 53% (now the worst condition — 0/6 on both currency-format and
+eval-expression, not yet dug into). ja_directive's mechanism is confirmed,
+not assumed: reasoning-trace language check shows ja_raw is mixed
+(10/18 majority-Japanese), ja_directive is 18/18 majority-English — but it
+costs ~3x the output tokens of every other condition, and — open question,
+not yet resolved — en_human's trace is *also* ~100% English without getting
+the same boost or the same token cost, so "reasoning in English" alone
+doesn't explain the ja_directive/en_human gap. Leading hypothesis: the
+directive functions as a generic deliberation trigger (more test-time
+compute), with the English-ness being incidental to this model rather than
+causal. Untested control that would settle it: a same-language ("think
+carefully, Japanese, no language switch") directive.
+
+Also ran a second model, **`gemma-4-31b-it` via Google AI Studio** (free
+tier: 30 RPM / 16K TPM / 14.4K RPD) — not the planned Claude/OpenAI frontier
+arm, just a free, fast way to sanity-check the ceiling-effect risk this
+document already flagged below. It hit exactly that: 97-100% pass rate in
+every condition, 2 failures out of 144 generations total, task set is too
+easy for this model to show any language effect at all. But token cost
+still differentiates conditions even at ceiling: ja_directive costs Gemma
+only ~1.2-1.3x the other conditions (vs qwen3.5's ~3x), and unlike qwen3.5,
+Gemma's *thinking*-token count barely moves across conditions (704-804,
+flat) — the extra cost shows up in a longer final answer, not more
+deliberation. Consistent with: a weak/quantized model needs (and pays for)
+real extra deliberation to close a real gap; a strong model has no gap to
+close and pays little either way. Scripts are fully separate from the local
+arm (`spike/run_generations_gemma.py`, `spike/grade_generations_gemma.py`,
+API key in a gitignored file, never committed) — zero risk to the Ollama
+pipeline.
+
+Discussed but not yet built: one very complex, still single-file,
+still-abstract/algorithmic bonus task (e.g. a small expression-language
+interpreter with variables/functions/recursion) specifically to get a
+stronger model like Gemma off its ceiling. Flagged risks before building it:
+(1) N=6 on one task is exactly as fragile as the N=3 problem above, just
+concentrated on one data point instead of averaged over six; (2) prompt-
+equivalence risk (see business-days above) scales with task complexity, not
+just difficulty; (3) doing it properly costs the same authoring/verification
+effort as any of the existing 6 tasks. Treat as one labeled exploratory
+bonus task if built, not a claim-bearing addition to the main 6-task result.
+
 A parked program on evaluating AI-generated *design* quality (Japanese
 typographic conformance, JLReq-based) lives at `parked/design-program.md`. It is
 not dead and it is not scooped, but it is not being worked on.
@@ -300,6 +360,14 @@ If frontier saturates near 100%, the complex 5 tasks may need to get harder
 specifically for that arm; don't assume the same difficulty band works for
 both arms just because it's the same task set.
 
+**Confirmed, not just anticipated (2026-09-06):** ran `gemma-4-31b-it` (a
+stronger model than qwen3.5:9b, via Google AI Studio's free tier, not the
+planned frontier arm) against the same 6-task set — 97-100% pass rate in
+every condition, 2 failures out of 144. Textbook ceiling effect exactly as
+predicted above. Confirms this task set cannot test H1-H5 on models much
+stronger than qwen3.5:9b without harder tasks — see the bonus-task note in
+Status above.
+
 Preregistration comes *after* the spike.
 
 ## Paper structure (draft)
@@ -441,13 +509,38 @@ NLP), MSR, or an SE workshop. Name one and work backward from its deadline.
 - [x] Exact wording of the reason-in-English directive — 英語で考えてから回答してください。
 - [x] MT system(s) — Google Translate (translate.google.com), JA→EN, one
       system only so far
-- [x] Local model set for the spike — `qwen3.5:9b` primary;
-      `deepseek-r1:14b`/`gemma4:12b` bonus-only. Real study may want more
-      models and non-Chinese-lab diversity (Gemma/Llama) per earlier discussion
-- [ ] Frontier model set and reasoning coverage within budget — not touched yet,
-      budget still fully unspent
-- [x] Samples per cell for the spike — 3 (reduced from 5 for the deadline)
+- [x] Local model set for the spike — `qwen3.5:9b` primary (Q4_K_M
+      quantization, GGUF, confirmed via `ollama show`; native context
+      262144, spike configured num_ctx up to 32768 — inconsistently across
+      the run, see below). `deepseek-r1:14b`/`gemma4:12b` never run
+      (bonus-only, deprioritized once qwen3.5 showed a usable signal).
+- [x] Ad hoc second model, not the planned frontier arm — `gemma-4-31b-it`
+      via Google AI Studio free tier, run for real (144 generations, graded).
+      Hit a ceiling effect (97-100% pass rate) — see Status above. Real
+      study still wants Claude/OpenAI as the actual frontier arm per the
+      $20/provider budget plan; Gemma was zero-cost exploration, not that.
+- [ ] Frontier model set (Claude/OpenAI) and reasoning coverage within
+      budget — not touched yet, budget still fully unspent
+- [x] Samples per cell for the spike — bumped 3→6 mid-run (see Status) after
+      N=3 produced a result (en_human worst) that didn't survive doubling.
+      Real-study N still needs deriving properly per Budget discipline above,
+      this was reactive, not planned.
 - [ ] pass@k value — not yet decided, spike is just recording raw pass/fail
+- [ ] Sampling params were not fixed or logged during the spike run itself —
+      recovered after the fact via `ollama show` (qwen3.5:9b ships with
+      temperature=1, top_k=20, top_p=0.95, presence_penalty=1.5, never
+      overridden) and Google's model-info endpoint (gemma-4-31b-it defaults
+      to temperature=1, topP=0.95, topK=64). Real study must set and record
+      these explicitly per generation, not reconstruct them after the fact.
+- [ ] `num_ctx` was not held constant across the qwen3.5 spike dataset —
+      early files used Ollama's 4096 default (before the truncation bug was
+      caught), most used 16384, 2 outlier regenerations used 32768. Doesn't
+      currently affect any result (nothing hit a lower ceiling after the
+      fixes), but real study should fix one value up front and log it.
+- [ ] Bonus complex single-file task (e.g. expression-interpreter-with-
+      variables) to get a stronger model off its ceiling — discussed
+      2026-09-06, not yet built, see Status above for the risks flagged
+      before starting it.
 
 ## Repository conventions
 

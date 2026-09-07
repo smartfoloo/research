@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-28536192-5f2d-439e-b353-48af70a2ee61",
+    "object": "chat.completion",
+    "created": 1788697082,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間の営業日（月〜金）の数を返す。\n    日付自体は含まない。祝日は考慮しない。\n    \n    Args:\n        date1: YYYY-MM-DD 形式の日付文字列\n        date2: YYYY-MM-DD 形式の日付文字列\n    \n    Returns:\n        2つの日付の間の営業日数（両端を含まず）\n    \"\"\"\n    fmt = \"%Y-%m-%d\"\n    d1 = datetime.strptime(date1, fmt).date()\n    d2 = datetime.strptime(date2, fmt).date()\n    \n    # 順序を揃える\n    start = min(d1, d2)\n    end = max(d1, d2)\n    \n    # スタートとエンド自体は含まないので、+1日と-1日の範囲で確認\n    # 実質的に start + 1 から end - 1 の範囲のカレンダー日で月〜金の数を数える\n    current = start + timedelta(days=1)\n    count = 0\n    while current < end:\n        if current.weekday() < 5:  # 0=月曜, 4=金曜\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022056687,
+      "prompt_tokens": 109,
+      "prompt_time": 0.008460863,
+      "completion_tokens": 315,
+      "completion_time": 0.643629906,
+      "total_tokens": 424,
+      "total_time": 0.652090769
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_57c7e760a9",
+    "x_groq": {
+      "id": "req_01m1vaey6ne6vrkk9shjgg3j9q",
+      "seed": 923325529
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間の営業日（月〜金）の数を返す。\n    日付自体は含まない。祝日は考慮しない。\n    \n    Args:\n        date1: YYYY-MM-DD 形式の日付文字列\n        date2: YYYY-MM-DD 形式の日付文字列\n    \n    Returns:\n        2つの日付の間の営業日数（両端を含まず）\n    \"\"\"\n    fmt = \"%Y-%m-%d\"\n    d1 = datetime.strptime(date1, fmt).date()\n    d2 = datetime.strptime(date2, fmt).date()\n    \n    # 順序を揃える\n    start = min(d1, d2)\n    end = max(d1, d2)\n    \n    # スタートとエンド自体は含まないので、+1日と-1日の範囲で確認\n    # 実質的に start + 1 から end - 1 の範囲のカレンダー日で月〜金の数を数える\n    current = start + timedelta(days=1)\n    count = 0\n    while current < end:\n        if current.weekday() < 5:  # 0=月曜, 4=金曜\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 109,
+  "completion_tokens": 315,
+  "total_tokens": 424,
+  "groq_seed": 923325529,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 33.8908851146698,
+    "generated_at": "2026-09-06T07:18:02"
+  }
+}

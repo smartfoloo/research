@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__shortest-path__ja_directive__sample4.json",
+  "task": "shortest-path",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # 1. Check for negative weights\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative weights are not allowed\")\n    \n    # 2. Handle case where start is end\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n    \n    # Initialize distances and predecessor map\n    dist = {}\n    prev = {}\n    for u, v, w in edges:\n        if u not in dist:\n            dist[u] = float('inf')\n            prev[u] = None\n        if v not in dist:\n            dist[v] = float('inf')\n            prev[v] = None\n    # Ensure start node is in dist\n    if start not in dist:\n        dist[start] = 0\n        prev[start] = None\n    else:\n        dist[start] = 0\n    \n    # Priority queue: (distance, node)\n    pq = [(0, start)]\n    \n    while pq:\n        d, u = heapq.heappop(pq)\n        \n        # If we have a worse distance, skip\n        if d > dist.get(u, float('inf')):\n            continue\n            \n        # If we reached the end, we can stop early (optional optimization)\n        if u == end:\n            break\n            \n        # Explore neighbors\n        if u in graph:\n            for v, w in graph[u]:\n                if v not in dist:\n                    dist[v] = float('inf')\n                    prev[v] = None\n                \n                new_dist = d + w\n                if new_dist < dist.get(v, float('inf')):\n                    dist[v] = new_dist\n                    prev[v] = u\n                    heapq.heappush(pq, (new_dist, v))\n                    \n    # Check if path exists\n    if dist.get(end, float('inf')) == float('inf'):\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = prev.get(current)\n    path.reverse()\n    \n    return (dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 195,
+  "completion_tokens": 812,
+  "total_tokens": 1007,
+  "groq_seed": 1897169045,
+  "graded_at": "2026-09-06T09:09:01"
+}

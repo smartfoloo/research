@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__ja_directive__sample4.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\n\n   def shortest_path(edges, start, end):\n       # Check for negative weights\n       for u, v, w in edges:\n           if w < 0:\n               raise ValueError(\"Negative edge weights are not allowed.\")\n\n       if start == end:\n           return (0, [start])\n\n       # Build graph\n       graph = {}\n       nodes = set()\n       for u, v, w in edges:\n           if u not in graph: graph[u] = []\n           graph[u].append((v, w))\n           nodes.add(u)\n           nodes.add(v)\n\n       # If start or end not in graph nodes\n       if start not in nodes or end not in nodes:\n           return (None, None)\n\n       distances = {node: float('inf') for node in nodes}\n       distances[start] = 0\n       previous_nodes = {}\n       pq = [(0, start)]\n\n       while pq:\n           current_distance, current_node = heapq.heappop(pq)\n\n           if current_distance > distances[current_node]:\n               continue\n\n           if current_node == end:\n               break\n\n           if current_node in graph:\n               for neighbor, weight in graph[current_node]:\n                   distance = current_distance + weight\n                   if distance < distances[neighbor]:\n                       distances[neighbor] = distance\n                       previous_nodes[neighbor] = current_node\n                       heapq.heappush(pq, (distance, neighbor))\n\n       if distances[end] == float('inf'):\n           return (None, None)\n\n       # Reconstruct path\n       path = []\n       curr = end\n       while curr in previous_nodes:\n           path.append(curr)\n           curr = previous_nodes[curr]\n       path.append(start)\n       path.reverse()\n\n       return (distances[end], path)",
+  "stdout": "",
+  "stderr": "  File \"/app/test_script.py\", line 4\n    def shortest_path(edges, start, end):\nIndentationError: unexpected indent\n",
+  "docker_returncode": 1,
+  "passed_cases": null,
+  "total_cases": null,
+  "all_passed": false,
+  "prompt_token_count": 185,
+  "candidates_token_count": 1977,
+  "thoughts_token_count": null,
+  "total_token_count": 2162,
+  "graded_at": "2026-09-06T06:53:31"
+}

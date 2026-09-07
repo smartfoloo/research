@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_directive__sample5.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    グラフ上の二点間の最短経路を計算します。\n    \n    Args:\n        edges: ((from_node, to_node, weight), ...) のタプルのリスト (有向辺)\n        start: 開始ノード\n        end: 終了ノード\n    \n    Returns:\n        (距離, [パス]) - 到達不可能な場合は (None, None)\n    \n    Raises:\n        ValueError: エッジの重みにマイナス値が含まれる場合\n    \"\"\"\n    \n    # 開始と終了が同じノードの場合\n    if start == end:\n        return (0, [start])\n    \n    # 負の重みがあるかチェック（事前に確認）\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weight must be non-negative.\")\n            \n    # 隣接リストを作成\n    adj = {}\n    all_nodes = set()\n    for u, v, w in edges:\n        if u not in adj:\n            adj[u] = []\n        adj[u].append((v, w))\n        all_nodes.add(u)\n        all_nodes.add(v)\n    \n    # 距離を管理する辞書 (初期値は無限大)\n    dist = {node: float('inf') for node in all_nodes}\n    # スタートノードの距離を 0 に設定\n    dist[start] = 0\n    \n    # 優先列 (最小距離のノードをポップするために heapq を使用)\n    pq = [(0, start)]\n    \n    # 最短経路を記録する辞書（再帰構造の親ノードからパスを復元するため）\n    parent = {start: None} \n    \n    while pq:\n        d, u = heapq.heappop(pq)\n        \n        # 既に処理済みのノードか、現在距離が記録された距離より長い場合はスキップ\n        if dist.get(u, float('inf')) < d:\n            continue\n            \n        # ターゲットに到達したら中断（Dijkstra の性質により最短距離は確定）\n        if u == end:\n            break\n        \n        # 隣接するノードを処理\n        for v, w in adj.get(u, []):\n            new_dist = dist[u] + w\n            # 新たな距離がより短い場合のみ更新\n            if new_dist < dist[v]:\n                dist[v] = new_dist\n                parent[v] = u\n                heapq.heappush(pq, (new_dist, v))\n                \n    # エンドノードに到達できたか確認\n    if end not in dist or dist[end] == float('inf'):\n        return (None, None)\n    \n    # パスを復元 (End から Start へ逆方向に戻し、リストを正常順序にする)\n    path = []\n    curr = end\n    while curr != start:\n        path.append(curr)\n        curr = parent[curr]\n    path.append(start)\n    path.reverse()\n    \n    return (dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 193,
+  "eval_count": 6374,
+  "graded_at": "2026-09-06T03:04:32"
+}

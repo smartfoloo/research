@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__ja_directive__sample1.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "def format_currency(n):\n    s = str(abs(n))\n    # Add commas\n    comma_separated = ''\n    i = len(s)\n    while i > 0:\n        start = max(0, i - 3)\n        comma_separated = s[start:i] + (',' if i - 3 > 0 else '') + comma_separated\n        i = start\n    # Determine sign\n    if n < 0:\n        return f\"-${comma_separated}\" if ',' in comma_separated else f\"-${s}\" # Wait, just f\"-${comma_separated}\"\n    else:\n        return f\"${comma_separated}\"",
+  "stdout": "FAIL case 0: expected '$1,234,567', got '$1234,567,'\nFAIL case 1: expected '-$1,234', got '-$1234,'\nPASSED 2/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 2,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_tokens": 96,
+  "completion_tokens": 1328,
+  "total_tokens": 1424,
+  "groq_seed": 1175801423,
+  "graded_at": "2026-09-06T09:08:38"
+}

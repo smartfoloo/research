@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonで最短経路問題を解くためには、**ダイクストラ法（Dijkstra's algorithm）**を使用するのが最適です。ただし、負の重みを持つエッジが含まれている場合は `ValueError` を発生させるという条件があるため、最初にそのチェックを行います。\n\n以下に条件を満たす `shortest_path` 関数の実装を示します。\n\n```python\nimport heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # 1. 負の重みのチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edges with negative weights are not allowed.\")\n            \n    # 2. start と end が同じ場合の処理\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフの構築 (Adjacency list)\n    graph = defaultdict(list)\n    nodes = set()\n    for u, v, w in edges:\n        graph[u].append((v, w))\n        nodes.add(u)\n        nodes.add(v)\n\n    # start または end がグラフのノードに存在しない場合\n    if start not in nodes or end not in nodes:\n        return (None, None)\n\n    # 4. ダイクストラ法の初期化\n    # 優先度付きキューには (現在の距離, 現在のノード, 経路) を格納\n    queue = [(0, start, [start])]\n    \n    # 訪問済みのノードを記録して、最適でない経路を探索するのを防ぐ\n    visited = set()\n\n    while queue:\n        current_distance, current_node, path = heapq.heappop(queue)\n\n        # 目的地に到達した場合\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        visited.add(current_node)\n\n        # 隣接ノードを探索\n        for neighbor, weight in graph[current_node]:\n            if neighbor not in visited:\n                distance = current_distance + weight\n                heapq.heappush(queue, (distance, neighbor, path + [neighbor]))\n\n    # 5. 経路が存在しない場合\n    return (None, None)\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    \n    # 例の実行\n    print(shortest_path(edges, \"A\", \"C\"))  # 出力: (3, ['A', 'B', 'C'])\n    \n    # 同じノードの場合\n    print(shortest_path(edges, \"A\", \"A\"))  # 出力: (0, ['A'])\n    \n    # 経路がない場合\n    print(shortest_path(edges, \"A\", \"D\"))  # 出力: (None, None)\n    \n    # 負の重みがある場合\n    try:\n        shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n    except ValueError as e:\n        print(e)  # 出力: Edges with negative weights are not allowed.\n```\n\n### 実装のポイント\n1. **負の重みの検出**: ループの開始時にすべてのエッジを走査し、`weight < 0` のものが一つでもあれば `ValueError` を発生させます。\n2. **早期リターン**: `start == end` の場合は計算を省き、即座に `(0, [start])` を返します。\n3. **効率的な探索**: `heapq`（優先度付きキュー）を使用することで、常に最小の距離を持つノードを効率的に選択しながら探索します。",
+              "thoughtSignature": "El4KXAERTTIPO0/9py22IJZe89/vbRjgZDyVWeV8qnXtIZWx7yNt2jJBN0wrKV1te4Os2so1yEqmA6zjyw+ztlsm8RXDnx//P8rkPDz8GvqGNpaxioHwMZTK3nvfw43I"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 178,
+      "candidatesTokenCount": 848,
+      "totalTokenCount": 1026,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 178
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "zFKdavvwGNvnrfcPnfbz0AI"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonで最短経路問題を解くためには、**ダイクストラ法（Dijkstra's algorithm）**を使用するのが最適です。ただし、負の重みを持つエッジが含まれている場合は `ValueError` を発生させるという条件があるため、最初にそのチェックを行います。\n\n以下に条件を満たす `shortest_path` 関数の実装を示します。\n\n```python\nimport heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # 1. 負の重みのチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edges with negative weights are not allowed.\")\n            \n    # 2. start と end が同じ場合の処理\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフの構築 (Adjacency list)\n    graph = defaultdict(list)\n    nodes = set()\n    for u, v, w in edges:\n        graph[u].append((v, w))\n        nodes.add(u)\n        nodes.add(v)\n\n    # start または end がグラフのノードに存在しない場合\n    if start not in nodes or end not in nodes:\n        return (None, None)\n\n    # 4. ダイクストラ法の初期化\n    # 優先度付きキューには (現在の距離, 現在のノード, 経路) を格納\n    queue = [(0, start, [start])]\n    \n    # 訪問済みのノードを記録して、最適でない経路を探索するのを防ぐ\n    visited = set()\n\n    while queue:\n        current_distance, current_node, path = heapq.heappop(queue)\n\n        # 目的地に到達した場合\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        visited.add(current_node)\n\n        # 隣接ノードを探索\n        for neighbor, weight in graph[current_node]:\n            if neighbor not in visited:\n                distance = current_distance + weight\n                heapq.heappush(queue, (distance, neighbor, path + [neighbor]))\n\n    # 5. 経路が存在しない場合\n    return (None, None)\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    \n    # 例の実行\n    print(shortest_path(edges, \"A\", \"C\"))  # 出力: (3, ['A', 'B', 'C'])\n    \n    # 同じノードの場合\n    print(shortest_path(edges, \"A\", \"A\"))  # 出力: (0, ['A'])\n    \n    # 経路がない場合\n    print(shortest_path(edges, \"A\", \"D\"))  # 出力: (None, None)\n    \n    # 負の重みがある場合\n    try:\n        shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n    except ValueError as e:\n        print(e)  # 出力: Edges with negative weights are not allowed.\n```\n\n### 実装のポイント\n1. **負の重みの検出**: ループの開始時にすべてのエッジを走査し、`weight < 0` のものが一つでもあれば `ValueError` を発生させます。\n2. **早期リターン**: `start == end` の場合は計算を省き、即座に `(0, [start])` を返します。\n3. **効率的な探索**: `heapq`（優先度付きキュー）を使用することで、常に最小の距離を持つノードを効率的に選択しながら探索します。",
+  "prompt_token_count": 178,
+  "candidates_token_count": 848,
+  "thoughts_token_count": null,
+  "total_token_count": 1026,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "elapsed_seconds": 7.666774272918701,
+    "generated_at": "2026-09-06T06:47:27"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonの標準ライブラリである `datetime` を使用して、ご要望の条件を満たす関数を作成しました。\n\nこの関数では、2つの日付の前後関係がどちらであっても正しく計算できるように処理し、指定された通り「日付自体は含まない（排他的）」範囲で月曜日から金曜日（週末を除く）の数え上げを行います。\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdateオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\").date()\n\n    # 順番が逆であっても対応できるようにする\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # 日付自体は含まないため、開始日の翌日から終了日の前日までを対象とする\n    current_date = start_date + timedelta(days=1)\n\n    count = 0\n    while current_date < end_date:\n        # weekday() は月曜日が 0、日曜日が 6 を返す\n        # 0〜4 が月曜日から金曜日\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n# 内訳: 1月2日(火), 3日(水), 4日(木), 5日(金) の計4日\n```\n\n### 関数のポイント\n1. **日付の順序への配慮**: `min()` と `max()` を使っているため、`business_days(\"2024-01-08\", \"2024-01-01\")` のように順序を逆にして渡しても同じ結果が得られます。\n2. **端点の除外**: `start_date + timedelta(days=1)` とし、ループの条件を `current_date < end_date` にすることで、引数として渡された2つの日付自体を除外して計算しています。\n3. **曜日の判定**: `datetime.weekday()` メソッドを使用し、値が `4` 以下（月曜=0, 火曜=1, 水曜=2, 木曜=3, 金曜=4）の場合のみカウントを増やしています。",
+              "thoughtSignature": "El4KXAERTTIPHKq25YK68JI1Z9Fkfxc4QEDb1HcTI4ke0WInZfT088deOKkwwntvAMxwfBgXNE4hhJTGqA3Zaj3qBIYLa68KB1IqeBRSEaOmWQFI8khw0hC5vPOR4F21"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 583,
+      "totalTokenCount": 683,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "-k-dav_rL72ivr0PrdmsgQ8"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonの標準ライブラリである `datetime` を使用して、ご要望の条件を満たす関数を作成しました。\n\nこの関数では、2つの日付の前後関係がどちらであっても正しく計算できるように処理し、指定された通り「日付自体は含まない（排他的）」範囲で月曜日から金曜日（週末を除く）の数え上げを行います。\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdateオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\").date()\n\n    # 順番が逆であっても対応できるようにする\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # 日付自体は含まないため、開始日の翌日から終了日の前日までを対象とする\n    current_date = start_date + timedelta(days=1)\n\n    count = 0\n    while current_date < end_date:\n        # weekday() は月曜日が 0、日曜日が 6 を返す\n        # 0〜4 が月曜日から金曜日\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n# 内訳: 1月2日(火), 3日(水), 4日(木), 5日(金) の計4日\n```\n\n### 関数のポイント\n1. **日付の順序への配慮**: `min()` と `max()` を使っているため、`business_days(\"2024-01-08\", \"2024-01-01\")` のように順序を逆にして渡しても同じ結果が得られます。\n2. **端点の除外**: `start_date + timedelta(days=1)` とし、ループの条件を `current_date < end_date` にすることで、引数として渡された2つの日付自体を除外して計算しています。\n3. **曜日の判定**: `datetime.weekday()` メソッドを使用し、値が `4` 以下（月曜=0, 火曜=1, 水曜=2, 木曜=3, 金曜=4）の場合のみカウントを増やしています。",
+  "prompt_token_count": 100,
+  "candidates_token_count": 583,
+  "thoughts_token_count": null,
+  "total_token_count": 683,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 7.252391815185547,
+    "generated_at": "2026-09-06T06:35:25"
+  }
+}

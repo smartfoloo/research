@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_directive__sample1.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    通貨形式の文字列に変換する関数。\n    ドル記号 ($) を付け、3 桁ごとにカンマ区切りにする。\n    負の数の場合はマイナス記号 (-) をドル記号の前に付ける。\n    :param n: 数字 (int or float)\n    :return: フォーマットされた文字列\n    \"\"\"\n    # 絶対値を計算してカンマ付きに変換する\n    formatted_value = f\"{abs(n):,}\"\n    \n    # 負の数の場合、マイナス記号とドル記号の順を指定通り \"-$\" にする\n    if n < 0:\n        return f\"-${formatted_value}\"\n    else:\n        # 正の数 (またはゼロ) は \"$\" で始める\n        return f\"${formatted_value}\"\n\n# 実行例\nprint(format_currency(4640039))   # $4,640,039\nprint(format_currency(-4640039))  # -$4,640,039",
+  "stdout": "$4,640,039\n-$4,640,039\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 94,
+  "eval_count": 6284,
+  "graded_at": "2026-09-05T21:40:27"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__shortest-path__en_human__sample2.json",
+  "task": "shortest-path",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a directed weighted graph using Dijkstra's algorithm.\n    \n    Args:\n        edges: List of (from_node, to_node, weight) tuples representing one-way roads.\n        start: Starting node.\n        end: Ending node.\n    \n    Returns:\n        Tuple of (distance, path) where distance is the shortest total distance\n        and path is an ordered list of nodes on that path.\n        If start and end are the same, return (0, [start]).\n        If no path exists, return (None, None).\n        If any edge weight is negative, raise ValueError.\n    \"\"\"\n    # Check for negative weights\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed.\")\n    \n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    adj = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in adj:\n            adj[from_node] = []\n        adj[from_node].append((to_node, weight))\n    \n    # Dijkstra's algorithm\n    # dist[node] = shortest distance from start to node\n    dist = {start: 0}\n    prev = {}  # To track the path\n    # Priority queue: (distance, node)\n    pq = [(0, start)]\n    \n    visited = set()\n    \n    while pq:\n        d, u = heapq.heappop(pq)\n        if u in visited:\n            continue\n        visited.add(u)\n        \n        if u == end:\n            break\n        \n        if u in adj:\n            for v, w in adj[u]:\n                if w < 0:\n                    raise ValueError(\"Negative edge weights are not allowed.\")\n                if v not in dist or d + w < dist[v]:\n                    dist[v] = d + w\n                    prev[v] = u\n                    heapq.heappush(pq, (d + w, v))\n    \n    if end not in dist:\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    node = end\n    while node != start:\n        path.append(node)\n        if node not in prev:\n            # Should not happen if end is in dist\n            return (None, None)\n        node = prev[node]\n    path.append(start)\n    path.reverse()\n    \n    return (dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 155,
+  "completion_tokens": 571,
+  "total_tokens": 726,
+  "groq_seed": 246683364,
+  "graded_at": "2026-09-06T09:08:58"
+}

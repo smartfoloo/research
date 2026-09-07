@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-02f9bb54-8f99-4b85-bde2-e4bacbb85fb0",
+    "object": "chat.completion",
+    "created": 1788697227,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To solve this problem, I need to create a Python function that calculates the number of business days (Monday through Friday) strictly between two given dates. The key constraints are:\n1.  Input format is `YYYY-MM-DD` strings.\n2.  Business days are Mon-Fri.\n3.  Weekends (Sat-Sun) and public holidays are excluded (holidays are ignored entirely).\n4.  The start and end dates themselves are **excluded** from the count. Only dates strictly *between* date1 and date2 are counted.\n\nApproach:\n- Parse the date strings into `datetime` objects.\n- Determine the range: iterate from `max(date1, date2) + 1 day` to `min(date1, date2) - 1 day`.\n- For each date in this range, check if `weekday()` is 0-4 (Mon-Fri). If so, increment the counter.\n- Handle edge cases where the dates are too close (i.e., no days strictly in between).\n\nExample check:\n- \"2024-01-01\" (Mon) and \"2024-01-08\" (Mon).\n- Days strictly between: Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri), Jan 6 (Sat), Jan 7 (Sun).\n- Business days in this range: Jan 2, 3, 4, 5 → 4 days.\n\nHere's the implementation:\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    # Parse the date strings\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date for simpler iteration\n    if d1 >= d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    current_date = d1 + timedelta(days=1)  # Start strictly after d1\n    \n    while current_date < d2:  # End strictly before d2\n        if current_date.weekday() < 5:  # 0=Mon to 4=Fri\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.0239805,
+      "prompt_tokens": 116,
+      "prompt_time": 0.00774616,
+      "completion_tokens": 522,
+      "completion_time": 0.990088381,
+      "total_tokens": 638,
+      "total_time": 0.997834541
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_fea14bdc83",
+    "x_groq": {
+      "id": "req_01m1vakb39ep3v9rxh0yj4tpzx",
+      "seed": 770035734
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "To solve this problem, I need to create a Python function that calculates the number of business days (Monday through Friday) strictly between two given dates. The key constraints are:\n1.  Input format is `YYYY-MM-DD` strings.\n2.  Business days are Mon-Fri.\n3.  Weekends (Sat-Sun) and public holidays are excluded (holidays are ignored entirely).\n4.  The start and end dates themselves are **excluded** from the count. Only dates strictly *between* date1 and date2 are counted.\n\nApproach:\n- Parse the date strings into `datetime` objects.\n- Determine the range: iterate from `max(date1, date2) + 1 day` to `min(date1, date2) - 1 day`.\n- For each date in this range, check if `weekday()` is 0-4 (Mon-Fri). If so, increment the counter.\n- Handle edge cases where the dates are too close (i.e., no days strictly in between).\n\nExample check:\n- \"2024-01-01\" (Mon) and \"2024-01-08\" (Mon).\n- Days strictly between: Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri), Jan 6 (Sat), Jan 7 (Sun).\n- Business days in this range: Jan 2, 3, 4, 5 → 4 days.\n\nHere's the implementation:\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    # Parse the date strings\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date for simpler iteration\n    if d1 >= d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    current_date = d1 + timedelta(days=1)  # Start strictly after d1\n    \n    while current_date < d2:  # End strictly before d2\n        if current_date.weekday() < 5:  # 0=Mon to 4=Fri\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 116,
+  "completion_tokens": 522,
+  "total_tokens": 638,
+  "groq_seed": 770035734,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "business-days",
+    "condition": "ja_directive",
+    "sample_idx": 3,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。英語で考えてから回答してください。",
+    "elapsed_seconds": 34.287041664123535,
+    "generated_at": "2026-09-06T07:20:27"
+  }
+}

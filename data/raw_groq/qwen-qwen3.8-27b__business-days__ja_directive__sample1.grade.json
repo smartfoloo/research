@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__business-days__ja_directive__sample1.json",
+  "task": "business-days",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Return the number of business days (Monday to Friday) strictly between date1 and date2.\n    \n    Args:\n        date1: A date string in 'YYYY-MM-DD' format.\n        date2: A date string in 'YYYY-MM-DD' format.\n    \n    Returns:\n        The count of weekdays (Mon-Fri) that fall strictly between date1 and date2.\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # Ensure we iterate from the earlier date to the later date\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    current = d1 + timedelta(days=1)  # Start the day after d1 (exclusive) while current < d2 (exclusive of d2 as well)\n    \n    while current < d2:\n        if current.weekday() < 5:  # 0=Monday, 4=Friday\n            count += 1\n        current += timedelta(days=1)\n    \n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 116,
+  "completion_tokens": 1017,
+  "total_tokens": 1133,
+  "groq_seed": 2024106020,
+  "graded_at": "2026-09-06T09:08:30"
+}

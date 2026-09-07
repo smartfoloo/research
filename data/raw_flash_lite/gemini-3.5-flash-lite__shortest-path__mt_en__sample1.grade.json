@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__mt_en__sample1.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"Finds the shortest path between a start and end node in a directed graph.\n\n    Parameters:\n    edges (list of tuples): A list of (from_node, to_node, weight) representing\n    one-way streets.\n    start: The starting node.\n    end: The destination node.\n\n    Returns:\n    tuple: (total_distance, [list_of_nodes_in_path])\n           Returns (0, [start]) if start == end.\n           Returns (None, None) if no path exists.\n    \"\"\"\n    # Check for negative edge weights\n    for u, v, weight in edges:\n        if weight < 0:\n            raise ValueError(\n                f\"Negative edge weight detected between {u} and {v}: {weight}\"\n            )\n\n    # If start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list\n    graph = defaultdict(list)\n    for u, v, weight in edges:\n        graph[u].append((v, weight))\n        # Ensure nodes with no outgoing edges still exist in the graph keys\n        if v not in graph:\n            graph[v] = []\n\n    # Priority queue stores tuples of (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n\n    # Keep track of visited nodes to avoid processing the same node multiple times\n    visited = set()\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the destination, return the distance and path\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        visited.add(current_node)\n\n        # Explore neighbors\n        for neighbor, weight in graph[current_node]:\n            if neighbor not in visited:\n                heapq.heappush(\n                    pq,\n                    (\n                        current_distance + weight,\n                        neighbor,\n                        path + [neighbor],\n                    ),\n                )\n\n    # If the priority queue is exhausted and we haven't returned, no route exists\n    return (None, None)\n\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # Output: (3, ['A', 'B', 'C'])\n    print(shortest_path(edges, \"A\", \"A\"))  # Output: (0, ['A'])\n    print(shortest_path(edges, \"C\", \"A\"))  # Output: (None, None)\n\n    # Test negative weight exception\n    try:\n        shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n    except ValueError as e:\n        print(e)  # Output: Negative edge weight detected between A and B: -1",
+  "stdout": "(3, ['A', 'B', 'C'])\n(0, ['A'])\n(None, None)\nNegative edge weight detected between A and B: -1\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 146,
+  "candidates_token_count": 943,
+  "thoughts_token_count": null,
+  "total_token_count": 1089,
+  "graded_at": "2026-09-06T06:53:34"
+}

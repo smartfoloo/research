@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_directive__sample4.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    \"\"\"\n    数学的式を文字列から計算する関数。\n    演算順序（優先順位）を考慮し、負の数もサポートします。\n    ゼロで割った場合は ZeroDivisionError を引き起こします。\n\n    Args:\n        expr (str): 計算する式の文字列 (例: \"3 + 4 * (2 - 1)\")\n\n    Returns:\n        int or float: 計算結果。\n\n    Raises:\n        ValueError: 無効な文字（アルファベットや関数呼び出しなど）が含まれる場合。\n        ZeroDivisionError: 分母がゼロの場合。\n        SyntaxError: Python の構文エラーが発生した場合。\n    \"\"\"\n    \n    # セキュリティのため、許可された文字のみを正規表現でフィルタリング\n    # 数字、小数点、演算子 (+, -, *, /), 括弧、空白、改行\n    allowed_pattern = r'^[\\d\\.\\+\\-\\*\\/\\(\\)\\s]+$'\n    \n    if not re.match(allowed_pattern, expr):\n        raise ValueError(f\"Invalid characters found in expression: {expr}\")\n\n    try:\n        # Python の標準 eval を使用して計算実行\n        # 演算順序は Python が内部で自動処理\n        result = eval(expr)\n        return result\n    except ZeroDivisionError:\n        # 要求通り、ゼロ除算例外をそのままスロー（またはキャッチし再スロー）\n        raise\n    except Exception as e:\n        # 他のエラー (SyntaxError など) も伝播させるか処理する\n        raise\n\n# --- 使用例 ---\n\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 10 / 2\"))      # 出力: 0.0\n    try:\n        eval_expression(\"1 / 0\")               # ZeroDivisionError が発生\n    except ZeroDivisionError as e:\n        print(f\"Error: {e}\")                   # Error: division by zero\n        \n    try:\n        eval_expression(\"__import__('os')\")    # ValueError が発生 (無効な文字)\n    except ValueError as e:\n        print(f\"Security Check: {e}\")          # Security Check: ...",
+  "stdout": "7\n0.0\nError: division by zero\nSecurity Check: Invalid characters found in expression: __import__('os')\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 89,
+  "eval_count": 6384,
+  "graded_at": "2026-09-06T03:04:24"
+}

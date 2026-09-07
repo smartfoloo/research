@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_directive__sample6.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr):\n    # Tokenizer: extracts numbers, operators, and parentheses\n    # Handles decimals and negative numbers implicitly if we tokenize carefully,\n    # but let's use a standard regex for tokens.\n    tokens = re.findall(r\"\\d+\\.?\\d*|[+\\-*/()]\", expr)\n    if not tokens:\n        return 0\n\n    class Parser:\n\n        def __init__(self, tokens):\n            self.tokens = tokens\n            self.pos = 0\n\n        def peek(self):\n            return self.tokens[self.pos] if self.pos < len(self.tokens) else None\n\n        def consume(self, expected=None):\n            token = self.peek()\n            if expected and token != expected:\n                raise ValueError(f\"Expected {expected}, got {token}\")\n            self.pos += 1\n            return token\n\n        def parse_expression(self):\n            node = self.parse_term()\n            while self.peek() in (\"+\", \"-\"):\n                op = self.consume()\n                right = self.parse_term()\n                if op == \"+\":\n                    node += right\n                elif op == \"-\":\n                    node -= right\n            return node\n\n        def parse_term(self):\n            node = self.parse_factor()\n            while self.peek() in (\"*\", \"/\"):\n                op = self.consume()\n                right = self.parse_factor()\n                if op == \"*\":\n                    node *= right\n                elif op == \"/\":\n                    if right == 0:\n                        raise ZeroDivisionError(\"division by zero\")\n                    node /= right\n            return node\n\n        def parse_factor(self):\n            token = self.peek()\n            # Handle unary minus or plus\n            if token == \"-\":\n                self.consume()\n                return -self.parse_factor()\n            if token == \"+\":\n                self.consume()\n                return self.parse_factor()\n\n            # Handle parentheses\n            if token == \"(\":\n                self.consume(\"(\")\n                node = self.parse_expression()\n                self.consume(\")\")\n                return node\n\n            # Handle numbers\n            if token and (token.isdigit() or \".\" in token):\n                self.consume()\n                return float(token) if \".\" in token else int(token)\n\n            raise ValueError(f\"Unexpected token: {token}\")\n\n    parser = Parser(tokens)\n    result = parser.parse_expression()\n\n    if parser.pos < len(parser.tokens):\n        raise ValueError(\"Unexpected trailing tokens\")\n\n    return result",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 80,
+  "candidates_token_count": 2234,
+  "thoughts_token_count": null,
+  "total_token_count": 2314,
+  "graded_at": "2026-09-06T06:53:17"
+}

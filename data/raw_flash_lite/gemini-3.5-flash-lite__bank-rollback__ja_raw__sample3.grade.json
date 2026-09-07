@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__bank-rollback__ja_raw__sample3.json",
+  "task": "bank-rollback",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    初期残高と取引リストを受け取り、取引を順番に適用する関数。\n    途中で残高がマイナスになった場合は、初期残高と False を返す。\n    正常に完了した場合は、最終残高と True を返す。\n    \"\"\"\n    initial_balance = balance\n    \n    for tx in transactions:\n        balance += tx\n        # 残高がマイナスになった場合\n        if balance < 0:\n            return (initial_balance, False)\n            \n    # すべての取引が正常に処理された場合\n    return (balance, True)\n\n# --- 使用例 ---\nprint(bank_rollback(100, [50, -30, -200]))  # 出力: (100, False)\nprint(bank_rollback(100, [50, -30, -50]))   # 出力: (70, True)",
+  "stdout": "(100, False)\n(70, True)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 132,
+  "candidates_token_count": 380,
+  "thoughts_token_count": null,
+  "total_token_count": 512,
+  "graded_at": "2026-09-06T06:52:55"
+}

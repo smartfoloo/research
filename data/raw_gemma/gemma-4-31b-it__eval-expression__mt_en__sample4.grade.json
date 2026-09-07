@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__mt_en__sample4.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # Tokenize the expression: numbers (including decimals), operators, and parentheses\n    tokens = re.findall(r'\\d+\\.?\\d*|[+\\-*/()]', expr)\n    pos = 0\n\n    def peek():\n        \"\"\"Look at the current token without consuming it.\"\"\"\n        nonlocal pos\n        return tokens[pos] if pos < len(tokens) else None\n\n    def consume():\n        \"\"\"Return the current token and move the pointer forward.\"\"\"\n        nonlocal pos\n        token = peek()\n        pos += 1\n        return token\n\n    def parse_factor():\n        \"\"\"\n        Handles the highest priority: Parentheses, Unary Minus, and Numbers.\n        Grammar: factor = number | \"(\" expression \")\" | \"-\" factor\n        \"\"\"\n        token = peek()\n\n        if token == '(':\n            consume()  # Consume '('\n            result = parse_expression()\n            consume()  # Consume ')'\n            return result\n        \n        if token == '-':\n            consume()  # Consume '-'\n            return -parse_factor() # Handle negative numbers recursively\n\n        token = consume()\n        if token is not None:\n            return float(token)\n        return 0\n\n    def parse_term():\n        \"\"\"\n        Handles Multiplication and Division.\n        Grammar: term = factor { (\"*\" | \"/\") factor }\n        \"\"\"\n        result = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                result *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                result /= right\n        return result\n\n    def parse_expression():\n        \"\"\"\n        Handles Addition and Subtraction.\n        Grammar: expression = term { (\"+\" | \"-\") term }\n        \"\"\"\n        result = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                result += right\n            else:\n                result -= right\n        return result\n\n    # The final result is the result of the lowest priority operation\n    final_result = parse_expression()\n    \n    # Return as int if there is no decimal remainder, otherwise float\n    return int(final_result) if final_result.is_integer() else final_result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 3\", 16),\n        (\"10 / 2 + 3\", 8),\n        (\"-5 + 2\", -3),\n        (\"2 * (-3 + 5)\", 4),\n        (\"10 / (2 - 2)\", \"ZeroDivisionError\"), # Should raise error\n        (\"2.5 * 2\", 5),\n    ]\n\n    for expression, expected in test_cases:\n        try:\n            res = eval_expression(expression)\n            print(f\"'{expression}' -> {res} (Expected: {expected})\")\n        except ZeroDivisionError as e:\n            print(f\"'{expression}' -> Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'10 + 2 * 3' -> 16 (Expected: 16)\n'10 / 2 + 3' -> 8 (Expected: 8)\n'-5 + 2' -> -3 (Expected: -3)\n'2 * (-3 + 5)' -> 4 (Expected: 4)\n'10 / (2 - 2)' -> Caught expected error: division by zero\n'2.5 * 2' -> 5 (Expected: 5)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 63,
+  "candidates_token_count": 1106,
+  "thoughts_token_count": 835,
+  "total_token_count": 2004,
+  "graded_at": "2026-09-06T05:08:26"
+}

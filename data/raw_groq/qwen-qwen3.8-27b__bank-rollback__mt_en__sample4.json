@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-7999ebde-7cfc-4375-8403-675812090f8b",
+    "object": "chat.completion",
+    "created": 1788703006,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.005619262,
+      "prompt_tokens": 115,
+      "prompt_time": 0.009258444,
+      "completion_tokens": 59,
+      "completion_time": 0.116672199,
+      "total_tokens": 174,
+      "total_time": 0.125930643
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_61e8d148b4",
+    "x_groq": {
+      "id": "req_01m1vg3qz2eqwatrap65tmh4gb",
+      "seed": 990976150
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 115,
+  "completion_tokens": 59,
+  "total_tokens": 174,
+  "groq_seed": 990976150,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "bank-rollback",
+    "condition": "mt_en",
+    "sample_idx": 4,
+    "prompt_text": "Create a Python function called bank_rollback(balance, transactions). transactions is a list of numbers with transaction amounts. Try to apply the given transactions in order and return the calculated final balance. If the balance becomes negative even during calculation, stop the calculation and return (balance, False) using the original balance, balance. Otherwise, return (final_balance, True). (Example: balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 12.491405010223389,
+    "generated_at": "2026-09-06T08:56:46"
+  }
+}

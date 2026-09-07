@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_directive__sample2.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "from datetime import date, timedelta\n\ndef business_days(date1_str, date2_str):\n    \"\"\"\n    2 つの日付の間にある営業日数（月曜日から金曜日）を返します。\n    両端の日付自体は含みません。\n    \n    Args:\n        date1_str (str): 開始日 'YYYY-MM-DD' 形式の文字列\n        date2_str (str): 終了日 'YYYY-MM-DD' 形式の文字列\n        \n    Returns:\n        int: 間にある営業日の数\n    \"\"\"\n    # 文字列を datetime.date オブジェクトに変換\n    d1 = date.fromisoformat(date1_str)\n    d2 = date.fromisoformat(date2_str)\n    \n    # 日付が逆順で指定された場合にも正しい結果を得られるように順序を整える\n    start, end = sorted([d1, d2])\n    \n    # 計算用のカウンターと、現在の日付を初期化します。\n    # 「両端は含まない」という条件により、start の翌日から end の前日までを対象にします。\n    current_date = start + timedelta(days=1)\n    count = 0\n    \n    while current_date < end:\n        # weekday() で週の曜日を返します（月＝0, ..., 土＝5, 日＝6）\n        # 0〜4 の間は営業日（月〜金）となります。\n        if current_date.weekday() < 5:\n            count += 1\n        \n        # 次の日に進める\n        current_date += timedelta(days=1)\n        \n    return count\n\n# テスト例\nif __name__ == \"__main__\":\n    print(f\"2024-01-01 〜 2024-01-08: {business_days('2024-01-01', '2024-01-08')}\") # 期待値 4\n    print(f\"2024-01-04 〜 2024-01-05: {business_days('2024-01-04', '2024-01-05')}\") # 期待値 0 (中間なし)\n    print(f\"2024-01-04 〜 2024-01-06: {business_days('2024-01-04', '2024-01-06')}\") # 期待値 2 (1/5, 1/7 を除く)",
+  "stdout": "2024-01-01 〜 2024-01-08: 4\n2024-01-04 〜 2024-01-05: 0\n2024-01-04 〜 2024-01-06: 1\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 114,
+  "eval_count": 5509,
+  "graded_at": "2026-09-06T03:04:15"
+}

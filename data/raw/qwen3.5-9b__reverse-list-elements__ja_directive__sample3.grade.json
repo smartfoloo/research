@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_directive__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    要素リストとその符号（パunctuation）リストをそれぞれ反転させる関数です。\n   元の要素ごとの順序は保持せず、リスト全体として逆順にします。\n\n    Args:\n        elements (list): 反転対象のテキスト要素のリスト\n        punctuation (list): 要素に関連する記号のリスト\n    \n    Returns:\n        tuple: (反転した要素リスト, 反転した記号リスト)\n    \"\"\"\n    return elements[::-1], punctuation[::-1]\n\n# 使用例\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\nprint(f\"元の要素: {elements}\")\nprint(f\"元の符号: {punctuation}\")\nprint(f\"反転後: 要素={new_elements}, 符号={new_punctuation}\")",
+  "stdout": "元の要素: ['Hello', 'world']\n元の符号: ['', '!']\n反転後: 要素=['world', 'Hello'], 符号=['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 107,
+  "eval_count": 2313,
+  "graded_at": "2026-09-05T21:40:35"
+}

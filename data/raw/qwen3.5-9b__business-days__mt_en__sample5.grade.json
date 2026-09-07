@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__mt_en__sample5.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculates the number of business days (Monday to Friday) between two dates.\n    Both dates are excluded from the count.\n\n    Args:\n        date1 (str): First date in \"YYYY-MM-DD\" format.\n        date2 (str): Second date in \"YYYY-MM-DD\" format.\n\n    Returns:\n        int: Number of business days between the two dates (exclusive).\n\n    Raises:\n        ValueError: If either date is invalid or improperly formatted.\n    \"\"\"\n    # Parse input dates\n    try:\n        d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n        d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    except ValueError:\n        raise ValueError(f\"Invalid date format. Expected 'YYYY-MM-DD'. Got: {date1}, {date2}\")\n\n    # Ensure chronological order\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    # Total days between dates excluding both endpoints\n    total_days = (d2 - d1).days - 1\n\n    if total_days < 0:\n        return 0\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        if current.weekday() < 5:  # Monday (0) through Friday (4)\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 117,
+  "eval_count": 1469,
+  "graded_at": "2026-09-06T03:04:20"
+}

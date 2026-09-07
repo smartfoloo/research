@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-af36ca79-b25f-40d1-ba7b-4c5fd4a4e7b6",
+    "object": "chat.completion",
+    "created": 1788699477,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef eval_expression(expr: str) -> int:\n    \"\"\"\n    Evaluate an arithmetic expression string with +, -, *, /, parentheses,\n    and unary minus for negative numbers.\n    \n    Supports operator precedence: parentheses first, then * and /, then + and -.\n    Raises ZeroDivisionError if division by zero is attempted.\n    \"\"\"\n    \n    # Remove all whitespace\n    expr = expr.replace(' ', '')\n    \n    if not expr:\n        raise ValueError(\"Empty expression\")\n    \n    index = 0\n    length = len(expr)\n    \n    def parse_expression():\n        \"\"\"Parse + and - operations (lowest precedence).\"\"\"\n        nonlocal index, length\n        result = parse_term()\n        while index < length and expr[index] in ('+', '-'):\n            op = expr[index]\n            index += 1\n            right = parse_term()\n            if op == '+':\n                result += right\n            else:\n                result -= right\n        return result\n    \n    def parse_term():\n        \"\"\"Parse * and / operations (higher precedence).\"\"\"\n        nonlocal index, length\n        result = parse_factor()\n        while index < length and expr[index] in ('*', '/'):\n            op = expr[index]\n            index += 1\n            right = parse_factor()\n            if op == '*':\n                result *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                # Integer division? Let's keep it as float? Or integer?\n                # The example shows integer results. Let's do integer division if divisible, else float?\n                # Actually, let's just do regular division and convert appropriately.\n                # For simplicity, let's do: if result is int and right is int, do integer division\n                # But / in Python 3 returns float by default. Let's just do regular division.\n                result = result / right\n        return result\n    \n    def parse_factor():\n        \"\"\"Parse unary minus/plus for numbers, and handle numbers and parenthesized expressions.\"\"\"\n        nonlocal index, length\n        \n        # Handle unary operators (+ or -)\n        if index < length and expr[index] in ('+', '-'):\n            op = expr[index]\n            index += 1\n            right = parse_factor()\n            if op == '-':\n                return -right\n            else:\n                return right\n        \n        # Handle parentheses\n        if index < length and expr[index] == '(':\n            index += 1  # skip '('\n            result = parse_expression()\n            if index >= length or expr[index] != ')':\n                raise ValueError(\"Expected closing parenthesis\")\n            index += 1  # skip ')'\n            return result\n        \n        # Handle number\n        if index < length and expr[index].isdigit():\n            start = index\n            # Check for decimal point? Let's stick to integers for now based on the example.\n            # But let's support floats too just in case.\n            while index < length and (expr[index].isdigit() or expr[index] == '.'):\n                index += 1\n            if '.' in expr[start:index]:\n                return float(expr[start:index])\n            else:\n                return int(expr[start:index])\n        \n        raise ValueError(f\"Unexpected character or end of expression at index {index}\")\n    \n    result = parse_expression()\n    \n    # Check that we've consumed the entire expression\n    if index != length:\n        raise ValueError(f\"Unexpected character at index {index}\")\n    \n    return result\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022000762,
+      "prompt_tokens": 84,
+      "prompt_time": 0.006498543,
+      "completion_tokens": 767,
+      "completion_time": 1.566311594,
+      "total_tokens": 851,
+      "total_time": 1.572810137
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_57c7e760a9",
+    "x_groq": {
+      "id": "req_01m1vcqznaegsadbx2qdyep6zk",
+      "seed": 582696527
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef eval_expression(expr: str) -> int:\n    \"\"\"\n    Evaluate an arithmetic expression string with +, -, *, /, parentheses,\n    and unary minus for negative numbers.\n    \n    Supports operator precedence: parentheses first, then * and /, then + and -.\n    Raises ZeroDivisionError if division by zero is attempted.\n    \"\"\"\n    \n    # Remove all whitespace\n    expr = expr.replace(' ', '')\n    \n    if not expr:\n        raise ValueError(\"Empty expression\")\n    \n    index = 0\n    length = len(expr)\n    \n    def parse_expression():\n        \"\"\"Parse + and - operations (lowest precedence).\"\"\"\n        nonlocal index, length\n        result = parse_term()\n        while index < length and expr[index] in ('+', '-'):\n            op = expr[index]\n            index += 1\n            right = parse_term()\n            if op == '+':\n                result += right\n            else:\n                result -= right\n        return result\n    \n    def parse_term():\n        \"\"\"Parse * and / operations (higher precedence).\"\"\"\n        nonlocal index, length\n        result = parse_factor()\n        while index < length and expr[index] in ('*', '/'):\n            op = expr[index]\n            index += 1\n            right = parse_factor()\n            if op == '*':\n                result *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                # Integer division? Let's keep it as float? Or integer?\n                # The example shows integer results. Let's do integer division if divisible, else float?\n                # Actually, let's just do regular division and convert appropriately.\n                # For simplicity, let's do: if result is int and right is int, do integer division\n                # But / in Python 3 returns float by default. Let's just do regular division.\n                result = result / right\n        return result\n    \n    def parse_factor():\n        \"\"\"Parse unary minus/plus for numbers, and handle numbers and parenthesized expressions.\"\"\"\n        nonlocal index, length\n        \n        # Handle unary operators (+ or -)\n        if index < length and expr[index] in ('+', '-'):\n            op = expr[index]\n            index += 1\n            right = parse_factor()\n            if op == '-':\n                return -right\n            else:\n                return right\n        \n        # Handle parentheses\n        if index < length and expr[index] == '(':\n            index += 1  # skip '('\n            result = parse_expression()\n            if index >= length or expr[index] != ')':\n                raise ValueError(\"Expected closing parenthesis\")\n            index += 1  # skip ')'\n            return result\n        \n        # Handle number\n        if index < length and expr[index].isdigit():\n            start = index\n            # Check for decimal point? Let's stick to integers for now based on the example.\n            # But let's support floats too just in case.\n            while index < length and (expr[index].isdigit() or expr[index] == '.'):\n                index += 1\n            if '.' in expr[start:index]:\n                return float(expr[start:index])\n            else:\n                return int(expr[start:index])\n        \n        raise ValueError(f\"Unexpected character or end of expression at index {index}\")\n    \n    result = parse_expression()\n    \n    # Check that we've consumed the entire expression\n    if index != length:\n        raise ValueError(f\"Unexpected character at index {index}\")\n    \n    return result\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 84,
+  "completion_tokens": 767,
+  "total_tokens": 851,
+  "groq_seed": 582696527,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "eval-expression",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）",
+    "elapsed_seconds": 104.69832491874695,
+    "generated_at": "2026-09-06T07:57:56"
+  }
+}

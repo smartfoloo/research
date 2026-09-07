@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_directive__sample3.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    通貨フォーマットを行う関数。負の数の場合はドル記号の前にマイナス記号を付けます。\n    \n    Args:\n        n (int or float): 金額\n    \n    Returns:\n        str: フォーマットされた通貨文字列\n    \"\"\"\n    if n < 0:\n        return f'-${abs(n):,}'\n    else:\n        return f'${n:,}'\n\n# 例:\nprint(format_currency(4640039))   # \"$4,640,039\"\nprint(format_currency(-1234567.89)) # \"-$1,234,567.89\"",
+  "stdout": "$4,640,039\n-$1,234,567.89\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 94,
+  "eval_count": 732,
+  "graded_at": "2026-09-05T21:40:28"
+}

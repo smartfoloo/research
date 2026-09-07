@@ -1,0 +1,53 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "\n*   Function name: `business_days(date1, date2)`\n*   Input: Two dates as strings in \"YYYY-MM-DD\" format.\n*   Output: Number of business days (Monday to Friday) *between* the two dates.\n*   Constraint 1: Do not include the start or end dates in the count.\n*   Constraint 2: Ignore public holidays.\n*   Example: \"2024-01-01\" (Monday) to \"2024-01-08\" (Monday) should result in 4 (Tue, Wed, Thu, Fri).\n\n    *   Convert strings to `datetime.date` objects.\n    *   Determine which date is the start and which is the end (to handle cases where `date1` > `date2`).\n    *   Iterate through the dates between the start and end.\n    *   Check if the day of the week is Monday-Friday.\n    *   Count and return.\n\n    *   *Approach A: Loop*\n        Simple, easy to implement. Fine for short date ranges.\n    *   *Approach B: Mathematical calculation*\n        More efficient for very large date ranges (thousands of years).\n    *   *Approach C: Using `numpy.busday_count`*\n        Fastest, but requires an external library. The prompt implies a standard Python function, so I should avoid external dependencies unless specified.\n\n    *Decision:* Since most business logic involves relatively small ranges (years, not millennia), a loop is readable and safe. However, for professional quality, I'll implement it clearly.\n\n    *   Convert: `datetime.strptime(date_str, \"%Y-%m-%d\").date()`\n    *   Sorting dates: `start, end = sorted([d1, d2])`\n    *   Iteration: `current = start + timedelta(days=1)` while `current < end`.\n    *   Weekday check: `current.weekday() < 5` (0=Mon, 4=Fri, 5=Sat, 6=Sun).\n\n    *   Case: Same date. (0 days)\n    *   Case: Consecutive dates. (0 days)\n    *   Case: `date1` > `date2`. (Should handle gracefully).\n    *   Example check: Jan 1 (Mon) to Jan 8 (Mon).\n        *   Dates between: Jan 2(Tue), 3(Wed), 4(Thu), 5(Fri), 6(Sat), 7(Sun).\n        *   Business days: 2, 3, 4, 5. Count = 4. Correct.\n\n    *   Import `datetime` and `timedelta`.\n    *   Define the function.\n    *   Implement the logic.\n    *   Add a few test cases to verify.",
+              "thought": true
+            },
+            {
+              "text": "Here is the Python code to achieve this. I have used the built-in `datetime` module to handle date parsing and calculations.\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date\n    start, end = (d1, d2) if d1 < d2 else (d2, d1)\n    \n    count = 0\n    # Start from the day after the start date\n    current_date = start + timedelta(days=1)\n    \n    # Iterate until the day before the end date\n    while current_date < end:\n        # weekday() returns 0 for Monday and 6 for Sunday\n        # 0-4 are Monday through Friday\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# Testing the example provided\nprint(f\"Business days between 2024-01-01 and 2024-01-08: {business_days('2024-01-01', '2024-01-08')}\") \n# Expected Output: 4 (Tue, Wed, Thu, Fri)\n\n# Additional test cases\nprint(f\"Same date: {business_days('2024-01-01', '2024-01-01')}\") # Expected: 0\nprint(f\"Consecutive dates: {business_days('2024-01-01', '2024-01-02')}\") # Expected: 0\nprint(f\"Weekend gap: {business_days('2024-01-05', '2024-01-08')}\") # Expected: 0 (Sat/Sun are skipped)\n```\n\n### Explanation:\n1.  **`datetime.strptime`**: This converts the strings into date objects so we can perform math on them.\n2.  **Sorting**: I used `start, end = (d1, d2) if d1 < d2 else (d2, d1)` to ensure the function works regardless of which date is passed first.\n3.  **`timedelta(days=1)`**: Since the requirement specifies that the two dates themselves should **not** be included, the loop starts at `start + 1 day` and continues only while the date is strictly **less than** the end date.\n4.  **`.weekday()`**: This method returns an integer. In Python, `0` is Monday and `6` is Sunday. Therefore, any value less than `5` is a business day.\n5.  **Time Complexity**: This function runs in $O(n)$ time where $n$ is the number of days between the two dates. For typical business date ranges, this is highly efficient."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 112,
+      "candidatesTokenCount": 699,
+      "totalTokenCount": 1438,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 112
+        }
+      ],
+      "thoughtsTokenCount": 627,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemma-4-31b-it",
+    "responseId": "CSSdaoSAJPLcvr0Pnq-KyA8"
+  },
+  "thinking_text": "\n*   Function name: `business_days(date1, date2)`\n*   Input: Two dates as strings in \"YYYY-MM-DD\" format.\n*   Output: Number of business days (Monday to Friday) *between* the two dates.\n*   Constraint 1: Do not include the start or end dates in the count.\n*   Constraint 2: Ignore public holidays.\n*   Example: \"2024-01-01\" (Monday) to \"2024-01-08\" (Monday) should result in 4 (Tue, Wed, Thu, Fri).\n\n    *   Convert strings to `datetime.date` objects.\n    *   Determine which date is the start and which is the end (to handle cases where `date1` > `date2`).\n    *   Iterate through the dates between the start and end.\n    *   Check if the day of the week is Monday-Friday.\n    *   Count and return.\n\n    *   *Approach A: Loop*\n        Simple, easy to implement. Fine for short date ranges.\n    *   *Approach B: Mathematical calculation*\n        More efficient for very large date ranges (thousands of years).\n    *   *Approach C: Using `numpy.busday_count`*\n        Fastest, but requires an external library. The prompt implies a standard Python function, so I should avoid external dependencies unless specified.\n\n    *Decision:* Since most business logic involves relatively small ranges (years, not millennia), a loop is readable and safe. However, for professional quality, I'll implement it clearly.\n\n    *   Convert: `datetime.strptime(date_str, \"%Y-%m-%d\").date()`\n    *   Sorting dates: `start, end = sorted([d1, d2])`\n    *   Iteration: `current = start + timedelta(days=1)` while `current < end`.\n    *   Weekday check: `current.weekday() < 5` (0=Mon, 4=Fri, 5=Sat, 6=Sun).\n\n    *   Case: Same date. (0 days)\n    *   Case: Consecutive dates. (0 days)\n    *   Case: `date1` > `date2`. (Should handle gracefully).\n    *   Example check: Jan 1 (Mon) to Jan 8 (Mon).\n        *   Dates between: Jan 2(Tue), 3(Wed), 4(Thu), 5(Fri), 6(Sat), 7(Sun).\n        *   Business days: 2, 3, 4, 5. Count = 4. Correct.\n\n    *   Import `datetime` and `timedelta`.\n    *   Define the function.\n    *   Implement the logic.\n    *   Add a few test cases to verify.",
+  "final_text": "Here is the Python code to achieve this. I have used the built-in `datetime` module to handle date parsing and calculations.\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date\n    start, end = (d1, d2) if d1 < d2 else (d2, d1)\n    \n    count = 0\n    # Start from the day after the start date\n    current_date = start + timedelta(days=1)\n    \n    # Iterate until the day before the end date\n    while current_date < end:\n        # weekday() returns 0 for Monday and 6 for Sunday\n        # 0-4 are Monday through Friday\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# Testing the example provided\nprint(f\"Business days between 2024-01-01 and 2024-01-08: {business_days('2024-01-01', '2024-01-08')}\") \n# Expected Output: 4 (Tue, Wed, Thu, Fri)\n\n# Additional test cases\nprint(f\"Same date: {business_days('2024-01-01', '2024-01-01')}\") # Expected: 0\nprint(f\"Consecutive dates: {business_days('2024-01-01', '2024-01-02')}\") # Expected: 0\nprint(f\"Weekend gap: {business_days('2024-01-05', '2024-01-08')}\") # Expected: 0 (Sat/Sun are skipped)\n```\n\n### Explanation:\n1.  **`datetime.strptime`**: This converts the strings into date objects so we can perform math on them.\n2.  **Sorting**: I used `start, end = (d1, d2) if d1 < d2 else (d2, d1)` to ensure the function works regardless of which date is passed first.\n3.  **`timedelta(days=1)`**: Since the requirement specifies that the two dates themselves should **not** be included, the loop starts at `start + 1 day` and continues only while the date is strictly **less than** the end date.\n4.  **`.weekday()`**: This method returns an integer. In Python, `0` is Monday and `6` is Sunday. Therefore, any value less than `5` is a business day.\n5.  **Time Complexity**: This function runs in $O(n)$ time where $n$ is the number of days between the two dates. For typical business date ranges, this is highly efficient.",
+  "prompt_token_count": 112,
+  "candidates_token_count": 699,
+  "thoughts_token_count": 627,
+  "total_token_count": 1438,
+  "_meta": {
+    "model": "gemma-4-31b-it",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 4,
+    "prompt_text": "Please create a Python function named `business_days(date1, date2)` that returns the number of business days (Monday through Friday) between two dates. Both dates should be in the format \"YYYY-MM-DD\". The calculation should be based solely on the day of the week, without accounting for public holidays. Note that the two dates themselves should not be included in the count (e.g., \"2024-01-01\", \"2024-01-08\" → 4).",
+    "elapsed_seconds": 40.92229127883911,
+    "generated_at": "2026-09-06T03:28:28"
+  }
+}

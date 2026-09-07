@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-c55298fe-dd79-4929-ae4a-826b2ce6f375",
+    "object": "chat.completion",
+    "created": 1788697358,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Let me think through this carefully.\n\nThe function `business_days(date1, date2)` should:\n1. Take two dates in YYYY-MM-DD format as strings\n2. Count business days (Mon-Fri) strictly **between** the two dates (excluding both endpoints)\n3. Ignore holidays, only consider weekdays\n4. Return the count\n\nExample: \"2024-01-01\" (Monday) to \"2024-01-08\" (Monday):\n- Days between: Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri), Jan 6 (Sat), Jan 7 (Sun)\n- Business days: Jan 2, 3, 4, 5 → 4 business days ✓\n\nApproach:\n- Parse both dates\n- Ensure we don't care about order? The problem says \"2つの日付の間\" (between two dates). Typically, we should handle it regardless of order, or assume date1 < date2. Let me re-read: it just says \"between\", so I'll make it work for any order by taking the min and max, or just compute the absolute difference. Actually, let's just ensure we compute from the earlier date to the later date, exclusive on both ends.\n\nSteps:\n1. Parse date1 and date2 into `datetime.date` objects\n2. Let start = min(date1, date2), end = max(date1, date2)\n3. Iterate from start + 1 day to end - 1 day (exclusive of both endpoints)\n4. Count how many of those days have weekday() in range(0, 5) (where Monday=0, Friday=4)\n\nLet me verify the example:\n- date1 = 2024-01-01 (Monday, weekday 0)\n- date2 = 2024-01-08 (Monday, weekday 0)\n- start = 2024-01-01, end = 2024-01-08\n- Days between: 2024-01-02 through 2024-01-07\n  - 01-02: Tue (weekday 1) → business\n  - 01-03: Wed (weekday 2) → business\n  - 01-04: Thu (weekday 3) → business\n  - 01-05: Fri (weekday 4) → business\n  - 01-06: Sat (weekday 5) → not business\n  - 01-07: Sun (weekday 6) → not business\n- Count = 4 ✓\n\nI'll use `datetime.date` and `timedelta` for iteration.\n\n```python\nfrom datetime import date, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    d1 = date.fromisoformat(date1)\n    d2 = date.fromisoformat(date2)\n    \n    # Ensure start <= end\n    start, end = sorted([d1, d2])\n    \n    # We count days strictly between start and end (exclusive of both)\n    count = 0\n    current = start + timedelta(days=1)\n    while current < end:\n        if current.weekday() < 5:  # Monday(0) to Friday(4)\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```\n\nThis is clear and correct. Let me also consider edge cases:\n- If date1 == date2: no days between, returns 0\n- If they're consecutive: no days between, returns 0\n- If order is reversed: `sorted` handles it\n\nThis looks good."
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022632424,
+      "prompt_tokens": 116,
+      "prompt_time": 0.009056035,
+      "completion_tokens": 833,
+      "completion_time": 1.657763308,
+      "total_tokens": 949,
+      "total_time": 1.666819343
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1vaqa6pemnbbzqx1yy2zvez",
+      "seed": 1187575717
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "Let me think through this carefully.\n\nThe function `business_days(date1, date2)` should:\n1. Take two dates in YYYY-MM-DD format as strings\n2. Count business days (Mon-Fri) strictly **between** the two dates (excluding both endpoints)\n3. Ignore holidays, only consider weekdays\n4. Return the count\n\nExample: \"2024-01-01\" (Monday) to \"2024-01-08\" (Monday):\n- Days between: Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri), Jan 6 (Sat), Jan 7 (Sun)\n- Business days: Jan 2, 3, 4, 5 → 4 business days ✓\n\nApproach:\n- Parse both dates\n- Ensure we don't care about order? The problem says \"2つの日付の間\" (between two dates). Typically, we should handle it regardless of order, or assume date1 < date2. Let me re-read: it just says \"between\", so I'll make it work for any order by taking the min and max, or just compute the absolute difference. Actually, let's just ensure we compute from the earlier date to the later date, exclusive on both ends.\n\nSteps:\n1. Parse date1 and date2 into `datetime.date` objects\n2. Let start = min(date1, date2), end = max(date1, date2)\n3. Iterate from start + 1 day to end - 1 day (exclusive of both endpoints)\n4. Count how many of those days have weekday() in range(0, 5) (where Monday=0, Friday=4)\n\nLet me verify the example:\n- date1 = 2024-01-01 (Monday, weekday 0)\n- date2 = 2024-01-08 (Monday, weekday 0)\n- start = 2024-01-01, end = 2024-01-08\n- Days between: 2024-01-02 through 2024-01-07\n  - 01-02: Tue (weekday 1) → business\n  - 01-03: Wed (weekday 2) → business\n  - 01-04: Thu (weekday 3) → business\n  - 01-05: Fri (weekday 4) → business\n  - 01-06: Sat (weekday 5) → not business\n  - 01-07: Sun (weekday 6) → not business\n- Count = 4 ✓\n\nI'll use `datetime.date` and `timedelta` for iteration.\n\n```python\nfrom datetime import date, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    d1 = date.fromisoformat(date1)\n    d2 = date.fromisoformat(date2)\n    \n    # Ensure start <= end\n    start, end = sorted([d1, d2])\n    \n    # We count days strictly between start and end (exclusive of both)\n    count = 0\n    current = start + timedelta(days=1)\n    while current < end:\n        if current.weekday() < 5:  # Monday(0) to Friday(4)\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```\n\nThis is clear and correct. Let me also consider edge cases:\n- If date1 == date2: no days between, returns 0\n- If they're consecutive: no days between, returns 0\n- If order is reversed: `sorted` handles it\n\nThis looks good.",
+  "finish_reason": "stop",
+  "prompt_tokens": 116,
+  "completion_tokens": 833,
+  "total_tokens": 949,
+  "groq_seed": 1187575717,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "business-days",
+    "condition": "ja_directive",
+    "sample_idx": 5,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。英語で考えてから回答してください。",
+    "elapsed_seconds": 95.44863557815552,
+    "generated_at": "2026-09-06T07:22:38"
+  }
+}

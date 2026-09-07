@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function `bank_rollback`:\n\n```python\ndef bank_rollback(balance, transactions):\n    # Keep track of the running balance starting from the original\n    current_balance = balance\n\n    for tx in transactions:\n        current_balance += tx\n        # If balance drops below zero, reject all transactions\n        if current_balance < 0:\n            return (balance, False)\n\n    # If all transactions are applied successfully without a negative balance\n    return (current_balance, True)\n```\n\n### Example Usage:\n\n```python\n# Example 1: Fails due to negative balance mid-way\nprint(bank_rollback(100, [50, -30, -200]))  \n# Output: (100, False)\n\n# Example 2: Succeeds\nprint(bank_rollback(100, [50, -30, -50]))   \n# Output: (70, True)\n\n# Example 3: Fails immediately\nprint(bank_rollback(50, [-60, 20]))          \n# Output: (50, False)\n```",
+              "thoughtSignature": "El4KXAERTTIPe7ZsAXlvcRCXwJJj4Ns24NeHp++AGpmNKs6CJY8OUnAEwFpTkU/v6+jWnq97P2iMsduIrSe6t7+XsL3hJV2WGsLMNjier8bGnED00uq3TJ/Vf45fXLMx"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 253,
+      "totalTokenCount": 353,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "aFOdaqXjHrTk1e8PtcSHyA8"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function `bank_rollback`:\n\n```python\ndef bank_rollback(balance, transactions):\n    # Keep track of the running balance starting from the original\n    current_balance = balance\n\n    for tx in transactions:\n        current_balance += tx\n        # If balance drops below zero, reject all transactions\n        if current_balance < 0:\n            return (balance, False)\n\n    # If all transactions are applied successfully without a negative balance\n    return (current_balance, True)\n```\n\n### Example Usage:\n\n```python\n# Example 1: Fails due to negative balance mid-way\nprint(bank_rollback(100, [50, -30, -200]))  \n# Output: (100, False)\n\n# Example 2: Succeeds\nprint(bank_rollback(100, [50, -30, -50]))   \n# Output: (70, True)\n\n# Example 3: Fails immediately\nprint(bank_rollback(50, [-60, 20]))          \n# Output: (50, False)\n```",
+  "prompt_token_count": 100,
+  "candidates_token_count": 253,
+  "thoughts_token_count": null,
+  "total_token_count": 353,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 3,
+    "prompt_text": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return (balance, False) where balance is the original balance. Otherwise return (final_balance, True). (Ex. balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 6.193194150924683,
+    "generated_at": "2026-09-06T06:50:01"
+  }
+}

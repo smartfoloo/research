@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__mt_en__sample5.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # Tokenize the input string: numbers (including decimals), operators, and parentheses\n    # This regex finds all numbers or single non-whitespace characters\n    tokens = re.findall(r'\\d+\\.?\\d*|[+\\-*/()]', expr)\n    pos = 0\n\n    def peek():\n        \"\"\"Return the current token without consuming it.\"\"\"\n        nonlocal pos\n        return tokens[pos] if pos < len(tokens) else None\n\n    def consume():\n        \"\"\"Return the current token and move to the next one.\"\"\"\n        nonlocal pos\n        token = peek()\n        pos += 1\n        return token\n\n    def parse_factor():\n        \"\"\"Handles numbers, parentheses, and unary minus.\"\"\"\n        token = peek()\n\n        # Handle unary minus (negative numbers)\n        if token == '-':\n            consume()\n            return -parse_factor()\n\n        # Handle parentheses\n        if token == '(':\n            consume() # consume '('\n            result = parse_expression()\n            if peek() == ')':\n                consume() # consume ')'\n            return result\n\n        # Handle numbers\n        if token and (token.isdigit() or '.' in token):\n            return float(consume())\n        \n        raise ValueError(f\"Unexpected token: {token}\")\n\n    def parse_term():\n        \"\"\"Handles multiplication and division.\"\"\"\n        left = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                left *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"Division by zero is not allowed.\")\n                left /= right\n        return left\n\n    def parse_expression():\n        \"\"\"Handles addition and subtraction.\"\"\"\n        left = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                left += right\n            else:\n                left -= right\n        return left\n\n    # Start parsing from the top level\n    result = parse_expression()\n    \n    # If we have tokens left over, the expression was malformed\n    if pos < len(tokens):\n        raise ValueError(\"Malformed expression\")\n        \n    # Return as integer if it's a whole number, otherwise float\n    return int(result) if result.is_integer() else result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    tests = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 3\", 16),\n        (\"10 / 2 + 3\", 8),\n        (\"-5 + 2\", -3),\n        (\"2 * (-3 + 5)\", 4),\n        (\"10 / (2 + 3) * 2\", 4),\n        (\"10.5 + 0.5\", 11),\n        (\"-2 * -3\", 6),\n    ]\n\n    for exp, expected in tests:\n        res = eval_expression(exp)\n        print(f\"'{exp}' -> {res} (Expected: {expected})\")\n\n    # Test Division by Zero\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'10 + 2 * 3' -> 16 (Expected: 16)\n'10 / 2 + 3' -> 8 (Expected: 8)\n'-5 + 2' -> -3 (Expected: -3)\n'2 * (-3 + 5)' -> 4 (Expected: 4)\n'10 / (2 + 3) * 2' -> 4 (Expected: 4)\n'10.5 + 0.5' -> 11 (Expected: 11)\n'-2 * -3' -> 6 (Expected: 6)\nCaught expected error: Division by zero is not allowed.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 63,
+  "candidates_token_count": 1202,
+  "thoughts_token_count": 923,
+  "total_token_count": 2188,
+  "graded_at": "2026-09-06T05:08:26"
+}

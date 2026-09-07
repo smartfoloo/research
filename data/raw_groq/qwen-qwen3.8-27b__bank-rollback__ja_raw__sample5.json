@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-0e139e21-3474-4b2d-8f63-e855001c2adb",
+    "object": "chat.completion",
+    "created": 1788702739,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n    for txn in transactions:\n        new_balance = current_balance + txn\n        if new_balance < 0:\n            return (balance, False)\n        current_balance = new_balance\n    return (current_balance, True)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.023542911,
+      "prompt_tokens": 144,
+      "prompt_time": 0.009651288,
+      "completion_tokens": 69,
+      "completion_time": 0.130813528,
+      "total_tokens": 213,
+      "total_time": 0.140464816
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_b930cafd52",
+    "x_groq": {
+      "id": "req_01m1vfvjtpecqa7xg8qjertmdf",
+      "seed": 1169703942
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n    for txn in transactions:\n        new_balance = current_balance + txn\n        if new_balance < 0:\n            return (balance, False)\n        current_balance = new_balance\n    return (current_balance, True)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 144,
+  "completion_tokens": 69,
+  "total_tokens": 213,
+  "groq_seed": 1169703942,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 5,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "elapsed_seconds": 103.62871050834656,
+    "generated_at": "2026-09-06T08:52:19"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__ja_raw__sample3.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def format_currency(n: int) -> str:\n    if n < 0:\n        sign = \"-\"\n        n = -n\n    else:\n        sign = \"\"\n    \n    # Convert to string and insert commas every 3 digits from the right\n    s = str(n)\n    if len(s) <= 3:\n        formatted = s\n    else:\n        # Split into groups of 3 from the right\n        groups = []\n        while len(s) > 3:\n            groups.append(s[-3:])\n            s = s[:-3]\n        groups.append(s)\n        groups.reverse()\n        formatted = \",\".join(groups)\n    \n    return f\"{sign}${formatted}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 89,
+  "completion_tokens": 160,
+  "total_tokens": 249,
+  "groq_seed": 1572208188,
+  "graded_at": "2026-09-06T09:08:41"
+}

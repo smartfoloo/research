@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__en_human__sample4.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # 1. Tokenize the expression\n    # This regex finds floating point numbers, integers, and operators/parentheses\n    tokens = re.findall(r'\\d*\\.\\d+|\\d+|[()+*/-]', expr)\n    \n    # 2. Handle negative numbers\n    # A minus sign is unary (negative) if it is at the start or follows an operator or '('\n    processed_tokens = []\n    for i, token in enumerate(tokens):\n        if token == '-' and (i == 0 or tokens[i-1] in '(+-*/'):\n            # We treat -x as (0 - x) to keep the binary operator logic simple\n            processed_tokens.append('0')\n        processed_tokens.append(token)\n\n    # 3. Shunting-Yard Algorithm to convert Infix to Postfix (RPN)\n    precedence = {'+': 1, '-': 1, '*': 2, '/': 2}\n    output_queue = []\n    operator_stack = []\n\n    for token in processed_tokens:\n        if re.match(r'^\\d*\\.\\d+|\\d+$', token): # If token is a number\n            output_queue.append(token)\n        elif token == '(':\n            operator_stack.append(token)\n        elif token == ')':\n            while operator_stack and operator_stack[-1] != '(':\n                output_queue.append(operator_stack.pop())\n            operator_stack.pop() # Remove '('\n        else: # Token is an operator\n            while (operator_stack and operator_stack[-1] != '(' and \n                   precedence[operator_stack[-1]] >= precedence[token]):\n                output_queue.append(operator_stack.pop())\n            operator_stack.append(token)\n\n    while operator_stack:\n        output_queue.append(operator_stack.pop())\n\n    # 4. Evaluate the Postfix expression\n    eval_stack = []\n    for token in output_queue:\n        if re.match(r'^\\d*\\.\\d+|\\d+$', token):\n            eval_stack.append(float(token))\n        else:\n            # Pop the two top operands for the operator\n            b = eval_stack.pop()\n            a = eval_stack.pop()\n            \n            if token == '+':\n                eval_stack.append(a + b)\n            elif token == '-':\n                eval_stack.append(a - b)\n            elif token == '*':\n                eval_stack.append(a * b)\n            elif token == '/':\n                if b == 0:\n                    raise ZeroDivisionError(\"Division by zero is not allowed.\")\n                eval_stack.append(a / b)\n\n    # Return result as integer if it has no decimal part, else float\n    result = eval_stack[0]\n    return int(result) if result.is_integer() else result\n\n# --- Test Cases ---\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))      # Expected: 7\nprint(eval_expression(\"-3 + 5\"))              # Expected: 2\nprint(eval_expression(\"10 / (2 + 3)\"))        # Expected: 2\nprint(eval_expression(\"2 * -3 + 10\"))         # Expected: 4\nprint(eval_expression(\"10.5 + 0.5\"))          # Expected: 11\ntry:\n    print(eval_expression(\"10 / 0\"))          # Expected: ZeroDivisionError\nexcept ZeroDivisionError as e:\n    print(f\"Error: {e}\")",
+  "stdout": "7\n2\n2\n7\n11\nError: Division by zero is not allowed.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 1230,
+  "thoughts_token_count": 1187,
+  "total_token_count": 2483,
+  "graded_at": "2026-09-06T05:08:20"
+}

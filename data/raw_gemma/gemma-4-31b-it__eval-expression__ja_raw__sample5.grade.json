@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__ja_raw__sample5.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # 1. トークナイズ（数値、演算子、括弧に分割）\n    # \\d+\\.?\\d* : 整数または小数\n    # [+\\-*/()] : 演算子または括弧\n    tokens = re.findall(r'\\d+\\.?\\d*|[+\\-*/()]', expr)\n    \n    # 2. 負の数（単項マイナス）の処理\n    # 式の先頭にある '-' や、'(' の直後にある '-' を '0 -' に置き換えて二項演算として扱う\n    processed_tokens = []\n    for i, token in enumerate(tokens):\n        if token == '-' and (i == 0 or tokens[i-1] == '('):\n            processed_tokens.append('0')\n        processed_tokens.append(token)\n    \n    # 演算子の優先順位定義\n    precedence = {'+': 1, '-': 1, '*': 2, '/': 2}\n    \n    # 3. 中置記法から後置記法 (逆ポーランド記法) への変換\n    output_queue = []\n    operator_stack = []\n    \n    for token in processed_tokens:\n        if token.replace('.', '', 1).isdigit():  # 数値の場合\n            output_queue.append(float(token))\n        elif token == '(':\n            operator_stack.append(token)\n        elif token == ')':\n            while operator_stack and operator_stack[-1] != '(':\n                output_queue.append(operator_stack.pop())\n            operator_stack.pop()  # '(' を捨てる\n        else:  # 演算子の場合\n            while (operator_stack and operator_stack[-1] != '(' and \n                   precedence[operator_stack[-1]] >= precedence[token]):\n                output_queue.append(operator_stack.pop())\n            operator_stack.append(token)\n            \n    while operator_stack:\n        output_queue.append(operator_stack.pop())\n        \n    # 4. 後置記法の計算\n    eval_stack = []\n    for token in output_queue:\n        if isinstance(token, float):\n            eval_stack.append(token)\n        else:\n            # 右項が先、左項が後になることに注意\n            b = eval_stack.pop()\n            a = eval_stack.pop()\n            if token == '+':\n                eval_stack.append(a + b)\n            elif token == '-':\n                eval_stack.append(a - b)\n            elif token == '*':\n                eval_stack.append(a * b)\n            elif token == '/':\n                if b == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                eval_stack.append(a / b)\n                \n    result = eval_stack[0]\n    # 整数で表現できる場合は整数として返し、そうでなければ浮動小数点を返す\n    return int(result) if result.is_integer() else result\n\n# --- テストケース ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 3\", 16),\n        (\"(10 + 2) * 3\", 36),\n        (\"-3 + 5\", 2),\n        (\"5 + (-2 * 3)\", -1),\n        (\"10 / 2 + 3\", 8),\n        (\"10 / 0\", \"ZeroDivisionError\"), # 例外チェック用\n    ]\n\n    for expression, expected in test_cases:\n        try:\n            res = eval_expression(expression)\n            print(f\"'{expression}' -> {res} (Expected: {expected})\")\n        except ZeroDivisionError as e:\n            print(f\"'{expression}' -> {e} (Expected: {expected})\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'10 + 2 * 3' -> 16 (Expected: 16)\n'(10 + 2) * 3' -> 36 (Expected: 36)\n'-3 + 5' -> 2 (Expected: 2)\n'5 + (-2 * 3)' -> -1 (Expected: -1)\n'10 / 2 + 3' -> 8 (Expected: 8)\n'10 / 0' -> division by zero (Expected: ZeroDivisionError)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 73,
+  "candidates_token_count": 1484,
+  "thoughts_token_count": 1156,
+  "total_token_count": 2713,
+  "graded_at": "2026-09-06T05:08:24"
+}

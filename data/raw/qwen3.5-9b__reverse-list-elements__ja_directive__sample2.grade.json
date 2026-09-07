@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_directive__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements リストの順序を反転させ、それに伴って punctuation リストも \n    同じ順序で反転させて返す関数です。\n    \n    引数:\n        elements (list): 単語や要素を含むリスト\n        punctuation (list): 各要素に対応する句読点などの記号リスト\n    \n    戻り値:\n        tuple: (新しい elements リスト, 新しい punctuation リスト) のタプル\n    \"\"\"\n    # リストをスライス演算で反転（[::-1]）\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n    \n    return new_elements, new_punctuation\n\n# 例題のテスト\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\nprint(new_elements)   # 出力: ['world', 'Hello']\nprint(new_punctuation) # 出力: ['!', '']",
+  "stdout": "['world', 'Hello']\n['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 107,
+  "eval_count": 3773,
+  "graded_at": "2026-09-05T21:40:35"
+}

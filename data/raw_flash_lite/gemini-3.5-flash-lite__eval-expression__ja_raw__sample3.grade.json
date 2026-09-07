@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_raw__sample3.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr):\n    # 空白を削除\n    expr = expr.replace(\" \", \"\")\n\n    # トークナイザー（数値、演算子、括弧に分解）\n    # 負の数に対応するため、マイナスが演算子として働くか符号として働くかを考慮します\n    tokens = re.findall(r\"(?:\\d+(?:\\.\\d*)?|\\.\\d+|[+\\-*/()]?)\", expr)\n    tokens = [t for t in tokens if t != \"\"]\n\n    class Parser:\n\n        def __init__(self, tokens):\n            self.tokens = tokens\n            self.pos = 0\n\n        def peek(self):\n            if self.pos < len(self.tokens):\n                return self.tokens[self.pos]\n            return None\n\n        def consume(self, expected=None):\n            token = self.peek()\n            if expected and token != expected:\n                raise ValueError(f\"Expected '{expected}', got '{token}'\")\n            self.pos += 1\n            return token\n\n        def parse(self):\n            if not self.tokens:\n                return 0\n            result = self.expr()\n            if self.pos < len(self.tokens):\n                raise ValueError(f\"Unexpected token: {self.peek()}\")\n            return result\n\n        # 加算・減算 (優先順位 低)\n        def expr(self):\n            result = self.term()\n            while self.peek() in (\"+\", \"-\"):\n                op = self.consume()\n                if op == \"+\":\n                    result += self.term()\n                elif op == \"-\":\n                    result -= self.term()\n            return result\n\n        # 乗算・除算 (優先順位 中)\n        def term(self):\n            result = self.factor()\n            while self.peek() in (\"*\", \"/\"):\n                op = self.consume()\n                if op == \"*\":\n                    result *= self.factor()\n                elif op == \"/\":\n                    divisor = self.factor()\n                    if divisor == 0:\n                        raise ZeroDivisionError(\"division by zero\")\n                    result /= divisor\n            return result\n\n        # 括弧、単項マイナス、数値 (優先順位 高)\n        def factor(self):\n            token = self.peek()\n\n            # 単項マイナス（負の数）の処理\n            if token == \"-\":\n                self.consume(\"-\")\n                return -self.factor()\n            if token == \"+\":\n                self.consume(\"+\")\n                return self.factor()\n\n            # 括弧の処理\n            if token == \"(\":\n                self.consume(\"(\")\n                result = self.expr()\n                self.consume(\")\")\n                return result\n\n            # 数値の処理\n            if token is not None:\n                self.consume()\n                try:\n                    # 小数点が含まれていれば float、なければ int に変換\n                    if \".\" in token:\n                        return float(token)\n                    else:\n                        return int(token)\n                except ValueError:\n                    raise ValueError(f\"Invalid number: {token}\")\n\n            raise ValueError(\"Unexpected end of expression\")\n\n    parser = Parser(tokens)\n    return parser.parse()\n\n\n# --- 使用例・テスト ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 3 * (-2)\"))  # 出力: -11 (負の数に対応)\n    print(eval_expression(\"10 / (5 - 5)\"))  # ZeroDivisionError が発生",
+  "stdout": "7\n-11\n(non-fatal) submitted code raised at top level: ZeroDivisionError('division by zero')\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 73,
+  "candidates_token_count": 1135,
+  "thoughts_token_count": null,
+  "total_token_count": 1208,
+  "graded_at": "2026-09-06T06:53:18"
+}

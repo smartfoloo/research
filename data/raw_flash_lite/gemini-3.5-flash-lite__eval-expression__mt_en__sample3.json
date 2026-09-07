@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "To safely evaluate mathematical expressions while respecting the order of operations, handling negative numbers, and raising a `ZeroDivisionError` on division by zero, we can parse and evaluate the expression using a recursive descent parser. \n\nHere is the complete Python implementation:\n\n```python\ndef eval_expression(expr):\n    \"\"\"Computes the mathematical expression in expr, considering the order of operations,\n\n    negative numbers, and raising ZeroDivisionError when dividing by zero.\n    \"\"\"\n    # Remove all whitespace from the expression\n    expr = \"\".join(expr.split())\n    if not expr:\n        return 0\n\n    def parse_expression(s, index):\n        node, index = parse_term(s, index)\n        while index < len(s):\n            if s[index] == \"+\":\n                index += 1\n                right, index = parse_term(s, index)\n                node += right\n            elif s[index] == \"-\":\n                index += 1\n                right, index = parse_term(s, index)\n                node -= right\n            else:\n                break\n        return node, index\n\n    def parse_term(s, index):\n        node, index = parse_factor(s, index)\n        while index < len(s):\n            if s[index] == \"*\":\n                index += 1\n                right, index = parse_factor(s, index)\n                node *= right\n            elif s[index] == \"/\":\n                index += 1\n                right, index = parse_factor(s, index)\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n            else:\n                break\n        return node, index\n\n    def parse_factor(s, index):\n        if index >= len(s):\n            raise ValueError(\"Unexpected end of expression\")\n\n        # Handle unary plus and minus (negative numbers)\n        if s[index] == \"+\":\n            return parse_factor(s, index + 1)\n        if s[index] == \"-\":\n            val, index = parse_factor(s, index + 1)\n            return -val, index\n\n        # Handle parentheses\n        if s[index] == \"(\":\n            index += 1\n            val, index = parse_expression(s, index)\n            if index >= len(s) or s[index] != \")\":\n                raise ValueError(\"Mismatched parentheses\")\n            return val, index + 1  # Skip the closing ')'\n\n        # Handle numbers (integers and floats)\n        start = index\n        while index < len(s) and (s[index].isdigit() or s[index] == \".\"):\n            index += 1\n\n        if start == index:\n            raise ValueError(f\"Unexpected character at index {index}: {s[index]}\")\n\n        num_str = s[start:index]\n        if \".\" in num_str:\n            return float(num_str), index\n        else:\n            return int(num_str), index\n\n    result, idx = parse_expression(expr, 0)\n    if idx < len(expr):\n        raise ValueError(f\"Unexpected trailing characters at index {idx}\")\n\n    return result\n\n\n# --- Examples ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # Output: 7\n    print(eval_expression(\"-5 + 2 * (-3)\"))  # Output: -11\n    print(eval_expression(\"10 / (5 - 5)\"))  # Raises ZeroDivisionError\n```\n\n### How it works:\n1. **Whitespace Removal:** Spaces are stripped out to make indexing straightforward.\n2. **Grammar Hierarchy (Order of Operations):**\n   - **Expressions (`+`, `-`)**: Lowest precedence.\n   - **Terms (`*`, `/`)**: Medium precedence.\n   - **Factors (Parentheses, unary signs, numbers)**: Highest precedence.\n3. **Negative Numbers:** Handled cleanly in `parse_factor` by checking for `-` signs right before a number or parentheses (e.g., `(-3)` or `-5`).\n4. **Division by Zero Check:** Whenever a `/` operation is evaluated, it checks if the divisor is `0` and explicitly raises a `ZeroDivisionError`.",
+              "thoughtSignature": "El4KXAERTTIPykVTNZ/E+PUyzYFbDYr4Ec9paLgxgZvkQq5TetyXOgrTjJFCqTD/D73itQpiETJTI7b1BvvtYi2TMrakzq1JcqOeO9xugi3LYwoqADhzLoGVmrGpNTpc"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 63,
+      "candidatesTokenCount": 965,
+      "totalTokenCount": 1028,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 63
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "d1KdauqlK-Wu2roPquKpEA"
+  },
+  "thinking_text": "",
+  "final_text": "To safely evaluate mathematical expressions while respecting the order of operations, handling negative numbers, and raising a `ZeroDivisionError` on division by zero, we can parse and evaluate the expression using a recursive descent parser. \n\nHere is the complete Python implementation:\n\n```python\ndef eval_expression(expr):\n    \"\"\"Computes the mathematical expression in expr, considering the order of operations,\n\n    negative numbers, and raising ZeroDivisionError when dividing by zero.\n    \"\"\"\n    # Remove all whitespace from the expression\n    expr = \"\".join(expr.split())\n    if not expr:\n        return 0\n\n    def parse_expression(s, index):\n        node, index = parse_term(s, index)\n        while index < len(s):\n            if s[index] == \"+\":\n                index += 1\n                right, index = parse_term(s, index)\n                node += right\n            elif s[index] == \"-\":\n                index += 1\n                right, index = parse_term(s, index)\n                node -= right\n            else:\n                break\n        return node, index\n\n    def parse_term(s, index):\n        node, index = parse_factor(s, index)\n        while index < len(s):\n            if s[index] == \"*\":\n                index += 1\n                right, index = parse_factor(s, index)\n                node *= right\n            elif s[index] == \"/\":\n                index += 1\n                right, index = parse_factor(s, index)\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n            else:\n                break\n        return node, index\n\n    def parse_factor(s, index):\n        if index >= len(s):\n            raise ValueError(\"Unexpected end of expression\")\n\n        # Handle unary plus and minus (negative numbers)\n        if s[index] == \"+\":\n            return parse_factor(s, index + 1)\n        if s[index] == \"-\":\n            val, index = parse_factor(s, index + 1)\n            return -val, index\n\n        # Handle parentheses\n        if s[index] == \"(\":\n            index += 1\n            val, index = parse_expression(s, index)\n            if index >= len(s) or s[index] != \")\":\n                raise ValueError(\"Mismatched parentheses\")\n            return val, index + 1  # Skip the closing ')'\n\n        # Handle numbers (integers and floats)\n        start = index\n        while index < len(s) and (s[index].isdigit() or s[index] == \".\"):\n            index += 1\n\n        if start == index:\n            raise ValueError(f\"Unexpected character at index {index}: {s[index]}\")\n\n        num_str = s[start:index]\n        if \".\" in num_str:\n            return float(num_str), index\n        else:\n            return int(num_str), index\n\n    result, idx = parse_expression(expr, 0)\n    if idx < len(expr):\n        raise ValueError(f\"Unexpected trailing characters at index {idx}\")\n\n    return result\n\n\n# --- Examples ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # Output: 7\n    print(eval_expression(\"-5 + 2 * (-3)\"))  # Output: -11\n    print(eval_expression(\"10 / (5 - 5)\"))  # Raises ZeroDivisionError\n```\n\n### How it works:\n1. **Whitespace Removal:** Spaces are stripped out to make indexing straightforward.\n2. **Grammar Hierarchy (Order of Operations):**\n   - **Expressions (`+`, `-`)**: Lowest precedence.\n   - **Terms (`*`, `/`)**: Medium precedence.\n   - **Factors (Parentheses, unary signs, numbers)**: Highest precedence.\n3. **Negative Numbers:** Handled cleanly in `parse_factor` by checking for `-` signs right before a number or parentheses (e.g., `(-3)` or `-5`).\n4. **Division by Zero Check:** Whenever a `/` operation is evaluated, it checks if the divisor is `0` and explicitly raises a `ZeroDivisionError`.",
+  "prompt_token_count": 63,
+  "candidates_token_count": 965,
+  "thoughts_token_count": null,
+  "total_token_count": 1028,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "eval-expression",
+    "condition": "mt_en",
+    "sample_idx": 3,
+    "prompt_text": "Create a Python function called eval_expression(expr) that computes the expression in expr. Be sure to consider the order of operations and be able to calculate negative numbers. When dividing by zero, raise ZeroDivisionError. (Example: \"3 + 4 * (2 - 1)\" -> 7)",
+    "elapsed_seconds": 7.942957401275635,
+    "generated_at": "2026-09-06T06:46:02"
+  }
+}

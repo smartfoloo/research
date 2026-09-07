@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__mt_en__sample4.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # Requirement: If start and end are the same node, return (0, [start])\n    if start == end:\n        return (0, [start])\n\n    # Build adjacency list and check for negative weights\n    adj = {}\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n        if u not in adj:\n            adj[u] = []\n        adj[u].append((v, w))\n\n    # Priority queue stores tuples of (distance, current_node)\n    # dist stores the shortest distance from start to each node\n    # prev stores the predecessor of each node to reconstruct the path\n    pq = [(0, start)]\n    dist = {start: 0}\n    prev = {start: None}\n\n    while pq:\n        current_distance, u = heapq.heappop(pq)\n\n        # If we reached the destination, we can stop early\n        if u == end:\n            break\n\n        # Nodes can be added to the priority queue multiple times. \n        # We only process the one with the smallest distance.\n        if current_distance > dist.get(u, float('inf')):\n            continue\n\n        # Explore neighbors\n        for v, weight in adj.get(u, []):\n            distance = current_distance + weight\n            if distance < dist.get(v, float('inf')):\n                dist[v] = distance\n                prev[v] = u\n                heapq.heappush(pq, (distance, v))\n\n    # Requirement: If the route does not exist, return (None, None)\n    if end not in dist:\n        return (None, None)\n\n    # Reconstruct the path by backtracking from end to start\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = prev[curr]\n    \n    return (dist[end], path[::-1]) # Reverse the path to get start -> end\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    # Example case\n    edges1 = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges1, \"A\", \"C\"))  # Expected: (3, ['A', 'B', 'C'])\n\n    # Same start and end\n    print(shortest_path(edges1, \"A\", \"A\"))  # Expected: (0, ['A'])\n\n    # No path exists\n    edges2 = [(\"A\", \"B\", 1), (\"C\", \"D\", 1)]\n    print(shortest_path(edges2, \"A\", \"D\"))  # Expected: (None, None)\n\n    # Negative weight case\n    try:\n        edges3 = [(\"A\", \"B\", -1)]\n        shortest_path(edges3, \"A\", \"B\")\n    except ValueError as e:\n        print(f\"Caught expected error: {e}\") # Expected: Edge weights cannot be negative.",
+  "stdout": "(3, ['A', 'B', 'C'])\n(0, ['A'])\n(None, None)\nCaught expected error: Edge weights cannot be negative.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 146,
+  "candidates_token_count": 980,
+  "thoughts_token_count": 918,
+  "total_token_count": 2044,
+  "graded_at": "2026-09-06T05:08:41"
+}

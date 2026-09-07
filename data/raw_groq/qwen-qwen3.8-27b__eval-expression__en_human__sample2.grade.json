@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__eval-expression__en_human__sample2.json",
+  "task": "eval-expression",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluates a mathematical expression string with support for:\n    - Addition, subtraction, multiplication, division\n    - Parentheses\n    - Negative numbers\n    - Proper order of operations (PEMDAS/BODMAS)\n    \n    Raises ZeroDivisionError if division by zero is encountered.\n    \"\"\"\n    # Tokenize the expression\n    tokens = tokenize(expr)\n    \n    # Parse using recursive descent parser\n    pos[0] = 0\n    result = parse_expression(tokens)\n    \n    if pos[0] != len(tokens):\n        raise SyntaxError(f\"Unexpected token at position {pos[0]}\")\n    \n    return result\n\n\ndef tokenize(expr: str):\n    \"\"\"Convert expression string into a list of tokens.\"\"\"\n    tokens = []\n    i = 0\n    while i < len(expr):\n        ch = expr[i]\n        # Skip whitespace\n        if ch.isspace():\n            i += 1\n            continue\n        # Numbers (including decimal and negative handled at parse level)\n        if ch.isdigit() or ch == '.':\n            num_str = ''\n            while i < len(expr) and (expr[i].isdigit() or expr[i] == '.'):\n                num_str += expr[i]\n                i += 1\n            tokens.append(('NUMBER', float(num_str)))\n            continue\n        # Operators and parentheses\n        elif ch in '+-*/()':\n            tokens.append(('OP', ch))\n            i += 1\n            continue\n        else:\n            raise SyntaxError(f\"Unexpected character: {ch}\")\n    \n    return tokens\n\n\ndef parse_expression(tokens):\n    \"\"\"Parse addition and subtraction (lowest precedence).\"\"\"\n    pos = [0]  # Use mutable list to track position\n    \n    result = parse_term(tokens, pos)\n    \n    while pos[0] < len(tokens) and tokens[pos[0]][1] in ('+', '-'):\n        op = tokens[pos[0]][1]\n        pos[0] += 1\n        term = parse_term(tokens, pos)\n        if op == '+':\n            result += term\n        elif op == '-':\n            result -= term\n    \n    return result",
+  "stdout": "FAIL case 0: raised NameError: name 'pos' is not defined\nFAIL case 1: raised NameError: name 'pos' is not defined\nFAIL case 2: raised NameError: name 'pos' is not defined\nFAIL case 3: expected ZeroDivisionError, got NameError\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_tokens": 76,
+  "completion_tokens": 1286,
+  "total_tokens": 1362,
+  "groq_seed": 1420615969,
+  "graded_at": "2026-09-06T09:08:44"
+}

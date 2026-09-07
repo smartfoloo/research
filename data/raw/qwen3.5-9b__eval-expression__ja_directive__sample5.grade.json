@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_directive__sample5.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    \"\"\"\n    文字列形式の数学式を実行します。\n    演算順序（優先順位）や負の数、除算によるゼロエラーを適切に処理します。\n    \n    Args:\n        expr (str): 計算したい数式の文字列\n    \n    Returns:\n        int or float: 計算結果\n    \n    Raises:\n        ZeroDivisionError: 0 で割ろうとした場合\n        ValueError: 有効な数学式以外の文字が含まれている場合\n    \"\"\"\n\n    # セキュリティ対策：許可された文字のみを含むか確認\n    # 数字、+ - * / ( ) スペース、点(.)のみを許可します。\n    allowed_pattern = r'^[0-9+\\-*/(). ]+$'\n    \n    if not re.match(allowed_pattern, expr):\n        raise ValueError(f\"Invalid characters detected in expression: {expr}\")\n\n    # 空白の取り込み（正規表現で検証済みなので、評価には影響ありません）\n    expr = expr.replace(' ', '') # 必要に応じて除去しますが、計算には影響ないので保持しても OK です\n    \n    try:\n        return eval(expr)\n    except ZeroDivisionError:\n        raise # 0 で割るエラーをそのまま伝播させます (仕様通りです)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 89,
+  "eval_count": 5729,
+  "graded_at": "2026-09-06T03:04:25"
+}

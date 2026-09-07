@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_raw__sample4.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と経路を返す関数（Dijkstra アルゴリズム）\n    \n    Args:\n        edges: [(from_node, to_node, weight), ...] のリスト\n        start: 開始ノード\n        end: 終点ノード\n    \n    Returns:\n        (distance, path) - 最短距離と経路のリスト（None あり）\n    \n    Raises:\n        ValueError: 負の重みのエッジが含まれる場合\n    \"\"\"\n    \n    # 同じノードの場合は即座に処理\n    if start == end:\n        return (0, [start])\n    \n    # エッジを辞書形式に変換：{to_node: [(from_node, weight), ...]}\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        if to_node not in graph:\n            # 逆方向のエッジがない場合のみ（有向グラフ）\n            pass\n        \n        # 重みの負チェック\n        if weight < 0:\n            raise ValueError(\"エッジの重みが負です\")\n        \n        graph[to_node].append((from_node, weight))\n    \n    # start が graph に存在しないなら、経路なし（ただしグラフ作成時の問題あり）\n    if start not in graph and graph:\n        return (None, None)\n    \n    # 最短距離の辞書（node -> min_dist）\n    distances = {start: 0}\n    # parent の辞書（再構築のため：to_node -> from_node）\n    parents = {}\n    \n    # 優先度キュー（(distance, node)）\n    queue = [(0, start)]\n    \n    # visited を管理\n    visited = set()\n    \n    while queue:\n        dist, node = heapq.heappop(queue)\n        \n        if node in visited:\n            continue\n        visited.add(node)\n        \n        # 終点に到達した場合は終了（ただしすべてのノードを処理する必要があるため注意）\n        # ここは Dijkstra の通常の停止条件を使わない\n        \n        # 次へ移動可能なノードがあるか確認（存在しない場合も考慮）\n        if node not in graph:\n            continue\n            \n        for prev_node, weight in graph[node]:\n            new_dist = dist + weight\n            \n            if prev_node not in distances or new_dist < distances[prev_node]:\n                # 更新可能\n                distances[prev_node] = new_dist\n                parents[prev_node] = node\n                heapq.heappush(queue, (new_dist, prev_node))\n    \n    # end が到達可能か確認\n    if end not in distances:\n        return (None, None)\n    \n    # 経路の再構築（end から start まで）\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = parents[current]\n    path.append(start)\n    path.reverse()\n    \n    return (distances[end], path)\n\n\n# 簡易テスト例\nif __name__ == \"__main__\":\n    edges = [(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # (3, ['A', 'B', 'C'])\n    \n    edges = [(\"X\",\"Y\",3)]\n    print(shortest_path(edges, \"Y\", \"X\"))  # (None, None)\n    \n    edges = [(\"A\",\"B\",-1)]  # 負の重み\n    try:\n        shortest_path(edges, \"A\", \"B\")\n    except ValueError as e:\n        print(e)",
+  "stdout": "(non-fatal) submitted code raised at top level: KeyError('B')\nFAIL case 0: raised KeyError: 'B'\nFAIL case 1: raised KeyError: 'B'\nFAIL case 2: raised KeyError: 'B'\nPASSED 1/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 1,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 186,
+  "eval_count": 1120,
+  "graded_at": "2026-09-06T03:04:33"
+}

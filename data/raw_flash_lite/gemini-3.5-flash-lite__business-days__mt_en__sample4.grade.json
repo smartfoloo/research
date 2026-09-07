@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__mt_en__sample4.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"Calculates the number of business days (Monday-Friday) between two dates,\n\n    excluding the boundary dates themselves.\n\n    Parameters:\n    date1 (str): The start date in \"YYYY-MM-DD\" format.\n    date2 (str): The end date in \"YYYY-MM-DD\" format.\n\n    Returns:\n    int: Number of business days between the two dates.\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Ensure start_date is earlier than end_date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n\n    # Exclude the boundary dates by moving start forward and end backward by 1 day\n    start_date += timedelta(days=1)\n    end_date -= timedelta(days=1)\n\n    # If they crossed over, there are no days in between\n    if start_date > end_date:\n        return 0\n\n    # Total calendar days strictly between the two dates (inclusive of the adjusted bounds)\n    total_days = (end_date - start_date).days + 1\n\n    # Calculate full weeks and remaining days\n    full_weeks, remainder = divmod(total_days, 7)\n\n    # Each full week contains exactly 5 business days\n    business_day_count = full_weeks * 5\n\n    # Check the remaining days\n    current_day = start_date + timedelta(days=full_weeks * 7)\n    for _ in range(remainder):\n        # Monday is 0 and Sunday is 6; Monday through Friday are < 5\n        if current_day.weekday() < 5:\n            business_day_count += 1\n        current_day += timedelta(days=1)\n\n    return business_day_count\n\n\n# Example usage:\n# print(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 112,
+  "candidates_token_count": 700,
+  "thoughts_token_count": null,
+  "total_token_count": 812,
+  "graded_at": "2026-09-06T06:53:05"
+}

@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-3367fd6c-c03c-400c-92f1-9d0d97b3da80",
+    "object": "chat.completion",
+    "created": 1788703408,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string with support for:\n    - Addition (+), Subtraction (-), Multiplication (*), Division (/)\n    - Parentheses for grouping\n    - Negative numbers\n    - Proper order of operations (PEMDAS/BODMAS)\n    \n    Raises ZeroDivisionError if division by zero is encountered.\n    \"\"\"\n    tokens = _tokenize(expr)\n    pos = [0]\n    \n    def peek():\n        if pos[0] < len(tokens):\n            return tokens[pos[0]]\n        return None\n    \n    def consume():\n        token = tokens[pos[0]]\n        pos[0] += 1\n        return token\n    \n    def parse_expression():\n        \"\"\"Parse addition and subtraction (lowest precedence)\"\"\"\n        result = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                result += right\n            else:\n                result -= right\n        return result\n    \n    def parse_term():\n        \"\"\"Parse multiplication and division (higher precedence)\"\"\"\n        result = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                result *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                result /= right\n        return result\n    \n    def parse_factor():\n        \"\"\"Parse unary plus/minus and primary expressions (highest precedence)\"\"\"\n        if peek() in ('+', '-'):\n            op = consume()\n            operand = parse_factor()\n            if op == '-':\n                return -operand\n            return operand\n        return parse_primary()\n    \n    def parse_primary():\n        \"\"\"Parse numbers or parenthesized expressions\"\"\"\n        token = peek()\n        if token is None:\n            raise ValueError(\"Unexpected end of expression\")\n        if token == '(':\n            consume()  # consume '('\n            result = parse_expression()\n            if peek() != ')':\n                raise ValueError(\"Expected closing parenthesis\")\n            consume()  # consume ')'\n            return result\n        elif token == 'number':\n            consume()\n            return token['value']\n        else:\n            raise ValueError(f\"Unexpected token: {token}\")\n    \n    return parse_expression()\n\n\ndef _tokenize(expr: str):\n    \"\"\"Tokenize the expression string into a list of tokens.\"\"\"\n    tokens = []\n    i = 0\n    expr = expr.replace(' ', '')\n    \n    while i < len(expr):\n        ch = expr[i]\n        \n        if ch in '+-*/()':\n            if ch == '+':\n                # Check if this is part of a number (e.g., after nothing or after operator/opening paren)\n                # Actually, unary +/- is handled in parse_factor\n                tokens.append(ch)\n            elif ch == '-':\n                tokens.append(ch)\n            else:\n                tokens.append(ch)\n            i += 1\n        elif ch.isdigit() or ch == '.':\n            # Parse number\n            j = i\n            has_dot = False\n            while j < len(expr) and (expr[j].isdigit() or (expr[j] == '.' and not has_dot)):\n                if expr[j] == '.':\n                    has_dot = True\n                j += 1\n            num_str = expr[i:j]\n            tokens.append({'type': 'number', 'value': float(num_str)})\n            i = j\n        else:\n            raise ValueError(f\"Unexpected character: {ch}\")\n    \n    return tokens\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.211532634,
+      "prompt_tokens": 73,
+      "prompt_time": 0.005686625,
+      "completion_tokens": 803,
+      "completion_time": 1.645484276,
+      "total_tokens": 876,
+      "total_time": 1.651170901
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_61e8d148b4",
+    "x_groq": {
+      "id": "req_01m1vgfy2ne82ad6s01bm8epfc",
+      "seed": 1379634847
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string with support for:\n    - Addition (+), Subtraction (-), Multiplication (*), Division (/)\n    - Parentheses for grouping\n    - Negative numbers\n    - Proper order of operations (PEMDAS/BODMAS)\n    \n    Raises ZeroDivisionError if division by zero is encountered.\n    \"\"\"\n    tokens = _tokenize(expr)\n    pos = [0]\n    \n    def peek():\n        if pos[0] < len(tokens):\n            return tokens[pos[0]]\n        return None\n    \n    def consume():\n        token = tokens[pos[0]]\n        pos[0] += 1\n        return token\n    \n    def parse_expression():\n        \"\"\"Parse addition and subtraction (lowest precedence)\"\"\"\n        result = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                result += right\n            else:\n                result -= right\n        return result\n    \n    def parse_term():\n        \"\"\"Parse multiplication and division (higher precedence)\"\"\"\n        result = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                result *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                result /= right\n        return result\n    \n    def parse_factor():\n        \"\"\"Parse unary plus/minus and primary expressions (highest precedence)\"\"\"\n        if peek() in ('+', '-'):\n            op = consume()\n            operand = parse_factor()\n            if op == '-':\n                return -operand\n            return operand\n        return parse_primary()\n    \n    def parse_primary():\n        \"\"\"Parse numbers or parenthesized expressions\"\"\"\n        token = peek()\n        if token is None:\n            raise ValueError(\"Unexpected end of expression\")\n        if token == '(':\n            consume()  # consume '('\n            result = parse_expression()\n            if peek() != ')':\n                raise ValueError(\"Expected closing parenthesis\")\n            consume()  # consume ')'\n            return result\n        elif token == 'number':\n            consume()\n            return token['value']\n        else:\n            raise ValueError(f\"Unexpected token: {token}\")\n    \n    return parse_expression()\n\n\ndef _tokenize(expr: str):\n    \"\"\"Tokenize the expression string into a list of tokens.\"\"\"\n    tokens = []\n    i = 0\n    expr = expr.replace(' ', '')\n    \n    while i < len(expr):\n        ch = expr[i]\n        \n        if ch in '+-*/()':\n            if ch == '+':\n                # Check if this is part of a number (e.g., after nothing or after operator/opening paren)\n                # Actually, unary +/- is handled in parse_factor\n                tokens.append(ch)\n            elif ch == '-':\n                tokens.append(ch)\n            else:\n                tokens.append(ch)\n            i += 1\n        elif ch.isdigit() or ch == '.':\n            # Parse number\n            j = i\n            has_dot = False\n            while j < len(expr) and (expr[j].isdigit() or (expr[j] == '.' and not has_dot)):\n                if expr[j] == '.':\n                    has_dot = True\n                j += 1\n            num_str = expr[i:j]\n            tokens.append({'type': 'number', 'value': float(num_str)})\n            i = j\n        else:\n            raise ValueError(f\"Unexpected character: {ch}\")\n    \n    return tokens\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 73,
+  "completion_tokens": 803,
+  "total_tokens": 876,
+  "groq_seed": 1379634847,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "eval-expression",
+    "condition": "mt_en",
+    "sample_idx": 4,
+    "prompt_text": "Create a Python function called eval_expression(expr) that computes the expression in expr. Be sure to consider the order of operations and be able to calculate negative numbers. When dividing by zero, raise ZeroDivisionError. (Example: \"3 + 4 * (2 - 1)\" -> 7)",
+    "elapsed_seconds": 44.72798538208008,
+    "generated_at": "2026-09-06T09:03:27"
+  }
+}

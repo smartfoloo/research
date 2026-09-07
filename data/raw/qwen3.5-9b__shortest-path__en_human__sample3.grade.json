@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__en_human__sample3.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 3,
+  "extracted_code": "def shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path between start and end nodes using Dijkstra's algorithm.\n\n    Args:\n        edges: List of (from_node, to_node, weight) tuples representing one-way roads\n        start: Starting node\n        end: Destination node\n\n    Returns:\n        Tuple (distance, path) where distance is total weight and path is ordered list of nodes.\n        Returns (None, None) if no path exists.\n\n    Raises:\n        ValueError: If any edge weight is negative\n    \"\"\"\n    # Handle same node case\n    if start == end:\n        return (0, [start])\n    \n    # Validate edges and build adjacency list\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weight not allowed\")\n        \n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Dijkstra's algorithm\n    import heapq\n    \n    heap = [(0, start)]  # (distance, node)\n    min_dist = {start: 0}\n    prev = {start: None}\n    \n    while heap:\n        dist, node = heapq.heappop(heap)\n        \n        # Skip if we've found a better path already\n        if node in min_dist and min_dist[node] < dist:\n            continue\n        \n        if node == end:\n            break\n        \n        # Process neighbors\n        if node in graph:\n            for neighbor, weight in graph[node]:\n                new_dist = dist + weight\n                \n                # Check if we found a shorter path to neighbor\n                if neighbor not in min_dist or new_dist < min_dist[neighbor]:\n                    min_dist[neighbor] = new_dist\n                    prev[neighbor] = node\n                    heapq.heappush(heap, (new_dist, neighbor))\n    \n    # Check if path exists\n    if end not in min_dist:\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = prev[current]\n    \n    path.reverse()\n    \n    return (min_dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 153,
+  "eval_count": 2063,
+  "graded_at": "2026-09-05T21:40:38"
+}

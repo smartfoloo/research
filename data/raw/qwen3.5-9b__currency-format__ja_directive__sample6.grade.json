@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_directive__sample6.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    金額をフォーマットします。\n    $ で始まり、3 桁ごとにカンマを付けます。\n    負の場合は -$ の順になります。\n    \n    Args:\n        n (int or float): フォーマットする数値\n    \n    Returns:\n        str: フォーマットされた文字列\n    \"\"\"\n    # 絶対値のカンマ区切り形式を取得\n    formatted_abs = f\"{abs(n):,}\"\n    \n    # 負の場合のみ '-' を追加し、$ を配置します。\n    # n < 0 の場合は '-' + '$' + 数値\n    # n >= 0 の場合は '' + '$' + 数値\n    return (f\"-$\" if n < 0 else f\"$\") + formatted_abs",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 94,
+  "eval_count": 6830,
+  "graded_at": "2026-09-06T03:04:22"
+}

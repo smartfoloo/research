@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__en_human__sample3.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 3,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        return \"-$\" + format(abs(n), ',')\n    else:\n        return \"$\" + format(n, ',')",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 78,
+  "completion_tokens": 46,
+  "total_tokens": 124,
+  "groq_seed": 1605716008,
+  "graded_at": "2026-09-06T09:08:37"
+}

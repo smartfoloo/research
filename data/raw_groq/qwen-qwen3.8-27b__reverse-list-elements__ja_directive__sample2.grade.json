@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__reverse-list-elements__ja_directive__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n    return (new_elements, new_punctuation)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 109,
+  "completion_tokens": 503,
+  "total_tokens": 612,
+  "groq_seed": 362568052,
+  "graded_at": "2026-09-06T09:08:53"
+}

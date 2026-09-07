@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__mt_en__sample2.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path between two nodes in a directed weighted graph.\n\n    Args:\n        edges: List of tuples (from_node, to_node, weight)\n        start: Starting node\n        end: Ending node\n\n    Returns:\n        Tuple of (distance, path), or (None, None) if no path exists\n\n    Raises:\n        ValueError: If any edge has a negative weight\n    \"\"\"\n    # Handle case where start equals end\n    if start == end:\n        return (0, [start])\n\n    # Collect all unique nodes from edges\n    all_nodes = set()\n    for from_node, to_node, _ in edges:\n        all_nodes.add(from_node)\n        all_nodes.add(to_node)\n\n    # Validate that both start and end exist in graph\n    if start not in all_nodes or end not in all_nodes:\n        return (None, None)\n\n    # Build adjacency list\n    adj = {}\n    has_negative = False\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weight detected\")\n        \n        if from_node not in adj:\n            adj[from_node] = []\n        adj[from_node].append((to_node, weight))\n\n    # Ensure start node exists in the adjacency list; add it if needed\n    if start not in adj:\n        adj[start] = []\n\n    # Dijkstra's algorithm\n    distances = {node: float('inf') for node in all_nodes}\n    predecessors = {}\n    distances[start] = 0\n    pq = [(0, start)]\n    visited = set()\n\n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n\n        if current_node in visited:\n            continue\n        visited.add(current_node)\n\n        if current_node == end:\n            break\n\n        for neighbor, weight in adj.get(current_node, []):\n            if neighbor not in visited:\n                new_dist = current_dist + weight\n                if new_dist < distances[neighbor]:\n                    distances[neighbor] = new_dist\n                    predecessors[neighbor] = current_node\n                    heapq.heappush(pq, (new_dist, neighbor))\n\n    # Check if end was reached\n    if distances[end] == float('inf'):\n        return (None, None)\n\n    # Reconstruct path from end to start\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = predecessors.get(current)\n\n    path.reverse()\n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 151,
+  "eval_count": 1820,
+  "graded_at": "2026-09-05T21:40:40"
+}

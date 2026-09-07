@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonの標準機能である書式指定（フォーマット指定子）を利用して、ご要望の関数を作成することができます。\n\n```python\ndef format_currency(n):\n    # f\"{n:,$}\" でカンマ区切りとドル記号の付与が同時に行えます\n    # 負の数の場合、自動的にマイナスが先頭（ドル記号の前）に来ます\n    return f\"${n:,.0f}\" if isinstance(n, float) else f\"${n:,}\"\n\n\n# テスト例\nprint(format_currency(4640039))  # 出力: $4,640,039\nprint(format_currency(-1234567))  # 出力: -$1,234,567\nprint(format_currency(0))  # 出力: $0\n```\n\n### 解説\n* `f\"{n:,}\"` は、数値を3桁ごとのカンマ区切り文字列に変換するPythonの標準的な機能です。\n* これに `$` を組み合わせることで、`$4,640,039` のような形式になります。\n* Pythonでは、負の数に対してこのフォーマットを適用すると、自動的に `-$4,640,039` のようにマイナス記号がドル記号の前に配置されます。",
+              "thoughtSignature": "El4KXAERTTIPn+PQj9fbuktwyaSsvSvHQwBeuS11xL1BKr0TIJICfn9JpxxMYNqgmYw25tpgP6Uc/6z68TERgSAxjYBWgTFkeOZbHxpH70ah8gSn67YFvpDQWEDqL55K"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 79,
+      "candidatesTokenCount": 299,
+      "totalTokenCount": 378,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 79
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "yFCdaquhDZi6vr0PnoaskAQ"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonの標準機能である書式指定（フォーマット指定子）を利用して、ご要望の関数を作成することができます。\n\n```python\ndef format_currency(n):\n    # f\"{n:,$}\" でカンマ区切りとドル記号の付与が同時に行えます\n    # 負の数の場合、自動的にマイナスが先頭（ドル記号の前）に来ます\n    return f\"${n:,.0f}\" if isinstance(n, float) else f\"${n:,}\"\n\n\n# テスト例\nprint(format_currency(4640039))  # 出力: $4,640,039\nprint(format_currency(-1234567))  # 出力: -$1,234,567\nprint(format_currency(0))  # 出力: $0\n```\n\n### 解説\n* `f\"{n:,}\"` は、数値を3桁ごとのカンマ区切り文字列に変換するPythonの標準的な機能です。\n* これに `$` を組み合わせることで、`$4,640,039` のような形式になります。\n* Pythonでは、負の数に対してこのフォーマットを適用すると、自動的に `-$4,640,039` のようにマイナス記号がドル記号の前に配置されます。",
+  "prompt_token_count": 79,
+  "candidates_token_count": 299,
+  "thoughts_token_count": null,
+  "total_token_count": 378,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 6,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "elapsed_seconds": 6.429575681686401,
+    "generated_at": "2026-09-06T06:38:49"
+  }
+}

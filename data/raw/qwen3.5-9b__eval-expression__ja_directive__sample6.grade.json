@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_directive__sample6.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "import ast\nimport operator\nimport builtins\n\ndef eval_expression(expr):\n    \"\"\"\n    数学的な式文字列を計算する関数です。\n    \n    Args:\n        expr (str): 計算する数式の文字列例: \"3 + 4 * (2 - 1)\"\n        \n    Returns:\n        float/int: 計算結果\n        \n    Raises:\n        ZeroDivisionError: 0 で割る場合\n    \n    Security Note:\n        外部入力に対してこの関数を使う場合は、セキュリティの観点から \n        __builtins__ を制限しているのが望ましいです。\n    \"\"\"\n    # 安全なスコープを作成 (ビルトイン関数の実行を防ぐ)\n    local_vars = {}\n    \n    try:\n        # eval を使用する際は、グローバル/ローカル変数にアクセスさせないようにする必要がある場合があるが、\n        # シンプルな計算機としてevalを使用。ただしセキュリティリスクを考慮し、\n        # 必要に応じて ast モジュールを使って式構造の解析を行うこともできるが、\n        # ここでは標準的な eval の制限用法を示す。\n        \n        # セキュリティ対策：ビルトイン関数へのアクセスを無効化 (可能な限り)\n        safe_builtins = {} \n        \n        return eval(expr, {\"__builtins__\": safe_builtins}, local_vars)\n    except ZeroDivisionError:\n        # 0 で割った場合、標準の Python 挙動に従って例外を再抛出する\n        raise \n    except Exception as e:\n        # 他のエラーはそのまま上書きしない（デフォルト動作）\n        raise e",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 89,
+  "eval_count": 5659,
+  "graded_at": "2026-09-06T03:04:25"
+}

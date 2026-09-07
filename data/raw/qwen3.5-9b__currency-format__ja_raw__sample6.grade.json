@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_raw__sample6.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "def format_currency(n):\n    # 符号を取得し、絶対値を扱う\n    sign = '-' if n < 0 else ''\n    abs_n = abs(n)\n    \n    # 千位ごとにカンマ区切りでフォーマットする\n    return f\"{sign}${abs_n:,}\"\n\n# 使用例\nprint(format_currency(4640039))   # $4,640,039\nprint(format_currency(-4640039))  # -$4,640,039\nprint(format_currency(123.45))    # $123.45\nprint(format_currency(-123.45))   # -$123.45\nprint(format_currency(0))         # $0",
+  "stdout": "$4,640,039\n-$4,640,039\n$123.45\n-$123.45\n$0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 87,
+  "eval_count": 1994,
+  "graded_at": "2026-09-06T03:04:23"
+}

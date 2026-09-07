@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__en_human__sample4.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path between start and end nodes using Dijkstra's algorithm.\n    \n    Args:\n        edges: List of (from_node, to_node, weight) tuples\n        start: Starting node\n        end: Ending node\n    \n    Returns:\n        (distance, path) tuple where distance is total weight and path is list of nodes.\n        If no path exists: (None, None).\n        ValueError raised if any edge weight is negative.\n    \"\"\"\n    # Case when start equals end\n    if start == end:\n        return (0, [start])\n    \n    # Check for negative weights and collect all nodes in the graph\n    nodes = set()\n    has_negative = False\n    for from_node, to_node, weight in edges:\n        nodes.add(from_node)\n        nodes.add(to_node)\n        if weight < 0:\n            raise ValueError(\"Negative edge weight not allowed\")\n    \n    # Ensure start and end are tracked\n    nodes.add(start)\n    nodes.add(end)\n    \n    # Build adjacency list (including start/end even with no outgoing edges)\n    graph = {node: [] for node in nodes}\n    for from_node, to_node, weight in edges:\n        if from_node in graph and to_node in graph:  # safety check\n            graph[from_node].append((to_node, weight))\n    \n    # Dijkstra's algorithm\n    distances = {node: float('inf') for node in nodes}\n    previous = {node: None for node in nodes}\n    distances[start] = 0\n    heap = [(0, start)]\n    \n    while heap:\n        current_distance, current_node = heapq.heappop(heap)\n        \n        # Skip if we've already found a shorter path to this node\n        if current_distance > distances[current_node]:\n            continue\n        \n        # Explore neighbors (if current node has outgoing edges)\n        if current_node in graph:\n            for neighbor, weight in graph[current_node]:\n                distance = current_distance + weight\n                if distance < distances[neighbor]:\n                    distances[neighbor] = distance\n                    previous[neighbor] = current_node\n                    heapq.heappush(heap, (distance, neighbor))\n    \n    # If destination is unreachable\n    if distances.get(end, float('inf')) == float('inf'):\n        return (None, None)\n    \n    # Reconstruct the path from end to start\n    path = []\n    current = end\n    while current in previous:\n        path.append(current)\n        current = previous[current]\n    \n    # If we somehow can't trace back to start, treat as no path\n    if not path or path[0] != start:\n        return (None, None)\n    \n    path.reverse()\n    return (distances[end], path)",
+  "stdout": "FAIL case 0: expected [3, ['A', 'B', 'C']], got (None, None)\nFAIL case 1: expected [1, ['A', 'B']], got (None, None)\nPASSED 2/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 2,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 153,
+  "eval_count": 1390,
+  "graded_at": "2026-09-06T03:04:31"
+}

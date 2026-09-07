@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_raw__sample1.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr):\n    # 1. 空白文字を削除\n    expr = expr.replace(\" \", \"\")\n\n    # 2. 字句解析（トークナイザー）: 数値、演算子、括弧に分解する\n    # 負の数を正しく認識するため、マイナス記号の扱いを調整します\n    # ここでは正規表現で数値（小数含む）、演算子、括弧を抽出します\n    token_pattern = re.compile(r\"(?:\\d+\\.\\d+|\\d+|\\+|\\-|\\*|/|\\(|\\))\")\n    tokens = token_pattern.findall(expr)\n\n    # トークンが正しく分割できているか、余計な文字がないかチェック\n    if \"\".join(tokens) != expr:\n        raise ValueError(f\"無効な文字が含まれています: {expr}\")\n\n    if not tokens:\n        raise ValueError(\"空の式です。\")\n\n    class Parser:\n\n        def __init__(self, tokens):\n            self.tokens = tokens\n            self.pos = 0\n\n        def peek(self):\n            if self.pos < len(tokens):\n                return self.tokens[self.pos]\n            return None\n\n        def consume(self):\n            token = self.peek()\n            self.pos += 1\n            return token\n\n        # 式 = 項 { (+ | -) 項 }\n        def parse_expression(self):\n            node = self.parse_term()\n            while self.peek() in (\"+\", \"-\"):\n                op = self.consume()\n                right = self.parse_term()\n                if op == \"+\":\n                    node = node + right\n                else:\n                    node = node - right\n            return node\n\n        # 項 = 因子 { (* | /) 因子 }\n        def parse_term(self):\n            node = self.parse_factor()\n            while self.peek() in (\"*\", \"/\"):\n                op = self.consume()\n                right = self.parse_factor()\n                if op == \"*\":\n                    node = node * right\n                else:\n                    if right == 0:\n                        raise ZeroDivisionError(\"ゼロによる除算です。\")\n                    node = node / right  # Python 3では浮動小数点数除算\n            return node\n\n        # 因子 = 数値 | '(' 式 ')' | UnaryPlus | UnaryMinus (負の数対応)\n        def parse_factor(self):\n            token = self.peek()\n\n            # 単項プラス・マイナス（負の数対応）\n            if token == \"+\":\n                self.consume()\n                return self.parse_factor()\n            if token == \"-\":\n                self.consume()\n                return -self.parse_factor()\n\n            # 括弧\n            if token == \"(\":\n                self.consume()\n                node = self.parse_expression()\n                if self.consume() != \")\":\n                # if self.consume() != \")\":  # 修正: 括弧の対応チェック\n                    raise ValueError(\"閉じ括弧がありません。\")\n                return node\n\n            # 数値\n            if token is not None:\n                self.consume()\n                try:\n                    # 整数または浮動小数点数に変換\n                    return float(token) if \".\" in token else int(token)\n                except ValueError:\n                    raise ValueError(f\"無効な数値です: {token}\")\n\n            raise ValueError(\"予期せぬ式の終わりです。\")\n\n    parser = Parser(tokens)\n    result = parser.parse_expression()\n\n    # パースしきれずにトークンが残っている場合\n    if parser.peek() is not None:\n        raise ValueError(f\"構文エラーです: {parser.peek()}\")\n\n    return result\n\n\n# --- テスト・使用例 ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\n    print(eval_expression(\"-5 + 3\"))  # 出力: -2 (負の数)\n    print(eval_expression(\"10 / (2 + 3)\"))  # 出力: 2.0\n    print(eval_expression(\"  -2 * ( -3 + 5 ) \"))  # 出力: -4\n\n    try:\n        eval_expression(\"5 / 0\")\n    except ZeroDivisionError as e:\n        print(e)  # 出力: ゼロによる除算です。",
+  "stdout": "7\n-2\n2.0\n-4\nゼロによる除算です。\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 73,
+  "candidates_token_count": 1329,
+  "thoughts_token_count": null,
+  "total_token_count": 1402,
+  "graded_at": "2026-09-06T06:53:17"
+}

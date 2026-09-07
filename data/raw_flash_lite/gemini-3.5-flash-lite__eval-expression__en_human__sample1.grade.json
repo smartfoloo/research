@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__en_human__sample1.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "import ast\nimport operator\n\ndef eval_expression(expr: str) -> float or int:\n    \"\"\"\n    Evaluates a mathematical expression string, supporting the order of operations,\n    parentheses, and negative numbers. Raises ZeroDivisionError on division by zero.\n    \"\"\"\n    # Supported operators mapping\n    operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n        ast.FloorDiv: operator.floordiv,\n        ast.Mod: operator.mod,\n        ast.Pow: operator.pow,\n        ast.UAdd: operator.pos,\n        ast.USub: operator.neg,\n    }\n\n    def _eval(node):\n        if isinstance(node, ast.Constant):  # Numbers (Python 3.8+)\n            if isinstance(node.value, (int, float)):\n                return node.value\n            raise TypeError(f\"Unsupported constant type: {type(node.value)}\")\n        \n        elif isinstance(node, ast.BinOp):  # Binary operations (e.g., a + b)\n            op_type = type(node.op)\n            if op_type in operators:\n                left = _eval(node.left)\n                right = _eval(node.right)\n                try:\n                    return operators[op_type](left, right)\n                except ZeroDivisionError:\n                    raise ZeroDivisionError(\"division by zero\")\n            else:\n                raise TypeError(f\"Unsupported operator: {op_type}\")\n                \n        elif isinstance(node, ast.UnaryOp):  # Unary operations (e.g., -5, +5)\n            op_type = type(node.op)\n            if op_type in operators:\n                operand = _eval(node.operand)\n                return operators[op_type](operand)\n            else:\n                raise TypeError(f\"Unsupported unary operator: {op_type}\")\n                \n        elif isinstance(node, ast.Expression):  # Root expression node\n            return _eval(node.body)\n            \n        else:\n            raise TypeError(f\"Unsupported expression structure: {type(node)}\")\n\n    # Parse the expression into an Abstract Syntax Tree\n    try:\n        tree = ast.parse(expr.strip(), mode='eval')\n    except SyntaxError as e:\n        raise ValueError(f\"Invalid expression syntax: {expr}\") from e\n\n    return _eval(tree)\n\n# --- Examples ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))       # Output: 7\n    print(eval_expression(\"-5 + (-3) * 2\"))         # Output: -11\n    print(eval_expression(\"10 / (5 - 5)\"))          # Raises ZeroDivisionError",
+  "stdout": "7\n-11\n(non-fatal) submitted code raised at top level: ZeroDivisionError('division by zero')\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 948,
+  "thoughts_token_count": null,
+  "total_token_count": 1014,
+  "graded_at": "2026-09-06T06:53:13"
+}

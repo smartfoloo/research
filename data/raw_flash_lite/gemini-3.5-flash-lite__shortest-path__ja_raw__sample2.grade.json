@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__ja_raw__sample2.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # 1. 負の重みのチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edges with negative weights are not allowed.\")\n            \n    # 2. start と end が同じ場合の処理\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフの構築 (Adjacency list)\n    graph = defaultdict(list)\n    nodes = set()\n    for u, v, w in edges:\n        graph[u].append((v, w))\n        nodes.add(u)\n        nodes.add(v)\n\n    # start または end がグラフのノードに存在しない場合\n    if start not in nodes or end not in nodes:\n        return (None, None)\n\n    # 4. ダイクストラ法の初期化\n    # 優先度付きキューには (現在の距離, 現在のノード, 経路) を格納\n    queue = [(0, start, [start])]\n    \n    # 訪問済みのノードを記録して、最適でない経路を探索するのを防ぐ\n    visited = set()\n\n    while queue:\n        current_distance, current_node, path = heapq.heappop(queue)\n\n        # 目的地に到達した場合\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        visited.add(current_node)\n\n        # 隣接ノードを探索\n        for neighbor, weight in graph[current_node]:\n            if neighbor not in visited:\n                distance = current_distance + weight\n                heapq.heappush(queue, (distance, neighbor, path + [neighbor]))\n\n    # 5. 経路が存在しない場合\n    return (None, None)\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    \n    # 例の実行\n    print(shortest_path(edges, \"A\", \"C\"))  # 出力: (3, ['A', 'B', 'C'])\n    \n    # 同じノードの場合\n    print(shortest_path(edges, \"A\", \"A\"))  # 出力: (0, ['A'])\n    \n    # 経路がない場合\n    print(shortest_path(edges, \"A\", \"D\"))  # 出力: (None, None)\n    \n    # 負の重みがある場合\n    try:\n        shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n    except ValueError as e:\n        print(e)  # 出力: Edges with negative weights are not allowed.",
+  "stdout": "(3, ['A', 'B', 'C'])\n(0, ['A'])\n(None, None)\nEdges with negative weights are not allowed.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 178,
+  "candidates_token_count": 848,
+  "thoughts_token_count": null,
+  "total_token_count": 1026,
+  "graded_at": "2026-09-06T06:53:32"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__shortest-path__mt_en__sample4.json",
+  "task": "shortest-path",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "def shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a directed weighted graph.\n    \n    Args:\n        edges: List of tuples (from_node, to_node, weight)\n        start: Starting node\n        end: Ending node\n    \n    Returns:\n        Tuple of (distance, path) where distance is the total weight of the shortest path\n        and path is a list of nodes. Returns (None, None) if no path exists.\n        Returns (0, [start]) if start == end.\n    \n    Raises:\n        ValueError: If any edge has a negative weight.\n    \"\"\"\n    # Check for negative weights\n    for edge in edges:\n        if len(edge) != 3:\n            raise ValueError(\"Each edge must be a tuple of (from_node, to_node, weight)\")\n        if edge[2] < 0:\n            raise ValueError(\"Edge weights must be non-negative\")\n    \n    # If start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    from collections import defaultdict\n    graph = defaultdict(list)\n    all_nodes = set()\n    \n    for from_node, to_node, weight in edges:\n        graph[from_node].append((to_node, weight))\n        all_nodes.add(from_node)\n        all_nodes.add(to_node)\n    \n    # Check if start or end are in the graph (they might not have outgoing/incoming edges)\n    # We'll still run Dijkstra, but if start has no outgoing edges, we won't reach end (unless start==end)\n    \n    # Dijkstra's algorithm\n    import heapq\n    \n    # dist[node] = shortest distance from start to node\n    dist = {node: float('inf') for node in all_nodes}\n    dist[start] = 0\n    \n    # prev[node] = previous node on the shortest path\n    prev = {node: None for node in all_nodes}\n    \n    # Priority queue: (distance, node)\n    pq = [(0, start)]\n    visited = set()\n    \n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n        \n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n        \n        # If we reached the end node, we can stop early\n        if current_node == end:\n            break\n        \n        for neighbor, weight in graph[current_node]:\n            if neighbor in visited:\n                continue\n            new_dist = current_dist + weight\n            if new_dist < dist[neighbor]:\n                dist[neighbor] = new_dist\n                prev[neighbor] = current_node\n                heapq.heappush(pq, (new_dist, neighbor))\n    \n    # Check if end is reachable\n    if dist[end] == float('inf'):\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    node = end\n    while node is not None:\n        path.append(node)\n        node = prev[node]\n    path.reverse()\n    \n    return (dist[end], path)",
+  "stdout": "FAIL case 2: raised KeyError: 'C'\nPASSED 3/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 3,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_tokens": 153,
+  "completion_tokens": 682,
+  "total_tokens": 835,
+  "groq_seed": 734021332,
+  "graded_at": "2026-09-06T09:09:05"
+}

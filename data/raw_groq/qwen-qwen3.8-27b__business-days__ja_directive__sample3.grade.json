@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__business-days__ja_directive__sample3.json",
+  "task": "business-days",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    # Parse the date strings\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date for simpler iteration\n    if d1 >= d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    current_date = d1 + timedelta(days=1)  # Start strictly after d1\n    \n    while current_date < d2:  # End strictly before d2\n        if current_date.weekday() < 5:  # 0=Mon to 4=Fri\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 116,
+  "completion_tokens": 522,
+  "total_tokens": 638,
+  "groq_seed": 770035734,
+  "graded_at": "2026-09-06T09:08:31"
+}

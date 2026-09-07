@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function `business_days(date1, date2)` using Python's built-in `datetime` module. \n\nIt handles dates regardless of which order they are passed in (chronological or reverse) and strictly excludes the start and end dates from the count as requested.\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Returns the number of business days (Monday-Friday) between date1 and date2.\n    Dates should be in the format 'YYYY-MM-DD'.\n    The start and end dates are excluded from the count.\n    \"\"\"\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date and d2 is the later date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    # Exclude the boundaries by moving start forward by 1 day \n    # and end backward by 1 day.\n    current_date = start_date + timedelta(days=1)\n    end_date = end_date - timedelta(days=1)\n    \n    # If the adjusted start is past the adjusted end, there are 0 business days\n    if current_date > end_date:\n        return 0\n        \n    count = 0\n    while current_date <= end_date:\n        # weekday() returns 0-4 for Monday-Friday, 5-6 for Saturday-Sunday\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# Example usage:\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4\n```\n\n### How it works:\n1. **Parsing:** It converts the input string dates into `datetime` objects.\n2. **Ordering:** It uses `min()` and `max()` so the function still works correctly even if `date2` is chronologically before `date1`.\n3. **Exclusion:** It shifts the `start_date` one day forward and the `end_date` one day backward to strictly exclude the boundary dates. If this results in the start date passing the end date, it immediately returns `0`.\n4. **Counting:** It loops through each day in the remaining range, checking `.weekday()`. Any day with an index less than 5 (Monday through Friday) is added to the count.",
+              "thoughtSignature": "El4KXAERTTIPlkLnqpsHCyeVfAk51fXSQKoJqFCJ5ZVdz3U8hgAdLunRe7CvAq7LoekJTJHsYY2/KnZnCAuqwkeDIdVWwlcYSyp99GuEY3k2kGbjUjmyRWP1uAG3RI+/"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 112,
+      "candidatesTokenCount": 604,
+      "totalTokenCount": 716,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 112
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "e1CdaqnJJaSz9tMP6bWfwAQ"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function `business_days(date1, date2)` using Python's built-in `datetime` module. \n\nIt handles dates regardless of which order they are passed in (chronological or reverse) and strictly excludes the start and end dates from the count as requested.\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Returns the number of business days (Monday-Friday) between date1 and date2.\n    Dates should be in the format 'YYYY-MM-DD'.\n    The start and end dates are excluded from the count.\n    \"\"\"\n    # Convert string dates to datetime objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure d1 is the earlier date and d2 is the later date\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    # Exclude the boundaries by moving start forward by 1 day \n    # and end backward by 1 day.\n    current_date = start_date + timedelta(days=1)\n    end_date = end_date - timedelta(days=1)\n    \n    # If the adjusted start is past the adjusted end, there are 0 business days\n    if current_date > end_date:\n        return 0\n        \n    count = 0\n    while current_date <= end_date:\n        # weekday() returns 0-4 for Monday-Friday, 5-6 for Saturday-Sunday\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# Example usage:\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4\n```\n\n### How it works:\n1. **Parsing:** It converts the input string dates into `datetime` objects.\n2. **Ordering:** It uses `min()` and `max()` so the function still works correctly even if `date2` is chronologically before `date1`.\n3. **Exclusion:** It shifts the `start_date` one day forward and the `end_date` one day backward to strictly exclude the boundary dates. If this results in the start date passing the end date, it immediately returns `0`.\n4. **Counting:** It loops through each day in the remaining range, checking `.weekday()`. Any day with an index less than 5 (Monday through Friday) is added to the count.",
+  "prompt_token_count": 112,
+  "candidates_token_count": 604,
+  "thoughts_token_count": null,
+  "total_token_count": 716,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 6,
+    "prompt_text": "Please create a Python function named `business_days(date1, date2)` that returns the number of business days (Monday through Friday) between two dates. Both dates should be in the format \"YYYY-MM-DD\". The calculation should be based solely on the day of the week, without accounting for public holidays. Note that the two dates themselves should not be included in the count (e.g., \"2024-01-01\", \"2024-01-08\" → 4).",
+    "elapsed_seconds": 7.032081842422485,
+    "generated_at": "2026-09-06T06:37:33"
+  }
+}

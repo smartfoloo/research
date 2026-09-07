@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-ddd30c9a-2ea5-4fd2-8c71-8eb66a08485d",
+    "object": "chat.completion",
+    "created": 1788701036,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string with support for:\n    - Addition, subtraction, multiplication, division\n    - Parentheses\n    - Negative numbers\n    - Order of operations (PEMDAS/BODMAS)\n    \n    Raises ZeroDivisionError if division by zero occurs.\n    \"\"\"\n    # Remove whitespace\n    expr = expr.replace(' ', '')\n    \n    if not expr:\n        raise ValueError(\"Empty expression\")\n    \n    def parse_index(index: int) -> tuple:\n        \"\"\"\n        Parse the expression starting at the given index.\n        Returns (value, new_index).\n        \"\"\"\n        # Try to parse a term (addition/subtraction level)\n        value, index = parse_add_sub(expr, index)\n        return value, index\n    \n    def parse_add_sub(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse addition and subtraction (lowest precedence after parentheses).\n        Returns (value, new_index).\n        \"\"\"\n        # First parse a multiplication/division term\n        left, index = parse_mul_div(expr, index)\n        \n        while index < len(expr) and expr[index] in ('+', '-'):\n            op = expr[index]\n            index += 1\n            right, index = parse_mul_div(expr, index)\n            if op == '+':\n                left = left + right\n            else:\n                left = left - right\n        \n        return left, index\n    \n    def parse_mul_div(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse multiplication and division.\n        Returns (value, new_index).\n        \"\"\"\n        left, index = parse_unary(expr, index)\n        \n        while index < len(expr) and expr[index] in ('*', '/'):\n            op = expr[index]\n            index += 1\n            right, index = parse_unary(expr, index)\n            if op == '*':\n                left = left * right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"Division by zero\")\n                left = left / right\n        \n        return left, index\n    \n    def parse_unary(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse unary plus/minus (negative numbers).\n        Returns (value, new_index).\n        \"\"\"\n        if index < len(expr) and expr[index] == '+':\n            index += 1\n            return parse_primary(expr, index)\n        if index < len(expr) and expr[index] == '-':\n            index += 1\n            value, index = parse_primary(expr, index)\n            return -value, index\n        return parse_primary(expr, index)\n    \n    def parse_primary(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse primary expressions: numbers or parenthesized expressions.\n        Returns (value, new_index).\n        \"\"\"\n        if index >= len(expr):\n            raise ValueError(\"Unexpected end of expression\")\n        \n        ch = expr[index]\n        \n        if ch == '(':\n            index += 1\n            value, index = parse_add_sub(expr, index)\n            if index >= len(expr) or expr[index] != ')':\n                raise ValueError(\"Missing closing parenthesis\")\n            index += 1\n            return value, index\n        \n        elif ch.isdigit() or (ch == '.' and index + 1 < len(expr) and expr[index + 1].isdigit()):\n            # Parse a number\n            start = index\n            if ch == '.':\n                index += 1\n                while index < len(expr) and expr[index].isdigit():\n                    index += 1\n                value = float(expr[start:index])\n            else:\n                while index < len(expr) and (expr[index].isdigit() or expr[index] == '.'):\n                    index += 1\n                num_str = expr[start:index]\n                if '.' in num_str:\n                    value = float(num_str)\n                else:\n                    value = float(num_str)\n            return value, index\n        \n        else:\n            raise ValueError(f\"Unexpected character '{ch}' at position {index}\")\n    \n    # Start parsing\n    result, final_index = parse_index(0)\n    \n    if final_index != len(expr):\n        raise ValueError(f\"Unexpected character at position {final_index}\")\n    \n    return result\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.019948574,
+      "prompt_tokens": 73,
+      "prompt_time": 0.005593515,
+      "completion_tokens": 949,
+      "completion_time": 1.866777372,
+      "total_tokens": 1022,
+      "total_time": 1.872370887
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1ve7jgaencb3he1t7cm39ty",
+      "seed": 2114813501
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string with support for:\n    - Addition, subtraction, multiplication, division\n    - Parentheses\n    - Negative numbers\n    - Order of operations (PEMDAS/BODMAS)\n    \n    Raises ZeroDivisionError if division by zero occurs.\n    \"\"\"\n    # Remove whitespace\n    expr = expr.replace(' ', '')\n    \n    if not expr:\n        raise ValueError(\"Empty expression\")\n    \n    def parse_index(index: int) -> tuple:\n        \"\"\"\n        Parse the expression starting at the given index.\n        Returns (value, new_index).\n        \"\"\"\n        # Try to parse a term (addition/subtraction level)\n        value, index = parse_add_sub(expr, index)\n        return value, index\n    \n    def parse_add_sub(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse addition and subtraction (lowest precedence after parentheses).\n        Returns (value, new_index).\n        \"\"\"\n        # First parse a multiplication/division term\n        left, index = parse_mul_div(expr, index)\n        \n        while index < len(expr) and expr[index] in ('+', '-'):\n            op = expr[index]\n            index += 1\n            right, index = parse_mul_div(expr, index)\n            if op == '+':\n                left = left + right\n            else:\n                left = left - right\n        \n        return left, index\n    \n    def parse_mul_div(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse multiplication and division.\n        Returns (value, new_index).\n        \"\"\"\n        left, index = parse_unary(expr, index)\n        \n        while index < len(expr) and expr[index] in ('*', '/'):\n            op = expr[index]\n            index += 1\n            right, index = parse_unary(expr, index)\n            if op == '*':\n                left = left * right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"Division by zero\")\n                left = left / right\n        \n        return left, index\n    \n    def parse_unary(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse unary plus/minus (negative numbers).\n        Returns (value, new_index).\n        \"\"\"\n        if index < len(expr) and expr[index] == '+':\n            index += 1\n            return parse_primary(expr, index)\n        if index < len(expr) and expr[index] == '-':\n            index += 1\n            value, index = parse_primary(expr, index)\n            return -value, index\n        return parse_primary(expr, index)\n    \n    def parse_primary(expr: str, index: int) -> tuple:\n        \"\"\"\n        Parse primary expressions: numbers or parenthesized expressions.\n        Returns (value, new_index).\n        \"\"\"\n        if index >= len(expr):\n            raise ValueError(\"Unexpected end of expression\")\n        \n        ch = expr[index]\n        \n        if ch == '(':\n            index += 1\n            value, index = parse_add_sub(expr, index)\n            if index >= len(expr) or expr[index] != ')':\n                raise ValueError(\"Missing closing parenthesis\")\n            index += 1\n            return value, index\n        \n        elif ch.isdigit() or (ch == '.' and index + 1 < len(expr) and expr[index + 1].isdigit()):\n            # Parse a number\n            start = index\n            if ch == '.':\n                index += 1\n                while index < len(expr) and expr[index].isdigit():\n                    index += 1\n                value = float(expr[start:index])\n            else:\n                while index < len(expr) and (expr[index].isdigit() or expr[index] == '.'):\n                    index += 1\n                num_str = expr[start:index]\n                if '.' in num_str:\n                    value = float(num_str)\n                else:\n                    value = float(num_str)\n            return value, index\n        \n        else:\n            raise ValueError(f\"Unexpected character '{ch}' at position {index}\")\n    \n    # Start parsing\n    result, final_index = parse_index(0)\n    \n    if final_index != len(expr):\n        raise ValueError(f\"Unexpected character at position {final_index}\")\n    \n    return result\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 73,
+  "completion_tokens": 949,
+  "total_tokens": 1022,
+  "groq_seed": 2114813501,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "eval-expression",
+    "condition": "mt_en",
+    "sample_idx": 6,
+    "prompt_text": "Create a Python function called eval_expression(expr) that computes the expression in expr. Be sure to consider the order of operations and be able to calculate negative numbers. When dividing by zero, raise ZeroDivisionError. (Example: \"3 + 4 * (2 - 1)\" -> 7)",
+    "elapsed_seconds": 44.60273051261902,
+    "generated_at": "2026-09-06T08:23:56"
+  }
+}

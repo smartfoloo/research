@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__business-days__ja_raw__sample5.json",
+  "task": "business-days",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間の営業日（月曜日から金曜日）の数を返す。\n    両端の日付は含まない。\n    \n    Args:\n        date1: YYYY-MM-DD 形式の最初の日付\n        date2: YYYY-MM-DD 形式の2番目の日付\n    \n    Returns:\n        2つの日付の間（両端を含まない）の営業日数\n    \"\"\"\n    # 日付を解析\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # date1 < date2 になるよう順に並べる\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    start = d1 + timedelta(days=1)  # date1 の翌日から\n    end = d2 - timedelta(days=1)    # date2 の前日まで\n    \n    if start > end:\n        return 0\n    \n    count = 0\n    current = start\n    while current <= end:\n        if current.weekday() < 5:  # 月曜日(0)から金曜日(4)\n            count += 1\n        current += timedelta(days=1)\n    \n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 109,
+  "completion_tokens": 324,
+  "total_tokens": 433,
+  "groq_seed": 264156454,
+  "graded_at": "2026-09-06T09:08:34"
+}

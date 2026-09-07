@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__eval-expression__en_human__sample5.json",
+  "task": "eval-expression",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "def eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string supporting +, -, *, /, parentheses,\n    and negative numbers, following standard order of operations.\n    \n    Raises ZeroDivisionError if division by zero occurs.\n    \"\"\"\n    # Tokenize the expression\n    tokens = _tokenize(expr)\n    # Parse and evaluate\n    pos = 0\n    \n    def parse_expression():\n        nonlocal pos\n        result = parse_term()\n        while pos < len(tokens) and tokens[pos] in ('+', '-'):\n            op = tokens[pos]\n            pos += 1\n            right = parse_term()\n            if op == '+':\n                result += right\n            else:\n                result -= right\n        return result\n    \n    def parse_term():\n        nonlocal pos\n        result = parse_factor()\n        while pos < len(tokens) and tokens[pos] in ('*', '/'):\n            op = tokens[pos]\n            pos += 1\n            right = parse_factor()\n            if op == '*':\n                result *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                result /= right\n        return result\n    \n    def parse_factor():\n        nonlocal pos\n        # Handle unary plus or minus\n        if pos < len(tokens) and tokens[pos] == '-':\n            pos += 1\n            return -parse_factor()\n        if pos < len(tokens) and tokens[pos] == '+':\n            pos += 1\n            return parse_factor()\n        \n        if pos >= len(tokens):\n            raise ValueError(\"Unexpected end of expression\")\n        \n        token = tokens[pos]\n        \n        if token == '(':\n            pos += 1\n            result = parse_expression()\n            if pos >= len(tokens) or tokens[pos] != ')':\n                raise ValueError(\"Expected closing parenthesis\")\n            pos += 1\n            return result\n        \n        # It should be a number\n        try:\n            value = float(token)\n            pos += 1\n            return value\n        except ValueError:\n            raise ValueError(f\"Invalid token: {token}\")\n    \n    result = parse_expression()\n    if pos != len(tokens):\n        raise ValueError(\"Unexpected token after expression: \" + str(tokens[pos]))\n    return result\n\n\ndef _tokenize(expr: str) -> list:\n    \"\"\"Tokenize the expression into numbers, operators, and parentheses.\"\"\"\n    tokens = []\n    i = 0\n    expr = expr.replace(' ', '')\n    while i < len(expr):\n        ch = expr[i]\n        if ch in '+-*/()':\n            tokens.append(ch)\n            i += 1\n        elif ch.isdigit() or ch == '.':\n            j = i\n            while j < len(expr) and (expr[j].isdigit() or expr[j] == '.'):\n                j += 1\n            tokens.append(expr[i:j])\n            i = j\n        else:\n            raise ValueError(f\"Invalid character: {ch}\")\n    return tokens",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 76,
+  "completion_tokens": 669,
+  "total_tokens": 745,
+  "groq_seed": 149317665,
+  "graded_at": "2026-09-06T09:08:45"
+}

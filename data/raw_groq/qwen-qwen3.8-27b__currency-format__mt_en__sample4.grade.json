@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__mt_en__sample4.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        sign = \"-\"\n        n = -n\n    else:\n        sign = \"\"\n    \n    # Convert to string and add commas every three digits\n    # Handle the case where n is an integer\n    n_str = str(int(n))\n    \n    # Insert commas every three digits from the right\n    formatted = \"\"\n    length = len(n_str)\n    count = 0\n    for i in range(length - 1, -1, -1):\n        formatted = n_str[i] + formatted\n        count += 1\n        if count % 3 == 0 and i != 0:\n            formatted = \",\" + formatted\n    \n    return sign + \"$\" + formatted",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 76,
+  "completion_tokens": 168,
+  "total_tokens": 244,
+  "groq_seed": 1180405475,
+  "graded_at": "2026-09-06T09:08:43"
+}

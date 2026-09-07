@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__shortest-path__ja_raw__sample2.json",
+  "task": "shortest-path",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短路問題をDijkstraアルゴリズムで解く関数。\n    \n    Parameters:\n    edges: (from_node, to_node, weight) タプルのリスト\n    start: 始点ノード\n    end: 終点ノード\n    \n    Returns:\n    (distance, path) のタプル。負のエッジがある場合はValueErrorを送出。\n    経路が存在しない場合は (None, None)。\n    start == end の場合は (0, [start])。\n    \"\"\"\n    # 負のエッジをチェック\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative edge weight found\")\n    \n    # start と end が同じ場合\n    if start == end:\n        return (0, [start])\n    \n    # アジャセンスリストの構築\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n    \n    # Dijkstraアルゴリズム\n    # d[node] = startからの最短距離\n    d = {}\n    # prev[node] = 最短経路上での前ノード\n    prev = {}\n    \n    # ユーティリティノードをすべて初期化\n    all_nodes = set()\n    for u, v, _ in edges:\n        all_nodes.add(u)\n        all_nodes.add(v)\n    all_nodes.add(start)\n    all_nodes.add(end)\n    \n    for node in all_nodes:\n        d[node] = float('inf')\n        prev[node] = None\n    \n    d[start] = 0\n    \n    # ヒープ: (distance, node)\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        dist, u = heapq.heappop(heap)\n        \n        # すでに訪問済みならスキップ\n        if u in visited:\n            continue\n        \n        visited.add(u)\n        \n        # end に到達したら早期終了\n        if u == end:\n            break\n        \n        # 隣接ノードを探索\n        if u in graph:\n            for v, w in graph[u]:\n                if w < 0:\n                    raise ValueError(\"Negative edge weight found\")\n                new_dist = dist + w\n                if new_dist < d[v]:\n                    d[v] = new_dist\n                    prev[v] = u\n                    heapq.heappush(heap, (new_dist, v))\n    \n    # 経路が存在しない場合\n    if d[end] == float('inf'):\n        return (None, None)\n    \n    # 経路を逆方向にトレース\n    path = []\n    node = end\n    while node is not None:\n        path.append(node)\n        node = prev[node]\n    path.reverse()\n    \n    return (d[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 188,
+  "completion_tokens": 659,
+  "total_tokens": 847,
+  "groq_seed": 13713831,
+  "graded_at": "2026-09-06T09:09:02"
+}

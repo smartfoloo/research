@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_raw__sample4.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 4,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    通貨形式の文字列を返す関数\n    \n    Args:\n        n: 整数または浮点数（通貨を表す金額）\n        \n    Returns:\n        formated string (例: \"$4,640,039\" や \"-$123\")\n    \"\"\"\n    abs_n = abs(n)\n    sign = \"-\" if n < 0 else \"\"\n    \n    # f-string の {:,} フォーマットで自動的に3桁ごとにカンマを挿入\n    formatted_abs = f\"{abs_n:,}\"\n    \n    return f\"{sign}${formatted_abs}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 87,
+  "eval_count": 907,
+  "graded_at": "2026-09-06T03:04:22"
+}

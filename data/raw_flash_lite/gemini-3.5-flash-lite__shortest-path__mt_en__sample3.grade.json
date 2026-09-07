@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__mt_en__sample3.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Finds the shortest path between a start and end node in a weighted directed graph.\n    \n    Parameters:\n    - edges: list of tuples (from_node, to_node, weight)\n    - start: the starting node\n    - end: the target node\n    \n    Returns:\n    - (distance, path): A tuple containing the total weight and a list of nodes.\n      Returns (0, [start]) if start == end.\n      Returns (None, None) if no path exists.\n    - Raises:\n    - ValueError: if any edge has a negative weight.\n    \"\"\"\n    # Check for identical start and end nodes\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list and check for negative weights\n    graph = defaultdict(list)\n    for u, v, weight in edges:\n        if weight < 0:\n            raise ValueError(f\"Negative edge weight detected: ({u}, {v}, {weight}). Dijkstra's algorithm does not support negative weights.\")\n        graph[u].append((v, weight))\n\n    # Priority queue stores tuples of (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n    \n    # Dictionary to store the shortest distance found to each node\n    shortest_distances = {start: 0}\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the target, return the distance and path\n        if current_node == end:\n            return (current_distance, path)\n\n        # If a shorter path to current_node has already been processed, skip\n        if current_distance > shortest_distances.get(current_node, float('inf')):\n            continue\n\n        # Explore neighbors\n        for neighbor, weight in graph[current_node]:\n            distance = current_distance + weight\n\n            # If a shorter path to the neighbor is found\n            if distance < shortest_distances.get(neighbor, float('inf')):\n                shortest_distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor, path + [neighbor]))\n\n    # If the priority queue is exhausted and 'end' was not reached\n    return (None, None)\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # Output: (3, ['A', 'B', 'C'])\n    print(shortest_path(edges, \"A\", \"A\"))  # Output: (0, ['A'])\n    print(shortest_path(edges, \"C\", \"A\"))  # Output: (None, None)",
+  "stdout": "(3, ['A', 'B', 'C'])\n(0, ['A'])\n(None, None)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 146,
+  "candidates_token_count": 900,
+  "thoughts_token_count": null,
+  "total_token_count": 1046,
+  "graded_at": "2026-09-06T06:53:34"
+}

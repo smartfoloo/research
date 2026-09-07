@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__eval-expression__ja_directive__sample2.json",
+  "task": "eval-expression",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "import ast\nimport operator\n\nclass UnsafeExpressionError(Exception):\n    pass\n\ndef _eval_node(node):\n    \"\"\"Recursively evaluate an AST node.\"\"\"\n    \n    # Numeric literal (int or float)\n    if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):\n        return node.value\n    \n    # Binary operations: +, -, *, /, //, %, **\n    elif isinstance(node, ast.BinOp):\n        left = _eval_node(node.left)\n        right = _eval_node(node.right)\n        \n        ops = {\n            ast.Add: operator.add,\n            ast.Sub: operator.sub,\n            ast.Mult: operator.mul,\n            ast.Div: operator.truediv,\n            ast.FloorDiv: operator.floordiv,\n            ast.Mod: operator.mod,\n            ast.Pow: operator.pow,\n        }\n        \n        if not isinstance(node.op, tuple(ops.keys())):\n            raise UnsafeExpressionError(f\"Unsupported operator: {ast.dump(node.op)}\")\n        \n        # Check for division by zero\n        if isinstance(node.op, (ast.Div, ast.FloorDiv, ast.Mod)):\n            if right == 0:\n                raise ZeroDivisionError(\"division by zero\")\n        \n        return ops[type(node.op)](left, right)\n    \n    # Unary operations: -, +\n    elif isinstance(node, ast.UnaryOp):\n        operand = _eval_node(node.operand)\n        unary_ops = {\n            ast.USub: operator.neg,\n            ast.UAdd: operator.pos,\n        }\n        if not isinstance(node.op, tuple(unary_ops.keys())):\n            raise UnsafeExpressionError(f\"Unsupported unary operator: {ast.dump(node.op)}\")\n        return unary_ops[type(node.op)](operand)\n    \n    else:\n        raise UnsafeExpressionError(f\"Unsupported expression node: {ast.dump(node)}\")\n\ndef eval_expression(expr):\n    \"\"\"\n    Evaluate a mathematical expression string.\n    \n    Supports: +, -, *, /, //, %, **, parentheses, and negative numbers (unary minus).\n    Respects standard operator precedence.\n    Raises ZeroDivisionError for division by zero.\n    \n    Example:\n        >>> eval_expression(\"3 + 4 * (2 - 1)\")\n        7\n    \"\"\"\n    try:\n        tree = ast.parse(expr.strip(), mode='eval')\n    except SyntaxError as e:\n        raise ValueError(f\"Invalid expression syntax: {e}\") from e\n    \n    return _eval_node(tree.body)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 91,
+  "completion_tokens": 1426,
+  "total_tokens": 1517,
+  "groq_seed": 1326518501,
+  "graded_at": "2026-09-06T09:08:46"
+}

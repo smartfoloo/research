@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__en_human__sample5.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Format a number as currency string with $ and thousand separators.\n    \n    Args:\n        n (int or float): The number to format\n        \n    Returns:\n        str: Formatted currency string like \"$4,640,039\" or \"-$500\"\n    \"\"\"\n    # Handle negative numbers by adding minus sign before $\n    if n < 0:\n        return f\"${n}\"\n    else:\n        return f\"${n:,}\"",
+  "stdout": "FAIL case 1: expected '-$1,234', got '$-1234'\nPASSED 3/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 3,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 76,
+  "eval_count": 1064,
+  "graded_at": "2026-09-06T03:04:21"
+}

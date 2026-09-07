@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__reverse-list-elements__en_human__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements and their corresponding punctuation.\n    \n    Args:\n        elements (list): A list of strings.\n        punctuation (list): A list of punctuation marks corresponding to elements.\n        \n    Returns:\n        tuple: (reversed_elements, reversed_punctuation)\n    \"\"\"\n    # Using list slicing [::-1] to reverse the lists\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n    \n    return (new_elements, new_punctuation)\n\n# Example usage:\nelements_list = [\"Hello\", \"world\"]\npunctuation_list = [\"\", \"!\"]\nresult = reverse_list_elements(elements_list, punctuation_list)\nprint(result)  # Output: (['world', 'Hello'], ['!', ''])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 75,
+  "candidates_token_count": 370,
+  "thoughts_token_count": 586,
+  "total_token_count": 1031,
+  "graded_at": "2026-09-06T05:08:27"
+}

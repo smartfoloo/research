@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__business-days__ja_raw__sample3.json",
+  "task": "business-days",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1_str, date2_str):\n    # 文字列をdateオブジェクトに変換\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date1_str, \"%Y-%m-%d\").date()  # 修正用プレースホルダ\n    d1 = datetime.strptime(date1_str, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2_str, \"%Y-%m-%d\").date()\n\n    # 常に d1 が過去、d2 が未来になるように入れ替える\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    # 開始日の翌日から終了日の前日までを対象とするため、\n    # d1に1日足し、d2から1日引く\n    start_date = d1 + timedelta(days=1)\n    end_date = d2 - timedelta(days=1)\n\n    # 期間が逆転している（もともと隣り合っているか同じ日付だった場合）は0を返す\n    if start_date > end_date:\n        return 0\n\n    count = 0\n    current_date = start_date\n\n    while current_date <= end_date:\n        # weekday() は月曜日が0、日曜日が6を返す。\n        # 0〜4（月〜金）の場合にカウントを増やす\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n\n    return count\n\n\n# --- 使用例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n# 内訳: 1月2日(火), 3日(水), 4日(木), 5日(金) の計4日\n\nprint(business_days(\"2024-01-05\", \"2024-01-08\"))  # 出力: 1\n# 内訳: 1月6日(土)、7日(日)を除き、1月6日～7日の間に平日はなし...\n# 例：1月5日と1月8日の間には、1月6日(土)と1月7日(日)があるので平日は0日ですが、\n# もう一度確認: 1月5日(金)の次、1月8日(月)の前...の間には日はありません。出力: 0",
+  "stdout": "4\n0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 100,
+  "candidates_token_count": 820,
+  "thoughts_token_count": null,
+  "total_token_count": 920,
+  "graded_at": "2026-09-06T06:53:03"
+}

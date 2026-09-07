@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__ja_raw__sample2.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    num_str = f\"{abs(n):,.0f}\"\n    return f\"{sign}${num_str}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 87,
+  "eval_count": 818,
+  "graded_at": "2026-09-05T21:40:28"
+}

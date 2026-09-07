@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__mt_en__sample6.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 6,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # Remove all whitespace for easier processing\n    expr = expr.replace(\" \", \"\")\n    pos = 0\n\n    def parse_expression():\n        \"\"\"Handles addition and subtraction (lowest precedence)\"\"\"\n        nonlocal pos\n        left = parse_term()\n        \n        while pos < len(expr) and expr[pos] in ('+', '-'):\n            op = expr[pos]\n            pos += 1\n            right = parse_term()\n            if op == '+':\n                left += right\n            else:\n                left -= right\n        return left\n\n    def parse_term():\n        \"\"\"Handles multiplication and division\"\"\"\n        nonlocal pos\n        left = parse_factor()\n        \n        while pos < len(expr) and expr[pos] in ('*', '/'):\n            op = expr[pos]\n            pos += 1\n            right = parse_factor()\n            if op == '*':\n                left *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"Division by zero is not allowed.\")\n                left /= right\n        return left\n\n    def parse_factor():\n        \"\"\"Handles parentheses, unary negatives, and numbers (highest precedence)\"\"\"\n        nonlocal pos\n        \n        # Handle unary minus (negative numbers)\n        if pos < len(expr) and expr[pos] == '-':\n            pos += 1\n            return -parse_factor()\n        \n        # Handle parentheses\n        if pos < len(expr) and expr[pos] == '(':\n            pos += 1  # skip '('\n            result = parse_expression()\n            if pos < len(expr) and expr[pos] == ')':\n                pos += 1  # skip ')'\n            return result\n        \n        # Handle numbers\n        start_pos = pos\n        # Match digits and decimal points\n        while pos < len(expr) and (expr[pos].isdigit() or expr[pos] == '.'):\n            pos += 1\n        \n        try:\n            return float(expr[start_pos:pos])\n        except ValueError:\n            raise SyntaxError(f\"Invalid character at position {start_pos}\")\n\n    # The final result is converted to int if it has no decimal part for cleaner output\n    result = parse_expression()\n    return int(result) if result == int(result) else result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"-5 + 2\", -3),\n        (\"10 / (2 + 3)\", 2),\n        (\"2 * -3 + 10\", 4),\n        (\"10.5 + 0.5\", 11),\n        (\"-(2 + 3) * 2\", -10),\n    ]\n\n    for expression, expected in test_cases:\n        res = eval_expression(expression)\n        print(f\"'{expression}' -> {res} (Expected: {expected})\")\n\n    # Testing ZeroDivisionError\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'-5 + 2' -> -3 (Expected: -3)\n'10 / (2 + 3)' -> 2 (Expected: 2)\n'2 * -3 + 10' -> 4 (Expected: 4)\n'10.5 + 0.5' -> 11 (Expected: 11)\n'-(2 + 3) * 2' -> -10 (Expected: -10)\nCaught expected error: Division by zero is not allowed.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 63,
+  "candidates_token_count": 1115,
+  "thoughts_token_count": 722,
+  "total_token_count": 1900,
+  "graded_at": "2026-09-06T05:08:27"
+}

@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_directive__sample5.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    2 つの日付の間の営業日（月曜日から金曜日）の数を計算します。\n    \n    Args:\n        date1 (str): YYYY-MM-DD 形式の日付文字列 (スタート)\n        date2 (str): YYYY-MM-DD 形式の日付文字列 (ゴール)\n    \n    Returns:\n        int: 間の営業日数 (端点を含まない)\n    \"\"\"\n    try:\n        # 日付文字列を datetime の date オブジェクトに変換\n        start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n        end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n        \n        # 開始日が終了日より後の場合は入れ替え\n        if start > end:\n            start, end = end, start\n            \n        # 営業日数を初期化\n        count = 0\n        \n        # 1 日分進め、かつ終了日より早くなるまでループ (end を含むか含まない判定に注意)\n        # 要件「2 つの日付自体は含まないように」なので、start から end までの区間内 (exclusive) \n        # つまり date == start と date == end はカウント対象外\n        current_date = start + timedelta(days=1)\n        \n        while current_date < end:\n            if current_date.weekday() < 5: # 月曜(0)〜金曜(4)は仕事日\n                count += 1\n            current_date += timedelta(days=1)\n            \n        return count\n        \n    except ValueError as e:\n        raise ValueError(f\"Invalid date format. Please use YYYY-MM-DD. Error: {e}\")\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    # 例：2024-01-01 (月) から 2024-01-08 (月) まで\n    d1 = \"2024-01-01\"\n    d2 = \"2024-01-08\"\n    \n    # 計算結果：\n    # 対象範囲：2024-01-02 ~ 2024-01-07\n    # 1/2 (水), 1/3 (木), 1/4 (金), 1/5 (土 -X), 1/6 (日-X), 1/7 (月)\n    # 結果：4 日\n    result = business_days(d1, d2)\n    print(f\"営業日数: {result} 日\") \n\n    # その他の例\n    print(business_days(\"2024-01-08\", \"2024-01-09\")) # 出力：0 (隣接してかつ週末を挟まないが範囲外なので)\n    # 実際には 01-08 は月。01-09 は火。間がないため 0。",
+  "stdout": "営業日数: 4 日\n0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 114,
+  "eval_count": 4021,
+  "graded_at": "2026-09-06T03:04:16"
+}

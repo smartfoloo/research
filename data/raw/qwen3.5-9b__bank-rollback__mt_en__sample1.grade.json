@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__bank-rollback__mt_en__sample1.json",
+  "task": "bank-rollback",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Process bank transactions in order and validate that balance never goes negative.\n\n    Args:\n        balance (number): Starting account balance.\n        transactions (list of number): List of transaction amounts (positive or negative).\n\n    Returns:\n        tuple: (final_or_original_balance, success)\n               - If successful: (final_balance, True)\n               - If failure: (original_balance, False)\n    \"\"\"\n    current_balance = balance\n\n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n\n    return (current_balance, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 113,
+  "eval_count": 1433,
+  "graded_at": "2026-09-05T21:40:21"
+}

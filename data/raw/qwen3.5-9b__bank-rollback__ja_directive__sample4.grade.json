@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__bank-rollback__ja_directive__sample4.json",
+  "task": "bank-rollback",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def bank_rollback(balance: int | float, transactions: list[int | float]) -> tuple[int | float, bool]:\n    \"\"\"\n    取引リストを順に処理して、最終的な残高を計算する関数です。\n    途中のいずれかの時点で残高がマイナスになった場合は、計算を停止し、\n    元の残高を戻して失敗フラグ付きで返します。\n\n    Args:\n        balance (int | float): 取引開始時の元々の残高\n        transactions (list[int | float]): 取引額のリスト（正値は入金、負値は出金）\n\n    Returns:\n        tuple[int | float, bool]: \n          (最終的な残高または元の残高, 処理が成功したか否か) のタプルを返します。\n    \"\"\"\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        # 計算中に残高がマイナス（0 より小さく）なった場合\n        if current_balance < 0:\n            return (balance, False)\n\n    # すべて処理成功した場合\n    return (current_balance, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 149,
+  "eval_count": 4713,
+  "graded_at": "2026-09-06T03:04:09"
+}

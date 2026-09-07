@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__shortest-path__en_human__sample1.json",
+  "task": "shortest-path",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a one-way graph using Dijkstra's algorithm.\n    \n    Args:\n        edges: List of (from_node, to_node, weight) tuples\n        start: Starting node\n        end: Ending node\n    \n    Returns:\n        (distance, path) where distance is the shortest total distance\n        and path is an ordered list of nodes on that path.\n        Returns (0, [start]) if start == end.\n        Returns (None, None) if no path exists.\n        Raises ValueError if any edge weight is negative.\n    \"\"\"\n    # Check for negative weights\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weight not allowed\")\n    \n    # Handle start == end\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Dijkstra's algorithm\n    # dist[node] = shortest distance from start to node\n    dist = {start: 0}\n    prev = {}  # Previous node in the shortest path\n    visited = set()\n    \n    # Priority queue: (distance, node)\n    heap = [(0, start)]\n    \n    while heap:\n        d, u = heapq.heappop(heap)\n        \n        if u in visited:\n            continue\n        \n        visited.add(u)\n        \n        # If we reached the end node, we can stop\n        if u == end:\n            break\n        \n        # Explore neighbors\n        if u in graph:\n            for v, weight in graph[u]:\n                if v in visited:\n                    continue\n                new_dist = d + weight\n                if v not in dist or new_dist < dist[v]:\n                    dist[v] = new_dist\n                    prev[v] = u\n                    heapq.heappush(heap, (new_dist, v))\n    \n    # Check if end is reachable\n    if end not in dist:\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = prev[current]\n    path.append(start)\n    path.reverse()\n    \n    return (dist[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 155,
+  "completion_tokens": 554,
+  "total_tokens": 709,
+  "groq_seed": 232601570,
+  "graded_at": "2026-09-06T09:08:58"
+}

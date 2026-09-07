@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_directive__sample2.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def eval_expression(expr):\n    \"\"\"\n    文字列形式の数学式を計算する関数です。\n    \n    Args:\n        expr (str): 計算対象の数学式文字列 (例: \"3 + 4 * (2 - 1)\")\n        \n    Returns:\n        int or float: 計算結果\n        \n    Raises:\n        ZeroDivisionError: 除算でゼロを割り当てた場合\n        SyntaxError: 文法エラーが発生した場合\n    \"\"\"\n    try:\n        # Python の eval は PEMDAS (演算順序) を自動的に正しく評価します\n        return eval(expr)\n    except ZeroDivisionError:\n        # 指定通り、ゼロ除算例外をそのまま送出\n        raise\n\n# 使用例\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力: 7\nprint(eval_expression(\"-5 + 10 / 2\"))      # 出力：5.0 (負の数も可)",
+  "stdout": "7\n0.0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 89,
+  "eval_count": 6092,
+  "graded_at": "2026-09-05T21:40:31"
+}

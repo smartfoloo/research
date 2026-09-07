@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_directive__sample3.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Calculates the shortest path between start and end nodes in a directed graph.\n    \n    Args:\n        edges: List of tuples (from_node, to_node, weight).\n        start: Starting node.\n        end: Target node.\n        \n    Returns:\n        A tuple (distance, path) where distance is the total weight and \n        path is the list of nodes. If unreachable, returns (None, None).\n        \n    Raises:\n        ValueError: If any edge has a negative weight.\n    \"\"\"\n    \n    # 1. Negative Weight Validation\n    # いずれかのエッジの weight がマイナスの場合、ValueError を発生させる\n    for _, _, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weight cannot be negative\")\n            \n    # 2. Start and End Case\n    # start と end が同じノードである場合、(0, [start]) を返す\n    if start == end:\n        return (0, [start])\n\n    # 3. Build Adjacency List\n    adj = {}\n    for u, v, w in edges:\n        if u not in adj:\n            adj[u] = []\n        adj[u].append((v, w))\n        \n    # Dijkstra's Algorithm Setup\n    dist = {start: 0}\n    prev = {start: None}\n    # Priority Queue stores tuples of (current_distance, node)\n    pq = [(0, start)]\n    \n    while pq:\n        d, u = heapq.heappop(pq)\n        \n        # Optimization: If we found a shorter path to u before this one was processed\n        if d > dist.get(u, float('inf')):\n            continue\n        \n        # If we reached the destination, we can stop because Dijkstra guarantees shortest path\n        if u == end:\n            break\n            \n        if u in adj:\n            for v, w in adj[u]:\n                new_dist = d + w\n                # Relaxation step\n                if v not in dist or new_dist < dist[v]:\n                    dist[v] = new_dist\n                    prev[v] = u\n                    heapq.heappush(pq, (new_dist, v))\n    \n    # 4. Check Reachability\n    # 経路が存在しない場合、(None, None) を返す\n    if end not in dist:\n        return (None, None)\n        \n    # 5. Reconstruct Path\n    path = []\n    curr = end\n    while curr != start:\n        path.append(curr)\n        curr = prev[curr]\n    path.append(start)\n    path.reverse()\n    \n    return (dist[end], path)\n\n# Example Usage\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    result = shortest_path(edges, \"A\", \"C\")\n    print(result) # Output: (3, ['A', 'B', 'C'])\n    \n    # Case: Unreachable\n    edges_unreachable = [(\"A\", \"B\", 1), (\"C\", \"D\", 2)]\n    result_none = shortest_path(edges_unreachable, \"A\", \"D\")\n    print(result_none) # Output: (None, None)\n\n    # Case: Same Node\n    result_same = shortest_path(edges, \"A\", \"A\")\n    print(result_same) # Output: (0, ['A'])\n    \n    # Case: Negative Weight Error\n    try:\n        edges_neg = [(\"A\", \"B\", -1)]\n        shortest_path(edges_neg, \"A\", \"B\")\n    except ValueError as e:\n        print(e)",
+  "stdout": "(3, ['A', 'B', 'C'])\n(None, None)\n(0, ['A'])\nEdge weight cannot be negative\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 193,
+  "eval_count": 5064,
+  "graded_at": "2026-09-05T21:40:38"
+}

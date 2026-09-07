@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__ja_directive__sample5.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "def eval_expression(expr):\n        try:\n            # eval() handles operator precedence, negative numbers, and parentheses natively.\n            # It also naturally raises ZeroDivisionError when dividing by zero.\n            return eval(expr)\n        except ZeroDivisionError:\n            raise ZeroDivisionError(\"division by zero\")\n        except Exception as e:\n            raise ValueError(f\"Invalid expression: {e}\")",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 80,
+  "candidates_token_count": 1138,
+  "thoughts_token_count": null,
+  "total_token_count": 1218,
+  "graded_at": "2026-09-06T06:53:17"
+}

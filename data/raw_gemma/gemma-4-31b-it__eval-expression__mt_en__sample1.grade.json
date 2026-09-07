@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__mt_en__sample1.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # Tokenize the input string: numbers, operators, and parentheses\n    # This regex finds floats/integers or single characters like +, -, *, /, (, )\n    tokens = re.findall(r'\\d*\\.\\d+|\\d+|[+\\-*/()]', expr)\n    pos = 0\n\n    def peek():\n        \"\"\"Return the current token without consuming it.\"\"\"\n        nonlocal pos\n        return tokens[pos] if pos < len(tokens) else None\n\n    def consume():\n        \"\"\"Return the current token and move the pointer forward.\"\"\"\n        nonlocal pos\n        token = peek()\n        pos += 1\n        return token\n\n    def parse_expression():\n        \"\"\"Handle Addition and Subtraction (lowest precedence).\"\"\"\n        node = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                node += right\n            else:\n                node -= right\n        return node\n\n    def parse_term():\n        \"\"\"Handle Multiplication and Division.\"\"\"\n        node = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                node *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n        return node\n\n    def parse_factor():\n        \"\"\"Handle Parentheses, Unary Minus, and Numbers (highest precedence).\"\"\"\n        token = peek()\n        \n        # Handle unary minus (negative numbers)\n        if token == '-':\n            consume() # move past '-'\n            return -parse_factor()\n        \n        # Handle positive unary (e.g., +5)\n        if token == '+':\n            consume()\n            return parse_factor()\n\n        # Handle parentheses\n        if token == '(':\n            consume() # move past '('\n            result = parse_expression()\n            if consume() != ')':\n                raise ValueError(\"Missing closing parenthesis\")\n            return result\n        \n        # Handle numbers\n        token = consume()\n        try:\n            return float(token)\n        except (ValueError, TypeError):\n            raise ValueError(f\"Invalid token: {token}\")\n\n    # Start parsing from the lowest precedence level\n    final_result = parse_expression()\n    \n    # Return as int if it's a whole number, otherwise float\n    return int(final_result) if final_result.is_integer() else final_result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    tests = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 3\", 16),\n        (\"10 / 2 + 3\", 8),\n        (\"-5 + 3\", -2),\n        (\"2 * (-3 + 1)\", -4),\n        (\"10 / (2 + 3) * 2\", 4),\n        (\"-2 * -3\", 6),\n        (\"10.5 + 0.5\", 11),\n    ]\n\n    for exp, expected in tests:\n        result = eval_expression(exp)\n        print(f\"'{exp}' -> {result} (Expected: {expected})\")\n\n    # Test ZeroDivisionError\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"'10 / 0' -> Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'10 + 2 * 3' -> 16 (Expected: 16)\n'10 / 2 + 3' -> 8 (Expected: 8)\n'-5 + 3' -> -2 (Expected: -2)\n'2 * (-3 + 1)' -> -4 (Expected: -4)\n'10 / (2 + 3) * 2' -> 4 (Expected: 4)\n'-2 * -3' -> 6 (Expected: 6)\n'10.5 + 0.5' -> 11 (Expected: 11)\n'10 / 0' -> Caught expected error: division by zero\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 63,
+  "candidates_token_count": 1191,
+  "thoughts_token_count": 1096,
+  "total_token_count": 2350,
+  "graded_at": "2026-09-06T05:08:25"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__ja_raw__sample2.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def format_currency(n: int) -> str:\n    \"\"\"\n    `n` を書式化し、先頭に `$` を付け、3桁ごとにカンマで区切った文字列を返す。\n    負の数の場合は、ドル記号の前にマイナス記号を付ける。\n    \n    例:\n        format_currency(4640039) -> \"$4,640,039\"\n        format_currency(-4640039) -> \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        sign = \"-\"\n        value = -n\n    else:\n        sign = \"\"\n        value = n\n    \n    # 桁を3桁ごとに区切ってカンマを挿入\n    s = str(value)\n    commas = []\n    while len(s) > 3:\n        commas.append(s[-3:])\n        s = s[:-3]\n    commas.append(s)\n    number_str = \",\".join(reversed(commas))\n    \n    return f\"{sign}${number_str}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 89,
+  "completion_tokens": 247,
+  "total_tokens": 336,
+  "groq_seed": 1594956968,
+  "graded_at": "2026-09-06T09:08:40"
+}

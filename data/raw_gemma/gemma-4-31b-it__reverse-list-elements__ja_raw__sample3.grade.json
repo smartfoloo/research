@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__reverse-list-elements__ja_raw__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements の順序を反転させ、それに合わせて punctuation も反転させて返す。\n    \"\"\"\n    # リストを反転させて返す\n    return elements[::-1], punctuation[::-1]\n\n# --- 動作確認 ---\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\nprint(f\"elements: {new_elements}\")      # ['world', 'Hello']\nprint(f\"punctuation: {new_punctuation}\") # ['!', '']",
+  "stdout": "elements: ['world', 'Hello']\npunctuation: ['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 92,
+  "candidates_token_count": 469,
+  "thoughts_token_count": 620,
+  "total_token_count": 1181,
+  "graded_at": "2026-09-06T05:08:31"
+}

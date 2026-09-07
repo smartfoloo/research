@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "To find the shortest path in a graph with non-negative edge weights, **Dijkstra's algorithm** is the standard and most efficient approach. \n\nHere is the complete Python function `shortest_path`, along with the necessary imports and a helper structure using Python's `heapq` module.\n\n```python\nimport heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Finds the shortest path between a start and end node in a weighted directed graph.\n    \n    :param edges: List of tuples representing (from_node, to_node, weight)\n    :param start: The starting node\n    :param end: The target node\n    :return: A tuple of (total_distance, [list_of_nodes_in_path])\n             Returns (0, [start]) if start == end.\n             Returns (None, None) if no path exists.\n             Raises ValueError if any edge weight is negative.\n    \"\"\"\n    # Base case: start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list and validate edge weights\n    graph = {}\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative edge weights are not allowed.\")\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n        # Ensure target nodes that have no outgoing edges still exist in the graph dict\n        if v not in graph:\n            graph[v] = []\n\n    # If start or end nodes aren't in the graph at all\n    if start not in graph or end not in graph:\n        return (None, None)\n\n    # Priority queue stores tuples of: (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n    \n    # Keep track of visited nodes to avoid processing the same node multiple times\n    visited = set()\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the destination, return the result\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n\n        # Explore neighbors\n        for neighbor, weight in graph.get(current_node, []):\n            if neighbor not in visited:\n                distance = current_distance + weight\n                heapq.heappush(pq, (distance, neighbor, path + [neighbor]))\n\n    # If the priority queue is exhausted and we haven't returned, no path exists\n    return (None, None)\n```\n\n### Example Usage:\n\n```python\nedges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\nprint(shortest_path(edges, \"A\", \"C\")) \n# Output: (3, ['A', 'B', 'C'])\n\n# Edge cases:\nprint(shortest_path(edges, \"A\", \"A\")) \n# Output: (0, ['A'])\n\nprint(shortest_path(edges, \"C\", \"A\")) \n# Output: (None, None)\n\ntry:\n    shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\nexcept ValueError as e:\n    print(e)\n# Output: Negative edge weights are not allowed.\n```",
+              "thoughtSignature": "El4KXAERTTIPU3ateDgqfG0NjxZRyPELQf9TxDeHNH4KSxqvfyx2+a/mnob49QZtuT9GgzqURtU3ziCtZcJ/rTaO9hYsHOeIu3bBRed1M0YZ+oTumwULRjpcWnpHJEx4"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 148,
+      "candidatesTokenCount": 787,
+      "totalTokenCount": 935,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 148
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "l1Kdatv7Gujp1e8Pz_W7oA8"
+  },
+  "thinking_text": "",
+  "final_text": "To find the shortest path in a graph with non-negative edge weights, **Dijkstra's algorithm** is the standard and most efficient approach. \n\nHere is the complete Python function `shortest_path`, along with the necessary imports and a helper structure using Python's `heapq` module.\n\n```python\nimport heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Finds the shortest path between a start and end node in a weighted directed graph.\n    \n    :param edges: List of tuples representing (from_node, to_node, weight)\n    :param start: The starting node\n    :param end: The target node\n    :return: A tuple of (total_distance, [list_of_nodes_in_path])\n             Returns (0, [start]) if start == end.\n             Returns (None, None) if no path exists.\n             Raises ValueError if any edge weight is negative.\n    \"\"\"\n    # Base case: start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list and validate edge weights\n    graph = {}\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Negative edge weights are not allowed.\")\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n        # Ensure target nodes that have no outgoing edges still exist in the graph dict\n        if v not in graph:\n            graph[v] = []\n\n    # If start or end nodes aren't in the graph at all\n    if start not in graph or end not in graph:\n        return (None, None)\n\n    # Priority queue stores tuples of: (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n    \n    # Keep track of visited nodes to avoid processing the same node multiple times\n    visited = set()\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the destination, return the result\n        if current_node == end:\n            return (current_distance, path)\n\n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n\n        # Explore neighbors\n        for neighbor, weight in graph.get(current_node, []):\n            if neighbor not in visited:\n                distance = current_distance + weight\n                heapq.heappush(pq, (distance, neighbor, path + [neighbor]))\n\n    # If the priority queue is exhausted and we haven't returned, no path exists\n    return (None, None)\n```\n\n### Example Usage:\n\n```python\nedges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\nprint(shortest_path(edges, \"A\", \"C\")) \n# Output: (3, ['A', 'B', 'C'])\n\n# Edge cases:\nprint(shortest_path(edges, \"A\", \"A\")) \n# Output: (0, ['A'])\n\nprint(shortest_path(edges, \"C\", \"A\")) \n# Output: (None, None)\n\ntry:\n    shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\nexcept ValueError as e:\n    print(e)\n# Output: Negative edge weights are not allowed.\n```",
+  "prompt_token_count": 148,
+  "candidates_token_count": 787,
+  "thoughts_token_count": null,
+  "total_token_count": 935,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "shortest-path",
+    "condition": "en_human",
+    "sample_idx": 1,
+    "prompt_text": "Write a Python function named shortest_path(edges, start, end) where edges is a list of (from_node, to_node, weight) tuples representing one-way roads. The function should return (distance, path), the shortest total distance and an ordered list of nodes on that path. If start and end are the same node, return (0, [start]). If any edge weight is negative, give a ValueError. If no path exists, just return (None, None). (Ex. edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]))",
+    "elapsed_seconds": 7.383630990982056,
+    "generated_at": "2026-09-06T06:46:33"
+  }
+}

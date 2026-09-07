@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__mt_en__sample6.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 6,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # 1. Handle the case where start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # 2. Validate weights and build adjacency list\n    graph = defaultdict(list)\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n        graph[u].append((v, w))\n\n    # 3. Initialize Dijkstra's algorithm\n    # distances stores the current known shortest distance from start to each node\n    distances = {node: float('inf') for node in graph}\n    # To handle nodes that might only appear as a destination, \n    # we ensure start and end are explicitly in the distances dict\n    distances[start] = 0\n    distances[end] = distances.get(end, float('inf'))\n    \n    # parents stores the previous node in the shortest path to reconstruct the route\n    parents = {node: None for node in distances}\n    \n    # Priority queue stores tuples of (distance, current_node)\n    pq = [(0, start)]\n\n    while pq:\n        current_distance, u = heapq.heappop(pq)\n\n        # If we reached the end node, we've found the shortest path\n        if u == end:\n            break\n\n        # If the popped distance is greater than the known shortest distance, skip it\n        if current_distance > distances.get(u, float('inf')):\n            continue\n\n        # Explore neighbors\n        for v, weight in graph[u]:\n            distance = current_distance + weight\n            \n            # If a shorter path to v is found\n            if distance < distances.get(v, float('inf')):\n                distances[v] = distance\n                parents[v] = u\n                heapq.heappush(pq, (distance, v))\n\n    # 4. Check if a path was actually found\n    if distances.get(end) == float('inf'):\n        return (None, None)\n\n    # 5. Reconstruct the path by backtracking from end to start\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = parents.get(curr)\n    \n    return (distances[end], path[::-1])\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    # Example from prompt\n    edges1 = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges1, \"A\", \"C\"))  # Expected: (3, ['A', 'B', 'C'])\n\n    # Start and end same\n    print(shortest_path(edges1, \"A\", \"A\"))  # Expected: (0, ['A'])\n\n    # No route exists\n    edges2 = [(\"A\", \"B\", 1), (\"C\", \"D\", 1)]\n    print(shortest_path(edges2, \"A\", \"D\"))  # Expected: (None, None)\n\n    # Negative weight error\n    try:\n        shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n    except ValueError as e:\n        print(f\"Caught expected error: {e}\") # Expected: Edge weights cannot be negative.",
+  "stdout": "(3, ['A', 'B', 'C'])\n(0, ['A'])\n(None, None)\nCaught expected error: Edge weights cannot be negative.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 146,
+  "candidates_token_count": 1104,
+  "thoughts_token_count": 907,
+  "total_token_count": 2157,
+  "graded_at": "2026-09-06T05:08:41"
+}

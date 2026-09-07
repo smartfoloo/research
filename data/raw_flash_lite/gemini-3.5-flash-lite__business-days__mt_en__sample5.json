@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function using the built-in `datetime` module. \n\nTo ensure the function is robust and handles dates regardless of which one comes first, it normalizes the order of the dates and then iterates through the days strictly between them.\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"Returns the number of business days (Monday through Friday)\n\n    between two dates (exclusive of the start and end dates).\n    Dates should be in the format \"YYYY-MM-DD\".\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n\n    # Ensure d1 is the earlier date and d2 is the later date\n    start = min(d1, d2)\n    end = max(d1, d2)\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        # weekday() returns 0 for Monday through 4 for Friday\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n### Example Usage:\n```python\n# 4 business days: Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri)\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4\n\n# Weekend span\nprint(business_days(\"2024-01-05\", \"2024-01-08\"))  # Output: 0 (Sat & Sun)\n```",
+              "thoughtSignature": "El4KXAERTTIPuy0py7wyIU4a+k5D2QWtMguSuMi6O6k1stxymlPQzz/4P/yzmQee74FKJ+XCjLkx1H8FBageEB2GyopwAoduV1i/yLQ+yuh+6UM+5fx0g6Dmr49wsnLT"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 112,
+      "candidatesTokenCount": 400,
+      "totalTokenCount": 512,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 112
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "dFCdapOIOKeU9tMPqMrQyQ8"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function using the built-in `datetime` module. \n\nTo ensure the function is robust and handles dates regardless of which one comes first, it normalizes the order of the dates and then iterates through the days strictly between them.\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"Returns the number of business days (Monday through Friday)\n\n    between two dates (exclusive of the start and end dates).\n    Dates should be in the format \"YYYY-MM-DD\".\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n\n    # Ensure d1 is the earlier date and d2 is the later date\n    start = min(d1, d2)\n    end = max(d1, d2)\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        # weekday() returns 0 for Monday through 4 for Friday\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n### Example Usage:\n```python\n# 4 business days: Jan 2 (Tue), Jan 3 (Wed), Jan 4 (Thu), Jan 5 (Fri)\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Output: 4\n\n# Weekend span\nprint(business_days(\"2024-01-05\", \"2024-01-08\"))  # Output: 0 (Sat & Sun)\n```",
+  "prompt_token_count": 112,
+  "candidates_token_count": 400,
+  "thoughts_token_count": null,
+  "total_token_count": 512,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 5,
+    "prompt_text": "Please create a Python function named `business_days(date1, date2)` that returns the number of business days (Monday through Friday) between two dates. Both dates should be in the format \"YYYY-MM-DD\". The calculation should be based solely on the day of the week, without accounting for public holidays. Note that the two dates themselves should not be included in the count (e.g., \"2024-01-01\", \"2024-01-08\" → 4).",
+    "elapsed_seconds": 6.692092657089233,
+    "generated_at": "2026-09-06T06:37:26"
+  }
+}

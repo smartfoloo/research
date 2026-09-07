@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__currency-format__mt_en__sample1.json",
+  "task": "currency-format",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        # Use abs() to remove the negative sign from the number \n        # so we can place the '-' manually before the '$'\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"\n\n# Test cases\nprint(format_currency(4640039))   # Output: $4,640,039\nprint(format_currency(-4640039))  # Output: -$4,640,039\nprint(format_currency(1000))      # Output: $1,000\nprint(format_currency(-50))       # Output: -$50",
+  "stdout": "$4,640,039\n-$4,640,039\n$1,000\n-$50\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 420,
+  "thoughts_token_count": 610,
+  "total_token_count": 1096,
+  "graded_at": "2026-09-06T05:08:17"
+}

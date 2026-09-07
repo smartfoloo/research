@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__ja_directive__sample6.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列を date オブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # 日付の前後関係を整理（d1が常に開始日、d2が終了日になるようにする）\n    start = min(d1, d2)\n    end = max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から終了日の前日までをループ\n    current_date = start + timedelta(days=1)\n    \n    while current_date < end:\n        # weekday() は 月曜日=0, 火曜日=1, ..., 金曜日=4, 土曜日=5, 日曜日=6 を返す\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# テストケース\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 結果: 4\nprint(business_days(\"2024-01-01\", \"2024-01-02\"))  # 結果: 0 (間に日がないため)\nprint(business_days(\"2024-01-05\", \"2024-01-12\"))  # 結果: 5 (6, 10, 11日は土日)",
+  "stdout": "4\n0\n4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 107,
+  "candidates_token_count": 922,
+  "thoughts_token_count": 717,
+  "total_token_count": 1746,
+  "graded_at": "2026-09-06T05:08:07"
+}

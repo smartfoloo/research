@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__bank-rollback__ja_directive__sample1.json",
+  "task": "bank-rollback",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    与えられた取引を順番に適用して計算する。\n    途中のどこかで残高がマイナスになったら、元の残高と False を返す。\n    \n    Args:\n        balance (int or float): 初期残高\n        transactions (list of int or float): 取引リスト\n    \n    Returns:\n        tuple: (final_balance, success)\n            success: True (正常終了), False (残高不足で中止)\n            final_balance: 成功時なら最終残高、失敗時なら初期残高\n    \"\"\"\n    current_balance = balance\n    \n    for tx in transactions:\n        current_balance += tx\n        # 途中のどこかで残高がマイナスになった場合は中断\n        if current_balance < 0:\n            return (balance, False)\n    \n    # 全取引を処理して、かつ不足にならなかった場合\n    return (current_balance, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 149,
+  "eval_count": 2352,
+  "graded_at": "2026-09-05T21:40:20"
+}

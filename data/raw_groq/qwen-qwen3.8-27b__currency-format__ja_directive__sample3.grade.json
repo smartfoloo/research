@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__currency-format__ja_directive__sample3.json",
+  "task": "currency-format",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        return -$\n    else:\n        return $",
+  "stdout": "",
+  "stderr": "  File \"/app/test_script.py\", line 4\n    return -$\n            ^\nSyntaxError: invalid syntax\n",
+  "docker_returncode": 1,
+  "passed_cases": null,
+  "total_cases": null,
+  "all_passed": false,
+  "prompt_tokens": 96,
+  "completion_tokens": 154,
+  "total_tokens": 250,
+  "groq_seed": 311039840,
+  "graded_at": "2026-09-06T09:08:39"
+}

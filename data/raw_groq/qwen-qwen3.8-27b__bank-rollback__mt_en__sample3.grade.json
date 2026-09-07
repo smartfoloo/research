@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__bank-rollback__mt_en__sample3.json",
+  "task": "bank-rollback",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order to the balance. If at any point the balance\n    becomes negative, stop and return (original_balance, False).\n    Otherwise, return (final_balance, True).\n    \n    Note: In the example, positive numbers are deposited (added) and negative\n    numbers are withdrawals (subtracted). Let's verify with the example:\n    balance=100, transactions=[50, -30, -200]\n    \n    Step 1: 100 + 50 = 150 (not negative)\n    Step 2: 150 + (-30) = 120 (not negative)\n    Step 3: 120 + (-200) = -80 (negative!) -> return (100, False)\n    \n    So the logic is: current_balance = balance; for each t in transactions:\n    current_balance += t; if current_balance < 0: return (balance, False)\n    \n    Wait, but what does \"balance becomes negative\" mean? Let's re-read:\n    \"If the balance becomes negative even during calculation, stop the calculation\n    and return (balance, False) using the original balance\"\n    \n    So we sum up the transaction amount to the running balance. If at any point\n    the running balance is negative, we abort and return the original balance\n    with False.\n    \n    Let me verify: 100 + 50 = 150, 150 - 30 = 120, 120 - 200 = -80 -> negative,\n    so return (100, False). Correct.\n    \"\"\"\n    current = balance\n    for t in transactions:\n        current += t\n        if current < 0:\n            return (balance, False)\n    return (current, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 115,
+  "completion_tokens": 429,
+  "total_tokens": 544,
+  "groq_seed": 200841569,
+  "graded_at": "2026-09-06T09:08:27"
+}

@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-48dfaee3-ad63-45ff-bd97-ba98e46364e0",
+    "object": "chat.completion",
+    "created": 1788702197,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a directed graph using Dijkstra's algorithm.\n    \n    Args:\n        edges: List of tuples (from_node, to_node, weight) representing one-way streets.\n        start: Starting node.\n        end: Ending node.\n    \n    Returns:\n        Tuple of (distance, path) where distance is the total distance of the shortest path\n        and path is a list of nodes along the path.\n        If start == end, returns (0, [start]).\n        If no route exists, returns (None, None).\n        If any edge has negative weight, raises ValueError.\n    \"\"\"\n    # Check for negative weights\n    for edge in edges:\n        if len(edge) != 3:\n            raise ValueError(f\"Each edge must be a tuple of (from_node, to_node, weight), got {edge}\")\n        if edge[2] < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n    \n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Dijkstra's algorithm\n    import heapq\n    \n    # Distances from start to each node\n    distances = {start: 0}\n    # Previous node on the shortest path\n    previous = {}\n    # Priority queue: (distance, node)\n    pq = [(0, start)]\n    visited = set()\n    \n    while pq:\n        dist, node = heapq.heappop(pq)\n        \n        if node in visited:\n            continue\n        \n        visited.add(node)\n        \n        # If we reached the end node, we can stop\n        if node == end:\n            break\n        \n        neighbors = graph.get(node, [])\n        for neighbor, weight in neighbors:\n            if neighbor in visited:\n                continue\n            new_dist = dist + weight\n            if neighbor not in distances or new_dist < distances[neighbor]:\n                distances[neighbor] = new_dist\n                previous[neighbor] = node\n                heapq.heappush(pq, (new_dist, neighbor))\n    \n    # Check if end was reached\n    if end not in distances:\n        return (None, None)\n    \n    # Reconstruct the path\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = previous[current]\n    path.append(start)\n    path.reverse()\n    \n    return (distances[end], path)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.005756502,
+      "prompt_tokens": 153,
+      "prompt_time": 0.012473269,
+      "completion_tokens": 610,
+      "completion_time": 1.228288872,
+      "total_tokens": 763,
+      "total_time": 1.240762141
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_61e8d148b4",
+    "x_groq": {
+      "id": "req_01m1vfb0tve0rrknsr96r2kec6",
+      "seed": 1374565747
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a directed graph using Dijkstra's algorithm.\n    \n    Args:\n        edges: List of tuples (from_node, to_node, weight) representing one-way streets.\n        start: Starting node.\n        end: Ending node.\n    \n    Returns:\n        Tuple of (distance, path) where distance is the total distance of the shortest path\n        and path is a list of nodes along the path.\n        If start == end, returns (0, [start]).\n        If no route exists, returns (None, None).\n        If any edge has negative weight, raises ValueError.\n    \"\"\"\n    # Check for negative weights\n    for edge in edges:\n        if len(edge) != 3:\n            raise ValueError(f\"Each edge must be a tuple of (from_node, to_node, weight), got {edge}\")\n        if edge[2] < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n    \n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Dijkstra's algorithm\n    import heapq\n    \n    # Distances from start to each node\n    distances = {start: 0}\n    # Previous node on the shortest path\n    previous = {}\n    # Priority queue: (distance, node)\n    pq = [(0, start)]\n    visited = set()\n    \n    while pq:\n        dist, node = heapq.heappop(pq)\n        \n        if node in visited:\n            continue\n        \n        visited.add(node)\n        \n        # If we reached the end node, we can stop\n        if node == end:\n            break\n        \n        neighbors = graph.get(node, [])\n        for neighbor, weight in neighbors:\n            if neighbor in visited:\n                continue\n            new_dist = dist + weight\n            if neighbor not in distances or new_dist < distances[neighbor]:\n                distances[neighbor] = new_dist\n                previous[neighbor] = node\n                heapq.heappush(pq, (new_dist, neighbor))\n    \n    # Check if end was reached\n    if end not in distances:\n        return (None, None)\n    \n    # Reconstruct the path\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = previous[current]\n    path.append(start)\n    path.reverse()\n    \n    return (distances[end], path)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 153,
+  "completion_tokens": 610,
+  "total_tokens": 763,
+  "groq_seed": 1374565747,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "shortest-path",
+    "condition": "mt_en",
+    "sample_idx": 1,
+    "prompt_text": "Create a Python function called shortest_path(edges, start, end) that returns the shortest total distance and a list of nodes along the path (distance, path). edges is a list of tuples (from_node, to_node, weight) representing one-way streets. If start and end are the same node, return (0, [start]). If the weight of any edge is negative, raise a ValueError. If the route does not exist, return (None, None). (Example: edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]))",
+    "elapsed_seconds": 43.94451594352722,
+    "generated_at": "2026-09-06T08:43:17"
+  }
+}

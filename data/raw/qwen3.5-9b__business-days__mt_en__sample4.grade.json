@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__mt_en__sample4.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "import datetime\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculates the number of business days (Monday-Friday) strictly \n    between two dates. The start and end dates are excluded from the count.\n    \n    Args:\n        date1 (str): First date in \"YYYY-MM-DD\" format.\n        date2 (str): Second date in \"YYYY-MM-DD\" format.\n        \n    Returns:\n        int: Number of business days between the two dates.\n    \"\"\"\n    try:\n        # Parse the input strings into datetime.date objects\n        d1 = datetime.datetime.strptime(date1, \"%Y-%m-%d\").date()\n        d2 = datetime.datetime.strptime(date2, \"%Y-%m-%d\").date()\n    except ValueError:\n        raise ValueError(\"Date format must be 'YYYY-MM-DD'\")\n\n    # Ensure start is earlier than end for consistent range calculation\n    if d1 > d2:\n        d1, d2 = d2, d1\n    \n    count = 0\n    \n    # Start iterating from the day AFTER the first date\n    current_date = d1 + datetime.timedelta(days=1)\n    \n    # Iterate while strictly before the second date\n    while current_date < d2:\n        # weekday() returns 0 (Monday) to 4 (Friday). \n        # Weekend days return 5 or 6.\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += datetime.timedelta(days=1)\n        \n    return count\n\n# Example usage based on your request:\n# print(business_days(\"2024-01-01\", \"2024-01-08\")) # Expected output: 4",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 117,
+  "eval_count": 7974,
+  "graded_at": "2026-09-06T03:04:19"
+}

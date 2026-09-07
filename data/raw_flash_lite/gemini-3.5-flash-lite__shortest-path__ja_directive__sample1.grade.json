@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__ja_directive__sample1.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # Step 1: Check for negative weights\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed.\")\n            \n    # Step 2: Handle start == end edge case\n    if start == end:\n        return (0, [start])\n        \n    # Step 3: Build adjacency list\n    graph = defaultdict(list)\n    nodes = set()\n    for u, v, w in edges:\n        graph[u].append((v, w))\n        nodes.add(u)\n        nodes.add(v)\n        \n    # If start or end not in graph, no path exists\n    if start not in nodes or end not in nodes:\n        return (None, None)\n        \n    # Step 4: Dijkstra's Algorithm\n    # pq stores (current_distance, current_node)\n    pq = [(0, start)]\n    distances = {start: 0}\n    predecessors = {start: None}\n    \n    while pq:\n        current_distance, current_node = heapq.heappop(pq)\n        \n        # If we reached the end node, we can stop early\n        if current_node == end:\n            break\n            \n        if current_distance > distances.get(current_distance, float('inf')):\n            continue\n            \n        for neighbor, weight in graph[current_node]:\n            distance = current_distance + weight\n            \n            if distance < distances.get(neighbor, float('inf')):\n                distances[neighbor] = distance\n                predecessors[neighbor] = current_node\n                heapq.heappush(pq, (distance, neighbor))\n                \n    # Step 5: Check if path exists and reconstruct\n    if end not in distances:\n        return (None, None)\n        \n    # Reconstruct path\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = predecessors.get(curr)\n    path.reverse()\n    \n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 185,
+  "candidates_token_count": 2290,
+  "thoughts_token_count": null,
+  "total_token_count": 2475,
+  "graded_at": "2026-09-06T06:53:30"
+}

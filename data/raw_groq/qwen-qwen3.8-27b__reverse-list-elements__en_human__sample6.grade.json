@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__reverse-list-elements__en_human__sample6.json",
+  "task": "reverse-list-elements",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements, keeping each punctuation mark attached to its original element.\n    \n    Args:\n        elements: List of string elements\n        punctuation: List of punctuation strings (same length as elements)\n    \n    Returns:\n        Tuple of (new_elements, new_punctuation) where both are reversed lists\n    \"\"\"\n    # Pair each element with its punctuation, reverse, then separate\n    paired = list(zip(elements, punctuation))\n    paired_reversed = paired[::-1]\n    new_elements = [pair[0] for pair in paired_reversed]\n    new_punctuation = [pair[1] for pair in paired_reversed]\n    return (new_elements, new_punctuation)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 84,
+  "completion_tokens": 169,
+  "total_tokens": 253,
+  "groq_seed": 888254366,
+  "graded_at": "2026-09-06T09:08:52"
+}

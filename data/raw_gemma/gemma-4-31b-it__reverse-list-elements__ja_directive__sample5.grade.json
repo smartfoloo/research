@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__reverse-list-elements__ja_directive__sample5.json",
+  "task": "reverse-list-elements",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elementsの順序を反転させ、対応するpunctuationも同様に反転させて返す。\n    \"\"\"\n    # スライス [::-1] を使ってリストを反転させます\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n    \n    return new_elements, new_punctuation\n\n# --- 動作確認 ---\nelements_input = [\"Hello\", \"world\"]\npunctuation_input = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements_input, punctuation_input)\n\nprint(f\"Elements: {new_elements}\")      # ['world', 'Hello']\nprint(f\"Punctuation: {new_punctuation}\")  # ['!', '']",
+  "stdout": "Elements: ['world', 'Hello']\nPunctuation: ['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 99,
+  "candidates_token_count": 726,
+  "thoughts_token_count": 602,
+  "total_token_count": 1427,
+  "graded_at": "2026-09-06T05:08:30"
+}

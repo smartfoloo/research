@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-e06f95ce-78e9-4090-88bb-7ceb9c6158ae",
+    "object": "chat.completion",
+    "created": 1788702503,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order. If any transaction would make the balance negative,\n    reject the entire list and return (original_balance, False).\n    Otherwise return (final_balance, True).\n    \n    Args:\n        balance: The initial account balance.\n        transactions: An ordered list of transaction amounts.\n    \n    Returns:\n        A tuple (final_balance, success) where success is True if all transactions\n        were applied successfully, False if the list was rejected.\n    \"\"\"\n    # Make a copy to iterate without modifying the original\n    temp_balance = balance\n    for transaction in transactions:\n        temp_balance += transaction\n        if temp_balance < 0:\n            return (balance, False)\n    return (temp_balance, True)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.020398268,
+      "prompt_tokens": 110,
+      "prompt_time": 0.008585725,
+      "completion_tokens": 177,
+      "completion_time": 0.346479528,
+      "total_tokens": 287,
+      "total_time": 0.355065253
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_57c7e760a9",
+    "x_groq": {
+      "id": "req_01m1vfmcfre9hafbkf3k9e0k47",
+      "seed": 999429797
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order. If any transaction would make the balance negative,\n    reject the entire list and return (original_balance, False).\n    Otherwise return (final_balance, True).\n    \n    Args:\n        balance: The initial account balance.\n        transactions: An ordered list of transaction amounts.\n    \n    Returns:\n        A tuple (final_balance, success) where success is True if all transactions\n        were applied successfully, False if the list was rejected.\n    \"\"\"\n    # Make a copy to iterate without modifying the original\n    temp_balance = balance\n    for transaction in transactions:\n        temp_balance += transaction\n        if temp_balance < 0:\n            return (balance, False)\n    return (temp_balance, True)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 110,
+  "completion_tokens": 177,
+  "total_tokens": 287,
+  "groq_seed": 999429797,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 2,
+    "prompt_text": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return (balance, False) where balance is the original balance. Otherwise return (final_balance, True). (Ex. balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 12.72950530052185,
+    "generated_at": "2026-09-06T08:48:23"
+  }
+}

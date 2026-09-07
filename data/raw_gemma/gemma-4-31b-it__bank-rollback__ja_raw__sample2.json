@@ -1,0 +1,53 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "*   Function name: `bank_rollback(balance, transactions)`\n    *   Input:\n        *   `balance` (number): Initial bank balance.\n        *   `transactions` (list of numbers): A sequence of deposits (positive) and withdrawals (negative).\n    *   Logic:\n        *   Iterate through the `transactions` list.\n        *   Apply each transaction to the current balance.\n        *   Check if the balance ever becomes negative.\n        *   If it becomes negative: stop immediately and return the original `balance` and `False`.\n        *   If all transactions are processed without the balance going negative: return the final calculated balance and `True`.\n    *   Example provided: `balance=100, transactions=[50, -30, -200]` $\\rightarrow$ `(100, False)` because at some point the balance drops below zero.\n\n    *   Initialize a temporary variable `current_balance` with the value of `balance`.\n    *   Use a `for` loop to iterate through `transactions`.\n    *   Inside the loop:\n        *   `current_balance += transaction`\n        *   `if current_balance < 0:`\n            *   `return (balance, False)`\n    *   After the loop finishes:\n        *   `return (current_balance, True)`\n\n    *   `balance = 100`, `transactions = [50, -30, -200]`\n    *   Step 1: `current_balance = 100 + 50 = 150` (>= 0, OK)\n    *   Step 2: `current_balance = 150 - 30 = 120` (>= 0, OK)\n    *   Step 3: `current_balance = 120 - 200 = -80` (< 0, FAIL)\n    *   Return: `(100, False)`. Matches the example.\n\n    *   Empty list: Should return `(balance, True)`.\n    *   Zero balance: `0` is not negative, so it should be okay.\n    *   Exactly zero after a transaction: Should be okay.\n\n    *   Write the function.\n    *   Include a docstring for clarity.\n    *   Provide test cases to demonstrate correctness.",
+              "thought": true
+            },
+            {
+              "text": "ご要望の関数 `bank_rollback` の実装です。\n\n```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    取引リストを順番に適用し、最終的な残高を計算します。\n    途中で残高がマイナスになった場合は、元の残高を返します。\n    \n    Args:\n        balance (int/float): 初期残高\n        transactions (list): 取引額のリスト\n        \n    Returns:\n        tuple: (最終残高または初期残高, 成功したかどうかの真偽値)\n    \"\"\"\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        # 残高がマイナスになった時点で処理を中断し、元の残高を返す\n        if current_balance < 0:\n            return (balance, False)\n            \n    # すべての取引を正常に適用できた場合\n    return (current_balance, True)\n\n# --- テストケース ---\n# 例1: 途中でマイナスになる場合\nprint(bank_rollback(100, [50, -30, -200]))  # 期待値: (100, False)\n\n# 例2: すべて適用可能な場合\nprint(bank_rollback(100, [50, -30, -20]))   # 期待値: (100, True) -> 100+50-30-20 = 100\n\n# 例3: ちょうど0になる場合（マイナスではないので成功）\nprint(bank_rollback(100, [-100]))           # 期待値: (0, True)\n\n# 例4: 最初からマイナスになる場合\nprint(bank_rollback(10, [-20]))             # 期待値: (10, False)\n\n# 例5: 取引リストが空の場合\nprint(bank_rollback(500, []))               # 期待値: (500, True)\n```\n\n### 解説\n1.  **一時的な変数の利用**: 元の `balance` を後で返す必要があるため、計算用の変数 `current_balance` を作成して計算を行います。\n2.  **ループ処理**: `for` 文で取引リストを一つずつ処理します。\n3.  **条件判定**: 各取引を適用した直後に `if current_balance < 0:` で判定を行い、マイナスになった瞬間に `return` して関数を終了させます。これにより、それ以降の取引は無視されます。\n4.  **戻り値**: \n    *   失敗時（マイナス発生時）: `(元の balance, False)`\n    *   成功時（全取引完了後）: `(最終的な current_balance, True)`"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 132,
+      "candidatesTokenCount": 621,
+      "totalTokenCount": 1278,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 132
+        }
+      ],
+      "thoughtsTokenCount": 525,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemma-4-31b-it",
+    "responseId": "kDSdarDMJYyl0-kPsaWxwAo"
+  },
+  "thinking_text": "*   Function name: `bank_rollback(balance, transactions)`\n    *   Input:\n        *   `balance` (number): Initial bank balance.\n        *   `transactions` (list of numbers): A sequence of deposits (positive) and withdrawals (negative).\n    *   Logic:\n        *   Iterate through the `transactions` list.\n        *   Apply each transaction to the current balance.\n        *   Check if the balance ever becomes negative.\n        *   If it becomes negative: stop immediately and return the original `balance` and `False`.\n        *   If all transactions are processed without the balance going negative: return the final calculated balance and `True`.\n    *   Example provided: `balance=100, transactions=[50, -30, -200]` $\\rightarrow$ `(100, False)` because at some point the balance drops below zero.\n\n    *   Initialize a temporary variable `current_balance` with the value of `balance`.\n    *   Use a `for` loop to iterate through `transactions`.\n    *   Inside the loop:\n        *   `current_balance += transaction`\n        *   `if current_balance < 0:`\n            *   `return (balance, False)`\n    *   After the loop finishes:\n        *   `return (current_balance, True)`\n\n    *   `balance = 100`, `transactions = [50, -30, -200]`\n    *   Step 1: `current_balance = 100 + 50 = 150` (>= 0, OK)\n    *   Step 2: `current_balance = 150 - 30 = 120` (>= 0, OK)\n    *   Step 3: `current_balance = 120 - 200 = -80` (< 0, FAIL)\n    *   Return: `(100, False)`. Matches the example.\n\n    *   Empty list: Should return `(balance, True)`.\n    *   Zero balance: `0` is not negative, so it should be okay.\n    *   Exactly zero after a transaction: Should be okay.\n\n    *   Write the function.\n    *   Include a docstring for clarity.\n    *   Provide test cases to demonstrate correctness.",
+  "final_text": "ご要望の関数 `bank_rollback` の実装です。\n\n```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    取引リストを順番に適用し、最終的な残高を計算します。\n    途中で残高がマイナスになった場合は、元の残高を返します。\n    \n    Args:\n        balance (int/float): 初期残高\n        transactions (list): 取引額のリスト\n        \n    Returns:\n        tuple: (最終残高または初期残高, 成功したかどうかの真偽値)\n    \"\"\"\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        # 残高がマイナスになった時点で処理を中断し、元の残高を返す\n        if current_balance < 0:\n            return (balance, False)\n            \n    # すべての取引を正常に適用できた場合\n    return (current_balance, True)\n\n# --- テストケース ---\n# 例1: 途中でマイナスになる場合\nprint(bank_rollback(100, [50, -30, -200]))  # 期待値: (100, False)\n\n# 例2: すべて適用可能な場合\nprint(bank_rollback(100, [50, -30, -20]))   # 期待値: (100, True) -> 100+50-30-20 = 100\n\n# 例3: ちょうど0になる場合（マイナスではないので成功）\nprint(bank_rollback(100, [-100]))           # 期待値: (0, True)\n\n# 例4: 最初からマイナスになる場合\nprint(bank_rollback(10, [-20]))             # 期待値: (10, False)\n\n# 例5: 取引リストが空の場合\nprint(bank_rollback(500, []))               # 期待値: (500, True)\n```\n\n### 解説\n1.  **一時的な変数の利用**: 元の `balance` を後で返す必要があるため、計算用の変数 `current_balance` を作成して計算を行います。\n2.  **ループ処理**: `for` 文で取引リストを一つずつ処理します。\n3.  **条件判定**: 各取引を適用した直後に `if current_balance < 0:` で判定を行い、マイナスになった瞬間に `return` して関数を終了させます。これにより、それ以降の取引は無視されます。\n4.  **戻り値**: \n    *   失敗時（マイナス発生時）: `(元の balance, False)`\n    *   成功時（全取引完了後）: `(最終的な current_balance, True)`",
+  "prompt_token_count": 132,
+  "candidates_token_count": 621,
+  "thoughts_token_count": 525,
+  "total_token_count": 1278,
+  "_meta": {
+    "model": "gemma-4-31b-it",
+    "provider": "google_ai_studio",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "elapsed_seconds": 36.21662974357605,
+    "generated_at": "2026-09-06T04:38:54"
+  }
+}

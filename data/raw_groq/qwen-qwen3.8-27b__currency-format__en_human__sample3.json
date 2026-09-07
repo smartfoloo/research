@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-946ef233-aa81-4495-9b2a-7d9e8030c67c",
+    "object": "chat.completion",
+    "created": 1788697771,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n):\n    if n < 0:\n        return \"-$\" + format(abs(n), ',')\n    else:\n        return \"$\" + format(n, ',')\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.019654048,
+      "prompt_tokens": 78,
+      "prompt_time": 0.005105672,
+      "completion_tokens": 46,
+      "completion_time": 0.087235061,
+      "total_tokens": 124,
+      "total_time": 0.092340733
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_b930cafd52",
+    "x_groq": {
+      "id": "req_01m1vb3zcneqyt3yb9yb51s2sq",
+      "seed": 1605716008
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n):\n    if n < 0:\n        return \"-$\" + format(abs(n), ',')\n    else:\n        return \"$\" + format(n, ',')\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 78,
+  "completion_tokens": 46,
+  "total_tokens": 124,
+  "groq_seed": 1605716008,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "en_human",
+    "sample_idx": 3,
+    "prompt_text": "Write a Python function named format_currency(n) that returns n formatted as a string with a $ in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. 4640039 -> \"$4,640,039\")",
+    "elapsed_seconds": 12.487771272659302,
+    "generated_at": "2026-09-06T07:29:31"
+  }
+}

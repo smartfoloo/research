@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-5d29ae99-0d8a-4a86-846c-5ccc00c23ed3",
+    "object": "chat.completion",
+    "created": 1788697038,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculate the number of business days (Monday to Friday) between two dates,\n    excluding both endpoint dates.\n    \n    Args:\n        date1 (str): Start date in YYYY-MM-DD format\n        date2 (str): End date in YYYY-MM-DD format\n    \n    Returns:\n        int: Number of business days (Mon-Fri) strictly between the two dates\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # Ensure start is before end\n    if start > end:\n        start, end = end, start\n    \n    count = 0\n    current = start + timedelta(days=1)\n    \n    while current < end:\n        if current.weekday() < 5:  # Monday=0 to Friday=4\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.019776666,
+      "prompt_tokens": 106,
+      "prompt_time": 0.007060489,
+      "completion_tokens": 233,
+      "completion_time": 0.442180402,
+      "total_tokens": 339,
+      "total_time": 0.449240891
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_b930cafd52",
+    "x_groq": {
+      "id": "req_01m1vadkb5ep6ts8f74609mbhe",
+      "seed": 1459437343
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Calculate the number of business days (Monday to Friday) between two dates,\n    excluding both endpoint dates.\n    \n    Args:\n        date1 (str): Start date in YYYY-MM-DD format\n        date2 (str): End date in YYYY-MM-DD format\n    \n    Returns:\n        int: Number of business days (Mon-Fri) strictly between the two dates\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # Ensure start is before end\n    if start > end:\n        start, end = end, start\n    \n    count = 0\n    current = start + timedelta(days=1)\n    \n    while current < end:\n        if current.weekday() < 5:  # Monday=0 to Friday=4\n            count += 1\n        current += timedelta(days=1)\n    \n    return count\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 106,
+  "completion_tokens": 233,
+  "total_tokens": 339,
+  "groq_seed": 1459437343,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 5,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "elapsed_seconds": 33.697158098220825,
+    "generated_at": "2026-09-06T07:17:18"
+  }
+}

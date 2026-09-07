@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-a076e219-d58e-45d1-b857-c20b05b1e782",
+    "object": "chat.completion",
+    "created": 1788702572,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order. If any transaction would make the balance negative,\n    reject the entire list and return (original_balance, False).\n    Otherwise, return (final_balance, True).\n    \"\"\"\n    current_balance = balance\n    for txn in transactions:\n        current_balance += txn\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.120970578,
+      "prompt_tokens": 110,
+      "prompt_time": 0.009180747,
+      "completion_tokens": 106,
+      "completion_time": 0.277459534,
+      "total_tokens": 216,
+      "total_time": 0.286640281
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1vfpfcqepqbg4hvv4jz93zw",
+      "seed": 77689912
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order. If any transaction would make the balance negative,\n    reject the entire list and return (original_balance, False).\n    Otherwise, return (final_balance, True).\n    \"\"\"\n    current_balance = balance\n    for txn in transactions:\n        current_balance += txn\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 110,
+  "completion_tokens": 106,
+  "total_tokens": 216,
+  "groq_seed": 77689912,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 5,
+    "prompt_text": "Write a Python function named bank_rollback(balance, transactions) where transactions is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return (balance, False) where balance is the original balance. Otherwise return (final_balance, True). (Ex. balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 12.767961502075195,
+    "generated_at": "2026-09-06T08:49:31"
+  }
+}

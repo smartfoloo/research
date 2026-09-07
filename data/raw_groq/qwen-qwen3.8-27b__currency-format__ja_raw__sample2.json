@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-d26c5ae0-f901-40e3-a2f3-6c0f8568bb89",
+    "object": "chat.completion",
+    "created": 1788697834,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n: int) -> str:\n    \"\"\"\n    `n` を書式化し、先頭に `$` を付け、3桁ごとにカンマで区切った文字列を返す。\n    負の数の場合は、ドル記号の前にマイナス記号を付ける。\n    \n    例:\n        format_currency(4640039) -> \"$4,640,039\"\n        format_currency(-4640039) -> \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        sign = \"-\"\n        value = -n\n    else:\n        sign = \"\"\n        value = n\n    \n    # 桁を3桁ごとに区切ってカンマを挿入\n    s = str(value)\n    commas = []\n    while len(s) > 3:\n        commas.append(s[-3:])\n        s = s[:-3]\n    commas.append(s)\n    number_str = \",\".join(reversed(commas))\n    \n    return f\"{sign}${number_str}\"\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.021852148,
+      "prompt_tokens": 89,
+      "prompt_time": 0.007054717,
+      "completion_tokens": 247,
+      "completion_time": 0.483455461,
+      "total_tokens": 336,
+      "total_time": 0.490510178
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_57c7e760a9",
+    "x_groq": {
+      "id": "req_01m1vb5wy0eytt3nbg1ghty7np",
+      "seed": 1594956968
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n: int) -> str:\n    \"\"\"\n    `n` を書式化し、先頭に `$` を付け、3桁ごとにカンマで区切った文字列を返す。\n    負の数の場合は、ドル記号の前にマイナス記号を付ける。\n    \n    例:\n        format_currency(4640039) -> \"$4,640,039\"\n        format_currency(-4640039) -> \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        sign = \"-\"\n        value = -n\n    else:\n        sign = \"\"\n        value = n\n    \n    # 桁を3桁ごとに区切ってカンマを挿入\n    s = str(value)\n    commas = []\n    while len(s) > 3:\n        commas.append(s[-3:])\n        s = s[:-3]\n    commas.append(s)\n    number_str = \",\".join(reversed(commas))\n    \n    return f\"{sign}${number_str}\"\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 89,
+  "completion_tokens": 247,
+  "total_tokens": 336,
+  "groq_seed": 1594956968,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "elapsed_seconds": 12.862957000732422,
+    "generated_at": "2026-09-06T07:30:34"
+  }
+}

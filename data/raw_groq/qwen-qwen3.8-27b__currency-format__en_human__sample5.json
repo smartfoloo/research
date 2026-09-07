@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-6ca76b5f-adaf-496a-9565-ceb9f3f3194c",
+    "object": "chat.completion",
+    "created": 1788697796,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n):\n    \"\"\"\n    Format a number as a currency string with $ sign and commas.\n    For negative numbers, the minus sign comes before the dollar sign.\n    \n    Example:\n        4640039 -> \"$4,640,039\"\n        -4640039 -> \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        return \"-$\" + format(-n, ',')\n    else:\n        return \"$\" + format(n, ',')\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022392172,
+      "prompt_tokens": 78,
+      "prompt_time": 0.005237101,
+      "completion_tokens": 132,
+      "completion_time": 0.258790895,
+      "total_tokens": 210,
+      "total_time": 0.264027996
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_b930cafd52",
+    "x_groq": {
+      "id": "req_01m1vb4qyeeg6vnxhaqbxb1253",
+      "seed": 1518848417
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n):\n    \"\"\"\n    Format a number as a currency string with $ sign and commas.\n    For negative numbers, the minus sign comes before the dollar sign.\n    \n    Example:\n        4640039 -> \"$4,640,039\"\n        -4640039 -> \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        return \"-$\" + format(-n, ',')\n    else:\n        return \"$\" + format(n, ',')\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 78,
+  "completion_tokens": 132,
+  "total_tokens": 210,
+  "groq_seed": 1518848417,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "en_human",
+    "sample_idx": 5,
+    "prompt_text": "Write a Python function named format_currency(n) that returns n formatted as a string with a $ in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. 4640039 -> \"$4,640,039\")",
+    "elapsed_seconds": 12.650839805603027,
+    "generated_at": "2026-09-06T07:29:56"
+  }
+}

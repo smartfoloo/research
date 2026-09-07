@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_directive__sample5.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Returns a tuple containing the reversed 'elements' list and \n    the reversed 'punctuation' list.\n    \n    :param elements: List of word strings.\n    :param punctuation: List of punctuation strings corresponding to elements.\n    :return: Tuple (reversed_elements, reversed_punctuation).\n    \"\"\"\n    return elements[::-1], punctuation[::-1]\n\n# 使用例 (Example Usage)\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements, punctuation)\nprint(f\"新しい単語リスト: {new_elements}\")  # Output: 新しい単語リスト：['world', 'Hello']\nprint(f\"新しい句読点リスト: {new_punctuation}\") # Output: 新しい句読点リスト：['!', '']",
+  "stdout": "新しい単語リスト: ['world', 'Hello']\n新しい句読点リスト: ['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 107,
+  "eval_count": 5007,
+  "graded_at": "2026-09-06T03:04:29"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__bank-rollback__mt_en__sample2.json",
+  "task": "bank-rollback",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    original_balance = balance\n    \n    for tx in transactions:\n        balance += tx\n        if balance < 0:\n            return (original_balance, False)\n            \n    return (balance, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 105,
+  "candidates_token_count": 198,
+  "thoughts_token_count": null,
+  "total_token_count": 303,
+  "graded_at": "2026-09-06T06:52:56"
+}

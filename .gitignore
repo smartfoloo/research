@@ -1,0 +1,5 @@
+spike/.gemma_api_key
+spike/.groq_api_key
+.venv/
+__pycache__/
+*.pyc

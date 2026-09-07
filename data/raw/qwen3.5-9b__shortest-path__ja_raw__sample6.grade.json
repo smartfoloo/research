@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_raw__sample6.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短経路を求める関数\n    \n    Args:\n        edges: (from_node, to_node, weight) のタプルリスト\n        start: 開始ノード\n        end: 終了ノード\n    \n    Returns:\n        (distance, path) または (None, None) または ValueError を送出する\n        \n    Examples:\n        >>> shortest_path([(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], \"A\", \"C\")\n        (3, ['A', 'B', 'C'])\n        >>> shortest_path([(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], \"A\", \"A\")\n        (0, ['A'])\n    \"\"\"\n    \n    # エッジからグラフを作成（隣接リスト）\n    graph = {}\n    \n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"マイナスの重みがあります\")\n        \n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # start == end の場合、グラフ内になくても OK\n    if start == end:\n        return (0, [start])\n    \n    # 開始ノードまたは終了ノードがグラフに存在しない場合\n    if start not in graph or end not in graph:\n        return (None, None)\n    \n    # Dijkstra アルゴリズム\n    distances = {node: float('inf') for node in graph}\n    distances[start] = 0\n    \n    previous = {node: None for node in graph}\n    \n    pq = [(0, start)]\n    visited = set()\n    \n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n        \n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n        \n        # 終了ノードに到達（最短距離が決まった）\n        if current_node == end:\n            break\n        \n        # グラフに現れないノードは処理しない\n        if current_node not in graph:\n            continue\n            \n        for neighbor, weight in graph[current_node]:\n            distance = current_dist + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                previous[neighbor] = current_node\n                heapq.heappush(pq, (distance, neighbor))\n    \n    # 終了ノードが到達可能でない場合\n    if end not in visited:\n        return (None, None)\n    \n    # 経路を再構築\n    path = []\n    current = end\n    while True:\n        path.append(current)\n        if current == start:\n            break\n        current = previous[current]\n    \n    path.reverse()\n    \n    return (distances[end], path)",
+  "stdout": "FAIL case 0: expected [3, ['A', 'B', 'C']], got (None, None)\nFAIL case 1: expected [1, ['A', 'B']], got (None, None)\nPASSED 2/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 2,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 186,
+  "eval_count": 5770,
+  "graded_at": "2026-09-06T03:04:33"
+}

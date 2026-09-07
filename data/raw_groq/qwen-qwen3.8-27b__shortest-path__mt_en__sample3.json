@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-d8a0fa78-4f67-4245-9402-95d0191bad60",
+    "object": "chat.completion",
+    "created": 1788702285,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a directed weighted graph.\n    \n    Args:\n        edges: List of tuples (from_node, to_node, weight)\n        start: Starting node\n        end: Ending node\n    \n    Returns:\n        Tuple of (distance, path) where distance is the total weight and path is list of nodes.\n        If start == end, returns (0, [start]).\n        If no path exists, returns (None, None).\n    \n    Raises:\n        ValueError: If any edge has a negative weight.\n    \"\"\"\n    # Check for negative weights\n    for edge in edges:\n        if len(edge) != 3:\n            raise ValueError(f\"Invalid edge format: {edge}\")\n        weight = edge[2]\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n    \n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    adjacency = {}\n    all_nodes = set()\n    for fr, to, weight in edges:\n        if fr not in adjacency:\n            adjacency[fr] = []\n        adjacency[fr].append((to, weight))\n        all_nodes.add(fr)\n        all_nodes.add(to)\n    \n    # Use Dijkstra's algorithm\n    import heapq\n    \n    # Initialize distances and predecessors\n    dist = {node: float('inf') for node in all_nodes}\n    pred = {node: None for node in all_nodes}\n    dist[start] = 0\n    \n    # Priority queue: (distance, node)\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        d, u = heapq.heappop(heap)\n        if u in visited:\n            continue\n        visited.add(u)\n        \n        if u == end:\n            break\n        \n        if u in adjacency:\n            for v, w in adjacency[u]:\n                if v not in visited:\n                    new_dist = d + w\n                    if new_dist < dist[v]:\n                        dist[v] = new_dist\n                        pred[v] = u\n                        heapq.heappush(heap, (new_dist, v))\n    \n    # Check if end is reachable\n    if dist[end] == float('inf'):\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    node = end\n    while node is not None:\n        path.insert(0, node)\n        node = pred[node]\n    \n    return (dist[end], path)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.006135221,
+      "prompt_tokens": 153,
+      "prompt_time": 0.012784142,
+      "completion_tokens": 570,
+      "completion_time": 1.137976654,
+      "total_tokens": 723,
+      "total_time": 1.150760796
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_61e8d148b4",
+    "x_groq": {
+      "id": "req_01m1vfdpkwedrtbh6z4k4qerpq",
+      "seed": 1676662009
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Find the shortest path in a directed weighted graph.\n    \n    Args:\n        edges: List of tuples (from_node, to_node, weight)\n        start: Starting node\n        end: Ending node\n    \n    Returns:\n        Tuple of (distance, path) where distance is the total weight and path is list of nodes.\n        If start == end, returns (0, [start]).\n        If no path exists, returns (None, None).\n    \n    Raises:\n        ValueError: If any edge has a negative weight.\n    \"\"\"\n    # Check for negative weights\n    for edge in edges:\n        if len(edge) != 3:\n            raise ValueError(f\"Invalid edge format: {edge}\")\n        weight = edge[2]\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n    \n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    adjacency = {}\n    all_nodes = set()\n    for fr, to, weight in edges:\n        if fr not in adjacency:\n            adjacency[fr] = []\n        adjacency[fr].append((to, weight))\n        all_nodes.add(fr)\n        all_nodes.add(to)\n    \n    # Use Dijkstra's algorithm\n    import heapq\n    \n    # Initialize distances and predecessors\n    dist = {node: float('inf') for node in all_nodes}\n    pred = {node: None for node in all_nodes}\n    dist[start] = 0\n    \n    # Priority queue: (distance, node)\n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        d, u = heapq.heappop(heap)\n        if u in visited:\n            continue\n        visited.add(u)\n        \n        if u == end:\n            break\n        \n        if u in adjacency:\n            for v, w in adjacency[u]:\n                if v not in visited:\n                    new_dist = d + w\n                    if new_dist < dist[v]:\n                        dist[v] = new_dist\n                        pred[v] = u\n                        heapq.heappush(heap, (new_dist, v))\n    \n    # Check if end is reachable\n    if dist[end] == float('inf'):\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    node = end\n    while node is not None:\n        path.insert(0, node)\n        node = pred[node]\n    \n    return (dist[end], path)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 153,
+  "completion_tokens": 570,
+  "total_tokens": 723,
+  "groq_seed": 1676662009,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "shortest-path",
+    "condition": "mt_en",
+    "sample_idx": 3,
+    "prompt_text": "Create a Python function called shortest_path(edges, start, end) that returns the shortest total distance and a list of nodes along the path (distance, path). edges is a list of tuples (from_node, to_node, weight) representing one-way streets. If start and end are the same node, return (0, [start]). If the weight of any edge is negative, raise a ValueError. If the route does not exist, return (None, None). (Example: edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)], start=\"A\", end=\"C\" -> (3, [\"A\", \"B\", \"C\"]))",
+    "elapsed_seconds": 43.87420129776001,
+    "generated_at": "2026-09-06T08:44:45"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_raw__sample2.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # start と end が同じ場合\n    if start == end:\n        return (0, [start])\n    \n    # グラフの構築（隣接リスト形式）\n    graph = defaultdict(list)\n    for from_node, to_node, weight in edges:\n        graph[from_node].append((to_node, weight))\n    \n    # start ノードがグラフに含まれていない場合\n    if start not in graph:\n        return (None, None)\n\n    # Dijkstra アルゴリズム\n    distances = {node: float('inf') for node in graph}\n    distances[start] = 0\n    previous = {node: None for node in graph}\n    \n    heap = [(0, start)]\n    visited = set()\n    \n    while heap:\n        current_distance, u = heapq.heappop(heap)\n        \n        if u in visited:\n            continue\n        \n        visited.add(u)\n        \n        if u == end:\n            break\n            \n        for v, weight in graph[u]:\n            distance = current_distance + weight\n            # 最短経路を更新可能か判断\n            if distance < distances[v]:\n                distances[v] = distance\n                previous[v] = u\n                heapq.heappush(heap, (distance, v))\n    \n    # end ノードに到達できない場合\n    if distances[end] == float('inf'):\n        return (None, None)\n    \n    # 経路の再構築\n    path = []\n    current = end\n    while previous[current] is not None or current != start:\n        path.append(current)\n        current = previous[current]\n    path.append(start)\n    path.reverse()\n    \n    return (int(distances[end]), path)",
+  "stdout": "FAIL case 0: raised KeyError: 'C'\nFAIL case 1: raised KeyError: 'B'\nFAIL case 2: raised KeyError: 'B'\nPASSED 1/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 1,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 186,
+  "eval_count": 1308,
+  "graded_at": "2026-09-05T21:40:39"
+}

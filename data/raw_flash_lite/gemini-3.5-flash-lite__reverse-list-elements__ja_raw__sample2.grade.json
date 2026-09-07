@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__reverse-list-elements__ja_raw__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"elements の順序を反転させ、punctuation をセットで逆順にして返す。\"\"\"\n    # 要素と句読点をペアにして反転させる\n    reversed_elements = list(reversed(elements))\n    reversed_punctuation = list(reversed(punctuation))\n\n    return reversed_elements, reversed_punctuation\n\n\n# --- 使用例 ---\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\nprint(f\"elements: {new_elements}\")\nprint(f\"punctuation: {new_punctuation}\")",
+  "stdout": "elements: ['world', 'Hello']\npunctuation: ['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 92,
+  "candidates_token_count": 493,
+  "thoughts_token_count": null,
+  "total_token_count": 585,
+  "graded_at": "2026-09-06T06:53:25"
+}

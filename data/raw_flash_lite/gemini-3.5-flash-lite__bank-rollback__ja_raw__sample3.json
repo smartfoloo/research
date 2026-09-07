@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonの関数 `bank_rollback` は以下のようになります。\n\n```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    初期残高と取引リストを受け取り、取引を順番に適用する関数。\n    途中で残高がマイナスになった場合は、初期残高と False を返す。\n    正常に完了した場合は、最終残高と True を返す。\n    \"\"\"\n    initial_balance = balance\n    \n    for tx in transactions:\n        balance += tx\n        # 残高がマイナスになった場合\n        if balance < 0:\n            return (initial_balance, False)\n            \n    # すべての取引が正常に処理された場合\n    return (balance, True)\n\n# --- 使用例 ---\nprint(bank_rollback(100, [50, -30, -200]))  # 出力: (100, False)\nprint(bank_rollback(100, [50, -30, -50]))   # 出力: (70, True)\n```\n\n### 関数の動作説明:\n1. `initial_balance` に元の残高 (`balance`) を保存しておきます。\n2. `transactions` のリストを `for` ループで順番に取り出し、現在の残高に加算（マイナスの場合は減算）します。\n3. 取引適用後の残高が `0` 未満（マイナス）になった時点で、途中の計算を中断し、保存しておいた `initial_balance` と `False` のタプルを返します。\n4. リストの最後までマイナスにならずに処理が終わった場合は、計算された最終残高と `True` のタプルを返します。",
+              "thoughtSignature": "El4KXAERTTIP5Ag+ur2WezgXV/6YUU2kzz/yli0L7HUxVLiMER3mwbDAGMRkpx5n/g0eAeIiFhOAPlf1F16t/GQEgF2ePlLhdG4o5ER/fjOHxVr/jdM1Zl/7nqp9rpg0"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 132,
+      "candidatesTokenCount": 380,
+      "totalTokenCount": 512,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 132
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "jlOdauuWIJ_KrfcPopvv-Ac"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonの関数 `bank_rollback` は以下のようになります。\n\n```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    初期残高と取引リストを受け取り、取引を順番に適用する関数。\n    途中で残高がマイナスになった場合は、初期残高と False を返す。\n    正常に完了した場合は、最終残高と True を返す。\n    \"\"\"\n    initial_balance = balance\n    \n    for tx in transactions:\n        balance += tx\n        # 残高がマイナスになった場合\n        if balance < 0:\n            return (initial_balance, False)\n            \n    # すべての取引が正常に処理された場合\n    return (balance, True)\n\n# --- 使用例 ---\nprint(bank_rollback(100, [50, -30, -200]))  # 出力: (100, False)\nprint(bank_rollback(100, [50, -30, -50]))   # 出力: (70, True)\n```\n\n### 関数の動作説明:\n1. `initial_balance` に元の残高 (`balance`) を保存しておきます。\n2. `transactions` のリストを `for` ループで順番に取り出し、現在の残高に加算（マイナスの場合は減算）します。\n3. 取引適用後の残高が `0` 未満（マイナス）になった時点で、途中の計算を中断し、保存しておいた `initial_balance` と `False` のタプルを返します。\n4. リストの最後までマイナスにならずに処理が終わった場合は、計算された最終残高と `True` のタプルを返します。",
+  "prompt_token_count": 132,
+  "candidates_token_count": 380,
+  "thoughts_token_count": null,
+  "total_token_count": 512,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "elapsed_seconds": 6.4465296268463135,
+    "generated_at": "2026-09-06T06:50:39"
+  }
+}

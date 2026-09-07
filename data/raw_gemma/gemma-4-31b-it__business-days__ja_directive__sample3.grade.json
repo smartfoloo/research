@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__ja_directive__sample3.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # date1がdate2より後の場合でも正しく計算できるようにソート\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current_date = start_date + timedelta(days=1)\n    \n    while current_date < end_date:\n        # weekday() は 月曜=0, 火曜=1, ..., 金曜=4, 土曜=5, 日曜=6 を返す\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# --- テストケース ---\n# 例: 2024-01-01 (月) から 2024-01-08 (月) \n# 間の日付は 1/2(火), 1/3(水), 1/4(木), 1/5(金), 1/6(土), 1/7(日)\n# 営業日は 4 日間\nprint(f\"Test 1: {business_days('2024-01-01', '2024-01-08')}\")  # 期待値: 4\n\n# 例: 隣り合う日付の場合（間がないため 0）\nprint(f\"Test 2: {business_days('2024-01-01', '2024-01-02')}\")  # 期待値: 0\n\n# 例: 週末を挟む場合 (金曜日から月曜日まで)\n# 間の日付は 土, 日 なので 0\nprint(f\"Test 3: {business_days('2024-01-05', '2024-01-08')}\")  # 期待値: 0",
+  "stdout": "Test 1: 4\nTest 2: 0\nTest 3: 0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 107,
+  "candidates_token_count": 1241,
+  "thoughts_token_count": 709,
+  "total_token_count": 2057,
+  "graded_at": "2026-09-06T05:08:06"
+}

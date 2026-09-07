@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_directive__sample3.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "import ast\nimport operator\n\n# 定義された演算子対応表\nOPERATORS = {\n    '+': (ast.Add, operator.add),\n    '-': (ast.Sub, operator.sub),\n    '*': (ast.Mult, operator.mul),\n    '/': (ast.Div, operator.truediv),\n    '//': (ast.FloorDiv, operator.floordiv),\n    '%': (ast.Mod, operator.mod),\n    '**': (ast.Pow, operator.pow),\n}\n\ndef eval_expression(expr):\n    \"\"\"\n    数学式を評価する関数\n    \n    Args:\n        expr: 計算したい文字列式（例: \"3 + 4 * (2 - 1)\"）\n    \n    Returns:\n        計算結果\n    \n    Raises:\n        ZeroDivisionError: 0 で割る場合\n        SyntaxError: 不正な構文の場合\n    \"\"\"\n    # ast を用いて安全にパースする\n    parsed = ast.parse(expr, mode='eval')\n    \n    return _evaluate_expression(parsed.body)\n\n\ndef _visit(op):\n    op_node = op\n    if isinstance(op_node, ast.BinOp):\n        left = _visit(op_node.left)\n        right = _visit(op_node.right)\n        \n        # 割り算の場合のゼロ除算チェック\n        if isinstance(op_node.op, ast.Div) and right == 0:\n            raise ZeroDivisionError(\"division by zero\")\n        if isinstance(op_node.op, ast.FloorDiv) and right == 0:\n            raise ZeroDivisionError(\"division by zero\")\n        if isinstance(op_node.op, ast.Mod) and right == 0:\n            raise ZeroDivisionError(\"division by zero\")\n        \n        return OPERATORS[type(op_node.op)][1](left, right)\n    elif isinstance(op_node, ast.UnaryOp):\n        operand = _visit(op_node.operand)\n        if isinstance(op_node.op, ast.USub):\n            return -operand\n        elif isinstance(op_node.op, ast.UAdd):\n            return operand\n        elif isinstance(op_node.op, ast.Not):\n            return not operand\n    elif isinstance(op_node, ast.Num):  # Python 3.7 以前\n        return op_node.n\n    elif isinstance(op_node, ast.Constant):  # Python 3.8+\n        return op_node.value\n    \n    raise ValueError(f\"Unsupported operator type: {type(op_node)}\")\n\n\ndef _evaluate_expression(node):\n    if node is None:\n        return 0\n    return _visit(node)",
+  "stdout": "FAIL case 0: raised KeyError: <class 'ast.Sub'>\nFAIL case 1: raised KeyError: <class 'ast.Add'>\nFAIL case 2: raised KeyError: <class 'ast.Add'>\nPASSED 1/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 1,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 89,
+  "eval_count": 1213,
+  "graded_at": "2026-09-05T21:40:31"
+}

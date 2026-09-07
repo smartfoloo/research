@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonでご指定の要件を満たす `format_currency(n)` 関数を作成しました。\n\n```python\ndef format_currency(n):\n    # 負の数かどうかを判定\n    is_negative = n < 0\n    \n    # 絶対値に対してカンマ区切りを適用\n    formatted_abs = f\"{abs(n):,}\"\n    \n    # 負の数の場合は先頭にマイナス、正・0の場合はそのままドル記号を付加\n    if is_negative:\n        return f\"-${formatted_abs}\"\n    else:\n        return f\"${formatted_abs}\"\n\n# --- テスト用コード ---\nprint(format_currency(4640039))   # 出力: $4,640,039\nprint(format_currency(-4640039))  # 出力: -$4,640,039\nprint(format_currency(123))       # 出力: $123\nprint(format_currency(0))         # 出力: $0\n```\n\n### 解説\n1. `abs(n)` で一度絶対値に変換します。\n2. Pythonのフォーマット指定子 `:,` を使うことで、数値を自動的に3桁区切りのカンマ形式に変換できます（例: `f\"{1234567:,}\"` -> `\"1,234,567\"`）。\n3. 渡された数値 `n` が負の数 (`n < 0`) であるかを判定し、負であれば `-$`、そうでなければ `$` を先頭に結合して返します。",
+              "thoughtSignature": "El4KXAERTTIPGmBQDfU5tJf5CHBBh8Hka9eNsbTBzy7EiSWaG5LyQKk/5qZvrrpPy6G9J1OENhZMp4SpLcf8azFImIH32ZJltUvUjfCgwKJ9067s0yiZyYn+tMbIW7Pd"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 79,
+      "candidatesTokenCount": 365,
+      "totalTokenCount": 444,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 79
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "qFCdaurdBLPlrfcP0ejFuAc"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonでご指定の要件を満たす `format_currency(n)` 関数を作成しました。\n\n```python\ndef format_currency(n):\n    # 負の数かどうかを判定\n    is_negative = n < 0\n    \n    # 絶対値に対してカンマ区切りを適用\n    formatted_abs = f\"{abs(n):,}\"\n    \n    # 負の数の場合は先頭にマイナス、正・0の場合はそのままドル記号を付加\n    if is_negative:\n        return f\"-${formatted_abs}\"\n    else:\n        return f\"${formatted_abs}\"\n\n# --- テスト用コード ---\nprint(format_currency(4640039))   # 出力: $4,640,039\nprint(format_currency(-4640039))  # 出力: -$4,640,039\nprint(format_currency(123))       # 出力: $123\nprint(format_currency(0))         # 出力: $0\n```\n\n### 解説\n1. `abs(n)` で一度絶対値に変換します。\n2. Pythonのフォーマット指定子 `:,` を使うことで、数値を自動的に3桁区切りのカンマ形式に変換できます（例: `f\"{1234567:,}\"` -> `\"1,234,567\"`）。\n3. 渡された数値 `n` が負の数 (`n < 0`) であるかを判定し、負であれば `-$`、そうでなければ `$` を先頭に結合して返します。",
+  "prompt_token_count": 79,
+  "candidates_token_count": 365,
+  "thoughts_token_count": null,
+  "total_token_count": 444,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 1,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "elapsed_seconds": 6.517961502075195,
+    "generated_at": "2026-09-06T06:38:17"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "*   Input: Two dates in `YYYY-MM-DD` format (`date1`, `date2`).\n    *   Output: Number of business days (Monday to Friday) *between* those two dates.\n    *   Constraint 1: Exclude weekends (Saturday, Sunday).\n    *   Constraint 2: Ignore holidays.\n    *   Constraint 3: Exclude the start and end dates themselves.\n    *   Example: `\"2024-01-01\"` to `\"2024-01-08\"` should return `4`.\n        *   Jan 1 (Mon) - exclude\n        *   Jan 2 (Tue) - count (1)\n        *   Jan 3 (Wed) - count (2)\n        *   Jan 4 (Thu) - count (3)\n        *   Jan 5 (Fri) - count (4)\n        *   Jan 6 (Sat) - exclude\n        *   Jan 7 (Sun) - exclude\n        *   Jan 8 (Mon) - exclude\n        *   Total: 4.\n\n    *   Convert input strings to `datetime` objects.\n    *   Determine which date is the start and which is the end (handle cases where `date1 > date2`).\n    *   Iterate through the days between `start` and `end`.\n    *   Check if the day is a weekday (Monday-Friday).\n    *   Increment a counter.\n\n    *   *Approach A: Iteration (Simple).* Loop from `start + 1 day` to `end - 1 day`. Good for small ranges, easy to read.\n    *   *Approach B: Mathematical calculation.* Calculate total days, divide by 7, multiply by 5, then handle the remainder. Much faster for very large ranges.\n\n    *Given the typical use case for this kind of request, a loop is usually sufficient and clearer, but I should provide a clean implementation.*\n\n    *   Import `datetime` and `timedelta`.\n    *   Parse `date1` and `date2`.\n    *   Ensure `start` is the earlier date.\n    *   Loop while `current_date < end_date`.\n    *   Inside loop: `if current_date.weekday() < 5: count += 1`.\n    *   Start the loop from `start + timedelta(days=1)`.\n\n    *   `date1 = \"2024-01-01\"`, `date2 = \"2024-01-08\"`\n    *   `start = 2024-01-01`, `end = 2024-01-08`\n    *   Loop starts at `2024-01-02`.\n    *   Jan 2 (Tue): weekday=1 < 5 -> count=1\n    *   Jan 3 (Wed): weekday=2 < 5 -> count=2\n    *   Jan 4 (Thu): weekday=3 < 5 -> count=3\n    *   Jan 5 (Fri): weekday=4 < 5 -> count=4\n    *   Jan 6 (Sat): weekday=5 not < 5\n    *   Jan 7 (Sun): weekday=6 not < 5\n    *   Jan 8 (Mon): Loop stops because `current_date < end_date` is false.\n    *   Result: 4. Correct.\n\n    *   Write the code.\n    *   Add comments explaining the logic.\n    *   Provide usage examples.\n    *   Handle potential input errors (like swapped dates).\n\n    *   `datetime.strptime()` for parsing.\n    *   `timedelta` for moving to the next day.\n    *   `.weekday()` method: 0=Mon, 4=Fri, 5=Sat, 6=Sun.",
+              "thought": true
+            },
+            {
+              "text": "ご要望の機能を実装したPython関数です。\n\n`datetime` モジュールを使用して、日付のパースと曜日の判定を行っています。\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # どちらが開始日でどちらが終了日かを確認（順序が逆でも動作するようにする）\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current_date = start_date + timedelta(days=1)\n    \n    while current_date < end_date:\n        # weekday() は 月曜日=0, ..., 金曜日=4, 土曜日=5, 日曜日=6 を返す\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# テスト\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 結果: 4\nprint(business_days(\"2024-01-08\", \"2024-01-01\"))  # 結果: 4 (逆順でも動作)\nprint(business_days(\"2024-01-01\", \"2024-01-02\"))  # 結果: 0 (間がない場合)\n```\n\n### 解説\n1.  **`datetime.strptime`**: `\"YYYY-MM-DD\"` 形式の文字列を日付オブジェクトに変換します。\n2.  **`min()` / `max()`**: ユーザーが `date1` と `date2` をどのような順番で入力しても正しく計算できるように、小さい方を `start_date`、大きい方を `end_date` としています。\n3.  **`timedelta(days=1)`**: 日付を1日ずつ進めるために使用します。\n4.  **`weekday()` メソッド**:\n    *   0: 月曜日\n    *   1: 火曜日\n    *   2: 水曜日\n    *   3: 木曜日\n    *   4: 金曜日\n    *   5: 土曜日\n    *   6: 日曜日\n    *   したがって、`weekday() < 5` であれば平日（月〜金）であると判断できます。\n5.  **ループ範囲**: `current_date` を `start_date + 1日` から開始し、`current_date < end_date` とすることで、**開始日と終了日の両方を除外**した「間の日数」だけをカウントしています。\n\n### 計算例（2024-01-01 〜 2024-01-08 の場合）\n*   1/1 (月): 開始日のため除外\n*   1/2 (火): 平日 $\\rightarrow$ **+1**\n*   1/3 (水): 平日 $\\rightarrow$ **+1**\n*   1/4 (木): 平日 $\\rightarrow$ **+1**\n*   1/5 (金): 平日 $\\rightarrow$ **+1**\n*   1/6 (土): 週末のため除外\n*   1/7 (日): 週末のため除外\n*   1/8 (月): 終了日のため除外\n*   **合計: 4日**"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 827,
+      "totalTokenCount": 1785,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "thoughtsTokenCount": 858,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemma-4-31b-it",
+    "responseId": "PRSdauO8Gby6vr0PqfnJiQ8"
+  },
+  "thinking_text": "*   Input: Two dates in `YYYY-MM-DD` format (`date1`, `date2`).\n    *   Output: Number of business days (Monday to Friday) *between* those two dates.\n    *   Constraint 1: Exclude weekends (Saturday, Sunday).\n    *   Constraint 2: Ignore holidays.\n    *   Constraint 3: Exclude the start and end dates themselves.\n    *   Example: `\"2024-01-01\"` to `\"2024-01-08\"` should return `4`.\n        *   Jan 1 (Mon) - exclude\n        *   Jan 2 (Tue) - count (1)\n        *   Jan 3 (Wed) - count (2)\n        *   Jan 4 (Thu) - count (3)\n        *   Jan 5 (Fri) - count (4)\n        *   Jan 6 (Sat) - exclude\n        *   Jan 7 (Sun) - exclude\n        *   Jan 8 (Mon) - exclude\n        *   Total: 4.\n\n    *   Convert input strings to `datetime` objects.\n    *   Determine which date is the start and which is the end (handle cases where `date1 > date2`).\n    *   Iterate through the days between `start` and `end`.\n    *   Check if the day is a weekday (Monday-Friday).\n    *   Increment a counter.\n\n    *   *Approach A: Iteration (Simple).* Loop from `start + 1 day` to `end - 1 day`. Good for small ranges, easy to read.\n    *   *Approach B: Mathematical calculation.* Calculate total days, divide by 7, multiply by 5, then handle the remainder. Much faster for very large ranges.\n\n    *Given the typical use case for this kind of request, a loop is usually sufficient and clearer, but I should provide a clean implementation.*\n\n    *   Import `datetime` and `timedelta`.\n    *   Parse `date1` and `date2`.\n    *   Ensure `start` is the earlier date.\n    *   Loop while `current_date < end_date`.\n    *   Inside loop: `if current_date.weekday() < 5: count += 1`.\n    *   Start the loop from `start + timedelta(days=1)`.\n\n    *   `date1 = \"2024-01-01\"`, `date2 = \"2024-01-08\"`\n    *   `start = 2024-01-01`, `end = 2024-01-08`\n    *   Loop starts at `2024-01-02`.\n    *   Jan 2 (Tue): weekday=1 < 5 -> count=1\n    *   Jan 3 (Wed): weekday=2 < 5 -> count=2\n    *   Jan 4 (Thu): weekday=3 < 5 -> count=3\n    *   Jan 5 (Fri): weekday=4 < 5 -> count=4\n    *   Jan 6 (Sat): weekday=5 not < 5\n    *   Jan 7 (Sun): weekday=6 not < 5\n    *   Jan 8 (Mon): Loop stops because `current_date < end_date` is false.\n    *   Result: 4. Correct.\n\n    *   Write the code.\n    *   Add comments explaining the logic.\n    *   Provide usage examples.\n    *   Handle potential input errors (like swapped dates).\n\n    *   `datetime.strptime()` for parsing.\n    *   `timedelta` for moving to the next day.\n    *   `.weekday()` method: 0=Mon, 4=Fri, 5=Sat, 6=Sun.",
+  "final_text": "ご要望の機能を実装したPython関数です。\n\n`datetime` モジュールを使用して、日付のパースと曜日の判定を行っています。\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # どちらが開始日でどちらが終了日かを確認（順序が逆でも動作するようにする）\n    start_date = min(d1, d2)\n    end_date = max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current_date = start_date + timedelta(days=1)\n    \n    while current_date < end_date:\n        # weekday() は 月曜日=0, ..., 金曜日=4, 土曜日=5, 日曜日=6 を返す\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# テスト\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 結果: 4\nprint(business_days(\"2024-01-08\", \"2024-01-01\"))  # 結果: 4 (逆順でも動作)\nprint(business_days(\"2024-01-01\", \"2024-01-02\"))  # 結果: 0 (間がない場合)\n```\n\n### 解説\n1.  **`datetime.strptime`**: `\"YYYY-MM-DD\"` 形式の文字列を日付オブジェクトに変換します。\n2.  **`min()` / `max()`**: ユーザーが `date1` と `date2` をどのような順番で入力しても正しく計算できるように、小さい方を `start_date`、大きい方を `end_date` としています。\n3.  **`timedelta(days=1)`**: 日付を1日ずつ進めるために使用します。\n4.  **`weekday()` メソッド**:\n    *   0: 月曜日\n    *   1: 火曜日\n    *   2: 水曜日\n    *   3: 木曜日\n    *   4: 金曜日\n    *   5: 土曜日\n    *   6: 日曜日\n    *   したがって、`weekday() < 5` であれば平日（月〜金）であると判断できます。\n5.  **ループ範囲**: `current_date` を `start_date + 1日` から開始し、`current_date < end_date` とすることで、**開始日と終了日の両方を除外**した「間の日数」だけをカウントしています。\n\n### 計算例（2024-01-01 〜 2024-01-08 の場合）\n*   1/1 (月): 開始日のため除外\n*   1/2 (火): 平日 $\\rightarrow$ **+1**\n*   1/3 (水): 平日 $\\rightarrow$ **+1**\n*   1/4 (木): 平日 $\\rightarrow$ **+1**\n*   1/5 (金): 平日 $\\rightarrow$ **+1**\n*   1/6 (土): 週末のため除外\n*   1/7 (日): 週末のため除外\n*   1/8 (月): 終了日のため除外\n*   **合計: 4日**",
+  "prompt_token_count": 100,
+  "candidates_token_count": 827,
+  "thoughts_token_count": 858,
+  "total_token_count": 1785,
+  "_meta": {
+    "model": "gemma-4-31b-it",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 1,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 51.02285027503967,
+    "generated_at": "2026-09-06T02:21:14"
+  }
+}

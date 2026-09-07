@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-235cb1fd-204b-4959-8a38-81737c517239",
+    "object": "chat.completion",
+    "created": 1788702994,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order to the balance. If at any point the balance\n    becomes negative, stop and return (original_balance, False).\n    Otherwise, return (final_balance, True).\n    \n    Note: In the example, positive numbers are deposited (added) and negative\n    numbers are withdrawals (subtracted). Let's verify with the example:\n    balance=100, transactions=[50, -30, -200]\n    \n    Step 1: 100 + 50 = 150 (not negative)\n    Step 2: 150 + (-30) = 120 (not negative)\n    Step 3: 120 + (-200) = -80 (negative!) -> return (100, False)\n    \n    So the logic is: current_balance = balance; for each t in transactions:\n    current_balance += t; if current_balance < 0: return (balance, False)\n    \n    Wait, but what does \"balance becomes negative\" mean? Let's re-read:\n    \"If the balance becomes negative even during calculation, stop the calculation\n    and return (balance, False) using the original balance\"\n    \n    So we sum up the transaction amount to the running balance. If at any point\n    the running balance is negative, we abort and return the original balance\n    with False.\n    \n    Let me verify: 100 + 50 = 150, 150 - 30 = 120, 120 - 200 = -80 -> negative,\n    so return (100, False). Correct.\n    \"\"\"\n    current = balance\n    for t in transactions:\n        current += t\n        if current < 0:\n            return (balance, False)\n    return (current, True)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.021707292,
+      "prompt_tokens": 115,
+      "prompt_time": 0.008952918,
+      "completion_tokens": 429,
+      "completion_time": 0.838779088,
+      "total_tokens": 544,
+      "total_time": 0.847732006
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_57c7e760a9",
+    "x_groq": {
+      "id": "req_01m1vg3b1nek4r2jwyrf0ahcdz",
+      "seed": 200841569
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order to the balance. If at any point the balance\n    becomes negative, stop and return (original_balance, False).\n    Otherwise, return (final_balance, True).\n    \n    Note: In the example, positive numbers are deposited (added) and negative\n    numbers are withdrawals (subtracted). Let's verify with the example:\n    balance=100, transactions=[50, -30, -200]\n    \n    Step 1: 100 + 50 = 150 (not negative)\n    Step 2: 150 + (-30) = 120 (not negative)\n    Step 3: 120 + (-200) = -80 (negative!) -> return (100, False)\n    \n    So the logic is: current_balance = balance; for each t in transactions:\n    current_balance += t; if current_balance < 0: return (balance, False)\n    \n    Wait, but what does \"balance becomes negative\" mean? Let's re-read:\n    \"If the balance becomes negative even during calculation, stop the calculation\n    and return (balance, False) using the original balance\"\n    \n    So we sum up the transaction amount to the running balance. If at any point\n    the running balance is negative, we abort and return the original balance\n    with False.\n    \n    Let me verify: 100 + 50 = 150, 150 - 30 = 120, 120 - 200 = -80 -> negative,\n    so return (100, False). Correct.\n    \"\"\"\n    current = balance\n    for t in transactions:\n        current += t\n        if current < 0:\n            return (balance, False)\n    return (current, True)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 115,
+  "completion_tokens": 429,
+  "total_tokens": 544,
+  "groq_seed": 200841569,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "bank-rollback",
+    "condition": "mt_en",
+    "sample_idx": 3,
+    "prompt_text": "Create a Python function called bank_rollback(balance, transactions). transactions is a list of numbers with transaction amounts. Try to apply the given transactions in order and return the calculated final balance. If the balance becomes negative even during calculation, stop the calculation and return (balance, False) using the original balance, balance. Otherwise, return (final_balance, True). (Example: balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 13.228994369506836,
+    "generated_at": "2026-09-06T08:56:33"
+  }
+}

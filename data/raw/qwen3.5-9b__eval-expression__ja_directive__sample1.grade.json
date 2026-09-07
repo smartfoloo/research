@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__eval-expression__ja_directive__sample1.json",
+  "task": "eval-expression",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "import builtins\n\ndef eval_expression(expr):\n    \"\"\"\n    数学的表現文字列を評価して計算結果を返す関数。\n    \n    引数:\n        expr (str): 計算式を表す文字列（例：\"3 + 4 * (2 - 1)\"）\n    \n    戻り値:\n        int or float: 計算結果\n\n    セキュリティ注意：\n        本関数は Python の built-in 'eval' を使用しています。\n        コードに直接実行させる性質を持つため、信頼できない入力に対しては\n        この関数を使用しないでください（コード注入攻撃のリスクがあります）。\n        安全な環境でのみ使用してください。\n    \"\"\"\n    # 基本的なバリデーション：不正な文字が含まれていないか確認する（簡易セキュリティ対策）\n    # 数、演算子、括弧、空白のみを許可します。\n    import re\n    if not re.match(r'^[\\d\\+\\-\\*\\/(). ]+$', expr):\n        raise ValueError(f\"無効な文字が含まれています: {expr}\")\n\n    try:\n        return eval(expr)\n    except ZeroDivisionError:\n        # ゼロ除算エラーが発生した場合も再発火して、呼び出し元に伝播させる\n        raise\n    except SyntaxError as e:\n        # 文法エラーの場合はそのまま伝播\n        raise\n\n# 使用例\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # 出力：7\n    \n    try:\n        print(eval_expression(\"5 / 0\"))  # ZeroDivisionError を出力する\n    except ZeroDivisionError as e:\n        print(f\"エラーが発生しました: {e}\")",
+  "stdout": "7\nエラーが発生しました: division by zero\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 89,
+  "eval_count": 8033,
+  "graded_at": "2026-09-05T21:40:31"
+}

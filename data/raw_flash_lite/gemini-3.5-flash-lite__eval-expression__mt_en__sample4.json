@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "To safely evaluate mathematical expressions in Python while respecting the order of operations, handling negative numbers, and raising a `ZeroDivisionError` on division by zero, we can use the built-in `ast` (Abstract Syntax Tree) module. \n\nThis approach is much safer and more robust than using `eval()` directly, as it restricts the execution to only safe mathematical operations.\n\nHere is the complete `eval_expression` function:\n\n```python\nimport ast\nimport operator\n\ndef eval_expression(expr):\n    \"\"\"\n    Computes the mathematical expression in expr, respecting the order \n    of operations, handling negative numbers, and raising ZeroDivisionError \n    when dividing by zero.\n    \"\"\"\n    # Supported operators mapping\n    operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n        ast.FloorDiv: operator.floordiv,\n        ast.Mod: operator.mod,\n        ast.Pow: operator.pow,\n        ast.UAdd: operator.pos,\n        ast.USub: operator.neg,\n    }\n\n    def _eval(node):\n        if isinstance(node, ast.Constant):  # Numbers (Python 3.8+)\n            if isinstance(node.value, (int, float)):\n                return node.value\n            raise TypeError(f\"Unsupported constant type: {type(node.value)}\")\n        \n        elif isinstance(node, ast.Num):  # Legacy support for numbers (Python < 3.8)\n            return node.n\n\n        elif isinstance(node, ast.BinOp):  # Binary operations (e.g., a + b)\n            left = _eval(node.left)\n            right = _eval(node.right)\n            op_type = type(node.op)\n            \n            if op_type in (ast.Div, ast.FloorDiv) and right == 0:\n                raise ZeroDivisionError(\"division by zero\")\n                \n            if op_type in operators:\n                return operators[op_type](left, right)\n            raise TypeError(f\"Unsupported binary operator: {op_type}\")\n\n        elif isinstance(node, ast.UnaryOp):  # Unary operations (e.g., -1, +5)\n            operand = _eval(node.operand)\n            op_type = type(node.op)\n            if op_type in operators:\n                return operators[op_type](operand)\n            raise TypeError(f\"Unsupported unary operator: {op_type}\")\n\n        elif isinstance(node, ast.Expression):  # Root node of parse\n            return _eval(node.body)\n\n        else:\n            raise TypeError(f\"Unsupported expression structure: {type(node)}\")\n\n    # Parse the expression string into an AST\n    try:\n        tree = ast.parse(expr.strip(), mode='eval')\n    except SyntaxError as e:\n        raise ValueError(f\"Invalid expression syntax: {expr}\") from e\n\n    return _eval(tree)\n\n# --- Examples ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))         # Output: 7\n    print(eval_expression(\"-5 + (-3) * 2\"))           # Output: -11\n    print(eval_expression(\"10 / (5 - 5)\"))            # Raises ZeroDivisionError\n```\n\n### How it works:\n1. **`ast.parse(expr, mode='eval')`**: Safely parses the mathematical string into an Abstract Syntax Tree, automatically handling operator precedence (PEMDAS/BODMAS) and parenthesis grouping.\n2. **Recursive Evaluation (`_eval`)**: The helper function walks through the AST nodes:\n   - **`ast.Constant` / `ast.Num`**: Extracts numerical values (including negative numbers).\n   - **`ast.BinOp`**: Handles standard binary math like addition, subtraction, multiplication, and division. It explicitly checks for division by zero (`right == 0`) and raises a `ZeroDivisionError`.\n   - **`ast.UnaryOp`**: Handles leading signs (e.g., `-5` or `+3`).\n3. **Safety**: Because it only evaluates specific mathematical AST nodes, malicious code injection (like running system commands) is impossible.",
+              "thoughtSignature": "El4KXAERTTIP04BzKS0K8S3C0OH7yQ2hgDgsKYo8pMoW4/zMjTk8FqHEXoTsuSjUmW30oY/Z7Szalhv0Ms7FoJc8+GOXfGiAWQ25tH0fbGHC76weBsBH/xMlz134WOAD"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 63,
+      "candidatesTokenCount": 972,
+      "totalTokenCount": 1035,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 63
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "f1KdapSEJ8CgrfcP077V4Ak"
+  },
+  "thinking_text": "",
+  "final_text": "To safely evaluate mathematical expressions in Python while respecting the order of operations, handling negative numbers, and raising a `ZeroDivisionError` on division by zero, we can use the built-in `ast` (Abstract Syntax Tree) module. \n\nThis approach is much safer and more robust than using `eval()` directly, as it restricts the execution to only safe mathematical operations.\n\nHere is the complete `eval_expression` function:\n\n```python\nimport ast\nimport operator\n\ndef eval_expression(expr):\n    \"\"\"\n    Computes the mathematical expression in expr, respecting the order \n    of operations, handling negative numbers, and raising ZeroDivisionError \n    when dividing by zero.\n    \"\"\"\n    # Supported operators mapping\n    operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n        ast.FloorDiv: operator.floordiv,\n        ast.Mod: operator.mod,\n        ast.Pow: operator.pow,\n        ast.UAdd: operator.pos,\n        ast.USub: operator.neg,\n    }\n\n    def _eval(node):\n        if isinstance(node, ast.Constant):  # Numbers (Python 3.8+)\n            if isinstance(node.value, (int, float)):\n                return node.value\n            raise TypeError(f\"Unsupported constant type: {type(node.value)}\")\n        \n        elif isinstance(node, ast.Num):  # Legacy support for numbers (Python < 3.8)\n            return node.n\n\n        elif isinstance(node, ast.BinOp):  # Binary operations (e.g., a + b)\n            left = _eval(node.left)\n            right = _eval(node.right)\n            op_type = type(node.op)\n            \n            if op_type in (ast.Div, ast.FloorDiv) and right == 0:\n                raise ZeroDivisionError(\"division by zero\")\n                \n            if op_type in operators:\n                return operators[op_type](left, right)\n            raise TypeError(f\"Unsupported binary operator: {op_type}\")\n\n        elif isinstance(node, ast.UnaryOp):  # Unary operations (e.g., -1, +5)\n            operand = _eval(node.operand)\n            op_type = type(node.op)\n            if op_type in operators:\n                return operators[op_type](operand)\n            raise TypeError(f\"Unsupported unary operator: {op_type}\")\n\n        elif isinstance(node, ast.Expression):  # Root node of parse\n            return _eval(node.body)\n\n        else:\n            raise TypeError(f\"Unsupported expression structure: {type(node)}\")\n\n    # Parse the expression string into an AST\n    try:\n        tree = ast.parse(expr.strip(), mode='eval')\n    except SyntaxError as e:\n        raise ValueError(f\"Invalid expression syntax: {expr}\") from e\n\n    return _eval(tree)\n\n# --- Examples ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))         # Output: 7\n    print(eval_expression(\"-5 + (-3) * 2\"))           # Output: -11\n    print(eval_expression(\"10 / (5 - 5)\"))            # Raises ZeroDivisionError\n```\n\n### How it works:\n1. **`ast.parse(expr, mode='eval')`**: Safely parses the mathematical string into an Abstract Syntax Tree, automatically handling operator precedence (PEMDAS/BODMAS) and parenthesis grouping.\n2. **Recursive Evaluation (`_eval`)**: The helper function walks through the AST nodes:\n   - **`ast.Constant` / `ast.Num`**: Extracts numerical values (including negative numbers).\n   - **`ast.BinOp`**: Handles standard binary math like addition, subtraction, multiplication, and division. It explicitly checks for division by zero (`right == 0`) and raises a `ZeroDivisionError`.\n   - **`ast.UnaryOp`**: Handles leading signs (e.g., `-5` or `+3`).\n3. **Safety**: Because it only evaluates specific mathematical AST nodes, malicious code injection (like running system commands) is impossible.",
+  "prompt_token_count": 63,
+  "candidates_token_count": 972,
+  "thoughts_token_count": null,
+  "total_token_count": 1035,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "eval-expression",
+    "condition": "mt_en",
+    "sample_idx": 4,
+    "prompt_text": "Create a Python function called eval_expression(expr) that computes the expression in expr. Be sure to consider the order of operations and be able to calculate negative numbers. When dividing by zero, raise ZeroDivisionError. (Example: \"3 + 4 * (2 - 1)\" -> 7)",
+    "elapsed_seconds": 7.9334821701049805,
+    "generated_at": "2026-09-06T06:46:10"
+  }
+}

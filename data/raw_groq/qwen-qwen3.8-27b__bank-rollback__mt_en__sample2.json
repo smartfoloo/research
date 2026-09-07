@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-fd336e6a-28aa-44ad-a2a2-f3cdb8728b1a",
+    "object": "chat.completion",
+    "created": 1788702981,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order to the balance. If at any point the balance becomes negative,\n    stop and return (original_balance, False). If all transactions are applied successfully,\n    return (final_balance, True).\n    \n    Args:\n        balance: The starting balance (a number)\n        transactions: A list of transaction amounts (positive for deposits, negative for withdrawals)\n    \n    Returns:\n        A tuple (balance_value, success_flag)\n    \"\"\"\n    original_balance = balance\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (original_balance, False)\n    \n    return (current_balance, True)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.02454024,
+      "prompt_tokens": 115,
+      "prompt_time": 0.009109653,
+      "completion_tokens": 169,
+      "completion_time": 0.331913068,
+      "total_tokens": 284,
+      "total_time": 0.341022721
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1vg2ykxe0w873c3fjnejsnm",
+      "seed": 810109068
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order to the balance. If at any point the balance becomes negative,\n    stop and return (original_balance, False). If all transactions are applied successfully,\n    return (final_balance, True).\n    \n    Args:\n        balance: The starting balance (a number)\n        transactions: A list of transaction amounts (positive for deposits, negative for withdrawals)\n    \n    Returns:\n        A tuple (balance_value, success_flag)\n    \"\"\"\n    original_balance = balance\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (original_balance, False)\n    \n    return (current_balance, True)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 115,
+  "completion_tokens": 169,
+  "total_tokens": 284,
+  "groq_seed": 810109068,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "bank-rollback",
+    "condition": "mt_en",
+    "sample_idx": 2,
+    "prompt_text": "Create a Python function called bank_rollback(balance, transactions). transactions is a list of numbers with transaction amounts. Try to apply the given transactions in order and return the calculated final balance. If the balance becomes negative even during calculation, stop the calculation and return (balance, False) using the original balance, balance. Otherwise, return (final_balance, True). (Example: balance=100, transactions=[50, -30, -200] -> (100, False))",
+    "elapsed_seconds": 12.72972846031189,
+    "generated_at": "2026-09-06T08:56:20"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__shortest-path__en_human__sample5.json",
+  "task": "shortest-path",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Finds the shortest path between a start and end node in a weighted directed graph.\n    \n    Parameters:\n    - edges: List of tuples representing (from_node, to_node, weight)\n    - start: The starting node\n    - end: The target node\n    \n    Returns:\n    - (distance, path): A tuple containing the total distance and a list of nodes \n                        representing the path. Returns (0, [start]) if start == end,\n                        and (None, None) if no path exists.\n    \"\"\"\n    # Check for negative edge weights\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weights must be non-negative.\")\n            \n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # Build the adjacency list: graph[u] = [(v, weight), ...]\n    graph = {}\n    nodes = set()\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n        nodes.add(u)\n        nodes.add(v)\n        \n    # If start or end nodes aren't in the graph at all\n    if start not in nodes or end not in nodes:\n        return (None, None)\n\n    # Priority queue stores tuples of (current_distance, current_node, path_so_far)\n    pq = [(0, start, [start])]\n    \n    # Dictionary to keep track of the shortest distance found to each node\n    distances = {start: 0}\n\n    while pq:\n        current_distance, current_node, path = heapq.heappop(pq)\n\n        # If we reached the destination, return the result\n        if current_node == end:\n            return (current_distance, path)\n\n        # If a shorter path to this node has already been found, skip\n        if current_distance > distances.get(current_node, float('inf')):\n            continue\n\n        # Explore neighbors\n        if current_node in graph:\n            for neighbor, weight in graph[current_node]:\n                distance = current_distance + weight\n\n                # If we found a shorter path to the neighbor, update and push to queue\n                if distance < distances.get(neighbor, float('inf')):\n                    distances[neighbor] = distance\n                    heapq.heappush(pq, (distance, neighbor, path + [neighbor]))\n\n    # If the priority queue is empty and we haven't reached 'end', no path exists\n    return (None, None)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 148,
+  "candidates_token_count": 841,
+  "thoughts_token_count": null,
+  "total_token_count": 989,
+  "graded_at": "2026-09-06T06:53:30"
+}

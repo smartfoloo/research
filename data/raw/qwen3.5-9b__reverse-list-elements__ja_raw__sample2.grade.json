@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__reverse-list-elements__ja_raw__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements リストと punctuation リストの両方を反転させる\n    \n    引数:\n        elements: 元の要素からなるリスト\n        punctuation: 記号（空白文字も含む）からなるリスト\n    \n    戻り値:\n        (new_elements, new_punctuation): 双方が逆順されたリストのタプル\n    \n    例:\n    >>> reverse_list_elements([\"Hello\", \"world\"], [\"\", \"!\"])\n    ([\"world\", \"Hello\"], [\"!\", \"\"])\n    \"\"\"\n    return elements[::-1], punctuation[::-1]\n\n\n# テスト用コード\nif __name__ == \"__main__\":\n    # 基本テスト\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n    \n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n    print(f\"元の elements: {elements}\")\n    print(f\"元の punctuation: {punctuation}\")\n    print(f\"反転後の elements: {new_elements}\")\n    print(f\"反転後の punctuation: {new_punctuation}\")\n    \n    # 複数の記号がある場合\n    elements2 = [\"A\", \"B\", \"C\"]\n    punctuation2 = [\".\", \",\", \"!\"]\n    \n    new_elements2, new_punctuation2 = reverse_list_elements(elements2, punctuation2)\n    print(f\"\\nelements: {elements2} -> {new_elements2}\")\n    print(f\"punctuation: {punctuation2} -> {new_punctuation2}\")",
+  "stdout": "元の elements: ['Hello', 'world']\n元の punctuation: ['', '!']\n反転後の elements: ['world', 'Hello']\n反転後の punctuation: ['!', '']\n\nelements: ['A', 'B', 'C'] -> ['C', 'B', 'A']\npunctuation: ['.', ',', '!'] -> ['!', ',', '.']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 100,
+  "eval_count": 1660,
+  "graded_at": "2026-09-05T21:40:36"
+}

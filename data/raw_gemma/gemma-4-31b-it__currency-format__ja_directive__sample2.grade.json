@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__currency-format__ja_directive__sample2.json",
+  "task": "currency-format",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        # 負の数の場合: マイナス記号 + ドル記号 + 絶対値のカンマ区切り\n        return f\"-${abs(n):,}\"\n    else:\n        # 正の数または0の場合: ドル記号 + カンマ区切り\n        return f\"${n:,}\"\n\n# テストケース\nprint(format_currency(4640039))   # 出力: $4,640,039\nprint(format_currency(-4640039))  # 出力: -$4,640,039\nprint(format_currency(1000))      # 出力: $1,000\nprint(format_currency(-1000))     # 出力: -$1,000\nprint(format_currency(0))         # 出力: $0",
+  "stdout": "$4,640,039\n-$4,640,039\n$1,000\n-$1,000\n$0\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 86,
+  "candidates_token_count": 724,
+  "thoughts_token_count": 514,
+  "total_token_count": 1324,
+  "graded_at": "2026-09-06T05:08:14"
+}

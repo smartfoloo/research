@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_raw__sample3.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    有向グラフでの最短距離とその経路を計算する関数\n    \n    Args:\n        edges: (from_node, to_node, weight) のタプルリスト\n        start: 開始ノード\n        end: 終了ノード\n    \n    Returns:\n        (distance, path): 最短距離と経路のリスト（None, None）または (0, [start])\n    \n    Raises:\n        ValueError: 負の重みのエッジがある場合\n    \"\"\"\n\n    # 1. エッジ weight が負でないかチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative weight not allowed\")\n\n    # 2. start == end の場合の特殊処理\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフを構築（ノードごとの隣接リスト）\n    graph = {}\n    all_nodes = set()\n\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        if to_node not in graph:\n            graph[to_node] = []\n        \n        graph[from_node].append((to_node, weight))\n        all_nodes.add(from_node)\n        all_nodes.add(to_node)\n\n    # 4. Dijkstra アルゴリズム\n    distances = {node: float('inf') for node in all_nodes}\n    predecessors = {node: None for node in all_nodes}\n    distances[start] = 0\n    \n    pq = [(0, start)]\n    visited = set()\n\n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n\n        if current_node in visited:\n            continue\n        \n        visited.add(current_node)\n\n        if not graph.get(current_node):\n            continue\n\n        for neighbor, weight in graph[current_node]:\n            new_dist = current_dist + weight\n            \n            if new_dist < distances[neighbor]:\n                distances[neighbor] = new_dist\n                predecessors[neighbor] = current_node\n                heapq.heappush(pq, (new_dist, neighbor))\n    \n    # 5. 経路が存在しない場合の判断\n    if end not in all_nodes or distances[end] == float('inf'):\n        return (None, None)\n\n    # 6. 経路の再構築\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = predecessors[current]\n    \n    path.reverse()\n\n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 186,
+  "eval_count": 3022,
+  "graded_at": "2026-09-05T21:40:39"
+}

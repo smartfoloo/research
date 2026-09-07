@@ -1,0 +1,53 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "\n*   Function name: `business_days(date1, date2)`.\n*   Input: Two strings (`date1`, `date2`) in `YYYY-MM-DD` format.\n*   Output: Integer representing the number of business days (Monday-Friday) *between* the two dates.\n*   Constraint 1: Exclude the start and end dates.\n*   Constraint 2: Ignore holidays.\n*   Constraint 3: Handle the date range regardless of which date is earlier.\n\n    *   Use the `datetime` module to parse strings into date objects.\n    *   Calculate the difference between dates.\n    *   Iterate through the range of dates or use a mathematical formula.\n\n    *   *Approach A: Loop (Simple but potentially slow for huge ranges)*\n        1. Convert strings to `datetime.date` objects.\n        2. Ensure `date1` is the earlier date.\n        3. Initialize a counter to 0.\n        4. Start a loop from `date1 + 1 day` up to `date2 - 1 day`.\n        5. Check if the current day is a weekday (`weekday() < 5`).\n        6. Increment counter.\n\n    *   *Approach B: Mathematical Formula (Efficient for huge ranges)*\n        1. Convert strings to `datetime.date` objects.\n        2. Calculate total days.\n        3. Calculate full weeks $\\times 5$.\n        4. Handle the remaining days.\n        *Self-Correction:* For a simple \"business days\" helper, a loop is usually acceptable unless the date range is millions of years. However, a loop is easier to read and less prone to \"off-by-one\" errors when excluding endpoints.\n\n    *   Let's go with a loop for clarity, as the specific example range is small. However, the `numpy.busday_count` is the industry standard, but I should stick to the standard library unless asked for external packages.\n\n    *   *Imports:* `from datetime import datetime, timedelta`\n    *   *Parsing:* `d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()`\n    *   *Ordering:* `start, end = (d1, d2) if d1 < d2 else (d2, d1)`\n    *   *Iteration:*\n        ```python\n        current = start + timedelta(days=1)\n        count = 0\n        while current < end:\n            if current.weekday() < 5:\n                count += 1\n            current += timedelta(days=1)\n        ```\n\n    *   Ex: \"2024-01-01\" (Monday), \"2024-01-08\" (Monday).\n    *   Days between: 02, 03, 04, 05, 06, 07.\n    *   02 (Tue) - Yes\n    *   03 (Wed) - Yes\n    *   04 (Thu) - Yes\n    *   05 (Fri) - Yes\n    *   06 (Sat) - No\n    *   07 (Sun) - No\n    *   Total = 4. Matches example.",
+              "thought": true
+            },
+            {
+              "text": "Here is the Python code to achieve this. I have used the built-in `datetime` module to handle the date parsing and calculations.\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Parse the strings into date objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # Ensure d1 is the earlier date to make the loop simple\n    start, end = (d1, d2) if d1 < d2 else (d2, d1)\n    \n    business_day_count = 0\n    # Start from the day after the start date\n    current_date = start + timedelta(days=1)\n    \n    # Loop until we reach the end date (exclusive)\n    while current_date < end:\n        # weekday() returns 0 for Monday and 6 for Sunday\n        # 0-4 are Monday through Friday\n        if current_date.weekday() < 5:\n            business_day_count += 1\n        current_date += timedelta(days=1)\n        \n    return business_day_count\n\n# Testing the example provided\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Expected Output: 4\n```\n\n### Explanation:\n1.  **`datetime.strptime`**: This converts the input strings into Python `datetime` objects based on the `YYYY-MM-DD` format.\n2.  **Sorting Dates**: I added a check (`start, end = ...`) to ensure that the function works regardless of whether `date1` or `date2` comes first chronologically.\n3.  **`timedelta(days=1)`**: This is used to increment the date by one day during each iteration of the loop.\n4.  **`.weekday()`**: This method returns an integer where **Monday is 0** and **Sunday is 6**. Therefore, any value less than 5 is a business day.\n5.  **Exclusivity**: By starting the loop at `start + 1 day` and using the condition `while current_date < end`, we ensure that both the start and end dates are excluded from the count."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 101,
+      "candidatesTokenCount": 521,
+      "totalTokenCount": 1336,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 101
+        }
+      ],
+      "thoughtsTokenCount": 714,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemma-4-31b-it",
+    "responseId": "RCGdauXpEryyvr0PoaH_oA8"
+  },
+  "thinking_text": "\n*   Function name: `business_days(date1, date2)`.\n*   Input: Two strings (`date1`, `date2`) in `YYYY-MM-DD` format.\n*   Output: Integer representing the number of business days (Monday-Friday) *between* the two dates.\n*   Constraint 1: Exclude the start and end dates.\n*   Constraint 2: Ignore holidays.\n*   Constraint 3: Handle the date range regardless of which date is earlier.\n\n    *   Use the `datetime` module to parse strings into date objects.\n    *   Calculate the difference between dates.\n    *   Iterate through the range of dates or use a mathematical formula.\n\n    *   *Approach A: Loop (Simple but potentially slow for huge ranges)*\n        1. Convert strings to `datetime.date` objects.\n        2. Ensure `date1` is the earlier date.\n        3. Initialize a counter to 0.\n        4. Start a loop from `date1 + 1 day` up to `date2 - 1 day`.\n        5. Check if the current day is a weekday (`weekday() < 5`).\n        6. Increment counter.\n\n    *   *Approach B: Mathematical Formula (Efficient for huge ranges)*\n        1. Convert strings to `datetime.date` objects.\n        2. Calculate total days.\n        3. Calculate full weeks $\\times 5$.\n        4. Handle the remaining days.\n        *Self-Correction:* For a simple \"business days\" helper, a loop is usually acceptable unless the date range is millions of years. However, a loop is easier to read and less prone to \"off-by-one\" errors when excluding endpoints.\n\n    *   Let's go with a loop for clarity, as the specific example range is small. However, the `numpy.busday_count` is the industry standard, but I should stick to the standard library unless asked for external packages.\n\n    *   *Imports:* `from datetime import datetime, timedelta`\n    *   *Parsing:* `d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()`\n    *   *Ordering:* `start, end = (d1, d2) if d1 < d2 else (d2, d1)`\n    *   *Iteration:*\n        ```python\n        current = start + timedelta(days=1)\n        count = 0\n        while current < end:\n            if current.weekday() < 5:\n                count += 1\n            current += timedelta(days=1)\n        ```\n\n    *   Ex: \"2024-01-01\" (Monday), \"2024-01-08\" (Monday).\n    *   Days between: 02, 03, 04, 05, 06, 07.\n    *   02 (Tue) - Yes\n    *   03 (Wed) - Yes\n    *   04 (Thu) - Yes\n    *   05 (Fri) - Yes\n    *   06 (Sat) - No\n    *   07 (Sun) - No\n    *   Total = 4. Matches example.",
+  "final_text": "Here is the Python code to achieve this. I have used the built-in `datetime` module to handle the date parsing and calculations.\n\n```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # Parse the strings into date objects\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n    \n    # Ensure d1 is the earlier date to make the loop simple\n    start, end = (d1, d2) if d1 < d2 else (d2, d1)\n    \n    business_day_count = 0\n    # Start from the day after the start date\n    current_date = start + timedelta(days=1)\n    \n    # Loop until we reach the end date (exclusive)\n    while current_date < end:\n        # weekday() returns 0 for Monday and 6 for Sunday\n        # 0-4 are Monday through Friday\n        if current_date.weekday() < 5:\n            business_day_count += 1\n        current_date += timedelta(days=1)\n        \n    return business_day_count\n\n# Testing the example provided\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # Expected Output: 4\n```\n\n### Explanation:\n1.  **`datetime.strptime`**: This converts the input strings into Python `datetime` objects based on the `YYYY-MM-DD` format.\n2.  **Sorting Dates**: I added a check (`start, end = ...`) to ensure that the function works regardless of whether `date1` or `date2` comes first chronologically.\n3.  **`timedelta(days=1)`**: This is used to increment the date by one day during each iteration of the loop.\n4.  **`.weekday()`**: This method returns an integer where **Monday is 0** and **Sunday is 6**. Therefore, any value less than 5 is a business day.\n5.  **Exclusivity**: By starting the loop at `start + 1 day` and using the condition `while current_date < end`, we ensure that both the start and end dates are excluded from the count.",
+  "prompt_token_count": 101,
+  "candidates_token_count": 521,
+  "thoughts_token_count": 714,
+  "total_token_count": 1336,
+  "_meta": {
+    "model": "gemma-4-31b-it",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 5,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "elapsed_seconds": 38.22142243385315,
+    "generated_at": "2026-09-06T03:16:36"
+  }
+}

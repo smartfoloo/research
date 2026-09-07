@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_directive__sample1.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import date, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2 つの日付の間の営業日（月曜日から金曜日）の数を計算します。\n    両方の入力された日付自体はカウントに含まれません。\n    \n    Args:\n        date1: 日付文字列 (YYYY-MM-DD)\n        date2: 日付文字列 (YYYY-MM-DD)\n        \n    Returns:\n        間にある営業日の数 (int)\n    \"\"\"\n    # 文字列から date オブジェクトに変換\n    start = date.fromisoformat(date1)\n    end = date.fromisoformat(date2)\n\n    # 日付が逆順の場合、計算のために順序を統一（または範囲が存在しない場合を処理）\n    # 今回は「間の営業日」なので順序入れ替えで絶対値を取るか、0 を返すかの判断が必要。\n    # 一般的なロジックとして範囲を確認する\n    if start > end:\n        return 0\n    \n    # 開始日当日は除外するため +1 日を付け足し、ループ条件に終了日が含まれないように設定\n    current_date = start + timedelta(days=1)\n    business_count = 0\n\n    while current_date < end:\n        # weekday() は月曜が 0 から金曜が 4 の値を返す\n        if current_date.weekday() < 5: \n            business_count += 1\n        current_date += timedelta(days=1)\n\n    return business_count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 114,
+  "eval_count": 4494,
+  "graded_at": "2026-09-06T03:04:14"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__reverse-list-elements__ja_raw__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"elements の順序を反転させ、punctuation も一緒にセットで逆順にする関数。\n\n    Args:\n        elements (list of str): 単語や要素のリスト\n        punctuation (list of str): 各要素に対応する句読点のリスト\n\n    Returns:\n        tuple: (反転した elements, 反転した punctuation)\n    \"\"\"\n    # 1. 念のためリストの長さが同じであることを確認（安全対策）\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さが一致していません。\")\n\n    # 2. リストの順序を反転する (reversed() またはスライス [::-1] を使用)\n    new_elements = list(reversed(elements))\n    new_punctuation = list(reversed(punctuation))\n\n    return new_elements, new_punctuation\n\n\n# --- 実行例・テスト ---\nif __name__ == \"__main__\":\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n\n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\n    print(\"Elements:\", new_elements)\n    print(\"Punctuation:\", new_punctuation)\n    # 出力結果:\n    # Elements: ['world', 'Hello']\n    # Punctuation: ['!', '']",
+  "stdout": "Elements: ['world', 'Hello']\nPunctuation: ['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 92,
+  "candidates_token_count": 507,
+  "thoughts_token_count": null,
+  "total_token_count": 599,
+  "graded_at": "2026-09-06T06:53:25"
+}

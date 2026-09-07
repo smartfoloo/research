@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_directive__sample6.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    重み付き有向グラフにおける最短経路を見つける関数。\n    \n    Args:\n        edges (list[tuple]): エッジのリスト [(from_node, to_node, weight), ...]\n        start: 開始ノード\n        end: 終了ノード\n        \n    Returns:\n        tuple: (total_distance, path_list) または (None, None)\n        \n    Raises:\n        ValueError: エッジのいずれかの重みがマイナスの場合に発生。\n    \"\"\"\n\n    # 1. 負の重みチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n\n    # 2. 開始ノードと終了ノードが一致する場合\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフの構築 (隣接リスト形式)\n    graph = {}\n    for u, v, w in edges:\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, w))\n    \n    # 初期化\n    # start を除くノードは距離 infinity (未到達扱い)\n    dist = {start: 0}\n    parent = {start: None} \n    \n    # 優先度キュー: (距離, ノード)\n    pq = [(0, start)]\n\n    # 4. Dijkstra のメインループ\n    while pq:\n        d, u = heapq.heappop(pq)\n        \n        # 既にこのノードへの更なる経路が見つかったならスキップ\n        if d > dist[u]:\n            continue\n        \n        # 最短距離を見つけるまで探索\n        if u in graph:\n            for v, w in graph[u]:\n                new_dist = dist[u] + w\n                # まだ記録されていないノードまたは現在よりも短い経路がある場合\n                if new_dist < dist.get(v, float('inf')):\n                    dist[v] = new_dist\n                    parent[v] = u\n                    heapq.heappush(pq, (new_dist, v))\n\n    # 5. 終点の到達可否チェック\n    if end not in dist or dist[end] == float('inf'):\n        return (None, None)\n\n    # 6. 経路の復元 (end -> start)\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        if curr == start:\n            break\n        curr = parent[curr] # 開始ノードは親を持たないのでループ終了\n        \n    # 経路を始点順に並べる\n    path.reverse()\n\n    return (dist[end], path)\n\n# --- 例の確認 ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    distance, path = shortest_path(edges, \"A\", \"C\")\n    print(f\"Distance: {distance}, Path: {path}\") # Expected: (3, ['A', 'B', 'C'])\n    \n    edges_unreachable = [(\"A\", \"B\", 1)]\n    res = shortest_path(edges_unreachable, \"A\", \"C\")\n    print(res) # Expected: (None, None)",
+  "stdout": "Distance: 3, Path: ['A', 'B', 'C']\n(None, None)\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 193,
+  "eval_count": 8195,
+  "graded_at": "2026-09-06T03:04:33"
+}

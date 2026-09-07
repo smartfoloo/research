@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__en_human__sample2.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def eval_expression(expr):\n    # Define operator precedence\n    precedence = {'+': 1, '-': 1, '*': 2, '/': 2}\n    \n    def apply_op(operators, values):\n        operator = operators.pop()\n        right = values.pop()\n        left = values.pop()\n        if operator == '+': values.append(left + right)\n        elif operator == '-': values.append(left - right)\n        elif operator == '*': values.append(left * right)\n        elif operator == '/':\n            if right == 0:\n                raise ZeroDivisionError(\"Division by zero\")\n            values.append(left / right)\n\n    values = []    # Stack for numbers\n    operators = [] # Stack for operators\n    i = 0\n    \n    while i < len(expr):\n        char = expr[i]\n        \n        # Skip whitespace\n        if char == ' ':\n            i += 1\n            continue\n            \n        # Handle Negative Numbers:\n        # A '-' is unary if it's at the start or follows an opening parenthesis '('\n        if char == '-' and (i == 0 or expr[i-1] == '('):\n            # To handle unary minus, we push a 0 to the value stack \n            # so that \"-5\" is treated as \"0 - 5\"\n            values.append(0)\n            operators.append('-')\n            i += 1\n            continue\n\n        # Parse multi-digit numbers and decimals\n        if char.isdigit() or char == '.':\n            val = \"\"\n            while i < len(expr) and (expr[i].isdigit() or expr[i] == '.'):\n                val += expr[i]\n                i += 1\n            values.append(float(val))\n            continue\n            \n        # Handle parentheses\n        if char == '(':\n            operators.append(char)\n        elif char == ')':\n            while operators and operators[-1] != '(':\n                apply_op(operators, values)\n            operators.pop() # Remove '('\n            \n        # Handle operators\n        elif char in precedence:\n            while (operators and operators[-1] != '(' and \n                   precedence[operators[-1]] >= precedence[char]):\n                apply_op(operators, values)\n            operators.append(char)\n            \n        i += 1\n\n    # Evaluate remaining operators\n    while operators:\n        apply_op(operators, values)\n        \n    # Return as int if there's no decimal remainder, else float\n    result = values[0]\n    return int(result) if result.is_integer() else result\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"3 + 4 * (2 - 1)\", 7),\n        (\"10 + 2 * 6\", 22),\n        (\"100 * ( 2 + 12 ) / 14\", 100),\n        (\"-3 + 5\", 2),\n        (\"10 / (2 + 3)\", 2),\n        (\"2 * (-3 + 5)\", 4),\n        (\"10.5 + 0.5\", 11),\n    ]\n\n    for expression, expected in test_cases:\n        res = eval_expression(expression)\n        print(f\"'{expression}' -> {res} (Expected: {expected})\")\n\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' -> 7 (Expected: 7)\n'10 + 2 * 6' -> 22 (Expected: 22)\n'100 * ( 2 + 12 ) / 14' -> 100 (Expected: 100)\n'-3 + 5' -> 2 (Expected: 2)\n'10 / (2 + 3)' -> 2 (Expected: 2)\n'2 * (-3 + 5)' -> 4 (Expected: 4)\n'10.5 + 0.5' -> 11 (Expected: 11)\nCaught expected error: Division by zero\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 66,
+  "candidates_token_count": 1170,
+  "thoughts_token_count": 997,
+  "total_token_count": 2233,
+  "graded_at": "2026-09-06T05:08:19"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__bank-rollback__ja_directive__sample1.json",
+  "task": "bank-rollback",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n            \n    return (current_balance, True)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 151,
+  "completion_tokens": 176,
+  "total_tokens": 327,
+  "groq_seed": 2109929227,
+  "graded_at": "2026-09-06T09:08:22"
+}

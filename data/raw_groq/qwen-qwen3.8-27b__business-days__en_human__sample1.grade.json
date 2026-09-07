@@ -1,0 +1,20 @@
+{
+  "raw_file": "qwen-qwen3.8-27b__business-days__en_human__sample1.json",
+  "task": "business-days",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "def business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Calculate the number of business days (Monday to Friday) between two dates,\n    excluding the start and end dates.\n    \n    Args:\n        date1: Start date in YYYY-MM-DD format\n        date2: End date in YYYY-MM-DD format\n    \n    Returns:\n        Number of business days between the two dates (exclusive)\n    \"\"\"\n    from datetime import datetime, timedelta\n    \n    dt1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    dt2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # Ensure date1 is before date2\n    if dt1 > dt2:\n        dt1, dt2 = dt2, dt1\n    \n    # Count business days strictly between dt1 and dt2 (exclusive)\n    count = 0\n    current = dt1 + timedelta(days=1)\n    while current < dt2:\n        if current.weekday() < 5:  # Monday=0 to Friday=4\n            count += 1\n        current += timedelta(days=1)\n    \n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_tokens": 106,
+  "completion_tokens": 257,
+  "total_tokens": 363,
+  "groq_seed": 1894256511,
+  "graded_at": "2026-09-06T09:08:28"
+}

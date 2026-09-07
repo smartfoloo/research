@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__currency-format__mt_en__sample5.json",
+  "task": "currency-format",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Formats a number as currency with dollar signs and comma separators.\n\n    Args:\n        n (int or float): The numeric value to format.\n\n    Returns:\n        str: Formatted string such as '$4,640,039' or '-$123.45'.\n    \"\"\"\n    sign = '-' if n < 0 else ''\n    num_str = f\"{abs(int(n)):.2f}\"  # Convert to string with up to 2 decimal places\n    \n    # Insert commas every 3 digits from the right\n    def add_commas(s):\n        # Skip first part, group rest in chunks of 3 from end\n        idx = len(s) % 3\n        return s[idx:] + (',' + s[:idx]) if idx else s\n\n    formatted = f\"{sign}$\"\n    formatted += add_commas(num_str.replace('.', ''))  # Remove decimal part and add commas\n    if '.' in str(int(n)):  # Include decimal part only if present\n        return formatted[:-3] + formatted[-3] + '.' + num_str[num_str.index('.'): ]\n\n    # Corrected final approach using a cleaner method",
+  "stdout": "FAIL case 0: expected '$1,234,567', got None\nFAIL case 1: expected '-$1,234', got None\nFAIL case 2: expected '$0', got None\nFAIL case 3: expected '$999', got None\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 74,
+  "eval_count": 1305,
+  "graded_at": "2026-09-06T03:04:23"
+}

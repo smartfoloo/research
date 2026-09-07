@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-da22c98c-eeea-463b-a838-2a93b6cb5f77",
+    "object": "chat.completion",
+    "created": 1788703526,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "To solve this problem, I first consider the input validation and edge cases. The function `shortest_path` takes a list of edges, a start node, and an end node. First, I check if any edge has a negative weight; if so, I raise a `ValueError`. Next, I handle the case where `start` equals `end`, returning `(0, [start])`.\n\nSince all weights are non-negative (after validation), Dijkstra's algorithm is the appropriate choice. It guarantees finding the shortest path efficiently even with weighted graphs.\n\nI will represent the graph as an adjacency list using a dictionary where each key is a node and the value is a list of tuples `(neighbor, weight)`. I then initialize a distance dictionary with infinity for all nodes except the start node (which gets 0). I also maintain a `previous` dictionary to reconstruct the path.\n\nUsing a min-heap (priority queue) based on distance, I repeatedly extract the node with the smallest tentative distance. If this node is the end node, I can stop early. For each neighbor of the current node, I check if a shorter path exists through the current node; if so, I update the distance and previous node.\n\nAfter the algorithm completes, I check if the end node was reached (i.e., its distance is not infinity). If not, I return `(None, None)`. Otherwise, I backtrack from the end node to the start node using the `previous` dictionary to construct the path, reverse it, and return the tuple `(distance, path)`.\n\n```python\nimport heapq\n\ndef shortest_path(edges, start, end):\n    # Check for negative weights\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative weight detected\")\n    \n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Initialize distances and previous node tracker\n    distances = {start: 0}\n    previous = {start: None}\n    \n    # Priority queue: (distance, node)\n    queue = [(0, start)]\n    \n    while queue:\n        current_dist, current_node = heapq.heappop(queue)\n        \n        # If we've popped a node with a distance greater than the known shortest, skip it\n        if current_dist > distances.get(current_node, float('inf')):\n            continue\n        \n        # Optional: early termination if we reached the end\n        if current_node == end:\n            break\n        \n        # Explore neighbors\n        if current_node in graph:\n            for neighbor, weight in graph[current_node]:\n                new_dist = current_dist + weight\n                if new_dist < distances.get(neighbor, float('inf')):\n                    distances[neighbor] = new_dist\n                    previous[neighbor] = current_node\n                    heapq.heappush(queue, (new_dist, neighbor))\n    \n    # Check if end node is reachable\n    if end not in distances:\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = previous[current]\n    \n    path.reverse()\n    \n    return (distances[end], path)\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.00573856,
+      "prompt_tokens": 195,
+      "prompt_time": 0.015935899,
+      "completion_tokens": 755,
+      "completion_time": 1.494379743,
+      "total_tokens": 950,
+      "total_time": 1.5103156420000001
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_61e8d148b4",
+    "x_groq": {
+      "id": "req_01m1vgkht9erav70dhszz7429p",
+      "seed": 528963160
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "To solve this problem, I first consider the input validation and edge cases. The function `shortest_path` takes a list of edges, a start node, and an end node. First, I check if any edge has a negative weight; if so, I raise a `ValueError`. Next, I handle the case where `start` equals `end`, returning `(0, [start])`.\n\nSince all weights are non-negative (after validation), Dijkstra's algorithm is the appropriate choice. It guarantees finding the shortest path efficiently even with weighted graphs.\n\nI will represent the graph as an adjacency list using a dictionary where each key is a node and the value is a list of tuples `(neighbor, weight)`. I then initialize a distance dictionary with infinity for all nodes except the start node (which gets 0). I also maintain a `previous` dictionary to reconstruct the path.\n\nUsing a min-heap (priority queue) based on distance, I repeatedly extract the node with the smallest tentative distance. If this node is the end node, I can stop early. For each neighbor of the current node, I check if a shorter path exists through the current node; if so, I update the distance and previous node.\n\nAfter the algorithm completes, I check if the end node was reached (i.e., its distance is not infinity). If not, I return `(None, None)`. Otherwise, I backtrack from the end node to the start node using the `previous` dictionary to construct the path, reverse it, and return the tuple `(distance, path)`.\n\n```python\nimport heapq\n\ndef shortest_path(edges, start, end):\n    # Check for negative weights\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative weight detected\")\n    \n    # Handle case where start and end are the same\n    if start == end:\n        return (0, [start])\n    \n    # Build adjacency list\n    graph = {}\n    for from_node, to_node, weight in edges:\n        if from_node not in graph:\n            graph[from_node] = []\n        graph[from_node].append((to_node, weight))\n    \n    # Initialize distances and previous node tracker\n    distances = {start: 0}\n    previous = {start: None}\n    \n    # Priority queue: (distance, node)\n    queue = [(0, start)]\n    \n    while queue:\n        current_dist, current_node = heapq.heappop(queue)\n        \n        # If we've popped a node with a distance greater than the known shortest, skip it\n        if current_dist > distances.get(current_node, float('inf')):\n            continue\n        \n        # Optional: early termination if we reached the end\n        if current_node == end:\n            break\n        \n        # Explore neighbors\n        if current_node in graph:\n            for neighbor, weight in graph[current_node]:\n                new_dist = current_dist + weight\n                if new_dist < distances.get(neighbor, float('inf')):\n                    distances[neighbor] = new_dist\n                    previous[neighbor] = current_node\n                    heapq.heappush(queue, (new_dist, neighbor))\n    \n    # Check if end node is reachable\n    if end not in distances:\n        return (None, None)\n    \n    # Reconstruct path\n    path = []\n    current = end\n    while current is not None:\n        path.append(current)\n        current = previous[current]\n    \n    path.reverse()\n    \n    return (distances[end], path)\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 195,
+  "completion_tokens": 755,
+  "total_tokens": 950,
+  "groq_seed": 528963160,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "shortest-path",
+    "condition": "ja_directive",
+    "sample_idx": 3,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）英語で考えてから回答してください。",
+    "elapsed_seconds": 104.64509654045105,
+    "generated_at": "2026-09-06T09:05:25"
+  }
+}

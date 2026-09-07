@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__ja_directive__sample3.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # 1. Handle the case where start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # 2. Validate weights and build adjacency list\n    graph = defaultdict(list)\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Weights cannot be negative.\")\n        graph[u].append((v, w))\n\n    # 3. Dijkstra's Algorithm initialization\n    # distances stores the current shortest distance from start to node\n    distances = {node: float('inf') for node in set([n for e in edges for n in e[:2]])}\n    # Ensure start and end are in the distances dict even if they have no edges\n    distances[start] = 0\n    distances[end] = distances.get(end, float('inf'))\n    \n    # predecessors stores the previous node to reconstruct the path\n    predecessors = {node: None for node in distances}\n    \n    # Priority queue: (distance, current_node)\n    pq = [(0, start)]\n\n    while pq:\n        current_dist, u = heapq.heappop(pq)\n\n        # If we reached the end node, we found the shortest path\n        if u == end:\n            break\n\n        # Skip if we found a better path already\n        if current_dist > distances.get(u, float('inf')):\n            continue\n\n        for v, weight in graph[u]:\n            distance = current_dist + weight\n            # If a shorter path to v is found\n            if distance < distances.get(v, float('inf')):\n                distances[v] = distance\n                predecessors[v] = u\n                heapq.heappush(pq, (distance, v))\n\n    # 4. Result construction\n    if distances.get(end) == float('inf'):\n        return (None, None)\n\n    # Reconstruct the path by backtracking from end to start\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = predecessors.get(curr)\n    \n    return (distances[end], path[::-1])\n\n# --- Test cases ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # Expected: (3, ['A', 'B', 'C'])\n\n    edges2 = [(\"A\", \"B\", 1), (\"B\", \"C\", 2)]\n    print(shortest_path(edges2, \"A\", \"D\")) # Expected: (None, None)\n\n    edges3 = [(\"A\", \"B\", 1), (\"B\", \"C\", -1)]\n    try:\n        shortest_path(edges3, \"A\", \"C\")\n    except ValueError as e:\n        print(e) # Expected: Weights cannot be negative.",
+  "stdout": "(3, ['A', 'B', 'C'])\n(None, None)\nWeights cannot be negative.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 185,
+  "candidates_token_count": 1292,
+  "thoughts_token_count": 821,
+  "total_token_count": 2298,
+  "graded_at": "2026-09-06T05:08:37"
+}

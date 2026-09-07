@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__eval-expression__mt_en__sample3.json",
+  "task": "eval-expression",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def eval_expression(expr):\n    \"\"\"Computes the mathematical expression in expr, considering the order of operations,\n\n    negative numbers, and raising ZeroDivisionError when dividing by zero.\n    \"\"\"\n    # Remove all whitespace from the expression\n    expr = \"\".join(expr.split())\n    if not expr:\n        return 0\n\n    def parse_expression(s, index):\n        node, index = parse_term(s, index)\n        while index < len(s):\n            if s[index] == \"+\":\n                index += 1\n                right, index = parse_term(s, index)\n                node += right\n            elif s[index] == \"-\":\n                index += 1\n                right, index = parse_term(s, index)\n                node -= right\n            else:\n                break\n        return node, index\n\n    def parse_term(s, index):\n        node, index = parse_factor(s, index)\n        while index < len(s):\n            if s[index] == \"*\":\n                index += 1\n                right, index = parse_factor(s, index)\n                node *= right\n            elif s[index] == \"/\":\n                index += 1\n                right, index = parse_factor(s, index)\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n            else:\n                break\n        return node, index\n\n    def parse_factor(s, index):\n        if index >= len(s):\n            raise ValueError(\"Unexpected end of expression\")\n\n        # Handle unary plus and minus (negative numbers)\n        if s[index] == \"+\":\n            return parse_factor(s, index + 1)\n        if s[index] == \"-\":\n            val, index = parse_factor(s, index + 1)\n            return -val, index\n\n        # Handle parentheses\n        if s[index] == \"(\":\n            index += 1\n            val, index = parse_expression(s, index)\n            if index >= len(s) or s[index] != \")\":\n                raise ValueError(\"Mismatched parentheses\")\n            return val, index + 1  # Skip the closing ')'\n\n        # Handle numbers (integers and floats)\n        start = index\n        while index < len(s) and (s[index].isdigit() or s[index] == \".\"):\n            index += 1\n\n        if start == index:\n            raise ValueError(f\"Unexpected character at index {index}: {s[index]}\")\n\n        num_str = s[start:index]\n        if \".\" in num_str:\n            return float(num_str), index\n        else:\n            return int(num_str), index\n\n    result, idx = parse_expression(expr, 0)\n    if idx < len(expr):\n        raise ValueError(f\"Unexpected trailing characters at index {idx}\")\n\n    return result\n\n\n# --- Examples ---\nif __name__ == \"__main__\":\n    print(eval_expression(\"3 + 4 * (2 - 1)\"))  # Output: 7\n    print(eval_expression(\"-5 + 2 * (-3)\"))  # Output: -11\n    print(eval_expression(\"10 / (5 - 5)\"))  # Raises ZeroDivisionError",
+  "stdout": "7\n-11\n(non-fatal) submitted code raised at top level: ZeroDivisionError('division by zero')\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 63,
+  "candidates_token_count": 965,
+  "thoughts_token_count": null,
+  "total_token_count": 1028,
+  "graded_at": "2026-09-06T06:53:20"
+}

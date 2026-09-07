@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_directive__sample1.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    非負の重みの有向グラフにおいて、start から end への最短経路を計算する関数。\n    \n    Args:\n        edges: [(from_node, to_node, weight), ...] のリスト\n        start: スタートノード (文字列またはハッシュ可能)\n        end: エンドノード (文字列またはハッシュ可能)\n        \n    Returns:\n        経路が存在する場合: (distance, path) タプル\n            distance: 総距離 (int/float)\n            path: ノードのリスト [start_node, ..., end_node]\n        経路が存在しない場合: (None, None)\n        \n    Raises:\n        ValueError: edges に負の重みのエッジが含まれている場合\n    \"\"\"\n\n    # 1. 負の重みをチェック\n    for _, _, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed.\")\n\n    # 2. スタートとエンドが同じノードの場合\n    if start == end:\n        return (0, [start])\n\n    # 3. グラフを隣接リストとして構築\n    graph = defaultdict(list)\n    for u, v, w in edges:\n        graph[u].append((v, w))\n\n    # 4. ダイクストラのアルゴリズム\n    # 各ノードまでの距離 (初期化は infinity、スタートのみ 0)\n    dist = {start: 0}\n    # 経路を復元するための前駆者（親ノード）のマップ\n    prev = {} \n    \n    # 優先度キュー (distance, current_node)\n    pq = [(0, start)]\n\n    while pq:\n        d_u, u = heapq.heappop(pq)\n\n        # 既に発見した最短距離より現在の距離が大きい場合はスキップ\n        if d_u > dist[u]:\n            continue\n        \n        # エンドに達した場合（Dijkstra は最早更新されないためここで抜ける）\n        if u == end:\n            break\n            \n        # 隣接ノードに対する relaxation\n        for v, w in graph[u]:\n            new_dist = dist[u] + w\n            \n            if v not in dist or new_dist < dist[v]:\n                dist[v] = new_dist\n                prev[v] = u\n                heapq.heappush(pq, (new_dist, v))\n\n    # 5. エンドノードに到達したかどうかの確認\n    if end not in dist:\n        return (None, None)\n\n    # 6. 最短距離が有効な場合の経路復元\n    path = []\n    curr = end\n    \n    # 親ノードをたどってスタートまで戻る\n    while True:\n        path.append(curr)\n        if curr == start:\n            break\n        curr = prev[curr] # 途中で KeyError が起きない保証が必要だが、到達可能なら必ず始ま\n\n    # ノードの順序を正しくし返す\n    distance = dist[end]\n    return (distance, path[::-1])\n\n# --- テスト例 ---\nif __name__ == \"__main__\":\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    result = shortest_path(edges, \"A\", \"C\")\n    print(result) # 期待値: (3, ['A', 'B', 'C'])\n\n    # 経路が存在しない場合\n    edges2 = [(\"A\", \"B\", 1)]\n    print(shortest_path(edges2, \"A\", \"C\")) # (None, None)\n\n    # スタート == エンドの場合\n    print(shortest_path([(\"A\", \"B\", 1)], \"B\", \"B\")) # (0, ['B'])",
+  "stdout": "(3, ['A', 'B', 'C'])\n(None, None)\n(0, ['B'])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 193,
+  "eval_count": 6553,
+  "graded_at": "2026-09-05T21:40:38"
+}

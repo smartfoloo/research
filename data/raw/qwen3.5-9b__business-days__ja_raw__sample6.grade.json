@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_raw__sample6.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "from datetime import datetime\n\ndef business_days(date1, date2):\n    \"\"\"\n    2つの日付の間の営業日数を計算します（月曜日から金曜日）\n\n    引数:\n        date1 (str) - 最初の日付 \"YYYY-MM-DD\" 形式\n        date2 (str) - 終了点の日付 \"YYYY-MM-DD\" 形式\n\n    戻り値:\n        int - 営業日の数（両端日付は含まない）\n    \"\"\"\n    # データをパース\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # date1 と date2 の大小を確認し、適切に順序付け\n    if start > end:\n        start, end = end, start\n\n    business_days_count = 0\n\n    for current_day in range(start + 1, end):\n        weekday = current_day.weekday()  # 0=月曜 ... 5=土曜 ... 6=日曜\n        if weekday < 5:\n            business_days_count += 1\n\n    return business_days_count",
+  "stdout": "FAIL case 0: raised TypeError: unsupported operand type(s) for +: 'datetime.date' and 'int'\nFAIL case 1: raised TypeError: unsupported operand type(s) for +: 'datetime.date' and 'int'\nFAIL case 2: raised TypeError: unsupported operand type(s) for +: 'datetime.date' and 'int'\nFAIL case 3: raised TypeError: unsupported operand type(s) for +: 'datetime.date' and 'int'\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 107,
+  "eval_count": 835,
+  "graded_at": "2026-09-06T03:04:18"
+}

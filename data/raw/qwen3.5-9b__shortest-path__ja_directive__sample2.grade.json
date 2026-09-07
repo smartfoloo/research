@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__shortest-path__ja_directive__sample2.json",
+  "task": "shortest-path",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    与えられた有向グラフの最短経路を計算する関数。\n    \n    引数:\n        edges: (from_node, to_node, weight) のタプルのリスト。\n        start: スタートノード。\n        end: ゴールノード。\n        \n    戻り値:\n        (distance, path): 最短距離と、ノードからなるパスのリスト。\n        経路が存在しない場合は (None, None)。\n        負の重みの場合 ValueError を発生させる。\n    \"\"\"\n\n    # スタートとゴールが同じの場合\n    if start == end:\n        return (0, [start])\n    \n    # 負の重みのチェック\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weight cannot be negative.\")\n\n    # グラフの隣接リストを構築\n    adj = defaultdict(list)\n    for u, v, w in edges:\n        adj[u].append((v, w))\n\n    # Dijkstra の初期化\n    # min_dist[node] に現在の最短距離を記録（存在しない場合は inf）\n    min_dist = {start: 0}\n    # parent_map を用いて経路の再構成を行う\n    parent_map = {}\n    \n    # 優先対列 [(distance, node)]\n    pq = [(0, start)]\n\n    while pq:\n        d, u = heapq.heappop(pq)\n        \n        # すでに発見されたより短い距離がある場合、この候補是无効（古いデータ）\n        if d > min_dist.get(u, float('inf')):\n            continue\n        \n        # ゴールノードに到達した場合は、最短経路が確定したので探索を終了可能（最適性保証）\n        if u == end:\n            break\n            \n        for v, weight in adj[u]:\n            new_dist = d + weight\n            # 発見された距離よりも短ければ更新\n            if new_dist < min_dist.get(v, float('inf')):\n                min_dist[v] = new_dist\n                parent_map[v] = u\n                heapq.heappush(pq, (new_dist, v))\n\n    # ゴールノードが到達可能かチェック\n    if end not in min_dist:\n        return (None, None)\n\n    distance = min_dist[end]\n    \n    # 経路の再構築\n    path = []\n    curr = end\n    while curr != start:\n        path.append(curr)\n        curr = parent_map[curr]\n        # もし親が見つからない（論理的な誤り）なら終了条件になるが、到達不可能なら前処理で返されるはず\n    path.append(start)\n    \n    # スタートからゴール順に並べるため反転させる\n    path.reverse()\n\n    return (distance, path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_eval_count": 193,
+  "eval_count": 6810,
+  "graded_at": "2026-09-05T21:40:38"
+}

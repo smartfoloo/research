@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__business-days__ja_raw__sample3.json",
+  "task": "business-days",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    2 つの日付の間の営業日数（月曜 - 金曜）を返します。\n    祝日は考慮せず、開始日・終了日の含みはなし。\n\n    Args:\n        date1: YYYY-MM-DD 形式の日付文字列または datetime 型\n        date2: YYYY-MM-DD 形式の日付文字列または datetime 型\n\n    Returns:\n        int: 間の営業日数\n    \"\"\"\n    # 日付を datetime 型に変換（必要であれば）\n    if isinstance(date1, str):\n        start = datetime.strptime(date1, '%Y-%m-%d')\n    else:\n        start = date1\n\n    if isinstance(date2, str):\n        end = datetime.strptime(date2, '%Y-%m-%d')\n    else:\n        end = date2\n\n    # 開始日 > 終了日の場合は入れ替える\n    if start > end:\n        start, end = end, start\n\n    # 営業日数をカウント\n    count = 0\n    current = start + timedelta(days=1)  # 含まないように +1\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜(0) - 金曜(4)\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "FAIL case 0: raised NameError: name 'datetime' is not defined\nFAIL case 1: raised NameError: name 'datetime' is not defined\nFAIL case 2: raised NameError: name 'datetime' is not defined\nFAIL case 3: raised NameError: name 'datetime' is not defined\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "prompt_eval_count": 107,
+  "eval_count": 1656,
+  "graded_at": "2026-09-06T03:04:17"
+}

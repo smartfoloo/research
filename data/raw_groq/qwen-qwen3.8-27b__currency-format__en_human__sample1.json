@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-cd0bc547-e4b2-43ca-84df-623bf818112a",
+    "object": "chat.completion",
+    "created": 1788697723,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n):\n    \"\"\"\n    Format a number as a currency string with $ sign and commas every 3 digits.\n    For negative numbers, put a minus sign before the dollar sign.\n    \n    Example:\n    >>> format_currency(4640039)\n    '$4,640,039'\n    >>> format_currency(-4640039)\n    '-$4,640,039'\n    \"\"\"\n    negative = n < 0\n    abs_n = abs(n)\n    \n    # Convert to string and add commas\n    n_str = str(abs_n)\n    \n    # Insert commas every 3 digits from the right\n    parts = []\n    if len(n_str) <= 3:\n        comma_str = n_str\n    else:\n        # Start with the last 3 digits\n        comma_str = n_str[-3:]\n        # Process the rest in groups of 3\n        rest = n_str[:-3]\n        while len(rest) > 3:\n            comma_str = ',' + rest[-3:] + comma_str\n            rest = rest[:-3]\n        comma_str = rest + ',' + comma_str\n    \n    if negative:\n        return '-$' + comma_str\n    else:\n        return '$' + comma_str\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.022014223,
+      "prompt_tokens": 78,
+      "prompt_time": 0.00529001,
+      "completion_tokens": 295,
+      "completion_time": 0.556936252,
+      "total_tokens": 373,
+      "total_time": 0.562226262
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_b930cafd52",
+    "x_groq": {
+      "id": "req_01m1vb2g8kedvrnaferdqnygnr",
+      "seed": 1364452064
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n):\n    \"\"\"\n    Format a number as a currency string with $ sign and commas every 3 digits.\n    For negative numbers, put a minus sign before the dollar sign.\n    \n    Example:\n    >>> format_currency(4640039)\n    '$4,640,039'\n    >>> format_currency(-4640039)\n    '-$4,640,039'\n    \"\"\"\n    negative = n < 0\n    abs_n = abs(n)\n    \n    # Convert to string and add commas\n    n_str = str(abs_n)\n    \n    # Insert commas every 3 digits from the right\n    parts = []\n    if len(n_str) <= 3:\n        comma_str = n_str\n    else:\n        # Start with the last 3 digits\n        comma_str = n_str[-3:]\n        # Process the rest in groups of 3\n        rest = n_str[:-3]\n        while len(rest) > 3:\n            comma_str = ',' + rest[-3:] + comma_str\n            rest = rest[:-3]\n        comma_str = rest + ',' + comma_str\n    \n    if negative:\n        return '-$' + comma_str\n    else:\n        return '$' + comma_str\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 78,
+  "completion_tokens": 295,
+  "total_tokens": 373,
+  "groq_seed": 1364452064,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "en_human",
+    "sample_idx": 1,
+    "prompt_text": "Write a Python function named format_currency(n) that returns n formatted as a string with a $ in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. 4640039 -> \"$4,640,039\")",
+    "elapsed_seconds": 33.99502348899841,
+    "generated_at": "2026-09-06T07:28:43"
+  }
+}

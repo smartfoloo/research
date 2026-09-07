@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__bank-rollback__en_human__sample2.json",
+  "task": "bank-rollback",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    # Keep a copy of the original balance in case we need to rollback\n    original_balance = balance\n    \n    # Simulate applying each transaction one by one\n    for tx in transactions:\n        balance += tx\n        # If balance drops below zero, reject all transactions\n        if balance < 0:\n            return (original_balance, False)\n            \n    # If all transactions are applied successfully without a negative balance\n    return (balance, True)\n\n# --- Example Usage ---\n# balance = 100\n# transactions = [50, -30, -200]\n# print(bank_rollback(balance, transactions))  # Output: (100, False)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 100,
+  "candidates_token_count": 179,
+  "thoughts_token_count": null,
+  "total_token_count": 279,
+  "graded_at": "2026-09-06T06:52:51"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__en_human__sample6.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # Special case: start and end are the same node\n    if start == end:\n        return (0, [start])\n\n    # Build adjacency list and check for negative weights\n    adj = {}\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n        if u not in adj:\n            adj[u] = []\n        adj[u].append((v, w))\n\n    # Dijkstra's algorithm initialization\n    # distances stores the current shortest distance from start to each node\n    distances = {start: 0}\n    # previous stores the node we came from to reconstruct the path\n    previous = {start: None}\n    # Priority queue stores (distance, current_node)\n    pq = [(0, start)]\n\n    while pq:\n        current_distance, u = heapq.heappop(pq)\n\n        # If we reached the end node, we can stop early\n        if u == end:\n            break\n\n        # Nodes can be added to the priority queue multiple times. \n        # We only process the one with the smallest distance.\n        if current_distance > distances.get(u, float('inf')):\n            continue\n\n        # Explore neighbors\n        for v, weight in adj.get(u, []):\n            distance = current_distance + weight\n            # If a shorter path to v is found\n            if distance < distances.get(v, float('inf')):\n                distances[v] = distance\n                previous[v] = u\n                heapq.heappush(pq, (distance, v))\n\n    # If the end node was never reached\n    if end not in distances:\n        return (None, None)\n\n    # Reconstruct the path by backtracking from end to start\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = previous[curr]\n    \n    return (distances[end], path[::-1])\n\n# Example usage:\n# edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n# print(shortest_path(edges, \"A\", \"C\"))  # Output: (3, [\"A\", \"B\", \"C\"])",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 148,
+  "candidates_token_count": 834,
+  "thoughts_token_count": 846,
+  "total_token_count": 1828,
+  "graded_at": "2026-09-06T05:08:36"
+}

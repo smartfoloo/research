@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__en_human__sample4.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # 1. Handle the case where start and end are the same\n    if start == end:\n        return (0, [start])\n\n    # 2. Build adjacency list and check for negative weights\n    graph = {}\n    for u, v, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights cannot be negative\")\n        if u not in graph:\n            graph[u] = []\n        graph[u].append((v, weight))\n\n    # 3. Initialize Dijkstra's data structures\n    # priority_queue stores tuples of (distance, current_node)\n    pq = [(0, start)]\n    # distances stores the minimum distance found so far to each node\n    distances = {start: 0}\n    # previous stores the parent node to reconstruct the path\n    previous = {start: None}\n\n    while pq:\n        current_distance, current_node = heapq.heappop(pq)\n\n        # If we reached the destination, we can stop early\n        if current_node == end:\n            break\n\n        # If we found a longer path than one we've already processed, skip it\n        if current_distance > distances.get(current_node, float('inf')):\n            continue\n\n        # Explore neighbors\n        for neighbor, weight in graph.get(current_node, []):\n            distance = current_distance + weight\n\n            # If this path to the neighbor is shorter than any previously found path\n            if distance < distances.get(neighbor, float('inf')):\n                distances[neighbor] = distance\n                previous[neighbor] = current_node\n                heapq.heappush(pq, (distance, neighbor))\n\n    # 4. Path Reconstruction\n    if end not in distances:\n        return (None, None)\n\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = previous[curr]\n    \n    return (distances[end], path[::-1]) # Reverse path to get start -> end\n\n# Example Usage:\n# edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n# print(shortest_path(edges, \"A\", \"C\")) \n# Output: (3, ['A', 'B', 'C'])",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 148,
+  "candidates_token_count": 833,
+  "thoughts_token_count": 800,
+  "total_token_count": 1781,
+  "graded_at": "2026-09-06T05:08:35"
+}

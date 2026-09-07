@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__eval-expression__ja_directive__sample6.json",
+  "task": "eval-expression",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    # 1. トークナイズ: 数字、演算子、括弧を分離する\n    # \\d+(\\.\\d+)? は整数または浮動小数点をキャプチャします\n    tokens = re.findall(r'\\d+(\\.\\d+)?|[+\\-*/()]', expr)\n    # re.findallでグループを使うとタプルになるため、文字列として整理する\n    tokens = []\n    # 正規表現を修正して、数値と記号を正しく抽出\n    token_pattern = re.compile(r'(\\d+(\\.\\d+)?|[+\\-*/()])')\n    tokens = [t[0] for t in token_pattern.findall(expr)]\n    \n    pos = 0\n\n    def peek():\n        \"\"\"現在のトークンを覗き見る\"\"\"\n        nonlocal pos\n        return tokens[pos] if pos < len(tokens) else None\n\n    def consume():\n        \"\"\"現在のトークンを消費して次へ進める\"\"\"\n        nonlocal pos\n        token = peek()\n        pos += 1\n        return token\n\n    def parse_expression():\n        \"\"\"足し算と引き算を処理 (優先度: 低)\"\"\"\n        node = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                node += right\n            else:\n                node -= right\n        return node\n\n    def parse_term():\n        \"\"\"掛け算と割り算を処理 (優先度: 中)\"\"\"\n        node = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                node *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                node /= right\n        return node\n\n    def parse_factor():\n        \"\"\"括弧、単項マイナス、数値を処理 (優先度: 高)\"\"\"\n        token = peek()\n\n        if token == '-':\n            consume() # '-' を消費\n            return -parse_factor() # 再帰的に処理して負数にする\n        \n        if token == '(':\n            consume() # '(' を消費\n            result = parse_expression()\n            if peek() == ')':\n                consume() # ')' を消費\n            return result\n        \n        # 数値の場合\n        token = consume()\n        if token is not None:\n            return float(token)\n        return 0\n\n    # 計算開始\n    return parse_expression()\n\n# --- テストケース ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"3 + 4 * (2 - 1)\", 7.0),\n        (\"10 + 2 * 3\", 16.0),\n        (\"(10 + 2) * 3\", 36.0),\n        (\"-5 + 2\", -3.0),\n        (\"3 * (-2 + 5)\", 9.0),\n        (\"10 / 2 / 2\", 2.5),\n        (\"2 * -3\", -6.0), # 演算子的に負数を扱うケース\n    ]\n\n    for expr, expected in test_cases:\n        result = eval_expression(expr)\n        print(f\"'{expr}' => {result} (Expected: {expected})\")\n\n    # ゼロ除算のテスト\n    try:\n        eval_expression(\"10 / 0\")\n    except ZeroDivisionError as e:\n        print(f\"Caught expected error: {e}\")",
+  "stdout": "'3 + 4 * (2 - 1)' => 7.0 (Expected: 7.0)\n'10 + 2 * 3' => 16.0 (Expected: 16.0)\n'(10 + 2) * 3' => 36.0 (Expected: 36.0)\n'-5 + 2' => -3.0 (Expected: -3.0)\n'3 * (-2 + 5)' => 9.0 (Expected: 9.0)\n'10 / 2 / 2' => 2.5 (Expected: 2.5)\n'2 * -3' => -6.0 (Expected: -6.0)\nCaught expected error: division by zero\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 80,
+  "candidates_token_count": 1661,
+  "thoughts_token_count": 802,
+  "total_token_count": 2543,
+  "graded_at": "2026-09-06T05:08:23"
+}

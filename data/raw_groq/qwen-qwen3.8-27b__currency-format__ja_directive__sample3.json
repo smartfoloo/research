@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-e7f6bf34-9177-4666-bedd-f860ebb2ae05",
+    "object": "chat.completion",
+    "created": 1788698050,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "I will design a Python function `format_currency(n)` that formats a number with a dollar sign and comma separators for every three digits, handling negative numbers by placing the minus sign before the dollar sign.\n\nThe steps are:\n1. Check if the number is negative.\n2. Work with the absolute value for formatting.\n3. Use Python's string formatting with the comma separator (e.g., `f\"{num:,}\"`).\n4. Prepend `$` for positive numbers, and `-$` for negative numbers.\n5. Return the formatted string.\n\nHere is the implementation:\n\n```python\ndef format_currency(n):\n    if n < 0:\n        return -$\n    else:\n        return $\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.020864006,
+      "prompt_tokens": 96,
+      "prompt_time": 0.007409424,
+      "completion_tokens": 154,
+      "completion_time": 0.311441617,
+      "total_tokens": 250,
+      "total_time": 0.318851041
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1vbcfyre18vj5g4ht406g11",
+      "seed": 311039840
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "I will design a Python function `format_currency(n)` that formats a number with a dollar sign and comma separators for every three digits, handling negative numbers by placing the minus sign before the dollar sign.\n\nThe steps are:\n1. Check if the number is negative.\n2. Work with the absolute value for formatting.\n3. Use Python's string formatting with the comma separator (e.g., `f\"{num:,}\"`).\n4. Prepend `$` for positive numbers, and `-$` for negative numbers.\n5. Return the formatted string.\n\nHere is the implementation:\n\n```python\ndef format_currency(n):\n    if n < 0:\n        return -$\n    else:\n        return $\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 96,
+  "completion_tokens": 154,
+  "total_tokens": 250,
+  "groq_seed": 311039840,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "ja_directive",
+    "sample_idx": 3,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）英語で考えてから回答してください。",
+    "elapsed_seconds": 103.52567052841187,
+    "generated_at": "2026-09-06T07:34:10"
+  }
+}

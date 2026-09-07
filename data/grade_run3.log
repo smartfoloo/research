@@ -1,0 +1,44 @@
+qwen3.5-9b__bank-rollback__ja_directive__sample1.json: FAIL (None/None)
+qwen3.5-9b__bank-rollback__ja_directive__sample2.json: FAIL (None/None)
+qwen3.5-9b__business-days__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__business-days__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__currency-format__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__en_human__sample1.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__en_human__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_directive__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__ja_raw__sample3.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample2.json: FAIL (None/None)
+qwen3.5-9b__eval-expression__mt_en__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__en_human__sample3.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__ja_directive__sample1.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__ja_directive__sample2.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__ja_directive__sample3.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__ja_raw__sample1.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__ja_raw__sample2.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__ja_raw__sample3.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__mt_en__sample1.json: FAIL (None/None)
+qwen3.5-9b__reverse-list-elements__mt_en__sample2.json: PASS (4/4)
+qwen3.5-9b__reverse-list-elements__mt_en__sample3.json: PASS (4/4)
+qwen3.5-9b__shortest-path__en_human__sample1.json: PASS (4/4)
+qwen3.5-9b__shortest-path__en_human__sample3.json: PASS (4/4)
+qwen3.5-9b__shortest-path__ja_raw__sample1.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__ja_raw__sample2.json: FAIL (None/None)
+qwen3.5-9b__shortest-path__ja_raw__sample3.json: PASS (4/4)
+qwen3.5-9b__shortest-path__mt_en__sample1.json: FAIL (2/4)
+qwen3.5-9b__shortest-path__mt_en__sample2.json: PASS (4/4)
+qwen3.5-9b__shortest-path__mt_en__sample3.json: PASS (4/4)
+
+graded: 31, already done: 30, errors: 11
+  ERROR qwen3.5-9b__business-days__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__business-days__ja_directive__sample3.json: no code extracted
+  ERROR qwen3.5-9b__currency-format__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__currency-format__ja_directive__sample2.json: no code extracted
+  ERROR qwen3.5-9b__currency-format__ja_directive__sample3.json: no code extracted
+  ERROR qwen3.5-9b__eval-expression__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__eval-expression__ja_directive__sample2.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__en_human__sample2.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__ja_directive__sample1.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__ja_directive__sample2.json: no code extracted
+  ERROR qwen3.5-9b__shortest-path__ja_directive__sample3.json: no code extracted

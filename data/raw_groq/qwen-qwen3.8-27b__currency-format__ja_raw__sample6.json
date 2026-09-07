@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-bef58aaf-d946-45ce-9512-87d9e22522f6",
+    "object": "chat.completion",
+    "created": 1788697885,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef format_currency(n: int) -> str:\n    if n < 0:\n        return \"-\" + format_currency(-n)\n    \n    # Format the number with commas every 3 digits\n    formatted = f\"{n:,}\"\n    \n    return \"$\" + formatted\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.020169509,
+      "prompt_tokens": 89,
+      "prompt_time": 0.007061716,
+      "completion_tokens": 64,
+      "completion_time": 0.125086921,
+      "total_tokens": 153,
+      "total_time": 0.132148637
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5e14805ce3",
+    "x_groq": {
+      "id": "req_01m1vb7enre9b9tv44kvpfkg91",
+      "seed": 970812663
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef format_currency(n: int) -> str:\n    if n < 0:\n        return \"-\" + format_currency(-n)\n    \n    # Format the number with commas every 3 digits\n    formatted = f\"{n:,}\"\n    \n    return \"$\" + formatted\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 89,
+  "completion_tokens": 64,
+  "total_tokens": 153,
+  "groq_seed": 970812663,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 6,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "elapsed_seconds": 12.62756609916687,
+    "generated_at": "2026-09-06T07:31:25"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Pythonで土日を除外し、かつ指定された2つの日付自体を含めない営業日数を計算する関数 `business_days(date1, date2)` を作成しました。\n\n`datetime` モジュールと `numpy` モジュールを使用する方法がありますが、外部ライブラリなし（標準ライブラリのみ）で実装するのが最も手軽です。\n\n### Pythonコード\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n\n    # 日付の順序が逆であっても対応できるようにする（または単にd1 < d2を前提とする）\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    # 日付自体を含めないため、開始日を翌日に、終了日を前日にずらす\n    start_date = d1 + timedelta(days=1)\n    end_date = d2 - timedelta(days=1)\n\n    # 期間が逆転した場合は営業日0日\n    if start_date > end_date:\n        return 0\n\n    # 営業日数を数える変数\n    business_day_count = 0\n    current_date = start_date\n\n    while current_date <= end_date:\n        # weekday()は月曜日が0、日曜日が6を返すため、0〜4（月〜金）を営業日とする\n        if current_date.weekday() < 5:\n            business_day_count += 1\n        current_date += timedelta(days=1)\n\n    return business_day_count\n\n\n# --- テスト例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n# 検証:\n# 1月1日(月) から 1月8日(月) の間（含まない）は\n# 1/2(火), 1/3(水), 1/4(木), 1/5(金) の4日間です。\n```\n\n### 処理の流れ\n1. **日付のパース**: `YYYY-MM-DD` 形式の文字列を `datetime` 型に変換します。\n2. **範囲の調整**: 「2つの日付自体を含めない」という条件を満たすため、`date1` の翌日から `date2` の前日までを計算対象とします。\n3. **ループ処理**: 対象期間の全日を1日ずつ進めながら、`weekday()` メソッドを使って曜日を判定します（`0`〜`4` が月〜金）。\n4. **カウント**: 平日であればカウントを1増やします。\n\n※もし期間が非常に長くなる場合（数十年単位など）がある場合は、ループ処理ではなく数学的な計算で高速化することも可能ですが、通常の用途であればこのループ処理で十分高速に動作します。",
+              "thoughtSignature": "El4KXAERTTIPZ6kLkPUzPXjUdMTLS45Ud4tZTla69cMVQDrmpuKmdE7mnQS7ysXsS1s1XN9icHCmBnETW2YPdbyQxqo7yNYlpHpk0lFT5DpJyHwK1/+LN7pj8VsZTThT"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 100,
+      "candidatesTokenCount": 687,
+      "totalTokenCount": 787,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 100
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "GVCdao-0EJSj9tMPgcKC0A8"
+  },
+  "thinking_text": "",
+  "final_text": "Pythonで土日を除外し、かつ指定された2つの日付自体を含めない営業日数を計算する関数 `business_days(date1, date2)` を作成しました。\n\n`datetime` モジュールと `numpy` モジュールを使用する方法がありますが、外部ライブラリなし（標準ライブラリのみ）で実装するのが最も手軽です。\n\n### Pythonコード\n\n```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1, date2):\n    # 文字列をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n\n    # 日付の順序が逆であっても対応できるようにする（または単にd1 < d2を前提とする）\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    # 日付自体を含めないため、開始日を翌日に、終了日を前日にずらす\n    start_date = d1 + timedelta(days=1)\n    end_date = d2 - timedelta(days=1)\n\n    # 期間が逆転した場合は営業日0日\n    if start_date > end_date:\n        return 0\n\n    # 営業日数を数える変数\n    business_day_count = 0\n    current_date = start_date\n\n    while current_date <= end_date:\n        # weekday()は月曜日が0、日曜日が6を返すため、0〜4（月〜金）を営業日とする\n        if current_date.weekday() < 5:\n            business_day_count += 1\n        current_date += timedelta(days=1)\n\n    return business_day_count\n\n\n# --- テスト例 ---\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 出力: 4\n# 検証:\n# 1月1日(月) から 1月8日(月) の間（含まない）は\n# 1/2(火), 1/3(水), 1/4(木), 1/5(金) の4日間です。\n```\n\n### 処理の流れ\n1. **日付のパース**: `YYYY-MM-DD` 形式の文字列を `datetime` 型に変換します。\n2. **範囲の調整**: 「2つの日付自体を含めない」という条件を満たすため、`date1` の翌日から `date2` の前日までを計算対象とします。\n3. **ループ処理**: 対象期間の全日を1日ずつ進めながら、`weekday()` メソッドを使って曜日を判定します（`0`〜`4` が月〜金）。\n4. **カウント**: 平日であればカウントを1増やします。\n\n※もし期間が非常に長くなる場合（数十年単位など）がある場合は、ループ処理ではなく数学的な計算で高速化することも可能ですが、通常の用途であればこのループ処理で十分高速に動作します。",
+  "prompt_token_count": 100,
+  "candidates_token_count": 687,
+  "thoughts_token_count": null,
+  "total_token_count": 787,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 6,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "elapsed_seconds": 7.472450017929077,
+    "generated_at": "2026-09-06T06:35:55"
+  }
+}

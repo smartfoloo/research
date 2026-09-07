@@ -1,0 +1,51 @@
+{
+  "raw_api_response": {
+    "id": "chatcmpl-9afec6f2-79e4-423f-a014-f2646c27cc3d",
+    "object": "chat.completion",
+    "created": 1788700598,
+    "model": "qwen/qwen3.8-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string with support for:\n    - Addition (+), Subtraction (-), Multiplication (*), Division (/)\n    - Parentheses for grouping\n    - Negative numbers\n    - Proper order of operations (PEMDAS/BODMAS)\n    \n    Raises:\n        ZeroDivisionError: If division by zero is attempted\n        \n    Example:\n        >>> eval_expression(\"3 + 4 * (2 - 1)\")\n        7\n    \"\"\"\n    # We'll use a recursive descent parser to handle order of properly.\n    # The grammar:\n    #   expression = term (('+' | '-') term)*\n    #   term = factor (('*' | '/') factor)*\n    #   factor = number | '(' expression ')' | ('+' | '-') factor\n    \n    # First, tokenize the expression\n    def tokenize(s: str):\n        tokens = []\n        i = 0\n        while i < len(s):\n            ch = s[i]\n            if ch.isspace():\n                i += 1\n                continue\n            if ch in '+-*/()':\n                tokens.append(ch)\n                i += 1\n            elif ch.isdigit() or ch == '.':\n                j = i\n                while j < len(s) and (s[j].isdigit() or s[j] == '.'):\n                    j += 1\n                tokens.append(s[i:j])\n                i = j\n            else:\n                raise ValueError(f\"Unexpected character: {ch}\")\n        return tokens\n    \n    tokens = tokenize(expr)\n    pos = 0\n    \n    def peek():\n        nonlocal pos\n        if pos < len(tokens):\n            return tokens[pos]\n        return None\n    \n    def consume():\n        nonlocal pos\n        token = tokens[pos]\n        pos += 1\n        return token\n    \n    def parse_expression():\n        \"\"\"expression = term (('+' | '-') term)*\"\"\"\n        result = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                result = result + right\n            else:\n                result = result - right\n        return result\n    \n    def parse_term():\n        \"\"\"term = factor (('*' | '/') factor)*\"\"\"\n        result = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                result = result * right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                result = result / right\n        return result\n    \n    def parse_factor():\n        \"\"\"factor = number | '(' expression ')' | ('+' | '-') factor\"\"\"\n        token = peek()\n        if token is None:\n            raise ValueError(\"Unexpected end of expression\")\n        \n        if token == '(':\n            consume()  # consume '('\n            result = parse_expression()\n            if peek() != ')':\n                raise ValueError(\"Expected ')'\")\n            consume()  # consume ')'\n            return result\n        \n        if token == '+':\n            consume()\n            return parse_factor()\n        \n        if token == '-':\n            consume()\n            return -parse_factor()\n        \n        # Must be a number\n        if token.isdigit() or (token[0] == '.' and len(token) > 1):\n            num_str = consume()\n            try:\n                return float(num_str)\n            except ValueError:\n                raise ValueError(f\"Invalid number: {num_str}\")\n        elif token[0].isdigit():\n            num_str = consume()\n            try:\n                return float(num_str)\n            except ValueError:\n                raise ValueError(f\"Invalid number: {num_str}\")\n        else:\n            raise ValueError(f\"Unexpected token: {token}\")\n    \n    result = parse_expression()\n    \n    # Ensure we consumed all tokens\n    if pos != len(tokens):\n        raise ValueError(f\"Unexpected token: {tokens[pos]}\")\n    \n    # Return int if result is a whole number, for cleanliness\n    if isinstance(result, float) and result == int(result) and abs(result) < 10**15:\n        return int(result)\n    return result\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "queue_time": 0.021570132,
+      "prompt_tokens": 73,
+      "prompt_time": 0.004888578,
+      "completion_tokens": 936,
+      "completion_time": 1.833959823,
+      "total_tokens": 1009,
+      "total_time": 1.838848401
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_fea14bdc83",
+    "x_groq": {
+      "id": "req_01m1vdt6rvey7sve2anjq6rjb6",
+      "seed": 1861119575
+    },
+    "service_tier": "on_demand"
+  },
+  "response_text": "```python\ndef eval_expression(expr: str) -> float:\n    \"\"\"\n    Evaluate a mathematical expression string with support for:\n    - Addition (+), Subtraction (-), Multiplication (*), Division (/)\n    - Parentheses for grouping\n    - Negative numbers\n    - Proper order of operations (PEMDAS/BODMAS)\n    \n    Raises:\n        ZeroDivisionError: If division by zero is attempted\n        \n    Example:\n        >>> eval_expression(\"3 + 4 * (2 - 1)\")\n        7\n    \"\"\"\n    # We'll use a recursive descent parser to handle order of properly.\n    # The grammar:\n    #   expression = term (('+' | '-') term)*\n    #   term = factor (('*' | '/') factor)*\n    #   factor = number | '(' expression ')' | ('+' | '-') factor\n    \n    # First, tokenize the expression\n    def tokenize(s: str):\n        tokens = []\n        i = 0\n        while i < len(s):\n            ch = s[i]\n            if ch.isspace():\n                i += 1\n                continue\n            if ch in '+-*/()':\n                tokens.append(ch)\n                i += 1\n            elif ch.isdigit() or ch == '.':\n                j = i\n                while j < len(s) and (s[j].isdigit() or s[j] == '.'):\n                    j += 1\n                tokens.append(s[i:j])\n                i = j\n            else:\n                raise ValueError(f\"Unexpected character: {ch}\")\n        return tokens\n    \n    tokens = tokenize(expr)\n    pos = 0\n    \n    def peek():\n        nonlocal pos\n        if pos < len(tokens):\n            return tokens[pos]\n        return None\n    \n    def consume():\n        nonlocal pos\n        token = tokens[pos]\n        pos += 1\n        return token\n    \n    def parse_expression():\n        \"\"\"expression = term (('+' | '-') term)*\"\"\"\n        result = parse_term()\n        while peek() in ('+', '-'):\n            op = consume()\n            right = parse_term()\n            if op == '+':\n                result = result + right\n            else:\n                result = result - right\n        return result\n    \n    def parse_term():\n        \"\"\"term = factor (('*' | '/') factor)*\"\"\"\n        result = parse_factor()\n        while peek() in ('*', '/'):\n            op = consume()\n            right = parse_factor()\n            if op == '*':\n                result = result * right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                result = result / right\n        return result\n    \n    def parse_factor():\n        \"\"\"factor = number | '(' expression ')' | ('+' | '-') factor\"\"\"\n        token = peek()\n        if token is None:\n            raise ValueError(\"Unexpected end of expression\")\n        \n        if token == '(':\n            consume()  # consume '('\n            result = parse_expression()\n            if peek() != ')':\n                raise ValueError(\"Expected ')'\")\n            consume()  # consume ')'\n            return result\n        \n        if token == '+':\n            consume()\n            return parse_factor()\n        \n        if token == '-':\n            consume()\n            return -parse_factor()\n        \n        # Must be a number\n        if token.isdigit() or (token[0] == '.' and len(token) > 1):\n            num_str = consume()\n            try:\n                return float(num_str)\n            except ValueError:\n                raise ValueError(f\"Invalid number: {num_str}\")\n        elif token[0].isdigit():\n            num_str = consume()\n            try:\n                return float(num_str)\n            except ValueError:\n                raise ValueError(f\"Invalid number: {num_str}\")\n        else:\n            raise ValueError(f\"Unexpected token: {token}\")\n    \n    result = parse_expression()\n    \n    # Ensure we consumed all tokens\n    if pos != len(tokens):\n        raise ValueError(f\"Unexpected token: {tokens[pos]}\")\n    \n    # Return int if result is a whole number, for cleanliness\n    if isinstance(result, float) and result == int(result) and abs(result) < 10**15:\n        return int(result)\n    return result\n```",
+  "finish_reason": "stop",
+  "prompt_tokens": 73,
+  "completion_tokens": 936,
+  "total_tokens": 1009,
+  "groq_seed": 1861119575,
+  "_meta": {
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "task": "eval-expression",
+    "condition": "mt_en",
+    "sample_idx": 2,
+    "prompt_text": "Create a Python function called eval_expression(expr) that computes the expression in expr. Be sure to consider the order of operations and be able to calculate negative numbers. When dividing by zero, raise ZeroDivisionError. (Example: \"3 + 4 * (2 - 1)\" -> 7)",
+    "elapsed_seconds": 44.64572477340698,
+    "generated_at": "2026-09-06T08:16:38"
+  }
+}

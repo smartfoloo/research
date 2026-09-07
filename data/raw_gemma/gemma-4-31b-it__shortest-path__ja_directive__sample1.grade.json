@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__ja_directive__sample1.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\n\ndef shortest_path(edges, start, end):\n    # 1. start と end が同じ場合の処理\n    if start == end:\n        return (0, [start])\n\n    # 2. 隣接リストの作成とマイナス重みのチェック\n    adj = {}\n    for u, v, w in edges:\n        if w < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n        if u not in adj:\n            adj[u] = []\n        adj[u].append((v, w))\n\n    # 3. ダイクストラ法の初期化\n    # distances: 各ノードへの最短距離を保持 (初期値は無限大)\n    distances = {node: float('inf') for edge in edges for node in (edge[0], edge[1])}\n    # startノードが edges に含まれていない場合の対策\n    distances[start] = 0\n    \n    # predecessors: 経路復元用に、どのノードから来たかを記録\n    predecessors = {}\n    \n    # 優先度付きキュー: (現在の距離, 現在のノード)\n    pq = [(0, start)]\n\n    while pq:\n        current_dist, u = heapq.heappop(pq)\n\n        # すでに記録されている距離より長い場合は無視\n        if current_dist > distances.get(u, float('inf')):\n            continue\n        \n        # ゴールに到達した場合 (この時点で取り出された距離が最短であることが保証される)\n        if u == end:\n            break\n\n        # 隣接ノードを探索\n        for v, weight in adj.get(u, []):\n            distance = current_dist + weight\n            if distance < distances.get(v, float('inf')):\n                distances[v] = distance\n                predecessors[v] = u\n                heapq.heappush(pq, (distance, v))\n\n    # 4. 結果の判定と経路の復元\n    if end not in distances or distances[end] == float('inf'):\n        return (None, None)\n\n    # 経路を逆順に辿ってリストを作成\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = predecessors.get(curr)\n    \n    return (distances[end], path[::-1])\n\n# --- テストケース ---\nif __name__ == \"__main__\":\n    # 例題ケース\n    edges1 = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges1, \"A\", \"C\"))  # 期待値: (3, [\"A\", \"B\", \"C\"])\n\n    # パスが存在しないケース\n    edges2 = [(\"A\", \"B\", 1), (\"C\", \"D\", 1)]\n    print(shortest_path(edges2, \"A\", \"D\"))  # 期待値: (None, None)\n\n    # start == end のケース\n    print(shortest_path(edges1, \"A\", \"A\"))  # 期待値: (0, [\"A\"])\n\n    try:\n        # マイナス重みのケース\n        edges3 = [(\"A\", \"B\", -1)]\n        shortest_path(edges3, \"A\", \"B\")\n    except ValueError as e:\n        print(f\"Caught expected error: {e}\")  # 期待値: Edge weights cannot be negative.",
+  "stdout": "(3, ['A', 'B', 'C'])\n(None, None)\n(0, ['A'])\nCaught expected error: Edge weights cannot be negative.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 185,
+  "candidates_token_count": 1574,
+  "thoughts_token_count": 1057,
+  "total_token_count": 2816,
+  "graded_at": "2026-09-06T05:08:36"
+}

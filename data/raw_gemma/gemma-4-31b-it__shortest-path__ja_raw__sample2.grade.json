@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__shortest-path__ja_raw__sample2.json",
+  "task": "shortest-path",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\n\ndef shortest_path(edges, start, end):\n    # start と end が同じノードである場合\n    if start == end:\n        return (0, [start])\n\n    # グラフの構築（隣接リスト形式）\n    graph = defaultdict(list)\n    for u, v, w in edges:\n        # 負のエッジがある場合は ValueError を出す\n        if w < 0:\n            raise ValueError(\"Edge weights cannot be negative.\")\n        graph[u].append((v, w))\n\n    # 優先度付きキュー (distance, current_node)\n    # 最初はスタートノードのみを格納\n    pq = [(0, start)]\n    \n    # 各ノードへの最短距離を保持する辞書（初期値は無限大）\n    distances = {start: 0}\n    \n    # 経路を復元するための親ノード保持用辞書\n    predecessors = {start: None}\n\n    while pq:\n        current_dist, u = heapq.heappop(pq)\n\n        # すでに記録されている最短距離より大きい場合はスキップ\n        if current_dist > distances.get(u, float('inf')):\n            continue\n\n        # ゴールに到達した場合、経路を復元して返す\n        if u == end:\n            path = []\n            while u is not None:\n                path.append(u)\n                u = predecessors[u]\n            return (current_dist, path[::-1])\n\n        # 隣接ノードを探索\n        for v, weight in graph[u]:\n            distance = current_dist + weight\n            if distance < distances.get(v, float('inf')):\n                distances[v] = distance\n                predecessors[v] = u\n                heapq.heappush(pq, (distance, v))\n\n    # 経路が存在しない場合\n    return (None, None)\n\n# --- テストケース ---\nif __name__ == \"__main__\":\n    # 例題ケース\n    edges = [(\"A\", \"B\", 1), (\"B\", \"C\", 2), (\"A\", \"C\", 5)]\n    print(shortest_path(edges, \"A\", \"C\"))  # 期待値: (3, ['A', 'B', 'C'])\n\n    # 同一ノードケース\n    print(shortest_path(edges, \"A\", \"A\"))  # 期待値: (0, ['A'])\n\n    # 経路が存在しないケース\n    print(shortest_path(edges, \"C\", \"A\"))  # 期待値: (None, None)\n\n    # 負のウェイトがあるケース\n    try:\n        shortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n    except ValueError as e:\n        print(e)  # 期待値: Edge weights cannot be negative.",
+  "stdout": "(3, ['A', 'B', 'C'])\n(0, ['A'])\n(None, None)\nEdge weights cannot be negative.\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 178,
+  "candidates_token_count": 970,
+  "thoughts_token_count": 897,
+  "total_token_count": 2045,
+  "graded_at": "2026-09-06T05:08:38"
+}

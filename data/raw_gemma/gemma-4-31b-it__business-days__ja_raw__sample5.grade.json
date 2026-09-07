@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemma-4-31b-it__business-days__ja_raw__sample5.json",
+  "task": "business-days",
+  "model": "gemma-4-31b-it",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    # 文字列形式(YYYY-MM-DD)をdatetimeオブジェクトに変換\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\")\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\")\n    \n    # 常にd1が開始日、d2が終了日になるように調整\n    start = min(d1, d2)\n    end = max(d1, d2)\n    \n    count = 0\n    # 開始日の翌日から、終了日の前日までをループ\n    current_date = start + timedelta(days=1)\n    while current_date < end:\n        # weekday() は 月曜=0, 火曜=1, ..., 金曜=4, 土曜=5, 日曜=6 を返す\n        if current_date.weekday() < 5:\n            count += 1\n        current_date += timedelta(days=1)\n        \n    return count\n\n# --- テストケース ---\n# 例: 2024-01-01(月) から 2024-01-08(月) の間\n# 含まれる日: 2(火), 3(水), 4(木), 5(金), 6(土), 7(日)\n# 営業日: 2, 3, 4, 5 の 4日間\nprint(f\"Test 1: {business_days('2024-01-01', '2024-01-08')}\") # 期待値: 4\n\n# 例: 2024-01-01(月) から 2024-01-02(火) の間\n# 含まれる日: なし\nprint(f\"Test 2: {business_days('2024-01-01', '2024-01-02')}\") # 期待値: 0\n\n# 例: 2024-01-01(月) から 2024-01-05(金) の間\n# 含まれる日: 2(火), 3(水), 4(木)\nprint(f\"Test 3: {business_days('2024-01-01', '2024-01-05')}\") # 期待値: 3",
+  "stdout": "Test 1: 4\nTest 2: 0\nTest 3: 3\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "prompt_token_count": 100,
+  "candidates_token_count": 919,
+  "thoughts_token_count": 937,
+  "total_token_count": 1956,
+  "graded_at": "2026-09-06T05:08:09"
+}
