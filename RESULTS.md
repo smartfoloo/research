@@ -74,6 +74,27 @@ By task: `apply-rewrite-rules` is at a full ceiling on both models (24/24, 100%,
 - luna's one failure (`simulate-snake`/`mt_en`/sample2) graded 0/6 because its first fenced code block contained a broken self-correction (an incomplete `walrus`-operator line, no trailing `return`) that it then fixed in a second code block later in the same response — `grading_common.py` only ever grades the first fenced block by design (documented, applies identically to every arm), so this is the existing methodology working as intended, not a luna-specific bug.
 - `apply-rewrite-rules` turned out to be an easier ceiling-breaker candidate than `simulate-snake` was hoped to be — both models solved it perfectly in all 24 samples each. If a future harder bonus task is authored, this is a data point that URL/rule-matching logic (however many branches) is not where these two models struggle; state-machine simulation with several interacting edge cases (like `simulate-snake`) is closer to where cracks show.
 
+## Combined 8-task overall (core 6 + 2 bonus) — flash-lite and luna only
+
+The two models with a complete 8-task × 4-condition × N=6 dataset (192 samples each — the only two run on both bonus tasks so far). Not a new dataset, just the core-6 and bonus-2 numbers above summed together per model.
+
+| condition | gemini-3.5-flash-lite | gpt-5.6-luna |
+|---|---|---|
+| en_human | 48/48 (100%) | 47/48 (98%) |
+| ja_raw | 45/48 (94%) | 48/48 (100%) |
+| ja_directive | 38/48 (79%) | 47/48 (98%) |
+| mt_en | 43/48 (90%) | 46/48 (96%) |
+| **overall** | 174/192 (91%) | 188/192 (98%) |
+
+| tokens | flash-lite avg (indexed) | flash-lite tok/correct | luna avg (indexed) | luna tok/correct |
+|---|---|---|---|---|
+| en_human | 830 (1.00x) | 830 | 1002 (1.00x) | 1023 |
+| ja_raw | 982 (1.18x) | 1047 | 1125 (1.12x) | 1125 |
+| ja_directive | 1420 (1.71x) | 1793 | 1143 (1.14x) | 1168 |
+| mt_en | 833 (1.00x) | 930 | 1016 (1.01x) | 1060 |
+
+Adding the 2 harder bonus tasks pulled flash-lite's overall down from 90% (core 6 alone) to 91% combined — basically unchanged, and its `ja_directive` gap actually widened slightly (78%→79% core vs the combined number sitting closer to the bonus tasks' 83%, both still clearly its worst condition). Luna barely moved (98%→98%). Neither model came off its ceiling in a way that changes the story: both are still too strong for this task set, bonus tasks included.
+
 ## Read
 
 - Real gap + ja_directive recovery only on qwen3.5 (weakest model, smallest/quantized). Gap: 67%→53% (mt_en worst). ja_directive: 94%, near-ceiling, at ~3-4x token cost. (Stale — pending regen, but the local arm's own prompts were never affected by the backtick fix since business-days aside its ja_raw already had backticks; direction of finding unlikely to change.)
