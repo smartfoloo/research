@@ -79,7 +79,7 @@ flat) — the extra cost shows up in a longer final answer, not more
 deliberation. Consistent with: a weak/quantized model needs (and pays for)
 real extra deliberation to close a real gap; a strong model has no gap to
 close and pays little either way. Scripts are fully separate from the local
-arm (`spike/run_generations_gemma.py`, `spike/grade_generations_gemma.py`,
+arm (`spike/arms/gemma/generate.py`, `spike/arms/gemma/grade.py`,
 API key in a gitignored file, never committed) — zero risk to the Ollama
 pipeline.
 
@@ -94,10 +94,12 @@ just difficulty; (3) doing it properly costs the same authoring/verification
 effort as any of the existing 6 tasks. Treat as one labeled exploratory
 bonus task if built, not a claim-bearing addition to the main 6-task result.
 
-A parked program on evaluating AI-generated *design* quality (Japanese
-typographic conformance, JLReq-based) lives at `parked/design-program.md`. It is
-not dead and it is not scooped, but it is not being worked on.
-`sample-sites-codex/` is leftover material from it.
+**2026-09-07 — parked/ removed from the repo.** A parked program on evaluating
+AI-generated *design* quality (Japanese typographic conformance, JLReq-based)
+previously lived at `parked/design-program.md`. Deleted during a repo cleanup
+(it is recoverable from git history if revived) — it was not dead and not
+scooped, just not being worked on; that hasn't changed, only its presence in
+this repo has.
 
 ## The question
 
@@ -550,12 +552,26 @@ NLP), MSR, or an SE workshop. Name one and work backward from its deadline.
 - Prompts, task sets, and analysis code versioned alongside the data
 - Every generation records: model label, date, arm, condition, all factor
   levels, full prompt text, all sampling parameters, full token accounting
-- Pipeline: `spike/run_generations.py` (Ollama → raw JSON per generation,
-  resumable, skips completed/missing) → `spike/grade_generations.py` (Docker,
-  isolated, network-disabled → pass/fail per generation). Ollama's
-  `/api/generate` response includes `prompt_eval_count`/`eval_count`
-  (input/output tokens) automatically — captured for free, no extra
-  instrumentation needed. Whether reasoning-trace tokens are separated from
-  answer tokens in the response, or bundled together (e.g. inside
-  `<think>...</think>` in the text), is unverified — check the first real
-  `qwen3.5:9b` output before trusting any reasoning-token breakdown.
+- Pipeline (reorganized 2026-09-07 for navigability — one folder per model
+  arm, same two-file shape in each):
+  - `spike/arms/qwen3_5_local/` — `generate.py` (Ollama → raw JSON per
+    generation, resumable, skips completed/missing) → `grade.py` (Docker,
+    isolated, network-disabled → pass/fail per generation)
+  - `spike/arms/gemma/`, `spike/arms/flash_lite/`, `spike/arms/groq_qwen3_8/`
+    — same `generate.py`/`grade.py` shape, one per hosted-API arm
+  - `spike/grading_common.py` — extraction/harness/sandbox logic shared by
+    all four arms' `grade.py` (a fix here applies everywhere at once)
+  - `spike/test_cases.py`, `spike/prompts.json` — shared across all arms
+  - `data/raw/<arm>/` — one raw+grade JSON pair per generation, per arm
+    (`qwen3_5_local/`, `gemma/`, `flash_lite/`, `groq_qwen3_8/`)
+  - `data/analysis/` — one-off ad hoc scripts (chart tables, token usage,
+    manual failure inspection); not part of the live pipeline
+  - `data/logs/` — saved stdout from past generation/grading runs
+  - `RESULTS.md` (repo root) — current pass-rate/token-cost tables, all arms
+  - Ollama's `/api/generate` response includes `prompt_eval_count`/
+    `eval_count` (input/output tokens) automatically — captured for free, no
+    extra instrumentation needed. Whether reasoning-trace tokens are
+    separated from answer tokens in the response, or bundled together (e.g.
+    inside `<think>...</think>` in the text), is unverified — check the
+    first real `qwen3.5:9b` output before trusting any reasoning-token
+    breakdown.

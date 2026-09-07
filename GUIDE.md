@@ -44,9 +44,12 @@ That's it. That's a complete first result.
       tasks now have all 4 conditions
 - [ ] Get `qwen3.5:9b` running on the PC, confirm GPU use and reasoning
       traces — see "PC setup" below
-- [ ] Run 3 samples × 6 tasks × 4 conditions, save every raw output —
-      `spike/run_generations.py` does this automatically
-- [ ] Grade the outputs — `spike/grade_generations.py` does this automatically
+- [x] Run N samples × 6 tasks × 4 conditions, save every raw output —
+      `spike/arms/qwen3_5_local/generate.py` does this automatically (N=6,
+      bumped from 3 — see CLAUDE.md Status). Three more arms added the same
+      way under `spike/arms/`: `gemma/`, `flash_lite/`, `groq_qwen3_8/`.
+- [x] Grade the outputs — `spike/arms/<arm>/grade.py` does this automatically
+- [x] Look at it — see `RESULTS.md` (repo root) for pass-rate/token tables
 - [ ] Look at it. Does a gap exist? Does anything close it?
 - [ ] Build the presentation — preliminary results, labeled as such (small N,
       one local model, spike not full study)
@@ -138,21 +141,25 @@ pip install requests
 ### 5. Run it
 
 ```bash
-cd spike
-python run_generations.py
+python spike/arms/qwen3_5_local/generate.py
 ```
-All 4 conditions are filled for all 6 tasks now — this generates the real
-spike data: 6 tasks × 4 conditions × 3 samples = 72 generations on
-`qwen3.5:9b`.
+(run from the repo root, not from inside `spike/`) All 4 conditions are
+filled for all 6 tasks — this generates the real spike data: 6 tasks × 4
+conditions × 6 samples = 144 generations on `qwen3.5:9b`.
 
 Then grade:
 ```bash
-python grade_generations.py
+python spike/arms/qwen3_5_local/grade.py
 ```
 Check results:
 ```bash
-cat ../data/raw/*.grade.json | grep all_passed
+cat data/raw/qwen3_5_local/*.grade.json | grep all_passed
 ```
+
+The three hosted-API arms (`gemma`, `flash_lite`, `groq_qwen3_8`) work the
+same way — `python spike/arms/<arm>/generate.py` then `.../grade.py` — each
+needs its own API key file in `spike/` (gitignored, see that arm's
+`generate.py` docstring for which env var / filename).
 
 ## If it doesn't work
 
@@ -167,6 +174,11 @@ cat ../data/raw/*.grade.json | grep all_passed
 
 - `CLAUDE.md` — full rules and reasoning, read when you want the "why"
 - `GUIDE.md` — this file, the "what do I do right now"
-- `NOTEBOOK.md` — your dated log, write in it every session
-- `lit/` — notes on papers you've read
-- `data/raw/` — saved model outputs, never edited after saving
+- `RESULTS.md` — current results across all four model arms, tables only
+- `spike/arms/<arm>/generate.py` + `grade.py` — the pipeline, one folder per
+  model arm (`qwen3_5_local`, `gemma`, `flash_lite`, `groq_qwen3_8`)
+- `spike/grading_common.py` — grading logic shared by all four arms
+- `data/raw/<arm>/` — saved model outputs, never edited after saving
+- `data/analysis/` — one-off scripts for reading the results (not the
+  pipeline itself)
+- `data/logs/` — saved run output from past generation/grading sessions
