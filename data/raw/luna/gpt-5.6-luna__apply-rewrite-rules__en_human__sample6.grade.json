@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__apply-rewrite-rules__en_human__sample6.json",
+  "task": "apply-rewrite-rules",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "from urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"Apply the first matching rewrite rule to each URL.\"\"\"\n\n    def replace_host(parsed, new_host):\n        # Preserve any userinfo and the original port.\n        netloc = parsed.netloc\n        userinfo = \"\"\n\n        if \"@\" in netloc:\n            userinfo, netloc = netloc.rsplit(\"@\", 1)\n            userinfo += \"@\"\n\n        port_suffix = \"\"\n        if netloc.startswith(\"[\"):\n            # IPv6 host\n            closing_bracket = netloc.find(\"]\")\n            if closing_bracket != -1:\n                suffix = netloc[closing_bracket + 1:]\n                if suffix.startswith(\":\"):\n                    port_suffix = suffix\n        else:\n            colon = netloc.rfind(\":\")\n            if colon != -1 and netloc[colon + 1:].isdigit():\n                port_suffix = netloc[colon:]\n\n        # Bracket an IPv6 replacement host if necessary.\n        if \":\" in new_host and not new_host.startswith(\"[\"):\n            new_host = f\"[{new_host}]\"\n\n        new_netloc = f\"{userinfo}{new_host}{port_suffix}\"\n        return parsed._replace(netloc=new_netloc)\n\n    def host_matches(host, match_value):\n        host = host.lower()\n        match_value = match_value.lower()\n\n        if match_value.startswith(\"*.\"):\n            domain = match_value[2:]\n            return host.endswith(\".\" + domain) and host != domain\n\n        return host == match_value\n\n    results = []\n\n    for url in urls:\n        parsed = urlsplit(url)\n        rewritten_url = url\n        matched = False\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            action = rule[\"action\"]\n\n            if match_type == \"path_prefix\":\n                matches = parsed.path.startswith(match_value)\n\n            elif match_type == \"host\":\n                matches = host_matches(parsed.hostname or \"\", match_value)\n\n            elif match_type == \"query_param\":\n                parameter_names = {\n                    name for name, _ in parse_qsl(\n                        parsed.query,\n                        keep_blank_values=True\n                    )\n                }\n                matches = match_value in parameter_names\n\n            else:\n                matches = False\n\n            if not matches:\n                continue\n\n            matched = True\n\n            if action == \"block\":\n                rewritten_url = None\n\n            elif action == \"strip_prefix\":\n                path = parsed.path\n                prefix = rule[\"action_value\"]\n\n                if path.startswith(prefix):\n                    path = path[len(prefix):]\n\n                if not path:\n                    path = \"/\"\n\n                rewritten_url = urlunsplit(parsed._replace(path=path))\n\n            elif action == \"redirect_host\":\n                rewritten_url = urlunsplit(\n                    replace_host(parsed, rule[\"action_value\"])\n                )\n\n            elif action == \"add_query_param\":\n                query = parsed.query\n                addition = rule[\"action_value\"]\n\n                if query:\n                    query = f\"{query}&{addition}\"\n                else:\n                    query = addition\n\n                rewritten_url = urlunsplit(parsed._replace(query=query))\n\n            break  # Only the first matching rule is applied.\n\n        results.append(rewritten_url if matched else url)\n\n    return results",
+  "stdout": "PASSED 8/8\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 8,
+  "total_cases": 8,
+  "all_passed": true,
+  "input_tokens": 443,
+  "output_tokens": 1800,
+  "total_tokens": 2243,
+  "reasoning_tokens": 1034,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-08T00:17:59"
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__apply-rewrite-rules__en_human__sample1.json",
+  "task": "apply-rewrite-rules",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "from urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"Apply the first matching rewrite rule to each URL.\"\"\"\n\n    def host_matches(host, match_value):\n        host = (host or \"\").lower()\n        match_value = match_value.lower()\n\n        if match_value.startswith(\"*.\"):\n            suffix = match_value[2:]\n            # Must be a strict subdomain, not the domain itself.\n            return host.endswith(\".\" + suffix) and host != suffix\n\n        return host == match_value\n\n    def replace_host(parsed, new_host):\n        \"\"\"Replace only the hostname, preserving credentials and port.\"\"\"\n        username = parsed.username\n        password = parsed.password\n        port = parsed.port\n\n        userinfo = \"\"\n        if username is not None:\n            userinfo = username\n            if password is not None:\n                userinfo += \":\" + password\n            userinfo += \"@\"\n\n        # Bracket IPv6 hostnames when reconstructing the netloc.\n        if \":\" in new_host and not new_host.startswith(\"[\"):\n            new_host = f\"[{new_host}]\"\n\n        netloc = userinfo + new_host\n        if port is not None:\n            netloc += f\":{port}\"\n\n        return parsed._replace(netloc=netloc)\n\n    result = []\n\n    for url in urls:\n        parsed = urlsplit(url)\n        rewritten = url\n        applied = False\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            action = rule[\"action\"]\n\n            matches = False\n\n            if match_type == \"path_prefix\":\n                matches = parsed.path.startswith(match_value)\n\n            elif match_type == \"host\":\n                matches = host_matches(parsed.hostname, match_value)\n\n            elif match_type == \"query_param\":\n                query_names = {\n                    name for name, _ in parse_qsl(\n                        parsed.query,\n                        keep_blank_values=True\n                    )\n                }\n                matches = match_value in query_names\n\n            if not matches:\n                continue\n\n            applied = True\n\n            if action == \"block\":\n                rewritten = None\n\n            elif action == \"strip_prefix\":\n                path = parsed.path\n                prefix = rule[\"action_value\"]\n\n                if path.startswith(prefix):\n                    path = path[len(prefix):]\n\n                if not path:\n                    path = \"/\"\n\n                rewritten = urlunsplit(parsed._replace(path=path))\n\n            elif action == \"redirect_host\":\n                rewritten = urlunsplit(\n                    replace_host(parsed, rule[\"action_value\"])\n                )\n\n            elif action == \"add_query_param\":\n                query = parsed.query\n                addition = rule[\"action_value\"]\n                new_query = f\"{query}&{addition}\" if query else addition\n                rewritten = urlunsplit(parsed._replace(query=new_query))\n\n            break  # Only the first applicable rule is used.\n\n        result.append(rewritten)\n\n    return result",
+  "stdout": "PASSED 8/8\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 8,
+  "total_cases": 8,
+  "all_passed": true,
+  "input_tokens": 443,
+  "output_tokens": 1209,
+  "total_tokens": 1652,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Evaluating action_value logic**\n\nIf the action_value doesn't start, it seems there may not be a change, but the rule should still be applied. I'm considering if I should implement a check to see if it starts with a certain prefix. The idea is to use strip_prefix to remove the action_value, which implies that I expect that prefix at the start of the path. However, removing characters regardless might violate some rules, so using startswith seems better. I'm also pondering if validation is necessary for the action value.",
+  "graded_at": "2026-09-08T00:17:58"
+}

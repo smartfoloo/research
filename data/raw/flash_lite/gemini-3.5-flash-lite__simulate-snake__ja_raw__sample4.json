@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "ご提示いただいた仕様に従って、スネークゲームのシミュレーションを行うPython関数 `simulate_snake` を作成しました。\n\n逆方向への移動の判定を行うために、現在の移動方向を追跡する仕組みを盛り込んでいます（最初の移動方向としては、ヘビの頭から2番目の胴体へのベクトルを利用しています）。\n\n```python\ndef simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # 最初の移動方向を計算 (頭 - 2番目のパーツ)\n    # 例: snake = [(2,2), (1,2)] なら RIGHT\n    if len(snake) > 1:\n        dx = snake[0][0] - snake[1][0]\n        dy = snake[0][1] - snake[1][1]\n        if dx == 1: current_dir = \"RIGHT\"\n        elif dx == -1: current_dir = \"LEFT\"\n        elif dy == 1: current_dir = \"DOWN\"\n        elif dy == -1: current_dir = \"UP\"\n        else: current_dir = \"RIGHT\"\n    else:\n        current_dir = \"RIGHT\"\n\n    opposite_dirs = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    direction_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if not alive:\n            break\n\n        # 指定された移動方向が現在の移動方向と逆である場合は、現在の移動方向のままにする\n        if move == opposite_dirs.get(current_dir):\n            actual_move = current_dir\n        else:\n            actual_move = move\n            current_dir = move\n\n        # 新しい頭の位置を計算\n        dv = direction_vectors[actual_move]\n        new_head = (snake[0][0] + dv[0], snake[0][1] + dv[1])\n\n        # 衝突判定 1: ボードの範囲外に出るか\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # 餌を食べる判定\n        # food リストが存在し、かつ最初の要素が有効\n        eating = False\n        if food and new_head == food[0]:\n            eating = True\n            food_eaten += 1\n            food.pop(0)  # 食べて有効な餌を消費する\n\n        # 衝突判定 2: ヘビ自身の体の一部に触れるか\n        # (ただし、餌を食べない場合、ちょうど移動しようとしている尻尾のマスは空くため衝突判定から除外できる)\n        body_to_check = snake if eating else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # ヘビの位置を更新\n        snake.insert(0, new_head)\n        if not eating:\n            snake.pop()\n\n    return (snake, alive, food_eaten)\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    board_size = (5, 5)\n    snake = [(2, 2), (1, 2)]\n    food = [(3, 2)]\n    moves = [\"RIGHT\", \"RIGHT\"]\n    \n    result = simulate_snake(board_size, snake, food, moves)\n    print(result)  # 出力: ([(4, 2), (3, 2), (2, 2)], True, 1) となるはずです\n```\n\n### 仕様のポイント\n1. **逆方向の無視**: `moves` で与えられた方向が直前の進行方向の正反対である場合、その入力を無視して直前の方向へ進みます。\n2. **自己接触判定**: 餌を食べない場合、尻尾が移動してそのマスが空くため、尻尾の座標を自己接触の判定から除外しています。\n3. **餌の処理**: 餌を食べると `food` リストの先頭が消去され、次の要素が自動的に次の有効な餌になります（リストが空になった場合は長さが増えなくなります）。",
+              "thoughtSignature": "El4KXAERTTIPppb8ITNSsAeeezmwnhJYODuA1w+6av1fkyEhAcfMWbDdvos1qxsYqh/S7ZVw32hcrzcxb+o/EpFpCZdw+mBL3wkPCezy0Xh5T8G601VrtetnTzW18/a2"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 441,
+      "candidatesTokenCount": 1033,
+      "totalTokenCount": 1474,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 441
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "yNCeap3mKIeX9tMPlZ-K8AI"
+  },
+  "thinking_text": "",
+  "final_text": "ご提示いただいた仕様に従って、スネークゲームのシミュレーションを行うPython関数 `simulate_snake` を作成しました。\n\n逆方向への移動の判定を行うために、現在の移動方向を追跡する仕組みを盛り込んでいます（最初の移動方向としては、ヘビの頭から2番目の胴体へのベクトルを利用しています）。\n\n```python\ndef simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # 最初の移動方向を計算 (頭 - 2番目のパーツ)\n    # 例: snake = [(2,2), (1,2)] なら RIGHT\n    if len(snake) > 1:\n        dx = snake[0][0] - snake[1][0]\n        dy = snake[0][1] - snake[1][1]\n        if dx == 1: current_dir = \"RIGHT\"\n        elif dx == -1: current_dir = \"LEFT\"\n        elif dy == 1: current_dir = \"DOWN\"\n        elif dy == -1: current_dir = \"UP\"\n        else: current_dir = \"RIGHT\"\n    else:\n        current_dir = \"RIGHT\"\n\n    opposite_dirs = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    direction_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if not alive:\n            break\n\n        # 指定された移動方向が現在の移動方向と逆である場合は、現在の移動方向のままにする\n        if move == opposite_dirs.get(current_dir):\n            actual_move = current_dir\n        else:\n            actual_move = move\n            current_dir = move\n\n        # 新しい頭の位置を計算\n        dv = direction_vectors[actual_move]\n        new_head = (snake[0][0] + dv[0], snake[0][1] + dv[1])\n\n        # 衝突判定 1: ボードの範囲外に出るか\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # 餌を食べる判定\n        # food リストが存在し、かつ最初の要素が有効\n        eating = False\n        if food and new_head == food[0]:\n            eating = True\n            food_eaten += 1\n            food.pop(0)  # 食べて有効な餌を消費する\n\n        # 衝突判定 2: ヘビ自身の体の一部に触れるか\n        # (ただし、餌を食べない場合、ちょうど移動しようとしている尻尾のマスは空くため衝突判定から除外できる)\n        body_to_check = snake if eating else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # ヘビの位置を更新\n        snake.insert(0, new_head)\n        if not eating:\n            snake.pop()\n\n    return (snake, alive, food_eaten)\n\n# --- 使用例 ---\nif __name__ == \"__main__\":\n    board_size = (5, 5)\n    snake = [(2, 2), (1, 2)]\n    food = [(3, 2)]\n    moves = [\"RIGHT\", \"RIGHT\"]\n    \n    result = simulate_snake(board_size, snake, food, moves)\n    print(result)  # 出力: ([(4, 2), (3, 2), (2, 2)], True, 1) となるはずです\n```\n\n### 仕様のポイント\n1. **逆方向の無視**: `moves` で与えられた方向が直前の進行方向の正反対である場合、その入力を無視して直前の方向へ進みます。\n2. **自己接触判定**: 餌を食べない場合、尻尾が移動してそのマスが空くため、尻尾の座標を自己接触の判定から除外しています。\n3. **餌の処理**: 餌を食べると `food` リストの先頭が消去され、次の要素が自動的に次の有効な餌になります（リストが空になった場合は長さが増えなくなります）。",
+  "prompt_token_count": 441,
+  "candidates_token_count": 1033,
+  "thoughts_token_count": null,
+  "total_token_count": 1474,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "simulate-snake",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "`simulate_snake(board_size, snake, food, moves)` というPython関数を作ってください。`board_size` は `(width, height)` というタプルにして、有効な座標の範囲は `(0, 0)` から `(width-1, height-1)` までにしてください。`snake` はヘビの体を表す `(x, y)` タプルのリストで、リストの最初の要素がヘビの頭の座標になるようにしてください。`food` は `(x, y)` タプルのリストで（順番も考慮）、そのうち最初の要素だけが「有効（active）」なものとします。`moves` は `\"UP\"`、`\"DOWN\"`、`\"LEFT\"`、`\"RIGHT\"` という文字列を含むリストとします。\n仕組みに関しては、まず、頭を指定された方向に1マス移動させ、体の各部分は、その前の部分がいたマスへと移動します。指定された移動方向がヘビの現在の方向と逆である場合は、現在の移動方向のまま1マス移動させてください。ただし、ヘビが餌を食べた直後の場合は、尻尾はその場にとどまり、ヘビの長さを1マス分長くします。ヘビの頭がその有効な餌に触れると、ヘビの長さが1増え、`food` リストの次の要素が有効になります（`food` が尽きた場合、ヘビは移動を続けますが、長さは増えなくなります）。新しい頭の位置がボードの範囲外に出るまたはヘビ自身の体の一部に触れる場合（ちょうど移動しようとしている尻尾のマスを除く）、ゲームオーバーでそれ以降の処理は行わないようにしてください。\nこのような処理をしたあと最後に`(final_snake, alive, food_eaten)` を返してください。（例: `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=[\"RIGHT\",\"RIGHT\"]` -> `([(4,2),(3,2),(2,2)], True, 1)`）",
+    "elapsed_seconds": 8.347604036331177,
+    "generated_at": "2026-09-07T23:57:16"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_directive__sample6.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake game.\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    snake = list(snake)\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Determine the initial direction from the head and the next body segment.\n    # For a one-segment snake, the direction is established by the first move.\n    current_direction = None\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        current_direction = (hx - nx, hy - ny)\n\n    next_food_index = 0\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if move not in directions:\n            raise ValueError(f\"Invalid move: {move}\")\n\n        requested_direction = directions[move]\n\n        # A snake cannot move directly backwards.\n        if current_direction is None:\n            current_direction = requested_direction\n        elif requested_direction == (\n            -current_direction[0],\n            -current_direction[1],\n        ):\n            requested_direction = current_direction\n        else:\n            current_direction = requested_direction\n\n        dx, dy = requested_direction\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # Determine whether the new head reaches the active food.\n        eats_food = (\n            next_food_index < len(food)\n            and new_head == food[next_food_index]\n        )\n\n        # The tail may be entered only when it is going to move away.\n        # If food is eaten, the tail stays in place, so it remains\n        # part of the collision-checking body.\n        body_to_check = snake if eats_food else snake[:-1]\n\n        # Check wall collision and self-collision.\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move the snake.\n        if eats_food:\n            snake = [new_head] + snake\n            food_eaten += 1\n            next_food_index += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n    return snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 558,
+  "output_tokens": 1156,
+  "total_tokens": 1714,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Examining movement for simulation**\n\nI’m thinking that the current direction should only update based on prior movement and not the opposite of what was requested. For the first move, I need to derive direction from the snake’s head and neck. If the snake’s length is 1, I’ll use the initially requested direction. I’m considering how to detect food interactions and ensure updates only happen for valid movements. I have a lot to process here to ensure accuracy in the simulation!\n\n**Clarifying food detection mechanics**\n\nI’m considering how to handle food detection, specifically when the snake's head touches active food. This should happen per move, so if the head is at the same location as the food, it can immediately eat without needing to move again. After eating, the next food becomes active. I’ll need to detect the new head only once, rather than looping continuously. For direction, the initial movement will be based on the position of the head in relation to the second part of the body. If the snake length is 1, the first move will be crucial.",
+  "graded_at": "2026-09-08T00:18:05"
+}

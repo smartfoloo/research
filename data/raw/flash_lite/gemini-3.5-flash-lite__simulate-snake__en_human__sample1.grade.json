@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__en_human__sample1.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Work with copies so we don't mutate input arguments\n    snake = list(snake)\n    food = list(food)\n    \n    # Map direction strings to coordinate offsets\n    dir_offsets = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # Determine the initial current movement direction based on the first two segments of the snake.\n    # If the snake only has 1 segment, default to \"RIGHT\" or any sensible direction.\n    if len(snake) > 1:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        current_dx, current_dy = hx - nx, hy - ny\n        # Find string representation of current direction\n        current_dir = \"RIGHT\"\n        for d, (dx, dy) in dir_offsets.items():\n            if (dx, dy) == (current_dx, current_dy):\n                current_dir = d\n                break\n    else:\n        current_dir = \"RIGHT\"\n        \n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if not alive:\n            break\n            \n        # Handle opposite movement rule: \n        # \"If the movement being applied is opposite to the snake's current movement, \n        # then just move the snake one cell with its current movement direction.\"\n        if move == opposites.get(current_dir):\n            actual_move = current_dir\n        else:\n            actual_move = move\n            current_dir = move\n\n        dx, dy = dir_offsets[actual_move]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # 1. Check boundary collisions\n        nx, ny = new_head\n        if not (0 <= nx < width and 0 <= ny < height):\n            alive = False\n            break\n\n        # Check if food is at the new head position\n        grew = False\n        if food and new_head == food[0]:\n            grew = True\n            food_eaten += 1\n            food.pop(0)\n\n        # 2. Check self-collision\n        # \"except for a tail cell that's about to move away on a step that's not growing\"\n        # If the snake is NOT growing, the tail will vacate its current position, \n        # so hitting the tail is allowed. If it IS growing, the tail stays, so hitting the tail is fatal.\n        if grew:\n            body_to_check = set(snake)\n        else:\n            body_to_check = set(snake[:-1])\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # 3. Move the snake\n        snake.insert(0, new_head)\n        if not grew:\n            snake.pop()\n\n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 417,
+  "candidates_token_count": 1007,
+  "thoughts_token_count": null,
+  "total_token_count": 1424,
+  "graded_at": "2026-09-08T00:17:46"
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_raw__sample2.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビの移動をシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    # 入力リストを変更しないようにコピー\n    current_snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # 逆方向の対応\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # ヘビの初期方向を、頭と首の位置から推定する\n    current_direction = None\n    if len(current_snake) >= 2:\n        head_x, head_y = current_snake[0]\n        neck_x, neck_y = current_snake[1]\n        dx = head_x - neck_x\n        dy = head_y - neck_y\n\n        for direction, vector in directions.items():\n            if vector == (dx, dy):\n                current_direction = direction\n                break\n\n    for requested_direction in moves:\n        # 逆方向への移動指示は無視し、現在の方向を維持する\n        if (\n            current_direction is not None\n            and requested_direction == opposites[current_direction]\n        ):\n            move_direction = current_direction\n        else:\n            move_direction = requested_direction\n            current_direction = move_direction\n\n        dx, dy = directions[move_direction]\n        head_x, head_y = current_snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # ボード外への移動\n        new_x, new_y = new_head\n        if not (0 <= new_x < width and 0 <= new_y < height):\n            alive = False\n            break\n\n        # 餌を食べるかどうかを判定\n        eats_food = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # 餌を食べない場合、移動する尻尾のマスへの移動は許可する\n        body_to_check = (\n            current_snake\n            if eats_food\n            else current_snake[:-1]\n        )\n\n        # 自分の体への衝突\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # 頭を追加\n        new_snake = [new_head] + current_snake\n\n        if eats_food:\n            # 尻尾を削除しないことで1マス分伸びる\n            food_eaten += 1\n            food_index += 1\n        else:\n            # 通常移動では尻尾を削除\n            new_snake.pop()\n\n        current_snake = new_snake\n\n    return current_snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 549,
+  "output_tokens": 1834,
+  "total_tokens": 2383,
+  "reasoning_tokens": 1034,
+  "reasoning_summary": "**Analyzing game collision mechanics**\n\nI'm grappling with a potential wording collision regarding moving the tail and how it relates to food intake and growth. It seems typically when a snake collides, it can only move its tail if there's no growth. If food is eaten at the tail, the movement into it might cause a self-collision. I need a clearer implementation process to manage these rules around movement and growth, especially in retaining tail positions while keeping track of directions.\n\n**Clarifying snake movement logic**\n\nI’m working through a scenario with a snake game example where the snake's head is at (2,2) and it needs to eat food at (3,2). If the snake moves to the right, it successfully eats the food, and I'm considering if I should create a function for validation. It seems I need to handle updates to the current direction carefully, especially if a move request is opposite to its current direction or perpendicular. For a snake of length 1, I also need to set up specific conditions.",
+  "graded_at": "2026-09-08T00:18:05"
+}

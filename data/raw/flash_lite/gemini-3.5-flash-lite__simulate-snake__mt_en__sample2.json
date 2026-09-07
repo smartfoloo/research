@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function `simulate_snake` implemented according to your rules:\n\n```python\ndef simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Make copies to avoid mutating input lists\n    snake = list(snake)\n    food = list(food)\n    moves = list(moves)\n\n    # Direction vectors\n    dirs = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Determine initial current direction based on head and second body part\n    if len(snake) > 1:\n        curr_dir = (snake[0][0] - snake[1][0], snake[0][1] - snake[1][1])\n    else:\n        # Default direction if snake is only 1 block long (facing RIGHT arbitrarily or based on context)\n        curr_dir = (1, 0)\n\n    # Helper to check if two directions are exact opposites\n    def is_opposite(d1, d2):\n        return d1[0] == -d2[0] and d1[1] == -d2[1]\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        requested_dir = dirs[move]\n\n        # \"If the specified movement direction is opposite to the snake's current direction, move it one square in the current movement direction.\"\n        if is_opposite(requested_dir, curr_dir):\n            move_dir = curr_dir\n        else:\n            move_dir = requested_dir\n            curr_dir = requested_dir\n\n        # Calculate new head position\n        new_head = (snake[0][0] + move_dir[0], snake[0][1] + move_dir[1])\n\n        # Check out of bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # Check self-collision\n        # \"touches any part of the snake's own body (other than the tail square it is about to move)\"\n        # If the snake doesn't grow, the tail moves, so the tail square is safe.\n        # If it eats food, the tail does NOT move, so the tail is also part of the solid body.\n        will_eat = len(food) > 0 and new_head == food[0]\n\n        body_to_check = snake if will_eat else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move snake\n        snake.insert(0, new_head)\n\n        if will_eat:\n            food.pop(0)\n            food_eaten += 1\n        else:\n            snake.pop()\n\n    return (snake, alive, food_eaten)\n```\n\n### Explanation:\n1. **Direction Handling**: The snake remembers its current movement direction (`curr_dir`). If a move is made in the exact opposite direction, it overrides the request and continues moving in `curr_dir`. Otherwise, it updates `curr_dir` to the new valid direction.\n2. **Collision Detection**: \n   - **Bounds**: Checks if the `new_head` coordinates are within `(0, 0)` and `(width-1, height-1)`.\n   - **Self-collision**: Normally, the tail moves away, meaning the current tail segment will be vacant. However, if the snake is about to eat food, the tail stays put. The code dynamically checks against either the full snake body (if eating) or all body parts except the tail (if not eating).\n3. **Eating Food**: When the head lands on the active food (`food[0]`), the food is consumed (`food.pop(0)`), `food_eaten` increments, and the tail is kept (meaning the snake grows by 1). Otherwise, the tail is removed (`snake.pop()`), keeping the length constant.\n4. **Early Termination**: If the snake dies at any point, the loop breaks and it immediately returns the current state with `alive = False`.",
+              "thoughtSignature": "El4KXAERTTIPDx3gUohefqDQjZfwZIna0L/PAYmNQgmr3CrN8Q7CJnyNjBeQ0Qj2/42JUC2AJ3As9Xv2er+UV7bF5xRdFxgfJMmvHjtcd3P1qcUizfTmfuMEelJS4aE6"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 428,
+      "candidatesTokenCount": 955,
+      "totalTokenCount": 1383,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 428
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "I9GeaqfmFcmpvr0P9qbR6QU"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function `simulate_snake` implemented according to your rules:\n\n```python\ndef simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Make copies to avoid mutating input lists\n    snake = list(snake)\n    food = list(food)\n    moves = list(moves)\n\n    # Direction vectors\n    dirs = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Determine initial current direction based on head and second body part\n    if len(snake) > 1:\n        curr_dir = (snake[0][0] - snake[1][0], snake[0][1] - snake[1][1])\n    else:\n        # Default direction if snake is only 1 block long (facing RIGHT arbitrarily or based on context)\n        curr_dir = (1, 0)\n\n    # Helper to check if two directions are exact opposites\n    def is_opposite(d1, d2):\n        return d1[0] == -d2[0] and d1[1] == -d2[1]\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        requested_dir = dirs[move]\n\n        # \"If the specified movement direction is opposite to the snake's current direction, move it one square in the current movement direction.\"\n        if is_opposite(requested_dir, curr_dir):\n            move_dir = curr_dir\n        else:\n            move_dir = requested_dir\n            curr_dir = requested_dir\n\n        # Calculate new head position\n        new_head = (snake[0][0] + move_dir[0], snake[0][1] + move_dir[1])\n\n        # Check out of bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # Check self-collision\n        # \"touches any part of the snake's own body (other than the tail square it is about to move)\"\n        # If the snake doesn't grow, the tail moves, so the tail square is safe.\n        # If it eats food, the tail does NOT move, so the tail is also part of the solid body.\n        will_eat = len(food) > 0 and new_head == food[0]\n\n        body_to_check = snake if will_eat else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move snake\n        snake.insert(0, new_head)\n\n        if will_eat:\n            food.pop(0)\n            food_eaten += 1\n        else:\n            snake.pop()\n\n    return (snake, alive, food_eaten)\n```\n\n### Explanation:\n1. **Direction Handling**: The snake remembers its current movement direction (`curr_dir`). If a move is made in the exact opposite direction, it overrides the request and continues moving in `curr_dir`. Otherwise, it updates `curr_dir` to the new valid direction.\n2. **Collision Detection**: \n   - **Bounds**: Checks if the `new_head` coordinates are within `(0, 0)` and `(width-1, height-1)`.\n   - **Self-collision**: Normally, the tail moves away, meaning the current tail segment will be vacant. However, if the snake is about to eat food, the tail stays put. The code dynamically checks against either the full snake body (if eating) or all body parts except the tail (if not eating).\n3. **Eating Food**: When the head lands on the active food (`food[0]`), the food is consumed (`food.pop(0)`), `food_eaten` increments, and the tail is kept (meaning the snake grows by 1). Otherwise, the tail is removed (`snake.pop()`), keeping the length constant.\n4. **Early Termination**: If the snake dies at any point, the loop breaks and it immediately returns the current state with `alive = False`.",
+  "prompt_token_count": 428,
+  "candidates_token_count": 955,
+  "thoughts_token_count": null,
+  "total_token_count": 1383,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "simulate-snake",
+    "condition": "mt_en",
+    "sample_idx": 2,
+    "prompt_text": "Create a Python function called `simulate_snake(board_size, snake, food, moves)`. `board_size` should be a tuple `(width, height)`, with valid coordinates in the range `(0, 0)` to `(width-1, height-1)`. `snake` is a list of `(x, y)` tuples representing the snake's body, and the first element of the list should be the coordinates of the snake's head. `food` is a list of `(x, y)` tuples (order is taken into account), of which only the first element is considered \"active\". Let `moves` be a list containing the strings `\"UP\", `\"DOWN\", `\"LEFT\", and `\"RIGHT\".\nAs for how it works, first, the head moves one square in the specified direction, and each part of the body moves to the square where the previous part was. If the specified movement direction is opposite to the snake's current direction, move it one square in the current movement direction. However, if the snake has just eaten, the tail will remain in place, increasing the snake's length by one square. When the snake's head touches its valid food, the snake's length increases by 1 and the next element in the `food` list becomes active (if `food` is exhausted, the snake continues to move, but its length no longer increases). If the new head position goes out of bounds of the board or touches any part of the snake's own body (other than the tail square it is about to move), the game is over and no further action should be taken.\nAfter processing like this, return `(final_snake, alive, food_eaten)` at the end. (Example: `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=[\"RIGHT\",\"RIGHT\"]` -> `([(4,2),(3,2),(2,2)], True, 1)`)",
+    "elapsed_seconds": 8.363933086395264,
+    "generated_at": "2026-09-07T23:58:46"
+  }
+}

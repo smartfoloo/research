@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__mt_en__sample1.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 1,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Make copies to avoid mutating the original inputs\n    snake = list(snake)\n    food = list(food)\n    \n    alive = True\n    food_eaten = 0\n    \n    # Map direction strings to coordinate offsets\n    dir_offsets = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # Determine the initial current direction of the snake based on head and second body part\n    if len(snake) > 1:\n        current_dir = (snake[0][0] - snake[1][0], snake[0][1] - snake[1][1])\n        # Normalize just in case, though usually 1 step\n        if current_dir != (0, 0):\n            current_dir = (\n                current_dir[0] // max(1, abs(current_dir[0])),\n                current_dir[1] // max(1, abs(current_dir[1]))\n            )\n    else:\n        # Default direction if snake has only length 1\n        current_dir = (1, 0) # RIGHT default\n\n    # Inverse mapping from offset to string for opposite check\n    offset_to_dir = {v: k for k, v in dir_offsets.items()}\n\n    for move in moves:\n        if not alive:\n            break\n            \n        requested_dir = dir_offsets[move]\n        \n        # Check if the requested direction is the exact opposite of the current direction\n        # If so, continue in the current direction instead.\n        if (requested_dir[0] == -current_dir[0] and requested_dir[1] == -current_dir[1]) and len(snake) > 1:\n            move_dir = current_dir\n        else:\n            move_dir = requested_dir\n            current_dir = move_dir\n            \n        # Calculate new head position\n        new_head = (snake[0][0] + move_dir[0], snake[0][1] + move_dir[1])\n        \n        # Check boundaries\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n            \n        # Check self-collision\n        # The snake can hit any part of its body EXCEPT the tail (since the tail moves away,\n        # unless it just ate, but the collision rule specifically says: \"other than the tail square it is about to move\")\n        # Therefore, we check against all body parts except the last one.\n        body_to_check = snake[:-1] if len(snake) > 1 else []\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # Check food consumption\n        ate_food = False\n        if food and new_head == food[0]:\n            ate_food = True\n            food_eaten += 1\n            food.pop(0)\n            \n        # Move snake\n        snake.insert(0, new_head)\n        if not ate_food:\n            snake.pop()\n            \n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 428,
+  "candidates_token_count": 1039,
+  "thoughts_token_count": null,
+  "total_token_count": 1467,
+  "graded_at": "2026-09-08T00:17:50"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__mt_en__sample6.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 6,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Make copies to avoid mutating input lists\n    snake = list(snake)\n    food = list(food)\n    \n    # Helper to get the current direction of the snake\n    # Direction is from snake[1] to snake[0]\n    def get_current_direction(s):\n        if len(s) < 2:\n            return None\n        hx, hy = s[0]\n        nx, ny = s[1]\n        if hx > nx: return \"RIGHT\"\n        if hx < nx: return \"LEFT\"\n        if hy > ny: return \"DOWN\"\n        if hy < ny: return \"UP\"\n        return None\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    food_eaten = 0\n    alive = True\n    just_ate = False\n\n    for move in moves:\n        if not alive:\n            break\n\n        current_dir = get_current_direction(snake)\n        \n        # If the move direction is opposite to the current direction, \n        # continue in the current direction.\n        if current_dir and move == opposites.get(current_dir):\n            actual_move = current_dir\n        else:\n            actual_move = move\n\n        # Calculate new head position\n        hx, hy = snake[0]\n        if actual_move == \"UP\":\n            new_head = (hx, hy - 1)\n        elif actual_move == \"DOWN\":\n            new_head = (hx, hy + 1)\n        elif actual_move == \"LEFT\":\n            new_head = (hx - 1, hy)\n        elif actual_move == \"RIGHT\":\n            new_head = (hx + 1, hy)\n        else:\n            new_head = (hx, hy)\n\n        # Check boundaries\n        nx, ny = new_head\n        if not (0 <= nx < width and 0 <= ny < height):\n            alive = False\n            break\n\n        # Check self-collision\n        # The snake can legally move into the spot currently occupied by its tail \n        # (unless it just ate and the tail is staying put, but even then, tail collision \n        # rules usually exclude the tail. The prompt states: \"touches any part of the \n        # snake's own body (other than the tail square it is about to move)\").\n        body_to_check = snake[:-1] if not just_ate else snake\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move snake: insert new head\n        snake.insert(0, new_head)\n\n        # Check food consumption\n        active_food = food[0] if food else None\n        if active_food and new_head == active_food:\n            food_eaten += 1\n            food.pop(0)  # Next food becomes active\n            just_ate = True\n        else:\n            if not just_ate:\n                snake.pop()  # Remove tail if didn't eat\n            just_ate = False\n\n    return (snake, alive, food_eaten)",
+  "stdout": "FAIL case 0: expected ([(4, 2), (3, 2), (2, 2)], True, 1), got ([(4, 2), (3, 2), (2, 2), (1, 2)], True, 1)\nFAIL case 1: expected ([(4, 0), (3, 0), (2, 0), (1, 0)], True, 2), got ([(4, 0), (3, 0), (2, 0), (1, 0), (0, 0)], True, 2)\nPASSED 4/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 6,
+  "all_passed": false,
+  "prompt_token_count": 428,
+  "candidates_token_count": 998,
+  "thoughts_token_count": null,
+  "total_token_count": 1426,
+  "graded_at": "2026-09-08T00:17:51"
+}

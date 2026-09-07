@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__ja_raw__sample5.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # リストをミュータブルな状態としてコピーして処理を進めます\n    snake_body = list(snake)\n    food_list = list(food)\n    \n    alive = True\n    food_eaten = 0\n    \n    # 方向の定義\n    dir_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # 反対方向の定義\n    opposite_dir = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n    \n    # 初期の進行方向を決定（体節が2つ以上ある場合）\n    current_dir = None\n    if len(snake_body) >= 2:\n        hx, hy = snake_body[0]\n        nx, ny = snake_body[1]\n        dx, dy = hx - nx, hy - ny\n        for d, (vx, vy) in dir_vectors.items():\n            if (vx, vy) == (dx, dy):\n                current_dir = d\n                break\n\n    for move in moves:\n        if not alive:\n            break\n            \n        # 逆方向の入力チェック\n        # ヘビが体を持たない、または方向がまだ定まっていない場合はそのまま受け入れる\n        if current_dir and move == opposite_dir.get(current_dir):\n            move_dir = current_dir\n        else:\n            move_dir = move\n            current_dir = move\n            \n        vx, vy = dir_vectors[move_dir]\n        hx, hy = snake_body[0]\n        new_head = (hx + vx, hy + vy)\n        \n        # 1. 壁との衝突判定 (ボードの範囲外)\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n            \n        # 2. 餌を食べるかどうかの判定\n        # food リストの最初の要素だけが有効\n        eating = False\n        if food_list and new_head == food_list[0]:\n            eating = True\n            \n        # 3. 自己との衝突判定\n        # 新しい頭の位置が、現在の体（移動によって空くはずの尻尾を除く）と重なるか\n        # 餌を食べない場合、尻尾は移動するので衝突判定から除外できる\n        # 餌を食べる場合、尻尾はその場に残るので全ての体が障害物になる\n        collision_body = snake_body if eating else snake_body[:-1]\n        if new_head in collision_body:\n            alive = False\n            break\n            \n        # 4. ヘビの移動処理\n        snake_body.insert(0, new_head)\n        if eating:\n            food_eaten += 1\n            food_list.pop(0)  # 次の餌を有効にする\n        else:\n            snake_body.pop()  # 尻尾を取り除く\n            \n    return (snake_body, alive, food_eaten)\n\n# --- 実行例 ---\nif __name__ == \"__main__\":\n    board_size = (5, 5)\n    snake = [(2, 2), (1, 2)]\n    food = [(3, 2)]\n    moves = [\"RIGHT\", \"RIGHT\"]\n    \n    result = simulate_snake(board_size, snake, food, moves)\n    print(result)  # 出力例: ([(4, 2), (3, 2), (2, 2)], True, 1)",
+  "stdout": "([(4, 2), (3, 2), (2, 2)], True, 1)\nPASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 441,
+  "candidates_token_count": 1054,
+  "thoughts_token_count": null,
+  "total_token_count": 1495,
+  "graded_at": "2026-09-08T00:17:50"
+}

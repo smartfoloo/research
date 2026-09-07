@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_directive__sample2.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビの移動をシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"board_size must contain positive values\")\n\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    direction_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposite = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # 入力リストを変更しないようにコピーする\n    current_snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n\n    # 現在の方向を求める。\n    # ヘビが1マスだけの場合は方向が未定義。\n    current_direction = None\n    if len(current_snake) >= 2:\n        head_x, head_y = current_snake[0]\n        neck_x, neck_y = current_snake[1]\n        dx = head_x - neck_x\n        dy = head_y - neck_y\n\n        for name, vector in direction_vectors.items():\n            if vector == (dx, dy):\n                current_direction = name\n                break\n\n    alive = True\n\n    for requested_direction in moves:\n        if requested_direction not in direction_vectors:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # 逆方向への移動は禁止し、現在の方向を維持する\n        if (\n            current_direction is not None\n            and requested_direction == opposite[current_direction]\n        ):\n            move_direction = current_direction\n        else:\n            move_direction = requested_direction\n\n        dx, dy = direction_vectors[move_direction]\n        head_x, head_y = current_snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # 有効な餌に到達したかを先に判定する\n        eating = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # ボード外判定\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # 餌を食べない場合は尻尾が移動するため、\n        # 移動前の尻尾のマスへの移動は許可する。\n        body_to_check = (\n            current_snake if eating else current_snake[:-1]\n        )\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # 体を更新する\n        if eating:\n            # 尻尾を削除せず、新しい頭を追加する\n            current_snake = [new_head] + current_snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            current_snake = [new_head] + current_snake[:-1]\n\n        current_direction = move_direction\n\n    return current_snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 558,
+  "output_tokens": 1710,
+  "total_tokens": 2268,
+  "reasoning_tokens": 895,
+  "reasoning_summary": "**Considering snake game mechanics**\n\nI'm thinking about the snake game mechanics. After the initial snake has length 1 and moves, it can grow after eating. If a single snake eats, it grows to length 2 with a new head and old head, maintaining its direction. However, I wonder what happens if the moves are invalid, as that may raise a ValueError. I'm also considering whether to include input validation, and if I need to mention a return at the collision state.\n\n**Evaluating snake validation**\n\nI think the validation for an empty snake should probably reject it early on. When it comes to board dimensions, maybe coordinate validation isn’t necessary, as it might complicate things. I'll ensure to raise a ValueError if a snake with a length of one tries to move without a direction. For lengths greater than one, I need to check for opposite directions. If the snake’s heading is odd, I’ll assume it’s valid. Overall, I want to return a tuple that includes the active food index status.",
+  "graded_at": "2026-09-08T00:18:04"
+}

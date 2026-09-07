@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__mt_en__sample6.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 6,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake moving on a rectangular board.\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    current_snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Infer the initial direction from the head and neck, if possible.\n    current_direction = None\n    if len(current_snake) >= 2:\n        head_x, head_y = current_snake[0]\n        neck_x, neck_y = current_snake[1]\n        current_direction = (head_x - neck_x, head_y - neck_y)\n\n    for move in moves:\n        if move not in directions:\n            raise ValueError(f\"Invalid move: {move}\")\n\n        requested_direction = directions[move]\n\n        # Prevent the snake from reversing directly into itself.\n        if (\n            current_direction is not None\n            and requested_direction == (\n                -current_direction[0],\n                -current_direction[1],\n            )\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        head_x, head_y = current_snake[0]\n        dx, dy = direction\n        new_head = (head_x + dx, head_y + dy)\n\n        # Check board boundaries.\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        eating = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # The tail is allowed as a destination when it will move away.\n        body_to_check = (\n            current_snake if eating else current_snake[:-1]\n        )\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move the snake.\n        current_snake.insert(0, new_head)\n\n        if eating:\n            food_eaten += 1\n            food_index += 1\n        else:\n            current_snake.pop()\n\n        current_direction = direction\n\n    return current_snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 416,
+  "output_tokens": 1116,
+  "total_tokens": 1532,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Clarifying movement logic**\n\nI’m working on crafting an answer that involves coding and clarifying the direction based on the head-neck dynamics. I need to consider scenarios like food collisions and how the snake's tail behaves, particularly when it's not eating. I should handle cases when the snake length is just one, where the direction isn't defined, and maintain a robust function to avoid errors. I'll ensure only the head touches valid food, and keep track of the food index without mutating the input.\n\n**Defining collision and movement logic**\n\nI need to determine if food could be on the tail, and if so, the tail should remain static during a collision check. If the snake eats, the tail won’t move, meaning it could collide. Typically, food shouldn't be on the snake's body. I should outline collision checks, clearly stating that when eating, all body positions except the tail are forbidden. I'll also make sure to validate initial snake directions and avoid unnecessary complications in the code.\n\n**Handling snake movement and direction**\n\nFor a snake of length one, I need to retain the last effective direction. I'll set the current direction based on the first two coordinates to coordinate the body ordering properly. If the snake is length two, I have to consider the initial head and neck vector. Requests for the opposite direction are blocked when length is one, which means all requested movements are valid. After the first move, I can define the snake’s current direction based on the specified direction. The food list order will also be tracked by the food index.",
+  "graded_at": "2026-09-08T00:18:07"
+}

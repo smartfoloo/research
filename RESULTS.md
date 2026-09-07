@@ -32,6 +32,48 @@
 | ja_directive | 5614 | 1889 | 1592 | 1290 | 714 |
 | mt_en | 3048 | 1499 | 693 | 623 | 631 |
 
+## Bonus/exploratory tasks (simulate-snake, apply-rewrite-rules) — 2026-09-08
+
+**Not part of the main 6-task claim-bearing result** — see `CLAUDE.md` Status. Same N=6/cell, same 4 conditions, only flash-lite and luna run so far (the two models already at ceiling on the core 6). Test cases for these two tasks (`spike/test_cases.py`) were authored and hand-verified for this run; `grading_common.py`'s tuple/list normalization was made recursive at the same time (previously only the top-level return value was normalized, which happened not to matter for any of the core 6 but would have silently failed correct solutions here, where `simulate_snake` returns a list of coordinate tuples nested inside the result).
+
+### Pass rate by condition (2 bonus tasks only)
+
+| condition | gemini-3.5-flash-lite | gpt-5.6-luna |
+|---|---|---|
+| en_human | 12/12 (100%) | 12/12 (100%) |
+| ja_raw | 12/12 (100%) | 12/12 (100%) |
+| ja_directive | 10/12 (83%) | 12/12 (100%) |
+| mt_en | 11/12 (92%) | 11/12 (92%) |
+| **overall** | 45/48 (94%) | 47/48 (98%) |
+
+By task: `apply-rewrite-rules` is at a full ceiling on both models (24/24, 100%, every condition) — it did not succeed at getting either model off the ceiling. `simulate-snake` shows some texture: flash-lite 21/24 (88%), luna 23/24 (96%).
+
+### Avg tokens/generation (indexed to that model's own en_human, bonus tasks only)
+
+| condition | flash-lite | luna |
+|---|---|---|
+| en_human | 1436 (1.00x) | 2172 (1.00x) |
+| ja_raw | 1657 (1.15x) | 2480 (1.14x) |
+| ja_directive | 1965 (1.37x) | 2491 (1.15x) |
+| mt_en | 1486 (1.04x) | 2224 (1.02x) |
+
+### Tokens per correct solution (bonus tasks only)
+
+| condition | flash-lite | luna |
+|---|---|---|
+| en_human | 1436 | 2172 |
+| ja_raw | 1657 | 2480 |
+| ja_directive | 1966 | 2491 |
+| mt_en | 1492 | 2201 |
+
+### Read (bonus tasks)
+
+- Still a ceiling effect on both models overall (94%, 98%) — these two tasks did not manage to push either model into a regime where a language effect could show, despite being harder than the core 6 by design.
+- flash-lite's one real crack: `ja_directive` is again its worst condition (83%, same direction as the core-6 result), at ~1.37x the token cost of `en_human` for a worse pass rate — consistent with "no reasoning trace to redirect, so the directive only adds cost."
+- The two flash-lite `simulate-snake` failures traced by hand: one got the tail-movement exception wrong (treated a same-turn tail vacancy as a fatal collision), one ignored the opposite-direction override and just applied the requested reversal literally, one had a growth/shrink tracking bug that left a stale extra segment after a non-growing move. All three are genuine model bugs on subtle spec details, not test-harness artifacts.
+- luna's one failure (`simulate-snake`/`mt_en`/sample2) graded 0/6 because its first fenced code block contained a broken self-correction (an incomplete `walrus`-operator line, no trailing `return`) that it then fixed in a second code block later in the same response — `grading_common.py` only ever grades the first fenced block by design (documented, applies identically to every arm), so this is the existing methodology working as intended, not a luna-specific bug.
+- `apply-rewrite-rules` turned out to be an easier ceiling-breaker candidate than `simulate-snake` was hoped to be — both models solved it perfectly in all 24 samples each. If a future harder bonus task is authored, this is a data point that URL/rule-matching logic (however many branches) is not where these two models struggle; state-machine simulation with several interacting edge cases (like `simulate-snake`) is closer to where cracks show.
+
 ## Read
 
 - Real gap + ja_directive recovery only on qwen3.5 (weakest model, smallest/quantized). Gap: 67%→53% (mt_en worst). ja_directive: 94%, near-ceiling, at ~3-4x token cost. (Stale — pending regen, but the local arm's own prompts were never affected by the backtick fix since business-days aside its ja_raw already had backticks; direction of finding unlikely to change.)

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__mt_en__sample3.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake moving on a rectangular board.\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"Board dimensions must be positive\")\n    if not snake:\n        raise ValueError(\"Snake must contain at least its head\")\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Copy the snake so the caller's list is not modified.\n    snake = list(snake)\n\n    # The current direction is determined by the head and neck when possible.\n    if len(snake) >= 2:\n        current_direction = (\n            snake[0][0] - snake[1][0],\n            snake[0][1] - snake[1][1],\n        )\n    else:\n        # A one-segment snake has no initial direction. Its first move\n        # establishes the direction.\n        current_direction = None\n\n    food_index = 0\n    food_eaten = 0\n\n    for move in moves:\n        if move not in directions:\n            raise ValueError(f\"Invalid move: {move}\")\n\n        requested_direction = directions[move]\n\n        # Do not allow an immediate reversal.\n        if (\n            current_direction is not None\n            and requested_direction == (\n                -current_direction[0],\n                -current_direction[1],\n            )\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        head_x, head_y = snake[0]\n        dx, dy = direction\n        new_head = (head_x + dx, head_y + dy)\n\n        # Check board boundaries.\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            return snake, False, food_eaten\n\n        eats_food = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # Normally the tail moves away and can be entered.\n        # If food is eaten, the tail stays in place and cannot be entered.\n        body_to_check = snake if eats_food else snake[:-1]\n\n        if new_head in body_to_check:\n            return snake, False, food_eaten\n\n        if eats_food:\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = direction\n\n    return snake, True, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 416,
+  "output_tokens": 2028,
+  "total_tokens": 2444,
+  "reasoning_tokens": 1358,
+  "reasoning_summary": "**Clarifying food movement logic**\n\nI'm looking into how to handle food movement with only valid strings on the list, which might not require error handling. It’s important to consider the coordinates as a tuple and the state of the food order. Only the first piece of food can be consumed, incrementing the index afterward. If there’s no food left, growth won't happen. I need to think about whether active food coordinates overlap with the head position and explain my assumptions around direction based on current and desired movements.\n\n**Analyzing snake collision logic**\n\nI’m working on a snake game's collision logic. If the snake's head collides with food at the tail, it should grow. I'll create a new snake based on whether it eats: if it does, the new head goes on the front, and the tail remains; if not, it'll just shorten. We increase the food index safely if it's eaten. I need to make sure the current state reflects whether the snake is dead before applying any more moves.",
+  "graded_at": "2026-09-08T00:18:06"
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_raw__sample5.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    スネークゲームをシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"board_size must contain positive values\")\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # 入力リストを変更しないようにコピーする\n    current_snake = list(snake)\n    food = list(food)\n\n    # 頭と首の位置から、初期方向を求める\n    current_direction = None\n    if len(current_snake) >= 2:\n        hx, hy = current_snake[0]\n        nx, ny = current_snake[1]\n        delta = (hx - nx, hy - ny)\n\n        for direction, vector in directions.items():\n            if vector == delta:\n                current_direction = direction\n                break\n\n    active_food_index = 0\n    food_eaten = 0\n    alive = True\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"invalid move: {requested_direction}\")\n\n        # 逆方向への移動は禁止\n        if (\n            current_direction is not None\n            and requested_direction == opposites[current_direction]\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        dx, dy = directions[direction]\n        head_x, head_y = current_snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # ボード外判定\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # 今回の移動で餌を食べるか判定\n        will_eat = (\n            active_food_index < len(food)\n            and new_head == food[active_food_index]\n        )\n\n        # 通常時は尻尾が移動するため、尻尾のマスへの移動は許可する。\n        # 餌を食べる場合は尻尾が残るため、尻尾も衝突判定に含める。\n        occupied_body = (\n            current_snake if will_eat else current_snake[:-1]\n        )\n\n        if new_head in occupied_body:\n            alive = False\n            break\n\n        if will_eat:\n            # 尻尾を残して1マス伸ばす\n            current_snake = [new_head] + current_snake\n            active_food_index += 1\n            food_eaten += 1\n        else:\n            # 尻尾を取り除きながら移動する\n            current_snake = [new_head] + current_snake[:-1]\n\n        current_direction = direction\n\n    return current_snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 549,
+  "output_tokens": 1987,
+  "total_tokens": 2536,
+  "reasoning_tokens": 1174,
+  "reasoning_summary": "**Reviewing game mechanics**\n\nThe user is asking about creating a game, which includes type hints and docstrings. I need to check for the validity of board dimensions and possibly raise a ValueError for invalid moves. I’m considering how to handle coordinates and avoid mutations. Updating the current direction should be carefully managed, especially with reversals. If accepted, the direction remains effective, but I must think about edge cases, like snake length. If the snake is malformed or adjacent, I should establish appropriate validations.\n\n**Considering snake movement logic**\n\nI'm thinking about how the snake's head interacts with food in its game. If the snake's head is already on a coordinate where food appears, should it eat again immediately? Maybe that makes sense, but typically, food coordinates are distinct. I can imagine the head staying at the location without a \"touch\" event on duplicates. There could be a requirement that the new head's position needs to touch the food for it to be considered eaten. Let’s work this logic through!",
+  "graded_at": "2026-09-08T00:18:05"
+}

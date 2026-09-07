@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__en_human__sample4.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Make copies to avoid mutating input parameters\n    snake = list(snake)\n    food = list(food)\n    \n    # Map move strings to coordinate offsets\n    direction_offsets = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # Determine the initial current movement direction based on the first two segments of the snake\n    if len(snake) >= 2:\n        current_dx = snake[0][0] - snake[1][0]\n        current_dy = snake[0][1] - snake[1][1]\n        current_dir = None\n        for d, (dx, dy) in direction_offsets.items():\n            if dx == current_dx and dy == current_dy:\n                current_dir = d\n                break\n    else:\n        current_dir = \"RIGHT\"  # Default fallback if snake has length 1\n\n    # Define opposites to handle reverse move restrictions\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if not alive:\n            break\n\n        # Rule: If movement is opposite to current movement, use current movement\n        if current_dir and move == opposites.get(current_dir):\n            move = current_dir\n\n        current_dir = move\n        dx, dy = direction_offsets[move]\n\n        # Calculate new head position\n        new_head = (snake[0][0] + dx, snake[0][1] + dy)\n\n        # Rule: Check if out of bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # Check if food is eaten\n        grew = False\n        if food and new_head == food[0]:\n            grew = True\n            food_eaten += 1\n            food.pop(0)\n\n        # Rule: Check collision with body\n        # If the snake is NOT growing, the tail will move away, so it shouldn't count as a collision.\n        # However, if it IS growing, the tail stays, so the entire current snake is an obstacle.\n        collision_body = snake if grew else snake[:-1]\n        if new_head in collision_body:\n            alive = False\n            break\n\n        # Apply movement\n        snake.insert(0, new_head)\n        if not grew:\n            snake.pop()\n\n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 417,
+  "candidates_token_count": 876,
+  "thoughts_token_count": null,
+  "total_token_count": 1293,
+  "graded_at": "2026-09-08T00:17:47"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__ja_directive__sample4.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    \n    # Direction vectors mapping\n    dirs = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # Opposite directions to check for illegal reverse moves\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n    \n    # We need to track the current direction of the snake.\n    # Since only the initial snake and moves are given, we can infer the initial\n    # direction from the position of the head and the second body part.\n    # If the snake is just 1 segment long, we default to \"RIGHT\" or any arbitrary valid direction.\n    current_dir = None\n    if len(snake) > 1:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        dx, dy = hx - nx, hy - ny\n        for d, (vx, vy) in dirs.items():\n            if (vx, vy) == (dx, dy):\n                current_dir = d\n                break\n    \n    # If direction couldn't be determined (e.g., length 1), default to the first move's direction or \"RIGHT\"\n    if current_dir is None:\n        current_dir = moves[0] if moves else \"RIGHT\"\n\n    food_queue = list(food)\n    food_eaten = 0\n    alive = True\n    \n    # Make a mutable copy of the snake\n    current_snake = list(snake)\n    \n    for move in moves:\n        # Check if the move is the exact reverse of the current direction\n        if opposites.get(move) == current_dir:\n            # If it is the reverse, continue in the *current* direction instead\n            actual_move = current_dir\n        else:\n            actual_move = move\n            current_dir = move\n            \n        # Calculate new head position\n        hx, hy = current_snake[0]\n        dx, dy = dirs[actual_move]\n        new_head = (hx + dx, hy + dy)\n        \n        # Check if the head eats food\n        # Only the first element in food_queue is active\n        ate_food = False\n        if food_queue and new_head == food_queue[0]:\n            ate_food = True\n            food_eaten += 1\n            food_queue.pop(0) # Remove the eaten food, next one becomes active\n            \n        # Check for collisions before moving\n        # 1. Wall collision\n        nx, ny = new_head\n        if not (0 <= nx < width and 0 <= ny < height):\n            alive = False\n            break\n            \n        # 2. Self collision\n        # Note: If the snake does NOT eat food, the tail will move away, \n        # so the tail position is technically safe. If it DOES eat food, the tail stays, \n        # meaning the current tail position is also occupied.\n        body_to_check = current_snake if ate_food else current_snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # Perform the move\n        current_snake.insert(0, new_head)\n        if not ate_food:\n            current_snake.pop() # Remove tail if no food was eaten\n            \n    return (current_snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 448,
+  "candidates_token_count": 1175,
+  "thoughts_token_count": null,
+  "total_token_count": 1623,
+  "graded_at": "2026-09-08T00:17:48"
+}

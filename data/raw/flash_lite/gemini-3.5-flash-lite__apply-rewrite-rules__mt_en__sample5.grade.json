@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__apply-rewrite-rules__mt_en__sample5.json",
+  "task": "apply-rewrite-rules",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode\n\n\ndef apply_rewrite_rules(rules, urls):\n    results = []\n\n    for url_str in urls:\n        parsed = urlparse(url_str)\n        scheme, netloc, path, params, query, fragment = (\n            parsed.scheme,\n            parsed.netloc,\n            parsed.path,\n            parsed.params,\n            parsed.query,\n            parsed.fragment,\n        )\n\n        # Extract host and port from netloc\n        if \"@\" in netloc:\n            auth, host_port = netloc.rsplit(\"@\", 1)\n            auth = auth + \"@\"\n        else:\n            auth = \"\"\n            host_port = netloc\n\n        if \":\" in host_port:\n            host, port = host_port.rsplit(\":\", 1)\n            port_str = \":\" + port\n        else:\n            host = host_port\n            port_str = \"\"\n\n        matched_rule = None\n        for rule in rules:\n            match_type = rule.get(\"match_type\")\n            match_value = rule.get(\"match_value\")\n\n            if match_type == \"path_prefix\":\n                if path.startswith(match_value):\n                    matched_rule = rule\n                    break\n\n            elif match_type == \"host\":\n                if host == match_value:\n                    matched_rule = rule\n                    break\n                elif match_value.startswith(\"*.\"):\n                    domain = match_value[2:]\n                    # Exact subdomain match (e.g., host is sub.domain.com and domain is domain.com)\n                    if host.endswith(\".\" + domain) and host != domain:\n                        # Ensure there are no extra sub-subdomains unless covered,\n                        # but standard definition of exact subdomain of *.domain.com is *.domain.com\n                        # Let's count parts: sub.domain.com has 3 parts, domain.com has 2.\n                        if (\n                            host.count(\".\") == domain.count(\".\") + 1\n                        ):  # strict direct subdomain\n                            matched_rule = rule\n                            break\n\n            elif match_type == \"query_param\":\n                q_params = parse_qsl(query, keep_blank_values=True)\n                if any(k == match_value for k, v in q_params):\n                    matched_rule = rule\n                    break\n\n        if not matched_rule:\n            results.append(url_str)\n            continue\n\n        action = matched_rule.get(\"action\")\n        action_value = matched_rule.get(\"action_value\")\n\n        if action == \"block\":\n            results.append(None)\n            continue\n\n        elif action == \"strip_prefix\":\n            if path.startswith(action_value):\n                path = path[len(action_value) :]\n                if not path.startswith(\"/\"):\n                    path = \"/\" + path\n\n        elif action == \"redirect_host\":\n            host = action_value\n\n        elif action == \"add_query_param\":\n            if \"=\" in action_value:\n                k, v = action_value.split(\"=\", 1)\n            else:\n                k, v = action_value, \"\"\n            q_params = parse_qsl(query, keep_blank_values=True)\n            q_params.append((k, v))\n            query = urlencode(q_params)\n\n        # Reconstruct netloc\n        netloc = auth + host + port_str\n        new_parsed = (scheme, netloc, path, params, query, fragment)\n        results.append(urlunparse(new_parsed))\n\n    return results",
+  "stdout": "PASSED 8/8\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 8,
+  "total_cases": 8,
+  "all_passed": true,
+  "prompt_token_count": 464,
+  "candidates_token_count": 1103,
+  "thoughts_token_count": null,
+  "total_token_count": 1567,
+  "graded_at": "2026-09-08T00:17:46"
+}

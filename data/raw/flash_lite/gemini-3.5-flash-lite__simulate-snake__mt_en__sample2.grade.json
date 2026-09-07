@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__mt_en__sample2.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # Make copies to avoid mutating input lists\n    snake = list(snake)\n    food = list(food)\n    moves = list(moves)\n\n    # Direction vectors\n    dirs = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Determine initial current direction based on head and second body part\n    if len(snake) > 1:\n        curr_dir = (snake[0][0] - snake[1][0], snake[0][1] - snake[1][1])\n    else:\n        # Default direction if snake is only 1 block long (facing RIGHT arbitrarily or based on context)\n        curr_dir = (1, 0)\n\n    # Helper to check if two directions are exact opposites\n    def is_opposite(d1, d2):\n        return d1[0] == -d2[0] and d1[1] == -d2[1]\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        requested_dir = dirs[move]\n\n        # \"If the specified movement direction is opposite to the snake's current direction, move it one square in the current movement direction.\"\n        if is_opposite(requested_dir, curr_dir):\n            move_dir = curr_dir\n        else:\n            move_dir = requested_dir\n            curr_dir = requested_dir\n\n        # Calculate new head position\n        new_head = (snake[0][0] + move_dir[0], snake[0][1] + move_dir[1])\n\n        # Check out of bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # Check self-collision\n        # \"touches any part of the snake's own body (other than the tail square it is about to move)\"\n        # If the snake doesn't grow, the tail moves, so the tail square is safe.\n        # If it eats food, the tail does NOT move, so the tail is also part of the solid body.\n        will_eat = len(food) > 0 and new_head == food[0]\n\n        body_to_check = snake if will_eat else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move snake\n        snake.insert(0, new_head)\n\n        if will_eat:\n            food.pop(0)\n            food_eaten += 1\n        else:\n            snake.pop()\n\n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 428,
+  "candidates_token_count": 955,
+  "thoughts_token_count": null,
+  "total_token_count": 1383,
+  "graded_at": "2026-09-08T00:17:50"
+}

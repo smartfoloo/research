@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__en_human__sample2.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = [tuple(s) for s in snake]\n    food = [tuple(f) for f in food]\n    \n    # Determine initial direction based on the first two segments of the snake\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        if hx - nx == 1: current_dir = \"RIGHT\"\n        elif hx - nx == -1: current_dir = \"LEFT\"\n        elif hy - ny == 1: current_dir = \"DOWN\"\n        elif hy - ny == -1: current_dir = \"UP\"\n        else: current_dir = \"RIGHT\"\n    else:\n        current_dir = \"RIGHT\"\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    dir_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if not alive:\n            break\n\n        # Check for opposite move rule\n        if move in opposites and move == opposites[current_dir]:\n            actual_move = current_dir\n        else:\n            if move in dir_vectors:\n                current_dir = move\n                actual_move = move\n            else:\n                # If an invalid move string is passed, keep current direction\n                actual_move = current_dir\n\n        # Calculate new head position\n        dx, dy = dir_vectors[actual_move]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # Check wall collision\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # Check food consumption\n        grew = False\n        if food and new_head == food[0]:\n            grew = True\n            food_eaten += 1\n            food.pop(0)\n\n        # Check self collision\n        # If not growing, the tail is about to move away, so it doesn't count as a collision.\n        body_to_check = snake[:-1] if not grew else snake\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # Move snake\n        snake.insert(0, new_head)\n        if not grew:\n            snake.pop()\n\n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 417,
+  "candidates_token_count": 665,
+  "thoughts_token_count": null,
+  "total_token_count": 1082,
+  "graded_at": "2026-09-08T00:17:47"
+}

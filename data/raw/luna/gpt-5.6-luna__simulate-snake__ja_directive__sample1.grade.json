@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_directive__sample1.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビの移動をシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"board_size must contain positive values\")\n\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposite = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # ヘビの初期方向を、頭と首の位置から決定する。\n    # 長さ1の場合は、まだ方向を持たないものとする。\n    current_direction = None\n\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        delta = (hx - nx, hy - ny)\n\n        for direction, direction_delta in directions.items():\n            if delta == direction_delta:\n                current_direction = direction\n                break\n\n        if current_direction is None:\n            raise ValueError(\"The snake's head and neck must be adjacent\")\n\n    snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # 逆方向への移動は禁止し、現在の方向を維持する。\n        if (\n            current_direction is not None\n            and requested_direction == opposite[current_direction]\n        ):\n            move_direction = current_direction\n        else:\n            move_direction = requested_direction\n\n        dx, dy = directions[move_direction]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # ボード外への移動\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # 有効な餌に到達したか確認する。\n        will_grow = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # 成長しない場合は尻尾が移動するため、現在の尻尾のマスには\n        # 入ってよい。成長する場合は尻尾が残る。\n        occupied_body = snake if will_grow else snake[:-1]\n\n        if new_head in occupied_body:\n            alive = False\n            break\n\n        if will_grow:\n            # 尻尾を削除せず、長さを1増やす。\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = move_direction\n\n    return snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 558,
+  "output_tokens": 1824,
+  "total_tokens": 2382,
+  "reasoning_tokens": 1034,
+  "reasoning_summary": "**Clarifying snake game logic**\n\nI’m evaluating how the snake game determines its final state before a fatal collision. It seems that the implementation should keep track of the state before any collision occurs. Tests should ensure that typically, when a collision happens, the simulation returns the current state of the snake. I should provide a code example with proper documentation, focusing on how to manage the snake's head and body during movement, along with growth detection when it eats food.",
+  "graded_at": "2026-09-08T00:18:04"
+}

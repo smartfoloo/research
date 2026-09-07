@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__ja_directive__sample5.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # Direction mappings\n    dir_offsets = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # Helper to check opposites\n    def is_opposite(d1, d2):\n        if not d1 or not d2:\n            return False\n        return dir_offsets[d1][0] == -dir_offsets[d2][0] and dir_offsets[d1][1] == -dir_offsets[d2][1]\n\n    last_direction = None\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if not alive:\n            break\n            \n        # Handle reverse direction rule\n        if last_direction and is_opposite(move, last_direction):\n            current_dir = last_direction\n        else:\n            current_dir = move\n            last_direction = current_dir\n            \n        dx, dy = dir_offsets[current_dir]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n        \n        # 1. Check boundary collision\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n            \n        # 2. Check if food is eaten\n        # Active food is always the first element of the food list\n        eating_food = False\n        if food and new_head == food[0]:\n            eating_food = True\n            \n        # 3. Check self-collision\n        if eating_food:\n            # If eating, tail does not move, so head cannot collide with any part of current snake\n            if new_head in snake:\n                alive = False\n                break\n            # Move snake (grow)\n            snake.insert(0, new_head)\n            food.pop(0)\n            food_eaten += 1\n        else:\n            # If not eating, tail will vacate. So collision check excludes the tail.\n            # The tail is snake[-1]\n            body_without_tail = snake[:-1]\n            if new_head in body_without_tail:\n                alive = False\n                break\n            # Move snake (normal)\n            snake.insert(0, new_head)\n            snake.pop()\n            \n    return (snake, alive, food_eaten)",
+  "stdout": "FAIL case 5: expected ([(3, 2), (2, 2)], True, 0), got ([(1, 2), (2, 2)], True, 0)\nPASSED 5/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 5,
+  "total_cases": 6,
+  "all_passed": false,
+  "prompt_token_count": 448,
+  "candidates_token_count": 1434,
+  "thoughts_token_count": null,
+  "total_token_count": 1882,
+  "graded_at": "2026-09-08T00:17:49"
+}

@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__ja_directive__sample2.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # Direction vectors\n    dir_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # Opposite direction mapping\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n    \n    alive = True\n    food_eaten = 0\n    \n    for move in moves:\n        if not alive:\n            break\n            \n        # Determine current direction from head and second segment if available\n        current_dir = None\n        if len(snake) > 1:\n            hx, hy = snake[0]\n            nx, ny = snake[1]\n            dx, dy = hx - nx, hy - ny\n            for d_name, (dvx, dvy) in dir_vectors.items():\n                if dvx == dx and dvy == dy:\n                    current_dir = d_name\n                    break\n        \n        # If requested move is opposite to current direction, keep current direction\n        if current_dir and move == opposites[current_dir]:\n            move = current_dir\n            \n        # Calculate new head position\n        dvx, dvy = dir_vectors[move]\n        new_head = (snake[0][0] + dvx, snake[0][1] + dvy)\n        \n        # Check wall collision\n        nx, ny = new_head\n        if not (0 <= nx < width and 0 <= ny < height):\n            alive = False\n            break\n            \n        # Check self collision\n        # The tail cell is allowed to move into (unless we are not removing the tail, \n        # but the prompt says: \"ちょうど移動しようとしている尻尾のマスを除く\" -> \n        # the tail cell itself is exempt from self-collision).\n        body_to_check = snake[:-1] if (food and new_head != food[0]) else snake\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # Check food collision\n        grew = False\n        if food and new_head == food[0]:\n            food_eaten += 1\n            food.pop(0)\n            grew = True\n            \n        # Update snake body\n        snake.insert(0, new_head)\n        if not grew:\n            snake.pop()\n            \n    return (snake, alive, food_eaten)",
+  "stdout": "FAIL case 3: expected ([(1, 2), (2, 2), (2, 1), (1, 1)], True, 0), got ([(2, 2), (2, 1), (1, 1), (1, 2)], False, 0)\nPASSED 5/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 5,
+  "total_cases": 6,
+  "all_passed": false,
+  "prompt_token_count": 448,
+  "candidates_token_count": 1582,
+  "thoughts_token_count": null,
+  "total_token_count": 2030,
+  "graded_at": "2026-09-08T00:17:48"
+}

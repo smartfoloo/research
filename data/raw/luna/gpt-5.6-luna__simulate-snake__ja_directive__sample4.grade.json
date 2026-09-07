@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_directive__sample4.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake game.\n\n    Parameters\n    ----------\n    board_size : tuple[int, int]\n        (width, height) of the board.\n    snake : list[tuple[int, int]]\n        Snake body, with the head at index 0.\n    food : list[tuple[int, int]]\n        Food positions in activation order.\n    moves : list[str]\n        A sequence containing \"UP\", \"DOWN\", \"LEFT\", or \"RIGHT\".\n\n    Returns\n    -------\n    tuple\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposite = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # Infer the current direction from the head and the next body segment.\n    # A one-cell snake has no initial direction.\n    current_direction = None\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        delta = (hx - nx, hy - ny)\n\n        for direction, vector in directions.items():\n            if vector == delta:\n                current_direction = direction\n                break\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"Invalid direction: {requested_direction}\")\n\n        # Ignore a reverse-direction request.\n        if (\n            current_direction is not None\n            and requested_direction == opposite[current_direction]\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n            current_direction = direction\n\n        dx, dy = directions[direction]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # Check whether the new head is outside the board.\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # The head eats the currently active food, if any.\n        eats_food = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # If food is eaten, the tail remains in place.\n        # Otherwise, the tail moves and may be excluded from collision checks.\n        body_to_check = snake if eats_food else snake[:-1]\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        if eats_food:\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n    return snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 558,
+  "output_tokens": 1259,
+  "total_tokens": 1817,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-08T00:18:04"
+}

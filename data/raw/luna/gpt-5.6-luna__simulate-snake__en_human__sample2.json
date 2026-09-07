@@ -1,0 +1,132 @@
+{
+  "raw_api_response": {
+    "id": "resp_0dfee17d2464ae0b006a9ed0a1c60087d0affbee5d5d6ddbe5",
+    "object": "response",
+    "created_at": 1788792993,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788793016,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0dfee17d2464ae0b006a9ed0a23adc87d0b4fcbbe64d0e294c",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntC5Nrk6mJxMcq8dbDm7lTXkySmEAVUM2iG6TQf_wXi9_v6vt7M2t4ghfi3089ChGg2F6x2RJXMgQpRu_YIHyZJCEzbvy37DIFG2oDINA7mAB43O6SyfZmciy00HekeMEhZv_tazSdfBuXBSUFPKs-lBLyV87LHqHXlH-Bgv7yE34lJEtmkm4Tt5pDVJkWsYxp5coQRbdd9Z9yg0FmZ-B6YxU6QEOPhSKGXc8y_1ElR5HlxP6nINq5u4AV4Z5fLm6gSPxguRkdo3vlxBzHv4br1xdHgHuwb-9eM9ai7SaOCDLtD2FITBDAe_3FBd96dextLYhWxtr2DZm-T4bQc-qc9xPHT4jKLu39SAm_CLu2Ea0uJ4N6aKbqovaxc19v8wBZvUv2KwhHpo60azptCNMYO12E87G07iDisgidHnv8NibkwLZPrzbEAFVTm147WOLPfT9YNPZZsy-lE43_C1ZVsiAvTn4IYF-8w0RUaeD4Do6s6YubdC7jDJMNyjgFsUEbpKj9QFyZdR7cgSo49NErhLlexpygdObGOX1uvnx6XttEkLXA3-l24-Zltvb53N86YWOuClEqvmEJfxv2Ak4DxASp6rYrMc8Q55dtV3QMDE0iClU7biLdGY0qKpumoZcoSED2FV5Uu_19ubBsj3Rh3ckseff2wZMr0rUSq5JX_VZdSOERZPz-WL-TU_ERjDX61mcWiTxjmtpS8k5gpuz9sv9DkjHo7G83AZU0pU5fyRpHVOlWMPvU_6XVWwDBOSqPbJyEhzlPUIA29dHUjkB8kgwaLiGKqjD6KShCuSJ4hCvY6Yr0DgU2sP1h_mKgseZN_IY4PdP0sgZmwxefW0wMogx2Ys-r9XJCrc970o10J714nuuVYKoIwAF0pXrJPzQrLSIhCVCSK4UxYADXgQY1_GN1RleUc559huKLv5Ck_dw-Gk1gEf3Ii29s9kv2nlx9AB0FC0iCroKdJxEnO799Pv3pnr_ssPJDzZw4Aod-cKt1OCvQpiITpvw2gfI-F0FcvnjJhCCUJsEwF0wLtKn0vviujH2rG-g5LVS9V3VzlZjMrqZKYvHnkEJRG1AsaXyKXWVALJASuc2O6T7FTbh48_dhq63ihR-T6rmGQjmtjhpWmhYecspvFiYOYB7w5GCPB0hZJ_90QtaeOF24dubw8gF7n8y-WQnQsgHGl4pRxf8BTVOx2G4jL-EekiO469iHNTFPRKtU-BLXpRD_UNcVYIKt81uuCYqoRXmaitpZS88oD0tAcMtrinBNV6OacD8bXzygwPQWNymESzXFxZcA-dNl8Cjtf1IEa78jJQsgfbduhe6uI6HgRadu7lDnhSZHtGhir1RHlHo0YS51FnYrsXcFqyR-WjqhxmjXtd2g_oINKJhWEDk63Lx8cqQHffOQuq8qr3ADns2FdT2D40qYnwbkg_mf_D119ofdXrgx1TaGoNiV9BAr51KP3B0pTOT6L163buuw-lPNeczi7dEvRWLrLsSOZ2FJad2WVGwi8sTC2nRmsl4ej-rOdv5pc8C4Lk_e28UWqgpAjTZGyEXr8oS3xpl2Eh5H4ybxbpD5rz1dzyS5l2oXz1QUWk7TG_9u7Jcy9nVpAocrAf7rTg-6T7ItP2X5FjZed-JlxXxiC1u921CoHb5tnl6ZaX3dxmlUomPT3MU_kH1qCKxyt75EXryu63h-B_ViHRoLjiOjhMwaT0GB2V9sCWQ3M-kVWYK_REJ00ygBB8Q-tMx77ICIvBzlQTwDx63L3icbf-V-VVMlnaKS1Xi2NQwPXJZyhmPS659zzZE1uqFCXCMz9Xb9Svhr5xJx76a2oSRrmmppUEcD4MEyI3NsKyB9Ynzjsl3PG2y5wc0zTElE8UmTqnu3lgslVBlWs2Qme_oBxTv75TiHBGX8TiXMzJze_EIryIJ-uwgaEJgOl8AL8NBcwI6a9vX9Z2ye8V-L11EcsetxDhv3FAi3qvK_wmHErRQTF25I6txrHdie4KIV6CLaDrHFVL-2b4Qi7DLCboSb610TFtogVpa5m5gHBzni0-VFGQR0D15iWGsYx1N-beZsGc9y-P8SO9Dkblic0iTQWRaY-KmoorS2u8VRs9NYf3WMVknjAN3Hl813X1BxSjJngVtpOzCa2--s2pWcQJnPRziuTR7Xz00Hi5Sg-Gcrmv6uNyt8CPZ1ncf2yRTuMo9zVmHS0xffAcyhMIJ-ow3Y-F2gS9nRFLF6eWXpKWWvmc9VdKt34zwAuAkpoJfEJwN_iC37eSasOo02mI13mWjFV2fFZohlgy7VihUJ1NH7U06W21ViDierI3i_GctiXGqNOR9zA3XvWwGs8NOMmilxY1McDxAS6OhJDXRztWmve0R7vQYRJHIWN4VRcbm1RlM6u7VNSq3_L4CjCNDZjQbLBPH61LLSbhgjzH6FsUIMat2Pfhe4L0OmoMa3d4NX5ZHFlTSa73dK5mi_v1hufAab5MWzp_R5mieknjiRpWb_RtGMHnF2RhelmDbVvzh2O_Xr9ocVXf47gzaCmt-m4Umy05ADTixCbfzsfzH1rOEELaAp5vPyE-ze8N5CqcoeHXeQQy6RsGoXYlUaFhWi6VD5WtcrVu5tXET81ngP6KgENkVU3pe75fbl1L3toOvWJtYc9XG86KT3qRy2D5LqjH_rdsnI3L-MFAswHfPdsQYz8r-xqX5HFLfcn7A0kS0qEZsQGv5fPQr_uUVE-wjZXhVf63sjbJCF7AG4hH3QckcUkHsqH-uCIq5CsJ2KxbWgyqX7V9smqE2gV6HIBUlAAQTVWq1zknq5gBohl_DmgsCRbUw76pwbGomucAa_qiybKWUhGp_KeLvUzF9Yf1eXHY1HbV14INUow1q_o3xayE-qRkKr999SJEj7rGoOZGJtrB0o6eCm6piF9hWPbUBBWSBhruUkRJ5c10ZG8J72mnjfcc7tcc5-lL755w0j_nPthGcblMMBZ5mFMftuLy6kdNpt5jsGBrzCJxDQbhCn2eu_XFL95IkcaFvx6herXa7E-x-8-sfkTKKgWDFVe_Do8u_aqxjxBIMi8gSMpZTzR2pfXTnsdJDJCG6b2M5Mboo83_fFcL9ynaGpDSHfuPeIqXnIITVqjHRh_qle15eZBcvEzftcldHMNVwjUoMjJagXR2yP1YRIuDPzdwhQW8ivKYrMFA6kcRPaCEUUx_yXrmgjjgcdCm0eWiEJAUoSZdl4nOrW95WKsAI-67Um5QX2-Qdz100bj61jI6ZTSxLf8J4DgJ7rannn7rynsuMXlTQP7n4Gu9u6J5YjJNpU8SYUUbItu-G1-bAtycyjxQmBKf5nQjdYE8cTMho7a0Q99oFE5rpCDwkyYOqeU7LV_B1Bs6TOQ9Rs9bft2aFa3S6um0vo2jHlaSMDjny-4QzzXHqH8p5O91LGNQRCXfvzI_g0mVGDEKgoZdWTK42XBD-Fb___ZSeEOHgk9h7bxjf2WuNNu1HjCNll5fZL5TDSdTCytCRPtAWUuaw9tfakKza161DTt19nyx32RjNPV2ASDbj6bTAGwT-quZ5hVeGRBKlcnELBDBCOFe6PKMjB3A1jeKvkbBsxc4C87YWf1PivcgPJP53-092CysAjSzrm9SXI0gbd6OFv6MLEhsb3hhgsFLiRurOveIrhnQzudO6Sy8V34Z4yGHaVd8qZVVTgcU0F3Nq34Fy4qav9Mrdtg6R2QtN6xE-q4h8RijHLClmDAW8wEkDsh3HNKrW6M-2zP9m9lzjATaUVD9LsHybp0siRkGcRY3Y55P5AjAsO5K3MYKHy7EHIGvxkapDMqt8hPXJD8vC-TcXLEfL0-hsXhBvnENj6OuVvfbzHBTnrxSKUcIxC_rhewJ9RYqd5J8VNwHmBIEZc38aaLFIyQYkCoph5QWpqljh_H7xGBfRDv90MTOFRGLWgmYMxaIsUkrefF5LnYx10Ui_PAJDeMmU1e_lXfp0Ntt-YOGRJrlnXIqe0bTMtBpDD3MZnlmZnByiWE7UyOLGwNGVBHSX8tC4Hw71U-2AzdTftS-lbazyy5wJ8PxjPnFDCPqTI_zK2ScHBG3h7KOEhnPedm12x0wjnokHfYQ-7Zjqe1WInVKtq-bw5V3weKjT1i4H3cc4NTB8nhNNwHwILCyJ4PX02Xrm7kP3bzEJ0LdBlyak2nKP-ZnzgKYW_K-RofOy8enRYr8oqO4-rO3HbHGbgRGNmK1nsXAJvaOt63hOmvQlKHXVlHw4z24Aho2Z4MHqkIKtlAixo9YeRIZzRmfp8TbO5gOXq4T09ZZqT4C_kkAxbM6np1OYs7Z0Lbsgwb7uQVEHEdgd8N8Rd3CTm_QfYgprXFQmQq4tzBDtVMgGn2V79DRqGn2cg7fgSuvR6CnxFpn8P8VMEmpE-hEawE5Oqikr4je1eDaNlgogds78DtQg3XlUk56dJTNz8slGolLW9PTubrGpW7JeIhonacNmY3opapGvlcMZAGJOdFy5FfplNWW9tiEK7JUTYHoAvFdGF1dqhSt9AZjM6ih080dljvJZ1Gtu9INOtZ-BvEQeOh-P6NIMD5VBgp-9E43v8UWz882xlSmTf6eNii8oJxYmm7OhqphQD0ewVcszJT_Jz-GDcLn",
+        "summary": []
+      },
+      {
+        "id": "rs_0dfee17d2464ae0b006a9ed0aad25487d095a00ec492b27160",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntC5____2lM85fFkXmZn9tJc8E0PvWGuzJcl7eqdQRF5jYbdNhdVrPe_ekBQdhkDEw9Ak2hG94Vmk5HdyQ5ZpL-F7_6BWejGRA_6oI-HDsrhRXMJLNb9m95BtjQrHuBj8yNCCNLxUujGUwfsGkVXq0yI_oYKQLUMRr6Xxbl89IotVn6q1LtM8lefUVXw7rXZrHV8XyZE5wUNgCLueQAS7idITbKeyQWSGXzGgYlfdYNuk8ewMTwI3bus5vt_AV5IdfaJ4uQCFM9bAqZ-YJoLjeYWB90VOHsIdHEUxHdqPaNg6X-Cl3PR1WDV-tnIq8t_Wh5IpDJUv2uA0KpyItQDlj99Gq7MHZljg_128C7rLio1q3C1myrZ3zqFhwY4FEZbz-Q5wDRf15yLdnL6RhM7lahS6Vmc6aX8n3FTXJXIe12sYC2bd09SuCIci7O9h_HiDTU3hDZ6PbDe3N-jv5rDtTVfB8hdH58Z48RmVEavFfg2OkRIPCtE8BSF6R08GcwKIB5o6wrs0-lvMWMGYWIKFB5EdqI2pEu4xzFUAONshDnfXy7C6bt2hF3uCQ_SGYKlt2Ba9affhE_2SbEwKy8_HTspAa5OAjjOkroB8Og4_Cj3C30c8PLluqIIvSCLcvVP9MugAgOn8mowITCaoQcXKiQdL6uEPRU5xQgK6Tg7hAN5m4bqUsnHTg2BlydMAvn56anZ5mM0NLVnhqyAD5cvLOh7EqGtK7y6J1fca3pCI72we3dIXJWIREdFkbR4VwTUidF66O0WiiAM2Jsorw-dbtKH9KxfUSeF9KG_sV6MSS2v6ZCVXZi0YUiAOOuJwp3mplCE8obeO3D4FcNCTdxFR3F9Hda0brEvXk0NIutuLGjn568yApjdZwSEybQ_sBfeNPJ2NBYXRupulevGC08eE8xu-dB51Flcux8sUU9udZtw_aKpWF9xAmWHjJQwWYZmUXkC1mdkaGwHFtJ8pxR8OAPJP809g4UYFf_K_Hav_Wv01_V3sH0Rw1gKP4demYMPSxwaUl4diN1g1DusvEbHLcY8qGwW3sdgrGgYqb4lDnJPFtmSrSc9zz5Ch66vW2yN-cdR8vdI3mMWG6y5HmOnObQtNhEkhRtpfU8wSlZ1gOEFeywesngpO2BAFC2HyDq98BjKEFHfruMItPHP7Xlu7TaZ9-c550WqH9Y-ABTybETBW2SqtQF-NAB_pbZRye9A8fHCSqPAOm9094ihkuWBiamIdSgl1CMioKn_QpuV3DPqNQLER3FsyApbr-gccFw1ruBmBJJXYBnXLNSGGpm4HsXdTpnEkiLlqWVG6MXkNL1qEfoXl5w2H1cI5--GpnyoeBuXA_v4PLiPqJ0-EzrDYy7QqpHbQnLitVpOMy8SCETnEtMcxpGsUTI56R--8TjpVtDGYcCA2P6WLbdWCly2LZQOjqTD-i9Ppz80sWU6_nvUCZKAaloJv6Fdsr8fUheal1ZjRYtZ9QpTIeSzXLYz-Z-YQletXx-aNVgxO-CVjxI5uA3LU0PlZhLVdbD_RHq-bvKoF1fgK_AJd-AgKWBC8Cov3vUtb9eHFNtKU-0zW2CpEx_7AbiZET-GbQEb5v7jaAIlFHVHqD7mfjgLwKr0oszdSuGzm_KPVFj8dqyhZJ30O7w7e6fzlG1I4ix6WZHMJmWBFRgaeBvUt7Ps9osLbUY1v08w-9CdKjcz0w7dIN7AjJRkzVyfrHpM2fvRBWHO7vjIDD3uOC7gYx68yIHXeDkNyV3pETC0jJ1QiaHAvnTBtdZ5MBMo9dhYdIl9MKCp7440dpGgvGz6IcwLBsowH5X_uOkVTIxTfFct2AQ6PfdqPJPDSsL9rWf_dMu0oKRxh2ZP3zN69aj4V0760Pu5yPdGob1YDfbCca3RakYTCQKkZ22ZdKXfXbXR8WSgKyfMn_rStlplw5Jx0jY2HkdnbplgrgV8B4TPcEd8camow5XJsVjJxoFh99FAzo6GU4DPrX61jBtF63e_KBhDkKzFlmK9P2ZajqybtCmoQnZTwD0PC1Q_TyAQDf5WI_GvUEY9uzyeKu7eqkjNxPlsUhUb8udx0Mg8_nWa9GpKc1znyX6x6yOS9YVbVXwVQiOB0gfFbuYnJLpBTqXnTub7EhxPS7g7vbNs1wtgu2aLZS6ST_RTEH9KBxAn0Kg2dja7LcmPKbSgnTYD7_sxGkmj0dwEyclo6BMCb2xqOuJyQUH5_SzuQEQl49zxaVlVwO5dMZzfbweGCA_93JeSkx_2dLa21Gh9IdGomRsV5nneO4SzE9AGH3IPw8i9nEItZHhF2_BHgq2KpCq2ayhpoA3d9X8qY3muiHX0n_Mbiy0Nq1u00zWf58ADEPx0zVUXo4UqoH2JXwAg2ylc1-sNgMyhpSQlYsJguhxivZTDpChy4AP1qT4ctgKn7qO1pcu64wgUzHW53r7bLALCD9ObjUuTGT3dXtB0u77iO1E0gtFi3p4c6Naie-ZW1HlB3YO1nftbRb5mPGeLA21Znt-_UbFYLcup2ZWDV6sVFiYjhMoZ5mB70WLDj05LMzXGeXlA3KVdeXlW8Fed4l4AzrI7qiQ20vHANBdgi6yzuq8NQnuqjZ1kB6LttjpRJE8TB882O4bBbqg6nHzFPkP85wZG5SVhckB-f2_CDVF7XuVsiP9S8KtlYlERYOnmXpo21l843xleNuUMjcmVTj4Fb3_8feJVeKcPGIGcuHHb0hvu8pE8TXW1mGykAucPJJTL21tt7qQzqJghAKX2DQJeHmLRzOQqfpNxn7tt98qyl47WzUwspPu1GvkWLX_8i_7c5VnxA64FvJ57s3H5jC9w9NqZcwTwNdp3keIk4tOVRH4O3hwRa1b2UuQtsUF62FkfIBJS7A0XNu0M1aIrYCEgw3vDaAJbSWuR4uKdXDhv7d84SKlp7KKYQRStb0EkfQhRFXTYQ-Q4BmfXmFaaBG_usv7hzRSSXpMqBYc5kHQcOZuFAGo9dR8aD3OEc4rmeMzZKkiltAVE7pa08vjP3tkFHnIkBrtRH0LZ2mu0-7DlOqi5V6saDI1ETN_xJILrVUbuco8J21Hj1D6PGems0y4evUKHWR2HVyyjGY0QeE-fNG3y2XfMTHCZoH0dLa0jV_2UUclOItfbY6m-27VxOH8ArbCorJeMDqPqJsDKdtEPk4LnTDLHHMHIUaeKqsIUBPumPN5j3TzWwaNNaasCMm6jWh9cJ1S1x9YLhZ-EK7OOTO9kexH926yFjeuEBNE4dJU9irJJZAzPMwzoV7MAwHiBnobb95WhmiHGVeVL6X6lf6PHmY3n8JyRWZ-LUMnQ0Ictws5wwjWUnYTcnQLrouW658CP_w4PS106fdvqAIByvec7dsy__2j0bNtNsYjmW9cbuH8PFcK9Wgqd4MVh-k90VqTGXapBJ_FivqyZCovB81-N18ovFEWxKGhx6dQYnYpzCLT6Zm8wrsq-PsgUr3OvB3q84fyYhi0B9YYdfU5TsSqkV8fknOy8xSTHQpRvyQm9bjO9xBdq8Biuz5X_ZMtGO6yQzW27WQC1H_Kf_KPH5HQTX2jEWkbv2qBdbPjBOQuXiZCWVC8hHK5WySO2EwjafyP2uYPizUnRNcBFxIM90FwGWmCsiQ6yC9NUO6ksbu8P3OLnai2kqyyj6_yXXsL3jhDB9xwu9assRZf_yGADOip-7Kk50hJSxeI-PUEoR8R8wjkOBZ8XsvW4wNeAviFaq2hXc2m5Sb3JpctpmTjiKcbPgyTpZ89Q4nSjt5EXzRONtUpVa194ixgNhQ1q6dE9gLfkGPLORiJQQVEBMrkZA8jJLoS00O6Menqgqim6olaLgw6LXcUAMHi4bQKK06egECmna_WAPlJ0KkTVEN3O13OxroQY3SnpbDyZ3ipCJXCkppf-O1c0NkCW-DV7L-9-HyvB0XsGsyZ3FrVJZL8JNdIFZaEi8omGuIybPhtqDxEqBYiO-fAeYLrq2Bsttuge6gwIEOuXYQrCjLnQP1k2wJOXwWUKx26sZi5W4Q-L0tZAYTW7jtP8gORGsT-vAxuwyYeUy9l0mehoFtHZxkoE1kXjo-CwVCHrh1Bny1ZPporhL2EGZqUVymgp3bO0WBlaOWmp9PwujhuzPv6jsoJ2tWRI6ZZCWlO0-jRwiil61NPEjB-0bP_yqfg79pzu1OJKpstjOgE3gziGRWREXPMBNKJUMKz86JlQv6mNXH-vNQaZJUCt_IHm4AH4XqZVOtu4cH_1WaVG0qdBn4x-zBghfkken6X37x_fpV6mvHqqxCcUIcQQMO38IuWjRhXnuqwgNFBi7u9tf3ZcYVBhVE6YMvbmIKte64bQIQGUTNXkFuvc5GSGRsrkk45t3V8_afT1CjvflGlmEoP04bMAYfc19p7z5jwbBOBRzU5DzbSCMvX-MF5Jh_FW4OpagzBFbLF5hkzEMUK2lu9AeV3w3Q==",
+        "summary": []
+      },
+      {
+        "id": "msg_0dfee17d2464ae0b006a9ed0b2b20887d08b4c0ab43ef224eb",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake moving on a rectangular board.\n\n    UP    -> y - 1\n    DOWN  -> y + 1\n    LEFT  -> x - 1\n    RIGHT -> x + 1\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # Infer the initial movement direction from the head and neck.\n    # For a one-segment snake, the first move determines the direction.\n    current_direction = None\n    if len(snake) >= 2:\n        head_x, head_y = snake[0]\n        neck_x, neck_y = snake[1]\n        delta = (head_x - neck_x, head_y - neck_y)\n\n        for name, direction_delta in directions.items():\n            if delta == direction_delta:\n                current_direction = name\n                break\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # A direct reversal is ignored.\n        if (\n            current_direction is not None\n            and requested_direction == opposites[current_direction]\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        dx, dy = directions[direction]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        growing = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # The tail is allowed as a destination only when it will move away.\n        occupied = snake if growing else snake[:-1]\n\n        outside_board = not (\n            0 <= new_head[0] < width\n            and 0 <= new_head[1] < height\n        )\n\n        if outside_board or new_head in occupied:\n            alive = False\n            break\n\n        if growing:\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = direction\n\n    return snake, alive, food_eaten\n```\n\nFor example:\n\n```python\nsimulate_snake(\n    board_size=(5, 5),\n    snake=[(2, 2), (1, 2)],\n    food=[(3, 2)],\n    moves=[\"RIGHT\", \"RIGHT\"],\n)\n```\n\nreturns:\n\n```python\n([(4, 2), (3, 2), (2, 2)], True, 1)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 403,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1700,
+      "output_tokens_details": {
+        "reasoning_tokens": 1034
+      },
+      "total_tokens": 2103
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake moving on a rectangular board.\n\n    UP    -> y - 1\n    DOWN  -> y + 1\n    LEFT  -> x - 1\n    RIGHT -> x + 1\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # Infer the initial movement direction from the head and neck.\n    # For a one-segment snake, the first move determines the direction.\n    current_direction = None\n    if len(snake) >= 2:\n        head_x, head_y = snake[0]\n        neck_x, neck_y = snake[1]\n        delta = (head_x - neck_x, head_y - neck_y)\n\n        for name, direction_delta in directions.items():\n            if delta == direction_delta:\n                current_direction = name\n                break\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # A direct reversal is ignored.\n        if (\n            current_direction is not None\n            and requested_direction == opposites[current_direction]\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        dx, dy = directions[direction]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        growing = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # The tail is allowed as a destination only when it will move away.\n        occupied = snake if growing else snake[:-1]\n\n        outside_board = not (\n            0 <= new_head[0] < width\n            and 0 <= new_head[1] < height\n        )\n\n        if outside_board or new_head in occupied:\n            alive = False\n            break\n\n        if growing:\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = direction\n\n    return snake, alive, food_eaten\n```\n\nFor example:\n\n```python\nsimulate_snake(\n    board_size=(5, 5),\n    snake=[(2, 2), (1, 2)],\n    food=[(3, 2)],\n    moves=[\"RIGHT\", \"RIGHT\"],\n)\n```\n\nreturns:\n\n```python\n([(4, 2), (3, 2), (2, 2)], True, 1)\n```",
+  "reasoning_summary": "",
+  "input_tokens": 403,
+  "output_tokens": 1700,
+  "total_tokens": 2103,
+  "reasoning_tokens": 1034,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "simulate-snake",
+    "condition": "en_human",
+    "sample_idx": 2,
+    "prompt_text": "Write a Python function named `simulate_snake(board_size, snake, food, moves)`. `board_size` should be a tuple `(width, height)`. Valid coordinates range from `(0, 0)` to `(width-1, height-1)`. `snake` should be a list of `(x, y)` tuples representing the snake's body and the head should be first. `food` should be an ordered list of `(x, y)` tuples where only the first one is \"active\". When the snake's head touches it, the snake length should grow by one and the next item in `food` should become active (if `food` runs out, the snake keeps moving but stops growing). `moves` should be a list of strings with `\"UP\"`, `\"DOWN\"`, `\"LEFT\"`, and `\"RIGHT\"`.\nFrom an experience perspective, the function should work like this: the head moves one cell in the given direction, and each body segment moves into the cell the segment in front of it just left. However, if the snake just ate, then the tail should stay in the same spot and the snake should get one segment longer. If the new head position goes outside the board, or would touch any of the snake's own body segments (except for a tail cell that's about to move away on a step that's not growing), the snake should die and no further moves should be worked out. If the movement being applied is opposite to the snake's current movement, then just move the snake one cell with its current movement direction.\nAt the end, return `(final_snake, alive, food_eaten)`. (Ex. `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=[\"RIGHT\",\"RIGHT\"]` -> `([(4,2),(3,2),(2,2)], True, 1)`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 25.21741795539856,
+    "generated_at": "2026-09-07T23:56:57"
+  }
+}

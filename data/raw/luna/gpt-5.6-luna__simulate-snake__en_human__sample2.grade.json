@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__en_human__sample2.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake moving on a rectangular board.\n\n    UP    -> y - 1\n    DOWN  -> y + 1\n    LEFT  -> x - 1\n    RIGHT -> x + 1\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # Infer the initial movement direction from the head and neck.\n    # For a one-segment snake, the first move determines the direction.\n    current_direction = None\n    if len(snake) >= 2:\n        head_x, head_y = snake[0]\n        neck_x, neck_y = snake[1]\n        delta = (head_x - neck_x, head_y - neck_y)\n\n        for name, direction_delta in directions.items():\n            if delta == direction_delta:\n                current_direction = name\n                break\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # A direct reversal is ignored.\n        if (\n            current_direction is not None\n            and requested_direction == opposites[current_direction]\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        dx, dy = directions[direction]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        growing = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # The tail is allowed as a destination only when it will move away.\n        occupied = snake if growing else snake[:-1]\n\n        outside_board = not (\n            0 <= new_head[0] < width\n            and 0 <= new_head[1] < height\n        )\n\n        if outside_board or new_head in occupied:\n            alive = False\n            break\n\n        if growing:\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = direction\n\n    return snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 403,
+  "output_tokens": 1700,
+  "total_tokens": 2103,
+  "reasoning_tokens": 1034,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-08T00:18:03"
+}

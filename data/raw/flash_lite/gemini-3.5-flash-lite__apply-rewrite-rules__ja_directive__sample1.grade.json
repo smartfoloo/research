@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__apply-rewrite-rules__ja_directive__sample1.json",
+  "task": "apply-rewrite-rules",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 1,
+  "extracted_code": "from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode\n\ndef apply_rewrite_rules(rules, urls):\n    results = []\n    \n    for url in urls:\n        parsed = urlparse(url)\n        matched = False\n        final_url = url\n        \n        for rule in rules:\n            match_type = rule['match_type']\n            match_value = rule['match_value']\n            action = rule['action']\n            action_value = rule.get('action_value')\n            \n            is_matched = False\n            \n            # 1. Evaluate match_type\n            if match_type == \"path_prefix\":\n                if parsed.path.startswith(match_value):\n                    is_matched = True\n                    \n            elif match_type == \"host\":\n                host = parsed.hostname or \"\"\n                if host == match_value:\n                    is_matched = True\n                elif match_value.startswith(\"*.\"):\n                    domain_suffix = match_value[1:]  # e.g., \".example.com\"\n                    # Strict subdomain check: host ends with suffix and has extra characters before it\n                    if host.endswith(domain_suffix) and len(host) > len(domain_suffix):\n                        is_matched = True\n                        \n            elif match_type == \"query_param\":\n                query_params = parse_qsl(parsed.query, keep_blank_values=True)\n                if any(k == match_value for k, v in query_params):\n                    is_matched = True\n            \n            # 2. If matched, apply action\n            if is_matched:\n                matched = True\n                if action == \"block\":\n                    final_url = None\n                elif action == \"strip_prefix\":\n                    path = parsed.path\n                    if path.startswith(action_value):\n                        path = path[len(action_value):]\n                    if not path:\n                        path = \"/\"\n                    parsed = parsed._replace(path=path)\n                    final_url = urlunparse(parsed)\n                elif action == \"redirect_host\":\n                    # Replace host in netloc while preserving port\n                    netloc = parsed.netloc\n                    if \":\" in netloc:\n                        _, port = netloc.rsplit(\":\", 1)\n                        new_netloc = f\"{action_value}:{port}\"\n                    else:\n                        new_netloc = action_value\n                    parsed = parsed._replace(netloc=new_netloc)\n                    final_url = urlunparse(parsed)\n                elif action == \"add_query_param\":\n                    # action_value could be \"key=value\" or just parameters to append\n                    query = parsed.query\n                    if query:\n                        query = f\"{query}&{action_value}\"\n                    else:\n                        query = action_value\n                    parsed = parsed._replace(query=query)\n                    final_url = urlunparse(parsed)\n                \n                # Stop at the first matching rule\n                break\n                \n        results.append(final_url if matched else url)\n        \n    return results",
+  "stdout": "PASSED 8/8\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 8,
+  "total_cases": 8,
+  "all_passed": true,
+  "prompt_token_count": 535,
+  "candidates_token_count": 1643,
+  "thoughts_token_count": null,
+  "total_token_count": 2178,
+  "graded_at": "2026-09-08T00:17:39"
+}

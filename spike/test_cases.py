@@ -79,6 +79,91 @@ TEST_CASES = {
             {"args": [100, [-100]], "expected": [0, True]},
         ],
     },
+
+    # Bonus/exploratory tasks (2026-09-08) -- see prompts-bonus.md. All cases
+    # hand-traced against the task prose below; none copied from a model
+    # output. death-case assumption, stated explicitly since the prompt
+    # doesn't say what to return on death: final_snake is the last snake
+    # state before the fatal move (the move that would kill it is never
+    # applied), matching "no further moves should be worked out."
+    "simulate-snake": {
+        "function": "simulate_snake",
+        "cases": [
+            # Given example: eats the only food on move 1 (grows, tail kept),
+            # then a normal non-growing move.
+            {"args": [(5, 5), [(2, 2), (1, 2)], [(3, 2)], ["RIGHT", "RIGHT"]],
+             "expected": ([(4, 2), (3, 2), (2, 2)], True, 1)},
+            # Two food items eaten in sequence -- food_eaten counts both and
+            # the snake grows on each.
+            {"args": [(5, 5), [(1, 0), (0, 0)], [(2, 0), (4, 0)], ["RIGHT", "RIGHT", "RIGHT"]],
+             "expected": ([(4, 0), (3, 0), (2, 0), (1, 0)], True, 2)},
+            # Wall death on move 2 -- final_snake is the state after move 1,
+            # move 2 (which would leave the board) is never applied.
+            {"args": [(3, 3), [(1, 1), (2, 1)], [], ["LEFT", "LEFT"]],
+             "expected": ([(0, 1), (1, 1)], False, 0)},
+            # Head moves onto the current tail cell, but the tail moves away
+            # this same turn (no growth) -- explicitly not a collision.
+            {"args": [(5, 5), [(2, 2), (2, 1), (1, 1), (1, 2)], [], ["LEFT"]],
+             "expected": ([(1, 2), (2, 2), (2, 1), (1, 1)], True, 0)},
+            # Head moves onto a non-tail body segment -- real collision,
+            # dies immediately on move 1, final_snake is the original snake.
+            {"args": [(5, 5), [(2, 2), (2, 3), (1, 3), (1, 2), (1, 1)], [], ["LEFT"]],
+             "expected": ([(2, 2), (2, 3), (1, 3), (1, 2), (1, 1)], False, 0)},
+            # Attempted reversal (opposite of current RIGHT direction) is
+            # ignored -- snake just continues RIGHT instead of dying/turning.
+            {"args": [(5, 5), [(2, 2), (1, 2)], [], ["LEFT"]],
+             "expected": ([(3, 2), (2, 2)], True, 0)},
+        ],
+    },
+
+    "apply-rewrite-rules": {
+        "function": "apply_rewrite_rules",
+        "cases": [
+            # Given example.
+            {"args": [[{"match_type": "path_prefix", "match_value": "/old-api/",
+                        "action": "strip_prefix", "action_value": "/old-api"}],
+                       ["http://api.example.com/old-api/users"]],
+             "expected": ["http://api.example.com/users"]},
+            # strip_prefix empties the path -- must fall back to "/".
+            {"args": [[{"match_type": "path_prefix", "match_value": "/api",
+                        "action": "strip_prefix", "action_value": "/api"}],
+                       ["http://x.com/api"]],
+             "expected": ["http://x.com/"]},
+            # host exact match + redirect_host, scheme/path/query preserved.
+            {"args": [[{"match_type": "host", "match_value": "old.example.com",
+                        "action": "redirect_host", "action_value": "new.example.com"}],
+                       ["http://old.example.com/path?q=1"]],
+             "expected": ["http://new.example.com/path?q=1"]},
+            # Wildcard subdomain matches a strict subdomain but NOT the bare
+            # domain itself (explicitly excluded by the spec).
+            {"args": [[{"match_type": "host", "match_value": "*.example.com",
+                        "action": "redirect_host", "action_value": "cdn.example.com"}],
+                       ["http://api.example.com/x", "http://example.com/x"]],
+             "expected": ["http://cdn.example.com/x", "http://example.com/x"]},
+            # query_param match + add_query_param appends to the existing query.
+            {"args": [[{"match_type": "query_param", "match_value": "utm_source",
+                        "action": "add_query_param", "action_value": "tag=abc"}],
+                       ["http://x.com/p?utm_source=foo"]],
+             "expected": ["http://x.com/p?utm_source=foo&tag=abc"]},
+            # No rule matches -- unchanged.
+            {"args": [[{"match_type": "path_prefix", "match_value": "/admin",
+                        "action": "block"}],
+                       ["http://x.com/public"]],
+             "expected": ["http://x.com/public"]},
+            # block action -- None instead of a rewritten URL.
+            {"args": [[{"match_type": "path_prefix", "match_value": "/admin",
+                        "action": "block"}],
+                       ["http://x.com/admin/secret"]],
+             "expected": [None]},
+            # Rule priority: first matching rule wins even though a later
+            # rule would also match -- stop after applying the first.
+            {"args": [[{"match_type": "path_prefix", "match_value": "/api", "action": "block"},
+                       {"match_type": "host", "match_value": "x.com",
+                        "action": "redirect_host", "action_value": "y.com"}],
+                       ["http://x.com/api/foo"]],
+             "expected": [None]},
+        ],
+    },
 }
 
 # No CUSTOM_HARNESS needed — lru-ttl-cache (the only stateful task) was cut

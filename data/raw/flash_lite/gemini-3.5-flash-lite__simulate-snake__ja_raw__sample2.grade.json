@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__ja_raw__sample2.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    # リストのミュータブルな変更を防ぐため、コピーを作成\n    snake = list(snake)\n    food = list(food)\n    \n    alive = True\n    food_eaten = 0\n    \n    # 方向の定義\n    dir_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    # 反対方向の定義\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n    \n    # 初期状態の移動方向を推測する（頭と2番目の体の位置から決定）\n    current_dir = None\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        dx, dy = hx - nx, hy - ny\n        for d, (vx, vy) in dir_vectors.items():\n            if (vx, vy) == (dx, dy):\n                current_dir = d\n                break\n                \n    for move in moves:\n        if not alive:\n            break\n            \n        # 指定された移動方向が現在の方向と逆である場合は、現在の移動方向のままにする\n        if current_dir and move == opposites.get(current_dir):\n            move = current_dir\n            \n        current_dir = move\n        vx, vy = dir_vectors[move]\n        \n        # 新しい頭の位置を計算\n        new_head = (snake[0][0] + vx, snake[0][1] + vy)\n        \n        # 衝突判定 1: ボードの範囲外\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n            \n        # 餌を食べるかどうかの判定（foodリストの最初の要素が有効）\n        eating = False\n        if food and new_head == food[0]:\n            eating = True\n            \n        # 衝突判定 2: ヘビ自身の体の一部に触れる\n        # ただし、食べない場合の尻尾のマスは移動によって空くため、衝突判定から除外する\n        body_to_check = snake if eating else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # ヘビの移動処理\n        snake.insert(0, new_head)\n        if eating:\n            food.pop(0)\n            food_eaten += 1\n        else:\n            snake.pop()\n            \n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 441,
+  "candidates_token_count": 893,
+  "thoughts_token_count": null,
+  "total_token_count": 1334,
+  "graded_at": "2026-09-08T00:17:49"
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_raw__sample1.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビの移動をシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # 現在の進行方向を、頭と首の位置から求める。\n    # ヘビの長さが1の場合は、まだ現在方向を持たない。\n    current_direction = None\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        vector = (hx - nx, hy - ny)\n\n        for name, direction in directions.items():\n            if direction == vector:\n                current_direction = name\n                break\n\n    snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n    alive = True\n\n    for requested_direction in moves:\n        if requested_direction not in directions:\n            raise ValueError(f\"invalid direction: {requested_direction}\")\n\n        # 現在の方向と逆向きの指示は無視する。\n        move_direction = requested_direction\n        if current_direction is not None:\n            dx, dy = directions[current_direction]\n            rdx, rdy = directions[requested_direction]\n\n            if (rdx, rdy) == (-dx, -dy):\n                move_direction = current_direction\n\n        dx, dy = directions[move_direction]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # ボード外への移動\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # 現在有効な餌を食べるかどうか\n        eats_food = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # 通常は尻尾が移動するため、現在の尻尾のマスには入れる。\n        # ただし餌を食べる場合は尻尾が残るため、尻尾にも入れない。\n        collision_body = snake if eats_food else snake[:-1]\n\n        if new_head in collision_body:\n            alive = False\n            break\n\n        # 頭を追加し、餌を食べなければ尻尾を取り除く。\n        if eats_food:\n            snake = [new_head] + snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = move_direction\n\n    return snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 549,
+  "output_tokens": 1262,
+  "total_tokens": 1811,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Clarifying snake movement rules**\n\nI’m thinking about the meaning of \"active only first element\" — does it imply that after consuming the first food item, the next one becomes active? I need to keep track of the food index. There could be a potential problem when the snake length is 2 and the tail collides: if the current direction is RIGHT but a LEFT turn is requested, that gets ignored, which seems reasonable. Also, I should consider validating if the snake's head and neck are diagonal at the start, since that could make the direction undefined.",
+  "graded_at": "2026-09-08T00:18:05"
+}

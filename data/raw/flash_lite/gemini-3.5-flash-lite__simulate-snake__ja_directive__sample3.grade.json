@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__ja_directive__sample3.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # Direction mapping\n    dir_map = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    food_eaten = 0\n    alive = True\n    \n    for move in moves:\n        if not alive:\n            break\n            \n        requested_dx, requested_dy = dir_map[move]\n        \n        # Determine current direction if length >= 2\n        if len(snake) >= 2:\n            curr_dx = snake[0][0] - snake[1][0]\n            curr_dy = snake[0][1] - snake[1][1]\n            \n            # Check if the move is the exact opposite\n            if requested_dx == -curr_dx and requested_dy == -curr_dy:\n                dx, dy = curr_dx, curr_dy\n            else:\n                dx, dy = requested_dx, requested_dy\n        else:\n            dx, dy = requested_dx, requested_dy\n            \n        # Calculate new head position\n        new_head = (snake[0][0] + dx, snake[0][1] + dy)\n        \n        # Check if new head hits active food\n        eating = False\n        if food and new_head == food[0]:\n            eating = True\n            \n        # Collision check\n        # Out of bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n            \n        # Self collision\n        # If not eating, the tail will vacate its cell, so it's not a collision spot.\n        body_to_check = snake[:-1] if not eating else snake\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # Apply movement\n        snake.insert(0, new_head)\n        if eating:\n            food_eaten += 1\n            food.pop(0)\n        else:\n            snake.pop()\n            \n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 448,
+  "candidates_token_count": 1134,
+  "thoughts_token_count": null,
+  "total_token_count": 1582,
+  "graded_at": "2026-09-08T00:17:48"
+}

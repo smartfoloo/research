@@ -1,0 +1,20 @@
+{
+  "raw_file": "gemini-3.5-flash-lite__simulate-snake__mt_en__sample5.json",
+  "task": "simulate-snake",
+  "model": "gemini-3.5-flash-lite",
+  "provider": "google_ai_studio",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulates a snake game and returns the final state.\n\n    :param board_size: Tuple (width, height)\n    :param snake: List of (x, y) tuples representing the snake's body (head is at index 0)\n    :param food: List of (x, y) tuples representing available food\n    :param moves: List of strings (\"UP\", \"DOWN\", \"LEFT\", \"RIGHT\")\n    :return: A tuple (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n    # Make copies to avoid mutating input lists\n    snake = list(snake)\n    food = list(food)\n\n    food_eaten = 0\n    alive = True\n\n    # Helper function to get the current direction based on the head and second body part\n    def get_current_direction(s):\n        if len(s) < 2:\n            return None\n        hx, hy = s[0]\n        nx, ny = s[1]\n        if hx > nx:\n            return \"RIGHT\"\n        if hx < nx:\n            return \"LEFT\"\n        if hy > ny:\n            return \"DOWN\"\n        if hy < ny:\n            return \"UP\"\n        return None\n\n    opposites = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n\n    direction_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n\n    for move in moves:\n        if not alive:\n            break\n\n        current_dir = get_current_direction(snake)\n\n        # \"If the specified movement direction is opposite to the snake's current direction,\n        #  move it one square in the current movement direction.\"\n        if current_dir and move == opposites.get(current_dir):\n            move = current_dir\n\n        # Calculate new head position\n        dx, dy = direction_vectors[move]\n        head_x, head_y = snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # Check bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # Check self-collision\n        # \"touches any part of the snake's own body (other than the tail square it is about to move)\"\n        # If it hasn't just eaten, the tail will vacate its position, so the tail is safe to move into.\n        # However, if it eats food, the tail stays, so the tail is NOT safe.\n        eating = food and new_head == food[0]\n        \n        collision_body = snake if eating else snake[:-1]\n        if new_head in collision_body:\n            alive = False\n            break\n\n        # Move the snake\n        snake.insert(0, new_head)\n\n        if eating:\n            food_eaten += 1\n            food.pop(0)  # Next element becomes active\n        else:\n            snake.pop()  # Remove tail\n\n    return (snake, alive, food_eaten)",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "prompt_token_count": 428,
+  "candidates_token_count": 989,
+  "thoughts_token_count": null,
+  "total_token_count": 1417,
+  "graded_at": "2026-09-08T00:17:51"
+}

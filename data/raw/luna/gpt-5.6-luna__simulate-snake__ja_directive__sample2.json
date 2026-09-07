@@ -1,0 +1,142 @@
+{
+  "raw_api_response": {
+    "id": "resp_012e1b8187a78ee5006a9ed1c493d887d096fb31447fd01234",
+    "object": "response",
+    "created_at": 1788793284,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788793298,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_012e1b8187a78ee5006a9ed1c54ab887d088d8f4a7bbd2cc42",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntHStIcH4ARAZadWrzpKypU28QShrJwNSuYaF6v-uvTYOuQQw-N08hRhov4deIGYvz3_b2VEJCu7eRWzEctjKH9jOL9_yJ_yyFz2x_mpl4nLXii5NHza2aSFB1OgXDDE0ITCPplt7L-sMC1Mf-vLI2C77GghOuV0FCqBgqIlj_GYq8Qosg8bOpJXnVJ50wbOxLBHUcfXIpZU843LuouorNMQfu8Wid0nafVeDTN7AC8LdptEd_K8aLPhek5QIZ8WNTGzt1dayD8Ro6UpLqk94YBeBme7sNq9vrJpeuYdbIMSEkQ8bKdBy-k_Wu7jXpGmBnOTO2xSUF0tBPBlySiPXxWueEbkM9QY5zNqL7U8FJXwSvbc5bts0mpXtbxw1uZEadq02YPWm_zb6tKoBH1Uy85u0LOkzQrJEj6dzI6_iABTSUX_Pv7lJoIjYNqoeJ7UQEazFirxcGV8ONTiEvtGLZdOYfDmvV6Q8t6dnQmWPMIagdhjIOBCTRuGesDxMVyaOYXHiwBaGbsKeaYFk40FWWH5Ud3N_iPjeKXprb00kmgLbiX2ils2YzXih6JYBSwDKqWkELcej4a9QWYw6YMinv0SFmBVpd2hbwQW3QVwTulqalabJJ8pylegWA_8nXOfS6F7_Y-lzKNqQCqQBo1dp-RAOlHi4sRYy-Pd4yvhTvHeGDh1XX8LIUiP3rKt5t0ob_LDcW-mQWRSvp0sWPkcR_bTKXlmlQjYwVVilWUefoYqigtSL2E4vhk_wDOq0o3lu61aktlKS1pKzoDC7JjjzKJm1uGvE051dpyM3QEp-q8pF0ReQX0oH-eSzGrfmjeyOCEH68GliWfXd-QFhrJr-Xy8CxN2VEUTOEQDLrTCnKnyRIQhJ6m2n_4Nps_g5FXI557y6aHrC1BxPxKDcyjvCEHUgp5j7alJ28f5MuwYJYUMLNtTG2_iay855zuIZDwLdp1PWNMRKVSs9prboReLCf9bsgkOHFBiX3s5DKj1QpIUF_saWMV13Z7TOpYAnn1YUjBXfQnas2Bmd5GOttjdYNPkSKE5wta1sCCNd9Zr953RqX84W4EVWpUVKt2BjSO1l8YR8cNQo7LW2P7sc5MmkwELndzTGS5TsGmSIaEJiVUD3LW9rS8VdDoOQSbeLveSGsPGUrJTUxhQ8IfpZdq5WnZIyHufr1kCHPzqGeUr3-otn5oHVzaGoVa9XWghBN_RI3ziDo56321X4-IKFV-FDzo13OaTUBwKjV6TfujFUOqXBo_hv90RsXR95OdU-Q7Jw6Pb-akNAmKsNv6dG8qzV6oyZEBUEX_WAU2Ds_dNaFLKtW5z1IWa4YjiO1eXPlz2MPtS2N2_lvAqz6RBZeQjL84PdFmA834-o3erMhN-gnGk6kuQvUWstXL4lCGqIkdj0-4po8qKqPEP0eFwee7LQbSLNBkOLzaoNy4yKI-2T3F7ym8uAB_3vgZ9UpIuK1vBnOx-2BP76HAyzLf-0GIdrwMbzlptSe-NYrkXnEXuuI3P2dd5RJCUJFi6TRdHUxtx2A_vw_DuEwugoE-8__JmNs3q-nEv_1dwgFrBDyk8qlegbpMqrsz9py3cEM1wLQG0QdWV4MojeUAovHOpOxQpHvK6RM8-S2qR26EFNxE37mU-hAGAB-XcX-tpWxEjShR2e9z5_QFbRxS_TCTCOTMowLvj42tguYOuZqku6o5tcfQ7RPiaEVEZ3b_lon0Zba4WSXJz0zT82THhxCsns5bZ_93efsZZ9hY7ufpQKiTwj-GZskcNFLKST10u1tuYUFOO-85VwDdejIBmFgTG-ZIMuAAcZmhxsG8GbZXgOVdVha64dyQxZPTiAVUjPDvGbIFyMiEOZTfeBOJQKPFlJsj0LRn6fzr3NDveKy1Po3JSHTFlx3SuZcROdKUouXh1BI-I0NsLmciEszXj_tijEpUI5J2CK5qFDY-nNUjavtE1j1wA6uhtGoP1eLIjH_S1XAs-Bu9HdkFM1Lcr3trdp1kKMVvqjSUcCtYUAXPwsmAA3QP-gKUvGhXb5D7SPzbRwDlaOJaxVb9OZ8OCDA1bn2V9cUcEBUSCZ1G-ZduXbKpVueacnrE61M6GOWVaQR-OlxwYY83WTgrxtjej9FMthCKdd1ROqRsYMHn3Qj7ezz9M4X9L_MEaKZdc-_4f0__rT1X2yh1Mn5f3X-zysc76glK9j5ZcoY52tq6WKphxYqLTYI1pXtm7_9b1QTnRuhGmUp_qUW_OVzlcQGM0-5sqYnW8tjgLu7dDY9v7eYxKU-x_UoMeZZJFyaa9KzYva_C9WrDncnRGN0M1vQ4LAUhoikI1bzgXE6knvzvw_o3fANBOPVGdhkKPe9CnfasNI2VV6FNZQSgwmoG6r2KKiOqgrpCHgjWHq2Moev9WumTZJy5Ozj0AQjN-QtfHBFHT7UJ3mDNe1lQUjJ0rS49z7RtxecQPdXuRh-0_0wOA7tlbf7VCmQj-ECwmln_pqo_SReZ4q8DESLyKlHyS46r54DFbpc0v54cVpBPvnS8gP5OGoMn0aAq-XdUos0i3_pBDwQl1e9nBPEoSKjgySpApb215FQf-DsnOutgrtHXBthCntJfaMMOAieZBHMCm_GrbL50yGPGIZZo-uVbqEbwaBLI2UMJC7utl0qlOxZkvX_Bi7REJAlKvBuQ34minuUE4DkkXxPk2mjFeYaxbec81iI68BA21w0qQQPgaXEWTjNTZ-7QUB6FTYImNbxpsv-_c-VJpMmjau_qs-x09YhPtLetAGjTek0qARQWSDyKBRPkDMr6LASSqFjLA33G3gZNhkLwp-_xqyjI_1gYDQfUNTleUqdafn4vmh9OjFuK4PxnOpX0h9zpr125sgfIz8xm7sVUDcVrnp0bqknPTiN6-8Sk6AoNkcz3EjCgr7Xw6Z1eyK09fPU20OGmzSLdWFyOtYr0ZkZv9lfFAkoCaS8TaPCt6DMSatq27F1_1G3p7m75vd5Bt3JFePdEUmEogvdnL7ON43tmgbFQ_Q35L-tFRCEwozCQIPrI9FiLoBpenq8YY8GTSneIiOctj3-ir9gutytdH_0_FbbOlXQyeNQAlgldkQeUIKhnhXsR8LhG8GEnB_BkoRirIJcVObjCiaSH1fFfUl_wAOft4msI5N5f7IFzYTghqo6yko6ZUqZELauxu7brHnNrVfAf5oUzKZQ6T_-kFlvhMenZm-IyTDdHiSzLpCn9hpSom45MydppZvIMz3AbuE9ZNn2HQSsNLR4Xh-zH6ZLt1YiC93lDWLp-2VOnu8xhtNIpxR5nrC0BbQeEnG3-HPxwuwGiX1R3ZsqezxDi1y-w2_9XE-IKKsMUcp1Fn9fJqCSC3XuDvOuiLN2hrxDhiKA0gMINN4kZVSsQUdiHbjeuqOhwrKe0g4xUHHrt4g8sl20jrBKEy6N0s81rbe1jIpy_nq6IA452MCM-Gca0Hn-RF-h5LdJnMyMIfuNmUkbBYbi2cbr23D1CeqmRwob5yjidpEAx1FNyIL80EETLMKwGbxZE50cesXmABuOme4-gGpEQxO2SLD3ktndr9P2ZSfoOmk9VaCZ5Z7IcLU8sqSApCemOOm7nafq-Z3-wueOQLz_a7FXyo82W6mYu8x0em9iP1KhhQuc178Q3TNM_9C8Wx-tjA6_tlTt26KrQU0M02sAgcbM2Mj9O0nWVEgiWlzXhjdlJg-W4tZIscKTEleoJ4MyBg6KMUN8zarUvBRl8mhukLCy2G3FgGJuwRVSKt28Zg-NMW1Z9iqGx71LLOyoPVIJ7GvTdM8Uy9q3_sg1UpKKDxTZpUazGRRXzHfHmmPX0wEQSZqFYsCGwPRm7OmKM5ZeH0cJI7TSKH1zsVD4E63SbSJJACXG0qqWXQ2C5n4NGInJ-4XECRywfKOFGgLiw0iQ7pNLnFw5MtlAHfB5e-jWUsS510jq30ft_CCaLAsbXGK0YAYUlDSzDmbRr1ycvcrXqHpn45Bh7ArL2bdxQW24g-nra5pDihnycGgeRiLcLwkE1cUlkULIMlxZOoMOUstu_DuGDXJ_ZfXKUQK12NM_4BtX9gijD1u6qc3v0XLB9bMRySZ64_tInc-4evfqaTAUSqRbSoTVgMilekbtrgy-srglAQLqGwiPi2Ha8Td1JEwP8hkiyMgJ1ne-Me0cldobglbkiSivW9xqDMcXWwnMXTWhNS6pC866GDjQqeTRZ4Zoa6-_iZqGZLbtKGMmUiWwVCu3G_Ae0ZTBUO3W96bcuro-DcrnCvbD3heBSq1SjdQoiPJLTxTDIqACFt8XTkdUutGlZDLZ81VqI95Mo5BbZJouwhLuVbaucZ-f-p3YfYZLWmBCaJ84R2FfQaBhwtNIxSf67zrPbRYjc3CtzK0vtIRuvI3a_tWsuKx8h_baAgmO-UcTV20SVCT5xGneIDd_5p",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering snake game mechanics**\n\nI'm thinking about the snake game mechanics. After the initial snake has length 1 and moves, it can grow after eating. If a single snake eats, it grows to length 2 with a new head and old head, maintaining its direction. However, I wonder what happens if the moves are invalid, as that may raise a ValueError. I'm also considering whether to include input validation, and if I need to mention a return at the collision state."
+          }
+        ]
+      },
+      {
+        "id": "rs_012e1b8187a78ee5006a9ed1cba44487d086dd83260e712f44",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntHSeDtmASa9AFyBlaWbZOU7L5kG1FVOAFqsBG1riew2NpUy0SdXZPOwrbdUKZAm9ll_wqTIBFFIXiZKAb2W2pJ32r98JtONFiQSpf72g1PxpTgXwVrRw4nYxtXsOX-kF-0wbH_I8vRkZoDN19zjvu1rObxh0RNJd2C0LUZd3HTOs1AeH59JTTU21yCDbgcYC36jup-9twxVIenJuJvVJG751rQsNmuOeRBPZ3ysBrNnRXBAZi8tuJq4N0dPqETvJAEP6_3wT1GIFIjEPjbKNMQOkP2kHamw16PilJZZrZgLQ6FYdz2SatXU_vKZoa4AeLVgk8O2mFc1kHkOGiqREcevbfOabzvdtaas1BuLXlR_LEiHBs3UtHm0mgRUQGu5mG2UrPodo2JrdaFOjMFq3-0-6d-T0xEEW5XDNUe8-_1slmQX4TEmot-Ioy3WHowqnFKRHZhrsytROVWgMDIRhX-AfWEBhnbBFKP3V8V2C-JWj41_K06jUpViiuSLf9LUOdkVv4J-mSMyoZxspjiBgpQcJrVxO9AKqAR34fr5mPa6WA0_mOX2AKxkNwNx3lI4r7PN2ZiqXw-UdqHDVBssaa8WOXfxiipscIRkceLt7RXJPEChgOYpAf9cxZGRanSmmKtv1GtjiZ8uJGNgvMYKbHenEC4-bBotiwBxFMtvJbPYTP6dA01pZ7JcePYGoFRxeD_-tkkXP-zCBI6AQBdQC-yA-4RSTBCwl8vr1IuZzjM1WRyBqkNmzD7LM6QHjuUwxMGwOVhs5hMShbjuu7jwPL6DokxK3jFWLxz3hXM0qS3qZaiw9qP9hLJ5H_WxuSisSwkyLlZ_scRkIF_xW1i2tpuoQxs7k1u8yZrYW4y3fdkeXkJhhJhV-EfBe0zFVOqDqonN6x4f6p8ZUj-cGwhFrGOgP1vEvAyM6usNeEC8W47SJ3DIHlufGgjPwdCc25dUYCDHYOtiM5RM5v52dFrfuvdQVktRr2OmTGfu3EDJk2KW9ClDwyEw2LXZW2dhmmnWn7ixs0kJa6h1WzME6cBiAm-cEIAqJz5PO3wgqD4DaTBBIpal6JDydJlQea2hFQlyezUBJNE2lve35wjUxptctC1mbDnVQc5a193JN05y5NSWFCW79eFpR8-jEwvfw4R66ZUxodwWJhhyYKzPjUxsJgGfWYwvgp9I6VaI21LC5guOn7Fq3fDPqYFSkFExuSMHXC7IMYrGmjRBakS2GSq7vnweHIF_fSmcH2nlZMhtKDaXLwF5lmKUP0lx6_M-bLVVeNK9cMNDWrzV_AFwiTKWopLU5ddi66pFN3vPRbgMkNiGSo-8via9dWuc9vL9Jc9ArSHbJMFazcmVz5v0aPDoBbN_jfgeySEA6fK5Nz0CSWCvDJyBmZn6xjNJmVFNxRyqHd6oDaBShckNFPZLjZJ2wyvl7afRa0QFOIqD3XRgo_gdHeloBf1tu4n80uQgNzD6F9MjsUJ60Mwy6InzIP_hVCLziUely4Gp2EwtbqCh--RmChw9dmLUamEzk4bRL0CalDLiqLss1-51cV22X8Q_WNu3s_HJ5KAbT48-4O0CsyzanC0Orx90o44XNJUTUIj0VVC6kb0pgSfxGowzDRCKK9W-oUB2ipNr_60s1Jm5hy75F3cCvOPwp0vGkYd32h0zVj1T6e1d2vPmoXkzQ2C0AUxkJByOQkuC7e0JLbMD_FoLPCddsF-we1NSUYk6gCYgea7ntRlFLDneB6ZKmmkOdtvr13lp4y-zwjPYfNZEdsHxw8ElGzVrEH-6TNnm8OalNYkVNERWudIIRrEfLNi4EG55I8e6jR2-c8nXv3s0gSaGmrYUMvqfOwb5lZVOaFu1kqCnZQF05yLmz2vZeceDCz8X1ZBNDUj3imxa67Mam_FX1GVPnQjPK2BAnlfSZH-D8D9mna-S-yHVC1pAA4BI4G7sEUXbzoOnagw12W5yYIu_1yGpC6uXfo7QTymn2zT3MKxNwY9-Gl7LjHTifbBaWKtZulitKRFzEwY2doJLURlIloJy2RLNFvWcix-Lm4WSmYE3mn5wP63f88xLcKuZ-9G35gMghNHSdDnvCCrtNFP6aAktspMk7Dz_ND1vlT3AHgAXaCLOb7TYLlYzjqDGm78L2S_a3vwNF_ymEEvmDfWxNDDOiqI4TQH9B8CDNY2HJdIz5MtD9dYCrCowJy4MEj9YlxbzdM9Lx_b4LB3Jiqy7LzO_ItVkjSEL8dRUq-YJdri6847jS-pSBBWQZwBKo9VjJ2DlaGdw0fjUeSH49mV_e3aHBG8IIZiboAVVy01Km3hPqJN7l8VsBjqAEnqxhKPILlH6Bdm7qI7euRL2i380MYSGnGtPAw8IIQelWkyID6u1g2Sr0kMZeysqN2kwvdcgyUzj2iJ2SECEthXGY5-2FubvUKbI8vHx_Kz16HzZq_m8N6jVVFHSzVoPwvmw6eko4etcU_5RulEFdsq27CgZ_56vxIXnSucBR13gBFdiKM67Bu0UyxNNZuRvfptBQF3GjrVQKoUDriTGdpNnWnxytVP5-ygHfj6Fplb2GUTSiCRyrF2a-d6MYmAMl87rMrzUYKZDv_YQ3re_rz5hG1G88W9aamWa6kB5sWIpz6gRL1yHLZCtz1mGSEKJ1PoA3jpFeDWehRrkaTjilGswna8ifEWA21n1_Ojx4aWXeXzTSWx6wkEA-QSCO6e359PN5gvtsb2V-jdRmzsqfDNfGfWoNpUoH-MVBfmrYpgD_MjJYMUxV309uaFGKizUFaHkrPwT3F4UXN9XZVOMA20KkYQmI7pHIMGqD3LwwbyClHHujUeRruGcpyZHtlPXzQzp0v7Bq3XBCC4lRJESec-9O6O1FLZIU1xwX7wPj8bpW7qtAiKYqN10T1llt6vDapjXpIxGNbX0x2nI-uk51gMGcGViVMfGGJ3ff4HHNTXxDmszpFko4EQDycF2w1MlUIdc4MP-oQ9lmwb84fUGQQvTeUir9VJpsjCIVhR0UWvJTWo5gkNU2mlHJUY3tLzViiFRFBuvst5gC6PIA6SDFXcV8FOheNgphJ5qnL36cossrMr2sWTJSaFUM_l_Fmkk-uGMtSYm-eItoNA5bNQr1dQxxH6gqJrOV47Jy1-U1I9BjYE0hivFwsZ3ACu0zImFZ58HoLI3JAJo4rvgP_9X_Nphmfgfe8N8htIvU9cu1ohLsXiGiga46ggih_bfWd4xpvuswcyl63F-Ake3piKRtzNtDsSvXdahSEEZUQBHNGwC2VzsGMhLnu7pklB74aSgn5Hd9uhFgIm8vYLalAxgE4wY7mJY6YsuK85LPtl-UyrYszc8kMx7FrXKg4JL1V6Jeb3e19kQ-jVs2LSz2atK26452R9w1eSoJ03DzZ5Pkl9gmOsJ5Z4VMTQFVOXskQiQMf2FNZqXUxt4loViaf3gIyPRx6e6mLGNtYIIoZ0CDJgzB12dakFvdGSZ7e3kuYqcePjt1Y6C41Ci42gPFKf8aZqC_qYqDZ4Z0J4aIR-tmJOI58UCE9jeETMnfBdWHzG-L4XdcdxqYjfDs_fhDCiRyQgPtJUcIgGakaiTNlAGeYfDT-YKvPyj2V2eKc-WS0qcjonAKmta205xPztxmnLxkNTRdhxW83se7J_PGKRtsDwKBLRmTV_9",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Evaluating snake validation**\n\nI think the validation for an empty snake should probably reject it early on. When it comes to board dimensions, maybe coordinate validation isn’t necessary, as it might complicate things. I'll ensure to raise a ValueError if a snake with a length of one tries to move without a direction. For lengths greater than one, I need to check for opposite directions. If the snake’s heading is odd, I’ll assume it’s valid. Overall, I want to return a tuple that includes the active food index status."
+          }
+        ]
+      },
+      {
+        "id": "msg_012e1b8187a78ee5006a9ed1cfe15887d0a1b00ad29e8d84b3",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビの移動をシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"board_size must contain positive values\")\n\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    direction_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposite = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # 入力リストを変更しないようにコピーする\n    current_snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n\n    # 現在の方向を求める。\n    # ヘビが1マスだけの場合は方向が未定義。\n    current_direction = None\n    if len(current_snake) >= 2:\n        head_x, head_y = current_snake[0]\n        neck_x, neck_y = current_snake[1]\n        dx = head_x - neck_x\n        dy = head_y - neck_y\n\n        for name, vector in direction_vectors.items():\n            if vector == (dx, dy):\n                current_direction = name\n                break\n\n    alive = True\n\n    for requested_direction in moves:\n        if requested_direction not in direction_vectors:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # 逆方向への移動は禁止し、現在の方向を維持する\n        if (\n            current_direction is not None\n            and requested_direction == opposite[current_direction]\n        ):\n            move_direction = current_direction\n        else:\n            move_direction = requested_direction\n\n        dx, dy = direction_vectors[move_direction]\n        head_x, head_y = current_snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # 有効な餌に到達したかを先に判定する\n        eating = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # ボード外判定\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # 餌を食べない場合は尻尾が移動するため、\n        # 移動前の尻尾のマスへの移動は許可する。\n        body_to_check = (\n            current_snake if eating else current_snake[:-1]\n        )\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # 体を更新する\n        if eating:\n            # 尻尾を削除せず、新しい頭を追加する\n            current_snake = [new_head] + current_snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            current_snake = [new_head] + current_snake[:-1]\n\n        current_direction = move_direction\n\n    return current_snake, alive, food_eaten\n```\n\n例:\n\n```python\nresult = simulate_snake(\n    board_size=(5, 5),\n    snake=[(2, 2), (1, 2)],\n    food=[(3, 2)],\n    moves=[\"RIGHT\", \"RIGHT\"],\n)\n\nprint(result)\n# ([(4, 2), (3, 2), (2, 2)], True, 1)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 558,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1710,
+      "output_tokens_details": {
+        "reasoning_tokens": 895
+      },
+      "total_tokens": 2268
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビの移動をシミュレーションする。\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"board_size must contain positive values\")\n\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    direction_vectors = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    opposite = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\",\n    }\n\n    # 入力リストを変更しないようにコピーする\n    current_snake = list(snake)\n    food_index = 0\n    food_eaten = 0\n\n    # 現在の方向を求める。\n    # ヘビが1マスだけの場合は方向が未定義。\n    current_direction = None\n    if len(current_snake) >= 2:\n        head_x, head_y = current_snake[0]\n        neck_x, neck_y = current_snake[1]\n        dx = head_x - neck_x\n        dy = head_y - neck_y\n\n        for name, vector in direction_vectors.items():\n            if vector == (dx, dy):\n                current_direction = name\n                break\n\n    alive = True\n\n    for requested_direction in moves:\n        if requested_direction not in direction_vectors:\n            raise ValueError(f\"Invalid move: {requested_direction}\")\n\n        # 逆方向への移動は禁止し、現在の方向を維持する\n        if (\n            current_direction is not None\n            and requested_direction == opposite[current_direction]\n        ):\n            move_direction = current_direction\n        else:\n            move_direction = requested_direction\n\n        dx, dy = direction_vectors[move_direction]\n        head_x, head_y = current_snake[0]\n        new_head = (head_x + dx, head_y + dy)\n\n        # 有効な餌に到達したかを先に判定する\n        eating = (\n            food_index < len(food)\n            and new_head == food[food_index]\n        )\n\n        # ボード外判定\n        x, y = new_head\n        if not (0 <= x < width and 0 <= y < height):\n            alive = False\n            break\n\n        # 餌を食べない場合は尻尾が移動するため、\n        # 移動前の尻尾のマスへの移動は許可する。\n        body_to_check = (\n            current_snake if eating else current_snake[:-1]\n        )\n\n        if new_head in body_to_check:\n            alive = False\n            break\n\n        # 体を更新する\n        if eating:\n            # 尻尾を削除せず、新しい頭を追加する\n            current_snake = [new_head] + current_snake\n            food_index += 1\n            food_eaten += 1\n        else:\n            current_snake = [new_head] + current_snake[:-1]\n\n        current_direction = move_direction\n\n    return current_snake, alive, food_eaten\n```\n\n例:\n\n```python\nresult = simulate_snake(\n    board_size=(5, 5),\n    snake=[(2, 2), (1, 2)],\n    food=[(3, 2)],\n    moves=[\"RIGHT\", \"RIGHT\"],\n)\n\nprint(result)\n# ([(4, 2), (3, 2), (2, 2)], True, 1)\n```",
+  "reasoning_summary": "**Considering snake game mechanics**\n\nI'm thinking about the snake game mechanics. After the initial snake has length 1 and moves, it can grow after eating. If a single snake eats, it grows to length 2 with a new head and old head, maintaining its direction. However, I wonder what happens if the moves are invalid, as that may raise a ValueError. I'm also considering whether to include input validation, and if I need to mention a return at the collision state.\n\n**Evaluating snake validation**\n\nI think the validation for an empty snake should probably reject it early on. When it comes to board dimensions, maybe coordinate validation isn’t necessary, as it might complicate things. I'll ensure to raise a ValueError if a snake with a length of one tries to move without a direction. For lengths greater than one, I need to check for opposite directions. If the snake’s heading is odd, I’ll assume it’s valid. Overall, I want to return a tuple that includes the active food index status.",
+  "input_tokens": 558,
+  "output_tokens": 1710,
+  "total_tokens": 2268,
+  "reasoning_tokens": 895,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "simulate-snake",
+    "condition": "ja_directive",
+    "sample_idx": 2,
+    "prompt_text": "`simulate_snake(board_size, snake, food, moves)` というPython関数を作ってください。`board_size` は `(width, height)` というタプルにして、有効な座標の範囲は `(0, 0)` から `(width-1, height-1)` までにしてください。`snake` はヘビの体を表す `(x, y)` タプルのリストで、リストの最初の要素がヘビの頭の座標になるようにしてください。`food` は `(x, y)` タプルのリストで（順番も考慮）、そのうち最初の要素だけが「有効（active）」なものとします。`moves` は `\"UP\"`、`\"DOWN\"`、`\"LEFT\"`、`\"RIGHT\"` という文字列を含むリストとします。\n仕組みに関しては、まず、頭を指定された方向に1マス移動させ、体の各部分は、その前の部分がいたマスへと移動します。指定された移動方向がヘビの現在の方向と逆である場合は、現在の移動方向のまま1マス移動させてください。ただし、ヘビが餌を食べた直後の場合は、尻尾はその場にとどまり、ヘビの長さを1マス分長くします。ヘビの頭がその有効な餌に触れると、ヘビの長さが1増え、`food` リストの次の要素が有効になります（`food` が尽きた場合、ヘビは移動を続けますが、長さは増えなくなります）。新しい頭の位置がボードの範囲外に出るまたはヘビ自身の体の一部に触れる場合（ちょうど移動しようとしている尻尾のマスを除く）、ゲームオーバーでそれ以降の処理は行わないようにしてください。\nこのような処理をしたあと最後に`(final_snake, alive, food_eaten)` を返してください。（例: `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=[\"RIGHT\",\"RIGHT\"]` -> `([(4,2),(3,2),(2,2)], True, 1)`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 16.185256958007812,
+    "generated_at": "2026-09-08T00:01:38"
+  }
+}

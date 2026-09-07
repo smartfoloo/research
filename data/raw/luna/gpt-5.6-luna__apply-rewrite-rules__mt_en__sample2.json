@@ -1,0 +1,145 @@
+{
+  "raw_api_response": {
+    "id": "resp_04156b250dc747b0006a9ed47ccf0487d08c10e075b3fca268",
+    "object": "response",
+    "created_at": 1788793980,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788794005,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_04156b250dc747b0006a9ed47d431487d094194beb69867080",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntSVwN5IEKc-xFcgx1q0uNNPKiqOV2kFTpGYVvUw3iBmP1AuvpHc6e6_hMx1T9RjtoGDWLpk3mDf70lU_baaUY97B-bQeh9c67b89_yWVHZxGenTuVBmK-3lUjQvhsDaU2dR6N3h0puJi7LgeeICnZ2SrIkVsEMpD7ggQwt8Lt1j54ixtTFDTXePNlTcYOUGX_dbOJf1LC44vbPLd_2JKm4jtYEHH_0DLckq57XGkdevJVxvCEqTs8nIszvDU0Fg7lnFLdadRSIXmCCbZhWKZb6kkINlJ1GMve837mlfhi2n076bGV1zm7R8nnJk3l1x5AxsjzdDQPhJ12NQWHmYQTEXbUpIIfKbzWDwc9NpwREjdemJ5N08ryUv7CWIMmJHEpeLiBO1wjO7fv7S4_CqJ2y4AB7J7vEfj7ogwmkuvrjxIKtO69zZYhibCn_4WKDMoGHPlIQvMVD3PoFPLPC6PDKWHnJDImg_rM5p6cqp4tVQ1e1UhaXQigrhaxpJnUF7v_UnKsHJXGShsbrQtUEgq1tRxoqYduClN8x_0J3BBqvJApntS_lKjiNcYoG3bxNY7Y7FbQoDvW8sUHPnKYzIP3bqM-WrN8hBizFvN7jPK8Sz_kPuoEHHk6LGV8-qD98tY60mcgEStlR2sBOVYlVwG7F4sqltj5aWbBubwKmAEBv0ayI8GySB-bmhOeBeDUZQPCkhkdNKM5cJ5pEs9nE3MEWYgikLOP0GyVoIPCFuTHtNh4_3VyKzQXfqPn3oD7UkMEnm_q06YUak3r_N9WX_NmcwunZaKQ-7psb91D7XgTnZPXVXQoIUPKwaXTjRPCOMR1JTYYsg17mZHpOsQ0dlEiRZGjzA0MaHshLSqAGc_6GovY267mMCNzO0FxgxgmkskSluYA_8_RzG-qM4iCGyYJZ9oPD7Wsj818pMfhuLjbyb4zRbe6i3wwatEsn52hRfcskvGz-ix06R80kJvaaCiLsH3LFg1MR6O1DJl2H3DL0MYK4LOzIwJGnVy1KrbT-U91-GQ_S7Dklht-Pzt8vWK2o4ZxzLPlNGFKsaH2Nl0XrknIj7Z2hnukN3VUi3cXy1-H1YQHsQWUQ58LVmsVMo4Ugif63zwC1gLPQCdstjKG_Arbdeeb2jZ--1q3toOCPsW8dQAw9Wa3xbO-a1XNA4Ve2teK_ZG2ZlJgGhDtjw6Ku-uYydBih--qtp2W61X3b3F_2cwL1ypc2RvxqyuAULfav9sJrOb_R9nTz2iuSGCv1-aB565dpORQv2gX0MSTb8RlvRY8Z8qs_BqVnChwWE-gxOtaz4q2dWbE-IJ4Feju6L2L3UXwSRFdcJgMVR_Gcag5eI9QpTP-t7OwMeoDFu8uZZA0fuNCfDk4bRLa3M_yqwn_OZdH7MJXv8madaU5I0zFXowdhoOvVjIyVIPIophC9IZJaczHA-grkKlSDfBIq218KUsjivsMgBrVDlX7XokKr_iDXYoba75-v3a72GBq8VdhbYtbO-01t-3vAZ3m2HI6mJSWxxHUI1YYyIHeH16mj-jCm0WXgbtVONawX7WNVdtbR9ZrtW5pn9EOox3viVr23sVOX0KO75WpsWADn8gUGSZIwhWMgq27LyIo4bmT3UcjQt-8Zt8dvaEVgYbsUeqBNp2OKSfJc-5t4qnrFR_I_4A9A2LR2M4bW0Xn7bpVYDiq7dHFPNgZb9MveIwe0GRhVzLkyrS7M8AMzS0jUn51gwZwPKBZTqW_x6E9ZZXvuU7yDHWvSI3Jv6TC6jSRykTvnQoaeC1y7I2KTL_w77WhmSEIy4O_rG4I-rhFaCQ8O9O2bnc3-1kGlji8VC-iMTLuPNoNiDXecuhvhkYi60iC1wCcqEu8Cu1b52dB__czL0Q28ES5uXHCT2BFlXrx1MMd5Y5wKh_n86fOhENrL5Hvpy2wE8fOfPIhZKc1iNUsW6aXWJi-3kmfH4WGIDKhDQJOHoQrEEf8IV4PXhotM4AxJP7YrbhYbgPrA9cE2riskCs61YfBoYUb6JkhJSm6hOcvbeWTJAm54ijO8E24camjDL90jyCknIepe9aIurNHIyGmLSlg5zd5DtNNL0K81Fx3Y1uhpwqtXxDegaW0olHKUurQFuHtxj7ESxckeoCdvMPJwK1JlXfGk_iBl-abXwATdE5se1UH_7ypMt1Dhj8Vf6vBZ4RueYqS0BqymS2ngDAIrwSj5dKTnmaONoBiBZ9T-1C4ZM4wJNsMxSDyqODDG1zQHMEeuIR2jXCFHIh1tZlxb6wQwkJHv8bM6Jyxyqg0O30k-UOQw7ki1cqSzfS9iLNX8dua5jyxQSW9nico-wnU4WgHzlU6T8iZTIGtwFbN7mC0ODygzMDe59i2kfUYfPkussmY70Vm4aBGh8xOyWVINIcSlXgM-BodUAq9dbt2wOiJ_9biTREcRvsW20qzwNpCtAPG31coNjf_vIHVLK-F-3JR1RFJGNI6HL6tPDS0aPDpzHmYCEyLls_VFMJm-mSewSra4eIBIEjakavXEnZTF0aF2EqNfhrI4Vl9sbKtURtAy1grTcfmGF2xKtZLWxez5KG5JqDvPjMcwVp2XFm2o1rY1f5_hSk8igx4piczHtnfxIgnRmDsdbuXDwz9_qhdfVTDdpXfGgrtsD8E5q_f-PYBAQBNleDPNBcYGNgrZGJb6p00YpsRx2Rrkv4U5iGEaGEIcp77j62KeOmQpu1-_8kpruV8xU1xLnJsjNjy8tWos4PG10LfobMJpPzfoFyZpWqIZvRSD1a_w-0UpsIB_MnTjPj5x1GZMUXCNzRN1NCgnMtmnigEcao3hALk4GP7PDaOFtkRKRnMf6RuIHX5XNDQgq1nsUbA2UutOBeu11IrnRWxhuZmFYfCsfs0LQb49StHpS1XfyMn0ziNC51dXB8mgYYStUfWCxPh1jrHudSeb3ViJBRVP33h370lpsOoJJCcfpMq_voJv6kBC7veJ6dDAcQ-4c2c3B8eEltOp4c9_BKR6b7It5wsDqDWJ9QZcllfiEuLO81ih1WXEfXzxJ68bTSAGBSdXIje3RZlN29ymKtlDh0PhnVsUQcfN2DPGcMZvQEh16sraMMcp8Wx0-_ECGjODF4wKlBdeYETVVIXBTC6kOxmZI36zhNVNDhaxlxqAo96WbxQkWZWu-XzMBid6fu1GHopO7me3il-t1L8k9VcSfyCtnvdCYdy7RF4atICjihApKSCyyD65rMdBKaalBE3-qC18PoZ5F22CpyaGl3Aib3Mi_fOLs0BOnZX0fNOlPEFaxWrM8J0xxHPDGHFS_Y1NToXOfxvnxaTfaNYYgbiHuQbUj5nitOUjwG4PaSTyY5uzDJZdSnSgpwyIx4OWzQuUvjoTGklq0xVDvcf8dBEMhUv806e-GBwHppOzerCq0LiBa3sRUJLKJnaNCCWYC6pfubdCm46CiRYCsBDR-GFuEPgLnjV_LFBnh2Epg1L-JKLQ8aMfPPifQ4-Q3d1Rk52b39clyQqQo1HYhNjjtdVu31CEPvhoSSVG7BSh4xeimC01NsVbBQmPtheONdhSspz-2fRHWgpbD6l5s5mibLBUrJQ3OBa8NI_I_4ZQGCuhgDnMQ07nghgwqNE5jFkgzyR5Iny7PRDvA2hVQOaSbnBJoQ5mCTcJGDLxj5oMpHFSnugOz-z1vvNJUupVzroTsRwtZmJqNG5c7pTFpzH-lgugKeIb38WuE5qRXL6D28xxf89YUoeyOMp0tUsWeC2sdCToSj40eP4ifSe32oi6PBHOpiTU_kpZyq_E1qlmMyZ7zuPaAWBW2bmeYv4yK5BC85BRNfHbmvXFR51K5vCti89Yk6q-6uAx1E8vqPaQnPmH-TeIXkuDH8_V0QU0IcLhwP6_tnhLyqY-_PCHS9f8g0DAupTJDDuLOyhgjgnW04coXocHFWK3Ri6rtfeLTTlZS1s0WN6WxZjYpAXhnDjYeWlRHhgaWsnP79_2IZrsJ5u80-t5JEVnReLGCZ029oXtR3Iax1shq9THTQ6G2H1-MxvPFcDSNkBjw205otOF6D1fl2NuZlMY-ga2r0oHjpP3dU92d6xWMJN3xFPmXpslrC1_jmn2k6GSFaYpAue_FclwvpOhy2vn0dFl8QgFqOD98vqPMVlvjhQcFS4rZTaxE0HZeRAF6ifcn3-I11JFxvjMFxPedSru13_o21PWL0WSxQmV90F_FWk48ykzTyaYPUySHgsSvxVqBuDqbB2UoAZ6Xr-prrcudsil3QXeY3OJQ52yFf87AVz2Qyx80RaLN4iXwPMGfIZq9icKQKh6QQ5QO8gp22a34g0d_uomHLMRe5QUuRiR6wDkPRG4eYfCBClmg60FiB71_kcJeUqj-vin_ctCCobdq3OxYPFata6wg38fAnKg2o97ON4v7I8_8lopyRqtwCPkLc0nhcsixN58Nk7RE809Nz2-xfq5rbz--l0Fu26gRif_g6BRpy8xA8LaAwP1AGjEz7qQxAflc1fHKq8oTENUi84jw0N5VIYKOuPYoAAup323_zxteMQMJJuvZK1h4qq7RJgYUOuXPPWeMRdiRsTwD59fVGAjJu4TKxc_LF0pqR3wI06U=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Interpreting code requirements**\n\nI need to craft an answer with the likely code, focusing on interpreting ambiguities and providing the right function. I’m thinking about URL parsing with elements like host port and wildcard exact subdomain. It seems like I need to ensure hostname matching is case-insensitive and preserve URL components. Also, if I'm stripping prefixes from paths, I must confirm whether the action value is present. If it's absent, how does that affect the result? It feels complex!"
+          },
+          {
+            "type": "summary_text",
+            "text": "**Preserving query encoding**\n\nI need to focus on query encoding here, particularly how `parse_qsl` and `urlencode` can affect it. My goal is to add an action value formatted as \"key=value\" to an existing query without changing it. I’ll use `parse_qsl` to keep blank values and work out how to handle parameters. If the URL has a port, I need to ensure the hostname is appropriately matched while preserving the original text, even for IPv6. I should build the netloc carefully to avoid issues."
+          },
+          {
+            "type": "summary_text",
+            "text": "**Using parsed hostname and port**\n\nI can use the `parsed.hostname` to pinpoint the host and determine the hostport suffix. In typical cases, I’ll check for a userinfo prefix. If the authority starts with a '[', I’ll need to find the closing bracket to handle the port properly, especially if it relates to an IPv6 address. I might have to make replacements for brackets as needed. It feels a bit complex, but I think I can manage this parsing effectively!"
+          }
+        ]
+      },
+      {
+        "id": "rs_04156b250dc747b0006a9ed4874e7887d096b79a3c83b6e542",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntSVh4xaRfckctg9EvCpdT1fJQlLdSBHbS1zyIjPvBYu7HKty4nwQTbmHndsuvTp2k7BswJG53CYDkqeinTaYUPxdr0VhbEKaqFesEUz5JRXjONDILIy_n00o0WbP_LF6WEdb90jvdCgx-YyN91o7_7FApp6WrlAuytubadQFmLhQpeax13drpBZvDI1fEFFpShZHHuHnSN4nFalPETXcotpyFUn4K6Z0iyvU77pQAawufzMGmyT2DaQ91r3HoI_rQNl4uXJtBS1b0MRtECJjW3qSj9ULQ4h4lKkcuPDBcjQXjWH8ClHmZn_5qQVykZ2fQSWvh21zTwt1_sWUHmGA1WQpOS2yGw6V6AWTvdNDJIBWPJTpz4dYgWZI4JF3plsg1_xPddgcdik0qA8EQ1Hu1UnslGeRuxUzZr_UocDeecx_AahjAinLFQrYPiFexZb67vSMiL7RWLiQpfW7U2pYxHWzd1IRUgUg0JuiB96b2a3o_TGHHh6HshjffOAWtrJs88SbEF58ai2ADPdHqsUAssCQNnRnfJhFH6cpvc_DoIXN-RnG4tacykqOUix8IWLbS2UVldt1JjfiorMK03skbRzsBYmbHKi9DJrFphoj62hHiHy0nqmFYBvcD5w5q1jA-d_PUxjcoyDhfv9a4Hjl44o9O16igTxcWBElMDlU9GwhBqRbvrPfBfMrwahMNh5k5YhFLSpU-E6lGkVnqAkuRsohEI5M7gXN1u0GQfBAiMWqxw_Od13FJSYRqeg97AI_3xQYhZp-VPISoaCHdB3iFyGpJG_yZSQ1iYZMItSkoaVdvfe6uRZ-4D4qvVwWIjXVaPEvKWgTYNv0Bx0T2bvzWiTHtaj-zIxAT1egNN5vne8FSnT85PT9Yb8bmiV-AlX4pTzKTF6fhOPoXkT9p6YJJtwBqRgjt-Q3JPd-2BPvQ-AvrxBwbUv1M-ISk3qgzbR-1jubznOxnO25KMGfAwpsMAZMKes_lvUfZMB6SkPJQxYMVpNh3K9gBU10lRZpoACjagzUyEbHK_IwVnEiOG1vhglDdOGSJtQOND-dYxkeY2Hctq1ZzI0RqkbRjNj2adUusCVWbXzzRZuHBJpfdnG1KssY_q8EcgUQPJm3JX4V2D14moJGEzswCWBLnPvk-LB8DsMwoxDLcSyWLAdc2IW4v1Ys0qFAzqHp491JcDCc7A4BP4DH-Av151XGrCyVu19r0Wd1PHTgE6aduxg_jnH_NUxmPEjDBitMxCt26BQqBaVUDnlWxdTBICrYgVmJPulBdwG2Tu2BTmXE-KS8A2cmOdRHbBBM74ZZF691GO2Lq6A8qdrdTh0JdOAdOqmtX_UBRgo4bgXoYu8DfZJZpQ0jT5GLEr0ISe7Cg5sHdyAlL9KDFoSMLanQB-N7ZdnyiUo3AeW7JrVs8fpCNt1uoNRqRC6nPhRWM8ZcyYweYLf0Mj8zk5xWPLJ7I1WpIoqpiOhgo1UyoCnxe-IQdQNtfkSmIKNggFGDbIoyG-3HYkvX8WxVKRZZgtL-ylH2b3l_QHa0L47iT1BNjdtBpYSanEcTyc2cPxLCKqVr0cnVJ3yxfnz5Yda9mLn1pZHxTdvKYOYYjALgoeX3-x2Jnqfyb1hTJPOtazKMMk2XqgNPGH8ln9GkGEFr9yXWr_MYuJdgu-8whKN2ltj5pvX2XJ1vz88YEAYnS2nw3b0NWCSi1Fg1qdEjnVKcAHQ39bcgrpe_T52noy4gk7_Oe9btPdyc6pHd1UY9VJm1guSnC4orcZhkAkwVPTF61KR_7M7AKPmCKDQBHHvJPkL5_BbMJSijoZWnYGdYAqlGmgt73INitl52ZeHT_Z7jFPEzRe_LqoaxXfQ_sS4REckBVdO02fBVYlkMtSNgpyZ5ECjR85yO41rY8eKlbjDhuzFCIbjLD2QXDkMZsVwiJHJ3k8N9sZa1BEq_MCxrUS_M83osIp35BaSlG6LrWAkWochVMpD5hIYcQTeBWHnAmOYtZOjTzz6xFeeh7Ncg_FudOWczNPmxU_-cIJFd0pq1x1a18LirKx1wkFF_cydEWD3ZrP12tK17VXLqNsqUjlFF7JIywiIuL-SLs9yBB9eINCwQuJvGaLp43gtKvqvXkH6N8otVFmda4x0PKE2Pj4vIPmJFBLTC0afrqS2yGPJqFCvjS1Uf2QrriiaEz6bx-dQM5rjWInZX9Bhx_jzdUcSNpMLOlISL8gSYQ_L2GqheZiiPwDK-IQrB_qaXTrAuVwSp8G_9HDQEfkQvVBhlilDzI7VIZYy4NGOQWPn6mVclCD-HJ7mvG_n16hze6ZA6PbsyPyAGoEdd6IM7wb_rCXQtvZI06tRPW3cwu5Eb6gAmFHnWJ06YjZXNN_Kxl_rZBtYHtmh5pt_8dOzLNu5hhFc7ZqNqkkcGXp8sFFk6QNReU5G1SwtB3BpqGUA4TfrMCv5XH3wW0kQ2x1qm4uWBQQbETDzMI-ft62VhfoDy9DGF-UPauex4tFaed0c-YRG67lJW9yKCa9Pgg3UPuvDcG1yiwYerUoMaGba6cylLkoxU91Mh-K48Rn4HRwUgM_qPFcP6P2oXdw3GdZxJZzFvY9DMmk1S5wrI_GkJFNJFF7kE8SKzTUWqKWZBJUxes74rJd9jvT1K9kbAcAM9MiE4YYeZbO48_Ch7p_z0Yq-IsW6JCRBg0Fil46a0TdTXCt-97ZIRXZc4e-BOi1B9flnvXTTqhfxotxFK1etkrTPPcujMo2QKMWjJw0tJCyz2YQYLioFVsrzPqcPbZxmwvJIMkOyclBb-wzA_bmd2Ptx4aXqpeNdiQ6BwPcnOJItFyIKTXrhCZe3uEdrqgyqD5p-PLSps7UrMmKgO6U3jo8DTv0vQoX7jiaL6Xguu6wPMF60FsQ4KPJOtjqS2DRPpptibLHU4xOuHe4aSJrqTPpUd4bjqwsnHxKrgVRPmLR5Jd9-r2_9Nx8Je4efF6t2u1VWSkVfqeylhcqiIzQ5L6Xv7teOFS5kuUNAU-Z-_wjGGPAtv5v9tOCTVsQtYXijThLygxvBVKkRBgjAAVpQlz4q0Wuz4NXvQIbUfbuiU21n0a7A_WQ2H4cubFA3up7dYIhAiRpYzzSRhNimpTmqrvfTcOtbjWCDAONxbIzST8w-Fwbvd854jjyESnVER5wf-iG4X94mg_J4Ip8qNlvgfLsujm4NQIUd16bDUGqpBuXJCj9xW_VPo70e7PWRQwi6s3yHBzz-do5uDiHW2DqcgbGI1dJjBR0d_i-eZcjgGfknP26A2zcuCZbH1OIsSCUXPnjcwEHvWzE339Pa7vsR6qVd_jxcSRL_3jJ8Qa45unRmdIVQ9wnPCKwOdip0u-LK128GYRycjYCV7w_ed6zlCtq8ZFARHszsLhY8kxzc62Pc_c1ceraDv8RA03nHhL53rJ_MuHi1sv-bZChJFyWOGWAAhxQKs9k9U9AmyY03KWPccwhQ5knFbZkw7IRfXJWGXLbrJ69qFM00ugzpThk_BcFDjeqOfXZKQiQxu5Ta6XKQVpGrkYlsN-dmd5Y7pUurbBt_Y4-sSAN_7VjDgIHXGlL-RYE_fW6HWVmULeZkRSlZMqd3cIOgaVQlWNvLJ_vZSuRQ-pt7Rryu3meeef1KoPslkIu8NBsfXSWmEdzzyNml5wRCMFWP7HvPW8ZXFHH6-C_WyG_xYdmaWqEvGkBiE56yZE5SR0lfK7S4e6mtO_-NpyL3t3YIOzzJ15UALt3ampojjjRT0XnvRHkAU97NqYan7yB9LMA3sGX_Y0e0ox0I1z7ium5FU2gDM0FJrdxIHs2lbAs06j2RSKr_-7cjhwPkdBJ6hE0i_-2GHS7XBxBTa8weuCq1shYXGUPHSuhgHeAaGKpsjx_cGLjCS8ThlTyGdn6h3kPeXztyQh9XKYPh8bTUD8iEf92lgCfuwMJSZVV9nMp_l03FzWHKHF3PuILAHvWDP3a-qLlHzBAoUYssBJoykJXz8ShKGVpbULO2JN_k2ISGeeZddi6h8rhsUL9NW31tkfCHVJkBOA4VzDeCnSd8y6OTQkz4HVh64RxWRZUuzXFDTbrD0PAJkWKkp4wNVKnfP7d9aT8YbOHSQGCMeeRbC26sJ11cNcGG-P4sB-bGETwihBkTC1SNp46Vuxv8SqmG0JUrp9GD874FS0DEQ6Qkh-6l1F7KFoQLj4Po56E8MrnavD8d8xvYavCLvSiSyNqydCb4x3GWqY5hnQIRVblWVQWhPu3RXmg5qqbXqJ12WM2ELzTbjE0jBDCj5v28ULsqWIaRfLl5R1II8IzRQQcO_DCv6CEDKWNDa3K6pTUCw6P3dN0bxzD3L_yFMNa6RGzd8fFVaFFnvYrzUza4Z7sB1NtsZ0sif8ar3Cy9u3JH-SjsHPKiKJK6hKBuWWCYuC4=",
+        "summary": []
+      },
+      {
+        "id": "msg_04156b250dc747b0006a9ed48e71f887d0846da1aa3d27ee14",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"\n    Apply the first matching rewrite rule to each URL.\n\n    Returns a list containing rewritten URLs, unchanged URLs, or None for\n    blocked URLs.\n    \"\"\"\n\n    def host_matches(host, match_value):\n        if not host:\n            return False\n\n        host = host.lower()\n        match_value = match_value.lower()\n\n        if match_value.startswith(\"*.\"):\n            base_domain = match_value[2:]\n            # Must be a subdomain, not the base domain itself.\n            return host.endswith(\".\" + base_domain)\n\n        return host == match_value\n\n    def replace_host(parts, new_host):\n        netloc = parts.netloc\n\n        # Preserve user information.\n        if \"@\" in netloc:\n            userinfo, hostport = netloc.rsplit(\"@\", 1)\n            prefix = userinfo + \"@\"\n        else:\n            hostport = netloc\n            prefix = \"\"\n\n        # Preserve the original port, including IPv6 authorities.\n        if hostport.startswith(\"[\"):\n            close_bracket = hostport.find(\"]\")\n            port_suffix = hostport[close_bracket + 1:] if close_bracket != -1 else \"\"\n            replacement = (\n                new_host\n                if new_host.startswith(\"[\")\n                else f\"[{new_host}]\" if \":\" in new_host else new_host\n            )\n        else:\n            colon = hostport.rfind(\":\")\n            if colon != -1 and hostport[colon + 1:].isdigit():\n                port_suffix = hostport[colon:]\n            else:\n                port_suffix = \"\"\n\n            replacement = new_host\n\n        return urlunsplit((\n            parts.scheme,\n            prefix + replacement + port_suffix,\n            parts.path,\n            parts.query,\n            parts.fragment,\n        ))\n\n    results = []\n\n    for url in urls:\n        parts = urlsplit(url)\n        rewritten_url = url\n        matched = False\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            action = rule[\"action\"]\n            action_value = rule.get(\"action_value\")\n\n            if match_type == \"path_prefix\":\n                matches = parts.path.startswith(match_value)\n\n            elif match_type == \"host\":\n                matches = host_matches(parts.hostname, match_value)\n\n            elif match_type == \"query_param\":\n                query_names = {\n                    name for name, _ in parse_qsl(\n                        parts.query,\n                        keep_blank_values=True\n                    )\n                }\n                matches = match_value in query_names\n\n            else:\n                matches = False\n\n            if not matches:\n                continue\n\n            matched = True\n\n            if action == \"block\":\n                rewritten_url = None\n\n            elif action == \"strip_prefix\":\n                path = parts.path\n                if path.startswith(action_value):\n                    new_path = path[len(action_value):] or \"/\"\n                    rewritten_url = urlunsplit((\n                        parts.scheme,\n                        parts.netloc,\n                        new_path,\n                        parts.query,\n                        parts.fragment,\n                    ))\n\n            elif action == \"redirect_host\":\n                rewritten_url = replace_host(parts, action_value)\n\n            elif action == \"add_query_param\":\n                new_query = (\n                    f\"{parts.query}&{action_value}\"\n                    if parts.query\n                    else action_value\n                )\n                rewritten_url = urlunsplit((\n                    parts.scheme,\n                    parts.netloc,\n                    parts.path,\n                    new_query,\n                    parts.fragment,\n                ))\n\n            # Only the first matching rule is used.\n            break\n\n        results.append(rewritten_url if matched else url)\n\n    return results\n```\n\nExample:\n\n```python\nrules = [\n    {\n        \"match_type\": \"path_prefix\",\n        \"match_value\": \"/old-api/\",\n        \"action\": \"strip_prefix\",\n        \"action_value\": \"/old-api\",\n    }\n]\n\nurls = [\"http://api.example.com/old-api/users\"]\n\nprint(apply_rewrite_rules(rules, urls))\n# ['http://api.example.com/users']\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 426,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1875,
+      "output_tokens_details": {
+        "reasoning_tokens": 1034
+      },
+      "total_tokens": 2301
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"\n    Apply the first matching rewrite rule to each URL.\n\n    Returns a list containing rewritten URLs, unchanged URLs, or None for\n    blocked URLs.\n    \"\"\"\n\n    def host_matches(host, match_value):\n        if not host:\n            return False\n\n        host = host.lower()\n        match_value = match_value.lower()\n\n        if match_value.startswith(\"*.\"):\n            base_domain = match_value[2:]\n            # Must be a subdomain, not the base domain itself.\n            return host.endswith(\".\" + base_domain)\n\n        return host == match_value\n\n    def replace_host(parts, new_host):\n        netloc = parts.netloc\n\n        # Preserve user information.\n        if \"@\" in netloc:\n            userinfo, hostport = netloc.rsplit(\"@\", 1)\n            prefix = userinfo + \"@\"\n        else:\n            hostport = netloc\n            prefix = \"\"\n\n        # Preserve the original port, including IPv6 authorities.\n        if hostport.startswith(\"[\"):\n            close_bracket = hostport.find(\"]\")\n            port_suffix = hostport[close_bracket + 1:] if close_bracket != -1 else \"\"\n            replacement = (\n                new_host\n                if new_host.startswith(\"[\")\n                else f\"[{new_host}]\" if \":\" in new_host else new_host\n            )\n        else:\n            colon = hostport.rfind(\":\")\n            if colon != -1 and hostport[colon + 1:].isdigit():\n                port_suffix = hostport[colon:]\n            else:\n                port_suffix = \"\"\n\n            replacement = new_host\n\n        return urlunsplit((\n            parts.scheme,\n            prefix + replacement + port_suffix,\n            parts.path,\n            parts.query,\n            parts.fragment,\n        ))\n\n    results = []\n\n    for url in urls:\n        parts = urlsplit(url)\n        rewritten_url = url\n        matched = False\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            action = rule[\"action\"]\n            action_value = rule.get(\"action_value\")\n\n            if match_type == \"path_prefix\":\n                matches = parts.path.startswith(match_value)\n\n            elif match_type == \"host\":\n                matches = host_matches(parts.hostname, match_value)\n\n            elif match_type == \"query_param\":\n                query_names = {\n                    name for name, _ in parse_qsl(\n                        parts.query,\n                        keep_blank_values=True\n                    )\n                }\n                matches = match_value in query_names\n\n            else:\n                matches = False\n\n            if not matches:\n                continue\n\n            matched = True\n\n            if action == \"block\":\n                rewritten_url = None\n\n            elif action == \"strip_prefix\":\n                path = parts.path\n                if path.startswith(action_value):\n                    new_path = path[len(action_value):] or \"/\"\n                    rewritten_url = urlunsplit((\n                        parts.scheme,\n                        parts.netloc,\n                        new_path,\n                        parts.query,\n                        parts.fragment,\n                    ))\n\n            elif action == \"redirect_host\":\n                rewritten_url = replace_host(parts, action_value)\n\n            elif action == \"add_query_param\":\n                new_query = (\n                    f\"{parts.query}&{action_value}\"\n                    if parts.query\n                    else action_value\n                )\n                rewritten_url = urlunsplit((\n                    parts.scheme,\n                    parts.netloc,\n                    parts.path,\n                    new_query,\n                    parts.fragment,\n                ))\n\n            # Only the first matching rule is used.\n            break\n\n        results.append(rewritten_url if matched else url)\n\n    return results\n```\n\nExample:\n\n```python\nrules = [\n    {\n        \"match_type\": \"path_prefix\",\n        \"match_value\": \"/old-api/\",\n        \"action\": \"strip_prefix\",\n        \"action_value\": \"/old-api\",\n    }\n]\n\nurls = [\"http://api.example.com/old-api/users\"]\n\nprint(apply_rewrite_rules(rules, urls))\n# ['http://api.example.com/users']\n```",
+  "reasoning_summary": "**Interpreting code requirements**\n\nI need to craft an answer with the likely code, focusing on interpreting ambiguities and providing the right function. I’m thinking about URL parsing with elements like host port and wildcard exact subdomain. It seems like I need to ensure hostname matching is case-insensitive and preserve URL components. Also, if I'm stripping prefixes from paths, I must confirm whether the action value is present. If it's absent, how does that affect the result? It feels complex!\n\n**Preserving query encoding**\n\nI need to focus on query encoding here, particularly how `parse_qsl` and `urlencode` can affect it. My goal is to add an action value formatted as \"key=value\" to an existing query without changing it. I’ll use `parse_qsl` to keep blank values and work out how to handle parameters. If the URL has a port, I need to ensure the hostname is appropriately matched while preserving the original text, even for IPv6. I should build the netloc carefully to avoid issues.\n\n**Using parsed hostname and port**\n\nI can use the `parsed.hostname` to pinpoint the host and determine the hostport suffix. In typical cases, I’ll check for a userinfo prefix. If the authority starts with a '[', I’ll need to find the closing bracket to handle the port properly, especially if it relates to an IPv6 address. I might have to make replacements for brackets as needed. It feels a bit complex, but I think I can manage this parsing effectively!",
+  "input_tokens": 426,
+  "output_tokens": 1875,
+  "total_tokens": 2301,
+  "reasoning_tokens": 1034,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "apply-rewrite-rules",
+    "condition": "mt_en",
+    "sample_idx": 2,
+    "prompt_text": "Create a Python function called `apply_rewrite_rules(rules, urls)`. `rules` should be an ordered list of dictionaries. Each dictionary contains `match_type` (either `\"path_prefix\"`, `\"host\"`, `\"query_param\"`), `match_value`, `action` (if `\"strip_prefix\"`, `\"redirect_host\"`, `\"add_query_param\"`, `\"block\"`), and `action_value` (if `action` is `\"block\"`). ) is included. Let `urls` be a list of URLs. For a given URL, check the rules in the list in order and use only the first rule that matches. If it doesn't match any of the rules, just return the URL unchanged.\n* `\"path_prefix\"`: Matches if the URL path starts with `match_value`. `\"strip_prefix\"` removes `action_value` from the beginning of the path (use `\"/\"` if the removal results in an empty path).\n* `\"host\"`: Matches if the host of the URL exactly matches `match_value`, or if `match_value` begins with `\"*.\"` and the host is an exact subdomain of whatever follows (but not the domain itself). `\"redirect_host\"` replaces the host in the URL with `action_value` (leaving the scheme, port, path, and query unchanged).\n* `\"query_param\"`: Matches if a parameter named `match_value` already exists in the URL's query. `\"add_query_param\"` adds `action_value` (e.g. `\"key=value\"`) to the query.\nReturn one result for each URL given. Regardless of which of the three rules above is matched, if the `action` of that rule is `\"block\"`, return `None` instead of the rewritten URL. (Example: `rules=[{\"match_type\": \"path_prefix\", \"match_value\": \"/old-api/\", \"action\": \"strip_prefix\", \"action_value\": \"/old-api\"}]`, `urls=[\"http://api.example.com/old-api/users\"]` -> `[\"http://api.example.com/users\"]`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 27.01757001876831,
+    "generated_at": "2026-09-08T00:13:26"
+  }
+}

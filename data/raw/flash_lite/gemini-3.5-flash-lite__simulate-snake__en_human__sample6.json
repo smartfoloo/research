@@ -1,0 +1,49 @@
+{
+  "raw_api_response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "Here is the Python function `simulate_snake` implemented according to your rules.\n\n```python\ndef simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # Determine initial direction based on the first two segments of the snake\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        current_dir = (hx - nx, hy - ny)\n    else:\n        # Default direction if snake only has 1 segment (facing right)\n        current_dir = (1, 0)\n        \n    dir_map = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    opposite_map = {\n        (0, -1): (0, 1),\n        (0, 1): (0, -1),\n        (-1, 0): (1, 0),\n        (1, 0): (-1, 0)\n    }\n    \n    food_eaten = 0\n    alive = True\n    \n    for move in moves:\n        if not alive:\n            break\n            \n        requested_dir = dir_map[move]\n        \n        # \"If the movement being applied is opposite to the snake's current movement,\n        # then just move the snake one cell with its current movement direction.\"\n        if requested_dir == opposite_map.get(current_dir):\n            move_dir = current_dir\n        else:\n            move_dir = requested_dir\n            current_dir = requested_dir\n            \n        # Calculate new head position\n        hx, hy = snake[0]\n        dx, dy = move_dir\n        new_head = (hx + dx, hy + dy)\n        \n        # Check boundary collisions\n        nx, ny = new_head\n        if not (0 <= nx < width and 0 <= ny < height):\n            alive = False\n            break\n            \n        # Check if snake eats food\n        grows = False\n        if food and new_head == food[0]:\n            grows = True\n            \n        # Check self-collision\n        # The tail cell is about to move away if we are NOT growing\n        body_to_check = snake if grows else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # Move snake\n        snake.insert(0, new_head)\n        if grows:\n            food.pop(0)\n            food_eaten += 1\n        else:\n            snake.pop()\n            \n    return (snake, alive, food_eaten)\n```\n\n### Explanation:\n1. **Direction Tracking**: The initial movement direction of the snake is inferred by looking at the vector from the second segment to the head.\n2. **Opposite Move Rule**: If the requested move directly opposes the `current_dir`, it is overridden to maintain the `current_dir`. Otherwise, the `current_dir` is updated to the new valid move.\n3. **Collision Checks**: \n   - **Walls**: Checks if the new head is out of the `(0, 0)` to `(width-1, height-1)` range.\n   - **Self**: Checks against the body. If the snake *doesn't* grow on this turn, the tail segment is temporarily ignored because it will vacate its position simultaneously as the head moves in.\n4. **Growth and Food**: If the new head matches the active food item, the tail is kept (meaning the snake grows), the food item is consumed, and the next food item becomes active. Otherwise, the tail is removed (`snake.pop()`).",
+              "thoughtSignature": "El4KXAERTTIPeDS7SVCxwj3fNe08RnSa2yaC965iUe2AbzNCpNA7HIe2iIEJsQBNqjjqhtATnURooklGgXnmm+ux6W+T9A5zc1Of5QgpAz86zGyGmT23YIaaymlRiS9q"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 417,
+      "candidatesTokenCount": 884,
+      "totalTokenCount": 1301,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 417
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "qNCeas_cFY2f1e8PkY_RwAY"
+  },
+  "thinking_text": "",
+  "final_text": "Here is the Python function `simulate_snake` implemented according to your rules.\n\n```python\ndef simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    snake = list(snake)\n    food = list(food)\n    \n    # Determine initial direction based on the first two segments of the snake\n    if len(snake) >= 2:\n        hx, hy = snake[0]\n        nx, ny = snake[1]\n        current_dir = (hx - nx, hy - ny)\n    else:\n        # Default direction if snake only has 1 segment (facing right)\n        current_dir = (1, 0)\n        \n    dir_map = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    opposite_map = {\n        (0, -1): (0, 1),\n        (0, 1): (0, -1),\n        (-1, 0): (1, 0),\n        (1, 0): (-1, 0)\n    }\n    \n    food_eaten = 0\n    alive = True\n    \n    for move in moves:\n        if not alive:\n            break\n            \n        requested_dir = dir_map[move]\n        \n        # \"If the movement being applied is opposite to the snake's current movement,\n        # then just move the snake one cell with its current movement direction.\"\n        if requested_dir == opposite_map.get(current_dir):\n            move_dir = current_dir\n        else:\n            move_dir = requested_dir\n            current_dir = requested_dir\n            \n        # Calculate new head position\n        hx, hy = snake[0]\n        dx, dy = move_dir\n        new_head = (hx + dx, hy + dy)\n        \n        # Check boundary collisions\n        nx, ny = new_head\n        if not (0 <= nx < width and 0 <= ny < height):\n            alive = False\n            break\n            \n        # Check if snake eats food\n        grows = False\n        if food and new_head == food[0]:\n            grows = True\n            \n        # Check self-collision\n        # The tail cell is about to move away if we are NOT growing\n        body_to_check = snake if grows else snake[:-1]\n        if new_head in body_to_check:\n            alive = False\n            break\n            \n        # Move snake\n        snake.insert(0, new_head)\n        if grows:\n            food.pop(0)\n            food_eaten += 1\n        else:\n            snake.pop()\n            \n    return (snake, alive, food_eaten)\n```\n\n### Explanation:\n1. **Direction Tracking**: The initial movement direction of the snake is inferred by looking at the vector from the second segment to the head.\n2. **Opposite Move Rule**: If the requested move directly opposes the `current_dir`, it is overridden to maintain the `current_dir`. Otherwise, the `current_dir` is updated to the new valid move.\n3. **Collision Checks**: \n   - **Walls**: Checks if the new head is out of the `(0, 0)` to `(width-1, height-1)` range.\n   - **Self**: Checks against the body. If the snake *doesn't* grow on this turn, the tail segment is temporarily ignored because it will vacate its position simultaneously as the head moves in.\n4. **Growth and Food**: If the new head matches the active food item, the tail is kept (meaning the snake grows), the food item is consumed, and the next food item becomes active. Otherwise, the tail is removed (`snake.pop()`).",
+  "prompt_token_count": 417,
+  "candidates_token_count": 884,
+  "thoughts_token_count": null,
+  "total_token_count": 1301,
+  "_meta": {
+    "model": "gemini-3.5-flash-lite",
+    "provider": "google_ai_studio",
+    "task": "simulate-snake",
+    "condition": "en_human",
+    "sample_idx": 6,
+    "prompt_text": "Write a Python function named `simulate_snake(board_size, snake, food, moves)`. `board_size` should be a tuple `(width, height)`. Valid coordinates range from `(0, 0)` to `(width-1, height-1)`. `snake` should be a list of `(x, y)` tuples representing the snake's body and the head should be first. `food` should be an ordered list of `(x, y)` tuples where only the first one is \"active\". When the snake's head touches it, the snake length should grow by one and the next item in `food` should become active (if `food` runs out, the snake keeps moving but stops growing). `moves` should be a list of strings with `\"UP\"`, `\"DOWN\"`, `\"LEFT\"`, and `\"RIGHT\"`.\nFrom an experience perspective, the function should work like this: the head moves one cell in the given direction, and each body segment moves into the cell the segment in front of it just left. However, if the snake just ate, then the tail should stay in the same spot and the snake should get one segment longer. If the new head position goes outside the board, or would touch any of the snake's own body segments (except for a tail cell that's about to move away on a step that's not growing), the snake should die and no further moves should be worked out. If the movement being applied is opposite to the snake's current movement, then just move the snake one cell with its current movement direction.\nAt the end, return `(final_snake, alive, food_eaten)`. (Ex. `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=[\"RIGHT\",\"RIGHT\"]` -> `([(4,2),(3,2),(2,2)], True, 1)`)",
+    "elapsed_seconds": 7.737277030944824,
+    "generated_at": "2026-09-07T23:56:43"
+  }
+}

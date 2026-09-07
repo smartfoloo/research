@@ -1,0 +1,137 @@
+{
+  "raw_api_response": {
+    "id": "resp_0761627e245ad5fb006a9ed363055087d09310caad8336c23d",
+    "object": "response",
+    "created_at": 1788793699,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788793726,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0761627e245ad5fb006a9ed363919887d080256df16086b0c9",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntN-YhAlVUdKTfMi38pD09ccrvZ9nymPeMxbD7Kx0fDcjS249JnVW8IVQ2aBAijbSYsMhZUX7P0AtHkNB6vJlO0RT-Fn-gXcC-cfI5r7j2B0VwKMnJc_b9Jb2MFUFGQIycXSSgOhEbjWMk0A3d02kmMLE9aRelJfXH5ScWyI3Q9A2kXoF5xu9ia12njorrHGWmEj3IJ-PK8DqfOM1aTTz_HDyjgkA0dKo6-eWRG79h5YifXnXYHje-MGl3MNlLswaxhU04VYz-sGXslm6-u9iDJaWDKdfJWtxjQChNIbc4f9XF3CrWTwwHaQfCIp94qXaBdwm-HLm2I1fy9IRAkezEZWy-n7ddiV5fdSnkqiLUuacQfqHFOQot8fqYIbIvAPe_P5zBBnhBiuAM13X9YSIyy6e7X3LPFMLwoi0dFy3MgxqBLI148qh8JpAWagj9XolZwlTaNpfLdUQDOYMt9kyGpvM2VCE3NshtAVwrkPSY6t1njVHbdRvNl8q8eYTFeTvzkf46dp-RKjnx7jQM-qijKpV4O4R1Zqnf_x95SBAT6h9lR-JjNePJVW6MkiS2sCaSICIksfFMSZSn2hbfYp_PCu_7uHJyRbrFwGvhQBWXAa9ESXIB2CRmdI6Nc54u8EQGqAUP_lwCtpU2E4XhGIVDjGaym7Kr4tEMi79VI4LAeFajl1P4rIymaN4Ss5aiVyoc0gzZ2tZzIjz3W0qJzCuQCrCF9fugSuUH5WdTC-xK3S3i3NgfSpTTMfz--VdMstpyMDkcTRpfPhkYWmEM4LKwyUYxqE85OW77cgz8y9jXGkzMrVjz796kLJgNs_v9eqm1y1vW3iEd74aWO5ZGAM8CEECofMzVifUpXIaOqDLnwlBoQZlucWfYHsnqPIVKz5LjvVwUk40EhURI61kQppfsxuuyNoYVpnmSPH8b5czx-Il2hy6GEG3DOtwb164AYcx62G0xxZd5ddu72QLREhxuaniZsYnXi-5qcmNAwLG0PTyCslMgV1ZOKgdced8_YLHezsG_B5EIjNiLHd_IuocWAp0-PC65E5zF0AYfsb9Zh9gzetNn2LNEzAmQVH6F8lytrXpWoakX0TvMUIUoJhqs7cINPqTJDxZgZYe0TmfARHnHpVj1pYbGMvEYAazKW6SOqVEbNryYpqWBx7kJ85-aV4sVEaDYberW5-ysaCB0bzpATf91j4Q8I7vwM53pzzkw-W94hFFrVNTvm7gZFtoNNsqIys310Y050CQZhcL0MZamaEkOzmOE8uQeDdfW23xgPmX7Si7wOQIDF5Oz9KlMp7eop-UDu6xCfdKP1WGCrzY1UBwj4hHYfb-eSEXpmomEc0iFSbmRrFJIMfcgR2oY8YS-Z-LIyNF0_sEj4YpKiw4-vfEM1FK-DUBYsRQzr2mIJ1bpnmCxAsN9ad-eGIm4ybVvZH8CEH8jNxeO6nZxLM_gFFZJbuTwpuBDXZ81CzBhnd92mU7eHXacE-zoHnuVJ9vM7wOmWPtXppUc__sZYd0tTvhRMjreHf5rte4vAOq38z9rbSK08IRQjhiejVaKza63IoB0NMZfsLP2E06a64lfmggt_ayoajkvgfTWX9wJagz27w0c0_LBHzd6jUVSo7usP5fGkd0CN9kVdf5cdfJIPJD9jPBN4RVN60uAhjQfN47Dn9PK6ZQMP1bOzNveyGWUQt3cWRwrh7Wze7PAxDtmkTqTkKe3P-lujO64PYMxM24nFkmpIKgU_jzf3Xaaf3f0Md14Qiokf2k4-sWBEI9gtDVtOrPBCAgPijBU1GPPhR77AR005mR6BZ0CyWR-UaiPtAeVT5zNzUfuh6UpnEANIhbS7mf151Q7gj5Ruvz5OH7h_z9TuS_roHNrmJ4UTknmmOBRq7qUEFSC_hbmRVadxi3-X-MRLdCK1fiX9Pqb-4ge7OYPbngAvuW_hQ9gAhIh8b1ogW7MuhfD301BmUVK38ikl9udn5gZi60VAF5M2mo4vdTioZso9GxwJEMU14yC_A-Kk9bxSx0HVn_K_dF8Vg0-kY34z2S3e201tbNqbZsUxwbwyk6cC7FmhqSNXxE91G45lF6PKv0upC7FbwS05K2IR_HxNOGfq5tBhobxG9VgCZj9UHsW8pwyp7gbj4ayzyXj6de2v18LB_VboQxDOZUmBpdCGTemKKmpvPY5jIWBS8mPBrQLnk6TS5TjBiBsKiU-MZhzubNXWYUbFMcGNW0hNJFar8LMfshWdx6nebGv8oCKLAYoSIfar10nRZ-KU08Lk3xkI7u7bwpwKJxzm9CTXnhkHOzHr3XZW5iLfqgD7cUvPj-p79DZdywJ2b6llmUt8JFwpE7fO5w9NPgqa89BOwiWf9_KboiNMxA6BSpLN1Ne3ETl9liPN2vKbzWDpciU0y-0t5ntRBiW2zh4cAoen6mKQuclNRE91aahHKmTVPgkZK71Hby6sPxyaTuz7PaCUwf55pqrNx-v8cDapGAENQ7X5bkL8t7CgXcKliW8Uj6IbpUY5sF_xye5HzOCRgDZeLke7tiCMLAdRekbEO-xZEA6qRhn8ybC2MpFS_2cBFMGiREzfVLYc5Vgon7uxjzzF_Xk9kZbreYJakttl04n53RyBFJL1K_HESPLUiHmgHiL-7FeOw23gC9MZWlqnAMyHfx99Jj8TUuM-0iM2FdgUTqsn5GP8Q-PMK5XblkZ-ZDMQnDYaeEnaGgaVMYsY4LZwxVWF1ELb1seafVSUfBgchiReIaUsR2-7oUxOqVRKZ6T_67DTz1K94Dw5PvyJ5rt8KKZwS5NaBkqW7IKo92OgqcrNpbxTCZHpUBQ-8TKljyfThrLvMYvsjPmUCxs8gOBXv7Iuea6YMiJQTvoMv6AWaAsb9tK4_fF3O_ODE5awM_eMBquKJt1n4OXNTcYtUqQ1vpY4KdPg2JmppFyHqdOT15OYS7AiEqDJxFD8MjX3vnBgpymwv5Ad1j-s1Kw13yIjiDYu4_Ig6hTxCiBGIbZLWVYLGpodJPejv8x63nGseSIZBFJybMLkRBMsIsVddd8yW7lsX4L_JAMt9wPQWiRwvdlf0WmaNRO7dPj-zrKSeHR4VvecDWU9BPulNSCdmKwrInoSjNpGq44URqjjjEZyd0dEau6_BwL0U-IuEsyLc6kPdhUER97aj6KMsiHO-6RuwtQhDceU8Csf0FlCwYvJyN2vIWvVwrPCTY7aJf14Ta__7IOxb_zr8j_g-XClZ-db_moZ28VZubHENn9nwTq_dNzOVgG_rI5-NH1Au1kncEMBuQSl8MJygobRkWAKZFdmAeGUhScNhrRdvaIkOCqzzkBA8tT9kxfncXm1scP0Ip1kggbEAdrqKUbuJQdmbdimDlCKe8wtorA2VnVPB7bR-XX9Fd0Z2KrjUvN5IIHu9h0XPwYQPExo0O2CtaK99XBCmQVXwMR1Sz6hAJ5kJKP29wy29Hqpi6_8Y9tWbP0pYSWunDk35FvIadLpWt19gzqRRhuhInmMDg6B_38aiberej3SNezN8rnLz-ahmGHmdszlTHpWGjstNy1X0xItPFOtROqUEFUn5Ajv9VVjA3DXCoqCnM5aLjyLmI8TrAjqEoG1vlVUEoy0Noa_t-ZqKZ5mmHnMBS0l9f0pGVkE1TbUIN7wGMDf9-76FobhDQf1zZ91Z0ummqlAOWIvfpKsxktwhpO5cEauzePIVEPYhTwKE_5cBdGjqB357ytdoLDFI2FdkxOv2wVjsENcirT1ArRjexfICMiDr4dX5w-3STHv05JoPAiftYLFeT834nbhG1iKJyJvmOIdv70TFU1bhXuI1HktSZ8Xai8dIgAnvCLS9QeMq3ybEy6bLAoD24KPh5rl0w3g7fE2jf81Sclfse9tr0J-1ph__lR7fX0YdvRmkLQQn4h0-SovSjNuA_YCcWttfFEMi6P9Z5rDgbqwRqA83N6dtGXzJx73s0jrGg2ChPRJk6o58e5X9luKNv7NTHmJYdoTrtEt2Y9KmNruUP0AUF8KNC6Aam6SwQYx3qmuQo5C9raHPL3v_y6IWAeVnnHRUWf3wi27_I2tMFikqfLgxEuUXQvCLpsCVunxgiYMQnk6dHrRALahuj2z_VgM4wi8uE2N6mvJ5aq03uNBW8wlO9wYWjreveSMcNPu-cNKjJlnpcJU7VJ-XkJMZP-55IX2MHH5Ou2pOEORGDQO6d0C-gJen_X9bUnA2Cn5NL99SpwMDAMsshpEr8aPITx17-SyS1mABnPZFMxbwPmYhMi05AMbEXGHl8TqP-9zEzGnY-V48ooKcqxnHBKw80MM_NZpzkOs2Rgam_hVWnoQgeYFFxxVREVV8QK6XxfMXxmPNY9drM1ogXcps-SHI_FF5WviIXo14cByhTjFdLTiRw7518xOZBtriDi3_tgZgh8w-TH7NcezAHvXIvfD3W4a3INuwniaB0htDye_40SsdSVEljv1Q7veYNpSQAkFPfkyAxlQY5qwUVhSw16r20rGPAc1IeB1VqLWVEaieFbXg_07ll_wAlyrWTm_lKyxowpARewfw8W2a4JxHw3-6z0Xtb8PJnqja4p4VFPLzNXsysJBxIfJWJf2U7dxpCm4Po2FUXUAg8mISrlWrXP4a3mNdMBlbPKAZju0owwrsRg6MjhyEkWp1c451uLpwaJg=",
+        "summary": []
+      },
+      {
+        "id": "rs_0761627e245ad5fb006a9ed36c8bac87d0b2103692dc75476c",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqntN-WjIQLrwcYIktGoe42h6zTWSt8j_H57nWeu_vMNx_nEsRxS7fsKuPAs-RgTWPt_1l9hzNxwL-3boJK64I2Ig7LY7XJZrzGk7sS-mo-7zAzwcGyyflIuosWP3ycjSuo5DIExGglvugWN7cK8Na_r2nJOfmExfk-QfMgKSKQns-2S0aruPqDuFvEm5HFZDkYgns-QSR3XHJ54sZwqSPp_3FQmEZaQ09cstYcCDCV8F91rMtYCrOlgPN8uWVDzxRHyz5jveuNUGuka9yEv1I_Gm4VhwGBhCzPM-FsziJT2DOI_UMVfF0VzRC_cAg-70zyPEUE3XQtUGtF9wCH3pJyJ8srDIKJeLcAr6cfLWqG4q8imsSJbnPOe_IgCePoAd2Rn-MdGkmeAx9EzXCM-LHAaxLCbve1JGTQQuJgFayljkBeXXMOljUqMcXWbPjI-5-QqZ7shmpwSNKisBwKs9bU1EwK1Y9Iy_-de0MLgB_R0G4Nog8tHedFPIyzOmdD78MmUhKvwCMzDIfSvOGmNAMtjZAJQJQVAZU9Ht6kIntp-cRnrsc24EZMDw_yk_7u82juC6cihoEPqt9IUjX_znClpfJYmNsdPNVaWP2GxVvcq_306YtCP7sbU08u9HWoldLAr2KV5TZJDCsN06bWMpoRogjD2dtuREHZJohV6pWP2LzqfQl0Fe9yjqkGseRgy53OylFaTGw_w26OL1meUS5cK8O5Z2ztTWjQftoQ_TFd0h_Ln64HsG2IFb0bCL4OmjkuAH6Z3GMqnn_4fHIO7GTbGJbOHjMT8KUO75yUz6YxVOYMuvm8n5zK_QSQK0U4sVOQuFg6QlzP80ROFB39k63wMa-o1UpQ3EeDxCv93Ibc1KYyDP27THUWFCEndQ-T7SwxwVdKxmzgBz_HXHLk6Q7HpT7-tDq_Y-7GaN39m2Yp8q0rpVIZLd0GCjQBmoAPUZyO6QZ6ZAgRSktaHswBjj72v8mET-6h2B8UfjkJoEQPnSg5kfX3WT9uf-XmwsJW8CkQIeXJwSzBvo3ycrL98ZyWvK7fYib_8Ixe0qMCBr4dWuOV43GW50GhUTFCLAvmBP6La-3Ld1YIl4JMLad3UWKNOBvjocAJvji43NoyeC1rDcw0jxMWX-rejUHNXGEGOxZYVmXaZphuTxyBDIqJQR8iInedYypwuWlz69Rmr3dHiZzBmEsYp0o8pzKrWLJ_4V6HPQ6uS9BcYte1-CW82Yql2t1zsA55nPGSjFqpLag4sz9xEzZPLkKMVbXgm9HAYTLodvdomonqU3iMJ4CVNyhC2B0hxW4zQkKCG6f2HoAQVS8XCbYtyTbleH8mvBM8JzkmdlnYc4lUycB_YBMkVC7XcD5UfxMgZCh6KlU-aMHZ3lnR3p7MeNjFH0EGaVsf88bR9ZL-I3pf5K6uqbiQs54HFvqfxp2LeO_MfsHOYFIG1LultyiRm89M7HyJERzVgMjCFSAiYR8W0cZzel88xJtC5W3ncxby2I1r9nxClA65OEZt3-JqrRPzfuHY8_hiB6e9oUd4MUbnLRsPna7-ra9bxWFt3vsY6f6UvFHoowu879Q68qc2eI-p2DN6cCBOo_c6-ncb_KgGX79zyBcxBNBKlJF9-rYDfZ1085k25BITAI8R2W0F-rZNfDA0f5rvOlrBfDwWdSoEnlclv6yM7_YLKcpecv1YYCWFvEvQZ-qveGKuoqEpX_vx7g9yTjGJpNU61ddBlaANoaYLk1x190StiljX0DdxErknRfjWmJZ2BkJluQcpDY8mucLUveQY4QbwEfTxSxQwxy0jc9BN09N7adQFOEkBToikXxrTBKygZMoQFYN5IAT_MJ1v5qCW-B2TPNOX7i-o1sz6iegoFXWeLQVnfVU1geoFMkhCJkhfiMwX1CnlcLRGr7frjz8mnX8NqVM7w4MRiS1edcdhEDkuj2nr8t5scI1ZV7SqegCRfVLSSVuBuDyB2xSeX8pmvODM8r0kglDR9LrCE2oiM4Z3Aushk2g48yrZVghRlM3w4i6Gw3ZX2gPte437ApKveD0GXc_oL4NAIE8bIwRGKTNojxTW8zi29pakMJBCIP5S-5NDGSX91D82EaEiH-0MpxdfLe_KAadFPyxrQZjJTy5aexv0DGz8-RUnk-hU3TM4RcGd9OUhoUiqYveaGEjSyQPEGriAi0yEz7gfrUpYKKfIdfU7U5haoxv8ajQMUB5nSyVDSh-6hCmWmd3ok0KhQq-XrSauSVo4CDfbKI7Y20F3zuMycwseBMmdErbMlog_ciMFVoAhHc9tq3q_0rrjH7D_0cw6SvSVofgALgFUGQo-t-tZN2zalSERyaz4Jm-xGL0yU780JZnLogaYRTdIgQ4CrIA-PmVC1np87jEtsnfFR8nJ0E01hEjBYE99w-Iv7Vu0m1dAzMMwYLg2Q2jSTSOr9gkv7m5xeHFsGOiwNqVqk9eDhreWTewZ9oVlX5xFVQeWWo2UgUPbHMuegxP37fB74vZu2iVEzWSvLDwAfCfERDVNp4--8sz7LL4W7UEKwjB8LTz5TVPELi4wuCcCFkPioxNObQz6WmBjGloy8z4UUgVHoR2ljvRHA0-zPo3Pj8MNpI_CrGXh12G8qr4OFH4DQaP2KKeg3P26ss-KXn6PIgFbiZ7FKeK8LUPr0R8NPu6N8tQiISfzzE0fGltDB39rPLfFj22lQQ5DY-r4CH9iLGL2vC1vT0JPrOQq4MErJQf-o0rBHEOfX1Z0Dlr1eM7N-dwhz6gok2-cG9CtH_GGlua3Sy24h-HEb-QfNDvxva-hytuCxrhxbBDZtQpUOAnJjKsq2TUunVuaHBJbLCPgK2qYfYn_ZXOkVb1pYoYT4q0j2qsE7RdbQA35NQ-FiM5HHMkoZwjExEuJNZaFd46OuirP4I6nPVxQ88VsZJXh2RYT1_mRF6gSfNdIwe4NfBU8i0D71sCu0LuKkM01-S2GqdBDNjuEVcPKQDGZ41rnGZD_xER-vAuSQPrPIyq31_rMIbJHgEB7NpFzzpbG-OuYosZYaaT-rXIAhnmdkhO5wfV1FW7xF4NI0p-wXbhrzCWZEsbx2wE_9-a5HVBV2fG_ZWLJzIaq4TEVG3KrEcT8fDV_C3dkWP2DoBjYue19nuC1T2BEfmCjvKorgz5kiGBp1B74scJsmyPYHZcBj88B5aptwx7XgM5K3bv2hA72AOssZ3L_poeYczodGW6W04wfwlbqYhEk1q5l-AJSk5OXRJNFRWqk0eQxI2J4xVtsr-YumUNos1k1uQkP00oCGxpEKgsD1-lrv6fIX7IYHjWSD19YLgE03x6w8KNUv3TO3qvvOgUqfpKPgFkWCjsiGQyot6smy_Vne5CDUcvFCR6anLzP_I1pzUungh4IltCIlgz4bWgBoVWlemrH0fKMsQbXXAJpSRGIuJlrPNvx_DXEm9lrM0ZXvqFgq3iRHwjwUy_IZnbK1LJ_xRojoaWX3R8oRtQRY_H9K5craDMBPx2LgeUrKCDx60trQrb6p3cinW8jJtIw48JQbzjINXHzxE00JuhzcrpQxtFclmCQB777v1voASF9TIdi4Fb6hMO4K_viVZ17vqobgluO5WQ1WgiIie0lptAn0tBItzAGsjtr8cgYrTStL6FuKQhF93BrXxNIV1rJL-Dvu9Dl9d8intHvRPGyQ56HRANhowTT8FnthRYYJfFpTTJYh4UI_50iMoVpRHlaUsN2fq7yU7SorBOiPaNSvti3Fd3IYmC2iNNZfjMSqPmTObs0SCRLmmkgJAU91CLCLI4p_i6JxE7V7gIoAn3I5Ez00tHHuYESQVopGONxpiboLG6ZBlMSCleg8u_6gm_RjdGM2KO6Ea5d642nnXobZ97zmhEVcF0_ztYIHSwoYDLm2TH7BrZ_OIs1ymQ2q12glPFU8cn_zJ1JoGvijBUHhJFPFFAVaLM5gtH8Q8ggqCW5RVHilzUPlL2kiCKkkL6lYQlYrwbRXkT5mGizT0gj4gETIDoq2BqRZcTs90YfSs55_nARH9Ju6G13Wg3JeScEjBpp5anL7xIK3WOCgDNVboYWnZTFGmDo9Zeovv25YI3sYMJpAt6uYLYvO0V6DUnmu5hZQtqYMw1GRqAIc8dnq2w-0sY_le45TVcLwEv37Yoi9V81TvkCmAdGQAI-NcSnaNEVEFtQcNg41fw-u-wi97sGaORiQw1BVGouGUQPjP3TEt2PEP5ykDAAIZ4k2QZGj3J0eBu7I03cVQx8rNOM75X8b39g2r9kIxmQlka83qL_noi-8SqUeh5UKg19r--Ay9IX8_LOdwG4Kh4ByINY0y98-BOa9thBscFlbKvxDtjULjlyS8ro7HAWj4ur_dQg2kWspt_F5l12fiIWEU8WzbAZCGQKGzYHxdsgStXSY2H5p1VYfOhCVfpwEvcGjhHzh6xFo9WzmxfxUb0D8nAtHLcv_iJJdKA3pYU3QIGkjS65F10M4GFUmm8pZPdq5xDvfYBUSn4EVN5QIw0BxMttw==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Exploring URL handling**\n\nI’m looking into how host redirects work while preserving port and user info. I see that `urlsplit` can get the hostname, and it seems to return it in lowercase for ASCII characters, which likely makes things case insensitive. Unicode might require lowercasing too. When it comes to path prefixes, a match like \"/foo\" does indeed match with \"/foobar\". So, I think using `urlsplit` and `urlunsplit` is the way to go, along with `urlparse` for URL paths."
+          }
+        ]
+      },
+      {
+        "id": "msg_0761627e245ad5fb006a9ed376ca7887d0acc3f4d012bc2113",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"\n    rules: ルール辞書の順序付きリスト\n    urls: URL文字列のリスト\n\n    戻り値:\n        書き換え後のURLのリスト。\n        block に該当したURLは None。\n    \"\"\"\n\n    def host_matches(host, match_value):\n        if host is None:\n            return False\n\n        host = host.lower()\n        match_value = match_value.lower()\n\n        if match_value.startswith(\"*.\"):\n            base_domain = match_value[2:]\n            # ドメインそのものは除外し、厳密なサブドメインだけを許可\n            return host.endswith(\".\" + base_domain) and host != base_domain\n\n        return host == match_value\n\n    def replace_host(parsed, new_host):\n        \"\"\"\n        ホストだけを置き換え、ユーザー情報とポートは維持する。\n        \"\"\"\n        netloc = parsed.netloc\n\n        # ユーザー情報を分離\n        if \"@\" in netloc:\n            userinfo, hostport = netloc.rsplit(\"@\", 1)\n            userinfo += \"@\"\n        else:\n            userinfo = \"\"\n            hostport = netloc\n\n        # 既存ポートを分離\n        port = \"\"\n        if hostport.startswith(\"[\"):\n            # IPv6形式\n            closing = hostport.find(\"]\")\n            if closing != -1:\n                if hostport[closing + 1:].startswith(\":\"):\n                    port = hostport[closing + 1:]\n        elif \":\" in hostport:\n            _, port_number = hostport.rsplit(\":\", 1)\n            if port_number.isdigit():\n                port = \":\" + port_number\n\n        # IPv6アドレスを指定された場合に備えて括弧を付ける\n        if \":\" in new_host and not new_host.startswith(\"[\"):\n            new_host = f\"[{new_host}]\"\n\n        new_netloc = userinfo + new_host + port\n        return parsed._replace(netloc=new_netloc)\n\n    def rewrite_one(url):\n        parsed = urlsplit(url)\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            action = rule[\"action\"]\n\n            matched = False\n\n            if match_type == \"path_prefix\":\n                matched = parsed.path.startswith(match_value)\n\n            elif match_type == \"host\":\n                matched = host_matches(parsed.hostname, match_value)\n\n            elif match_type == \"query_param\":\n                params = parse_qsl(\n                    parsed.query,\n                    keep_blank_values=True,\n                )\n                matched = any(name == match_value for name, _ in params)\n\n            if not matched:\n                continue\n\n            # 最初に適合したルールだけを処理\n            if action == \"block\":\n                return None\n\n            action_value = rule[\"action_value\"]\n\n            if action == \"strip_prefix\":\n                path = parsed.path\n                if path.startswith(action_value):\n                    path = path[len(action_value):]\n                if path == \"\":\n                    path = \"/\"\n\n                parsed = parsed._replace(path=path)\n\n            elif action == \"redirect_host\":\n                parsed = replace_host(parsed, action_value)\n\n            elif action == \"add_query_param\":\n                if parsed.query:\n                    query = parsed.query + \"&\" + action_value\n                else:\n                    query = action_value\n\n                parsed = parsed._replace(query=query)\n\n            return urlunsplit(parsed)\n\n        # どのルールにも適合しなかった場合\n        return url\n\n    return [rewrite_one(url) for url in urls]\n```\n\n使用例:\n\n```python\nrules = [\n    {\n        \"match_type\": \"path_prefix\",\n        \"match_value\": \"/old-api/\",\n        \"action\": \"strip_prefix\",\n        \"action_value\": \"/old-api\",\n    }\n]\n\nurls = [\"http://api.example.com/old-api/users\"]\n\nprint(apply_rewrite_rules(rules, urls))\n# [\"http://api.example.com/users\"]\n```\n\n`block` の例:\n\n```python\nrules = [\n    {\n        \"match_type\": \"host\",\n        \"match_value\": \"*.example.com\",\n        \"action\": \"block\",\n    }\n]\n\nprint(apply_rewrite_rules(rules, [\"https://api.example.com/data\"]))\n# [None]\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 599,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1967,
+      "output_tokens_details": {
+        "reasoning_tokens": 1034
+      },
+      "total_tokens": 2566
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"\n    rules: ルール辞書の順序付きリスト\n    urls: URL文字列のリスト\n\n    戻り値:\n        書き換え後のURLのリスト。\n        block に該当したURLは None。\n    \"\"\"\n\n    def host_matches(host, match_value):\n        if host is None:\n            return False\n\n        host = host.lower()\n        match_value = match_value.lower()\n\n        if match_value.startswith(\"*.\"):\n            base_domain = match_value[2:]\n            # ドメインそのものは除外し、厳密なサブドメインだけを許可\n            return host.endswith(\".\" + base_domain) and host != base_domain\n\n        return host == match_value\n\n    def replace_host(parsed, new_host):\n        \"\"\"\n        ホストだけを置き換え、ユーザー情報とポートは維持する。\n        \"\"\"\n        netloc = parsed.netloc\n\n        # ユーザー情報を分離\n        if \"@\" in netloc:\n            userinfo, hostport = netloc.rsplit(\"@\", 1)\n            userinfo += \"@\"\n        else:\n            userinfo = \"\"\n            hostport = netloc\n\n        # 既存ポートを分離\n        port = \"\"\n        if hostport.startswith(\"[\"):\n            # IPv6形式\n            closing = hostport.find(\"]\")\n            if closing != -1:\n                if hostport[closing + 1:].startswith(\":\"):\n                    port = hostport[closing + 1:]\n        elif \":\" in hostport:\n            _, port_number = hostport.rsplit(\":\", 1)\n            if port_number.isdigit():\n                port = \":\" + port_number\n\n        # IPv6アドレスを指定された場合に備えて括弧を付ける\n        if \":\" in new_host and not new_host.startswith(\"[\"):\n            new_host = f\"[{new_host}]\"\n\n        new_netloc = userinfo + new_host + port\n        return parsed._replace(netloc=new_netloc)\n\n    def rewrite_one(url):\n        parsed = urlsplit(url)\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            action = rule[\"action\"]\n\n            matched = False\n\n            if match_type == \"path_prefix\":\n                matched = parsed.path.startswith(match_value)\n\n            elif match_type == \"host\":\n                matched = host_matches(parsed.hostname, match_value)\n\n            elif match_type == \"query_param\":\n                params = parse_qsl(\n                    parsed.query,\n                    keep_blank_values=True,\n                )\n                matched = any(name == match_value for name, _ in params)\n\n            if not matched:\n                continue\n\n            # 最初に適合したルールだけを処理\n            if action == \"block\":\n                return None\n\n            action_value = rule[\"action_value\"]\n\n            if action == \"strip_prefix\":\n                path = parsed.path\n                if path.startswith(action_value):\n                    path = path[len(action_value):]\n                if path == \"\":\n                    path = \"/\"\n\n                parsed = parsed._replace(path=path)\n\n            elif action == \"redirect_host\":\n                parsed = replace_host(parsed, action_value)\n\n            elif action == \"add_query_param\":\n                if parsed.query:\n                    query = parsed.query + \"&\" + action_value\n                else:\n                    query = action_value\n\n                parsed = parsed._replace(query=query)\n\n            return urlunsplit(parsed)\n\n        # どのルールにも適合しなかった場合\n        return url\n\n    return [rewrite_one(url) for url in urls]\n```\n\n使用例:\n\n```python\nrules = [\n    {\n        \"match_type\": \"path_prefix\",\n        \"match_value\": \"/old-api/\",\n        \"action\": \"strip_prefix\",\n        \"action_value\": \"/old-api\",\n    }\n]\n\nurls = [\"http://api.example.com/old-api/users\"]\n\nprint(apply_rewrite_rules(rules, urls))\n# [\"http://api.example.com/users\"]\n```\n\n`block` の例:\n\n```python\nrules = [\n    {\n        \"match_type\": \"host\",\n        \"match_value\": \"*.example.com\",\n        \"action\": \"block\",\n    }\n]\n\nprint(apply_rewrite_rules(rules, [\"https://api.example.com/data\"]))\n# [None]\n```",
+  "reasoning_summary": "**Exploring URL handling**\n\nI’m looking into how host redirects work while preserving port and user info. I see that `urlsplit` can get the hostname, and it seems to return it in lowercase for ASCII characters, which likely makes things case insensitive. Unicode might require lowercasing too. When it comes to path prefixes, a match like \"/foo\" does indeed match with \"/foobar\". So, I think using `urlsplit` and `urlunsplit` is the way to go, along with `urlparse` for URL paths.",
+  "input_tokens": 599,
+  "output_tokens": 1967,
+  "total_tokens": 2566,
+  "reasoning_tokens": 1034,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "apply-rewrite-rules",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "`apply_rewrite_rules(rules, urls)` というPython関数を作ってください。`rules` は辞書の順序付きリストにしてください。各辞書には `match_type`（`\"path_prefix\"`、`\"host\"`、`\"query_param\"` のいずれか）、`match_value`、`action`（`\"strip_prefix\"`、`\"redirect_host\"`、`\"add_query_param\"`、`\"block\"` のいずれか）、および `action_value`（`action` が `\"block\"` の場合は省く）が含まれます。`urls` はURLのリストとします。与えられたURLに対し、リスト内のルールを順に確認し、最初に適合したルールのみを使って処理を終わらせてください。どのルールにも適合しない場合は、URLを変更せずにそのまま返してください。\n   * `\"path_prefix\"`: URLのパスが `match_value` で始まる場合に適合します。`\"strip_prefix\"` はパスの先頭から `action_value` を削除します（削除の結果パスが空になる場合は `\"/\"` を使用します）。\n   * `\"host\"`: URLのホストが `match_value` と完全に一致する場合、または `match_value` が `\"*.\"` で始まり、ホストがその後に続く部分の厳密なサブドメインである場合（ドメインそのものは含みません）に適合します。`\"redirect_host\"` はURLのホストを `action_value` に置き換えます（スキーム、ポート、パス、クエリは変えないでください）。\n   * `\"query_param\"`: URLのクエリに `match_value` という名前のパラメータが既に存在する場合に適合します。`\"add_query_param\"` はクエリに `action_value`（例: `\"key=value\"`）を追加します。\n与えられた各URLに対し結果を1つ返してください。上記の3つのルールのうちどれに適合したかにかかわらず、そのルールの `action` が `\"block\"` である場合は、書き換え後のURLではなく `None` を返してください。（例: `rules=[{\"match_type\": \"path_prefix\", \"match_value\": \"/old-api/\", \"action\": \"strip_prefix\", \"action_value\": \"/old-api\"}]`, `urls=[\"http://api.example.com/old-api/users\"]` -> `[\"http://api.example.com/users\"]`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 29.348407745361328,
+    "generated_at": "2026-09-08T00:08:46"
+  }
+}

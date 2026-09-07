@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__simulate-snake__ja_directive__sample5.json",
+  "task": "simulate-snake",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulate a snake game.\n\n    Returns:\n        (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    if width <= 0 or height <= 0:\n        raise ValueError(\"board_size must contain positive values\")\n\n    if not snake:\n        raise ValueError(\"snake must not be empty\")\n\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0),\n    }\n\n    # Make a copy so that the input list is not modified.\n    snake = list(snake)\n\n    # The initial direction is inferred from the head and the neck.\n    # For a one-cell snake, the first move determines its direction.\n    current_direction = None\n    if len(snake) >= 2:\n        dx = snake[0][0] - snake[1][0]\n        dy = snake[0][1] - snake[1][1]\n        inferred_direction = (dx, dy)\n\n        if inferred_direction in directions.values():\n            current_direction = inferred_direction\n\n    active_food_index = 0\n    food_eaten = 0\n    alive = True\n\n    for move in moves:\n        if move not in directions:\n            raise ValueError(f\"Invalid move: {move}\")\n\n        requested_direction = directions[move]\n\n        # Ignore a move that is directly opposite to the current direction.\n        if (\n            current_direction is not None\n            and requested_direction == (\n                -current_direction[0],\n                -current_direction[1],\n            )\n        ):\n            direction = current_direction\n        else:\n            direction = requested_direction\n\n        head_x, head_y = snake[0]\n        new_head = (\n            head_x + direction[0],\n            head_y + direction[1],\n        )\n\n        # Check whether the new head is outside the board.\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            break\n\n        # The active food is the first uneaten food item only.\n        will_grow = (\n            active_food_index < len(food)\n            and new_head == food[active_food_index]\n        )\n\n        occupied = set(snake)\n        tail = snake[-1]\n\n        # Normally the tail moves away, so entering the current tail cell\n        # is allowed. If the snake is growing, however, the tail remains.\n        hits_body = new_head in occupied\n        hits_moving_tail = new_head == tail and not will_grow\n\n        if hits_body and not hits_moving_tail:\n            alive = False\n            break\n\n        if will_grow:\n            snake = [new_head] + snake\n            active_food_index += 1\n            food_eaten += 1\n        else:\n            snake = [new_head] + snake[:-1]\n\n        current_direction = direction\n\n    return snake, alive, food_eaten",
+  "stdout": "PASSED 6/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 6,
+  "total_cases": 6,
+  "all_passed": true,
+  "input_tokens": 558,
+  "output_tokens": 1773,
+  "total_tokens": 2331,
+  "reasoning_tokens": 1034,
+  "reasoning_summary": "**Refining game logic**\n\nI need to set the current direction based on the delta. If the body length is greater than 1, I’ll calculate the direction from the second segment to the head. There might be some validation for adjacent moves that could raise a ValueError. When checking for collisions, I’m tracking the tail and occupied positions. If the new head collides with the occupied set and isn’t the tail (unless we’re growing), that’s a dead condition. I'll also manage food eaten properly.\n\n**Checking food collision**\n\nI’m wondering if the active food needs to be checked at the initial position. Since normally, I check the new head after movement, but the user mentioned that the head could touch the active food before moving. This raises a point, but my example doesn't illustrate that. I think it’s more about simulation semantics happening with each move. So, I’ll have to ensure the food collision checks are conducted appropriately during the movement process.",
+  "graded_at": "2026-09-08T00:18:04"
+}

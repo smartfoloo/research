@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__apply-rewrite-rules__en_human__sample4.json",
+  "task": "apply-rewrite-rules",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "from urllib.parse import urlsplit, urlunsplit, parse_qsl\n\n\ndef apply_rewrite_rules(rules, urls):\n    \"\"\"\n    Apply at most one rewrite rule to each URL.\n\n    Returns a list containing rewritten URLs, unchanged URLs, or None for\n    blocked URLs.\n    \"\"\"\n    results = []\n\n    for url in urls:\n        parts = urlsplit(url)\n        path = parts.path\n        matched_rule = None\n\n        for rule in rules:\n            match_type = rule[\"match_type\"]\n            match_value = rule[\"match_value\"]\n            host = parts.hostname or \"\"\n\n            if match_type == \"path_prefix\":\n                applies = path.startswith(match_value)\n\n            elif match_type == \"host\":\n                if match_value.startswith(\"*.\"):\n                    domain = match_value[2:]\n                    applies = host != domain and host.endswith(\".\" + domain)\n                else:\n                    applies = host == match_value\n\n            elif match_type == \"query_param\":\n                query_names = {\n                    name for name, _ in parse_qsl(\n                        parts.query,\n                        keep_blank_values=True\n                    )\n                }\n                applies = match_value in query_names\n\n            else:\n                raise ValueError(f\"Unknown match_type: {match_type}\")\n\n            if applies:\n                matched_rule = rule\n                break\n\n        if matched_rule is None:\n            results.append(url)\n            continue\n\n        if matched_rule[\"action\"] == \"block\":\n            results.append(None)\n            continue\n\n        action = matched_rule[\"action\"]\n        action_value = matched_rule[\"action_value\"]\n\n        if action == \"strip_prefix\":\n            if path.startswith(action_value):\n                path = path[len(action_value):]\n            if not path:\n                path = \"/\"\n\n            results.append(urlunsplit((\n                parts.scheme,\n                parts.netloc,\n                path,\n                parts.query,\n                parts.fragment,\n            )))\n\n        elif action == \"redirect_host\":\n            # Preserve user information and the original port.\n            username = parts.username\n            password = parts.password\n            port = parts.port\n\n            userinfo = \"\"\n            if username is not None:\n                userinfo = username\n                if password is not None:\n                    userinfo += f\":{password}\"\n                userinfo += \"@\"\n\n            new_host = action_value\n            if \":\" in new_host and not new_host.startswith(\"[\"):\n                new_host = f\"[{new_host}]\"\n\n            new_netloc = userinfo + new_host\n            if port is not None:\n                new_netloc += f\":{port}\"\n\n            results.append(urlunsplit((\n                parts.scheme,\n                new_netloc,\n                parts.path,\n                parts.query,\n                parts.fragment,\n            )))\n\n        elif action == \"add_query_param\":\n            new_query = parts.query\n            if new_query:\n                new_query += \"&\"\n            new_query += action_value\n\n            results.append(urlunsplit((\n                parts.scheme,\n                parts.netloc,\n                parts.path,\n                new_query,\n                parts.fragment,\n            )))\n\n        else:\n            raise ValueError(f\"Unknown action: {action}\")\n\n    return results",
+  "stdout": "PASSED 8/8\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 8,
+  "total_cases": 8,
+  "all_passed": true,
+  "input_tokens": 443,
+  "output_tokens": 1240,
+  "total_tokens": 1683,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-08T00:17:59"
+}
