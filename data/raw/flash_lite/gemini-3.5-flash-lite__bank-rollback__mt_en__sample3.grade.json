@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "mt_en",
   "sample_idx": 3,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"Applies transactions in order to the balance.\n\n    Stops and returns (original_balance, False) if the balance becomes negative\n    at any point. Otherwise, returns (final_balance, True).\n    \"\"\"\n    original_balance = balance\n\n    for tx in transactions:\n        balance += tx\n        if balance < 0:\n            return (original_balance, False)\n\n    return (balance, True)",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"Applies transactions in order to the starting balance.\n\n    If the balance drops below zero at any point, stops and returns the original\n    balance and False. Otherwise, returns the final balance and True.\n    \"\"\"\n    original_balance = balance\n\n    for tx in transactions:\n        balance += tx\n        if balance < 0:\n            return (original_balance, False)\n\n    return (balance, True)",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 105,
-  "candidates_token_count": 242,
+  "prompt_token_count": 114,
+  "candidates_token_count": 263,
   "thoughts_token_count": null,
-  "total_token_count": 347,
-  "graded_at": "2026-09-06T06:52:56"
+  "total_token_count": 377,
+  "graded_at": "2026-09-07T08:46:07"
 }

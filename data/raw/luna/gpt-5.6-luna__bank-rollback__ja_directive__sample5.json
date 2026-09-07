@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_045b8a5d23067f0a006a9ec9c5ab7087d0b9d407c1396a25db",
+    "object": "response",
+    "created_at": 1788791237,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791241,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_045b8a5d23067f0a006a9ec9c60b5887d0bb72c936b3102711",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsnJiYDPyIfLxExWX2-BbNr7M3xizcBSv9g_2TscE5eJ8YmkLrEqj7DFYntWjA99xc0uwVuNHBtAXPZb8DgNe6CEXgkWoM81YZQ0TwHWugwD-ExVeIpZe5GFy5xgnKzugBq0Cm4kA30CNSyRGVowevcKAKjmxjdGgN7R_yAnOalHoeqm3LfaQgWI6lx6CdwBt5aZkLhUiCZb4vI1IPEQ9soEmsIgspQiq5j-f2Lo3igK94xJnnbIKxv2TmS8yOuDGgcpOCdSOWFWHGyimG9DStBz7DdEvzvpAVvrOaybTIhs9cTVGys8oGqrh717cN4mPEsDNLepuxKqX3Lh603EM2jMhvDie5ognXRJUQj7BB1eKQ_ImUX65bSiD8OhWJ-IIny0ihjgUqXaPv99-PJ_TytZynBhR-ssFqzvT6QSotfeWEKzBTYJtG-W9K6WLCvs8dRVouJNVKh0oNZeO4GL_zotc4gNdzsDgET2TW1vF11P5EgeqnAppq8A4T1_XCIV-wDDH_DEdZaSE0M-n1vXXQG2v_fe6cfkdu1F9OUJa5uTiewM2C-CFseOyDRi3dcA1NPRsBNQkr5I6300NMDqfsfa9VAjpIsLU7S4LkEcqUfYFXTPwRPqSDlmLFSQ4hci4_H7k_EuXJXqLUJkWY6hkT8UJNZGfbVAGOV1abh63EqOoBZo_HmsjbQ1rPnZilaqmnrCMwxCQ9XJFhQ3ZHPprzKvaE0HlOC_e1uOIIlmgCvYItM7-8TCDONhutWMZbKYuD16b_6qDoJx5DRz3BZoPduUPDqHV6RG-rc_s1W6rXfp92Pb-WSpaJVAZD30J0S0UeLolLXeLPh3qgg3MEbaOn_LAOm-csoHc98iLJZJBjuDS-rkvS1uhG4GgFwRiXy47abAPagFfq3nSQKcusxb2VfrlTIyAGLMy8VQWocuCxZ7tGh-un_CVd22U_gpCjDOYswEhGdX5atG0yUHT1lihgFXKn6o0TptKBl8wHlbh3bUDZgaYDbxTo5F1UO7PgIYsSiD7Q6804fkHXLhndOdcEAa-SJkxZyihumI8pt7fmI2FHi8xEt0hm1it80n6_Wn3LSoS9ONayqF-S1ijesV5P5KNZ2u9JISQviSgy8s0hoMXaR4Zg7X2QIdG2RQ0thbyfplRMqbTfr0SCG3a5TauU4e7UpWs2FOBdeWr6y9aHQmnI-1mUohp_J7voVd7lcThK8L14Xux16qStMkinoU1GVFPZ_w9_86-S8Q6KNTAOtbRxzGb97qp2LwQ_APs5GLNa4qCRtrnoPg8dWqAf4Yx1xRWusWB0Z8HH5QNLtQt-ozpW0lPryCnpexrW8zaIg90-49DVtX92rpzElUgtZt0up99FltJTngCqI6GfDKrKS9zQ1u4A7EE7bKOmmx1KRXN0nrsM7BCSztXZHUgjNYxSkqFzNM_nNBaQXBI9efcLyvApEUW_-_vH9fM9g4YHhWfpHNrKf_0bRoDxYxqkYrP4QvS9Euf03n1r37LF8lh05z6Pj7MsV4FO1_dQ2JoFJ-kULLDes4FjH3w7FBaQ1GpKf5TUMeVkcRwcd8SqnF6Pv25dZnkW0XQts259MotgMiwBOxwb5YSk1YMTyxVQHtCQevjRaRXLLbKns-BTbBqcNPLkxqdaYFX_E6IOrKLjHc-IGxcVm6hdWVL_MSuEleIbu3G381983c9Kz_flcs0bETW8ndWj7LSn7glgCZJw2lY9LxBGC4PxYsuON3QTF-gXazM6-q0hZTkoDBXq60RfNiNpG90v30sZc3u36X00bNv242-701n2HRMSQYJXkgl5rz04byEinyhHVZdhIx_Yv7hqr3qgb44dVQn_dKCAJdltDfuH9BU_ethgEMDfCGwB_6NG8_ZMq-kOvhic9th31T5CrLeCAI2iutSl9POEti4ZBlb-NTaZf6Mt1mP8xwdbt7SCEF8_9JJXcAqkALAmf2R31J29LSgykuJzgXCCBR-dTno910He9S4tgGz0JKdBDeR_qFrvMnLlQsV8emQovXldbQyf44g7LrnGZz6FBtUk3GoNckOCgGb6uYtbTmu1Eun2C3SRlBOim3anccgiwj7BVL2QwAlR2VwS_bGwt_YBorYAee2-p4_oH1SLJY3Cr6GGAcNk7Zyh4Ub-QlozVHzD2IGLORwB16wmV750Zux0fN",
+        "summary": []
+      },
+      {
+        "id": "msg_045b8a5d23067f0a006a9ec9c84b5487d09ededbbce1e3b215",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)\n# (100, False)\n\nresult = bank_rollback(100, [50, -30, -20])\nprint(result)\n# (100, True)\n```\n\n各取引を順番に適用し、途中で残高がマイナスになった場合は、元の `balance` を返します。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 167,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 301,
+      "output_tokens_details": {
+        "reasoning_tokens": 149
+      },
+      "total_tokens": 468
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)\n# (100, False)\n\nresult = bank_rollback(100, [50, -30, -20])\nprint(result)\n# (100, True)\n```\n\n各取引を順番に適用し、途中で残高がマイナスになった場合は、元の `balance` を返します。",
+  "reasoning_summary": "",
+  "input_tokens": 167,
+  "output_tokens": 301,
+  "total_tokens": 468,
+  "reasoning_tokens": 149,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_directive",
+    "sample_idx": 5,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.779184341430664,
+    "generated_at": "2026-09-07T09:27:20"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0aa3c029cc620f35006a9ec66eff8887d09192ad42cf41384d",
+    "object": "response",
+    "created_at": 1788790383,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790386,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0aa3c029cc620f35006a9ec66f756087d0b45496a653f0cd4e",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsZz2o2WH8SU3PYyJGl9dcD9WZcXVt2O7UXv5QnNoU99lAsoeGczxhQ4VtXQF9y6Q9qtgXvzsP1igfP5eS3_eG6qHuIScpYRYgg-1qKVlIBRkn5ZkpeN1oArNpGQv2GNyvrC9q5rF0S31kDs16ZbaiQs9e4_3UaGxVKpjea_4wyTvYlpc8sh_bwhU7l-IwjeE61nWZOpvZkKh0_prIm_0IzvmfAEQsYh97dJsGhKu6kEz13Sii-wkyLgb8SFIvRCOkB1XYS7qGZ8f7WOpnmjHunl9rrKlXGrzMmW9YXth08Y9pdJVVj3jJPhOHqM8iLVXbEkT6o48_lGtyzoUnLGAMSeFmiPViuTIRu_lDMjMXeDAi1z_wzy9ove3VkFKoMlooVmCaz-J-82h22llPk71vCrwJSZVeFCbuE8sZLs6U5Jem2wWJKd2zC-YMedFbC-2oDoEzlgqBEdznzrzJLWJltik-MxWWeGAyMm5QYzlQYq0Vg5FRWGeFzFSycdJTP_cS1zX6gUfb9lg73pE2KwELlxivCYAE3xp1h9tG1CSryvrngCWGnTnZhhVgd67njX3Z8xgBgxkRd9DOOwwRoqJFgL5L7IECcNx3Y8fENCJ7jGZrArIBrQP3OIzRxlJFzXmOxVdFFUbRUUGSnlOoq25FBfX3Hk3Q2OFycPpoNb585UO8fkaG30sGIZPGqdhSeU3ViPuaQ6pfJ9P9JgweJgZivqSPHbXDPXe0MKu8ybd66KCjlL83TDEFcWv3yhIDoeMvJ0DD0m10OY-LNlc0K7EaeY38apOzjXG0n354iujZ-EXYucuda6o2j6ZBWiWTf3VA1AkxO6MyMX6Jr2l92Gl8EVqSANwFqCUao86EzyhdiLPWiLPCDkKigIeWTEQAOEois6aRuvt6ojp9AOnLeJaVd6uDmoUiTQQ76xA5hY1BzhKoMeBSguGDzg6eZVhgLN7J6GKjGr3abl3lRFOe4aJ34X5nC1zYNdtYTQ4V0HOeXXkjJwHbA8hWec4OAhbSWKoClwuzCjVMSt05O2nTneij11j-A16bpocoawuT-fMt7fpPQjbbIiTbLsI490D5GjjqvfVa5fNDJZrStgsqRW03AU9aqiU0jri50MmZJ1stZVg7JsRErggcNXesH8Lr7P2F8UL6qVr7Z-vVdRnKwv1YWby96508TCStPLHR-Z7DHIOBpzl4X3cA18LM4jmGPyzoN_v3aOU4UwsjKJwqpsLU-GshGz6eUDCfcMH0bxRMm8XFtEyaFAcv3ryFXpKxbUlt2JfeZGp1U_EfmMuUe5dkgQ_1xXjt6g7_pFwnIs7fQe9TjpaEAbfkIGT1mzMsuZwlf_zG4DPWlZLTU4LwzGyMGUNGZRQQD9xM_l2pv4tSWzlkR65hD-OaqFgF1D00d3yEYhRlC-AeNwBqZaNNVr5gMdFa4on8jQtlXBRT9E9GUM7dhC6tGi8_-jOWHjiqHgyrCJFQxf70CDUSP01TRhdYWby4c7rGzFix0GywKHsvwxoCmosKoGd4OFTh14g82SHG6s26FrH32e7NliCnC9rZIuiXd-bvXBDBZgLxaWPmya2_5W6-ciMzq7B3-GVNuIgu8AgCEFaDHWrbla7RdR1HnEUHyu7CsFiwX_mG-aZsLnNnHanqBD9lh-R1vk5LreVsciivtMzrVEHhTy6IbzAcIjgxKLJUEF5-UmjcvRbp5HJkcae3dbExShF5WJfRXjsi0zWJGS5eA7xFigkwHOfKh2jdRRk0uyRqEyD9-kwrXnctuTG5AIHxNkdtjPQnQOuy_5EBezqkuYqc75JZwMrbcTj0wFUIF20VOXIKShhqJCmuvRG_92qYNBhOTZOY4Rx_4raHOy0m9KseCnQCLXVZkeqZb0ZIOLkjE_--bZukK4iQfEIIHeITTmPkQ5WyHc7WoyzMcQx74EWLpfILUcUkIXB0m4Jr7T1LiXUMU8IBR7BpxL13q3UBWeIz_e-nOV0HGE",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Formatting currency values**\n\nI need to explain the code for formatting currency. I should consider how to handle decimals, especially since the prompt indicates a number. I want to format the currency correctly by using commas every three digits and having the negative sign before the dollar sign. For instance, I could use f\"-${abs(n):,}\" for negative values. It’s important to ensure the negative sign appears correctly before the dollar and handle potential decimals appropriately."
+          }
+        ]
+      },
+      {
+        "id": "msg_0aa3c029cc620f35006a9ec6728b8087d083f1b97af1a6f011",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\nExamples:\n\n```python\nformat_currency(4640039)   # \"$4,640,039\"\nformat_currency(-4640039)  # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 69,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 223,
+      "output_tokens_details": {
+        "reasoning_tokens": 144
+      },
+      "total_tokens": 292
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\nExamples:\n\n```python\nformat_currency(4640039)   # \"$4,640,039\"\nformat_currency(-4640039)  # \"-$4,640,039\"\n```",
+  "reasoning_summary": "**Formatting currency values**\n\nI need to explain the code for formatting currency. I should consider how to handle decimals, especially since the prompt indicates a number. I want to format the currency correctly by using commas every three digits and having the negative sign before the dollar sign. For instance, I could use f\"-${abs(n):,}\" for negative values. It’s important to ensure the negative sign appears correctly before the dollar and handle potential decimals appropriately.",
+  "input_tokens": 69,
+  "output_tokens": 223,
+  "total_tokens": 292,
+  "reasoning_tokens": 144,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "en_human",
+    "sample_idx": 5,
+    "prompt_text": "Write a Python function named `format_currency(n)` that returns `n` formatted as a string with a `$` in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. `4640039` -> \"$4,640,039\")",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.14696478843689,
+    "generated_at": "2026-09-07T09:13:06"
+  }
+}

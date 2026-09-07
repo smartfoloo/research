@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_09b48515399a0f69006a9ec8a269bc87d08acd0f8f91e136a6",
+    "object": "response",
+    "created_at": 1788790946,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790956,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_09b48515399a0f69006a9ec8a31c5487d0bb548a084538502b",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsish8gNYTKm9p12ydd3L04i2gPFrB4TNYN8OKBE-l6Lhsb0Yb-jAaJT61pSuONz5IhH567RdhrFCArTJ5FWSuf3Aqn5DNvzDhFkd_tIxDxWT5SMkRB-iWQCGECR9_naXYMIXy7LM6IZGzcz4eaguiP7YZhs-5OmZy4G2UEq2yfoPX-9Ak38NNH0HsakWnFHAP3FUxnxmPSZUSTVVwcf_OqgMSeU2D61isd-P_RuQ3QuUqvbxa3-KGc0MzFlI651BIgTOdNyFqz8MWP-_2mp1kWtQg6PQqzwVL5PJRocjZEJfwNMFFFIXCWiz7idP4FDBG2yXF7O-q5BuZVwyhPDO_wBOfgyH5gsnYlbnVSXCx01wKXK1eQIUSEDrUyAoKMPHztDeA1yls9JQKwKbqCDFMbE_osYrl2so-BESse3Hg96etD5qUvHY4wCGUdVAYjV_u4knAGMStmWDSIW9MA4IQeeq-keYf_rDvHaPcKytRXeaHq-14gIWhQzQBLtUDN7zH1A3rjXPocJejfHYsMqFCW9WqjSy310VYkCip_qwhhQZENsh9AWDn1hqce6y9k0W_Yap2ic63Z-4CNjapFgGSs42SeD_3YYmw0uXtgNYjC9IJgssmh1P4m8A5zpCdaGs987OiSf27FeQWcEHTaV2efOuqHhQClDLT9vXHRo02wsbOZJMviCQ4Js_yCkNjDg2u7Dyz2_qL2-gY5mvZfU0HLQsQ1LAvVteHvWCfXfTl1GbpMjVaAf8buBiMXyOKNJ0cVmCdyBd8wumNlZAfucS68f9NgWcE-pVIEAGcfVE50jk7YglLfnGdLkxtnT_BSpHMQvOegat6TGjOtfB-qvGISoXwFtfof3cZieeFykPj4zIwBZW80tosPcGkqCeqPyn7mpGE4zmo-kai_npVofZoCGTbB5cO_7nRjp4DZsLbDbGWbCHd0o9XteWIUzlh1FaPHYU0EO7NLmfKgklQdMQBQjW1E0SsxBsSbZJTxT4ZmtInvSOp_ieUKOU_IqeiyquVWCbLkg7M-hi9TNUVVjuoDbplLAE8TFZ6F34ul73GSedolZhoGrCtwnYXlko9qUOs6rS1o5MuEgd336TNrYgeP9qsyyrySK3aGr7LD4LpZfCXANb9qLf7eslDSYiYE6rLzfQrnjpU2-JEnLpx0TgZ_wp8h2NxGQArP4n-XwRiFGu0KHLh34vsm3sTDnABlEbjDjikbSdWHbxtH3LZJmU01dJK8X189eeIYmlycGE-9pYnf2ivO_Zi7ZG4Tmccrpeqc-WTuqC9WCDyLVIQYAdPMBEodaRGlG_SrYI-Y3KqyQFkJq1X99nUBdILjR-YeBG99af_SW4Ja097enE3SIQdAln7LS9YWYywAvAP58sie-uYCoIMrxD1XUhVkd0MegTe3Y7nlYefG1k0koBNaoIfzaGUZUkAXcjx4V8sCWXVM8_J688wTV00Wkvag0D6N3F2sejaRFCSuYYOAGGFax9glXLoK6MXXedhrdfwNVakLEU2oG2oi1cRrqk5ojdLt1H30MOB5Ob_8rJ5c_gCunfYGxlvMI2HD_ZLp4T5WQtKv7t9NEMFYjZadLx7qF-_4Ar1kJYJa8UQ-raC52Q_DUkTCbPYn_77Ul2Q1l9MHezJwiX9nv6LeZgB2gGwwguy5vmU0Ewsu8SESkOtlTMd-aKS5_o9Lpeqk3frimoinaQNEDEGq3qA3b3TVVKXKgHJcMSddNxgeSggYtPwZf7Wej_vBZQn3aCbQT7uws8xCU5Nfqi70hTyh9yZSKhjO8CB3YFR9G5vy30DpyKCl3bQqPGlo144qPf2WOwFLR9FBM8QzBfkhF5NIIdtLvSfXIXivRpQP7j-XLVlHpunWWWupfF3t2SnvjTldBexMjh3P4E5tNL2nDlgg2WVbU7YlSUigIqTAvoB3gID49JzHL95jrDFCPAoOsMKscT-eZHUEDtCYzyhA3oEv_4Joz0otnznU6nkRQrErUtTfJ9MyAQJ_2XiWsEOR2hFTJtainBqREnAs0woWrW1WW6V22vJqEIK8QEFs95H37YO41SRCybPGgBcB3i65SAXOvk55ENwwBnLXGFppOR0fak7fKwCDNxPonFM6nAzz5fSKchAv2c34XZ_sflWKsCwmGynNjJf1BNa1Trm7IVvH5gq6FiS9UFTFwTmHECKwU0o9YPP2dsiHSBhhtxQYIt7IQ5nygTGAKOjOh-cUA_U8d2iCJDgXYL8R-Qky2h_UVOLOw5r2T0fbsXLEdREO4952MmExlNEHE8bu5GilVvLqd2nsVctjc4rbOJuxavGktl-HqHHAnRbgTDJT3NtAowhNDjMnosNP7NlN_3WaYvXZUcPO1wX92pH9IHQVJmnBSsLsVOGXQz6mO_kGOj_zTwbrlKDEHEFUAIyOBI2-1QjUlnZKu1b6pPejOwblKJhO6mipUkb4jkjhb6TZfG3QvPtuDoHb4QO_hgkRDuaILurztpa3e93KLClwZbCKwoWtfNEDuAnlLfmscSQRN4e4I17BkcQTaNKCybJNPauNSUZ8vlsiL6BuvEkDB4ol8jgTxHbOcrH9pe2uOySkZ8SbI0K2IBqjnxfTNQn8iwEB_RsQPqjMBb5UZ5qN-wV_pE4hCD7ZtSSvngWIK1t7TxgicJPTALzZOQLhsMz0X8aVQTS98PcEiL7Gb3hNI-gAGGvktMKQ2ldotBrHf5_Thy8s0LEJHvcDrYFAeFLLSdGq8HzWYiy2T0a3x9ANB37ihujMt221lQGfjt7iWQS3qHtB9eRqhk5wRifqZ2Jrm-ztwSEYUjASJyapGgf5h3p5dIFVSuQJFpF7T8F5Muo77YhWBC2jResGrn2EUfeZsg1uMsrydMy01yci73Rz8UWB8n5wNOwo46cCPfeI5LKBlflmCLpRL6GSUBjbXw_BTI8m1ZsPyoyX2aES_8e92vfnr09DHxZvrOpYM9Xwemms35-Ix0lHajx-5BDH0y4Xl_gmHAkwQAJDp0i6Y-D2OvaKRtEnF2i3EI48p227HSAnJPttio0x7ArED32DwJBheTLE7m8T_j1lGLr69AN-GCk-2mRW8qvxXGjS9SU8qsqTb6WDBo1_GUnYtpBREGOc6hrYCDezOB56_bRRq7-0TWC5qETVt7rqRME5_wSaBeaGSTKQfUMsuMMQoDbvJ2CoBf8_fQrt2sS_BpGQHQOUqufNCKdHDHn_1yY_4GybU-EdS2rm_TCfIWTKBXhApZnAZGt2cewq9EsLsG1EYVDsIIjqbNRd0LK1goH7uLU9PSHcL0wEU4ds9rr11WP48TchYK3si4aAvdlsheY1bYJLvQioTTmRkueGz8ndW4Zxkg8009kfYJ8L80TS62U7VrE9-6B-LRRDH8jeR_cLe1cWQVycycDqBS6N29Wx-_VuzOXz_syTVxVSzXL8RnrtTzQC1aPKHV1FmRKIOaiX8dGKqEAlDj0Lo8JC93Da0hUlMn8c7OzH3QT_d--tydLL1cLg4qpAeJT-UlpFr7NiwO6l_pLfWEXPZyCGfpqjNrEXg5P_ZIWvBDXisA3TW_kq3UThOnY6uVqhfN40wVXvzC7wxBHjvajrkhalbU-oHnIzwVnUKK4AOGdWNqsYdEja84bO1pAFhxa1esRv7MzGyaW-7rGRrsY7ppMk03liJPNgHk7oOSX-qMs-aOEphANJo-sPWAAw6gb7lJHFD3DTrY2_lDYhwgtdyophERNPw3CMA-PEbsQkXur3hg1f7DVyKSM3FTU9rzuxlk33jTUaWtr2bKYvMJnWkaX0xuPuZuZtSok7vICb3sWUOmulLmIEbeIgISG4Eqjvb4RixhyvmtKrunt-Y-UUxVrVx10HphSp7DyRwRY1r--NVLk-EBMP9XoTQQdI=",
+        "summary": []
+      },
+      {
+        "id": "msg_09b48515399a0f69006a9ec8a8519887d09f822d01e7294ac0",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nimport itertools\nfrom collections import defaultdict\n\n\ndef shortest_path(edges, start, end):\n    graph = defaultdict(list)\n\n    # Validate weights and build the graph\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights must be non-negative\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return (0, [start])\n\n    distances = {start: 0}\n    previous = {}\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, node = heapq.heappop(queue)\n\n        if current_distance != distances.get(node):\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph[node]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return (None, None)\n\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return (distances[end], path)\n```\n\nThis uses Dijkstra’s algorithm and runs in `O((V + E) log V)` time for non-negative edge weights."
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 163,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 740,
+      "output_tokens_details": {
+        "reasoning_tokens": 411
+      },
+      "total_tokens": 903
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nimport itertools\nfrom collections import defaultdict\n\n\ndef shortest_path(edges, start, end):\n    graph = defaultdict(list)\n\n    # Validate weights and build the graph\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights must be non-negative\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return (0, [start])\n\n    distances = {start: 0}\n    previous = {}\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, node = heapq.heappop(queue)\n\n        if current_distance != distances.get(node):\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph[node]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return (None, None)\n\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return (distances[end], path)\n```\n\nThis uses Dijkstra’s algorithm and runs in `O((V + E) log V)` time for non-negative edge weights.",
+  "reasoning_summary": "",
+  "input_tokens": 163,
+  "output_tokens": 740,
+  "total_tokens": 903,
+  "reasoning_tokens": 411,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "en_human",
+    "sample_idx": 4,
+    "prompt_text": "Write a Python function named `shortest_path(edges, start, end)` where `edges` is a list of `(from_node, to_node, weight)` tuples representing one-way roads. The function should return `(distance, path)`, the shortest total distance and an ordered list of nodes on that path. If start and end are the same node, return (0, [start]). If any edge weight is negative, give a `ValueError`. If no path exists, just return `(None, None)`. (Ex. `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 12.094507694244385,
+    "generated_at": "2026-09-07T09:22:36"
+  }
+}

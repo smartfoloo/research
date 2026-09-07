@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__en_human__sample4.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr):\n    \"\"\"Evaluate an arithmetic expression with +, -, *, /, and parentheses.\"\"\"\n\n    token_pattern = re.compile(\n        r\"\\s*(?:(\\d+(?:\\.\\d*)?|\\.\\d+)|([()+\\-*/]))\"\n    )\n\n    tokens = []\n    pos = 0\n\n    while pos < len(expr):\n        match = token_pattern.match(expr, pos)\n\n        if not match:\n            if expr[pos:].strip() == \"\":\n                break\n            raise ValueError(f\"Invalid character at position {pos}\")\n\n        number, operator = match.groups()\n\n        if number is not None:\n            value = float(number) if \".\" in number else int(number)\n            tokens.append((\"number\", value))\n        else:\n            tokens.append((operator, operator))\n\n        pos = match.end()\n\n    if not tokens:\n        raise ValueError(\"Expression is empty\")\n\n    index = 0\n\n    def parse_expression():\n        nonlocal index\n        value = parse_term()\n\n        while index < len(tokens) and tokens[index][0] in (\"+\", \"-\"):\n            operator = tokens[index][0]\n            index += 1\n            right = parse_term()\n\n            if operator == \"+\":\n                value += right\n            else:\n                value -= right\n\n        return value\n\n    def parse_term():\n        nonlocal index\n        value = parse_factor()\n\n        while index < len(tokens) and tokens[index][0] in (\"*\", \"/\"):\n            operator = tokens[index][0]\n            index += 1\n            right = parse_factor()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                value /= right\n\n        return value\n\n    def parse_factor():\n        nonlocal index\n\n        if index < len(tokens) and tokens[index][0] in (\"+\", \"-\"):\n            operator = tokens[index][0]\n            index += 1\n            value = parse_factor()\n            return value if operator == \"+\" else -value\n\n        if index >= len(tokens):\n            raise ValueError(\"Unexpected end of expression\")\n\n        token_type, token_value = tokens[index]\n\n        if token_type == \"number\":\n            index += 1\n            return token_value\n\n        if token_type == \"(\":\n            index += 1\n            value = parse_expression()\n\n            if index >= len(tokens) or tokens[index][0] != \")\":\n                raise ValueError(\"Missing closing parenthesis\")\n\n            index += 1\n            return value\n\n        raise ValueError(f\"Unexpected token: {token_value}\")\n\n    result = parse_expression()\n\n    if index != len(tokens):\n        raise ValueError(f\"Unexpected token: {tokens[index][1]}\")\n\n    return result",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 75,
+  "output_tokens": 1140,
+  "total_tokens": 1215,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:30"
+}

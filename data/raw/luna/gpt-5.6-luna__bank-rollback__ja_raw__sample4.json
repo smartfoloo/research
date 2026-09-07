@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_06b4fed939df9a13006a9ec9a784ec87d09e6ff0ce9f4ad094",
+    "object": "response",
+    "created_at": 1788791207,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791209,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_06b4fed939df9a13006a9ec9a849d487d09ba7fae24f74353f",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsmq4f2ThpVnfcbB3MRV_ima7jTq9TNINxftBGgcPD9yB9oH93gByq3aDRBUgFgz4z_HoEgpBEpxSKtQ58S2FHiq8kHN-EHlHkFvmMLPrVrJ1q31aZouewslMj-g_-AFc7Bw86seajpYc9bjZJvOs7JkeZ8YeCCErB8WoBVLCNPcGUEYnwgOqDlXhN2dRwRtispA8dbp1BeiUSjoYnnkZVEfDTcEsuPGnGyLr1cdrAGwcnOliru0aDqqMSv8Z_Z1q1BqoXuqo9LgTsXIyxTeI9JfwAdcvCoIp6eqSqNbtMZNywz1uXQPx2UR4IGq0xOKbzo2Dy02kp_cY86zNBPvYqYLgkVbf7LwZLui8Z-8_t6PIRkmlBIl8BGN3yJjAhJYP-Xowk7Iqs9Lz63ovTLl_FWKmg-ObNHXuWb12n5mDdoP-9YNcVfzwXRM-cZUNpjYUHEEwuR6MFo1KBecro8loyXjVJiK-6qKCzp5SwX3tUJ4a80rtzkxEBgVG8AHGNW8SkSn0-TJPpfY2a3kOTNqFN5Yw435P2BUIYphdp8zPpgVvjoBhcoRAvLXcBJvUL40IlgvN_JOd-kMT4DzGapvMAvVgHTSY7s-LVeJgLe5V3MkPWsAQ9L7WaEudnII69yoq8C_G3neO4xJQmoo2lChqARaz76EFH6wk2kXy2OCSFI_TO0zCI259kz4jdga9EWFEOKAF74sYwlLxHgF84jn0BC-EI4CcEkB40srY0YXJi6kuNLHBCCOjr6jeXZ9RsEWqgei4GPxf4EKMcykrBrY9WtBKmTFW7zwfUXnccRzbUyJcsFmfVn8WeZhtMfrgJ1IzUVNoPz8ds4z2AqmyHK69JarB3O9EKrzePCgJptNM10M8Itl0r8qvSmMt3jiZjVcsrzh4NpjaAW9kLQighTUZRYU149_Kymg_Vp3nBLn_uSCoqXBdSvejlghwprbbFMuXiHfrxGhwYQehc4E5IV8v_mHVOmmpSTJxPJI7WvLAUu48GC80MTze5gBItYWllQYcvpy0x-P3pIMdWjg8PJ2B3JBjMej6_AwNqa0w6-ebmekGhzylaO-T5x7IHXZkpNTvoYI8U_NfI5h7Diq5b7Qh7KZZoysoPKOuQ1BfTqFkJpIYCHggxb1tpyLyFQ1YFPFFUk4PT-fHI3VrZ_mdCHqbkyfQa5se55ZsagrmGiOx0fP4RfyvFUqjH8qDoSwWtzGVx8b3JEvPjsVgkj4Xsx4B7dgc0C6Oykv3x0qv6kGKUykBDAGUe3i-s14IMsw-RkkuLJ_aDni7vGVjYq7KYsydlT1SUueJFVIzNUWNAbbYRvYcx6ycY2iG90-K3RT3QVWCciMmc8FMLaPej3KPKzT-P-PC_MPOygQnDDgKZAu7_qUunnElvSbkOQGzuUVWzjK8BjLy4dp12w8k0V673oRNXPYfXUMqd5SjzuAPpUQZQ8eCEny-kKWQV4A4TBBdZCsnweRjSg9ZTKQmqlJ0_-C4NUa8vuNzC9yl1HTdFkjO7aQLzg=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Explaining Japanese code validation**\n\nAlright, I need to address how to validate Japanese codes. It seems like we're focusing on function without causing any mutation. I should explain the steps clearly, using a numeric list. It’s important to ensure that if there's any intermediate negative, we can roll back effectively. A tuple might be the right return type, and I’m considering whether a current state boolean is necessary. I'll include an example to clarify things further!"
+          }
+        ]
+      },
+      {
+        "id": "msg_06b4fed939df9a13006a9ec9a9853087d0a8b5f2301e8b7e09",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 158,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 159,
+      "output_tokens_details": {
+        "reasoning_tokens": 50
+      },
+      "total_tokens": 317
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Explaining Japanese code validation**\n\nAlright, I need to address how to validate Japanese codes. It seems like we're focusing on function without causing any mutation. I should explain the steps clearly, using a numeric list. It’s important to ensure that if there's any intermediate negative, we can roll back effectively. A tuple might be the right return type, and I’m considering whether a current state boolean is necessary. I'll include an example to clarify things further!",
+  "input_tokens": 158,
+  "output_tokens": 159,
+  "total_tokens": 317,
+  "reasoning_tokens": 50,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 4.5821263790130615,
+    "generated_at": "2026-09-07T09:26:49"
+  }
+}

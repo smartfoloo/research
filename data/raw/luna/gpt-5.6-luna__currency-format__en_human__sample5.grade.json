@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__currency-format__en_human__sample5.json",
+  "task": "currency-format",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 69,
+  "output_tokens": 223,
+  "total_tokens": 292,
+  "reasoning_tokens": 144,
+  "reasoning_summary": "**Formatting currency values**\n\nI need to explain the code for formatting currency. I should consider how to handle decimals, especially since the prompt indicates a number. I want to format the currency correctly by using commas every three digits and having the negative sign before the dollar sign. For instance, I could use f\"-${abs(n):,}\" for negative values. It’s important to ensure the negative sign appears correctly before the dollar and handle potential decimals appropriately.",
+  "graded_at": "2026-09-07T09:28:23"
+}

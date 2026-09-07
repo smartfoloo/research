@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__ja_directive__sample4.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と経路を返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: エッジの重みが負の場合\n    \"\"\"\n    graph = {}\n\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    # (距離, タイブレーク用番号, ノード, 経路)\n    # ノード同士が比較できない型でも動作するように番号を入れる\n    counter = count()\n    queue = [(0, next(counter), start, [start])]\n    distances = {start: 0}\n\n    while queue:\n        current_distance, _, current_node, path = heapq.heappop(queue)\n\n        # より短い距離が既に見つかっている場合はスキップ\n        if current_distance > distances[current_node]:\n            continue\n\n        if current_node == end:\n            return current_distance, path\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                heapq.heappush(\n                    queue,\n                    (\n                        new_distance,\n                        next(counter),\n                        next_node,\n                        path + [next_node],\n                    ),\n                )\n\n    return None, None",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 218,
+  "output_tokens": 865,
+  "total_tokens": 1083,
+  "reasoning_tokens": 387,
+  "reasoning_summary": "**Addressing Dijkstra function requirements**\n\nI need to create a function for a Japanese prompt regarding Dijkstra's algorithm, specifically focusing on validating negative weights. I’ll have to consider if malformed input should be handled in my implementation. All nodes should be hashable, and weights need to be numeric. If any edge has a negative weight, even if it's a start-end case, the function must raise an error. I might also mention potential ordering issues regarding negative checks. I'll ensure the code and explanation are clear.\n\n**Implementing Dijkstra's Algorithm**\n\nI'll use `if weight < 0` in my Dijkstra function to handle cases of negative weights. I need to manage stale comparisons with `dist.get(node)` and ensure accurate path copying. I'll initialize distances with `{start: 0}` and set up paths. It's important to confirm if `current_distance` matches stored values. Using `itertools.count` could come in handy. I may also avoid unnecessary copies by using predecessors for path reconstruction. Lastly, I need to keep the response in Japanese and include the code.",
+  "graded_at": "2026-09-07T09:28:47"
+}

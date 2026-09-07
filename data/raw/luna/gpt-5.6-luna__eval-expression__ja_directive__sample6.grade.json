@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__ja_directive__sample6.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr: str):\n    \"\"\"\n    +, -, *, /、括弧、整数・小数、単項の + / - に対応する\n    数式評価関数。\n    \"\"\"\n\n    token_pattern = re.compile(\n        r\"\\s*(?:(\\d+(?:\\.\\d*)?|\\.\\d+)|([()+\\-*/]))\"\n    )\n\n    tokens = []\n    pos = 0\n\n    while pos < len(expr):\n        match = token_pattern.match(expr, pos)\n\n        if not match:\n            raise ValueError(f\"不正な文字があります: {expr[pos]!r}\")\n\n        number, operator = match.groups()\n\n        if number is not None:\n            if \".\" in number:\n                tokens.append(float(number))\n            else:\n                tokens.append(int(number))\n        else:\n            tokens.append(operator)\n\n        pos = match.end()\n\n    if not tokens:\n        raise ValueError(\"式が空です\")\n\n    index = 0\n\n    def current_token():\n        return tokens[index] if index < len(tokens) else None\n\n    def parse_expression():\n        \"\"\"加算・減算\"\"\"\n        nonlocal index\n\n        value = parse_term()\n\n        while current_token() in (\"+\", \"-\"):\n            operator = current_token()\n            index += 1\n            right = parse_term()\n\n            if operator == \"+\":\n                value += right\n            else:\n                value -= right\n\n        return value\n\n    def parse_term():\n        \"\"\"乗算・除算\"\"\"\n        nonlocal index\n\n        value = parse_factor()\n\n        while current_token() in (\"*\", \"/\"):\n            operator = current_token()\n            index += 1\n            right = parse_factor()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                value /= right\n\n        return value\n\n    def parse_factor():\n        \"\"\"数値、括弧、単項の + / -\"\"\"\n        nonlocal index\n\n        token = current_token()\n\n        if token == \"+\":\n            index += 1\n            return parse_factor()\n\n        if token == \"-\":\n            index += 1\n            return -parse_factor()\n\n        if token == \"(\":\n            index += 1\n            value = parse_expression()\n\n            if current_token() != \")\":\n                raise ValueError(\"閉じ括弧 ')' がありません\")\n\n            index += 1\n            return value\n\n        if isinstance(token, (int, float)):\n            index += 1\n            return token\n\n        raise ValueError(f\"予期しないトークン: {token!r}\")\n\n    result = parse_expression()\n\n    if index != len(tokens):\n        raise ValueError(f\"予期しないトークン: {current_token()!r}\")\n\n    return result",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 103,
+  "output_tokens": 1053,
+  "total_tokens": 1156,
+  "reasoning_tokens": 314,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:33"
+}

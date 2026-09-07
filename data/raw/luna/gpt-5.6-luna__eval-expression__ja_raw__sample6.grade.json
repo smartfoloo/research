@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__ja_raw__sample6.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "import ast\nimport operator\n\n\ndef eval_expression(expr: str):\n    tree = ast.parse(expr, mode=\"eval\")\n\n    binary_operators = {\n        ast.Add: operator.add,\n        ast.Sub: operator.sub,\n        ast.Mult: operator.mul,\n        ast.Div: operator.truediv,\n    }\n\n    unary_operators = {\n        ast.UAdd: operator.pos,\n        ast.USub: operator.neg,\n    }\n\n    def evaluate(node):\n        # 数値リテラル\n        if isinstance(node, ast.Constant):\n            if type(node.value) in (int, float):\n                return node.value\n            raise ValueError(\"数値以外は使用できません\")\n\n        # 単項演算子: -3, +3\n        if isinstance(node, ast.UnaryOp):\n            op = unary_operators.get(type(node.op))\n            if op is None:\n                raise ValueError(\"対応していない単項演算子です\")\n            return op(evaluate(node.operand))\n\n        # 二項演算子\n        if isinstance(node, ast.BinOp):\n            op = binary_operators.get(type(node.op))\n            if op is None:\n                raise ValueError(\"対応していない演算子です\")\n\n            left = evaluate(node.left)\n            right = evaluate(node.right)\n\n            if isinstance(node.op, ast.Div) and right == 0:\n                raise ZeroDivisionError(\"division by zero\")\n\n            return op(left, right)\n\n        raise ValueError(\"不正な式です\")\n\n    return evaluate(tree.body)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 94,
+  "output_tokens": 937,
+  "total_tokens": 1031,
+  "reasoning_tokens": 435,
+  "reasoning_summary": "**Designing a safe parser**\n\nI need to create a function to handle Japanese-like code while ensuring safety. I'll clarify that I should avoid using eval, possibly opting for tokenization or an AST approach. The parser must support arithmetic operations, parentheses, and handle errors like ZeroDivisionError for division by zero. Python's AST seems robust for managing expression parsing, but I must ensure it rejects booleans and handles syntax errors effectively. I'll need to manage operators like +, -, *, and / appropriately too.\n\n**Clarifying expression evaluation**\n\nI need to support arithmetic expressions, ensuring that operators are correctly mapped. The user likely wants to calculate using four basic operations: addition, subtraction, multiplication, and division, along with unary operations. I'll use Python's AST for parsing. I should ensure that constants are either integers or floats and reject booleans or complex numbers. Division by zero needs an explicit check, raising a `ZeroDivisionError`, and I’ll need to handle parentheses properly. It's crucial to remember that using `ast.parse` prevents arbitrary code execution, which is a good security measure!",
+  "graded_at": "2026-09-07T09:28:35"
+}

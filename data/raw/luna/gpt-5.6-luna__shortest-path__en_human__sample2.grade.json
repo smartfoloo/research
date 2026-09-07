@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__en_human__sample2.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    # Negative weights are not valid for Dijkstra's algorithm.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights must be non-negative\")\n\n    if start == end:\n        return 0, [start]\n\n    graph = {}\n    for from_node, to_node, weight in edges:\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    distances = {start: 0}\n    previous = {}\n    sequence = count()\n    queue = [(0, next(sequence), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # Ignore stale queue entries.\n        if distance != distances.get(node):\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue, (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    node = end\n    while node != start:\n        path.append(node)\n        node = previous[node]\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 163,
+  "output_tokens": 825,
+  "total_tokens": 988,
+  "reasoning_tokens": 488,
+  "reasoning_summary": "**Evaluating Dijkstra's Algorithm**\n\nI need to craft an answer that includes likely code and explanations. I should decide on using Dijkstra's algorithm while validating for negative edges. There may be edge cases if nodes are unhashable, and I’ll need to consider parallel edges. It's crucial to check for negative edges as they'll raise a ValueError. I should also focus on path reconstruction and node comparability, particularly with counter for ties. I'll ensure all negatives are handled properly before building the adjacency list. If no path exists, mentioning the ValueError is essential.\n\n**Developing Shortest Path Code**\n\nI’m working on a function called `shortest_path` that processes edges with a focus on negative weights. I’ll need to create an adjacency list and manage a heap for distance calculation. If the start and end nodes are the same, I should validate after scanning for negatives. A second loop can be constructed for checks. Weights can use Decimal or integers, but counter tuples help resolve equal distances. I might want to explain time complexity in the final answer. I’m keeping an eye on ensuring all nodes are hashable as well.\n\n**Clarifying Edge Cases in Path Function**\n\nI need to ensure that if there’s a negative edge weight, and the start equals the end, I should raise a ValueError. So, it's necessary to scan for negative weights first with `if weight < 0`. There’s potential to create a graph using node objects that handle equality and hashing properly. I’ll use a heap tuple structured as `(distance, sequence, node)` to avoid direct node comparisons by assigning a counter at insertion. Finally, I might return the distance as an integer. Time to formulate this properly!",
+  "graded_at": "2026-09-07T09:28:45"
+}

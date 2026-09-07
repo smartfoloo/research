@@ -1,0 +1,134 @@
+{
+  "raw_api_response": {
+    "id": "resp_0dabb6917eca46c8006a9ec64bb56887d0a2e9987ce9c1b2ca",
+    "object": "response",
+    "created_at": 1788790347,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790353,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0dabb6917eca46c8006a9ec64c437087d09a2daf20e341cafc",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsZREdOq3JCEDYTqcKOkBiddYJJ7rOoYxUXEYeyQ_KmenNlQmH0zS1IdcN_Gvdh5DCejLTo-GHR3njqlkWln4pjE08QkhkENiBnfrJqfgig06nX3Tj8SIUSzDB6ihdbY6kaK_85-X-qGnbFJ1A9_TkcnlP2WHUPrsH20aNWo6maRNpr0OkQKHOjOTQR4CUCAlyNvnd1nYm_v0K0xqHtYLdM0e1kdiQllaq9H4ZPD68bQWE9qCgn3P6wfcy_Bk4HFYZyK3VseC1QYEAoWqc8wW6UvRKj3v0r-1pqZiT_VZFypnvoy0xGS0hbQm69HZzxqsvj4kT-dMU9-xJ7Jyqfa63VOMtj5d4Vowjo2sBReOYIzB3tCdx3CRsDY6Wsz-aDtlxrFam8Gp79t1sNFJL10YCmlrTzvdTshMAwUAFlbrJzeV21M1x8J3HkKGWrAwcKhKmtiBs5U7FzF51NtL0DuIq5unPagSUgwm0aQ4KS7D-52FVifTigzl3tnq8o_r8UBhnCM1Exb6xoOsFc_JdEkzMSFu9m9-hF_gd84mWfoP7F0FqJb3U8MwGLJzI_axv-VtBFQH71_HdJ4FBm9smCiEi-czP3qNKGNtNn1Eucr1EaL7dlMlCqx3Gu06nlZqHQUpHORnavZ43DShKqpeNtZm_SLHNhqJSSMosuDibmENwZusQTzCNiUKShfxTU_HYwrESeQE2w4PUkmV0XMNJbBG11ZLdbq_8gZzAacE-4gFuyOVHiL9qJ9aD0439GjyNYOn0ICm87dntwxOlKGlzh9_J-wWhTAMJvJ0zcnZo0B7vheCaqpwC6B6fBahImytazeFGZWZnKkGT9WEjywd1CpJD-STEdGFnqe2QmwgRx-Ac4ibG6ncj-CAWX7aAnXB6H4fNj_aDU3hGwKrt3H77N4ClXeap_2OiGzIwTOnXm0ukwyiU-8W47v4q5kPPkz-JyIPE95amyu2Gq1o5kAaLXA9vj2lyqAdnSos6GTgpC4hhSVgaNLQEBf_LZtxbvgrNDtPAIpK-CAxImIz1ep0ZuevXYNwgkMF8squz5dNEshD6gTpb-GhBb5rvQgyYNanQw-yYRVyoXscdbbn_Cc4arCvjPyESaJ13UiwNIbDhzA2nVOJWnv54ycYL15K1Oc8xaf4l8_kmHRnoDF9ZPEyGT1WyeEylMMdX_I4O_KyWodH1aHX7WRi7589l0adwEsm_nXl3mvPVevUB4glxMPPuLlrpS5-Y98kQslUEH8oRabhpEReSCLKFvVyK2igSA95X9DKdlSvdxqDqB7uC8_aJ8YjbxTHL8Cxte3FxRe6ApJXXWIS6MrGFkchi0vr6izlEj6nDkYrP98lpiac7C8jCjEK3DmXBR2Z-V0hIgXCWkmOSPffayBuJfZJatcL7ea0jvcFaq05sLXezEoYjbSMtiu4YP-iiayQWDGH85B9GW3UnH7G3P7bTL3_3UgTuBMsCXOqo-Af6VtZaV4UbeSXMShhBFMJV_t8iu9lqvGGjwyZVV6PfjuMCSSTlMyJYw-_qscduJim0gFwHw34EU69ucESnzb0bIsFy894-imTHGDRHZfJ4gc6mHgTMa7WXq023h1aKtbM5VlZk4pzg99m6FIV-xhMIbjYoKV9skEpJz99jrIy59YzPFin5nS-eD2Q8d39zEVqVghzYGC3KExMHEDYFclhSa_T0vIhWUIl86R1HHSBRRGRYlr73YjRDkItm48zcXvCNc9PttPD8AIPpxjILf34kXiAtb12-jiVOJgoe4x3M4AR-axgUGHfkNOLCSEvcDV4Obpk335hc-LKAnBnOvjSVoaSUuMetOhdsyG-KpX-p7_LF_3KE3LirRCEAvBFii4OCMEf8J8WD_WuNOiiuVPsTHaMClXA5BUVTdgyvpMtSIeYog8f1RzLl33CkbbxvDXOCHCfFcD-pcmuOOFslBNLTNVFTl_SQ_t1yeiS_9ubxslrXD_1zsTPVWQmKEAvtJqbtdoPhdFSNBFJJZCKelwyqktLQID9P-YXEkKrXjniJuA_NCZWW4qD7TS_1OHWwb6C1tW7Y5JC67QNvtgTMgy3I19n5jPpRSNdC99RwLZdUCOHmmcIWfwxrFUm13v_K8DvVARPfPMhb4oWRDzq38eaFWlZEgXw-RPKWOvZOhoregIyoAANM7wOJqUf0y-guQx-a7XGzT7lXB7ST7gmn-BVuXvoLwznoEkZOpe9r7xqwl6b7N0s9wotyhXvrxv8L89Ocuav_YrPxqql8M6BFPc4FhhdvXL2Wx1c2vLTMxMVNKfAXT6usk_2MnaJda7nO_HcGvDxugLM9iOmABci9setF2AltKYWY3WytGK256KEJm8h5RFv_ccCcHsLOkHNvDCFvTc7b2PrEegT1VWvWtD6OhBLIySvm3DO0oT_VJLf8MKUhWk50H51wVZeHUXoX3iigt5YVDOs3_jumDsib8WXGK2JZsT98bhg-zpX_0MvFwWwiDHZKde5TaZS54QM_qCNetM5MKLKu1bZ1y4maLm7k5imPP169Tm71KloATQt0liPEmHNipruLDCwpc7gSP3I4iCLL0-cW9wrtFBlmQPSwN4pHj0vHvGkelcVkR2kP5_ZhIOlZKnp8YrW1EVoHnjdt93cCTM1X1eKdh9LvYK30rT_fJbpVpPo0VoBkg87fJBowxD8oLCVhEJ5j8XVYl-",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Explaining code logic**\n\nI need to clarify the code requirements for calculating weekdays between two dates, like from January 1 to January 8. So, we’re looking for weekdays from January 2 to 7 which gives us four workdays. I think I should create a function that counts only these weekdays and handles different date orders. To measure, I might consider using datetime parsing and a loop to exclude endpoints. I’ll ensure it covers scenarios like adjacent dates and maybe implement a validation step to handle date strings properly."
+          },
+          {
+            "type": "summary_text",
+            "text": "**Crafting weekday calculation logic**\n\nI think I should focus on formulating an efficient way to calculate weekdays. A clear loop will be key to ensuring accuracy in the results. I want to make sure the logic efficiently counts weekdays between two given dates without overcomplicating the process. Right now, my main goal is to streamline the calculation so that it’s straightforward for anyone using this logic. I'll aim to deliver a function that meets those needs precisely."
+          }
+        ]
+      },
+      {
+        "id": "msg_0dabb6917eca46c8006a9ec650cdb087d099308042ca62cb2d",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of weekdays strictly between date1 and date2.\n    Dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 92,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 431,
+      "output_tokens_details": {
+        "reasoning_tokens": 227
+      },
+      "total_tokens": 523
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of weekdays strictly between date1 and date2.\n    Dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```",
+  "reasoning_summary": "**Explaining code logic**\n\nI need to clarify the code requirements for calculating weekdays between two dates, like from January 1 to January 8. So, we’re looking for weekdays from January 2 to 7 which gives us four workdays. I think I should create a function that counts only these weekdays and handles different date orders. To measure, I might consider using datetime parsing and a loop to exclude endpoints. I’ll ensure it covers scenarios like adjacent dates and maybe implement a validation step to handle date strings properly.\n\n**Crafting weekday calculation logic**\n\nI think I should focus on formulating an efficient way to calculate weekdays. A clear loop will be key to ensuring accuracy in the results. I want to make sure the logic efficiently counts weekdays between two given dates without overcomplicating the process. Right now, my main goal is to streamline the calculation so that it’s straightforward for anyone using this logic. I'll aim to deliver a function that meets those needs precisely.",
+  "input_tokens": 92,
+  "output_tokens": 431,
+  "total_tokens": 523,
+  "reasoning_tokens": 227,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 5,
+    "prompt_text": "Create a Python function called business_days(date1, date2) that returns the number of business days (Monday to Friday) between two dates. Both dates are in YYYY-MM-DD format. Please calculate only the days of the week without taking into account holidays. However, please do not include the two dates themselves. (Example: \"2024-01-01\", \"2024-01-08\" → 4).",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 7.72577977180481,
+    "generated_at": "2026-09-07T09:12:32"
+  }
+}

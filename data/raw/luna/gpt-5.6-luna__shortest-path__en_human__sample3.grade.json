@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__en_human__sample3.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"Return (shortest_distance, path) for a directed weighted graph.\"\"\"\n    graph = {}\n\n    # Build the adjacency list and validate weights.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    sequence = count()\n    heap = [(0, next(sequence), start)]\n\n    while heap:\n        distance, _, node = heapq.heappop(heap)\n\n        # Ignore outdated heap entries.\n        if distance != distances[node]:\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if neighbor not in distances or new_distance < distances[neighbor]:\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    heap, (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # Reconstruct the path.\n    path = []\n    current = end\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 163,
+  "output_tokens": 860,
+  "total_tokens": 1023,
+  "reasoning_tokens": 464,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:45"
+}

@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 1,
-  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements while keeping each punctuation mark\n\n    attached to its original position (or effectively reversing the punctuation list\n    along with the elements so they stay paired with their relative positions,\n    or standard reversal of both lists).\n\n    Based on the example provided:\n    elements=[\"Hello\", \"world\"], punctuation=[\"\", \"!\"] -> ([\"world\", \"Hello\"], [\"!\", \"\"])\n    \"\"\"\n    # Reverse both lists independently\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation",
-  "stdout": "PASSED 4/4\n",
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements while keeping punctuation marks\n\n    attached to their original relative positions.\n\n    Parameters:\n    elements (list of str): The list of words/strings.\n    punctuation (list of str): The list of punctuation marks corresponding to elements.\n\n    Returns:\n    tuple: (new_elements, new_punctuation)\n    \"\"\"\n    # Reverse both lists to swap the elements while maintaining their \n    # corresponding punctuation positions.\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n\n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\n    print(f\"Elements: {new_elements}\")\n    print(f\"Punctuation: {new_punctuation}\")\n    # Output:\n    # Elements: ['world', 'Hello']\n    # Punctuation: ['!', '']",
+  "stdout": "Elements: ['world', 'Hello']\nPunctuation: ['!', '']\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 75,
-  "candidates_token_count": 350,
+  "prompt_token_count": 86,
+  "candidates_token_count": 411,
   "thoughts_token_count": null,
-  "total_token_count": 425,
-  "graded_at": "2026-09-06T06:53:21"
+  "total_token_count": 497,
+  "graded_at": "2026-09-07T08:46:15"
 }

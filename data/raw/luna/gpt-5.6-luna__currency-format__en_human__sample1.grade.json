@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__currency-format__en_human__sample1.json",
+  "task": "currency-format",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "def format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 69,
+  "output_tokens": 219,
+  "total_tokens": 288,
+  "reasoning_tokens": 142,
+  "reasoning_summary": "**Developing code for formatting**\n\nI need to consider the code for formatting numbers with potential decimals. I'll look into how Python handles this with the f-string format. If the number is negative, I should ensure the minus sign appears before the dollar sign. I think something like `f\"-${abs(n):,}\"` could work. For integers and floats, I might need different formatting rules to handle commas and decimals appropriately. I guess focusing on creating a function specifically for this would be the best approach!",
+  "graded_at": "2026-09-07T09:28:22"
+}

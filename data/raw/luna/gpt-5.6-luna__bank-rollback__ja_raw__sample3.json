@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_056530409a911bf4006a9ec9a28a6887d0a4203854ec152147",
+    "object": "response",
+    "created_at": 1788791202,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791205,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_056530409a911bf4006a9ec9a3272887d0a9039ebc966ed779",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsmlnu1UXi0EyqsVRac6EMRBzN6Rwb6W9c0nkkYrYQuPbGDnvHojMHdQyg8Ih6Lytc8mO-UyPUoyCc8pf_77s-roBGPD7ngjp4AjAOcv4IQt0kSoT1V8LH0nXIzrhpItA8ArSgYXqP1qTivXlxPSmc9sHSB7FpKNkSw-PumBS913-pp6YR_gaNPX83MA4uGHC3L6Pg7wBsd8xy4mkqo0qhqYwCMfkpH82vkWn5A2_LlctR742Y93wbjl3pNM4qF5czlk3Otm7iYEl9_XVuOZCKprngj1Mcr1QoEG4AJjpePhNAwi61_yvWNaUg207l7AUCofD_srr5j8UTDya3fVc2N6aiFA8p3AUd7QO11SRQEY1zuGdcQL_ptRPLuGCrTfpVzvC7fB0Q3RgSKZcL9XrWrEwLw8rCWOwWFCHBe9i9g5nDlZ-dwp0Jxj5KmX-ohmrbr30woOvDJD6rqn8BDJ98KETKi989HiUdOrBx8ruDkkl5xKcPi0EGls7eu1cqvawx8iXiF9dFnL4VXmJW8uQx_Ehe3WpRv8zl0DDV4uowxoG2701cqA1CMZI-YT68HK4DqeGs1skaVAxfr5xwKhqVv2vtx4YsIb3xSnrP6UMvnFeJPWw2R5HSWw9saAOpko_4s1UWZ0zmICN9xk315_0o5DcKtnr8Y-LjJ6fweEdfy9Fdw4LwS7ozps4yVIw0C72AWo-lpKRnvXWhBW0SG6oyL9GoMpiBmF8Sy3yInN3KxTWSoGmfSjVc8kaVOtt9VE9QJnO1Y1VdmQ27-RzaKVYITuFQub2qL-THl2I1RnqfR-5FuRIZmr4ZCumOt3p7LNrt8ncqAIWl-_eDK46UaG4yBCZD8eqSZLUmTmvjzagUNnIwnZ8oExJgGuLQ3LB8fMczBmEvWBzfdkiBHpdIFm_I81mi37LSE5ZTantRKtu5dZHfCJI3eb9_MfTBLHePsytXHAyhBwiOMwG8PD1kpR4fvnPNug27QftpXDLCHKHLOMKu-bZl_11Q3qaWP09gofscIVxvx5jjaIk_pTZRRB6SFx14dv5SnFDeakkqIg4Z1f_WSQOjxCTvS7xLLKNbp6m6jpTfwSge34Ea_ysbu2Or1NIdAx97F7fPdlzrh9fpy534b57o_kXPqkIuQpv6RgLidzy4_3fMst4HOkmfBrlSSKBrPpYUhcxClDOVm1izNgicd7RlrEb1MND0yxUaAlI-2pGd4-FGhMWk7Y_-AAgcyRrDyTbZGxx_u6312y_LirfIh-MuO0alu2lBRBAMf6923zaqrsqJUrrISMzPFv0RBvXI5Ip_pufnWV6VZJdT5Ajdf7cJAF4scr--1x-HN087lhGiU-PeCfe_be5d2d6uPTP-Bs4x4zkF7QR-RMPwHZJx67xcG_0DeIMZT1O7Eq68LTW8tEDtpvx8NHV1MGrfID_OifGPkawt0h3EWVdBfL7dcR9DkvHaS-2TEy70MLuK99mO4c7bjiTwEyF3FLIpzZNB7rzlmFqCqwCbgHIdmu7S0PLOtl64uMjt_Olql7BfeCe1q2N46R-_HbJOZGjwJLsFwvOyv2Y9FaJOZQcxqFfjkiTvz9DdpQ1brnic2wEv-aEcBwKocRcEYq6Yx67nH3DpiutEhC-1NXeZlNUJM8R782zBmJoeQ46FLFaEZz35ao8YIPGB9shIwGhbNB53AA7G0DLZcDw0lKnlUmIXd7KSJzXhk7gXXn4zWldx0DHV6UqOufR1FT5MGQi1MWbDE_EeNQb6Ta6zUV2DhFk_kl644wup6FPxESocIE8yvSS63Ge8Eh1AlvVrd7uSj4WMgeYbU7948hPWbZGfm0wGMN7SK87SVnWagii8TKM0-louHe0R_58nJ-LWqkuPp3MStidMyTr4kk0k3yoUq6cIqnd30=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering code validation**\n\nI need to focus on writing a function in Japanese that involves validating transactions without mutating the original balance. It seems like I should include a check to see if the current balance is negative after each transaction. I’m wondering if I should also check if the initial balance is negative and if that should immediately cause the function to fail. It looks like I should keep the example concise and possibly include type hints for clarity."
+          }
+        ]
+      },
+      {
+        "id": "msg_056530409a911bf4006a9ec9a519cc87d0b79f281b13bebad1",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 158,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 216,
+      "output_tokens_details": {
+        "reasoning_tokens": 107
+      },
+      "total_tokens": 374
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Considering code validation**\n\nI need to focus on writing a function in Japanese that involves validating transactions without mutating the original balance. It seems like I should include a check to see if the current balance is negative after each transaction. I’m wondering if I should also check if the initial balance is negative and if that should immediately cause the function to fail. It looks like I should keep the example concise and possibly include type hints for clarity.",
+  "input_tokens": 158,
+  "output_tokens": 216,
+  "total_tokens": 374,
+  "reasoning_tokens": 107,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.002242088317871,
+    "generated_at": "2026-09-07T09:26:45"
+  }
+}

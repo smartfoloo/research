@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 6,
-  "extracted_code": "def format_currency(n):\n    # Handle negative numbers by storing the sign and making n positive for formatting\n    sign = \"-\" if n < 0 else \"\"\n    n = abs(n)\n    \n    # Format as an integer with commas, then prepend the sign and dollar sign\n    return f\"{sign}${n:,}\"\n\n# Examples:\nprint(format_currency(4640039))   # Output: \"$4,640,039\"\nprint(format_currency(-1234567))  # Output: \"-$1,234,567\"\nprint(format_currency(500))       # Output: \"$500\"",
-  "stdout": "$4,640,039\n-$1,234,567\n$500\nPASSED 4/4\n",
+  "extracted_code": "def format_currency(n):\n    # Format the number with commas for thousands and 0 decimal places\n    formatted = f\"{n:,.0f}\"\n    \n    # Handle negative numbers to ensure the minus sign comes before the dollar sign\n    if n < 0:\n        # Remove the minus sign from the formatted string and place it before the '$'\n        return \"-$\" + formatted.replace(\"-\", \"\")\n    else:\n        return \"$\" + formatted\n\n# Examples:\nprint(format_currency(4640039))   # Output: $4,640,039\nprint(format_currency(-1234567))  # Output: -$1,234,567\nprint(format_currency(100))       # Output: $100",
+  "stdout": "$4,640,039\n-$1,234,567\n$100\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 68,
-  "candidates_token_count": 267,
+  "prompt_token_count": 73,
+  "candidates_token_count": 344,
   "thoughts_token_count": null,
-  "total_token_count": 335,
-  "graded_at": "2026-09-06T06:53:08"
+  "total_token_count": 417,
+  "graded_at": "2026-09-07T08:46:09"
 }

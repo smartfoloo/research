@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__en_human__sample6.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 105,
+  "output_tokens": 173,
+  "total_tokens": 278,
+  "reasoning_tokens": 65,
+  "reasoning_summary": "**Clarifying transaction code**\n\nI need to explain the answer code more clearly. I should consider how transaction semantics impact balance, like how positive amounts add and negative amounts withdraw. It’s important to preserve the original balance without causing it to go negative. I’m thinking about using a Python function with a number list, maybe utilizing Decimal for accuracy. I might include type hints, and while I don’t need to validate inputs, I have to avoid mutating any values.",
+  "graded_at": "2026-09-07T09:28:07"
+}

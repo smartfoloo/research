@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__mt_en__sample2.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of Monday–Friday days strictly between two dates.\n    The input dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0, ..., Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 4",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 565,
+  "total_tokens": 657,
+  "reasoning_tokens": 352,
+  "reasoning_summary": "**Clarifying date calculations**\n\nI need to provide a code solution and explanation, particularly about exclusive endpoints when counting business days. For instance, between Jan 1 and Jan 8, I should clarify the inclusion of weekdays and weekends. I might need to handle order, since the request doesn’t specify the behavior if the second date is earlier. I could implement a simple loop to count weekdays and ensure accurate behavior in terms of sign when dates are reversed. Let's figure this out with careful consideration!\n\n**Improving date counting function**\n\nI think the function should return a count while handling ordered dates gracefully. The requirement isn’t clear, but normally, we expect a positive number. If necessary, I can use absolute values to count days. The standard coding approach would be to set up start and end using `datetime.strptime`, then loop to count. I’ll ensure to explicitly support reversing the order by returning a negative count if needed. Defining \"between\" as nonnegative means I should also validate the order and count only weekdays. Let’s make this clean and organized!",
+  "graded_at": "2026-09-07T09:28:20"
+}

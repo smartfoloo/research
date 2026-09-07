@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__en_human__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverse elements while keeping each element's punctuation attached.\"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements and punctuation must have the same length\")\n\n    new_elements = list(reversed(elements))\n    new_punctuation = list(reversed(punctuation))\n\n    return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 213,
+  "total_tokens": 305,
+  "reasoning_tokens": 87,
+  "reasoning_summary": "**Explaining code requirements**\n\nI need to clarify how to interpret punctuation and align the lists. Reversing both lists is a priority. I should think about validating the function to ensure it’s working correctly. Perhaps it’s best to avoid mutating them. Using list(reversed()) could help here. Should I mention lengths in the requirements? I want to provide a straightforward solution. It's essential to ensure that the punctuation is paired correctly, and using tuples might help preserve the structure. I’ll also write a docstring and consider an optional length check.",
+  "graded_at": "2026-09-07T09:28:38"
+}

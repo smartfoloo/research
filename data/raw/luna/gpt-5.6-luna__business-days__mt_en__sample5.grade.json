@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__mt_en__sample5.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of weekdays strictly between date1 and date2.\n    Dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 431,
+  "total_tokens": 523,
+  "reasoning_tokens": 227,
+  "reasoning_summary": "**Explaining code logic**\n\nI need to clarify the code requirements for calculating weekdays between two dates, like from January 1 to January 8. So, we’re looking for weekdays from January 2 to 7 which gives us four workdays. I think I should create a function that counts only these weekdays and handles different date orders. To measure, I might consider using datetime parsing and a loop to exclude endpoints. I’ll ensure it covers scenarios like adjacent dates and maybe implement a validation step to handle date strings properly.\n\n**Crafting weekday calculation logic**\n\nI think I should focus on formulating an efficient way to calculate weekdays. A clear loop will be key to ensuring accuracy in the results. I want to make sure the logic efficiently counts weekdays between two given dates without overcomplicating the process. Right now, my main goal is to streamline the calculation so that it’s straightforward for anyone using this logic. I'll aim to deliver a function that meets those needs precisely.",
+  "graded_at": "2026-09-07T09:28:21"
+}

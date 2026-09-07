@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_055a38968e209eb1006a9ec48853d087d0a39c7c5664e41fb4",
+    "object": "response",
+    "created_at": 1788789896,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788789903,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_055a38968e209eb1006a9ec488c93887d0a2cb4079837cc52a",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsSPLec5XIy2TYIKnfX4FlH56K6FwHfagK6LXrL551s2XZyQ8CkXWV9QTUrrTveGmWtzFvNwCkTAwAAfpUauKdaXh_N_YBbkTSVSWrMgA-8GhOZdd3US1CgfXhhirBM7f3kQaQO6Z-AM23GASycHb-TjtoH_18swuNCjdpoRfEyBEZYX63zFGbLCo3WSf7Sbm4Ndk5bOdcZ9iq_Zid3hWuyZG8_h0DR7d-eri6Ck7dqzTz7mzTp9RPOQofnVV1OshsThdR_3tI2X49Hk2reHwlRT59_a9ROwtNln19Xcq04o5P1x0EMFzNLT7rgwWRrMJVeBllHOT0d5Yvy9hAHEgjrR07i3e_uSDBtSmQK-LL2P-k7RYjnQH4NjmXXAP5Z6a0GVnRW70RXj3sQYOqOF895HyuFJy47BesD-6YsAVKHy6NAy9de53HtMYSCFjPNNEgxPtnEwLUklJX_eRdrD0Q_YrOiJpteCjpi-agUTvdowkaT0xzi4PF5fDa7Fksr-XAdaw0C5iJ0BPVMCkTSQXCO8L_20sei4pHJPKvDKHTQPLYXRUgUvSvJbM-irHn1_fZ5M2tYxo9DcUr1gHypfuMRcY-O-V6lq4iwq6W3ZDcMpP724qmdAqkokwXDTDD9X5IwW-XPTM7uEw1pYvEw4fxOtRAdYZV6INDNHOpl4ECqywj5uXh0bbGfVfD31_fvKTftDK7jW6OL-4EJfp_CDCelFLxHf9DbFHoWqwKRo0mFo22-dNH9LvCGwR-rw6xkEiKriRIvCdcmDlMCeGX-jhVuvAuXeG14HEiM4ba_yEoBIqqzt6vxlp9T4ePu-ISC2kHei8tDtjQSz5QpJKbEp4DS5_IkBFrCpIWyv05JCZdqnVbCRhIAN3hlljdfwUtkdNFY0hyReIC1U6esPSUAgQffX0tuAwzmIzX5JB8jwqjbEx5FttcxyhJrhsyWEuz4ZftxvyImb_WIaVxBfi2le0SW1tzP3mNZgdi1z4MsiqDLSbvDqWyAKMmQBMSKL0UTTLUztzoA_AGN2ufHzMz87dUTM8qD0EFBH-h1j_agZgNXpS0_jdy2SNvMH6x0wWwLV3vJetMp03YkkP-_DNaKwanDShwR5uTMEVWcWZzt9d3_tXhKsdNwnSk-d6kegn2Np15zaxw8faqJcKsXTOvWdkjlh3wTDmY50n6enztl1FA8m8YM46-fmGVF5hmL94QEWj-xbWp5hEA6WVvMMlWVG5J0goXPXutqcSpHRYjVEGdwCVhdGXop30KU4pTWZIa9MzRBJpwbU6eMUz9VoVFbn8l7JSpjdjMTV_St_K3KvgVRCotNNXaCjPgEUHbyKASagr7A-utZuoiDNCaOYbnAX60dIHMGITfpd4JLBqgAzOwoJlQRj9TcXQLED6a_yNRyj3yVlkENcxOmBWZrgf75YbBPHMls5l_bG_RKkURtYOUHg4W8d8iYPwqz6gKtjqQc7ceHL3YsHhDHGEQ8nlut1XicZGe2Zi-8P3HrHY4SwlUbVNb0RMMkNpSItCeZHU9DGyGBs0HWwz8l0ze5kzqoeDxoxBoI6_QVCnEODwB2dqmTApemsIzL_IcGNQDn2oHAi3Lxrg42hluoHmOMjlbj8TGr8oClCkP1Krxd2FIRHRisdz-t02mDds30BZ15A9vxJKyYK530AQoQBOMwirPB9wvbRS2BA6aW5WfFBukRgputxO__LmXF2AA4fpW-d7MWAGS-MP_FQY6WpXW53b7DsNycN9ThmhDBKFKGtm6or6byCcHMPWomWd-bki0B89An2oyCZdbn_2YoqhktOz6vilH3Sd_dXX6Cz7NPYnaO5fycpEc6G4VkFxpL_DcviHMP3LHOw1sUK1pDKVls_ZxtmXqjYi_ASvZsnWQbrqCtmWND9HtJpXv3kf60-ZvqfyIV43xeLz7XaQEdjroX2dKl3I_a6m3_wmPVGhDYH_kEKYNfu995ht40qHWpUve_trfCW2T-fDBRNTZzcSGsa16sY10VVjgv1UjkGrBR15Dn_04misUecvHdp63RZv5UI3gSdf4EIv-oswXcDh4PbT32ftE8MsUpmNvVsSrgD3rwz6dtc8Wl7B0lDMGBhjgTSMryiE63Fdk5gbvmMUxHciI2ZJhENmkmzU5lb_ncuFCyEi_2GbY_oBJp-4WBlS8UieFw_mzo7vWNrPDhCrYb2P9GdOgnYZkEIIIT-EUleOgb5n4IJsOw3ySrA87gxxuVXBa7qB44VGxwSULwpZFa0nayyQdy3LRL_I2VKXZ-LOqeem80rMHhJWIKkvohxMNJuTroz4JPbbtkjMjUsSIrblhkPpqidukYzbpaM8I9GLJut8e5C4MpfshjQLbfo5grayRewmamorelfzk4SnXWxdq5JIT85we_KhmIa4UTve-oDLN0RDUP1e1yiGRotYrGubX8eOtklcSn2fV-qd4IcenXzzyerxm5Pcd5gzZQ7i0p-gLWtPaAp-GBFz-znxns7xu1r7ZR3oP3pDVEJmAG6YKggGEaAuEPU6dI14KSGFlp1IdC43UmwkSq-YSUsy-bc97oI-gfVnn5eFZDAOP-Z58orxJb-FjEeNrfk4wM2RwrlvG1gTTlUcvV5-UkkUgL1rzHRemb_65L6rkF74bmwJGqr0NtAS1xrC7mqgJ3JFNYslgcwcHCzpv3t7YvhkWCban-KoAc9raFELzOwr--JNH3LuP4FclgTeWdJUHG7JuOmvbZGjgAv6NtZHoDUSAKzOmTBO3ckJSBF2LgyhQnWj76d0WS6wgH2Wv_K6VCdXCAr8RgblpLLk1W_3hAi8XD8LN4WZw2oM17DMS2kC4VKsS-HqFFEDXVg0ECr1XPiI6fdwuPvJIiU-EzAJ882MwvsPRu4-d_B-vTLAt_-uCHPddwiH6Xxig==",
+        "summary": []
+      },
+      {
+        "id": "msg_055a38968e209eb1006a9ec48c9bd087d0893c1370c8c149d8",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    両端の日付は含まない。\n    土曜日・日曜日は営業日に含めない。\n    \"\"\"\n\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序が逆でも同じ結果を返す\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜日=0 ～ 金曜日=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nこの例では、`2024-01-02` から `2024-01-05` までの4日間だけを数えます。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 121,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 544,
+      "output_tokens_details": {
+        "reasoning_tokens": 271
+      },
+      "total_tokens": 665
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    両端の日付は含まない。\n    土曜日・日曜日は営業日に含めない。\n    \"\"\"\n\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序が逆でも同じ結果を返す\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜日=0 ～ 金曜日=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nこの例では、`2024-01-02` から `2024-01-05` までの4日間だけを数えます。",
+  "reasoning_summary": "",
+  "input_tokens": 121,
+  "output_tokens": 544,
+  "total_tokens": 665,
+  "reasoning_tokens": 271,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "ja_directive",
+    "sample_idx": 1,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 9.024922847747803,
+    "generated_at": "2026-09-07T09:05:02"
+  }
+}

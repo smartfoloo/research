@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_06035f7dd74e8e3f006a9ec623c56c87d089f7b59310ccee0d",
+    "object": "response",
+    "created_at": 1788790307,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790316,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_06035f7dd74e8e3f006a9ec624a08887d09737ef8e994d2ab0",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsYsPp1Ob4xZIFq8g_0QHkFeourq8Ao8ZiPkRWnaf9kvUXqTfJBaERPQCgsm19RdDA_AWGxlncU6pnkzOFQetM67-lLz96fELwRLk3-4qP3G1eTFAcN9ILimKTI51Ogd-DuSvFTwrO5IQ4G3Gqn-OPjzoYZa5aW3cnIKFiNm8bwj5qAnsKov5gi4w1RJWvlJduNgpQgve3_m7MHrX9FxclBMXSlSBO9WF2qTZo9PsA4P2iAmzBBqlxSWC0LWTdpb5NJfM1nM9cqZl0YWy0d_gGcrLccyJ399w0dWRn31AntGD41KovLlZ9YTpaJr5ebfsernqQ80bnM0S9naBjQMCP_xX_UB907tG7vQHEnPtU8q7JPDHe9ktDuJD3Pyd-UL04zIOseqEa3hy3xIi7o7rIIKjmi-pJDf_5vkKHUL3pP1Qdd_hSXkHJEYpMTn1jMQKCKDdqZl16uwxIHtjhisIYJmw7kKPg6pCh5Gan0EF9ADivrZTspSxoaC_2xZSlTqM20uRH-kJ-j0WoiIgiALV3L1obV-IyK9ML4hKrql6wqnxVZRfmKS3R38J3xYOLjrInGIUcw1PwTHsoI8HdaRS6_WWiE0rQnVUI_GD71OHJYLMMLqLoYKJviJBeAPg1bbmLgglfgdafOblrLctJjOephGmN1U8zD00yTkrbs96GubWOLjsgLssMnjzWeOKZjiPlyLgJsgYcvyEITJ-Ov6cMccjwJ74uhWKUepxuvLLh0glT505a8zJTqqQp8HYvtCNeMvTC-gxaSwz4hpV-Ik_mDZ0OIFXKyPKVENkhUHu2O72tsVDJFdX817NcgE5WGv3iB36zVRVuiynXDinhwQM7cBk7CdFbIi4OG0na6etDcgCx9SS2xRLtT98Sk_OVryv-46mQpR9cixBtGwPDF3b9LT7kRas81J4HaJUwS8OnEBPj37oAFoHn0gnq0JS_dJmmRbcJcoUwlrVagbXQArl3MunT8KRV88lx6A4OKaU7C9Q9gUdNWn6ylfUNPvrG9h2tkFQZ_LWMV8XZOaMfb8MwyAlj6LxVmBNICfie92TdH3VtpWMpIU3lOdL7jaD8mHh0n86Ugw4yvdPt9GwoA-SxpvtX3QtuofaXsAM8J9TicE_swxDK33EYXkLOMmc-OD1AQdynq0tnEuXgRCHQX4cFnL6oeunif7QIUMZYODAfj-bbni4O5xi3gNM_V9snB96z9rfY9EkQHGKxdWc4tJD-pmiyUqpfRduccEcT4LLR9pKDjP5yC9U3z-NLIdYG7sV-vCnEJckg6Zn32w68S6gvlQ9tS1i-yK7j9FvmLtcT0MG5Cz73Ny4basmkHBd3-Xw6v5chsKU_CvQZxcqN9JfZzEX-Qcw1TOWfNH1i6hpRAASy-BRTHMoB5eUNi4y954mI37svVZsxqLXeeidPNptqFWclymNm__5gJtfGnTm7MQHX4oZwv0ypYba2BE6BKNSFD2SaKwyAP6OyOXjudDBc1RxryOgb3BEPkAl_A1XL2XxsqoYTwfkya20TkGKrt0xQ8JuyxLH64f_1yeTG8md18GppjiBVQ00CuyEHvENou6P_3u8TUVfAv33ChZjGb5VRZT2QmpVaDik8xoS0nIpir0IiNNxvhBYn-HxI4KTNY4PiucqNHjWj0HO0zbRhjT_7EmLwC-Qt4x_vpS4pWOnzNuSz0QadPRh9b5slhX2Bhp5ZqzxgUn00xfcs-KiTlZVwZZmmgZdnQxDLBLW97li5WWkJeehs-AEaAw_GX6cjZV7oBHmwVnU2NdiN7eIA9uWJ33-fJuoKJH3ceIxKkl-ff_S4nA9tUJUTHdeTNPqCoQHo1UP9WTtTruRdZIxJQAXQUwkKhGgBfxPrKCWhxT3TjnKZmZ6OTamvsO8zv6x57quOF5W6PEe2CKXzWt51xUGUIwF4cCTFjOLdBIz10DUJiX2C48-4CXWOdNs2iEtftWlY8ya7jEWG_pI6gQdIUtUDqctRN-0Sg-2mpQQXpITWxgW9DjgtxtUlGBNxnuK9jxxYDJUrdTb7XQvrRUb7X3J6P_KX6HEF325jO6R16p4ycBbIYKTzqE4510BficBQNlxQyE7I78hq_N1jmnhsPpVwLV5-gzipehWw1tFW9Kjx2LkfJ9OAfzeAQmeJqSh7NgJRgDBrIWxqeYqNayI2qUr2uMdyp8zKUUU7AiRChceLILtSkKWR4gq_6mX9Ij8TAtXE-GENVCsxvpDtcaFzTh6PjOqMMyXSiG9chP8nvS6-F6ll_fINaLy-8ggiA76Y4EY8wqRWX0VCZQmHM_hruEzsUF0ujpenfvgqvJkuANZ_uuoBrZBPWQEGMmouiFukChTwRMw7BDZz_j6V5uJa8DlJo2fGrJXKa_OBp0odpu6c1m7bEv-HAOKsUMROFHwIF8XSi5KS5KXMPUkhfMCN8BYwTUFF652YtFx7g8EXJXO7t1lrxnwiSalRRIAVltg1RUeopHjXpdEDFnxwzs2n2dA6cOGMt-QZ5EDLIlhbJ96TXj-mcgVIQr2t665EGoJelXfOOjzvr8IlrkQA3RtHLOrT8dynXTND5KKEIkruMILbifrEooZBu0Hf6NVwhNeXJsSFilp8O9K7hZf6dIZGdRK_A7fW-u4Ur1xcOXd7uQCTfGdXigZ0L62-cbTfjHK0p_GoKpo4ZOIM49TjU8UlaQj3BYAJYylEZu2mA97G2Ono4C25yCWY6oaICnDYCY6hVWkr2xx_jGXU9tNjYPGhdw93uNVCAVFpWRIZKEYJaRt9fRrJEuGqHEwjh8YuOvcqOmx27cNKKGRr-rkrg_KNpLuZNYl7PyWrhCJ0LXi0-pgjYZQw==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying date calculations**\n\nI'm working on a function to calculate the number of business days between two dates in Japanese. It seems essential to exclude endpoints in the calculation and to ensure clarity on how to define the range. I’ll consider using the datetime module and accounting for the absence of data when date1 equals date2. The formula can be made efficient, but I want to keep it simple and clear, especially when handling differently ordered dates. Overall, I will provide the code along with examples to illustrate its use."
+          }
+        ]
+      },
+      {
+        "id": "msg_06035f7dd74e8e3f006a9ec62b46ec87d0a5f4bf68ddbb451a",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    月曜日〜金曜日のみを営業日とし、date1 と date2 自体は含めない。\n    日付の順序が逆でも計算できる。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序をそろえる\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    days_between = (d2 - d1).days\n\n    return sum(\n        (d1 + timedelta(days=i)).weekday() < 5\n        for i in range(1, days_between)\n    )\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\n`weekday()` は、月曜日を `0`、金曜日を `4`、土曜日を `5`、日曜日を `6` として返します。したがって、`< 5` で平日のみを判定しています。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 121,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 599,
+      "output_tokens_details": {
+        "reasoning_tokens": 303
+      },
+      "total_tokens": 720
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    月曜日〜金曜日のみを営業日とし、date1 と date2 自体は含めない。\n    日付の順序が逆でも計算できる。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序をそろえる\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    days_between = (d2 - d1).days\n\n    return sum(\n        (d1 + timedelta(days=i)).weekday() < 5\n        for i in range(1, days_between)\n    )\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\n`weekday()` は、月曜日を `0`、金曜日を `4`、土曜日を `5`、日曜日を `6` として返します。したがって、`< 5` で平日のみを判定しています。",
+  "reasoning_summary": "**Clarifying date calculations**\n\nI'm working on a function to calculate the number of business days between two dates in Japanese. It seems essential to exclude endpoints in the calculation and to ensure clarity on how to define the range. I’ll consider using the datetime module and accounting for the absence of data when date1 equals date2. The formula can be made efficient, but I want to keep it simple and clear, especially when handling differently ordered dates. Overall, I will provide the code along with examples to illustrate its use.",
+  "input_tokens": 121,
+  "output_tokens": 599,
+  "total_tokens": 720,
+  "reasoning_tokens": 303,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "ja_directive",
+    "sample_idx": 6,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 10.905023574829102,
+    "generated_at": "2026-09-07T09:11:56"
+  }
+}

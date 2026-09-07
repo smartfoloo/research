@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0fce82ab8c0c99ff006a9ec6cd3be487d0b0d91ca7e66c8732",
+    "object": "response",
+    "created_at": 1788790477,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790481,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0fce82ab8c0c99ff006a9ec6cdeff087d0988ab9c64e22b05e",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsbRawA4DuSbPLXjo4bkQtOVWtanBN98lmRL7j46c3VrH-SW0RgYrE12sTCEdfKFLp-Fy65ZJeoJB9LI0yY1z2eBgfB2yILBuLgmHekNQT5TBs-n0tYTvQYJ6QFCcL3gy1af9ZpM2n1rV6WvG3-DWO60anf-RzlbxHL-1cQQOiEZSza-c5uo7ye8CjcqxgWRIVnIfuZbFQjYO3XA2zlVRmcHM7o0cjoFZDCdsYEwnHNDhJinV0SnTtlKm6MTsVuYPuzCjM4buAy6MMoaxfdIDoIR6HEN2sPDgPNHn7pLvHYE7YGz73v-qe54B0yroyaRuoiD0IHNX7c0bJTjRdSSFVC9_Jh10JGt2WHJvzBwIa0b-cwIy2ISsoAxcccPAokdc8tWTsT1P7DK9LztFTRICyZhZiscT1Nv5C3uWEaLzF58YZIszc8tC3zKfTOULBCE_ySY6qpDFzmdOmoS1KmudKerIzlt3GTQE53O2VXX3xYWclBZfg-bVPWEJ25RmPsO_weGJg7CKnUHpJvTDnglWAOZYuVbaxtp2spwTivYqRh2jA79ONLGqORpO4S-dARYSHONWxRIw7Fr7ax3a_P0gVUShGTBUdIGtdm2BNw9GKxWCCnXfSPviB2x9mxJzIaK_nKkkmSv74H0otI9raX76sLUqgCeI39qIFruDYbDnF8Ma97KdYJxBhQHK4e-AtnsmNGs5H-Zer7mTsWr8TNZJT3DBPAQw00s9NlihAmWAMi6XYtxQp5a33WDrLEYcDN3camC_YylkViQwzUzi-HCCUmI9igEDQUCibxb8RqxmF76ip32YZUwQ-Z2UtZevXWDoTFq6dNdRssah72uj0742dNI8VA2sKgWk-uTQRm_FGy64ffd1pbFCDdqV6EdMcbXvIWQmnCIz0RuIY3_UGFGZ0CWRHWUHC1VgTT9e7y_P2rPkhrAMuVdFe6iiZmgOTfJgxB2azuKFlhxZTz02tTEBqZjIPlXdvAdVnWH_V_LVpGDERbXqlYeBQDdlHc2Mxfv4KAvRG8br4tLbr1Fe19W-WWNx03eh54Urx_3ZhvH3sRjptGF0d1z6SUMQvP4KV1bXdRgHGxnqa_IxfAAKkaCPQzpWo2j4WiDVZWZujUs9sR40bpysVN33wPH6UdKH43m2vwPXb7izEMAicvFEDyNUem7yd-UhWdTxXbFnr102c-067L9w624cHpOimfzZpM2Ppt97o8Kj_4kgA171JTR3zsQOEpRDs8oGgmEMo1KO_r2plUBjE1M_TJZOa7MeuFyYfDshP_Hqkc1GuFXHs16MUGL7IXJ-Jt8WviBaOqNOgZWO8M_VocjSTTzZMeQuntPaBEpMd7e9uPKm5wqTptF4gFlHSzNzOfeHH_9gdcMyIPXNr-lux0OXtl1rt1Nqp144-_kmDfjcvtQgRI8u6EVmLwvtrNDbTfwB3UkcuzON6Q70kd9Tz00T1j-lVPdX8wrvMBDZc12HYY732JFH48HUo9_7ngmnP-r0X2a97jTrMXFMMJUmcwN2VkMWqUCB9RoCpGwN2Q_rBk7vEL3FVwUhi7LPnOqGWbN8vCQmZ1xY6hJRIKbFJrMFU5esehKu8tCJWZ44fABAMQhdcdFLZDdFDgpzkATFBNPqnJiuMUXGaW9UN4CiK7o72XS7JXRjyS8IuYubzPZMdVmSA-EtWZkLe040pdkiRRIy72KTgN0TrVFR6UYuotEEt1D43LaY4NizJDz6TBYEGI2dC1HJ8CrXunK9wbu7bNL-aOJ0e3m5LwY0TqhMQmrR1qASgXh98gwgd5vRXEYj_R0c2WhosMC44cQUpQzOumdC51ZKpSzVDmaEfMvZjCkjpe7YO9sOs4ywrbmJv-ddyJV11hwI59FKFOQJIvy3ZU5fgCYXFeTtHIZ-cTMB0tA5L3Kh1ck_xzqtjX6gKO19NajThiYQyBLRp3NwuBoIEOMSxJQv1LWyucbPwcFz6qYVs_6NyWwA2roiz1tbICh4psVlr3e16C3TVjd8pXbu7j8wpVHjhno_oOoCFaNkg_1A3Y2p7a7lAbCnuFcFmpamfhpftASQU9httgP2RjXLbjOFAHwaXFg67GvHbX7HiFLH8X-1ztIrW91NBlSXWeCyctJA1iB64VTl4T19d6uuqj-8iVzPITaaanEC3Ke8yK3m5YzTyXYHMbI5PdnfYqJzSfhHhlv2nrDTrv3oTZi41f5lLoE7bPpn-yqJoI=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Formatting currency code**\n\nI need to decide how to handle decimal formatting for currency. For integers, I can use f-string formatting to add commas, but for negative values, I'd want to add the minus sign before the dollar sign. \n\nFor floats, I'll ensure proper decimal handling, with a function that checks if the number is an instance of a float or integer. The code should look something like this: \n\n```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nI’ll include tests to confirm it's working correctly!"
+          }
+        ]
+      },
+      {
+        "id": "msg_0fce82ab8c0c99ff006a9ec6d149c487d088cd17b25526b3de",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)    # \"$4,640,039\"\nformat_currency(-4640039)   # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 68,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 256,
+      "output_tokens_details": {
+        "reasoning_tokens": 179
+      },
+      "total_tokens": 324
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)    # \"$4,640,039\"\nformat_currency(-4640039)   # \"-$4,640,039\"\n```",
+  "reasoning_summary": "**Formatting currency code**\n\nI need to decide how to handle decimal formatting for currency. For integers, I can use f-string formatting to add commas, but for negative values, I'd want to add the minus sign before the dollar sign. \n\nFor floats, I'll ensure proper decimal handling, with a function that checks if the number is an instance of a float or integer. The code should look something like this: \n\n```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nI’ll include tests to confirm it's working correctly!",
+  "input_tokens": 68,
+  "output_tokens": 256,
+  "total_tokens": 324,
+  "reasoning_tokens": 179,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "mt_en",
+    "sample_idx": 5,
+    "prompt_text": "Create a Python function called `format_currency(n)` that returns `n` with a `$` at the beginning and every three digits separated by commas. For negative numbers, be sure to include a minus sign before the dollar sign. (Example: `4640039` -> \"$4,640,039\")",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 7.879525661468506,
+    "generated_at": "2026-09-07T09:14:41"
+  }
+}

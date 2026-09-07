@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_raw__sample3.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    営業日は月曜日から金曜日とし、両端の日付は含めない。\n    日付の順序が逆でも、絶対値の営業日数を返す。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜=0 ～ 金曜=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 112,
+  "output_tokens": 445,
+  "total_tokens": 557,
+  "reasoning_tokens": 156,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:18"
+}

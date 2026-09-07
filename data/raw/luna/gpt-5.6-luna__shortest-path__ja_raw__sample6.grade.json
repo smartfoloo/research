@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__ja_raw__sample6.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "import heapq\nimport itertools\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と経路を返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成しつつ、負の重みを検査\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"エッジの weight に負の値は指定できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    # 負のエッジ検査後に判定する\n    if start == end:\n        return 0, [start]\n\n    # (距離, タイブレーク用番号, ノード, 経路)\n    # タイブレーク用番号により、ノード同士を比較できない場合にも対応\n    counter = itertools.count()\n    queue = [(0, next(counter), start, [start])]\n    distances = {start: 0}\n\n    while queue:\n        current_distance, _, current_node, path = heapq.heappop(queue)\n\n        # 古い探索結果は無視\n        if current_distance != distances[current_node]:\n            continue\n\n        if current_node == end:\n            return current_distance, path\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if (\n                next_node not in distances\n                or new_distance < distances[next_node]\n            ):\n                distances[next_node] = new_distance\n                heapq.heappush(\n                    queue,\n                    (\n                        new_distance,\n                        next(counter),\n                        next_node,\n                        path + [next_node],\n                    ),\n                )\n\n    return None, None",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 209,
+  "output_tokens": 1032,
+  "total_tokens": 1241,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Crafting Dijkstra's Algorithm in Japanese**\n\nI need to create an answer in Japanese, specifically for implementing Dijkstra's algorithm. First, I should validate that there are no negative edge weights since that's a requirement for Dijkstra's. I'll ensure all nodes are hashable and address potential issues with stale heaps and paths. Including a function with an explanation is essential, and I must consider handling cases of equal distances properly while also building the adjacency list correctly. Finally, I'll ensure to check for the start and end nodes.\n\n**Addressing Dijkstra's Algorithm Details**\n\nI'm considering the potential issues with weights in Dijkstra's algorithm, particularly if they could be decimals or integers. When using heaps, I need unique counters to avoid comparison issues, ensuring proper path storage. I should validate edges, especially checking for negatives or NaN values. If the start and end nodes are the same, maybe I won’t need to construct anything further. It's crucial to ensure nodes are hashable, and I'll mention negative validation before checking for start-equal conditions.\n\n**Considering Negative Weights**\n\nI wonder if we need to ensure that all edges have negative weights, even if they're malformed. My initial thought is that it's unnecessary. It could actually optimize the predecessor function. This makes me think about how incorporating checks for negative weights might complicate things more than they need to be. So, it might be better to focus on properly constructing the edges, rather than worrying about negative weights in malformed cases.",
+  "graded_at": "2026-09-07T09:28:50"
+}

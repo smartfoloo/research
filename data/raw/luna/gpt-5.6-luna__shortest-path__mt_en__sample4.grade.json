@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__mt_en__sample4.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (distance, path) for the shortest route from start to end.\n\n    If no route exists, return (None, None).\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = defaultdict(list)\n\n    # Validate weights and build the directed graph.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return (0, [start])\n\n    distances = {start: 0}\n    previous = {}\n    queue = []\n    sequence = count()\n\n    # The sequence number avoids comparing node values when distances tie.\n    heapq.heappush(queue, (0, next(sequence), start))\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # Ignore outdated queue entries.\n        if distance != distances[node]:\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph[node]:\n            new_distance = distance + weight\n\n            if (\n                neighbor not in distances\n                or new_distance < distances[neighbor]\n            ):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return (None, None)\n\n    # Reconstruct the path.\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return (distances[end], path)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 162,
+  "output_tokens": 921,
+  "total_tokens": 1083,
+  "reasoning_tokens": 470,
+  "reasoning_summary": "**Explaining Dijkstra's Algorithm**\n\nI need to focus on Dijkstra's algorithm and its requirements. I wonder if I'm considering malformed inputs and negative weights correctly. I need to ensure that nodes are hashable and that edge weights are numeric. It's crucial to inspect all edges for negatives before proceeding.\n\nI’m thinking if I should raise an error for negative weights or malformed data. Also, path reconstruction is another area to clarify. I should remember to validate all inputs even if some edges seem irrelevant.\n\n**Clarifying Dijkstra's Implementation**\n\nI'm working on creating a function for Dijkstra’s algorithm, ensuring everything is clear and unnecessary details are excluded. I’ll use a distance dictionary initialized with {start: 0} and a previous dictionary for path reconstruction. I'll validate edge unpacking and make sure to address potential negative weights before adding edges. \n\nIt's important to check that start and end nodes are hashable. I should also reverse the path reconstruction process. The final output should follow the required formatting.\n\n**Clarifying Return Values**\n\nI’m considering whether I need to return both the shortest total distance and the path as a tuple formatted as `(distance, path)`. The wording is a bit ambiguous, but it seems clear that the response should include both components in a single return statement. I’ll make sure to follow this structure in the implementation, providing a concrete example to clarify how to use the function effectively with those return values.",
+  "graded_at": "2026-09-07T09:28:51"
+}

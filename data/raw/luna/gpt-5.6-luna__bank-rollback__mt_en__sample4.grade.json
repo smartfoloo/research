@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__mt_en__sample4.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    original_balance = balance\n\n    for transaction in transactions:\n        balance += transaction\n\n        if balance < 0:\n            return original_balance, False\n\n    return balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 108,
+  "output_tokens": 210,
+  "total_tokens": 318,
+  "reasoning_tokens": 104,
+  "reasoning_summary": "**Evaluating code design**\n\nI need to create a function for handling balances, ensuring I address any ambiguity. If the balance goes negative, it should return the original balance and a false value. I want to handle both positive and negative transactions, using the original balance for calculations. For instance, 100 plus 50 will be 150, but if I subtract 200, it should return the original balance and false. I'll consider adding type hints and providing a code explanation to clarify my approach.",
+  "graded_at": "2026-09-07T09:28:12"
+}

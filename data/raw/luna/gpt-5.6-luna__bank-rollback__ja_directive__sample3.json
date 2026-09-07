@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_0eab1fb63ffa7149006a9ec9bb581487d0855ec0a9b81fa5b2",
+    "object": "response",
+    "created_at": 1788791227,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791230,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0eab1fb63ffa7149006a9ec9bbb69087d0b7de3746800922bf",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsm-mJGuAcMqzQjbfj9Pfi8d7ALBMOh9WFIDJ5ncXTIuklnTy_0QY31-GnRbG55fEMkmlFdikZ9H2Xb4GZZGMZ9zJ3coghxaOI_IXWqG1AS4YDLX-Z0okt76p7AZV-7tOI-fpKMzJH4_S3IzzeWc_kyNXKeFjN7lwtRZY5BdREJLVCM6sKgtSl18DuAEK3sNiX5IWKCemZJQtrjchMZ-L0VVo6J4ciPuGV3t9eXP90kOCqsSZV3XBldDEEPbWM0zhagOu4vSJu4RDgNM1L-LLoBjcHp3WpSISl5l9WMFmX0_oQKTWPo-AIFQ7eUQ8d4N_OXGoog35Wx8qLYvkLynjMUF5AmYPDyhUoGcG_TBS3lGSy_rMUOH3TZdGXpO1uPGeGKhecdSlP9mr5nPHoT9XQLZ5rXW3CWbBiCq6BlAr5Zlyoyc4VR6G4cMav8a6bF0yQ0Jp3zyYtX1M2FTjEE7li_AfubTkP9KPqsYrBTQQ_y7hOEgNqFavm3OAII8PT2I71pneN9kM0lUZtIdE1oXJb2h0qnVbB4d-YfIDJntAWOXbxlO5Ku_Hu59QzTDOpGSAtcQ-Y7WRnRXBhnb16gVHVzCfmMv5ptrJpcybQ6pPBPW8KCzTXAxdWizdsrer1-MOLVAr7eCe9gLYw3SAIpVhs2UpIgXHzEDl2IZgdORHsb7sWtFAJK3p4s97P0mnWrfFzGjv4nT9bTvIs1iasG5wflK_9l44Z9KQciux6odIyfklwPBxPH-TtC3Fo2_yQkJ3UGvMLZc-I-A7gJJiTxBR_nzuJCmhZF9gy7oduOefXu_BoUBZNPyGBZLlaYYELdwt52g_Vp536veA0TFdo5tZS7Ruddvk3Rub35hXGYrw8cpu9pzn3lIzenHOUnz_et2eeEAWtbYWOsfvUoZBQfaq7M4P7PxKj1_SqCmUGJetDT3u7Y5BTDZGMi8FCtelU_XGy4sjA0Ah-8P1TlxOuPzYOeHHcfxiEtPZ4oNQj1wtcKTzfIgAqxuGBOT8KvBugcS8WKUq-es5Kulus-rZ8sidkOnJty1342aeRcSbu1nga71KZLhbGXDXga8n0DJrn7nMl-6jD20_pn8xkqr9fij-cIqEdZzstBF94gGrceB-SKv8rFnNEbAaMR_mwsZK4MDC3cAXG5qyWjJ9gE6_eDaGPr8jpPtPnbEGvJCVP_yX2LuPj4mzx8opc9_U_hNGg-qgsLj_5ynV63R5sx-hl4XtsrEDXguFNrMh-Y_7E-RZ8qIcqyZ52Wn-a9TBLgrxTpySWWCat9BM-b2wDn57ImnM6uPSqGCt3uPfdgoh-wVjOj-7oW7yJn20yUEeFjcfUWOcfYALCFIFA4yIhSSxbCksHeBaI7SrS0oNI6_-8gjL6EO9s3ayLYmUwHoO0zqy_7orq7Yr8ipXTaCOHUON4MQuFVy4WJ1KveGeo9VxCUZPrpQF-TSs4-MHXNMwNHMADE44jJzaGiYmfH_L8qoxZCvtu6oVCXsnNma13CKlHNh7YLqasgT4ft0lsKxagZAbPp0AJdBI7z38PjpFeama0KkfrKA3hijWOGiWegh9V9rdL4e-dsnaOVLbteZjJSy7dRo7BFpqtZSKlui0N5UMZcFyeQNNGfiIn5TdN-TWcaItkutnDR_GecSsC1o9Dy4YcBQcAo9lWAG0qn1-vOH4Tz3cAnM4Y3DZ1qQu0x00eHreHF41eWrairDETRvgeH99IZ6i9gazWX-5-8OEnYFtd3h2v-SkKimlP15eryOQ6ZZf0m2ObvEt31UCp2wcqt-Jwyy5nsbe41uKfNdjXAeRO3ysV6xQkQ8gfgyyyg8aYK_yblQtrDU_7kkbOSYQOQuZ13sRA-2foHkntzjZD9uIhha-mLyCT9EDyhU-uu7oZLOQKxJSo30CzZ2qFZF6RiSLUYgv4lHk7VPWxACpq_Y3-dYFuewXyJIiwULzfvDkoqJPaJynhBvv-FSqP1Qrfni8XJ5WyJKJbZIvM8IYoDriYev9Ks6Fiepqxqa3md8e6atPCu5UJk2X39tst-BAS-6PJwzns4i0dt0tnyG9DFWi_j61zt9XQd8qQnm0plumOYxuDnbMbo=",
+        "summary": []
+      },
+      {
+        "id": "msg_0eab1fb63ffa7149006a9ec9bd806487d0bd0e58f83584138f",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, 20])\nprint(result)  # (140, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 167,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 253,
+      "output_tokens_details": {
+        "reasoning_tokens": 134
+      },
+      "total_tokens": 420
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, 20])\nprint(result)  # (140, True)\n```",
+  "reasoning_summary": "",
+  "input_tokens": 167,
+  "output_tokens": 253,
+  "total_tokens": 420,
+  "reasoning_tokens": 134,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_directive",
+    "sample_idx": 3,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.259466886520386,
+    "generated_at": "2026-09-07T09:27:10"
+  }
+}

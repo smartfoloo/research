@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_0bcc2425c28a0aa8006a9ec8c504cc87d08755e669cbc369ad",
+    "object": "response",
+    "created_at": 1788790981,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790992,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0bcc2425c28a0aa8006a9ec8c5fdc087d0b9f74de4c3ab6639",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsjQz59G4g_apoVvgGCxUACCrUrqci8hGkooxYoN5AbMfXCeQODQmChbPT0wta5ETikrJ3fNC1uuuD9s67r0-4RO4ol9yThpgw0tj6BZlycKYizyC0HKs9Fh8-NSSJtE4YYv-uqhPZ3oTKnvOfReyx-odssh8HtoGrJ2RfegTyslN1xZTuhtbkiIi8hGK2TobxYbtcTxm5MtZ-s2fuJAHOi9zHHcBMn_kfoYcrMWs19eItaQWRp-UiN8XGgEuFv0nTPkcydv8tOkz6L6WxfeXXIzSYJMymyxabx6NkMYf_61r720V2sYAp6j6gGyzNDhks-yU_ywYtnFs_8-5P1fU-8kTUnR0wb3NHd-l9oj2RdfBrYVPwQ3RgVhR9JVCIYmMDQPGvhJG-0XYOqBloKUoZ9ref40hmSy0gLPPgkgBNq2Ts32sH4ASDeE0nLXsBEgtYKFJE3UbtfIggyl9HSlzdxkioGgzTUGqpBHtKMSiHbKvhRf06c0mwkLULPffKvxbgKaWoAxuGh1ja6pPy65f0rOjcmJSO6OniRHrhS3sDDQ_xEGWZkFY6zSIbFK9gHZR1UUIwd3s6SPWDoLV0QrpA4Bjfc6-fVh5lxaw6kE---PqPHr9kvfvboeWrRVIoxUZCbCwdmbBh0iseXzGa-iRWmdeii4Dh0NimWr5y1m9ajBqA_C-0n2_o99Fd16R6TLtzbRnQsp9ajh7VaQT6lpZT6uswHvOxsLVTQP2gXkce1fLfklPe8NUKWIrvJ1aEbp1Ha-emzRehaFZnfl07m0yZy20Hyg48WD3zsAPelqIZ82t-I2bRGGn6N9hC9tdF51KnuSg96BugPEIqPOtf1I5Yp4NfnvO43uk71fuN_f6paP9M814yz_VQkyZKeCoRNzt31_SAoQcN-0YeNZybc4KJM4QPpCNJSNKi9hhmQVABdWmes1bq6XkHuavooUUtWKBE4TLhfs_TNdosLZQGPBEjSvwiGJ7qd4w8UmNmcjjplDtXGObKL7pCaLtLz6V1gk8XQFrG-O1F6D_pHoHtwZieCjtiuc3iMICDBm9KZu9Q-v9Cw102cUSck3DNQBfeXUPn5Ru7DWMvxCtGcnAIKTQXU38PepYyJkthJ4Kn1m_MrgbCD-TrhfKiOntZ4ktmfKH8BhFP-7T0f98TQdgh3xEr_PO-Avc744JLThL3sbKvI0-I4fIiNXIXPkji8ppU0LKgLyB0m7rqzQdxES8FWff6YB-psN6k4kYnTrLCQzLbmWt3Nam5vmRtrskOrld9GqQL-0mTIdi4FXvHAQ0pfEBc4BB6WViBHZQVUhAksKRjIrwwHBpBnVtyEGc-NEXnGW7sufkrTbCVr3wniPIeK-5CHm9Jbs_DPa4ntR4m-GO4fKmSjh3CyxQIm8F7_Xi1mZkF_2IUH4BzxyVR0pxBG2q2Mp6DMxoIweNYYnXfjbqZiKO4bF1RTvElR3bC5ObwciUzW0zCTTHrB0BLZJtDqRT88zaKdLymAqTCG8lsljphlMM7BnKP2HY-ZnCVIH1Emh0C1MIk_-6nT7ToV6DgjjbrGqFCUZ9FdT3hqG_FLmnLFyGyiSqnjA1hTck40ZwCPVwZiCdaJXLO7lPeHU-APDOrF5DMeaHS4k3jul3XkS3086dEkAOb6rRApJ6mmFmLDFOI6JNtptbswzxbzJ9G8y6GDYT8iPay0XaMwzAwKq9NTkAcU4okAdhjBkrcsdBlsAnC4Chp7kWVpJmRKZCGJwd3r1cFA6sqRjrvP0JV3s6aQLDRPPKyF9OTxiHJOx7o-g6CYzNNJ-ZN4WHhwfuhm0B14sNw7wi61H0CIS3_MPF82lDbrr9dk8CLDJDnrqRFwMtkJEO0cBlxWdhjPy2wbaF44tv71nEy6L7K4bryQUwGnBwjyM_0hc_hmqtNJ2ozkOTFCM3ISC7WT9b_N6uy4-GitA2Pg_m5aKyqX5BbyX_2MLctbFl-YSXHsADHDMru7Nf2t_Kws7reLatbQmGVkReIxboQG61-heEpjNVfGcn9Mi16jPbgScxDgCIN97P5sVZfdmUtk0D0lFpnpt7ycUgNd9uLzjtuvaBFqJD_NTeqEdZTDK6Nt_lfW99ayVM0EjQ9V6IGX4rzN6PSZsBakcRVMXpuqxLYSnNleobZCI4mALrppWIlZiqYWuSl3hpiWPkiplFTcK5p6EW4Q_U0GOK0rnMdPSJkUtKWj4XP5de30UI5n-C-LJ4rQtrU8WDo2rR5tZE0lFKIvfUVur3isjiAr4uH7bh9Jwern0QCOeSLr8l7aRAng_Ux3m5smVewIoWKqqNeIGqcxNSa6Ru9aHnnzUNG7V7cfnOJQ8GFowPWp1g1KKprxsBWOdpHE7ptS_r_vd0WBoslsp4xWGwhTPslYyTaHxsjQzmjDlD2Cbpd5PcLcWQQCh0mhbCCzh3oY3TeMgyquRUZ7Ge2xeZNUSv8NdCQ2MvjPA-unu0E8tsbQ7Ccowq0n7j3DjbSteF3j3HRwn2maYVGYCI-VurK7D43YaiiuXrV5WWC5vxNCWCPdbn2ttdRyveOjBocpdbjoSLay4PwLxpTdo593EqtiLh4oatacT74vAtSUtsdGqpiJxIxNc3UHct3tk5v376ltnMAuaYDn1mLR_NwoesqAGaDXGjeQ3fHA8Te677UpIkRLX_qQGec47ShVWLB_cfhHQZmzTfVwsJI37B4B3M2F5PNanyQu1AppA_rcFlIqfQ4O9bWbMe-IAmEjukD5kcaVP88I9XlGjOSVKKZlzSDzwO-s6blrfJvc8VTHbcyFSslAt7cRircKNSYNgiN5D_gSL7QmwPeSeR_0dognef40sp-3raxmESX3AXIxbfFgOtN7kH2ODuxntuPvM2BsaGwzAOs3Oh8OwhWXm9hJ4IHNXlUvXZAUdGbpunsAs88EspXdGhnCLD-clZT-xbKv17CrRRtR3VF6o1aGovyK47xwMIWOssPVR-TCzbpTazTlZKqf-WbTKzjoDJx-OBIPjkGR8fq3cRe3Jo_n8wSCJtbzAz3i0a2gloPH1QpyYsHf5D2Lvh444sT11cxuDukgXupS9Y3lSxCgts3OWoVAwHwHSzOGgbUZ_FSSS3h0JRVZCetBJYyEm7kF5mGDv-j1ZoLxs_rFh59To5H8clPANuGYk9xO30SMQM7qcQ7ko93M2ccfAK5Om4TuGl-OMMmA-iezbyhS3SGtxFVH6XLoHmJeigQIBl1n9SIhKdjp19qbYx6NsxcvQaA7TD8OeD6bwAnB3P_u_vPlJS6z9A8IquOeCGY2Rpi7CGLy7IPe2vI8klOLQP6K0Rhb3R1ktb74sX1Xc5zkp",
+        "summary": []
+      },
+      {
+        "id": "msg_0bcc2425c28a0aa8006a9ec8ca7c2087d098a0d5e010deff9a",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nimport itertools\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    戻り値:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    負の重みを持つエッジがある場合:\n        ValueError\n    \"\"\"\n\n    graph = {}\n\n    # 先に全エッジを検査し、グラフを作成する\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"エッジの重みには負の値を指定できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    paths = {start: [start]}\n\n    # ノード同士を比較できない型でも動作するよう、連番をタイブレーカーに使う\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current_node = heapq.heappop(queue)\n\n        # 古いキュー要素は無視する\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            return current_distance, paths[current_node]\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                paths[next_node] = paths[current_node] + [next_node]\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    return None, None\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\nダイクストラ法を使用しているため、すべてのエッジの重みが非負である必要があります。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 209,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 834,
+      "output_tokens_details": {
+        "reasoning_tokens": 324
+      },
+      "total_tokens": 1043
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nimport itertools\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    戻り値:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    負の重みを持つエッジがある場合:\n        ValueError\n    \"\"\"\n\n    graph = {}\n\n    # 先に全エッジを検査し、グラフを作成する\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"エッジの重みには負の値を指定できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    paths = {start: [start]}\n\n    # ノード同士を比較できない型でも動作するよう、連番をタイブレーカーに使う\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current_node = heapq.heappop(queue)\n\n        # 古いキュー要素は無視する\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            return current_distance, paths[current_node]\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                paths[next_node] = paths[current_node] + [next_node]\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    return None, None\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\nダイクストラ法を使用しているため、すべてのエッジの重みが非負である必要があります。",
+  "reasoning_summary": "",
+  "input_tokens": 209,
+  "output_tokens": 834,
+  "total_tokens": 1043,
+  "reasoning_tokens": 324,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 14.121268510818481,
+    "generated_at": "2026-09-07T09:23:12"
+  }
+}

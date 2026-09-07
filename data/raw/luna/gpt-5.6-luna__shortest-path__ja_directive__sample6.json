@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0b2e229b95f6b018006a9ec935a62487d0bf4be8bda9ee3f01",
+    "object": "response",
+    "created_at": 1788791093,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791103,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0b2e229b95f6b018006a9ec936112487d0a2821f391ec71f2d",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnslAOVsiP77hYs7wYpGRYSzujMKClXzqu3GVLdMjkSA9RcNN3s2DoWCiUpVVmjees8NoQTIRgObzcgCH5u8gF1s-MDUb79kdB8pZGryY1Ps07qabAJ4UZ25lW93zxJbLo4q9ZIOt48wjJ0Slpw7uGPc6Kh5RKPinEiV2WqCfFHBWyePo49Fbs68HoPb4kYcC4j4T2VUX2tBPjrGPrANcv4Zk5r0_hJxlBZ22Ax6Y-3M2VSAKsmiSgmkmBaRHlH_QpJcdH5AXECGsW0_v50ztMZU3NNxRhapi4lBnsFXW5ye_Y9WAN_Ukg1vlb7wZO_EVEdw1JaWDFlFqEje6kwW0l6ozJTYKQuSPQ0ACZlN3MQanpIqLVFtdzx5YoWDXF26OgpgSfnNJBFjblW-jQWbrqRLRrH0iNygKaoeAJnH0ucAM1Is4VxblkTrprMSoBt1jTQN3jeAid1rdZQ5mqVid0pedwI7NDeqnvfi1QMfzZGQfdmjbDCvEFUYGzS0v7mbtvv918D7qBoi7GbrPGW4LanaHWHvGKHrH3oOrrJ2vv3XE7dezy8qT0uhLiZjRBgKWy2qvqOOzZTmR96Atn0YtcZaw8lZQMtF_e5C2YfXWn4ExVh6aRS4xmjSzR2LOq1QwuyRDE6yDCh0r9X7fCiAjkIRH4RCSlg4a6bKyXBO7UyuvXJLUyEsVIcGa1g7Nx5CsCd7UXzcQWnlw2E_V1ELWY5kQHELd2se8Cp_SUZPs0B5xLH-WYcwq-_4IiKNeaCp4BKNZtdeXb-Sui3Uo42GonqTlcyH8-iIsHlsTfBzrmbTmNTUoxgnOBl_QCelhD3RaMKEQ9-P_ynPYWrGaIP9vNGfWMenW4ioSIsCfpzf5qGSts-ROxsDSFRrXUaqXcrjece8Ra8Dnbr3n2uQocj917k4opM6cdfmQjEqVmu081_xiPLMHEILjYc1f1bT-EEOWCvkLVJxfu4Sc4NaxW8oaXB8LyAfEXaULtMsKQRCk1_It3H9oG96_zw9RhEAxJU69LyM829D67WwPo8Aay_ryKQgSUYDdWKglsMH4vcvncJNSjvPAvFy6dFf18Bhmkgeaq2-IBuzTDJ-wx-e5MJAGFWKhGhV2DHYSf_20bPux_wY16BWEg3CfXjJV7vJv_5LqWrZYrnKX-Nxlivza6XXyC0Q7XvUdrp1_nNTsv2ZSSrNaJYTztoqmpoSTJ1_gr-oziAFMzM74JCGZZGP2Tkg4pKBNP91R9nRot9CAkktYuRtxEfox4KxpY5lS-fcJQvLQGxIa3SddI-mZcL1mHSTR1S5LBQ93hffun60Gqc3nqzk776eTmLFwaE6x35eqnHXhDgxNGw23sIWzZhL2ihIh2YtJSXYGx82TwpawCsLLsdZoHrVW250AzMkEGBmehibHRJ-_oELmFR-IJcrisApYa_vSieYB2KU0HgbDir9MpuzrB3u27Ig4yMvUjrvDuHsOUAGxW2bM_akSv8IEMCS4dks95jW1_35jZKrBORgtsqqaFcA3hj63SlbnsZn2W8pRD3uJ6-6WaVlH0ZqUa082DZATWiLj6TTycARhQPGjKmHMMzJk0f3DCU83xgw3cu_vrbiLFpD_SrxP-I5o4a31ihpAplt5T2fZ1b_8vsgbd_BtFVWEllWG2tkM-OpxNiy-_8G8sv44eQ8LJR3JyytbgSBQc5f0C0Wi8INrE75qZh4yTTAjwG-FyJEQPHDlAvzTnIdw-OADT-n7hLAhape_xhUdnw95CQbM21vQjcRqEZNgZ7RTD5adwqrZ29KBmzGEJH_rGurSe23wXL7eelBVqn6VlyY7_fpkYdeH2Hhngo2tSKOoobVMos1bInfrbntAHE2jQFRhedOTiWwACiLPANJhUjmF5oxkgSLntAP1hHL19YtwTCnt82ll23Gga3QwC8buW5cbjCsIlmNYWEp_MH9IH0KHpjz49e9xtlJClc6abycrttcAw7wS17QwhIMK75G0VDz5qi1LGFGFWDZjMAMm3wygTHpCodEgLtgGcFZ72ilx7o-qaOQmQqugWl_n9WRtZvd6T9ApVheQlkINVfzWksakS_uuIG015KbWjpPGvKQVXTHZ48seUxnH45q1op5OZuR1E32XhJpQnQY1rGWZJlUuOisynjgxDjI4T2_fa0ydApBJi9uYKwf8rez71qA6LMZURqpuT58qhaVj9qR3KU74PXZlbXjyR6j1JREuC6BWhc4-ccu78IxlVydKWa0seXWCzhlXiBib0RVlBicatfuAtgXn4o1X8KuiveHrBuEMd41e2yPJl3nr3ZuU6ixA26Zm-D9mKL3ncxtcNqgvFPO9xjtfDxZdscqdORd4iuqYe4shTYC00BK-nlnK3QnkBn-BIUEC6mxJRUIQjdhTAcZjtJ4maZ7aUR7b4O6EkgEc1X96YH4MuZ0TJmPEcHvXheakfiZwZ7R4YDNFgBXyupxp6Neapz0rnknwHpP5rwhne162-iZYe7bQ3a8PTyzRSrYBTsocGCkVcsw5FPHVSie9_GILR3FkojH89ulsFL1zKnj_XoBx_DKspwJ4l06uGA3D33EuEZaVN1QZnFt8BpgjJanf-3xAuAohKYVCHKHDhMltA5UIZeLKp_EE7rymoYQQk3Gvb-pQHgJM1b0JhGIecqW16DYztyG7ZZrFdfNhnhIxRQROdwhcIr3C-gvhI0ufv4dVv_xBfiwe7hAyjxrrvzZbh0lrQSJO7VZhyIwkoWRVzlEdlxXqGkkXl8sXicXsswpqv_4cPxovELFoSd9o1aVsiefcXVsM98MUw-mLcvzReizmE36YuEkFc1um52WKYassOk5r_Gd1fPFfEyZRgXymr9gj5FyqKANxhGziySk20Zbwd4cmWIGL6HQOSAyLE3qlhQfNahWK3GOairK3BGzQBTdmRjDNz3HhLJY=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Formulating edge generation**\n\nI’m considering a generator for edges that will return a list. That sounds good! I might create potential edges from a node if their values are equal. I want to reconstruct the paths using a distances dictionary, especially since an endpoint might not have adjacency. I think I need to focus on the numeric weight as well, so I’ll aim to return an integer. Let’s formulate this step by step!"
+          }
+        ]
+      },
+      {
+        "id": "msg_0b2e229b95f6b018006a9ec93b249087d09b0f5e1923aa5e7e",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジが含まれている場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みを検証\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番を利用する\n    sequence = count()\n    heap = [(0, next(sequence), start)]\n\n    while heap:\n        current_distance, _, current_node = heapq.heappop(heap)\n\n        # 古い情報は無視\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                previous[next_node] = current_node\n                heapq.heappush(\n                    heap,\n                    (new_distance, next(sequence), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\n負の重みがある場合:\n\n```python\nshortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n# ValueError\n```\n\n経路が存在しない場合:\n\n```python\nshortest_path([(\"A\", \"B\", 1)], \"A\", \"C\")\n# (None, None)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 218,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 839,
+      "output_tokens_details": {
+        "reasoning_tokens": 256
+      },
+      "total_tokens": 1057
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジが含まれている場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みを検証\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番を利用する\n    sequence = count()\n    heap = [(0, next(sequence), start)]\n\n    while heap:\n        current_distance, _, current_node = heapq.heappop(heap)\n\n        # 古い情報は無視\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                previous[next_node] = current_node\n                heapq.heappush(\n                    heap,\n                    (new_distance, next(sequence), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\n負の重みがある場合:\n\n```python\nshortest_path([(\"A\", \"B\", -1)], \"A\", \"B\")\n# ValueError\n```\n\n経路が存在しない場合:\n\n```python\nshortest_path([(\"A\", \"B\", 1)], \"A\", \"C\")\n# (None, None)\n```",
+  "reasoning_summary": "**Formulating edge generation**\n\nI’m considering a generator for edges that will return a list. That sounds good! I might create potential edges from a node if their values are equal. I want to reconstruct the paths using a distances dictionary, especially since an endpoint might not have adjacency. I think I need to focus on the numeric weight as well, so I’ll aim to return an integer. Let’s formulate this step by step!",
+  "input_tokens": 218,
+  "output_tokens": 839,
+  "total_tokens": 1057,
+  "reasoning_tokens": 256,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_directive",
+    "sample_idx": 6,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 12.91551399230957,
+    "generated_at": "2026-09-07T09:25:04"
+  }
+}

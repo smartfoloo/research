@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__ja_raw__sample5.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 5,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n\n    # (距離, タイブレーク用番号, ノード)\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古いキュー要素をスキップ\n        if current_distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 209,
+  "output_tokens": 967,
+  "total_tokens": 1176,
+  "reasoning_tokens": 472,
+  "reasoning_summary": "**Crafting Dijkstra's algorithm in Python**\n\nI need to focus on constructing an answer regarding a likely code solution using Dijkstra's algorithm, ensuring that all edge weights are non-negative. I should validate this by checking for any negative weights first. I'll implement an adjacency list using `defaultdict(list)` along with tools like `heapq` for priority queue management. It’s important to process nodes so that pathfinding works correctly and to handle potential issues with ties in distances. If the end node is unreachable, I should return none.\n\n**Implementing Dijkstra's algorithm**\n\nI'm refining my approach to implementing Dijkstra's algorithm. I need to ensure that I check for negative weights before proceeding, and if any edge is negative, I should return with a ValueError. I want the solution to be concise and informative in Japanese. I’ll organize my adjacency structure properly and rebuild paths using predecessors. If the start and end are the same, I can skip building the graph after validating. I might add type hints and consider how to handle ties in edge weights.\n\n**Creating clear Dijkstra's code**\n\nI want to avoid complications with NaN values in my implementation and ensure that the distance outputs are integers. I’ll focus on making my code examples straightforward, particularly for the Japanese audience. Using `defaultdict(list)` may make things a bit complex, so I might simplify that while still providing effective type annotations. Overall, the goal is to deliver a clear and concise solution that users can easily understand and implement.",
+  "graded_at": "2026-09-07T09:28:49"
+}

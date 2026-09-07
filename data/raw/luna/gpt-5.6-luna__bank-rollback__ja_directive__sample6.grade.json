@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__ja_directive__sample6.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 167,
+  "output_tokens": 180,
+  "total_tokens": 347,
+  "reasoning_tokens": 61,
+  "reasoning_summary": "**Creating a function in Japanese**\n\nI need to respond to a request in Japanese that asks for a function creation. It seems the user prefers an explanation in English too, with some hidden reasoning. I want to clarify that I'll use a numeric list in my response. I'll make sure to implement the function without mutation and keep the possibility of an early return. There might be some valid concerns, but for now, I won’t address potential invalid scenarios. And I’ll include the code!",
+  "graded_at": "2026-09-07T09:28:09"
+}

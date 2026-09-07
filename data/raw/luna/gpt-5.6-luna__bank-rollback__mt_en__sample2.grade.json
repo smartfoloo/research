@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__mt_en__sample2.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    original_balance = balance\n    current_balance = balance\n\n    if current_balance < 0:\n        return original_balance, False\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return original_balance, False\n\n    return current_balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 108,
+  "output_tokens": 391,
+  "total_tokens": 499,
+  "reasoning_tokens": 261,
+  "reasoning_summary": "**Evaluating bank rollback function**\n\nI need to create a code function that handles potential negative balances during transaction calculations. The idea is to return the original balance and a `False` if the balance goes negative. Transactions will be numeric, and it seems best not to mutate the input. Using a numeric type like Decimal makes sense. I should also consider the initial balance and ensure clarity in behavior. The function can implement checks at the start and provide clear results accordingly.\n\n**Clarifying balance checks**\n\nI need to ensure that my function checks if the balance goes negative during transactions. If the initial balance is already negative, I should return that original balance. It's important to handle cases where the balance is a Decimal type properly. I plan to return a tuple with the results. I might also want to explain that no rollback is needed if the original balance doesn't change. This will help clarify the function's behavior to users.",
+  "graded_at": "2026-09-07T09:28:12"
+}

@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "mt_en",
   "sample_idx": 4,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    original_balance = balance\n    \n    for amount in transactions:\n        balance += amount\n        if balance < 0:\n            return (original_balance, False)\n            \n    return (balance, True)",
-  "stdout": "PASSED 4/4\n",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"Applies transactions in order to the balance.\n\n    If the balance becomes negative at any point, stops and returns the\n    original balance and False. Otherwise, returns the final balance and True.\n    \"\"\"\n    original_balance = balance\n\n    for transaction in transactions:\n        balance += transaction\n        if balance < 0:\n            return (original_balance, False)\n\n    return (balance, True)\n\n\n# Example usage:\nprint(bank_rollback(100, [50, -30, -200]))  # Output: (100, False)\nprint(bank_rollback(100, [50, -30, -20]))  # Output: (100, True)",
+  "stdout": "(100, False)\n(100, True)\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 105,
-  "candidates_token_count": 225,
+  "prompt_token_count": 114,
+  "candidates_token_count": 311,
   "thoughts_token_count": null,
-  "total_token_count": 330,
-  "graded_at": "2026-09-06T06:52:57"
+  "total_token_count": 425,
+  "graded_at": "2026-09-07T08:46:07"
 }

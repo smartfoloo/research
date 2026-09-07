@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_0ac92c7ed06d46d2006a9ec98b060887d08c8d39acd8554c8f",
+    "object": "response",
+    "created_at": 1788791179,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791185,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0ac92c7ed06d46d2006a9ec98c0e0087d0963d3491a83aaaf2",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsmSF7yarv4a7HeRopb6xIrdm9UT9Oh_UMATmkkp6VKHxAAcDmD55VmF66dB-OVjTZuHAhX-5eqV8TKkHQgQw6KfzR3gg3cupxVDDUyR_JC77HDLj3UsXqw7nXy2IFVEZoVgFsLaBSva0W5WZkvXi03sON_PCTskWJ74QKa5X_oVMG-I01trlb4iW7GidCE3QfdKKc7f3f7lvLnFqLt4EgFdwxaVinQHVeGO_X4787wzS5dzqA2Ov4gYVPzeH0RXpR8cH0p16nGfUc2BninWxMWNDUIa5rLfoeyZKo3nV9MSo9tL2aUvwoYrPaLEiTu7WIGdhI8Ep9yIk6AETUgxx0jrrCx-UTHzP6sADWJCM9xs822a5gBizf3TXaLk--V9sPH6Fgpq_JgzlS7BhU3RjB-ycH55E7r5K_nXRKH01LUgS5x1K2PX7bH70kn3ejNkVVyg043pTHq1Kd8F5-cRlIruxNQ4o8pmjXWldr2A7tFJ9wXwCXj1Zr9RoZRq9IRpfeZGGjol6T3x9HfxgGb15zqd72uqpdoAU8qqZZjQVpa_unPkdAMCvly7IZXfgShE1mAppUEmyaNgBZazF1S0NAyCgJ4cy5_hliGnDxMa5tjOITOra8i6nMXcWhHmac7siIR-QLLTurPakBIIsw284HSWhXhgXEbXh1Y-MKC43VZeo30ZulBOm2LxZ4AtRRqI4kKlVoowEElbGHE_1K0SSilV6FL881fyeXF0HgEy7lbPQ9L8AsCj-dW4d8lXWfTKubn9ulkHwTk6QEr5pzpoWWNxGuSKk5gFrrQUETB9TwgsLb6s7L3Uiajt1Kte5fxqESkxff6zhfS7Trsxi5vbs4-163ZJnrnogCwua4mB4EduGL8NfFX9w4-8SrpioCIUIfj-uOb2MsLVcv8NsCScCjGPW2HKcjAwMc-z5nWI3nxozGICRBvNx-7l-Dm-aWzropGD4pVR3FF5Swu9LquUSGMFmQdrUYNcjpq48y5x3q8B7H_hC3UU7-_z2gqZeKVxfYregNPO_3LyJtsI32HZkUAS59QtRuNDpbkFsnJRZy9IqrGiheTkhyrDDRQLL-JrKSZP40SB_OqZB9jDd2z-FAX-Bejl2HPvDc_Hhv2ZiHdfHkWoxGrZjWqClposMOnsZc_6uVlvGaoQB5XKOejw1UXA7rZsMmcap8PnI-JwHXP0PNd5U-QhbPdl46lCmDm4E6FbbaiP888VoF0C1nRQysqYv3g0t_Drs48BF6b6HGf2sSKaQkF-tpCPTpPz7ose83nHOuMUw1CpwiKgTB5k5kJqj6OiC0zWDY_AaweLArEqpJkPctZJ2e0AqG0Mv5mNvT2lMFzdPG2MTX3HupS7k8MOuw2G0h65lJNVopnZIGHJ2cOdrbV_s_yPoOZSJHPtrvVTWPXo0cBR22vsTNwC-BcvZXj-Trc4q2EAxayM92B6kXSf7y0PE8aMf9quVM6ug5s6U23tOc9x0AVqUWlBuNdSHZhL2vihaFLQcFxQL1jpL0RWBMRSdvPIuBfE6UTqzZ7xzjlNOyE34TennDVxdYIxP6LbtzKyAX783xwnLve0MzI9izHD6w_sl8z_MHqW8rYiXUBPyMDDiXHhnQcX2eH_L9DKGETj6cqwr0-vAyS4yA85gFytt-qP8L3t19eCepqlVmU4tO3JcLkWaabwzFlXfCEa0ayRFb8Q0WruTcRwwKsp3H4w6CtMMYJhL8DryYdfhdZBn7B-DCyv3p6-i4t_KeSGhHSiPkC5TKE54AgU0YLb6ragEQbeXiU9-EBV0EZKnXgmtPYP8FxUtqEfVfET9IvYJxyneXwSge1KIkHwnJLkzmillasIbyW9CbCqCD8W8GutkzUKij-sZaRdYFNjLamC_V3DYL2X4LPHaUSBB0NpT7T7DeWbNGNF4obI7XFwLwA7gcZ1tz8UGRB-aMn4vwmlYeckJlLmCQhk8WlR_HX-QzvCLSmJcgNKh99JymcEKtSt8zUUk_Vak_L6k8hwYkF6i7IdAxbbBtWBOtVeaAzfX3NR0NGb5PaKNtArsHKhW_4MvjcJezEyKotzLC0RDg1ljNit7lJYFs1rCOAgmjlo1wTmQr5N2v7TWspSi-X-IR2gpvvksECMmQ1Kl5vdFY5DusccbkEnKQKunvWHc8uFDuRHSbLhC3CIMAoyzusjTc-1XOr3_yms9fPkWOqxBYLPWaropiUVwqkw_LE9y8oqIavRPjghj1n3AQyJbxLa",
+        "summary": []
+      },
+      {
+        "id": "msg_0ac92c7ed06d46d2006a9ec98ee56087d08b667b038025a4a0",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    original_balance = balance\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return original_balance, False\n\n    return current_balance, True\n```\n\nExample:\n\n```python\nbank_rollback(100, [50, -30, -200])\n# (100, False)\n\nbank_rollback(100, [50, -30, -20])\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 105,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 269,
+      "output_tokens_details": {
+        "reasoning_tokens": 156
+      },
+      "total_tokens": 374
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    original_balance = balance\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return original_balance, False\n\n    return current_balance, True\n```\n\nExample:\n\n```python\nbank_rollback(100, [50, -30, -200])\n# (100, False)\n\nbank_rollback(100, [50, -30, -20])\n# (100, True)\n```",
+  "reasoning_summary": "",
+  "input_tokens": 105,
+  "output_tokens": 269,
+  "total_tokens": 374,
+  "reasoning_tokens": 156,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 4,
+    "prompt_text": "Write a Python function named `bank_rollback(balance, transactions)` where `transactions` is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return `(balance, False)` where `balance` is the original balance. Otherwise return `(final_balance, True)`. (Ex. `balance=100, transactions=[50, -30, -200]` -> `(100, False)`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 9.007527589797974,
+    "generated_at": "2026-09-07T09:26:25"
+  }
+}

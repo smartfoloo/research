@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__en_human__sample5.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 5,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (distance, path) for the shortest directed path from start to end.\n\n    Returns (None, None) if no path exists.\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = {}\n\n    # Build the graph and validate all edge weights first.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # Ignore outdated queue entries.\n        if distance != distances[node]:\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if neighbor not in distances or new_distance < distances[neighbor]:\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    node = end\n\n    while True:\n        path.append(node)\n        if node == start:\n            break\n        node = previous[node]\n\n    path.reverse()\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 163,
+  "output_tokens": 885,
+  "total_tokens": 1048,
+  "reasoning_tokens": 462,
+  "reasoning_summary": "**Crafting code for Dijkstra's algorithm**\n\nI need to explain how to implement Dijkstra's algorithm with validation for negative weights. First, I’ll ensure that if any edge weight is negative, a ValueError is raised. I can check all edges at the start, even if the start and end nodes are the same. I’ll set up an adjacency list and handle potential ties in weights by using a heap with a counter. I'll make sure to focus on non-negative weights and ensure paths can be reconstructed properly!\n\n**Formulating Dijkstra's algorithm code**\n\nI'm setting up a structure for Dijkstra's algorithm, starting with a distance dictionary initialized for the start node. I'll utilize a heap to manage the nodes efficiently. I need to check for negative weights before building the graph, raising a ValueError immediately if any is found. Including both start and end nodes in the adjacency list will ensure they are processed correctly. I'll remember to handle potential ties and ensure all nodes can be hashed properly. Adding a docstring will clarify the function's purpose!",
+  "graded_at": "2026-09-07T09:28:46"
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__mt_en__sample6.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 6,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of weekdays strictly between two dates.\n    Dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0, Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 361,
+  "total_tokens": 453,
+  "reasoning_tokens": 161,
+  "reasoning_summary": "**Clarifying date calculations**\n\nI need to explain how to code for calculating the number of weekdays between two dates, specifically from January 1st to January 8th, which would give us four weekdays excluding weekends. I’m considering whether to handle the order of dates by swapping them if necessary and returning a signed result. The function could use `datetime.strptime` and `timedelta`, and it should raise a ValueError for invalid dates. I'll ensure to include examples for clarity.",
+  "graded_at": "2026-09-07T09:28:22"
+}

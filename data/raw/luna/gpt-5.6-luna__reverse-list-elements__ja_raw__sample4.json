@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_0ce3d9e43b728304006a9ec70dbef887d095110ce9a8fa7ff8",
+    "object": "response",
+    "created_at": 1788790541,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790545,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0ce3d9e43b728304006a9ec70e185c87d0b95bb956b255c3ae",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnscSbiiUrtGv6tJ1zCdbVrl3EL7tSyfNpimSlXKeJzPu-BkwXZYXtaoz0L_XWX8NwGtRF_gSDH0gWOhOhiMvmDgynrbXKokc8zPZpFi2q2sC95xGZxuzjEpZFsoiR7XFkvAM_4EPh2bFuN-FzAfuJJLpCRMaV7S96LVCiqdXALG30yDlY-_f5U8gbG5bos6CmZq42OTqf0QUY7p9zwYsL8YDZ9rLzHmuvbF5zBXRxn1sw7Eq6s4J08xH5bAf-1bqdCddi_ltbBpKd9QIUFqYp44MNtBjH1xGhsdaUuCmSg8qczS4NOKNtzkmqcFY0B9wUeobShnOVU66lhFKUQGzOQWxJHV72Uj6urhtulkeB50gAnGc8LcaiiNA5w8CFyI6RhZtE82bAitPnpXA51EKCg8cJI8Ap7_lpj_6hT-rrNTENDPA3Cj_J4yT0qOxptQGNOmAi2UhDPRsHt59zXHbd3UdRAU-Ufv4KScBp6DVklzKUfFtAiaQ80FJvrcTjwCZ0XwmKtZdX0dnSY8VZy9xMZ5u0yB1loXN8Cz9SlPkbWWfJ6AKZrImbU61Tq8PTysn0H9Wh3XuQ9db27_QvXPUwFkN0nBUDcv8py_bFYurgsfAZToEVya43NPRy02zZQjhNugzytThzAg3pnEEbF_FeEgFwenuQOnDp6KK4xQ6lrcNVS-4gae0Sidbav9UXMVOixk9JoR0XTJyAsY1P6yLr2K-TdTdt6dkFNC9SJ9WGn-Lh9MJr56RbUeVS298ofXKmtTdWXZZkzZrU1qP63WBLXhfq-xXBKy9Comlxd7PxTawpBL-_n88rRXiANkrQmZGgy3fyLDMD3JzjwTsY-P90jakJ3txk1hVMmMeAsxbijU4zEoY9bKoZNAOFANQD2W2Qx9PiKC0rXN59rl9CoZRGTGD1_Egu7kesWhoe5969FfTORvnNKkdoWXaDOHDig_hlRLKhRruX01h-kCSncTGiUKmDaj-1Ticv6WvNnW3iJf3Yp0Wqv4wl21SVrrL4Bv5wxNxn12dmxfDIJeee3Pm-C3nflyQ9BPMg7kT_qIBVMrya-donv4hRwqH78Xm0pU5q6gI8i32fS80kNH8c5YB5rpa9hJ6QwHGyWwWd4D_IH9H34pipJ6ReXn9OMDBOtXcDKu-FN45B9022skUSskI2Jw-kF5s3deMVkaR5tgdvLvzuNo6VlFX3NLfj_lFq1sU9u_iGH2zOewdYGdYz5EAv4yJpaJNpg-i5cQqGwzVo1Pp8VstrHeIturW-Kbujd_HIfrxHVANS1mTpfyQb0Oy8yjbFi_Ez-CE1a20VNLBIcwWrzOK9BHKhw3vl7cV_hO4G691ruGSIL25x-AEeUeZ07czQErnG_uXyKKWofQplLd1gusmGkDQL_GPifF3jA-fA_3V4a6A6i1hsRzHlqRLOWX4DSO-pds1PrWC2JkTKOpoLSZ6A40Q5f4NjN10-HnvlqXSryFTL8TylXLmPHJ7JYIP-Kl2a5PjefSUHdQmJaoykBf1g13s2byE-5meTkH5LC0bzRWuiCmiwwhOko3dy3esoa3HG8d1-B14RvisMfgLh4hZRyAYm2vdZ5uSMgx-dNLXxyA8MiWv9hvw8eutf64UnkCnHtHbptXZ154jCyIG2wKy8Q4mZ3njVPVcVZm9YemLWtMYtJkFSYW6MCf9waFMFTIMkLWJTGko1-vDFYMrimuzHA8fWt2IxHNQ6NeERsdEwbQ7ovFUJuby9pVB8IB0CC4OeXnMGjjnoiPV7gpH_LgGbQlxEIXiPEPw2OVZ3ChLEZqj6tnhBddzg413XzURPL0461tkBgfWzi4c8k9n3SvkLRIfLBfjA_Zqi9aHTh-3RYSRHw0c5RfnFJu0YIMvEsnEBT_tGBwtndwboskzWF14-4blA8W8rctTo0HEBdy4VT8XKDrdClJjKOi6cMeMqC_r1dcNjbSyVphKYUGE1d-gKv_RJ3hvr7hf1DZbv4Tt",
+        "summary": []
+      },
+      {
+        "id": "msg_0ce3d9e43b728304006a9ec710268c87d08669dc9931d35788",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements と punctuation の対応関係を保ったまま、\n    要素の順序を反転して返す。\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さは同じである必要があります\")\n\n    paired = list(zip(elements, punctuation))\n    reversed_pairs = paired[::-1]\n\n    if not reversed_pairs:\n        return [], []\n\n    new_elements, new_punctuation = zip(*reversed_pairs)\n    return list(new_elements), list(new_punctuation)\n```\n\n使用例:\n\n```python\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nresult = reverse_list_elements(elements, punctuation)\nprint(result)\n# ([\"world\", \"Hello\"], [\"!\", \"\"])\n```\n\n各単語と対応する記号をペアにしてから反転するため、記号の対応関係が維持されます。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 108,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 326,
+      "output_tokens_details": {
+        "reasoning_tokens": 116
+      },
+      "total_tokens": 434
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements と punctuation の対応関係を保ったまま、\n    要素の順序を反転して返す。\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さは同じである必要があります\")\n\n    paired = list(zip(elements, punctuation))\n    reversed_pairs = paired[::-1]\n\n    if not reversed_pairs:\n        return [], []\n\n    new_elements, new_punctuation = zip(*reversed_pairs)\n    return list(new_elements), list(new_punctuation)\n```\n\n使用例:\n\n```python\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nresult = reverse_list_elements(elements, punctuation)\nprint(result)\n# ([\"world\", \"Hello\"], [\"!\", \"\"])\n```\n\n各単語と対応する記号をペアにしてから反転するため、記号の対応関係が維持されます。",
+  "reasoning_summary": "",
+  "input_tokens": 108,
+  "output_tokens": 326,
+  "total_tokens": 434,
+  "reasoning_tokens": 116,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "reverse-list-elements",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "`elements` の順序を反転させる `reverse_list_elements(elements, punctuation)` という Python 関数を作ってください。その際、`punctuation` に含まれる記号を元の単語とセットにして `(new_elements, new_punctuation)` を返すようにしてください。（例: `elements=[\"Hello\", \"world\"]`, `punctuation=[\"\", \"!\"]` -> `([\"world\", \"Hello\"], [\"!\", \"\"])`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.518404483795166,
+    "generated_at": "2026-09-07T09:15:45"
+  }
+}

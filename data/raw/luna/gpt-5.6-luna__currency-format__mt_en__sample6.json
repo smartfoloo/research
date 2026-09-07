@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_099926aeabefa453006a9ec6d4002087d0898a8964e9b933da",
+    "object": "response",
+    "created_at": 1788790484,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790488,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_099926aeabefa453006a9ec6d49da887d0aa05a7b1aa63ff96",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsbZMImzdLUoWU7vu0YxiLZm2pX5q5XVp6YQNsr4mg4yCgq9r2icVHTyNKgXrvRtWqHeOXEMm032nVWdSDyxyoumR3wTIqC7sRrb3WdkospBHyHzZoDtip0UDBrKfIZ2bPBboEI8N3fpZwqttI-plQ2Vl6veo2Mxc1UkTKK-XHLXDuJSytY2r6ZtOnZmVlp5hlVeEvAQbyEU2Gz9GBF7Hqvoyy6KVDRRa8fQ0R-IKt6S75_dgb0jXwmtVAbmxt6QMjc5aT6TbzBvIMf-0E4OeNxsXFRjDW0A_MzUutVo6zhsw2jGm84ffxdZZck7sjEvVxTPR3HCgo_I_wwujmZSscCCQRwHijYY6bHWJU9imrOCtY--FYoqjDaT8YsiqxJ02c1cllfg67ZPEP2ZgDTXSqpxyrqPhrG9W53e_Ch0j7j9iWUGtHqCDt9kceFnyilAWq9yeBPMs1UaMlOrJ2yc9eTOoyE-Z310PTTSJ9yGZ-Dyn1bKuONSHoHTJoQMf7mxjkZ0LrHcuFsIgmlFGxx5h41UyiT60M8iS43nCfYDAD5C9pYAqBVp_QfCWbqY4cnkyCZg_lnpScDKjDsGR7MluVY-mJ3qCu4WxWQwMfOwHgQ522g2tQ7xk6VOLFxnFLq7Nay2X0pNKEoLWXzwjo1mPt_i3AtQMfUtOXDlbvkVppcAXm14urF-8jemp58PnBYEqXLSv4GVjSGB99pnxE42tWvhPmciK9iBITFq8_2hvjZNROcE1E0XJU11JckF2KPszsjP811UWyH6oyeYoMd2S_BfKWIbh9viWANmdH0eXnV_I62SV7JHh8hrUtWcE8whKHdwFnk3QahycAvelcclfYax2t7xMYTD6HDvyEGTLa0CW9GTDibldUTaLLytHc94qC2SFTXlmbDl2JrrWEqyHd3PCZOnNgpNg3x8z50tXp8j0jFkvRtbehlVlMhCRidqPn0PQ_dMgJxben9-2-QaLdN0AVsfrTL1Pxp5AiQTDiVZLR4sETJZQruh2cb-8-2nSYw-Y-Vy7zMN7DHQAg0haf0wTLBarriel5Px9MMPCKSQgE-0BJ4MBehv2K87c66fp8inhjHxFcGnVlCiAY7rdty9eX1WE6qgdGYkrKVYihHhmsAg4b4oIbIORGq_RJRQ04zUp-nvdg66olhT_Yg0lmHvjdM91GYSg-sxC92fg2rZ26Vuwc_UB9Iah9XIgpfzuyThyCIvfhOUcrIBHdkfpWkm0Pi1soc3vzmGA4cHlMMPvkZB3zEqPS4RHAk1xyD9CPoYVF9BR7A49jHNMiSqVqPSLF17HNDr5qVsiAVQ8Jj30SbOtgPupaOoeKBtGexoyfxZKEYt9IyAFCDBeYBAr_5x3HvcLbQrB1sMyJQemoMrK3sf__XhzHwxGMwuRjua-AAkuy4b4V7PIV-QsyNTPHixBvQ2ds-wkKPP_bmkzg4QerHoFwnmzLcazOZXYCocJJ1UpbCUrz6PhdD6yIlRNbPMVENilbl4Auzt9If7btlQwojQAI4G5HXU8LZJcSySX1zXUgDYFRryMihk-z_4Y7Uu6-OU3KykmeawDmJmmiVaHsjCM8t6Q7zRU4PLitUuWP17G1bjWAjcnryOmo9kY38H01y2eBsbWgL49EZWSmFlMO6Ys-clDzz0Z7Bl-G_w4Z1SbNZkzrgfuhFWEbQpBo7BJZjkudc8w5RXuHquONTjjW6xjS0FZTr6rj5XMNJ78eShRi2o74RiHa0RUa-H5KI97GhvjqVJF-cmSiB6GZBA26xqKPNMrAGgkJ9wzHVZE-ma_FdJLlXxOFhxIwfO5oQ9YSjpv25dL5W1ATa3SZ2HSpXVXPiFnX9rwbnT6eCTbnN9AZ2UDs0JqGyppZtXbsOj_2PbPqjdohsHQohuDfeI2fa6xcVGFtxw3ys1qOMhRe-oKSEzzFHwx-CRt9C8rMTAPxLx7DR-4_2VWenRyxvOyXITMjrzCrjb3fZr33w1SaN9GLMhQcZ7aK2hOMdgXtfZ3EosI8A1Y2y6wpyNJ43YdlJljHLDfHJxZwDSnX8Q1Trn1yfwEq9CE-LeFYqqhyakDFfCVAbp46jzBPsuX_NElLwG4qdTYOO1t_i7BgAnvwIIpG_G3wnJjD1CnvSrAlm60BaoQJ-7B1ZJC-jwG5JZ3fyWDCZ9E5ZQMPTquhPPbcYnrAV_oYSyCGiufvBT7mV56GirFuby1Xoro8e-gw8rccZjotJxJZjHuZx-MdR84V8PrvLCxXpqNPu5KmBEGz5D__CqLHAF34u7rCBLnnniTFgo8R7-_yIrh1olcDfBP_jn-jP9eraOKQmT8r4SicK5zuXofCn5lYryGfCZ_Ac6P4JWLvfrTwxdnINxSIII7z40lySZ6t8BlsylSKWiuYhtUfFkynJbsz7xcltATS0eHWB2YI2_gvdXqxT36jf1xj_8rER56TWpZsDRop4HGGPNiJWCnjYW28w2WJLMqZrrN22zD2YEIVOlPN4nDpDorlBwrX8OMn4cDfvV24IQRGwXD8Ck4fL_Y3YFRt5jYoT3dkyTb86ID5n9cHnG5JblAolI",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering currency formatting**\n\nI need to explain the code for formatting numbers into currency. I’m thinking about how to handle negatives and decimals. There’s a convention for currency formatting, like using something similar to `f\"{n:,.0f}\"`, but that can misplace the negative sign.\n\nI also want to create a robust function that supports both integers and floats, properly presenting the currency with commas and handling negative values correctly. My planned function should return formatted values for varying inputs while addressing these concerns."
+          }
+        ]
+      },
+      {
+        "id": "msg_099926aeabefa453006a9ec6d8af7887d0b9c5031b53a4c432",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)    # \"$4,640,039\"\nformat_currency(-4640039)   # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 68,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 332,
+      "output_tokens_details": {
+        "reasoning_tokens": 255
+      },
+      "total_tokens": 400
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)    # \"$4,640,039\"\nformat_currency(-4640039)   # \"-$4,640,039\"\n```",
+  "reasoning_summary": "**Considering currency formatting**\n\nI need to explain the code for formatting numbers into currency. I’m thinking about how to handle negatives and decimals. There’s a convention for currency formatting, like using something similar to `f\"{n:,.0f}\"`, but that can misplace the negative sign.\n\nI also want to create a robust function that supports both integers and floats, properly presenting the currency with commas and handling negative values correctly. My planned function should return formatted values for varying inputs while addressing these concerns.",
+  "input_tokens": 68,
+  "output_tokens": 332,
+  "total_tokens": 400,
+  "reasoning_tokens": 255,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "mt_en",
+    "sample_idx": 6,
+    "prompt_text": "Create a Python function called `format_currency(n)` that returns `n` with a `$` at the beginning and every three digits separated by commas. For negative numbers, be sure to include a minus sign before the dollar sign. (Example: `4640039` -> \"$4,640,039\")",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 7.526667833328247,
+    "generated_at": "2026-09-07T09:14:48"
+  }
+}

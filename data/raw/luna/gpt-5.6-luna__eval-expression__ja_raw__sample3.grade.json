@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__ja_raw__sample3.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr):\n    \"\"\"\n    +, -, *, / と括弧に対応した式の評価関数。\n    負の数や単項の + / - も扱えます。\n    \"\"\"\n\n    if not isinstance(expr, str):\n        raise TypeError(\"expr must be a string\")\n\n    token_pattern = re.compile(\n        r\"\\s*(?:(\\d+(?:\\.\\d*)?|\\.\\d+)|([()+\\-*/]))\"\n    )\n\n    tokens = []\n    pos = 0\n\n    while pos < len(expr):\n        match = token_pattern.match(expr, pos)\n\n        if match is None:\n            raise SyntaxError(f\"不正な文字があります: {expr[pos]!r}\")\n\n        number, operator = match.groups()\n\n        if number is not None:\n            value = float(number)\n            if value.is_integer() and \".\" not in number:\n                value = int(value)\n            tokens.append((\"NUMBER\", value))\n        else:\n            tokens.append((operator, operator))\n\n        pos = match.end()\n\n    tokens.append((\"EOF\", None))\n    index = 0\n\n    def current():\n        return tokens[index]\n\n    def consume(expected=None):\n        nonlocal index\n\n        token = current()\n        if expected is not None and token[0] != expected:\n            raise SyntaxError(\n                f\"{expected!r} が必要ですが、{token[0]!r} が見つかりました\"\n            )\n\n        index += 1\n        return token\n\n    # 式: 加減算\n    def parse_expression():\n        value = parse_term()\n\n        while current()[0] in (\"+\", \"-\"):\n            operator = consume()[0]\n            right = parse_term()\n\n            if operator == \"+\":\n                value += right\n            else:\n                value -= right\n\n        return value\n\n    # 項: 乗除算\n    def parse_term():\n        value = parse_unary()\n\n        while current()[0] in (\"*\", \"/\"):\n            operator = consume()[0]\n            right = parse_unary()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                value /= right\n\n        return value\n\n    # 単項演算子: -2, +3, --4 など\n    def parse_unary():\n        if current()[0] == \"+\":\n            consume(\"+\")\n            return parse_unary()\n\n        if current()[0] == \"-\":\n            consume(\"-\")\n            return -parse_unary()\n\n        return parse_primary()\n\n    # 数値または括弧内の式\n    def parse_primary():\n        if current()[0] == \"NUMBER\":\n            return consume(\"NUMBER\")[1]\n\n        if current()[0] == \"(\":\n            consume(\"(\")\n            value = parse_expression()\n            consume(\")\")\n            return value\n\n        raise SyntaxError(f\"予期しないトークンです: {current()[1]!r}\")\n\n    result = parse_expression()\n\n    if current()[0] != \"EOF\":\n        raise SyntaxError(f\"予期しないトークンです: {current()[1]!r}\")\n\n    return result",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 94,
+  "output_tokens": 1307,
+  "total_tokens": 1401,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Considering unary operations**\n\nI’m thinking about how to handle unary operations. If the current token is \"OP\" and the next character is one of the operators \"+-\" then I need to classify all operators. Maybe parentheses should be included as a kind of character? It could simplify things if tokens, strings, and numbers are represented as floats. This approach might make it easier to parse everything correctly. I'll keep exploring this!",
+  "graded_at": "2026-09-07T09:28:34"
+}

@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0bd51beae988ff12006a9ec91160d887d0ad0672142fa1d19c",
+    "object": "response",
+    "created_at": 1788791057,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791066,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0bd51beae988ff12006a9ec911dc7487d0a018845bdcbf2336",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnskaSSKVPnWTUaIUsbFi5GWQMdOYN3XZMaV_Il-pzhCJsdNtfV0f0TfXRbv7bLE57fJy6FsBRRWi1Jq2mFZs60qMTu1ry4675tkR3Bxxsq3fGuQqcV2BhdySPgP9ynHjXV-kedGhpg6La4OyckhoAWw9lZBKDOPBRmuAVs-CBx5_BrqOc0IHlPtsn2QZHGKrwE_N2Yip5j56-ZoJmWUbuAqg65OfllPil-yfV341MJYFhsTDt_hviMq0WLuxhLXEWyGCVR2c5T6u6mAYlVDkEUGQMN4gqNbs9IKt697OTJMQFeMkBD7FNuJlAv9kmHR6ajJ8Ck_ECr1WAT8jWME8wQG0KS-uicDNGV8KaE6t7Q_dBC7KMMQLYYU0q4ZPhMOlfRyLsRQNqzcsstLLKyAKdowCCHIEk1Vvv-OyK83xplXxKnh0xuBVBPIak7yRMDaA1V6Nnu3Ifr7NKtqm21ttiRMU75vsgHDB_ixDKd18IRy-AS_hxSnQsPKm_BMsnSrbGwp_hfsmc8Kxoe9Fe8qW7Ps_z8r6ZmdfTPYJj0lEld4-OiYiqelpfaI_aDUqf9LgFB-Wodm_OtTrzqoiNzYRLExZ6sA8y5E58IFIx5oMPkd2WxUNvohxT8Cq6f_fCZK7jlPwQyVl0yBadJw-SBuD_WIdiPN7TyHGD_VkhEeoLi3ayHrk6nqvESkOMLlISgdEpfUS1zI8XC1OBDDJe-KerBbtNRNx2-VAydpXQJ8YjjJzEaIAVyKEyVqtAgj0czhDcO3Y1J-nSz4huJb33s4HMEfCXNGy_8qO2ciqVQgWfuf-xaDtY9twxt1g9DRk-DHtSkLpnMNE0cYCEaN7Bn78qoMftu34_lHgTTYFFA1HbMYym1y7zPtb8XStwkNFLrDVNAfunnsGQUheF5dnauU2BtyAhGz3jdzrqPjPblmpzA5IL-k3_vufy9UuquRJIMyOf89dky7NxwucpYx2l4FWe5eADeXHxb4j2Rrd1WoLqnFz7l6gAEYbN9rnM45G_m6nn78vuu_bCrV7PuFVAE7nrbFocE1r5FL95oZoRN9BS1A4bKXdjHyJ8aYmhPZtEltROXM3Ryqkgx936GgAMqmCIT2738h3_lpjcGzv3xstALiTkxIMCMIlFwE_LCfSTLFoI_AdZJgrQyzyRVb_DEj4ulEPTc84b1SERoV3TlpjsmoG07V5z9Tb_GW7PsPa7_Pj1zsI6NwXwWhSXB21W1D8VEzoNYjBJgepZYpdqK6Cqix4BsG7xAfJSHRpBuP4j3IbPZ1qLuw1cPMeTXIDjDcUHd4ZPFvZIJEefg9XAYhXVdYkZ5B2QN2DDvG1rodoWVNFKVDAIUIgIP5jpYlSiBuUEm4c5BvTitmTtYrmuHSOuwKZM_x_Cu2L5cR3qA6lKyU-TI3pRx4KPsIx_jB8BpyQANXGKCHpBD8dI_kRDBX0-hVcvOrXKxhmx3q_bhwOBylJW3DEv_aDETDq5P33GshIylyLPcrJ3uGcfqFFKWtZF8Ly3ZZP1byNn5r_CVC-VcBWVv6hk5Q-gZlzJgeD7hpAouJ8SL7cpwzdcYt61HIqvgo66eZ-9BZR1FpKmSpLdZJGYz7C0FmpFoI0vljrCCuAaopyfie_YdsPRmnoT5f5NTCm-gVLkTD5pwFRNYygh6EOqERK-NUR1n5qAyLKDlMUGSi0XQitykxdkL0NTimL3KZppGZCdethrIYvm10d4bdYm9o5WrjHfK1oDMFIAPOaWxOuw7bnzadRoIa63hm-1oM1K993oEZjntLa7NCb8oIM2QCNf-pxBTWOP7LnxouyamlaU8fARR0s7Mtmiz0lSfs3QPqyh_otf9A68vVR4xnPGSf2fURKkvmuJbtpiEeSolONwUZZQu7-BF5Kx2vfq72DKi8i0JYQXIX5R2iinhYF6tEiu9DKDqRUh1W7geEpcRTUc_vLwduRX9dQdGjGROTTDxOij9XEkuoULEurq8Uzv0PvEuekooKHn5PA-x5PtqbEtk1qsu-ZDZHq2A_Qgtv9k6X7um5VMuTjIrYMLD4c06WJ6MnBUr6pt1I4UeT5IFg5viphkUDztvmBKCUzqpOGC9CSRaQosYBLKbQRfMnNYP6BkzZqwpAiVox86JxTPJoX1asI_pkd-pC9cPEs-xaDh4AsuSUdqKF4VLGdNADRbb0JD1Fq1pGMToWnCpYtcDGuRCH40N1WiTheHIf8Hb2I6EdhX2k5N3e4XZLQO73JXeGYDofJ88NpxltANtvV1Xa3eLX3wYZ6ADLyVUYeCttqyGu7qTnshUvgP4lckJneBdCFAECYddxXCkNMQup2W_FmokS8hwfTrkuy8Q2lShFb1nEZK721z6Hw_xE1m1APTluAW0ko3m7gf5buuA9DHSv0BZzmgO6xDPxgwMEWQs9mWRWMAX3h4KaZBtkTQlhYpDT3JOyIS3oIDtsPIQOVDbSKnoeMpTCHfuKiFFwyVAeHAdJAGLPuzltwThpixQSOKiLpMJXmiNOU0tPkYgnVoYAr2onoA2phxDJ_Ti7S4xb0t-nqke2sJlNWHgarGarG_tyfzuoOKlz6xXZY-sT4i-pnF_REqc9umdo1gYwtLUR9-BsX-737UHDMwZ_hPFEGx6MoA1BeLmEBmAFTiaiDaL-EpiPuwMjIhxWi2bpX_mJoYZ3GAeEkVSaHr6r0pWtR1Q3UAW87y5Zet57M5J53hyFlpp96ugT0odrNy-h3RCOOi6RV78X_3-p8fdBXe_u8nyq5jZ_xaD_lZNz1lvzvZ3ezbiWB3WlvT9BqUy_aRRTTQJ_QUni7a89hnoxS8NgOKrfCtfFjZJg2IQxQRzEe748nLZGDfsGfkMs1ohQes17IWNacHCrHQsb6ME1oBwiBgU-Jut2zozg-is_6eOSkAcd1HA==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering coding examples**\n\nI'm thinking about how to handle a situation where a path is unreachable. It might make sense to return early from a function when popping the end of a list. I should include an example in the code. It also strikes me that a Japanese explanation might help clarify what's needed. I don't want to reveal my reasoning process here; I just need to focus on providing a concise solution."
+          }
+        ]
+      },
+      {
+        "id": "msg_0bd51beae988ff12006a9ec916b7a487d08352bf06a179dd2f",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: いずれかのエッジの重みが負の場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    # 負の重みを事前に確認\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported.\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n\n    # (距離, 順序, ノード) として、ノード同士の比較を避ける\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古いキュー要素を無視\n        if current_distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, [\"A\", \"B\", \"C\"])\n```\n\nこの実装は、負の重みがないことを前提としたダイクストラ法を使用しています。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 218,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 761,
+      "output_tokens_details": {
+        "reasoning_tokens": 245
+      },
+      "total_tokens": 979
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: いずれかのエッジの重みが負の場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    # 負の重みを事前に確認\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported.\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n\n    # (距離, 順序, ノード) として、ノード同士の比較を避ける\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古いキュー要素を無視\n        if current_distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, [\"A\", \"B\", \"C\"])\n```\n\nこの実装は、負の重みがないことを前提としたダイクストラ法を使用しています。",
+  "reasoning_summary": "**Considering coding examples**\n\nI'm thinking about how to handle a situation where a path is unreachable. It might make sense to return early from a function when popping the end of a list. I should include an example in the code. It also strikes me that a Japanese explanation might help clarify what's needed. I don't want to reveal my reasoning process here; I just need to focus on providing a concise solution.",
+  "input_tokens": 218,
+  "output_tokens": 761,
+  "total_tokens": 979,
+  "reasoning_tokens": 245,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_directive",
+    "sample_idx": 3,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 11.413117170333862,
+    "generated_at": "2026-09-07T09:24:26"
+  }
+}

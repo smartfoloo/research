@@ -1,0 +1,134 @@
+{
+  "raw_api_response": {
+    "id": "resp_0eda49ed6ba32f48006a9ec61268fc87d0a9e3738c00ee658a",
+    "object": "response",
+    "created_at": 1788790290,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790296,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0eda49ed6ba32f48006a9ec612ef9487d0a0c4e653794f1378",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsYYdHMcGvtRxNvxYlheG2SJdP0w-5ihzWz5V5pJSb4YeFHSEPqHQy6ljs5hWqkE78cVkdPCaqqh4PuR8ichT_U38Q-gvl0qi3N4C8no0k5-z0Qhn2zz41R046xQuo4ZDpCZwgBKAYdbsG4Lc_zBi00vBtKwIpBpUzNNCydnJn_A_iVjVk2YIVjHuq8f3TK8T7-ruS19N3_ot05HV5nCFi206TaRucFSRyCv2WGFKwQAktQddqPWPB3yzkgF0m0LhrOmzbxA5RzI6EzE_OBH8fKilbA6BGDJm1MurzBwWaE8L6861UPb2ZQro_lDZzD3czd859T6ToQVKQS66oW-EjBZIxUQJnO_lzdvO2YQpk5YN2RucjwCWKXG-sp9CPmzY6lMBUuhl1vaddV6UBEGRQ8GNOJySrlFweFZAZOdBFAjUyckFlH0rcAucYdYf1kjUoJB4XqWWqZBnHg0BL0LlAQoTFZS_fOWBVVDJDRGnbn0V9W7rgWnAua0WVzF6cpZ04oiDqShI3IPslXd0Py3cAD6TTOFMCjvdguIMAvC99KE3qCllbScxWJrt0hFP4R1StayeLs3qtOhofofZS4472_WyOSkFX6-LcjEFUCGfPp_nqAT3HqLbEGyYIqqayQ6Me4HdBoh_qZFQoyedf9rOhuEVuBLUTarEDo7KcFXByGkPXRmXMiR5V3YbnqWdTCt5sNfWgUTGuzKye9TLFyJPKDPdzGkrpWTtX2gX7z--ZsyeJ3YchvQYyIkGCbPE3lyTo1TBgQHn1TbuYPgSgnAZE39I_7mqK_lYfq5sK0Epsw3YW3Xkp4pHj8yceycOIN0O9gwU9Z4hMEGmlXnee3QWGRUQ8kjMb8IR2DIgk_pzCmvZyjkn_xs5qwNxa2V_zqxLrXtd9jOXYnqz3GHLaOsa7OSGBP_u_o_23tHwL5mNd1dNO61MrDvGko4w3OKK4VoxKnBqjPotne41nJt83ew-Kz9lJsQghC06RJ944z604w0fOWCZSHzv251CunPGTUKTbZmoy969sJO0uorQu_-dQHxYQO8L8RojaB-27Hf7m9ptpXrbbA-gw58FIdUFJnw8XS-9LMp4p3n6u4X-IHxpVTuWOteBKZHklN-MNXCn4yx6zrEpcPSOF8K3ZVDcGWIHq0YRGBfTWSGzQf9Rjt2ORs-3bAThOH44e8IYqJ2i5ZA3o5IADEzZEPUJZybu2u6UT3QHr3xT_HNRPAHiZR5au9Q68KpeVzS7xLCJptnD9Ekgefh9tCaeF1-ajw6gaFMsVkPqTxoNrlZ5HhjnMV1MQMWm6oemUFUtb5T0_xlnfqlVHzBSPFSHZ01b47nuAX37B5lphzl69jYFJcPgjeX2hAySJvWXTXqSuRg9LP2Z1cZmUNw_c0J5jzkWzbTfpmQ5zXNafmu5Bur7Mprzdt-k7nA__6qdx03O4q-CM0uI6ekU1SDpkUHGQUn34RqiaC5cS4pnn1YNFZ1h90Ulh_ueNp1j-iBhtjnGho7_NH3dCcvfF7QtO5RSA5uXPlwziR_ef7C3-eukEu36FnFblOWJrVtAdx8T8brItknNSJdDeaKFgEOZipNn3-iMfSIvQ0tAaYD32oprIK5EWW1B7XVgVRx_FiC4InLw3ZlYYfnmujvB3p3ldRMFyQnaB6hRSXKwbhOlWupNtrAvd6_aLpKpR1CA-LYBmjXzalfhBtkzDfgg-CpACuWuMaimhsfSicCn_ZbiGGZ-R2oMCgGQvyU5mCXg3SvTQg4bKnpFpAJF-RZHonp2RZeG4zQKLE-g_LmpbE8BZwEGFoXAepUvj9GrW4GRdS-OYfzClawLY4pVA-3JnQwDOu5mhEzhGcuzW98c5cjDPDTarWMgw4MAhLa1QSPjVb11hhUm3LUMndgqjaIxQPIyAAyqfpSJ1JZ8xK_lD00H3TVpkovPUuGlh6sfR13wj6_gre9cbH4ppLlDZ2dWJanO58frlT2GRDpNL9-jJN9G4PuXNKoXyHAa7PXuC7el1eHANZSoqmOCaf-EWmje4rt68IaAmLIkSsqfsUVbOINaP2NjKGI3cqTxxSlxVd5U9qv3E3Hd7BZsXL0CS4I5HATw7bFD-ZLe-JWI87hBGBNNozj4QED1H3tipzKYpop_Bv0Mait7zrQ8M1c7K6aBtHCGKhX0a14ILWvOtYevdrCkVqkS_V-yTsiHm0jb8_Irpm5YS8zkUyqA4cyH0Avn-BS2DGelS38w0YP6zOUg7SDcWvJhXXFWQ8tjdsADz-qEXtDenZDXeWybFH5wbyD9byG-5WV4Qob7LVLu2q8RH9jtT0yP4tnLMkjJduIkNEYOJTTKDyYvs7iZwWz4zONBWGMSAonY8z2OarhwdaJdcCEhhfdfDK7OX1wVfKzujS4GJ12AiI-uUUYSi4Aw6JLdKlS0e6bML-AoMYtPORlqQcbHyBQptnrjO7MxPlmNHbwSUNL27tFTdX3WsUhkrNIjECWA-lLOcS2ZFPISDHf8DFA77_0rJiCjswHhPqjWVLH2dwVwqQilmN-zwobX63_ewl7dKv9N9FZ6ePwK0V-rYTphAJFZ2-fiAwN4eqqhTRPUmSILJ8UHbcJDCfGnV3M80aGJFlMCTOBN9vso2erLXt5MMwQcrd0IPQfg8FPEXbzIH3f1yRpaPrx0zc9p5tNdW1cXMzFqCPgSLZRd0Ew5xu5kR3aAlSjUla06lBSrP7B9TS1cOYUhfYHf2sZMotO71HiJDObuSumgkisazCSbljiLVU2o4G--eTvaBgciem1Ywk8n_8RLcUH2JIqpLT1_R17OMVMxBk1jAlo-RkaeYHX",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying date calculations**\n\nI need to develop a function to calculate the number of weekdays between two dates, considering exclusivity. The idea involves using a loop or formula with datetime, specifically excluding endpoints. If date1 is after date2, I might raise a ValueError or return an absolute count. I'll ensure it can handle reversed dates by swapping them if needed. The implementation should include a docstring for clarity, and confirm that the code is presented in Japanese."
+          },
+          {
+            "type": "summary_text",
+            "text": "**Finalizing implementation details**\n\nI'm feeling good about the progress, though there's always room to optimize further if needed. The user might expect a detailed implementation, so I'll make sure to include an example in the response. I could choose between a formula or a loop for the calculations, but it's essential to ensure that the date inputs are in string format. I'll keep everything clear for the user and provide the response in Japanese as requested."
+          }
+        ]
+      },
+      {
+        "id": "msg_0eda49ed6ba32f48006a9ec6179a0487d0a293aecca3db9e18",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間にある営業日（月曜日〜金曜日）の数を返す。\n    date1 と date2 自体は含めない。\n    日付の順序が逆の場合は、入れ替えて計算する。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        # Monday = 0, ..., Friday = 4\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\n`2024-01-02` から `2024-01-05` までの4営業日を数え、両端の日付は含めません。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 121,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 529,
+      "output_tokens_details": {
+        "reasoning_tokens": 254
+      },
+      "total_tokens": 650
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間にある営業日（月曜日〜金曜日）の数を返す。\n    date1 と date2 自体は含めない。\n    日付の順序が逆の場合は、入れ替えて計算する。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        # Monday = 0, ..., Friday = 4\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\n`2024-01-02` から `2024-01-05` までの4営業日を数え、両端の日付は含めません。",
+  "reasoning_summary": "**Clarifying date calculations**\n\nI need to develop a function to calculate the number of weekdays between two dates, considering exclusivity. The idea involves using a loop or formula with datetime, specifically excluding endpoints. If date1 is after date2, I might raise a ValueError or return an absolute count. I'll ensure it can handle reversed dates by swapping them if needed. The implementation should include a docstring for clarity, and confirm that the code is presented in Japanese.\n\n**Finalizing implementation details**\n\nI'm feeling good about the progress, though there's always room to optimize further if needed. The user might expect a detailed implementation, so I'll make sure to include an example in the response. I could choose between a formula or a loop for the calculations, but it's essential to ensure that the date inputs are in string format. I'll keep everything clear for the user and provide the response in Japanese as requested.",
+  "input_tokens": 121,
+  "output_tokens": 529,
+  "total_tokens": 650,
+  "reasoning_tokens": 254,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "ja_directive",
+    "sample_idx": 4,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 8.024974346160889,
+    "generated_at": "2026-09-07T09:11:35"
+  }
+}

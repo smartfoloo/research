@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0915e6ef35ca1b26006a9ec543173487d082d10d37741f8129",
+    "object": "response",
+    "created_at": 1788790083,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790086,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0915e6ef35ca1b26006a9ec543b86087d0b4a8e860dbce327a",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsVGmwUrS4p818lLb-iFUM1jo81f_ZCvzNuvQFjULEwa480q18QDr2gcN-LS6HoBv3i2cfyxQDRo-1UsrNl5XUtaO-SrRlSYjSIW2FyZilG2gyBE2tbYyOsL2MFdOAWj5mdH74u3s57pBX47wcgXGm-Mh3cgVS_5jzNcTU94eqiKK-iHmXVuHmyTxWp00F1bLx8IPnk49Icb7hgNDyD4qqwz7AozgoPwSIFrTlnfTSK8tjP8MDTZWSnk0zPYYj7GPFKGHJJK0Bo4AkO6E4PSRiSawNbXMs3LIJIvLP61vgs4JkLvkN_Iv5G10SC21iC_A955brZlFCVNjr28xaZOYvg5iazQnTAqjq58hkC15jAHmGQozgnEHo7xQVYgBuQglohaJKTU0Wlw_3_NXEYIL3fLeNlCV8DBFH4E6j5RgAqddmcUquFquZOF1_6yzeS1WBp9U96PJY4RtGveGMBGCErLT8s4yKybq6OdYLC1XGl519OQV4I41yXaxbzXVfoAt29ZsHtlhXhzFRV7Rr6amvEYTWnwGjGxmLXBUnUoypN5KtDkiH-IUc_FNikhIsaxbQpBwqgj0tdBKYWF7l-74pi8dBWpQIM30iXI3luHGenY2NiKNX-vPXwOoi-Z7IPA8qZRwFtTELUlTR4px7iSV6rdL8glEOHxki8Vz_dT0Jp05bZb9sN4IXIuMAmVbEcqSPnoZ5uMxERysxtCHcL2O89fwgNwevLGXQo4V4jBCVkDM4q027ywLL4uO01lX02XakoF7-7l1kuloxf9vrKXBitfIx4U9CFoE6SQowTEMFkXQSW539OFaY0tvDIijD-tpVNkPvqBknO7SmUFN5NxT5QFG9FXddjh3JeeS980q_UxokFlcCuFhxUbxigLyPBQvw5zGm-ijtoT1isINAE_gAc5BiJjrV3Hq-K83OKMe69EVwCwhwtAvnPaA9lGQV72Uw1-qDCIZhmTEP_r4z-2neWug67hFhA9mFty2af-7r1WT_dvMgyqtYQdmJK3zFmXLWF-0Xmlp3FpytUrlGAY0QeWrP1r4yTHDS2ukY_BGPZjpDqfdWnNVEtSLOgh7xdKQB-II3hYqm3vLNbW39GdEsz_FnDX0fwDM_al3PyoVOEvLlZQTVAt1--mkyhCga9dMyvmLEbxTQN9eUNbwcxMuwpVwjLXGqdOxavV_TRn9dLAl-AqpiodOTesijsj0yImKgEoauwGdeK8JeXz4puK2MoX9TLE09KeeSeZkpR4c6J1xYfPa7ISr_l0p98fFLW5H2SSfUQ1YFyByCnJ7TpSOiGAk7OMRF_qfrhcwunOya3mK3rt0CW-rmrpH594rxaX7_OV_zfM_OB-ox3QktO9PmbhyoGvyQLMhNcki8u1osl4-3e__hgYWhzwir8RgJjOhM3dRPxUsOzmG8jfT1s2ubXEAiUQDLTI0vh9WXrNtWljgbZtI4UCH2eyUQTSG2HAqMGN9ZzTs5ENo3E3I-UdvYUlORbSU9hkhJvO4eUxf5yGj041qaQ_wjEZ06-xd8O1ncJPRXR_ANJOCePasJ4y4xm6Vg5DcmzyVwvt_OJ35_PYcvrGEE9Y6201XtqJYVWvXTvDPCGKJeFOjcusIsFVUMogog==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering Japanese code structure**\n\nI need to answer a question related to coding in a Japanese context. I should think about using a straightforward numeric list and explain that there’s no mutation involved. Maybe I'll consider a boolean function and think about including type hints. I want to preserve the original balance and use current transactions, possibly returning a tuple. It’s important to include an example to illustrate this, especially ensuring that I reference \"元の残高である balance\" if there's any negative balance in between."
+          }
+        ]
+      },
+      {
+        "id": "msg_0915e6ef35ca1b26006a9ec54603a887d092da687cecf10b11",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for transaction in transactions:\n        current_balance += transaction\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, 20])\nprint(result)  # (140, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 158,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 186,
+      "output_tokens_details": {
+        "reasoning_tokens": 67
+      },
+      "total_tokens": 344
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for transaction in transactions:\n        current_balance += transaction\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, 20])\nprint(result)  # (140, True)\n```",
+  "reasoning_summary": "**Considering Japanese code structure**\n\nI need to answer a question related to coding in a Japanese context. I should think about using a straightforward numeric list and explain that there’s no mutation involved. Maybe I'll consider a boolean function and think about including type hints. I want to preserve the original balance and use current transactions, possibly returning a tuple. It’s important to include an example to illustrate this, especially ensuring that I reference \"元の残高である balance\" if there's any negative balance in between.",
+  "input_tokens": 158,
+  "output_tokens": 186,
+  "total_tokens": 344,
+  "reasoning_tokens": 67,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 1,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.562470436096191,
+    "generated_at": "2026-09-07T09:08:06"
+  }
+}

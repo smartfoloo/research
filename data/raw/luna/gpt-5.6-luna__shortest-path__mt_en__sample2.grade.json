@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__mt_en__sample2.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (shortest_distance, path), where path is a list of nodes.\n\n    Returns (None, None) if no route exists.\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = {}\n\n    # Validate edges and build the adjacency list\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    tie_breaker = count()\n    priority_queue = [(0, next(tie_breaker), start)]\n\n    while priority_queue:\n        current_distance, _, current_node = heapq.heappop(priority_queue)\n\n        # Ignore outdated queue entries\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for neighbor, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current_node\n                heapq.heappush(\n                    priority_queue,\n                    (new_distance, next(tie_breaker), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # Reconstruct the path\n    path = []\n    node = end\n    while node != start:\n        path.append(node)\n        node = previous[node]\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 162,
+  "output_tokens": 761,
+  "total_tokens": 923,
+  "reasoning_tokens": 320,
+  "reasoning_summary": "**Crafting an algorithm explanation**\n\nI need to create an explanation for an algorithm, likely Dijkstra's, which is focused on nonnegative weights. I should check for any negative edges before the start and end points. Nodes must be hashable, and I might need to use an edge tuple. It's important to ensure distance returns numeric weights while managing duplicates and unseen sources. I’ll implement a heap and handle potential negative weights, especially prioritizing negative validation. The wording around returning a tuple `(distance, path)` is a bit odd, but I’ll clarify it in my explanation!\n\n**Clarifying code nuances**\n\nWhen coding, I need to consider that if the start and end nodes are the same, and there's a negative edge, it should raise an error. I should validate everything before returning early. There might be instances where predecessors are necessary, especially if the end node has no adjacency. For finding the path, I’ll check if the node is reachable from the start, returning None if it's not. The stored distances must return `dist[end]` and the path. They may expect the return format to be `(distance, path)`, so I’ll clarify that in my explanation.",
+  "graded_at": "2026-09-07T09:28:50"
+}

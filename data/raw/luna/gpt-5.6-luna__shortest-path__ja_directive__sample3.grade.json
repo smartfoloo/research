@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__ja_directive__sample3.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: いずれかのエッジの重みが負の場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    # 負の重みを事前に確認\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported.\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n\n    # (距離, 順序, ノード) として、ノード同士の比較を避ける\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古いキュー要素を無視\n        if current_distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 218,
+  "output_tokens": 761,
+  "total_tokens": 979,
+  "reasoning_tokens": 245,
+  "reasoning_summary": "**Considering coding examples**\n\nI'm thinking about how to handle a situation where a path is unreachable. It might make sense to return early from a function when popping the end of a list. I should include an example in the code. It also strikes me that a Japanese explanation might help clarify what's needed. I don't want to reveal my reasoning process here; I just need to focus on providing a concise solution.",
+  "graded_at": "2026-09-07T09:28:47"
+}

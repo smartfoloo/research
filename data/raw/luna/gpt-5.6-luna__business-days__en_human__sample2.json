@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_079996a56a562fa1006a9ec5ad9ce887d0bfca251a2be7748d",
+    "object": "response",
+    "created_at": 1788790189,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790193,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_079996a56a562fa1006a9ec5adec5c87d0b6d74e220dd55f1f",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsWx8ymNuP6FJF5mmlvOBAONkZh_AmnzLL5BmqV7UskPQJUDUh5BHAuy_-xmaBqXgy9wechjOc6aF7NgbUGSF8jxQW8n-8Y7rTVCbArOqPzzaqNHHHdXjlZJGOeKEakyLj7RsnGprxvOui6JcYOO2NleJthap0O9dXLoK8YXNTGD7kSro16KU5RZTAP_D46kHzH8ft0P23gKyx5ATzlI4NQKXnBt5rpNeTWHD9W5WRxflGVDM5bUgCtRN2Cw3zt2q1CttRQdHLfbAUpbPqpWblevAMcW_G3lSCbaczaZo4ndoQzaurhPvMF64lE3cRD0o-Poxuf_M0xTpVX2R1O8Cm4K-KlL248P2tLgk-1GK48uBRonrd87EV6oJerC4mP6hZk9KrAoWD0wucU8neM65Jdzm-CXKxLtzh0c4r7VC8zxoIabg4tIXMu8kueFpzLiizWHrPPFP3n544sU_1vwZF4hFrZWtLPAp3IlonXGu7xH6WHcmqgyFSgS6IRcdj6Tmfltxaqq1wTCE5gRyGVNQ40DkEZWzPKReKEcAOfarYrW2oP5CXW7VtHzJt-summdzrA0KXOm1rCytTi3Q3YVUUJFgf6lQyRQbVYMSRgTEzntGUihuQeYJjdOi-ziYpqLAc7tVou8A2BCh-cDwbhAgWbdLEzz-_t0J4ktSqX4P3cExuJf9AewZd329xQ94Qup7RHAvNBIDWG73Dd2_zjgLjAbtJ8edQC526qwl_2-74qYmN3Nse8NaoOg43r40DlJIoNyWkJKCkmF9hxTpo6zSQh1skNduvuRVioa3HeXq_TpvB-N7VGVUUQXxIHfz92SRGigLeqH_UlJtsv4gHu4pLZ6-CCoOnOCX1AsCvekHGBlNGM-SUr21po4QLsX4T0MMU38Uo_7ConDM1j6h7aa9G6AdRD_BDon40tN8Iz3GWP8W5IADb-4cXOgooMIwcuFtKix-Z_mSslu0koMU5qpe5j7jpuZFtdkhuf85QQpB5Vo2XX2tmIhOEL6cvPkTI_4yV_H0_SAB5oDxIV2aDU18c27JH4SOruOMfpmJGfDY1W9jlJbLd8aM64v-XvMgRYtm6pGchTu5Vy1nNB0pydkXAnODUCcbxuKr88OxjTNe9sJTisDyED-8T0BlifUhcytawQ7skomKQ-8DcAymI8cjBmrGNmBsx7E4vQSiEMHYqKM13d2L-6GZqqe6Q_Wmge1omFMnKnVx1N7aSwH9ewr3IGXg-kap3myAkTEfq2PNpM7J5yi8OxwHHOlaumMENubDAwv0C68_wHFCOd9mfqTcYj9KKZmXFw9cf26WuyTL9_nRMi3gjJszRAQabGYyHua6WUEjfz-w-O_UzrJfkEbyg76Cf_RZv2ocgIHsFmpewaop44i11D2Ejy68MgIiTcBP5Zyz4Dr23x6n-0P4j8joR6ETPteQo9VnhHiqjQ0xvrVGbuDjXLscS6943daAoSj-HygBF7b2n7K3NKljOZu6x7iYquZ1Iienc-9AB6tT_xOsq2s6inVVaSBpnoLtugyXmo_mSDkTVcyutS5QsHx1D_rIZYXWOsbV_P1nHU--oQ85GzQF8iSv7FnL57FMuNSbDeTFHLeuPhGknZ_IWR-kCGO-RyzQMS15hI0PyY0umCrSKj2FV2s1kdf_gCLreUIcHs1C8cd9nDDV8hiZz27vCO8HWWhkbG6Z6zBBuMv9_cWec51nsR6HrCIqJB4gJ-TTLQkp9lsYcjrF0MciLk6aHTPEkFiWss_Xd8IKJnUqo7Gt-Fgk8Ymnzjtx6AIiy3S0FfhfaCTioSM99Nq5nabCn7CzWIxAYPk0WcQS-XixBjZqmZqNGyQmP85Ril5N_KVuMITlBKDftOTQ3tF3oTkIAvZqNG4AJqD94V7VWQDB1NAc9NN-M3bG4-oBQRI3f4w8-TXmh5J4sOK5H9v-8UlBf3SMl-fVMOIBhGkF9BhLpqqgxFQtnBenpRe1RjLxbg3AlepDYpKNWf7vxnoRS_CWG6GMbmbjbAZ4yPdoP5mBh9x2SfCixxASv9gA02Dz76bCVVUgPQhwoWbJTUvRzfVv115UHZT7tJVmWLXlSQMN7tUttajwkxlfDwZqUagnW6NN-tp6q4st9w4SIpDoWjtF6WQ2y3_rSTJnbyQu1z3dOjxpr3-wNo_M6cXH4UUG6X_5RKDLUq0EO7Y21svvMvq9jgWUeP7VFSYKFlUyyFO4aD7q9vGiKBc0txHPvadbLftIFI_g2R9ZH1rjtTMyMspfQHVlEaBlaTRtn4ipFyLnK3zIzSWiLUAiLy0AeceiC44xKpHCkgvpkW0dN-Zjioj36JGWw==",
+        "summary": []
+      },
+      {
+        "id": "msg_079996a56a562fa1006a9ec5b0857c87d0aa53f20c08fb64ee",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the calculation work regardless of date order\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 91,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 373,
+      "output_tokens_details": {
+        "reasoning_tokens": 186
+      },
+      "total_tokens": 464
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the calculation work regardless of date order\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```",
+  "reasoning_summary": "",
+  "input_tokens": 91,
+  "output_tokens": 373,
+  "total_tokens": 464,
+  "reasoning_tokens": 186,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 2,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 4.899064540863037,
+    "generated_at": "2026-09-07T09:09:53"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_011d4de1aa76c376006a9ec9b65df487d080b0d45835a3cf6f",
+    "object": "response",
+    "created_at": 1788791222,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791225,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_011d4de1aa76c376006a9ec9b6c07087d0a8fb9538d230fc64",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsm54jsHO6K5GogJiYR8FXsOYCuSj81xpKj9IxkWOlC528Kwa_oPCn4YBxztSLpVT6DMZzhNs4lfXrDqbQ7Sb8xuV2zHxM6BpymEkh8wY8VmLZEeJZEy-kEsJ2pmlWuioaFwdyJ180Yst9yVRG08fhyIxiNI4SEoDLuMOPG4DpV1zjxym6v4KbpE4ftEMcZAlA7eNd49cjqMiWRJ8SdxN4oa94OTyzEuD-x7U8uOXWxyzMv8Rqc_e1rYXLvNqMkMOCZXf6krKQiP8_u6_yVLNTVHlTLbi72WESyaUySfOehpQvNrL-z9QQpN4N-pIdR9r35m6mogTXAFGoZ44bibRypYKkFeUjoYvO0CVoq6SfkR0Vw7tWMNXAMa9V6iPlkvCVqJxFXfgaDTjYbCTRGgzArv5pNvAcaOnP7YdaEj6CHmZ8SDg5inUIXUa4XYCbQHLw25gJmuNx4xA2qLYKvQmjyNosD2jb-nQJc-tlzSN5FTSO1ne0FTSd8KkTMybNAWVjkBovjyUJTchzD-dr_zlCPNWsXpBRGcP5Ze3wXd7LiN5oiohCJn7L3flrfK0-HDHUJHNa6LXIbUftcgPXWIrjYUVc8KAxAMvitQJG7LmNqjD3di0njcnRJppOmjS6BC73E_FYryCvUK0c9mE0rAWeIWVPJGussMlEet44ndyx0oyPBK3KUEqoQFw1RXcLDRjfNlMUfPUWaQvyZQLV-_iVxY74byvpcsAQZDEwlaOIia64GSz4lZqvDcPPsWdQwKEgdiDwMnHQU7z02uhpjFrbIGUzLf2S_z0Bmz2VpZcRGa3YnPFs-SmDuOzwKOOzcuF04Vl0YgbuVI3S4T1isxiO4Su62hJywMFXNhJR5ypKQ_xm3iUqtXpxhzFFZMDmuuY2Upm1zZ4clkYyezPvjN5w3s4SRkf38oLkV740yxxKl4PsSi-l-pN5FDNs85CodgO42fXTbZPPVr9trODYR3pSs0DJieP22Dd5Cs8OZskLv4plY30DhRETvNwVL0n258Xoh8C4tX-5pL1TZyh8mBEnD5WnW9q2YmXn2xfcvql6RwyQ-_aEDrPczc-XX7MYbTsVJWPfU1vsUbsyVHETCqwiCOtx4ccL78biZEKFaS9LeSKBorPZ66V9U8ikVOntXAKfkH_kv9109dXgdxmsg3HJh5KpmlO4bwTQXSrMvXP1u2jdbQ7Eh1qKpDd9gGgZyGqYb9FDjgjC73SS22qVkDWN5T8lY-qqREu4R5CdzLOYWZ46Qthwtwo5bQCm1CtBuc-j1rZERMxjIAWwyshiY6xIPNsUXpGNRGzH2N7LTNkVYTlnQ053L9A9lcNLa1rzStdV0-2Dzyf_wA9bpgfTaRwzGHC3mljO8wtx2DG555knLiKy8O-mRtfSG8innsPTmGB9CulmVjvBh20gCgT96NG8lZxVrBONh-eItlnDc4_26T7xAZDKhRHMrcOVV0k2bAo61RLzrJ4gCASYBdhmN25hfT6wWDbiVJa5aLJtOgXob9WLkhlXkOYWujxUpyv5wTx_dimhsnoccVWT-IazBpWtAl51i1pkjqtitapamduAfXhBRg-LdaZsNWsfR_btCp8KGpAOFmK_qfrTJ-YyDSuKUM0ojWQGaodd3DxibzkjAsrFWivr4n_NuE3-NLL2H8FrpT-aqw6f7a-nl7pnR8MBFQ6Ix4DbgzzObdmegfbvZ8FNsdStIqeKn2h2P-XSgUkIngWc5qIf8RgRAhSw1-Qg4EJ1IwMDZLH-R1DUSwk07eGESivNNYgIu4w_FyVE9cqZMpexAE1TH8ZkANH1S3cTf1ZJR4o-A3zFh7Lljg1eZhidxRiFOx76tOgvzSceHRPB7VbdXPnwu35BS_jdOM4czund6Aa5vjOCJ2EUSrWnWF3LuaAePlTmDupI4flio2BYMlUnxccXMbqZJ7MZ9-9VT8S1hr7x_K8ave-Qb2Jh1-2ZXF4sJVFHt9Wz3p37HKF3-i",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering coding function**\n\nI need to think about how to create a function in Japanese based on the user’s request. I'll likely start in English to ensure I understand the requirements, then provide the code with an explanation. I need to consider using a numeric list, implementing no mutations, and checking for negative balances during calculations. If the starting balance is negative, I might want to reject the transaction. I’ll return the balance and a status based on the calculations, and then provide the explanation in Japanese."
+          }
+        ]
+      },
+      {
+        "id": "msg_011d4de1aa76c376006a9ec9b8f21887d0a6923bba38819c76",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 167,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 223,
+      "output_tokens_details": {
+        "reasoning_tokens": 114
+      },
+      "total_tokens": 390
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Considering coding function**\n\nI need to think about how to create a function in Japanese based on the user’s request. I'll likely start in English to ensure I understand the requirements, then provide the code with an explanation. I need to consider using a numeric list, implementing no mutations, and checking for negative balances during calculations. If the starting balance is negative, I might want to reject the transaction. I’ll return the balance and a status based on the calculations, and then provide the explanation in Japanese.",
+  "input_tokens": 167,
+  "output_tokens": 223,
+  "total_tokens": 390,
+  "reasoning_tokens": 114,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_directive",
+    "sample_idx": 2,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.011914014816284,
+    "generated_at": "2026-09-07T09:27:04"
+  }
+}

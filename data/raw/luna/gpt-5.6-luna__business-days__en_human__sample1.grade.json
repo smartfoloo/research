@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__en_human__sample1.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import date, timedelta\n\ndef business_days(date1, date2):\n    start = date.fromisoformat(date1)\n    end = date.fromisoformat(date2)\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\n# Example\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 4",
+  "stdout": "4\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 91,
+  "output_tokens": 374,
+  "total_tokens": 465,
+  "reasoning_tokens": 215,
+  "reasoning_summary": "**Crafting a date function**\n\nI need to craft an answer that explains how to interface between excluding endpoints, perhaps considering the order. Since the user hasn't specified a date order, I think implementing it as absolute would work. For example, from Jan 1 to Jan 8, excluding Jan 2 through Jan 5, would yield 4. \n\nI need to decide if reversed inputs would fit too, supporting symmetry by swapping. It’s important to ensure the same date returns zero business days. I’ll provide a Python function that effectively counts these weekdays with a loop and normalization. \n\nI just need to finalize the code and example now!",
+  "graded_at": "2026-09-07T09:28:13"
+}

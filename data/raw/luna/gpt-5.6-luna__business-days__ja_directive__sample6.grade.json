@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_directive__sample6.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    月曜日〜金曜日のみを営業日とし、date1 と date2 自体は含めない。\n    日付の順序が逆でも計算できる。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序をそろえる\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    days_between = (d2 - d1).days\n\n    return sum(\n        (d1 + timedelta(days=i)).weekday() < 5\n        for i in range(1, days_between)\n    )",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 121,
+  "output_tokens": 599,
+  "total_tokens": 720,
+  "reasoning_tokens": 303,
+  "reasoning_summary": "**Clarifying date calculations**\n\nI'm working on a function to calculate the number of business days between two dates in Japanese. It seems essential to exclude endpoints in the calculation and to ensure clarity on how to define the range. I’ll consider using the datetime module and accounting for the absence of data when date1 equals date2. The formula can be made efficient, but I want to keep it simple and clear, especially when handling differently ordered dates. Overall, I will provide the code along with examples to illustrate its use.",
+  "graded_at": "2026-09-07T09:28:17"
+}

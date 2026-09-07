@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0c27fbb893a72e37006a9ec4a7631887d0a37a4148c3780761",
+    "object": "response",
+    "created_at": 1788789927,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788789931,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0c27fbb893a72e37006a9ec4a7d6d887d0ad9331846f727af7",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsSsoJ_rOf2YdklHVT7kGZT9RCJ4vf5D_20-E7SZ4TCIh5ovrDtDimieNyl6t1D6Z02LeDyOf_HDYkGmhiiMngBaV8mHPOm4mJyf4eJfjO7JtusvR-za1beI1p4yBI2hknape0ByBiAZhLx3mRDBCjUwpJ42RCceQdW0yNimDFsHHyGprqG-K_JfPiCastm_e2XdgpF334Yl5jG8ZB8m_sD4mqdAy2ip8WPsHKbYGfEmMyBQJcFcqtYdlvTV80a_uDc8HuUKFVnvRhY6rLjETtKUcAuECoU_x4sFE4Zu1CvK8osRy20594JaElmeba0mHfKfnzUC5FF73IIOXp3jQaY789YBCB2avzcyfj7UWkiJqtQW8rpDYiuh2q-15VQ1vLdBqTuH72OmihHXCIPLMgF6lzPYUalYBZfLc5Uxy4pd8ttJjbLDgE2SaWA-LVwqdlikJtbT3OcN0Qc2eMHE6Vs1o-c3MKtRTP-mFmjwJE7w0Ccm7_LnYkHNcuoDzH61-2mrurfI7-lCbq7aL_8BYE7Ndp2bE3eSwWAg7h2i68VRxxlFMjF8M3QZNZ8bOY5MBTWfVi1ATGaxyX-dHC3FjTftpihmneX2qAIxE5ibiMDpOq_MBA6wAdRYGMx20W-i7sorQVzFWThXCQn4T_E03bS7dyPZRpJBprKE6JSdqbJBaOEH_RJimUdECvudD3gfq-hD40ZpxPGzKsxs-yHndTSZt6ZV4kg8RNAXVCxFXOhXvrGboCojkwAcvyaqqPYAGgM-qNRO46iUKXJnGIMTxx1fJ7oJCfdxsaov2rPPIMF_7QUGqxvFPrSmKKazmuwkVALMBG1pfPrur6l7jLy-18FGi2up35BrELtgRIdwjyOGTAz2bCmjrm6cwJRHqu1lN4a13Ju5Cuf_V-uniMJbyHmrWz1vCx9fTjFYQmjvIgwIz4S2u_19SnkkqyL9Sd-koSDGTKyv04QHS5rEAQfbCOBXlGc7N8SEss1Nz5XpxN2KZsf1d-CcP_fRN7xF7OKajQ898TrvPjF5M-CyoAzFfFOC9UiFtHw3EXu0T54QWhpnuVGsyWBq3-Fft_TuatKw1diTxtYRTNamBX6lh9wwa1Iiev7MJwPi4BDOqWuI-CGSK1eOBYKQLkx4m-TVbwYexbqD9wExKnHhBuTVZAcMt-cpanK_XuPAK6q8gJxrYaKFCuLxkEZK-Xa2zJRLq2jUd01CmsfXRTrvmJOS1yRP8laHbH7PbQltvulCbtRPPSWeAABmbd_klciJpOfrL07MIJSfxGT4j78bu-7d7R658gvmk70C0Xf-rEyOT3ep5DRNuHEx6VRHWV2eS4vLFPIhsBCJXg_r6FKlV1NfHGA_dHL03uszPm2C49EKjlrK9pwQ1oIJ_iN3lf9CxXLFjQTnQJXjqxiGW_1maefG9i4kHBpeHLkDTMJGHsVuqXEK6sxxhJ3GMfbmevXiTO_LyThXCTaS6v8zQ3YzkypcR-pk700lTzCG8Gl7ZFSQ-l5y47mHsxToIhKR72kG-MWfFft-BpK0ADb91I2NAcYA1uhn--6dcdTiVm-jAooQptKhkyeaeKLk0AUNRLmRW0Bp2SDJfKJm-ontXHZ6hHgv4cvnwMbobiD1TPY04g0TrMWEy0kEYxno3dgCi0WihAQltXaLrmkw2ymN-b6Wv64qEjC9JAs2UwbTNSNLPeN9244YoY3PDV_6hNOGeJVQ5-uWHWqROzT6VdeZVVrPM-_Qw2IkmSpFX7X31uDNoe0l_1geg8hLX7tOXCJD0gXj9dPBhIZXwVReQqgSe-s_-1Y1I7izgT2fbyWpArd2Ws0nm4O3kAOaWg9ompyvIAIFFicZarhhKJsZSKSLmGe8-N-Zr2kwa-iu6AIb3rCDqvqAaq-XdzWid_rAHCWUOjYSdhC3s_dvnmRyzTurntR8KEMw6vcmiDegyzv8N3zmT9BUE9ZOZcJn43Pb-5kX3nMHAfsQTZdVy6nqhy1UjJC34c4G18ninyOcXuPCXLH0PQDEgptQ4obsOQ67j3MINUWho-3YKMKW3goH8DPx4-c898F923xixPsdypQ1q78Z6ap9WgVr1a-JhkOzn37FyINGao4lynKB0hREPPjMByi4VA_O6fZ5NxQydre6HxzustRuGqAHyEofd44=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying numerical formatting in code**\n\nI need to clarify how to handle numeric types in code, especially for formatting currency in Python. When dealing with negatives, it should be \"-$...\" instead of \"$-\". I should consider whether to include floats and how to format them with commas and decimals. If n is a negative number like -4640039, I'd want it to display as -$4,640,039. I might use something like `f\"{n:,.0f}\"` to round floats, and ensure there's a check for negative zero."
+          }
+        ]
+      },
+      {
+        "id": "msg_0c27fbb893a72e37006a9ec4ab6b3c87d0b00225404552a976",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\n使用例：\n\n```python\nprint(format_currency(4640039))   # \"$4,640,039\"\nprint(format_currency(-4640039))  # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 271,
+      "output_tokens_details": {
+        "reasoning_tokens": 189
+      },
+      "total_tokens": 365
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\n使用例：\n\n```python\nprint(format_currency(4640039))   # \"$4,640,039\"\nprint(format_currency(-4640039))  # \"-$4,640,039\"\n```",
+  "reasoning_summary": "**Clarifying numerical formatting in code**\n\nI need to clarify how to handle numeric types in code, especially for formatting currency in Python. When dealing with negatives, it should be \"-$...\" instead of \"$-\". I should consider whether to include floats and how to format them with commas and decimals. If n is a negative number like -4640039, I'd want it to display as -$4,640,039. I might use something like `f\"{n:,.0f}\"` to round floats, and ensure there's a check for negative zero.",
+  "input_tokens": 94,
+  "output_tokens": 271,
+  "total_tokens": 365,
+  "reasoning_tokens": 189,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 1,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.71425986289978,
+    "generated_at": "2026-09-07T09:05:31"
+  }
+}

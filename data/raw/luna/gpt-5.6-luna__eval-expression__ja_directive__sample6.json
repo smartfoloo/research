@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_0dcc3317b04f57cc006a9ec8317e4487d0a2a455ebc5cabccf",
+    "object": "response",
+    "created_at": 1788790833,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790843,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0dcc3317b04f57cc006a9ec831e4f087d0ad5f311a7375318e",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsg7odlReymNxifWrJVH7QkPUSZkIWN3CkBrYfEtoVrSGe4MjFECwlUrchDsR-zjTPeLu7GEhXwJ-G7FCCvT3U5MuWVggfXMdHy_Tux_27-3VTNf-LYdFxeen8vt9FRkLW6hWYhkX_dlfRgJFITXObbnAH9aG-BKX3SV1XoOtQhws6nsLzdFHIM5P2T3FkclV92LeMn1BCVLyPJ07T2Xxdp8c7N5my7QcN4-nw9hipBSciokBZt3h7jPwkLZglEbdaeiKD7ZvyrDZ9tlEoWXgJWX1KJjbnhzoHxt5iogAKKONqYJZdckc8TRz5Rn2r4nKZ2HEKkm0rqDtmIR-A2NHmUp78tdrSAv_V0VrB4rUxlaIXb60_hmx2nm9Ymm3Q8N3WN3tg9ID_dOzsu9Fjft5Ue6yN1gBlLaBSxJDJO1ajjqXO6pmpByR3NvdYT4AAnI3rnPH8Nr_ionO19pfc7tl0wGa1D4zUTOvaxMZDmoD1E3X4M2bMnsl5G4kKSLM22gorc9by39Q13t5IudFy7eiYODKOO3cashC8juYhCtMxY73iSUroNpdTwjWik-DivZ51AAxrCWCpikSfpEbQ1pRuMz0cd45BB7tCzRDYOpAQaodIhRjIfGpf5CB8nMdHkOJOjUVap-GIAQdkBDzHBupeAc7E06RtyfcOXgoj19D-Rj4tVz_n8QZr0aO_aInied-cyWZ4BNgYRrzn74q5bP1EnZ6U1yKy4ysRwKtmrkkEOHnLtNdTWzEfy9XSMzB7yP_FeBUlWChJSNgy1jCSIK5irKSv5Sx3-EdCRjhHal3lurMs0FggYLK3UwrljA-LukjALx2BQXQwsCtndDQ3hdDDbOwUbnTJAc8ksT5IusAvE7ulFICSTIEqyRXHMADbwNl87mnZLV3KxjjgFMYrTfSlyxzVOow0oklwGJKq4Jeqzr6lQwOjrtpjb6JgF9awAel6htyd_5LQQ2r-5Q4jF3DkSXOgcuz7yQ7Ekb-nyBUTVnlN1a9CZgplXzernVQLDt6lEkQ5Shn7cA9d5Md_jZOeeBmS3UxGxR3drXG1wrVFnmuoFI6VcZYVLy7jRj9Jt8yxcXMc3YaLTRDKjnKDytmsi_yEabDafrOp6YgQ1EWhqFZeB3Vkckc0obRvx3ijQQ0qXkV8LCuextx-FaHdxz7sQcZVEasHV_cCG-YHL_qB3UGUvsQEnOaUdx2WEdbWKysbAFdTBVYmUxdq2RGZV6_ugvZOUwxX1ZqAv2gH1BlwFSq5jWeGbe84CJ0fOmqdVUY9VluIif3pT3psUnm0_-m2S4WkCv8d4q7P5ccj22SbTC2z8BnMtDBNwf8HaLB9SwmMTQfJtnpHsw9Cxb7nuAGkNdApq6ePBc4xco6SqaPrM_IgqnYrM8G9HCkiARQS06Zl1EA-_NRaOw6RmgIau3uM34cQ-snNd04Zok9nhCRnl0qiL2hM6sJpvnMw2gn7DP_DMmTaApZybDp73a-L63lnwmErainwCjrgcvuOEnqkVzuxZ7bqN7lJd_AfiQY-wOqHizbs4qElN6gebkw_YABQRW4y9w6y0H2uO8xX_QB3VjbNpwdDHlBNSFvyxtc4yGXknKBXj6wDUMBrULbRTHgbRPOtHiwRH10kfFlGKTCfHsONR0V_Phd3gZJQ3FhUoUb-sS0d6Yj9X5IT-J8819gb5XeVPf2572GcaHjdSTSrJ4Bgd--4bZPrpnttS_yZajWoTeaPcnhPmEt_eTMGqo9Gf7l7nXlBbcU79IGH07Ms7hziQKJ-oe1bmgozwVR8c7eO0bI49xxASNBi59vViN69KNkZL_bOQbqW6C4JqRDIDhXla6RBwpxGZOSG4kwH9yHqvTtY3_5ft5i302xTMF3ibLCFofeLH6EOKCHMy34SgwKMmm64szMZvyqbvOVG9mlJy8XKOBLrbbf9DNqJNyaJf3cN8-2gXNB7MChsEh-J4mt18U2TqVhAHJsavFBwrF-hgGVXH9lSO1K6pswi4X9Pw4fbEte9-Q4ipigSliZFLSUUc3q0Lmo93Phq6zzVmCLF0QJyhTN3OpuzCI2gKYE--nF3jRmFQn5gPoQe0bdusNfzNDunUWpyFooOnY-dQtpR1hEwfokwe319R5mzx0ZzIt-G9sa-nK4esg6s_XEM25shryi8VoYbtOzX9GTEkvXRNRhxgkUjVuBmj5MOGSq96cIHmk_C61BdZXEzr1QlM2ymcXXy7wrBHsVEUGYAP5VyRal9QJV67FjDT9PyokPhWENaSAEpoVpXhhFXtG9k8MJ48fpJ0HoSv0kDPpA4OY9z_c_ukVgYLahIg-z65gUGoVQwidFSivFiziaEB5pf86dky7N1AUimU7xg4Da05hZXjCM0DKbA6o6uh8Cg80xyPyPGnMpwMzSH--tf3M6OaKhhrevKCTCnAsydv1SfP_ur8as5cU5CPg6cd9ljjh6dyk-55Lr8WY6sMbJefbuTPtKvW1vS8ZDzRQUmCAljjIBmSsIaibKCT52V2sQSBSRiX8gdF7esdVoJCV8Vv1flpBJ7jlnLFq509xkeVGRlbO_MkOlvUG7whaQ1q7HADWjHbiTEbNsJQxAWjABNNcvnmX2WU9__ZtRAtZisdrRCnE4-vE9VDMKsWO-3wJEcmRoYC8dnw6IOdBIyDkwr5ojMM3P2R5tFgalPZkAt8Ke3UfzHk4uH9w35y1bp4JAwkTDF1n-iphkqaNS__jGj0JkodwD0tUZaUK0bkdjLu5deovKHXaJRfuy6w2x4dymoba_RN8xR4bJS-vwuW50CbVQZaifLtwVfJeLBFK2TNHMKJ7BOuR9ZXuaJXerjDKp9ySz4uvb3i_XLMwecnpmJoZnoo7tpJGlf1a6R7TBdZYHImaxOv0hl9lAZLpl_1Xt2R9wR1C4YDdlcXRO7_Byc__2x-kEEfAx8XpwbchFaklyHPAn0959juNfiQI7nYb10XZ6ZCR1v6oBaFoU3lr4usUaTWhTpvR4P2MkxyWTEl7WsbAir-8dumoM-qljjbqzjTXonaCE9Wgf9L9UB7UO8p0cPKEkGj5WuhLYIUXWOW8tKDyy8oRQYaeEpY8RxPEuHIppgELBg==",
+        "summary": []
+      },
+      {
+        "id": "msg_0dcc3317b04f57cc006a9ec836346487d08f73a7a4845a50ad",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "以下のように、再帰下降パーサーを使うと、演算子の優先順位・括弧・負の数に対応できます。`eval()` は使用していません。\n\n```python\nimport re\n\n\ndef eval_expression(expr: str):\n    \"\"\"\n    +, -, *, /、括弧、整数・小数、単項の + / - に対応する\n    数式評価関数。\n    \"\"\"\n\n    token_pattern = re.compile(\n        r\"\\s*(?:(\\d+(?:\\.\\d*)?|\\.\\d+)|([()+\\-*/]))\"\n    )\n\n    tokens = []\n    pos = 0\n\n    while pos < len(expr):\n        match = token_pattern.match(expr, pos)\n\n        if not match:\n            raise ValueError(f\"不正な文字があります: {expr[pos]!r}\")\n\n        number, operator = match.groups()\n\n        if number is not None:\n            if \".\" in number:\n                tokens.append(float(number))\n            else:\n                tokens.append(int(number))\n        else:\n            tokens.append(operator)\n\n        pos = match.end()\n\n    if not tokens:\n        raise ValueError(\"式が空です\")\n\n    index = 0\n\n    def current_token():\n        return tokens[index] if index < len(tokens) else None\n\n    def parse_expression():\n        \"\"\"加算・減算\"\"\"\n        nonlocal index\n\n        value = parse_term()\n\n        while current_token() in (\"+\", \"-\"):\n            operator = current_token()\n            index += 1\n            right = parse_term()\n\n            if operator == \"+\":\n                value += right\n            else:\n                value -= right\n\n        return value\n\n    def parse_term():\n        \"\"\"乗算・除算\"\"\"\n        nonlocal index\n\n        value = parse_factor()\n\n        while current_token() in (\"*\", \"/\"):\n            operator = current_token()\n            index += 1\n            right = parse_factor()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                value /= right\n\n        return value\n\n    def parse_factor():\n        \"\"\"数値、括弧、単項の + / -\"\"\"\n        nonlocal index\n\n        token = current_token()\n\n        if token == \"+\":\n            index += 1\n            return parse_factor()\n\n        if token == \"-\":\n            index += 1\n            return -parse_factor()\n\n        if token == \"(\":\n            index += 1\n            value = parse_expression()\n\n            if current_token() != \")\":\n                raise ValueError(\"閉じ括弧 ')' がありません\")\n\n            index += 1\n            return value\n\n        if isinstance(token, (int, float)):\n            index += 1\n            return token\n\n        raise ValueError(f\"予期しないトークン: {token!r}\")\n\n    result = parse_expression()\n\n    if index != len(tokens):\n        raise ValueError(f\"予期しないトークン: {current_token()!r}\")\n\n    return result\n```\n\n使用例:\n\n```python\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))\n# 7\n\nprint(eval_expression(\"-2 * 3 + 10\"))\n# 4\n\nprint(eval_expression(\"10 / 2 - 3\"))\n# 2.0\n\nprint(eval_expression(\"-(2 + 3) * 4\"))\n# -20\n\nprint(eval_expression(\"1 / 0\"))\n# ZeroDivisionError\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 103,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1053,
+      "output_tokens_details": {
+        "reasoning_tokens": 314
+      },
+      "total_tokens": 1156
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "以下のように、再帰下降パーサーを使うと、演算子の優先順位・括弧・負の数に対応できます。`eval()` は使用していません。\n\n```python\nimport re\n\n\ndef eval_expression(expr: str):\n    \"\"\"\n    +, -, *, /、括弧、整数・小数、単項の + / - に対応する\n    数式評価関数。\n    \"\"\"\n\n    token_pattern = re.compile(\n        r\"\\s*(?:(\\d+(?:\\.\\d*)?|\\.\\d+)|([()+\\-*/]))\"\n    )\n\n    tokens = []\n    pos = 0\n\n    while pos < len(expr):\n        match = token_pattern.match(expr, pos)\n\n        if not match:\n            raise ValueError(f\"不正な文字があります: {expr[pos]!r}\")\n\n        number, operator = match.groups()\n\n        if number is not None:\n            if \".\" in number:\n                tokens.append(float(number))\n            else:\n                tokens.append(int(number))\n        else:\n            tokens.append(operator)\n\n        pos = match.end()\n\n    if not tokens:\n        raise ValueError(\"式が空です\")\n\n    index = 0\n\n    def current_token():\n        return tokens[index] if index < len(tokens) else None\n\n    def parse_expression():\n        \"\"\"加算・減算\"\"\"\n        nonlocal index\n\n        value = parse_term()\n\n        while current_token() in (\"+\", \"-\"):\n            operator = current_token()\n            index += 1\n            right = parse_term()\n\n            if operator == \"+\":\n                value += right\n            else:\n                value -= right\n\n        return value\n\n    def parse_term():\n        \"\"\"乗算・除算\"\"\"\n        nonlocal index\n\n        value = parse_factor()\n\n        while current_token() in (\"*\", \"/\"):\n            operator = current_token()\n            index += 1\n            right = parse_factor()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                value /= right\n\n        return value\n\n    def parse_factor():\n        \"\"\"数値、括弧、単項の + / -\"\"\"\n        nonlocal index\n\n        token = current_token()\n\n        if token == \"+\":\n            index += 1\n            return parse_factor()\n\n        if token == \"-\":\n            index += 1\n            return -parse_factor()\n\n        if token == \"(\":\n            index += 1\n            value = parse_expression()\n\n            if current_token() != \")\":\n                raise ValueError(\"閉じ括弧 ')' がありません\")\n\n            index += 1\n            return value\n\n        if isinstance(token, (int, float)):\n            index += 1\n            return token\n\n        raise ValueError(f\"予期しないトークン: {token!r}\")\n\n    result = parse_expression()\n\n    if index != len(tokens):\n        raise ValueError(f\"予期しないトークン: {current_token()!r}\")\n\n    return result\n```\n\n使用例:\n\n```python\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))\n# 7\n\nprint(eval_expression(\"-2 * 3 + 10\"))\n# 4\n\nprint(eval_expression(\"10 / 2 - 3\"))\n# 2.0\n\nprint(eval_expression(\"-(2 + 3) * 4\"))\n# -20\n\nprint(eval_expression(\"1 / 0\"))\n# ZeroDivisionError\n```",
+  "reasoning_summary": "",
+  "input_tokens": 103,
+  "output_tokens": 1053,
+  "total_tokens": 1156,
+  "reasoning_tokens": 314,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "eval-expression",
+    "condition": "ja_directive",
+    "sample_idx": 6,
+    "prompt_text": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 12.125880479812622,
+    "generated_at": "2026-09-07T09:20:43"
+  }
+}

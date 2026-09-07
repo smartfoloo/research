@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__ja_directive__sample6.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 6,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements の順序を反転し、各単語に対応する punctuation も\n    元の単語とセットのまま反転して返します。\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さは同じである必要があります。\")\n\n    pairs = list(zip(elements, punctuation))\n    pairs.reverse()\n\n    new_elements = [element for element, _ in pairs]\n    new_punctuation = [mark for _, mark in pairs]\n\n    return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 117,
+  "output_tokens": 314,
+  "total_tokens": 431,
+  "reasoning_tokens": 80,
+  "reasoning_summary": "**Clarifying code requirements**\n\nI need to provide a solution for handling Japanese text, specifically dealing with punctuation attached to the original words. I should reverse pairs and return lists, perhaps validating the input? This could involve a simple function. I'll include instructions to think in English, even if that's not visible. I need to address lengths and implement a ValueError for mismatches. I'll ensure to name everything specifically, add a docstring, and provide examples of usage.",
+  "graded_at": "2026-09-07T09:28:41"
+}

@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0bf0de2a03fb8a30006a9ec6a8ce5887d0aa09fba8ff227e0a",
+    "object": "response",
+    "created_at": 1788790440,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790444,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0bf0de2a03fb8a30006a9ec6a92c8887d0b4102b355749426e",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsaswx3FJUB3VnHTxa3BJKN9k-Tbzp0wezmpynabVBP7kQC8j0EtdO3PWwp82U15YDyGwz8wK4kvquoaXTisCZnCY-iOe5kunqSPF-ZMOMre36GJoV08vHg06kl79gVsUS4CDVLv-f2H4Gjo6nLcJJz_FGc6aAv9Jejm4T7TFqN0vcN0rVIKasIQlyUQxf4s4LR-iFZilAynFuKqxHK7fKpcSwPHc9KBFg4DMUFmDB8gc7F68_5QEwhXJNeVqPRifiUX3TTlkwDzE-MSWJeH9rJeXkihMsktV_k-poO5Z5wq7hh6_gjaoc0sv0br6dKnNNJWt7_OrXzgsjV_5sMvLt4HkWKSt6LZvi4S5OgPiAWFFKz7VKt4D5W7zvzc9Aq4Pf_rYl7iQebsv2tD01TudFkp4352shRRMqDfD0Ppq0PME7WkLohFqwfAIIXW2qIXsQRMCze7srbY4XT7sUiSTQvkIAuS9wf0f6U9MywYU-Z7o_O1DyA4rbdBrzyk9tqVa8yT0utpUhEfwnurOuTYaLiZScCk5BFtdvxO7rfZXKPyI1wsTLXuxs69KuiaxTYuPtA8aIqsMeqcZBjSb-WRtQlaFiAF_6KO94LUcS8_RP1dB5mnl9BIcOSAIOMsfA9G64kr-Avr5nW4DVhxhS1Ivmdf7VndSi3tIfvRff741DDgxiLQDx0lImckLDbXlbrqER5MXw1Ta_8RnJciHs9MLAjQUbKWqSh2wJpS7lYISDaE3cw9AGyAeG0W-qDbmljKyIkHWXZD1GgFnsyIq2GpHB4PUDl4LB8mjJxMcRsm8foczONCx70XRt-c4NxgRpDbSrtfBubi4Cv4BSsomdu9QrYsAzQaqCGVcMf-GI9VBc1ltEOwEr4T1pH0fhoMHc0yKGe4itVK9j9j_lT-raTFWdsuFKTEz4kHtQLkqA0Pp20riyC_12TMGplkO7YIF3B59eu-WoNIiz7OuehOfaKxCcfRbtIqZMT8vYm8WPN_y2Jk1gr4nYnuS6S_8_Eokwkb4rZZMN_tPrwZnFhAulKAh6ChIan4aD2sJoDmpjiE5Plwo_tuKvQxg9U_5sW5DwzYFowSH7yEeZiJaa_PnkApoZ-OAU90chj7coRockGXt5oM0cAfOnP41Tm0l1BHjdrReH42wyr-ptbVvII1BOwUjLaINvPUANwkdDU9sFiEZQ6vUhjmCfO2t-pWpysdfAyJvEzM8rphY8645brS0qwpAqIgOVCNC5sXm77lXNRP0GmpCza7gk4w_8GDobaxUb-PMMvx9FlVARqNujTVMUmMeY8SfxHqtjwmsIoPdtTbhMDupgqUCbKPeGKvdK5Hw8fxtkxhjY7RKhl-B1gaq36e8q6Llb9zbMVCsUorRecfq1mpWDypeP5MElsisloWXH75e11m7BeMy4KNc9nlBgYcGHqaxk-43pJQuKz5UMBcz2EA8M-Zy4TxrGooZdXfX9AzBdNXASnZVzryiTDkNOuPVY9bxfDdVqJniyr3_YjTsfZfFLdY4JWAwFT_gPNLJaitPVAgWpiu6h9ln4u1CHgaoD72gftdqouSaAHGbp7FxGzmOfDsWK3qlw_D4GzI7QW4icBxRQAE87MBT-0E3R_f_YtJYD7pzHpHmhSzXAiRBoggf1ssuJrORani70o85YmlcEz1duNNUnazQQsANNkh4D9i4daoA5W2tNnzkSMx20bITgKxwPw38zak4bEELzE5U0thwAeWZsMTxfv97jJcgJ1SVSodyJaqWrqe3W646a-P7StudtGzP0_XyyIQizjMqATINjWt6bZEyPzG65qb6Xo2Y0xsIA6WFjj6vZ8o0y3TjlWhyInK6BZu-3PKpspNS2UrSPIgrzd19T63TeWmGnBmWHs1pXlPIs2m4XIaEunyb3JvZqH5vAGrFknBwYAg0MtMrU8LrRBqYzphEg0f_Z17rVzp09XepQko14GK8cKER6w=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Formatting currency for Japanese request**\n\nI need to answer a request related to formatting currency in code for a Japanese context. I’m inferring that I should implement a way to handle negative dollar amounts, like -$1,234. I think formatting it as f\"${n:,.0f}\" could work, but a negative sign before the dollar is preferred. So, I’ll create the function to ensure it displays correctly. I’ll also include examples to clarify how it works and keep the explanation concise!"
+          }
+        ]
+      },
+      {
+        "id": "msg_0bf0de2a03fb8a30006a9ec6abda1c87d0ab9d80e95f2999cd",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\n使用例:\n\n```python\nprint(format_currency(4640039))   # $4,640,039\nprint(format_currency(-4640039))  # -$4,640,039\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 103,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 221,
+      "output_tokens_details": {
+        "reasoning_tokens": 141
+      },
+      "total_tokens": 324
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\n使用例:\n\n```python\nprint(format_currency(4640039))   # $4,640,039\nprint(format_currency(-4640039))  # -$4,640,039\n```",
+  "reasoning_summary": "**Formatting currency for Japanese request**\n\nI need to answer a request related to formatting currency in code for a Japanese context. I’m inferring that I should implement a way to handle negative dollar amounts, like -$1,234. I think formatting it as f\"${n:,.0f}\" could work, but a negative sign before the dollar is preferred. So, I’ll create the function to ensure it displays correctly. I’ll also include examples to clarify how it works and keep the explanation concise!",
+  "input_tokens": 103,
+  "output_tokens": 221,
+  "total_tokens": 324,
+  "reasoning_tokens": 141,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "ja_directive",
+    "sample_idx": 5,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.59757137298584,
+    "generated_at": "2026-09-07T09:14:03"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_02bd97944f5dbb30006a9ec7af8ec887d08150c2f5931ee3f0",
+    "object": "response",
+    "created_at": 1788790703,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790712,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_02bd97944f5dbb30006a9ec7b0162887d0b3647e22859722ce",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnse4T1U-o_u0v-0DsGOAcGEPXYVScJtCd5YJW8jcmNYGNuHLVxbYI8WVOfLcMTRzwkTPE9wUHcwF_LNTQx4s2tXkEszK3F-8MbLlUVpOZXZYQQf6rtlsgfiR2XqJb4roTqx0cSBGDYQtHPrQcjJM5IVWfbxoB6WBwHuSl9wxbmriEVcCzH70X9-h4xs9bsD9rSmjavdi2vFhDSBXh97Tq00hRKd6i7tNG71KOxME9ZLTkVavHGbmysngQ4KjdBiv_HMVS6EcGlVAvthuajg0gdUI90vRT7w064hNi3OhC045lqZ8cGSnfRUeBurMQxvgPeDMfO8RhPwG8YJw7H34HpQQZ8u9AqIsUTt_H7CzIaoXCxVApMnj1WAFUxCXmapIk0RnYuruGm8TXAeK8wUUw5kGcDmeSHyYYDb6PAnY5sse3JaEUtzPcbcONGIUZTaxa3DyG5xr0IwgoCW4uYNs94yruOJDxIRGG0m-7N7cpxuDMcyIcj1NZgI7ari_Wrcpz_Z0w4ztqLHmV7N77WsJ1chg0Vs45ASqQILy7HBl9fjm1Bm-YtuZq5ONLiGYx9YxAL6f3A9JPjAlXqEXRmeqJladdzMExbOqRy_5RAji6DuXt-Ib5IELwWIm9If-ljg9nF4iAia_6xM5c1FodcL56wQBlMhNXpwd8zIWnsQP5C1SyysaEJK9oog_RZ7Vfb8qlMzSKbwVFbzL6D-6R2XCbj5V307xkjQcWvTyopgbWuMc3iy07MeKZuv3cw0uKzJVK_mQd9Z30-Uc_9J0g_MUgMiAqTHfqGgD7cWV0pjDrB5N-vdb_51sScFDjK5szi4u_sy0lMpdH3bYxqLUTigBKcLceksX_30x9EgFIRrkEZIskplmvXTaS-QTgoGWSrSBevdPm5ADAMnZHBHdrkrm_o6Zz_2k_tvrQucNaQ1afwQVOrcIh7vTF9yVNHMJt3uVayhtfUcAP0K26H99anPi8DW6dPC-dukYG3ikMspGbA2uu_A_GjgsfR97rqm0Yln5J3gnS2X7VsM1ImigwzkjbXi5Y2iDIAfm175g_-_PCkz5FD5ABUhkwLBZt4NBijoqec5w8byeCQUtfdR_8ArjLi8XsXwYB3Ed_jRTAjaKkH7_aMSi3bSp8cuG0zlVkYiYarnTQkHNm00Qc7-BGRu0sjfRyrb1gac8pTOHXY45A_ZOSIjPF7ihyIKGsNhGCb161LqD2eWrf2twFULtANnfRrfVG9RKBsd7fnUBF-eatCEggtR22zpKG6QWPKdN86BPI0ic-DdyG9_F76UBAgPAMqIJSmDiDWH4M29h1iXkOQ170VR_SRrUkBeaM2BQy1za8g2SgkQbktAWgg31dVxzY3nhYCw9sbzFTAW9LLcczwPa9lzPFkYu1v2jxIELH1AaOjJ00hV0ifG4bkc_jguS4u8mB1OLQATE4br184nIkXKBhw1i3vixweYDi5FLN0_zz1Ws8Ire9df8buYLsEW5H5N--hwkbNjNiABzSld2xJdp73w8kCY5nsBBmuBRCiGhkYyPGvwVWL-3LdfFp5Jtn7TdBvgrQOSs3t36s3NHOD-cz1iXdX0i5jtr73wlIhPHEo_G60JQnA7wy3HjV_EcW7luuURGOCRC1liStPPQTZSEZp_F0oGkJq1FGHIHlI3WrAAUQ7syT85dWnTR5xvRSmrCBBtOtyi58He6G3_N0zMo3C2Y-HpnsykTy9OeD23Hm6qz8ZdnxRQPAUAvkwsqvAVOLT3qxzjriOvcU9dUjro8cVhpBpPU7dKoxiVuOb3w9Z5-BWJCray4DMULF1ddABR2htsmJOHQsY5y-EbnxrNDY_F7hfYGjYbkAABbzBEJhrVeZI4W7NLZkrNyVjS8mJ3ynwm9iww2RlbmtRqjKZ8IaCwtFfwjkQserG52KBLGtDlx8EC7LfQYrQxWYpH0wqXA6AVF5lcNVjE6mQAvKCBaYYYzqUFcMZ4HEzgZWiPIcmDexNuN8RkcdeUgjEz7ElEKUMrqT9gOBv7a86lwYe6rDO6kKHEJTMQVAHuTCWecA8xrUkVmKsTnTBtmU3YlTuFF5YvUyJE8L9yuEP2pKy5GJMAzKAPlNbDFfP1GNhntCtV27ZU5AeqZbu0D729Hs8lJBki_0fEQVFs8zJoCLxJJusToaKlPil_kraEuiE1PrQNqyygzeJhq0_sqLrVxOYGVx4fuFeaGWwFqgYqVC1U1I_aNNT0D1J0fL8qkHJpK8wLjXyQMzdjMiMHm9U-kADZ7sLOoASM8gcm04QgkobB_8QezsBDWS2-4-vdRaC_bniBkmwN6cPnKxUQ6eY7mhc___w74iXMuAW_pT5YebPlNIs8QOa7Ifgdr1HXUb8_JMeL63BWUXKJ8K5iFb9SLoVPyXzjC56SuAC1jJF5me0KvPqhN-9A1zAyRiux85UGp9TmGj7V6Qzn8j6RHp0DiZQ1XdHhuAzB9i3o83o-vDgfJWUZH48ZZMg7mt3Pm2ixrScCSWVYZnHi0pgvUhCKyOJiUssntLB2FoCwMMQAsx36nsDINMMPuXcJqV-D9V9bABoQNs7TzH7-8bBG7My7Oeg2PYHAygqMidF2apCeCxpMDSCfbZqcDrO_8cyO_o1cVmuK6TKKiFSVwlP2co1wXAkRxIvsHGXvI26QESijK_IEIiymcKN2BILsJYvUFzzOwLHNZhbiDylrSNFD5yoLiZ62tjp_D9kCoLpcMWYCC8TP7BHNHyR9cAixb4cP_tVdM2jWyvzPLsU3biWTyCrlLBVuVOCglqzRKhlTOY34GEYdkYwhnrcc7Yk4xuOOzsG1_7LdxpoKYFO_hD9Yg75D4THIrZ7XE9cXWPmpDIkH-21K_MZGy3ZI8CfljtJ7JWVmcKhFuBfRRtOSJn1SITEYgwuWuWd7_nS80wP2lVrHa4l_sbdT1iGDmpFm4D-f_diyIyR23zq9txzfYY1mtAJkBXwxIfU_SzScXUmcijxIzWaaOZ0LYziX-640do2-lpnCQJnVGSAQmOgW7Xcx491L7eYQUBZCKIKmg2yOAcFYp-fqnPn8fCmhkXjTqu5x5gETIhWGJYccUj5Gmo8ocRF3OXXB5EBL7BukiV3D08JIHG1686yeqBjZ6dEidhB0A90F_iMzhVubkmwXHiGiqiT8W8i9GynAoIfCtpTsLiJlTbDHUsMNc0b1dnXMcWCzqwQWJJ95Ax0MZUUTFQYFW40Y3ReGOy4qdlupnKo7lt_R5Yr2JMw1dk9mkkMd7JIPGA0uiRuqfmgPGK7hv4pW-MiiuSSGnq-aQfwVEX_j4lacCtnsxTNwU_ddQMGt_WHWZDNAmUGmxBWvuOsV-u64zfIEDfTH4n6LVu8VmadSWBe_FBAocuvbSMjQ0eeiKMNXfm15T4q7j0oBxErhlVgIlyry96jrduziflT5BbRmmPVrDHhHkZ-emCaz6TaumDIRpg33hZzmtMOYVzkhenbdc5qwZw69jhgLB3sOMkbWetl5pmJ9dY8X3ftgWvKaG0vPFdHJtye28uo3lsUZ7yCunR2TaScZBimgZv2xSIO_IJaHJNBTQuoXjebF9sjTtr442AULu5OfDGA7alN_unwNIgjKaXIN1F4t0o7H-aCGEuN7TiOB1iljaRj64_RE0gqjIQwcOLarTvLxC_Lgxd0L4Dg0nev31V7p2i-KAHu5qMVPP7SwwUNOLKj-7Gs7cY3zex8PQhO6Kbn9Y_A0ICJglDz9tVVBVdKrFMsh1pjlu6-qj-7ZM-C6OpkPbKVhJO-cTc2CSXxJ_XDWlkp9EzdC3_OivAoXU3JX_Z5LWaGmKfmoHxtkRF55ToL9tliKA3-JKI6VILv_DACtOQl3TIm-TzCTZKjjW8aF22M1HKM7eQLhNtvuW3dXhi_c9DOq35VdZOENLXoI-SpxZicuoytHfIwWlBLNXVgUnxY96UZgzwANYKPf7-CsFS8xpT4RAekHJDTtO8aNKK7oplIfg-i9y9z3fa7EeYh0vSnyBsaoBWGWgyik3Rgil_RMlenA7igBFjVpQYevkSCaVX-hbngAeNaz4atUN_M2ZuU0TTbY8i6x_KR0jlBSUr-cruD3Hko2KLvwZX9lQ2ntp31uVxb5bZkAKg6wLqM08ihX_433UvbyzqE5Mwu9vTJh_fU-oa_GN1HB3SHI7SH02QdHteHkDY2b86e-bccyNa6XZ6Rxm7fOChcY9PGZIajSSCRNeLKlRJX3tDYf7eRbZyC8cymiFs6R3lv0Dc6xYfjzypekIRbOqQR5kLmDgQwnVWODz87NW2--BSntI",
+        "summary": []
+      },
+      {
+        "id": "msg_02bd97944f5dbb30006a9ec7b59f0487d0af7cb27df09d3090",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport ast\n\n\ndef eval_expression(expr):\n    \"\"\"+、-、*、/ と括弧、単項の負号に対応する式評価関数\"\"\"\n\n    tree = ast.parse(expr, mode=\"eval\")\n\n    def evaluate(node):\n        # 数値リテラル\n        if isinstance(node, ast.Constant):\n            if type(node.value) in (int, float):\n                return node.value\n            raise ValueError(\"数値以外は使用できません\")\n\n        # 単項演算子（例: -3, +5）\n        if isinstance(node, ast.UnaryOp):\n            value = evaluate(node.operand)\n\n            if isinstance(node.op, ast.USub):\n                return -value\n            if isinstance(node.op, ast.UAdd):\n                return value\n\n            raise ValueError(\"未対応の単項演算子です\")\n\n        # 二項演算子\n        if isinstance(node, ast.BinOp):\n            left = evaluate(node.left)\n            right = evaluate(node.right)\n\n            if isinstance(node.op, ast.Add):\n                return left + right\n            if isinstance(node.op, ast.Sub):\n                return left - right\n            if isinstance(node.op, ast.Mult):\n                return left * right\n            if isinstance(node.op, ast.Div):\n                if right == 0:\n                    raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                return left / right\n\n            raise ValueError(\"未対応の演算子です\")\n\n        raise ValueError(\"無効な式です\")\n\n    return evaluate(tree.body)\n```\n\n使用例:\n\n```python\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))  # 7\nprint(eval_expression(\"-3 + 2 * 5\"))        # 7\nprint(eval_expression(\"10 / 4\"))            # 2.5\n\neval_expression(\"1 / 0\")\n# ZeroDivisionError: ゼロで割ることはできません\n```\n\n`ast` を使って許可した演算だけを評価するため、`eval()` を直接使うより安全です。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 964,
+      "output_tokens_details": {
+        "reasoning_tokens": 516
+      },
+      "total_tokens": 1058
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport ast\n\n\ndef eval_expression(expr):\n    \"\"\"+、-、*、/ と括弧、単項の負号に対応する式評価関数\"\"\"\n\n    tree = ast.parse(expr, mode=\"eval\")\n\n    def evaluate(node):\n        # 数値リテラル\n        if isinstance(node, ast.Constant):\n            if type(node.value) in (int, float):\n                return node.value\n            raise ValueError(\"数値以外は使用できません\")\n\n        # 単項演算子（例: -3, +5）\n        if isinstance(node, ast.UnaryOp):\n            value = evaluate(node.operand)\n\n            if isinstance(node.op, ast.USub):\n                return -value\n            if isinstance(node.op, ast.UAdd):\n                return value\n\n            raise ValueError(\"未対応の単項演算子です\")\n\n        # 二項演算子\n        if isinstance(node, ast.BinOp):\n            left = evaluate(node.left)\n            right = evaluate(node.right)\n\n            if isinstance(node.op, ast.Add):\n                return left + right\n            if isinstance(node.op, ast.Sub):\n                return left - right\n            if isinstance(node.op, ast.Mult):\n                return left * right\n            if isinstance(node.op, ast.Div):\n                if right == 0:\n                    raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                return left / right\n\n            raise ValueError(\"未対応の演算子です\")\n\n        raise ValueError(\"無効な式です\")\n\n    return evaluate(tree.body)\n```\n\n使用例:\n\n```python\nprint(eval_expression(\"3 + 4 * (2 - 1)\"))  # 7\nprint(eval_expression(\"-3 + 2 * 5\"))        # 7\nprint(eval_expression(\"10 / 4\"))            # 2.5\n\neval_expression(\"1 / 0\")\n# ZeroDivisionError: ゼロで割ることはできません\n```\n\n`ast` を使って許可した演算だけを評価するため、`eval()` を直接使うより安全です。",
+  "reasoning_summary": "",
+  "input_tokens": 94,
+  "output_tokens": 964,
+  "total_tokens": 1058,
+  "reasoning_tokens": 516,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "eval-expression",
+    "condition": "ja_raw",
+    "sample_idx": 2,
+    "prompt_text": "`expr` の式を計算する `eval_expression(expr)` という Python 関数を作成してください。演算の順序を考慮し、負の数も計算できるようにしてください。ゼロで割る場合は、`ZeroDivisionError` を出すようにしてください。（例: `\"3 + 4 * (2 - 1)\"` -> `7`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 11.13443899154663,
+    "generated_at": "2026-09-07T09:18:32"
+  }
+}

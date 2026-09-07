@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__en_human__sample6.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "import re\n\ndef eval_expression(expr):\n    \"\"\"Evaluate expressions containing +, -, *, /, parentheses, and unary signs.\"\"\"\n    number_pattern = re.compile(r\"(?:\\d+(?:\\.\\d*)?|\\.\\d+)\")\n    pos = 0\n\n    def skip_whitespace():\n        nonlocal pos\n        while pos < len(expr) and expr[pos].isspace():\n            pos += 1\n\n    def parse_expression():\n        nonlocal pos\n        value = parse_term()\n\n        while True:\n            skip_whitespace()\n            if pos >= len(expr) or expr[pos] not in \"+-\":\n                return value\n\n            operator = expr[pos]\n            pos += 1\n            right = parse_term()\n\n            if operator == \"+\":\n                value += right\n            else:\n                value -= right\n\n    def parse_term():\n        nonlocal pos\n        value = parse_factor()\n\n        while True:\n            skip_whitespace()\n            if pos >= len(expr) or expr[pos] not in \"*/\":\n                return value\n\n            operator = expr[pos]\n            pos += 1\n            right = parse_factor()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                value /= right\n\n    def parse_factor():\n        nonlocal pos\n        skip_whitespace()\n\n        if pos >= len(expr):\n            raise ValueError(\"Expected a number or parentheses\")\n\n        # Support unary + and -\n        if expr[pos] in \"+-\":\n            operator = expr[pos]\n            pos += 1\n            value = parse_factor()\n            return -value if operator == \"-\" else value\n\n        # Parenthesized expression\n        if expr[pos] == \"(\":\n            pos += 1\n            value = parse_expression()\n            skip_whitespace()\n\n            if pos >= len(expr) or expr[pos] != \")\":\n                raise ValueError(\"Missing closing parenthesis\")\n\n            pos += 1\n            return value\n\n        # Number\n        match = number_pattern.match(expr, pos)\n        if not match:\n            raise ValueError(f\"Unexpected character at position {pos}\")\n\n        token = match.group()\n        pos = match.end()\n        return float(token) if \".\" in token else int(token)\n\n    result = parse_expression()\n    skip_whitespace()\n\n    if pos != len(expr):\n        raise ValueError(f\"Unexpected character at position {pos}\")\n\n    return result",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 75,
+  "output_tokens": 1074,
+  "total_tokens": 1149,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Considering return types and inputs**\n\nI'm contemplating the return types here. For integer addition, `3 + 4` should be an integer, which is 7. But if I'm dividing, like in `\"6 / 2\"`, the output is likely expected as a float, which would be 3.0. Also, I'm thinking about edge cases, such as the input `\"1 / -0\"`; it might catch something tricky like division by zero. There’s a lot to think about with different data types and potential inputs!",
+  "graded_at": "2026-09-07T09:28:31"
+}

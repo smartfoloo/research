@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 2,
-  "extracted_code": "def format_currency(n):\n    # Check if the number is negative to handle the minus sign placement\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"",
+  "extracted_code": "def format_currency(n):\n    # Format the number with commas for thousands and 0 decimal places\n    formatted_number = f\"{abs(n):,}\"\n\n    # Handle negative numbers\n    if n < 0:\n        return f\"-${formatted_number}\"\n    else:\n        return f\"${formatted_number}\"",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 68,
-  "candidates_token_count": 237,
+  "prompt_token_count": 73,
+  "candidates_token_count": 281,
   "thoughts_token_count": null,
-  "total_token_count": 305,
-  "graded_at": "2026-09-06T06:53:07"
+  "total_token_count": 354,
+  "graded_at": "2026-09-07T08:46:08"
 }

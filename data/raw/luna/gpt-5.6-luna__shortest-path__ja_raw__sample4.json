@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_018567695921046c006a9ec8e119c487d098e1d03e87aaa100",
+    "object": "response",
+    "created_at": 1788791009,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791017,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_018567695921046c006a9ec8e19cf087d0b87c635f9d0e09e0",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsjpJkPKRqh9hhgDrJxPU735eVXanlpLP5QVItJXd0SkDXwahIior6rey2crKhAqgawn0J0xWOADoAs98mcmeD4-E9nt5w4cBUPDj1VM_lsyttjFzK7CFxDoFk-_LQH1UTDXmCU2SI69ntN5xYkQQBpViVprVMTokftFhCHtPi-uk5ITPdSuBB1ldozECsy1X7HnoJMdX0JnNZHx5Ciq9FVY-0PPT44syuBKr8BP02m8YgA4XOJ7qiihvDeC94-NH4pAKHFQwCFDT0wCEBlNX7FkgPw_8G1DHJEsFpOFz-xK0iKxV8xqHq92PAzvlyaYGeEHg6g6DcEJ3NpjBf9zUP5WZe1WEcMhOaDJasihIWEHqAPbkvUQyZOgMb7ZRdeTupJ8UhXPfyo9lgf9q-E-n8Ljrce8u-fXJNCJhrmqMDi_2RAcXyzTIha973sRoZHPU5j5OEmLcI4kusVDQDrvU0MHs0wyc_m96evFnaefQZqTzaci27yrVEOzTO6W4jtgNvZfMqSY3Y9a9lnNvIvg-15SDgzjzyvi7H0VVa-smkSrsK8Mgpw8ivkfSoqmw4fPDMz2HgPpbnYhQKdt1ogWFnmDPPRiAdCF0oljRr2NjKz_wlpu5W-tBvRIT4SucdreT3Iw2P4muWr7Qkx21FyqF0CeeQDwzRP_-jdWLwANPdGUXkkSkW1euEY-ER6rOknDK4i7J43fMow9CBSmGOsedLrIUe6wvtLJyhIzltCb51TDgpiRKVFLa2Nc2wdiebMig2Z6UFHLpBZiycBrGC8RrIAJzgmKhuA5tPYsm2R5U-m6j4F2aVBhwXxt__YnrnWaqz3gsg4ptnDQflhWCaFGGP2Z5mT5zyKW6jagFJYu9Htx6-d5OCh53hBkV622flnluk7g36VltIEIoIyQOb1PP93OzxZV2PZ5cqdYh1CwKkLCqvRTXC920xOEyVOMoNFKBBmsavXEAMxl-4A6U0boIascj8Jmt49CwMcSXtHSl-IDo58gXFUAHjrO4139aj66mDIDXY0oXJ-vP-jcIlrWkbxz_fpqPhqmolnchkSiBjOFmiiHTpgf8jalNs-82cqOZgvix_mU0O7pFcp7JbwKAs5HHVj2dyMfUal-oNcsNAftGjgFvJo5EZqxibmy-EVL7S_Hwzh3XddVTbBvdMXqhTedpe9rLwcVNvKUa9j9IxGrIA2b1HKrbAH714_v5bPzIqueWfenZkMIPik2FMfaMIW_RXKo_OGa-XlgILG0ExZqiSx-qdc0eUvpxW4yjOzdb-Spf2AYJ6XIxyk0q-BQo7Ay7Vfup_ZWV15BzXZ3yu7VKiYLt__55eu_Dx6TJqSgwDrJRmT0vnsVeb0xROnQU2ajNVY0PMzu5At1y0b5ckPyRfAIn14_VAIVnDLuVreYyJNiEBHuF5qLE4YFsQ8yApxwzNhEExWiZxF7LfZF8dHgS2g3zUhFw14AhaI_1wDv5mNmD7k9YBDXcMrrx9yCxznSlI38f5LP165jQhoRThMSeLelp2k0tXVePFBSerkmclgYdxJEel4rGH7a3ak7s3wM-vSybPpbxsoGTTw6p9iftVH3AYptJXiETJhMQv1zjjpDPcd_m7U-mME2_Ti-dnub_dYIsSY3x6L88_O2VSp0opZZ4CqMjs1k9zL1ku-XFq2l_ULctkplnKF_DtIlIFdp4__LFYeUBZ7pCfqaFdMnuDyTxhXpNCGeiEnT98ITr5PihqeXkAdLP8zaOPHVne_aczIp8bSWqxPMwCmIt2rNhXhLuGh6KQCuJvk2X82su8VJsUl65IIeQA8dlXR1-QMLaZp4WUJ2rWVab6-H8qQ3Sc2iM6zXDV08B42iJfX5_gEvB-QRYhZKAAmgG_nuLGBh5hEovT47xPQrYXO8gYg9qQJr5KuSJlZK-Amb0EeODqmnKXVRN0hI39VYglfFqIlTxbpXctFizUpgAZwrcGNVKFNeWVjgtfV0if0oy2GhCwm4A5Mk8hsszfuwzuwc0hHw3abcn0Eh4kTScQTor3mRp0FeZu0w-756AKFNdM9Ajc2rAm98hvnatn-60TD9fbdwtC0hHc1xRyPhChUKfuWMkxIlRVXk5Cm5FdK-ZXGKsJtcv2yPaMTuZoia3yEu_B08pBzHDdpkOoQAc2BpV3r7L89IG-eNEIDtkpzajmTpPmFdQz-N6vl_rjV1hoVktVZOQ1X33sUBtGyPYXuawrDHDQ-8ylSKiQRKhdna5XuTKerAOvihGLE8MmbaF_U1G2UxiFIPUF16QxH9PJyMibqFydMQUtfaeIHfG8t846q23SZ44d8q-WB0MouCt4BL4e6a-0JUIBdVh_AOigY8XNgoiXWXuoAweI8GrXSD2T1ZCNxYPmsMb6-FC3Ndp73NoPb2s8uTXKgnLaC3UWO-408_50pnkzm7BztsBlBYM8DNmQhMDZrwdQ4vItzBw9vVEPtDBuJggrBk9xuikxssZ2AT_2G9qUe9sCIfbgdWqmOC2kK8uBXZHkL074Xz1hi-EEdptJUC-uBodJcgN3XI6gwUvHcv_9bMHVNhOH1UEjnkzhwKkAn--CkoOOT1NR-bNQV2-fj55XBBYjkgfilV-o2xN3A_XD13EdaUR5wnCS01HXQjmXkm3lpHI4No0ZLrnJVwpO6xpPYH44o4mo6Ik1BsPqU4La26apwHrDD2jsq7yAaQGW3ooKQOLHhbhDNoo-LOcYN43IVyQ-sCTUJABNBvGLBP-Iqz4gCUApVhXAbdZj1qzyWziz4oVC0OGawqcgjYOnJz-veQGjEDlw-yXGILO2Vh8zrOEhKrIMbzuM9_1NuVeuVHpPRn31y74dhVOt94GKSBJ36eVc-Ig92uz9t-JO84lVSJkVH0SfLAyKJ2VrN7x8efRaM1YXAGwYGDgZjzW_zf8TGWVpniRlstniKcy8KMbRz6477WV8S8eBOfAKxdKmPPHnEKu_DUR1QWelvvc4pj1ONY6JbWFxJM9dKyuKcknMtsb0yM0lXx0tOyPI_PXN8X8zWDO05RHwvthZA6YtKOgpM4rfEbLdHf8-v6G2qmURg5pJdDbcpMNc0EiMrZ6EkxVx6yD07GREaGRdBmKHdL6HTw95e9tfxa_Wa4pWI=",
+        "summary": []
+      },
+      {
+        "id": "msg_018567695921046c006a9ec8e5c1e487d0b689fa0087789992",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノード列を返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みをチェック\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    # 距離と直前ノード\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番をタイブレーカーにする\n    counter = count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # 古いキュー項目は無視\n        if distance != distances.get(node):\n            continue\n\n        if node == end:\n            break\n\n        for next_node, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if (\n                next_node not in distances\n                or new_distance < distances[next_node]\n            ):\n                distances[next_node] = new_distance\n                previous[next_node] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    node = end\n\n    while True:\n        path.append(node)\n        if node == start:\n            break\n        node = previous[node]\n\n    path.reverse()\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n\nprint(shortest_path(edges, \"C\", \"A\"))\n# (None, None)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 209,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 835,
+      "output_tokens_details": {
+        "reasoning_tokens": 303
+      },
+      "total_tokens": 1044
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノード列を返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みをチェック\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    # 距離と直前ノード\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番をタイブレーカーにする\n    counter = count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # 古いキュー項目は無視\n        if distance != distances.get(node):\n            continue\n\n        if node == end:\n            break\n\n        for next_node, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if (\n                next_node not in distances\n                or new_distance < distances[next_node]\n            ):\n                distances[next_node] = new_distance\n                previous[next_node] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    node = end\n\n    while True:\n        path.append(node)\n        if node == start:\n            break\n        node = previous[node]\n\n    path.reverse()\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n\nprint(shortest_path(edges, \"C\", \"A\"))\n# (None, None)\n```",
+  "reasoning_summary": "",
+  "input_tokens": 209,
+  "output_tokens": 835,
+  "total_tokens": 1044,
+  "reasoning_tokens": 303,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 4,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 10.480535984039307,
+    "generated_at": "2026-09-07T09:23:37"
+  }
+}

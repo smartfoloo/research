@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 5,
-  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements while keeping punctuation attached\n\n    to their respective original positions/indices.\n\n    Parameters:\n    elements (list): A list of strings (words/tokens).\n    punctuation (list): A list of punctuation strings corresponding to elements.\n\n    Returns:\n    tuple: (new_elements, new_punctuation)\n    \"\"\"\n    # Reverse both lists so the pairings remain consistent\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# --- Example usage ---\nif __name__ == \"__main__\":\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n\n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n    print(f\"Elements: {new_elements}\")\n    print(f\"Punctuation: {new_punctuation}\")\n    # Output:\n    # Elements: ['world', 'Hello']\n    # Punctuation: ['!', '']",
-  "stdout": "Elements: ['world', 'Hello']\nPunctuation: ['!', '']\nPASSED 4/4\n",
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements while keeping the punctuation\n\n    marks attached to their original relative positions.\n    \"\"\"\n    # Reverse the lists\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 75,
-  "candidates_token_count": 448,
+  "prompt_token_count": 86,
+  "candidates_token_count": 247,
   "thoughts_token_count": null,
-  "total_token_count": 523,
-  "graded_at": "2026-09-06T06:53:22"
+  "total_token_count": 333,
+  "graded_at": "2026-09-07T08:46:17"
 }

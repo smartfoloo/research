@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_06aa977a560c93eb006a9ec638388487d080badd0d1089f22a",
+    "object": "response",
+    "created_at": 1788790328,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790338,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_06aa977a560c93eb006a9ec6390f4c87d0a1199ae6b0abd34e",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsZCOETXP3Z8RRBABJP2Pq7quuNxZ5k5UijbJqQc_U2vYYo3vWhtxuwRculfJ5dC990O1xcPyeTLsRzc75xwlAFrUR7fgTI6Ml5SRO529VaMcXoqN2TauomRq9uvnF_cn1kDPngJ38znql20oLtBFQqANPbjgbLi-MJs8Ytd3t9VJDGFGvWO9elIG7nsvHzhNOrJn6o6JonArDGS1SS4yG-AImPfDHX1CwNk8-GdaLljQbN2sLFYdNmbYTEpD5UmBORJ_S2qBdkv_EsEQFyerqmhIbhUy-xU-AZtETNdbsqgyp9_bvMPXUm4OpF_QNRVU5MZt5VzzHvbJIsTSYercc9iTsL2j20nWbomRBbKsjAd2RjOG_xAMYOVkjaKR0ciNLP40mmv-SYqbeuYkWPnxwJwKspDs66xb5DeyP7gR-QQjDW9tn0DfmIv8cmkpOXmrY2DjWtvCe6Xlq98W8Cr6yjVYSxE9SzCpQ7JD_XsrADKywq2NI3L1MVwF0FvKtLmraVfUyeXRq50gYagLbjgsFwVKtF47QHji0NQOf0ZBx7Gl0lJT7wf_oOLGx42S6aFDpKBbbXWmkswuNlVGU-WdGsH6eQOVLr2MXwuSytgafBIf2ajygvpq_6CYjtspFgpnr6DEIELsy23D7Dh5yg_iCBM3qBLRQHqzG7h6kzVPRZrmeUNX6Zy9vlsYqmYZZeL9-JAkVqK6sOOrBfGlNtI0zioUfU1Cdosb7Lm_m6vG4-wgy92kVYa-HJ_hVdGCf4ngQf3hQcysC8w6dXZ0HRMoGsT_Fr7zYVNewTROQY9C95SEbKZe-OhuGxPqnxBEbfPRVONgH2eAtJ0zMue_ab9ww55z25Fd4VTZWKCB4Et-H0ICvAFXHvAtfmJ95Pl72DJqHxiXfeuYIbP1CCKUp-WNzeWjG68TN1MN0wkErVnX6wDwm-jABP_dIzd5oy6TXmnEGjPVvJDThPYukFTVBFFbLKTGS9Vgc3EmAj7sDPlFlCgjJ2sjJfyaAVRktcdlG24FIclaTFdZBmfqfQ3th_jDrz3O_Ft1HyGnt9AKRPk_Yn3ioqtrATQRIzrYXH5wTIkrVdwMsvypVealvDOIyyMMepoy6U89oJ0-RPUmbBrRkSQ9uXfDMvlXCK1FoYn8-3ii3zFd6CuU3f5t0r9ubepNIiZtl7fD9Ol_257Eg2DYY5H4yWtDQLXllyFhxKBSPwDz7Wgmq1ZsSpVearwsXiW_yVbDQgk_dTWeOfpIjM0S8Tf7tfnxx8ArIp8mV-3IJrIw1AVl1njFGdbzBTYKItWv6Jd3_IZx_QIU12ixyJ8WKZoHSw8YN9TiJlWkg83qvrnoMCVnW9zOKK208PyTahm1Zu8bW-Cnibub5CXhVvQ7k9BlVDX6OylMjA7rAhLmWVdlowQkO_5I0mkuvymee-mVQQCKavi4CrQoBp91gEP279U0rZL2EVbMMRf5_ZTZH_aMYKnLUTKwElXYLeWp73KSXL71uDUkrNkferw4BZu-guJd2EU3ZNfX49hvelIdPkYOco33kwccnelSC74p7mKuQDhDJTuhFRvqlBKe8bsI0jCnW8P3OuAWe_kwN1mTW-f0ths-Zq2-UZUgarOCwqtPcv5p2tx5XyegZsh514EcUWkyetxu4ZfPCc16a1HEbBLZoFN2OMWmgloFxpwXeaqVzMFWebSVCnJT5h9vHVbwV-DUiVOc1Lh09PZP0albzHbEoB-WgKBzr-Jzl_Lz77xD365KsFJTnw0MN4LDDBslVbuXM9dqe4ifq6sOTMkpJpqpfNxDMXg7lv0aamo6ogNvOdmHtefqkMvgVTTbpCQ1D_XqY0Br4L4bpBnYIl4zoKn8LzAs-WuxDxtMWtKbtL36eGgrRoC0fzGiK43IP9CejkMKJtVJsA5J-O0zwIkMYNIlGfnm8aaCNhVWWU7s54Yvzot662hh7QzEVqWHoG8YXEbAPTWuZWM05QU9vj29b23VFMbpDMIpW9qgknbWLnCs-N71sm1AejaXFo-Mqe21LHZLygHGFPaw_3htV9zyThlTyZp_ifzN0jeYGuDuAaK3fO1Pt6Lo9Va3Artxm7g0l46KH5As4f0zMd4XRik4T_A0UJ6qn7G_mJ5OaIkBaHNf0UD4FVuDJy2rTmwgQnUFPANBz41hkOXOLv-CWh3S9pPQdL8jDfa5vKn8_Mxn7AcH0g3DtmHUCbZBVQ_Acdi8vzfzYin0DMDgr0VbvPL5J7nIQUOPA3DccYac8SyLCJ_fOZkaaMmFfVgK5LX6M2KPIVVzW9__zSA01OEyD2aa4mxdOFGFQUGEdIHNM_4-szX9Cj_0tyqivvNy_fS9HnodYTJxCpZXgjM2suFEYn34KsSn8Xs_4vF3y2p-rP0q2eXcBREkXmPb45lww5BFkrySRGkZcIlxlrGWYOQxSvJmzU5X0Dw16NjppWUD6WRgrR9OcTaoH6gG2LGPQKKuumwp9Nj2_XIQ3qWEOz5yEm3g14riRQk4kf5eCnuEmz2AH4T5KCfdHLHtTkITLt9Cw-idoAh7NoZWyvnyZY3BwhG3tGEWFHeTjhwgM-1kI3X3pdDU3XCdkFZvwwUc8Yo09TQfMQLGgI2u9BcnXxqDabgX-N25nf9M2eL3VX8rM4dfA1BRPjSlqVNBsWWALhoDYUpnPLDsCyEu1rs59eR9JnHZxreHKvFUUOkkzWlErKuMXws2mN9Io747Hb3gq5HE-Yajn3-1_gNNyDXC9H-NQE3F3LGrVWn0NlIG7NgegzZOoP7971-bSiF1fg4drZVxW90AZm9ofYBGQ1rleFT7kMYw6hjzGwvBHrpBgvbl37jzdbG7lWQr7eoFTf3tAgIP2T1tsWMeggO4816Mcybw8b7RtAlVr7ZG1XvaCoRRGGdBiec4RyRfQ==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering date preservation**\n\nI'm thinking about how to preserve dates and maybe need to use a function that incorporates min and max values. I should include an example and some tests to ensure it works correctly. It's essential to be careful with the input format, making sure both dates are specified in the YYYY-MM-DD format. Let's formulate a plan to test this approach effectively!"
+          }
+        ]
+      },
+      {
+        "id": "msg_06aa977a560c93eb006a9ec64051dc87d0a61e90072d83d8a1",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"Return the number of weekdays strictly between two dates.\"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the dates as an unordered range\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nThe dates themselves are excluded, so only January 2–5 are counted."
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 92,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 478,
+      "output_tokens_details": {
+        "reasoning_tokens": 273
+      },
+      "total_tokens": 570
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"Return the number of weekdays strictly between two dates.\"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the dates as an unordered range\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nThe dates themselves are excluded, so only January 2–5 are counted.",
+  "reasoning_summary": "**Considering date preservation**\n\nI'm thinking about how to preserve dates and maybe need to use a function that incorporates min and max values. I should include an example and some tests to ensure it works correctly. It's essential to be careful with the input format, making sure both dates are specified in the YYYY-MM-DD format. Let's formulate a plan to test this approach effectively!",
+  "input_tokens": 92,
+  "output_tokens": 478,
+  "total_tokens": 570,
+  "reasoning_tokens": 273,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 3,
+    "prompt_text": "Create a Python function called business_days(date1, date2) that returns the number of business days (Monday to Friday) between two dates. Both dates are in YYYY-MM-DD format. Please calculate only the days of the week without taking into account holidays. However, please do not include the two dates themselves. (Example: \"2024-01-01\", \"2024-01-08\" → 4).",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 12.767573833465576,
+    "generated_at": "2026-09-07T09:12:18"
+  }
+}

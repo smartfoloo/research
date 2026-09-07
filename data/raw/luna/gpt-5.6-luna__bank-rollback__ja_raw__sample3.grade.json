@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__ja_raw__sample3.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 158,
+  "output_tokens": 216,
+  "total_tokens": 374,
+  "reasoning_tokens": 107,
+  "reasoning_summary": "**Considering code validation**\n\nI need to focus on writing a function in Japanese that involves validating transactions without mutating the original balance. It seems like I should include a check to see if the current balance is negative after each transaction. I’m wondering if I should also check if the initial balance is negative and if that should immediately cause the function to fail. It looks like I should keep the example concise and possibly include type hints for clarity.",
+  "graded_at": "2026-09-07T09:28:10"
+}

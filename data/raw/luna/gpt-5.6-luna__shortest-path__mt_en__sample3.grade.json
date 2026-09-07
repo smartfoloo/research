@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__mt_en__sample3.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    # Build the adjacency list and reject negative weights.\n    graph = {}\n\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])  # Ensure the node exists\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    tie_breaker = count()\n    queue = [(0, next(tie_breaker), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # Ignore outdated queue entries.\n        if distance != distances.get(node):\n            continue\n\n        if node == end:\n            path = []\n            current = end\n\n            while current != start:\n                path.append(current)\n                current = previous[current]\n\n            path.append(start)\n            path.reverse()\n            return distance, path\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(tie_breaker), neighbor)\n                )\n\n    return None, None",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 162,
+  "output_tokens": 649,
+  "total_tokens": 811,
+  "reasoning_tokens": 268,
+  "reasoning_summary": "**Explaining Dijkstra's Algorithm**\n\nI need to clarify the answer for Dijkstra's algorithm, particularly regarding negative edges and how to manage them. If any edge has a negative weight, it raises questions about processing start and end nodes. I should think about using a heap and maintaining valid edges while reconstructing the path accurately. It's crucial to ensure that entries in a heap maintain comparability, so I might consider implementing a counter for tie-breaking. I’ll focus on returning the shortest distance and the path clearly.\n\n**Clarifying Start and End Returns**\n\nFor start and end points, I need to ensure a return value even if they aren’t in the graph. First, I’ll validate negative weights while constructing the algorithm. I may consider using a boolean check like `if weight < 0`, since any non-numeric values will raise an error naturally. I could provide concise code examples to illustrate how this works—perhaps focusing on ensuring that the returned distance is an integer when possible. Let’s keep the explanations clear!",
+  "graded_at": "2026-09-07T09:28:50"
+}

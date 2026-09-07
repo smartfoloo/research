@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__en_human__sample3.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 3,
+  "extracted_code": "import re\n\n\ndef eval_expression(expr):\n    \"\"\"Evaluate an arithmetic expression with +, -, *, /, and parentheses.\"\"\"\n\n    if not isinstance(expr, str):\n        raise TypeError(\"expr must be a string\")\n\n    token_pattern = re.compile(\n        r\"\\s*(?:(\\d+(?:\\.\\d*)?|\\.\\d+)|([+\\-*/()]))\"\n    )\n\n    tokens = []\n    position = 0\n\n    while position < len(expr):\n        match = token_pattern.match(expr, position)\n\n        if not match:\n            if expr[position:].strip() == \"\":\n                break\n            raise SyntaxError(f\"Invalid character at position {position}\")\n\n        number, operator = match.groups()\n        tokens.append(float(number) if \".\" in number else int(number))\n        if operator:\n            tokens.append(operator)\n\n        position = match.end()\n\n    index = 0\n\n    def peek():\n        return tokens[index] if index < len(tokens) else None\n\n    def parse_expression():\n        nonlocal index\n        value = parse_term()\n\n        while peek() in (\"+\", \"-\"):\n            operator = tokens[index]\n            index += 1\n            right = parse_term()\n            value = value + right if operator == \"+\" else value - right\n\n        return value\n\n    def parse_term():\n        nonlocal index\n        value = parse_factor()\n\n        while peek() in (\"*\", \"/\"):\n            operator = tokens[index]\n            index += 1\n            right = parse_factor()\n\n            if operator == \"*\":\n                value *= right\n            else:\n                if right == 0:\n                    raise ZeroDivisionError(\"division by zero\")\n                value /= right\n\n        return value\n\n    def parse_factor():\n        nonlocal index\n\n        # Support unary plus and minus, e.g. -3 and -(2 + 1)\n        if peek() == \"+\":\n            index += 1\n            return parse_factor()\n\n        if peek() == \"-\":\n            index += 1\n            return -parse_factor()\n\n        if peek() == \"(\":\n            index += 1\n            value = parse_expression()\n\n            if peek() != \")\":\n                raise SyntaxError(\"Missing closing parenthesis\")\n\n            index += 1\n            return value\n\n        value = peek()\n        if isinstance(value, (int, float)):\n            index += 1\n            return value\n\n        raise SyntaxError(\"Expected a number or opening parenthesis\")\n\n    result = parse_expression()\n\n    if index != len(tokens):\n        raise SyntaxError(f\"Unexpected token: {tokens[index]}\")\n\n    return result",
+  "stdout": "FAIL case 0: raised TypeError: argument of type 'NoneType' is not iterable\nFAIL case 1: raised TypeError: argument of type 'NoneType' is not iterable\nFAIL case 2: raised TypeError: argument of type 'NoneType' is not iterable\nFAIL case 3: expected ZeroDivisionError, got TypeError\nPASSED 0/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 4,
+  "all_passed": false,
+  "input_tokens": 75,
+  "output_tokens": 1097,
+  "total_tokens": 1172,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "**Evaluating error handling**\n\nI'm thinking about handling the ZeroDivisionError and whether it's standard in my code. I need to ensure that expressions like `- (2 + 3)` are supported, especially with negative numbers. There's a potential concern with how I tokenize operators and whether the parser can catch issues with Unicode characters. I should create clear rules for valid operators and parentheses to avoid generating a SyntaxError if something unsupported is encountered.",
+  "graded_at": "2026-09-07T09:28:30"
+}

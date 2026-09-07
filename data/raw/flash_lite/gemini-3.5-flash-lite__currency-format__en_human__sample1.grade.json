@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 1,
-  "extracted_code": "def format_currency(n):\n    # Format the number with commas for thousands and 2 decimal places (standard currency),\n    # or just integer formatting if decimals aren't needed. \n    # Based on the example, we will format as an integer with commas.\n    \n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"\n\n# Examples:\nprint(format_currency(4640039))   # Output: \"$4,640,039\"\nprint(format_currency(-1234567))  # Output: \"-$1,234,567\"\nprint(format_currency(500))       # Output: \"$500\"",
-  "stdout": "$4,640,039\n-$1,234,567\n$500\nPASSED 4/4\n",
+  "extracted_code": "def format_currency(n):\n    # Format the number with commas for thousands and 0 decimal places\n    formatted = f\"{abs(n):,}\"\n\n    # Handle negative numbers\n    if n < 0:\n        return f\"-${formatted}\"\n    else:\n        return f\"${formatted}\"\n\n\n# Examples:\nprint(format_currency(4640039))  # Output: $4,640,039\nprint(format_currency(-123456789))  # Output: -$123,456,789\nprint(format_currency(500))  # Output: $500",
+  "stdout": "$4,640,039\n-$123,456,789\n$500\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 68,
+  "prompt_token_count": 73,
   "candidates_token_count": 266,
   "thoughts_token_count": null,
-  "total_token_count": 334,
-  "graded_at": "2026-09-06T06:53:06"
+  "total_token_count": 339,
+  "graded_at": "2026-09-07T08:46:08"
 }

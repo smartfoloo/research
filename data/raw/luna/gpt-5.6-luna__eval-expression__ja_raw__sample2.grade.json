@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__eval-expression__ja_raw__sample2.json",
+  "task": "eval-expression",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import ast\n\n\ndef eval_expression(expr):\n    \"\"\"+、-、*、/ と括弧、単項の負号に対応する式評価関数\"\"\"\n\n    tree = ast.parse(expr, mode=\"eval\")\n\n    def evaluate(node):\n        # 数値リテラル\n        if isinstance(node, ast.Constant):\n            if type(node.value) in (int, float):\n                return node.value\n            raise ValueError(\"数値以外は使用できません\")\n\n        # 単項演算子（例: -3, +5）\n        if isinstance(node, ast.UnaryOp):\n            value = evaluate(node.operand)\n\n            if isinstance(node.op, ast.USub):\n                return -value\n            if isinstance(node.op, ast.UAdd):\n                return value\n\n            raise ValueError(\"未対応の単項演算子です\")\n\n        # 二項演算子\n        if isinstance(node, ast.BinOp):\n            left = evaluate(node.left)\n            right = evaluate(node.right)\n\n            if isinstance(node.op, ast.Add):\n                return left + right\n            if isinstance(node.op, ast.Sub):\n                return left - right\n            if isinstance(node.op, ast.Mult):\n                return left * right\n            if isinstance(node.op, ast.Div):\n                if right == 0:\n                    raise ZeroDivisionError(\"ゼロで割ることはできません\")\n                return left / right\n\n            raise ValueError(\"未対応の演算子です\")\n\n        raise ValueError(\"無効な式です\")\n\n    return evaluate(tree.body)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 94,
+  "output_tokens": 964,
+  "total_tokens": 1058,
+  "reasoning_tokens": 516,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:33"
+}

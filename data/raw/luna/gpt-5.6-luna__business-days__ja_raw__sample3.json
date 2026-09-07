@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_060574faed99b8d5006a9ec5deddb487d082504027e4a52b61",
+    "object": "response",
+    "created_at": 1788790238,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790245,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_060574faed99b8d5006a9ec5df4a8487d0941f27e8fe896cd8",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsXmHo__yltPCF9w8vAoyfZehZgyYhTdWvjl8cYr4jnELUP-BK-vO8V2C2r_heBJtB1B7Fq-aqBdXRGFLNrGhxG5j3DxJ9cJCHk0VgECBPXqNNjfhcEnPWuoWoTRmYvmH20756lasgKdVVr36LE7CGg-svjmos7pfkVTrJ392RzEdLS_gg_ntGolDesvDTWOpb2hNxpMRXd2g82TkjTrTe2xOOPzd3vCOx1A1oh4PWcBGTDzQX2wfJfr0uuYkz6rNx6eVGXgpD9TUYv2oJEKyPk_CAmYd6HpOddMRW3CfALA0JeaWHqGTwbgmhUUhIDnBYw5r9wNvh-RY_RCy1Pm25PHRcVBeeh1cKPiPSH2Fq7pXVzGOnIgjBWK8Jtf7tmJmMYS9LknIY7xxWN2fmIzKiNZZGNPEDacE45mVnJ8_99LQb3rCveiFRZx8zH_wGuClOYOi8YMwG0tNNFd_JRmSuDxJQmln_dr-q24ZacCcHK-GUxtcVULczlRVbFE_nEvdlx-KZv32E8gBXrJmLNVWTp6czTm2TcNu2DBp7tsIMfspobJ3GwgXqj0Y0RTSQ-LfBfS8aLh-ttD183MWrzR7xQY_cGgKosI4sl7gWfUiZCxqNwfugA1Uuoh9CpRhGYHGwLYzu4yaAinH_TLS4V7yQ9_qbbzOBZzKrvNZuHjspH9CY3U7bpgegCPZt7MCr2nXPX8IhRC3W7G3fuz3t0-IFOA9T4khND85QDerIqBRe_0jqdf--B480ArQEoZYgWTV4XVkBSJIFCDim9tOQZEfjef-1B5NdsTilXLESjfDPEhL9seTqXwflsv3w1B7BYWFjyeJF5wOrLzUT2r8S-Lqcl6vP_T0f4ESLkhg7nivCSkYSu_OXyA_ParChWtA7vSTERrwmM2n9BPL0R6XHV2GN93j1HaKHl2aaIB2UdZIZ8K-XXAtqvnQ82sKb2dku_ekB3zqXv-ZxWnAkjzk8dqjaZ9HqaN3wsh6mbhhcoyaAq1IWKNFRN-174plX2RLVg9Ng6vlU4-pkwXAvfB2X-Z2vg6T2eGMKIWMl4UNDy76tTCIIyk4BFZ6j7ubXPAdl-zLY849W43vatOvm9mOGQfCQwwO8OZO_qnZQB368xvKyLp1GjjelY0xZjb6pO7kq6OoC0CzuZR2znQ31eI73NMvlLUl9JY5oK5SawBex9_sfrjaTRBtpAX5gjgSDEGQKYnn_TwczXV1P72zb_mEgzy1bBhMDLPjNtGA8dz72nFuaSIb_KfusPqPrzprqKaTw0VkQe8ykGzWyeGyJdlw7Pdp-BswzDqa8qTVDoNb0S5Vz6Z98zHXF-j1Uhv6wJ1CaiBNHunlhwPI9VcA9rzr4T8t7eVnGtiZ3Q5A8OI8xfzBN2fJYmFpeG5mZEQjtJM9QnoiHSZEjByrgZHoBNp2Edw49vjlWFaCFau_XLgdpVKz7UUQVunekFLFYWexim-TNx2-LFRsAv4fBhWPqgB9hso9ATndMMcX_L2ttDmSdFcBsm1guD-Q10K9ea5VbGYUHrwRdDxaSSnnPdMhpafUuNtPCvfruBwGtqGClcNBVs_Xu8CpyZalHMnLLfYsb73K1rxR1n_0w_WvLL5hQgy0ODY5kLLVUp4I_Kw-p9mWiOfIqeo8TweWewZj0OVx3FNj98lqpr3_sU4tUptDDarYznfQHu1_d5ufYV94gOTEhDBIx21tFifQfpjqpNrSj9uWiiNpvbeDueAznfT4aH0kyuw-YsHunpOpIhr5iX_ebL4phTVDSEBMD_IBZDb9lR6WTxN9wUNNXBzEWDX-jArOb3V2PBuEicu1_lMXjJpRYABBPZLcvi7mm9AfWCw_Xeynq8_gukCGzX8-tc6wcvUEU8OuxZNxMbLf7FKZnYqqKPWQqRtmjoHpT5tPcM5ekXV2eDWb_2TFp_JLxZiGAbu7ctsdrY3ep5ReRA6pAY4zN8Vz5AMN8XtwZD6lSoQzPH2lBPJ6kJo9inOCmfAedf5XlUEs54rk07oKR_i5VP7BUxcHbtUn2klbUstvj8Ggjtb6Xd52YybsXDJHeYvSVHGWBOxhHH5vwM_przTVHOEduOin6I6WTjUz0TMVLAaHdqsijjdAif0XKUq9FA5gGCwbVY0qjkl2g==",
+        "summary": []
+      },
+      {
+        "id": "msg_060574faed99b8d5006a9ec5e19fc487d082d2fd43c4905365",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    営業日は月曜日から金曜日とし、両端の日付は含めない。\n    日付の順序が逆でも、絶対値の営業日数を返す。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜=0 ～ 金曜=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nこの例では、両端を除いた `2024-01-02` ～ `2024-01-07` のうち、火曜日から金曜日の4日を営業日として数えます。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 112,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 445,
+      "output_tokens_details": {
+        "reasoning_tokens": 156
+      },
+      "total_tokens": 557
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    営業日は月曜日から金曜日とし、両端の日付は含めない。\n    日付の順序が逆でも、絶対値の営業日数を返す。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜=0 ～ 金曜=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nこの例では、両端を除いた `2024-01-02` ～ `2024-01-07` のうち、火曜日から金曜日の4日を営業日として数えます。",
+  "reasoning_summary": "",
+  "input_tokens": 112,
+  "output_tokens": 445,
+  "total_tokens": 557,
+  "reasoning_tokens": 156,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 9.249582529067993,
+    "generated_at": "2026-09-07T09:10:45"
+  }
+}

@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 4,
-  "extracted_code": "def format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"",
+  "extracted_code": "def format_currency(n):\n    # Format the number with commas for thousands, then prepend '$'\n    # If the number is negative, the '-' will naturally fall before the '$'\n    return f\"${n:,.0f}\" if n >= 0 else f\"-${abs(n):,.0f}\"",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 68,
-  "candidates_token_count": 218,
+  "prompt_token_count": 73,
+  "candidates_token_count": 311,
   "thoughts_token_count": null,
-  "total_token_count": 286,
-  "graded_at": "2026-09-06T06:53:07"
+  "total_token_count": 384,
+  "graded_at": "2026-09-07T08:46:09"
 }

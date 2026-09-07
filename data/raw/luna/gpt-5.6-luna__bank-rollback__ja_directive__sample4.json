@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0e7f46e589084cec006a9ec9c08d0487d0b1ad8bad7fb83494",
+    "object": "response",
+    "created_at": 1788791232,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791235,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0e7f46e589084cec006a9ec9c1108487d0b2b24dd241aa6cea",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsnDTVMHIHpmr7D5sx1DGdNb_CSOyaP8DxLM7gnaX6peXWR57jcDPxN4PBEKmMjPvxfB3KXddTm2D-Hhvow8ViLQzGeBnS9rsZ4BMR_gJIKQZhCSMsYP77i0PsF-NDaWtvSkBgHoNYvpZg7JaJGRFbDlVm8U_0QMcXJsyxsdCtbMICQGdBy43hSl0ECkpZJQYv0GaDapU7ePlWcpR2pwWP_CWFH-k9Hge5z202VS8MVa6oPEmr-sXwlAB6doqGHBpfoG9Hj3xCZiuCfYiHD8d-O_Xm32EEXP_wzQAe1sS8QNgL3iIbF2ebLtBgXTRsXfZhnVesAiB7zKMsj3WXXJNmVlOk_ArNY0dZEuiUMEpMVg-Up0vfzSWSk-H5f6mLoBdZZa5MGLnZkowYEZAxUgAFmcg-K45YHWJ6sJM-ogbl38_we8CQBlQIzQ4U_5Qy4LESZlk1CM8AsUaKK76h1SdeNgvLXd_LNqbh53ba9Me7utXbJEbdP3GPuu8WR3vsePrVvQe98MQbBhdmUkSct-1tsmMoxe19HWxz1LsjclXtWUHqX8VLLE4wK3V-VM-GgdG-4xJhTAaO3zOdlbPMyL-sofAICPDrA7qD2azJSWw2q8eAR76uqd_Lan84sMe_HoQJFbkkkt28sbfwVp_9mJjtAfpZh1UVxEO0oN5XaQ6zTdx9GBiewualrBwoZJV_hjyNpo-68p0KRsj0tYqzdXB9262bSWduu5k49hdbf1nKGBuuWDabt7CoS2IhpdSim1VTA8qudE1CWVzZrDG8tK8G584mq91eH4rI4mhmmX5AAl7kr6A5VCet1H1mlzOmyi9GhuYZTuonv5VsQ38ZMf7ZnX4J4aqSmRM2o9x42o0TB7EPfZgkYlrbW6HWbnEtjdPu4QDNDiu6tT7T6wrSFtIXFMyeHp8r7zA46mAgtxmfeNpCP1vFHx6l4Q9gROvhROsw248NNbv2JoOtau-j6emfTnrQ0HBDJJ8W3BIyplGette3fCycUrqnBR6C4tyNlbwEHCPSQ9IV8D_jaggRCZUFziyqbfOFhBvbtiutH1LSpc39cXsmmSOe_dk_r6qRoHe4WJZV2gC2fvjta_tdvqzjIruDW5WR2V2yiPuKudIZMFR9fNO_e8rIMAgLTRGOqc17x7bIGGOu-Gut5Ux5Gp7mhctaPoG3FFvPfmqT7ryFGF1aVuJRGR6uLEtVilgSrUHdLSetxzRA7yhiylS4_FurOUeSOYIoGGzYlELyMpQXiPpjp8tFDSKJap_p6C8ngksgcM5AUrTHVmYA0LuzFDQ_tppGrI3zwG2CZ0ORKoLGsp_wuYZjA1pZtRqNtHofEKkD1-R_T6ya5YkzYbesPbaJD1LIw63prfVtJbhNhhTtRKkLWVj_cDRPNqxuOxMiw11-KQinH-IkePTCDqeKC6LaRECQJkQAHSbHq19sIjBWwW0fvZUbEUH-gCJ6v3FN90whhUTgUNx6ctO0ibT0lgDEa2MfvXAjfFjjKojllOl-1KHYgDmP9_afbL8pGLSDs4A5U-r3FeUvWxvgzKo4BL6Eko6RTF2HbE3Yq8Jc1tUbBtws0hInKCgLoSutnNuM7sB7YJUGxKT3mocviasC0gpSuVsdeFKPska-8LVxd71MUiW7pq93B6d_YOlcM-3FjokkE-",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying function requirements**\n\nI see that the user is asking for a function related to handling numbers in Python, perhaps in Japanese. I need to provide the code along with explanations. I should clarify what I mean by a numeric list and make sure to implement it sequentially with a rollback if the balance falls below zero. I’ll consider using mutation and possibly include type hints, with examples to illustrate the logic. Let's make sure to maintain the original balance, and I might need to use Decimal, int, or float for numbers."
+          }
+        ]
+      },
+      {
+        "id": "msg_0e7f46e589084cec006a9ec9c340ec87d0be49be9197419963",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 167,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 180,
+      "output_tokens_details": {
+        "reasoning_tokens": 71
+      },
+      "total_tokens": 347
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Clarifying function requirements**\n\nI see that the user is asking for a function related to handling numbers in Python, perhaps in Japanese. I need to provide the code along with explanations. I should clarify what I mean by a numeric list and make sure to implement it sequentially with a rollback if the balance falls below zero. I’ll consider using mutation and possibly include type hints, with examples to illustrate the logic. Let's make sure to maintain the original balance, and I might need to use Decimal, int, or float for numbers.",
+  "input_tokens": 167,
+  "output_tokens": 180,
+  "total_tokens": 347,
+  "reasoning_tokens": 71,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_directive",
+    "sample_idx": 4,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.12076735496521,
+    "generated_at": "2026-09-07T09:27:15"
+  }
+}

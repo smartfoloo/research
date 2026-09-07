@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__ja_raw__sample1.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements と punctuation の対応関係を保ったまま、\n    要素の順序を反転して返す。\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さは同じである必要があります。\")\n\n    pairs = list(zip(elements, punctuation))\n    pairs.reverse()\n\n    new_elements = [element for element, _ in pairs]\n    new_punctuation = [mark for _, mark in pairs]\n\n    return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 108,
+  "output_tokens": 287,
+  "total_tokens": 395,
+  "reasoning_tokens": 89,
+  "reasoning_summary": "**Clarifying function for Japanese punctuation**\n\nI need to create a function in Japanese that aligns punctuation with each element and possibly reverses pairs. It might help to show validation of these pairs. I'll include examples, ensuring the code handles lists without mutating them. Zipping the reversed pairs might be useful. I should think about a function name and type hints too. Plus, I need to ensure that if lengths mismatch, a ValueError is raised. I’ll provide an explanation in Japanese as well.",
+  "graded_at": "2026-09-07T09:28:41"
+}

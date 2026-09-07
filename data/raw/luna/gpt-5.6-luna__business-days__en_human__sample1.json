@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_077f31e245d5b4df006a9ec4782c8487d09d1b89b2622a25d8",
+    "object": "response",
+    "created_at": 1788789880,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788789885,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_077f31e245d5b4df006a9ec479546c87d0bb172f5aa48b3567",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsR9zeAIk1UyjnamNoK359yKyfcp2WyPDxarDXMf4G8DOZUdhmz7Wqv2U21DvrhLQZRII5STqzifxlM0Qx-tX4Wuzvsuc1PozqFEjdXhGvydtd_RVBUmdCVrvwWrCboGRoK64sJ0uQReSq7tdALvCrP097y55Bt4VT-oiiJtuzDibtpa6ZbRKJ7zIHmMEOBLbqp2RrTD_HvLkCEWbddswRuHnMtTov6u_wgPQ5yQ5Iq7Zvw0UDySimNwM-qWdIbpBZmTDTTe5xnAkMN9LMxeq_EymmFrPumG1rSPUtij4moMg-m7RhAEvXgRoloNCJJTnejYFOB6ywLMHWav4TL5aV5F8AVQhybo-lX60EI3FP3lol9AQUW8qAS3-MAKgezLMqy3bqdQOjVkTtlxSZbxQLpXy5QGLLkCoFHA0gCeuUDDLiTDzG-r5orrR95x43CF68WYMN_9GXhxI9kouFo8TCZgHeh0D6H02GHaIamn5uiNmPtX8vq5RVNqShcALuYkeXNzUrUsoxRnkPsYpkRZsPhLeTN8x7i-Ue9JAEQoPA8HMILpX_aRi4_7Kh1AU6igl4l6J-JIc-ZRK_Br9Dv-eJ1yBIkF-9cxW7Pq6KkGvzIecdiMqyYfQ4KLizRHFTBdj6OBfKjgRnCGzUoASA3L9UYQnHoq_W_-EX1tEiwiCAN4aV4B021CW4W1b4ZAiU8mnK5mnBbGqmRf8fNiktFr6vtp5K43E7q2vXcwWq3i9I7hW7Htb_K-ML1cB5-MwmYpoToecAjAN9qO7o9TX_zjpPb9IAVFgsANhBXxIF7xj-mkqDpaBnLt-lZ-9fmFdFEJoYjWFONcmX30kMTb4udx_DqXB9Gjhn8Sqb6NpDy0F_hndlokaw_9Xb8jDHooXHp8GyzJ7p2D7sk0m_dgm-J8poLvnKEHSGBppcPIlFS0ngYKZBwFxUFOq4lzp0aJ8WfXe_7T_mHNZnPLoGhiJPrIlD4OuxbXYaZ4sfJSSNSltn0yEW1gyLMiVLu2U1Cvotcpx_RlJmhn1zEt8qsE7RLnmG1rxBLllGGsPP4QjHW1Y6b1jERidcZATC3G-YcDMaLK1cP7fD28RYmmmQ8lvmEcRJLTdZU6mqiE0-8UaG8uDUMwUoi7-malvogj6CgE1_5VJOsqMJE2knGfUJx4pD7fu5xIVWBhM497G-OYbXHdFm40Ign4uaEN8f9VGi15y36heZkJMgA2tqnJqltH_2e8lLQwnlNA5lxv8Kr45ka7pyiIOsTsokhdGGjdVOCIIGZs8hRG9T5a0uCpduQsA-dQT8i5WW2pCYV_8vBGtKZDO41Ejx66yvUNYpfo_sUM40CxOEsH7PzU1jOJFPZkiREdt4ZAX9O_NzmLrZstKKWx-yZ5ZK7RWb9AAVyxZz2J1XyFXh0r6FQshmjTVocBkgBYw0C0N8DRNZ0UEHUEjqJx5V1dspMCwIJLk0lTkTyhxfjhjN41c9CiBFaKLkVejSIvHn49Pst7_ab4kNYWDdiPKwolrQpQcSlhRLMOKotuX81cEGh4oaSIjWGPmBsq3MNgggSFeSq2TjNxAVN5yaes6oJZIjUkVPxWghFADUKFs1_lwK6ATyK41GoaQhrFYffEBQGPdOEHfMGYWutv0LLITwANpelc8MgyZBkKrI8YtVtcegKdnBb9STTbFmlsaWOIP5O3b3_5Pn8sCQLBvzqqkqCCb4-KxT4NrU53MPPH1hzbtHT-EXWs1zpBrbICjCaZM-LYjD3mKcYIKVHWyNjoDUIYcY4hq8FqooNiYUnEM7aGF8HGbSkLDmooAPF45oSrfYjbWruAQVuuh_YMrrTO8gC8yxlyH_CnaOBFk2I1TWytMcQXyApXcfpXxLKVIS-PJl4NqK5xE1u35a7FuLnfV4OnOzeQXF-CW3yM5cf41u_Ge1oWjwyroIxdhd-UzS_zTrKjkJMfBrdnAqsNYus-_7Vy1Y0UO7JQu2wvmnicLmf8GuC8nBv2USjkfbDHE8sOdx8SX9V8-8wHaeeRl-pWrrwEdTy4wBfrXHZZ9srrVqjQdPLwjaf5BgP8spLpgB6Om4TJ6AL60aJzMNROYEyrRYlvU9E_B7tzDC0cGJMPdfNWftrb572dJCIWUG3jL1Zbelth5KasWqjUvopTBYcXjfbU0GDu54Vbs4vmikHh_143UcgvaIu3OcPcVz3TMQ33ffeIVIqWxIoti-eaObOFz6UkkcAVZKlqC-fWTJa5PlsSt6M1y7ZGie2uR2AA_esw0Bbd2SRs-K-ACEhzxUIhTvB5QlTLKtd41ccvrT2VoHjCFRtazOapg-Dw8B33BIHxEy7DN6qCylMizHfqSRVwkZQWNxDJbzR4MFcB6LlwjcNoEiGQ3Unlhbs1lOiKQzSUa-Pw_6gSJRTj27teMqq5nibzPhI2usctoQ_T7aWhMKgcYC7jhGpXajziUWFTe839JOANeVrMVDXkP0YKEdY3a3rE7g5UnEBlOlHM3xu9DpUR-LSjv8peML7xVtn0he7t1eWFOFOybliWymgOid11gtCG4Pock1sHg7moW4WpocanulsX",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Crafting a date function**\n\nI need to craft an answer that explains how to interface between excluding endpoints, perhaps considering the order. Since the user hasn't specified a date order, I think implementing it as absolute would work. For example, from Jan 1 to Jan 8, excluding Jan 2 through Jan 5, would yield 4. \n\nI need to decide if reversed inputs would fit too, supporting symmetry by swapping. It’s important to ensure the same date returns zero business days. I’ll provide a Python function that effectively counts these weekdays with a loop and normalization. \n\nI just need to finalize the code and example now!"
+          }
+        ]
+      },
+      {
+        "id": "msg_077f31e245d5b4df006a9ec47d14c487d0be3b315ea6ef32a4",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import date, timedelta\n\ndef business_days(date1, date2):\n    start = date.fromisoformat(date1)\n    end = date.fromisoformat(date2)\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\n# Example\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 4\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 91,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 374,
+      "output_tokens_details": {
+        "reasoning_tokens": 215
+      },
+      "total_tokens": 465
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import date, timedelta\n\ndef business_days(date1, date2):\n    start = date.fromisoformat(date1)\n    end = date.fromisoformat(date2)\n\n    # Make the result independent of argument order\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\n# Example\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))  # 4\n```",
+  "reasoning_summary": "**Crafting a date function**\n\nI need to craft an answer that explains how to interface between excluding endpoints, perhaps considering the order. Since the user hasn't specified a date order, I think implementing it as absolute would work. For example, from Jan 1 to Jan 8, excluding Jan 2 through Jan 5, would yield 4. \n\nI need to decide if reversed inputs would fit too, supporting symmetry by swapping. It’s important to ensure the same date returns zero business days. I’ll provide a Python function that effectively counts these weekdays with a loop and normalization. \n\nI just need to finalize the code and example now!",
+  "input_tokens": 91,
+  "output_tokens": 374,
+  "total_tokens": 465,
+  "reasoning_tokens": 215,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 1,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.138756990432739,
+    "generated_at": "2026-09-07T09:04:45"
+  }
+}

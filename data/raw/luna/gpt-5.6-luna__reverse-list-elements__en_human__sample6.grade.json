@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__en_human__sample6.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 6,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements and punctuation must have the same length\")\n\n    paired = list(zip(elements, punctuation))\n    paired.reverse()\n\n    if not paired:\n        return [], []\n\n    new_elements, new_punctuation = zip(*paired)\n    return list(new_elements), list(new_punctuation)",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 204,
+  "total_tokens": 296,
+  "reasoning_tokens": 74,
+  "reasoning_summary": "**Crafting a solution**\n\nI need to create a code that interprets punctuation and manages two lists effectively. First, I should reverse both lists and consider including validation to handle potential issues, such as ensuring they have equal lengths to avoid ValueErrors. It might be useful to zip the reversed pairs together to maintain their association. I’ll also need to preserve the types across lists and ensure functionality with empty lists. Time to write this out!",
+  "graded_at": "2026-09-07T09:28:39"
+}

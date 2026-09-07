@@ -1,0 +1,134 @@
+{
+  "raw_api_response": {
+    "id": "resp_094d81f77c8ec2e1006a9ec5ba884c87d09ae66a05928a3867",
+    "object": "response",
+    "created_at": 1788790202,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790210,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_094d81f77c8ec2e1006a9ec5bafdc087d084099238b481e226",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsXDBLvOij2Up2aIPkiLcHNOC0Gdpr89inmlGabn29JETXR2rce20YDDJ656WLwR6pPLLkKKTzXXg3iTYIaniI-JcAGxvyftjCGrJuP1zgkJCd8b8KN3jmRPMKTFgcr9Ncl_kAyTaZODA362UKYcxyWH19HwQDVjqeUYIeY_RBtz0g_gdsrojZCknt9CZ_8vrx5BvCbaQdfHEiZJcvl5I-r8cEltt5CL2_lB2kcJwjNvww-jPIEBtQdMmtNVWzwCZBn7MSA7TDU3ijrc-qWtvtMJ-itgUSdAMOPVJBiVGR-FcWDYJzlro5FPSkaLPue-nxn4uDeg3wDiFdyd-iGHJpkJlXZhvSAVfvFqqCDQtqy8h2FLNYbR-HZ3KHSr4iFrofttL3vKwPHaVfSWb6DjeIkhb2iGA29RSIuFrShXshSAW2LlcZGK4zKpXkgUtWFQUv1po36oqwURWGgBu4q8qXqg4NEYHdxkjciaKhZrKxQG8Q3XYgDUtEQGmhyaRR-6n7OiKWqlPBeNS4VQiekEm7gvfcz--hLaOqBk-fI3Ud_RQwQdmCVIwPXbfrtwcFR6rYW6MOXc9oUQjRXvtOcd7wWY2hJRk5DqgHi0PINh6H9LVd0X5x06euB5U2VP22CVhalpHKYsL_0oz0cCbmyC0dwbnl-fLDyEl_xptM1rK8NmPDf2yYntBij-vhkz-hNppzEBTjPtAEX9nT7GrxZ_ZE0TtFgCM-dkWzbA5V5_8YOk6vEkyxNm6IJS42BIS8oHOuZvOGbKdZOhy4yRf4K34STDWjsSuInyr4mx07tPItw1cpIP4dpsFCSWtp_p4bmm24-6QBxsqPQv0PlruSuXdC03A1sWwMmFsrgGEK1U4fB8wpMzafzKtdG84OG2EeQ0xm0asz-3df-o-9Z_enwTwCI8S09CXs_ISwxFpT3w51TUnfUxF2wGBipZmnFBDMSPrCxBZQ79azhswfBaT77AIRu6aO-95tLISKFlA5NwJGw73OdhPfFMgiSGfezyQvoe1O7KlEvovxQZUQCAH8I8WHbUuUT9LIDe0SxpwMVqVGBlonC_I1xppXP95vxnVsRmTIybBCngGdTHIzPDMPfBef8KhDzbb4t811tw6dUbLRIA92cPVG2Dx8sTe-vRj5ez9ZFHmD5c0jAwsc3OnknNCppe59ktjCUU1JrulevJB7aw9q5Q4SOJIqesfYdFlrFp3-NLptcP140xbep9zyqibusKXMxU2zpx54U7sMrzAOkNk03D2NLGpn4Rkzlw9A1ZiX-Y06c1YG1MherQxPcwQyalXLqG5wtss7WmnO673IH66ym6SrZhRObGf0ugX4OKzXFgsoGH_YTMlr0oKCTItf2CWiuzzbWKBtScL9J_y3ntDAqdZDmJE4nbmQuH9GcLwEkAr5S4UlGk3qBpJYKXUW92w6-soW6k0-oScdBE9p0LiRLKg57VigP8urICL2h-bDyUY4PLleFWVpXBHthYu3tgvW7X3O8lLZsPPQPXSAdqdMQVIhQeWvy5tlwomPLewQ6YOqALjwyA-TN8xzMGZfKwoMJpub0LKzrKFHSgQLKpYHll5Wmu04BtiYRt4-0G79BfDzOOhv0enELq7UhJ-Z2razhRMp5CQHu-woSNKLvL-1YTKsiEtLSkqJfAwIu0h_VVTsMe9micg_3vWSCKllwZuNT1bSejChUmcM0DM73gI4VWS2AuNykARHDdDSOBlmnA6RuW-M1bFFJ3e9MNYYVJHp1ngeq-v3PGEtj2-_K9DAL7LrePIpNDFsssMevCyAJwKGQRlLnfGPTCGz9jhSy7SsITM5hxu2e78NXrEzgPnpecbqlIeoQWECqSDISeFPNi1ixeO16KYhts2MloWMNMOdlTH0ji-KJnwuYkq0elfME992CsEvpE3qSjtWVEyrVpZFTSW0U4woMCqWiuraj9bEHuayTzkzYGTZjKtaNiqGSU1HGztoQSrtLeQJBw723UxTfhT1S79nobMaiaburVc0eDGJJ0OeA-ZY6usrSIfdNtEkc0LzCyHC195FWMIjdsllUNDu3XkGFwbBPWHlF8PH_6oYMplpo5sfeP31eLUO_NdHZ11otYYcB-jx18lHqjPmh3TbFFRe5sxblGODLi0yCQMrVHL_luiGHfK_O6XBGSJ4cynmc5xqP4V6WR2yTiZQv-SG-4ikJBkTYi5XE86MWK7q7T1c4cbQREhwJY4nFO0xM597pMpPfXXE1OFuUajuY4bbIivfZDEV3x1ZpEQCJRN7CSOA7UrIsnAW68oKQJPiVUBmGXiZVFkgRHTTlV8EA9aBJu11R8VXDmEHZMYPGMojmRVl81kTHA33uTnLQTVlqJvS_zTKsgAQd_TOf8CP0pthi2tc15S23kgdNFrBTZkLPeXkFzd7o66FLxRxxib6NTD7ZnlkpXoXib0p5qbjduBU2GLZlWpEbTmxzbR-YOWYQBzXTklTZKT5FDPDBIUqDLlesErER09vyotO8obswG0T1e1CrPPRtNqtHBhVnJClPqsSF6065xyIU88vkKw0WZz7IbxSLzRcS2IKrlBYxclIVrsn2fdUk8FKsG-0CEsEF_fxM0KqHH6ctxsq3emVEguwJ7cQwJR6RgOEcH4xpX7_IiUXpZGc1jm49x8Pb-TiaGeb6hIZtg1TpSxf9BCGkqf8iFJ_yRaBcJfvehpb-cOAJXwAQ-on1dn5Rl5WBn6GzcqIL7gDuF7yXV3Ou_bEW9fB-2M6pedOkbgK31XVbCm1AW-p0tyXzT-H2mgV9LkHlw1VlswyKasPF6wW8HuyY4sLOJwwTKcrQlbFWPobgS-kI0K6SO3VzL5KqtWJehJj1AfZNiIzpxi62kWR837tMS67SH_G0H1cfdjJP2PtzhYDTTp1yXS_dnqsPQyGFercZTrvlC_mgtE2LINRN31gT_llW7TjdfXQ3saXfZQbaf8O0iMrFF1kronLjMuoHwt3elzMG6hW9tULwuQ3gWhfFe4XHc8AZRSBi1e_qztjXJlcucLXdv0ceAL3nBkw81jtSLdbImjjEJqPET2JQlrL2Md1w_DjDJ4MpH9IErIWvVQWGChoKcIxoNnWrmKlwRaPXs-WJTrPNnMByCHmSPQLmGRZ1x1tTudg-9jPb4ax2FNtxpk5Lr1rKMVK0dAq99xHwGNR2nj4GxJhTPkWHp-7kOnyVs0Etj5xNUQscC0rg3Il7hwOWNro95sqGGfNYTiio0REU2iyYcsiDbkcerCkkwKcmAi4tEQKjuFfzKyzD1rdX4Sb7q4Wh7OSXnOFIt1wUUQ97mp7_AXvW-ibFNOkd8iU_QUrbs0p3dOcN3QyqjSf9ycAo_PWYw7qBSQOu2JvV1lXIqKthatu9OkImoMACxOZKqVpSERIYpEkvPye5HvPnCnZllkFZafbJNyFMqj9iRr3vL3ZwALOff2dtjE-3PQUwGmArQPqdi7ZoQhhP23Z3hjWdXffqQ1VWpzrqHQw67Sf8mXAwCF8eO_PUGlT7oGT6AT9GMbJ0-WrHiEc3m0dyFlSdGhlpSNWEYpriYCqVnR8V5T4gj6PZChMa3hHMyhDI5nXDdYahfqq8ZG0NZvNQUGtOX04GnPV1u4L8PEx9SJ-BzX01Oy6kuiXiZm65ST4evR0AFT75OS8OTPsEEbOyks1KCknuZUkHdiDE8FgHRWnRIyt5e20Ynf9rJvr4VqNFE17Je3Xcrgux2n3hXEkd08vyNKTQwavVZQRfQMpvuO_TRopTjil8zyF3bGO80WHS3YGxTbH47LecKFVesj-QXPUfZ8AzswTcRTJDkdcqJZSQXXv04tsQFuiK5K6rNTCLW7lfuvLvtYTyIgoPbZZfAMNDS93n84d2A1S1SGoIeGU79k1LjurcsiWrAhHwcMJTVOjPep_lS2I5UH1CP68twLi4Fx-K1b4-k9PjgolattiwgVOXnTCjKCRqaLqdk0K5bp7x2PvJ0-RPlzwL421sgxtn0UJTjVircIdJizItaEvQLmevmNtBvsgCxeiTu5HgZ5FIJ1rQ3eiF_A8auezcVXEkj99rSLE8y4BG0aLaqW6vbge2GFwjY80I=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering date calculations**\n\nI need to craft an answer for a code explanation about counting weekdays between two dates. I should interpret how to handle excluding endpoints and possibly the order of dates. For example, if I'm looking at dates from January 1 to January 8, I might consider just the weekdays in between, like January 2-5. To keep it efficient, I could use datetime and create a function that counts weekdays strictly inside that range. There’s also the idea of validating date formats and ensuring order, which seems important!"
+          },
+          {
+            "type": "summary_text",
+            "text": "**Developing a date function**\n\nI'm thinking about how to create a function in Python that counts weekdays between two dates using the `datetime` module. I can leverage the `toordinal()` method to get a clear starting point, starting from a reference date like January 1, 0001. I’ll need to ensure that if the first date is after the second, I can handle that and return a valid count of weekdays. It’s essential to account for order and handle endpoints properly, likely using a loop for clarity while keeping it efficient!"
+          }
+        ]
+      },
+      {
+        "id": "msg_094d81f77c8ec2e1006a9ec5c2696887d0b39d63586730b11d",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the calculation order-independent\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 91,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 680,
+      "output_tokens_details": {
+        "reasoning_tokens": 496
+      },
+      "total_tokens": 771
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Make the calculation order-independent\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```",
+  "reasoning_summary": "**Considering date calculations**\n\nI need to craft an answer for a code explanation about counting weekdays between two dates. I should interpret how to handle excluding endpoints and possibly the order of dates. For example, if I'm looking at dates from January 1 to January 8, I might consider just the weekdays in between, like January 2-5. To keep it efficient, I could use datetime and create a function that counts weekdays strictly inside that range. There’s also the idea of validating date formats and ensuring order, which seems important!\n\n**Developing a date function**\n\nI'm thinking about how to create a function in Python that counts weekdays between two dates using the `datetime` module. I can leverage the `toordinal()` method to get a clear starting point, starting from a reference date like January 1, 0001. I’ll need to ensure that if the first date is after the second, I can handle that and return a valid count of weekdays. It’s essential to account for order and handle endpoints properly, likely using a loop for clarity while keeping it efficient!",
+  "input_tokens": 91,
+  "output_tokens": 680,
+  "total_tokens": 771,
+  "reasoning_tokens": 496,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 4,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 10.456937789916992,
+    "generated_at": "2026-09-07T09:10:10"
+  }
+}

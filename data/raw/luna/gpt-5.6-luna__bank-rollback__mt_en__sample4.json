@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0b5e25846b6bc121006a9ec9dcd49487d0a360771024874e78",
+    "object": "response",
+    "created_at": 1788791260,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791263,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0b5e25846b6bc121006a9ec9dd3d5087d0aa63917949cb4d1d",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsnfkmvmxs-nplFwfp1ES8SuMC3hzv2U4uGpvI2QP1K_Jgj4pO1VSIRGmljhm7oXRV-7-KpY8tydoAkFhyVF_Sy-bZe9x7h3tk5BUkQXygdoAGAbloyhR1yu0BjNBhIO8EpvD-D6SOAy3cMg8TKJFKlC2QJlaXlc8Y9rRLr4VhporUWQA0cJo7GfrE6MuMLE5uk99cYMi3a929_oqRCzREAnEPycKE1Y4bMQp43Zu9QT67-ce6Dc1L0ANECE2hX9e-4dnk8Nab3GqaMJxHQqme5EKUdzzZJy8-Y2oMZa8kw1X_fmAElHgD6L_gcWdZXejooDpRemrhrbJ0rI1G0Ahdq8GVAhCUdCbkLjQ0GYPQX56kd53uM34uNYNhEac4O9y2_RxHb9bi5ZG8wVFEjbLyA4gmSRLOKAZz_KfWZJBl5zdXQVb_0xgbi1Qj5gZf39mJZUxUmG15_QNYOIU-x-kx8OQzJy457mraf6UfMm_LNDwKV-gwxmy2TdxLJ68GZbe5Q48JakQB-3KLmU1qc9_1VWt5eMXmMTewNVFI6N6FBsaJxz8egi8GvLIr8KoARlPfGgkpOT6dOcxjIJ3h2VeCP8yvUMhVmiC6ZVTxwPwa6ZpXXUSH3DDuLKuDleRwag-6zPimjJOOmtfiTD4xFDTa5Kzd11-htKd66D48B3YbVk3c88QQvbd6-DLhN7ZKjYy1GE72xTD7668X28OQnRoDGaDiyZlxa0tjXRTTeBbcuMmAcTjERPc297pFLpPzG0sIjiXdXCRCE4-DP8g5au8iYzXJtwlowzgJ--sz_P0quNWrkiiNi3at2Qt_5iZtr8SC4Ft6KTfB3FxBzxS3fJLrihromMUWMnMt44dA52S-nXduDtIyhy3C99AVjg9MAmyKq5dZmI84Rew499J5xXeCgsfYQsYx-o3I3jzslI5m2x6TX7akYx2BqsA5Tul5H8aPKF91KU12qhZq67eewq4aXEkMt-wW-eIokeybem_hNZXbR_EY3lcEeOXOvGbRRsvUIt5wxYH9gw6qiBAkv5hOcRGs2OesBwdfonqQUETyzRUOo3RqkUCvv3d_TrKagTgLHJnsXYt7TSiJeNM0KL9h-M8CQzZpjMIBJKmmo-AzMGHdsiUQaJwFBp1bqUBbSqxmzfF2WfDqcwXvOVvpFnDRyoZOl4wfEb61qfKCDcPdSd3vF5jbeuEI_5ftjAEKEWz4lEDz30COOeofzchc0e83QLHXr7VFD64fAPDupt0w5-4tYsXm6AHzn01Wk60jYdne6cHczY6ADv68qEEKIbgY6gcb93dWBPpvisUtEArk109mtIUmeTw0Y4pfE4z6s83CUqaUIC-1K46Hm1ADW7nZ7dwC7mT3u7iMxG2et-7a7ed5WJIBMyruojiLg0ldALa6ukUlUHD9I0NQAsmC8i3wrZL-WLYvd45gMyOctajVFkM-egaHLOMbdaNfEwu-xguBOReDCNFraFEiA5tfgY0GnmpgoajTaHT_FOx7Po7nc77vFQl-ajtVI_OL_THDlziyqOBpu416OLt4INNDANotSL1SThvYht6JcH1bTaoiylmpHObcdCJ3VZvtT4gxNsn3x7RO0zRgbm66QMt96qmSdd4J0rBtctKtqXzyDHhS07fUhELkoz9m54cSKM-_FzoUXJmiOvi98AMFdT7tIkcODDISvDXO4o7T-3LWR5vnam5-KaFfo8RSUM_iPvidm7cranD2qdxzXVhKUwliSHxnDiW0GSWpWMDNUWYi3BKuOJzSU=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Evaluating code design**\n\nI need to create a function for handling balances, ensuring I address any ambiguity. If the balance goes negative, it should return the original balance and a false value. I want to handle both positive and negative transactions, using the original balance for calculations. For instance, 100 plus 50 will be 150, but if I subtract 200, it should return the original balance and false. I'll consider adding type hints and providing a code explanation to clarify my approach."
+          }
+        ]
+      },
+      {
+        "id": "msg_0b5e25846b6bc121006a9ec9df3ac887d0bb81b990d1b0fb14",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    original_balance = balance\n\n    for transaction in transactions:\n        balance += transaction\n\n        if balance < 0:\n            return original_balance, False\n\n    return balance, True\n```\n\nExample:\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 108,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 210,
+      "output_tokens_details": {
+        "reasoning_tokens": 104
+      },
+      "total_tokens": 318
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    original_balance = balance\n\n    for transaction in transactions:\n        balance += transaction\n\n        if balance < 0:\n            return original_balance, False\n\n    return balance, True\n```\n\nExample:\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Evaluating code design**\n\nI need to create a function for handling balances, ensuring I address any ambiguity. If the balance goes negative, it should return the original balance and a false value. I want to handle both positive and negative transactions, using the original balance for calculations. For instance, 100 plus 50 will be 150, but if I subtract 200, it should return the original balance and false. I'll consider adding type hints and providing a code explanation to clarify my approach.",
+  "input_tokens": 108,
+  "output_tokens": 210,
+  "total_tokens": 318,
+  "reasoning_tokens": 104,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "mt_en",
+    "sample_idx": 4,
+    "prompt_text": "Create a Python function called `bank_rollback(balance, transactions)`. `transactions` is a numeric list of transaction amounts. Try to apply the given transactions in order and return the calculated final balance. If the balance becomes negative even during calculation, stop the calculation and return `(balance, False)` using the original balance `balance`. Otherwise, return `(final_balance, True)`. (Example: `balance=100, transactions=[50, -30, -200]` -> `(100, False)`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 4.97178053855896,
+    "generated_at": "2026-09-07T09:27:43"
+  }
+}

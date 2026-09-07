@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 4,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    # Keep a copy of the original balance in case we need to roll back\n    original_balance = balance\n    current_balance = balance\n    \n    # Process each transaction in order\n    for t in transactions:\n        current_balance += t\n        # If the balance drops below zero, reject all transactions\n        if current_balance < 0:\n            return (original_balance, False)\n            \n    # If all transactions are processed successfully without negative balance\n    return (current_balance, True)\n\n# --- Examples ---\nprint(bank_rollback(100, [50, -30, -200]))  # Output: (100, False)\nprint(bank_rollback(100, [50, -30, -20]))   # Output: (100, True)",
-  "stdout": "(100, False)\n(100, True)\nPASSED 4/4\n",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    original_balance = balance\n    current_balance = balance\n    \n    for tx in transactions:\n        current_balance += tx\n        if current_balance < 0:\n            return (original_balance, False)\n            \n    return (current_balance, True)",
+  "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 100,
-  "candidates_token_count": 352,
+  "prompt_token_count": 111,
+  "candidates_token_count": 213,
   "thoughts_token_count": null,
-  "total_token_count": 452,
-  "graded_at": "2026-09-06T06:52:51"
+  "total_token_count": 324,
+  "graded_at": "2026-09-07T08:46:05"
 }

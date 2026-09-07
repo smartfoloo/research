@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_raw__sample1.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 1,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間にある営業日（月曜日〜金曜日）を返す。\n    date1 と date2 自体は含まない。\n    祝日は考慮しない。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序にかかわらず計算できるようにする\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        # weekday(): 月曜日=0、日曜日=6\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 112,
+  "output_tokens": 489,
+  "total_tokens": 601,
+  "reasoning_tokens": 193,
+  "reasoning_summary": "**Creating a date function**\n\nI need to provide a solution in Japanese and clarify the order of dates. It seems like I should handle absolute dates and exclude endpoints. For example, counting weekdays between January 1 (Monday) and January 8 (Monday) would result in four weekdays: January 2 to January 5.\n\nI could implement this using Python's datetime library, ensuring to handle cases where date1 might be greater than date2. I'll make sure to raise a ValueError for invalid formats. It looks like including clear examples is essential, and I want to use proper type hints in the code!",
+  "graded_at": "2026-09-07T09:28:18"
+}

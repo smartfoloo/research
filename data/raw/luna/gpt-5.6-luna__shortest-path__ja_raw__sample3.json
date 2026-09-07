@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_022763ae3e0804c1006a9ec8d3822887d09d4b0e6ad599cc3c",
+    "object": "response",
+    "created_at": 1788790995,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791006,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_022763ae3e0804c1006a9ec8d4362c87d0af21e629cb47c341",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsjf9nmJjYf27_SxBZ3D1th7ezf7uid6dDiJ2rXXqLmr8tKLSv0bApAxpPYK9vprqPTHmplbBfLh949CoQYoOxfqAJhZYJOPPCS7h7NdW6aP7oyXjuAPVQNHTKy89llTGQBjBYXzSBq2mcdMTvU2rJUUDbwOEzYpr1xR4st1lelBPcK_MP7izRqHDVtuXEh0-haw20VqlMkKQw7V9vNC0TmTtR0Pvjb6-EteBKshfYAmh-iShiYscnYq4cVGlc0TNHyLg7oXTreYfnBAX8aPNNLF5QTFc5MK1xaRhjG-uSvdv_wZL5eYg08PoUlsMqpkeOz2JMznwlCNVvXwDWkwK-UxdwKditAlDV4Xs2aNQdQ6GV2YNBChyMH6-c8WsrVgQ_umEnMcBQOD5dcIEHHpXUGkBuOZMcqVm66ys2EGhxz-ohehhN78Io1IEJ6PRJ6RCtjZgxdMmPq89gxNg5PQM-eCNHawMTTYiQicfyFGijmgJLUAVfRRG6-rkRXj0FZPCwcGDJpZVDfhD5TT6sKt9yoOizybpYPuJhuVRaE62EElm3xiVfsL6kvuipHxj9bsz1PJQStPt5YzyelON3AwFYkMi1riIItFhhw_kM76C1DgxAomIy_0gOKj_u2oBAdkGOwGOq475LiqlPxYhg3RjZKLpwpvd4kKtQgjKvMPUpfg1C4tPOMgwurXCMszyJZYBJrdbb--DFuI5q2oaSvNBwvBqg2VQ8JL4BAmvdDjit_1yf6iMtyExnYX_MgQHL5UvIne_0SDPuWxLgK3SbXiZUvL98AtYMR5OFt0dRaL7pYPJkBt57G97i9TNB4CbxK_SjZpbgmvWpIr5A38aeAMU-p5FeyFrOJNoSWPl-KPnfovFupTB-UnGEaAcMQg7y3sUBlLpkMjGb0wHvN23Sq1cDRE6tTqqP5XLyUTJHZGRDG46ip2TaGxjslgUz8Ioj5crsssSixHQnE7EOjp695imI1pMdq3x3Y4YXotJRyYbOdH0iRBnU9cgC8VmmhkNOkiCdmMLzJEVTzJ5zqRseS7MANM6YkkbqiGICj6h1nOdx-O-ha92d9tf8gAvDwNUZRW3sry2duyFrzR0LFmNSo8YI7KAyi3jjX85WMayzwZfKRBfdeDhL0d3OqRfmYZB_QVc_RjXcs-tDdIsrDZ3jOGUnko_1_kEjEiWzPOcwv6ZAD2ubCp9zxDvAUlxDwsBuFIY11BzNQxPe3xSn6mh53o_1hPOGlYCmTfu3kYOF82NHP2nhB2PynOilJuMW3znuflX0hPxmiha3z4SOjsV-WVnBvcDmipcI8peikCz6kiJjgc0inpiXnkxZykvClwHGQSHSJbTnJlw261kDMiUMhIW7Sm7f5GyZ3hEE9YsOGKCfY99tutzskAveNZwovsNPEOe9kiYOQo2sgMHJdC2Rvd1SHWe8b7_sDnJ_HNB9oZU15A4g9G7uNzp5lyKlIjZV46Y7n_UDlItWbK4Wd2gEml3SPXsGXw4SntqkZ-S_L4kTK19yTmz4W7oYLwsCV-8DAqiCmjUETRyRgvpE8fD0kwJVQEjli1UX5C_5XTaJ3FlA_UUMm3rzF4uv6b8x0qXzX5CoQ-KEmRboo93LPSFgFOlLQlhHo2jMUfbyVEsA4na_5MTTEgtXb-knAAehoaW3JkXiE20ooqcda-5_3W3eYD5uP9sw2XXy-ZK8iHtkrwIBRzQKO07cCMIXsRZgdcZim-4MczKnqqPK2aDRVWADNJag2UPmp6C85U9t1r4dhSKiv78YeZOQ8NQVuWEm-ZCBMCAnJg_8tFirbNk8d2gqnshplpVozzbqWh2mji2M0b9cmqA23Bi4Zhv-zf5Ly8lBk4Uwl-CI6Jga4pqXPbXt4cx0kZ81o1pKVjhGGrELhmgU6wgITKOoOVwLVV7creMLEWd2kueut-hKYCFvcRx9JJBpS9fOoL1-k8lspAVzc6fQff2MSVwdoY93iTBEzKW6lBwyQOsF78WEtoRGUDuL84IP9Y4gihzy_BM9C-kCC1bVwYqyqPX4c8-VyCAHRoA45BZksZ4c-L1VVTc4bUPDHisPreWeBru41y_yr6ZuKIYOp38y7umFkIXHPuuaBg_RC89_muK86cz64G1CneTDYPvAAMkNWs8MT4uY-mZ7792Q8jfbFhS1ZwhG0F_B5-NznvSzEiei9zVtfD9HP_-V24RGoaYIZSWOryCsDxyogVMq6Yn1FOMwRq5zB1-HgnUDhLRCO5GMuNi_hrol4VQIT0XMwmGso5RBt0-cgKJP3qAev8ix0fHyI-BKgqTKpnpd3kFX5zx-F0AEGzZ5p9TZxmECRF9791e0Uqc4WEAmM3cRpkaNGPwZA14zePl63bYmQi3sVWNfWeHM23NxhQcWOPt78IdIw2QPPYcKm05XfjEjlzUMlcqyKdDbiNbWBdPNG61tYdlXOlHReF1WEEYmiBzxNfMISE3Vm9iSPEDGGmWdswL6SEMb4fm34rxWOdiQqRo22ChCf_8P7RHBllQwDE4ZyjU2MRyMzvDkiKly1Tpbm3PuG_hGlSYoJQz05_0zY-9zNOqD2du0pH4jeSd774n6ng8EZj85enn_d7v7CfJCCOOz8cFyPQ3JfjeIvqsZX_y__pi0ghOJOjTgIC5PVJ605fFpJlbVuPQR8RFhvzWwO4flLxdtQc8VvGOa_pbFJ64AxAmaI1CUbjKOMfK2EuJqYmOlHdMIePaudlBWQEQvpHsOU1Ocj3TcjEU0HIGJJWCf5CYHtZuiDUZRybqhJRol4llSU1OgmvaxZsiMB0EwZmYQlWxGZ7KONspJ_Gp1-0AWzPJCioOY3xNfGDNWWQ1KPxlcdRhiDbCHTzpENskWhUa-QEqIWOkLRtWpZPpdKFfOHcxLqtqFqWVhw8mz2niLhu5f408Zk8H80iiDgPZKdbjQV8tHL5WXEsi_hYgOBSqD5SHJEZxjY8Zg0H1tfXABquKE6TwhZVVdes6muw73lsRnPfvmQhxb4z8jdBMaTSAwLAfjAzsjmPK7aiYBVf0YEsvKejpYwWm693iZzZCZt9SXeQ0LRJ_7YoW3uif-o2UT5iXU-vRCGFEAUH18tZKFbXqslbozWvnAEjW49KtiYb-UWvD2f1wl1RsoLkf2TM88W-ARo6cTl-vWNgUiKym__auRO7Q9dNw8YIjyLeLnCJVUf8hH8QT7Vv8BDdXfIIqi7KU6AiJlytpuguvToWfUOBWF6lXDGJM-u-yvXRk66smdi3yHmO81-PrHiXqjgD0Cl71h42et8PbIRxyUXh85TD9rHHT49GYZltxrUyFODYKHlv7KmrYb4UyzfObdVIGOsPWJ-TApoSk6wt4VPRsNLwAjEHKnOm96Ee4emDb11JuIIuzztapMWq5HMVAhCT-HPz2JN6blnu1rOOgWfMA_iSKyZ11iboNs-Us0EscclXP5ZWb9cdpHKIx1S1k_sg-PqgqrLDfp4kxCAWsP4XkaJFeRd2cJkYpEnGNa86mdbJrdFFB7RHLXYvOopGxUo58SH6829FZoZbKSWhQoGbvcmqTLKQbWWSGDj84BOT87WOflAYOO1AnjY-G-Ii97L5IeXnutZOctWSwllnPFqKwzxvUMPCpEDjKg0jN4d5EVt6VIOM6qOUpRGjE2a95ktN85fofsZWqYh0ytv0aaWn6QScguQvZBlmCSGwmjmENt7wNHUlgWKEBrmJBkgI6Kiz6_PuL0ejlTKiQgBiZ0aT8PJkBjvDM6z4oRsBs88Wc0l3pheIDJVP8yBWDDndeTYRdE-SMAb8cPi7IvgaDDnbCX2uSOjppFxnZW9WDft6O2yZvgcTqlbKTeZ5YjKHBQVq5PEX",
+        "summary": []
+      },
+      {
+        "id": "msg_022763ae3e0804c1006a9ec8da079487d08e4d72a46ffa13b5",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    # エッジを確認しつつ、有向グラフを構築\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番を利用する\n    sequence = count()\n    queue = [(0, next(sequence), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古い候補は無視\n        if current_distance > distances.get(current, float(\"inf\")):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # predecessor 情報から経路を復元\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\nダイクストラ法を使用しているため、すべてのエッジの重みが 0 以上である必要があります。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 209,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 927,
+      "output_tokens_details": {
+        "reasoning_tokens": 392
+      },
+      "total_tokens": 1136
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    # エッジを確認しつつ、有向グラフを構築\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番を利用する\n    sequence = count()\n    queue = [(0, next(sequence), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古い候補は無視\n        if current_distance > distances.get(current, float(\"inf\")):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # predecessor 情報から経路を復元\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\nダイクストラ法を使用しているため、すべてのエッジの重みが 0 以上である必要があります。",
+  "reasoning_summary": "",
+  "input_tokens": 209,
+  "output_tokens": 927,
+  "total_tokens": 1136,
+  "reasoning_tokens": 392,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 3,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 14.064515829086304,
+    "generated_at": "2026-09-07T09:23:26"
+  }
+}

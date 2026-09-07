@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_directive__sample3.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 3,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    両端の日付は含まない。\n    祝日は考慮せず、月曜日〜金曜日のみを営業日とする。\n\n    日付の順序が逆でも、絶対値として計算する。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n    current = start + timedelta(days=1)\n    count = 0\n\n    while current < end:\n        # weekday(): 月曜日=0, ..., 金曜日=4, 土曜日=5, 日曜日=6\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 121,
+  "output_tokens": 688,
+  "total_tokens": 809,
+  "reasoning_tokens": 397,
+  "reasoning_summary": "**Clarifying date calculations**\n\nI’m looking to create a function that counts business days between two dates, likely with some specifics for Japanese code. It seems I need to exclude endpoints and possibly reverse the dates if needed. For example, counting weekdays between certain dates might involve using `datetime` and ensuring a strict format. \n\nI'll prepare the function to handle different scenarios, including checking for equal dates and potentially making the count symmetric. \n\nI’ll provide the code and a clear explanation without delving into English thoughts.\n\n**Handling date validations**\n\nI'm considering whether to include type errors and how `date.strptime` validates formats. Using `fromisoformat` from Python 3.7 could make it more straightforward. The task asks for a count of weekdays with no holidays included, and I should clarify how to handle reversed dates. \n\nUsers might expect a signed count if date1 is later, so I need to specify behavior. I could also explore providing a signed variant of the function. I'll keep the explanation concise and switch to Japanese for the final answer, as requested.",
+  "graded_at": "2026-09-07T09:28:16"
+}

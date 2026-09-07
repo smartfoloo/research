@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0ccbd9b18cb26ea1006a9ec659c9d487d09082b3c93dd175f3",
+    "object": "response",
+    "created_at": 1788790361,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790366,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0ccbd9b18cb26ea1006a9ec65a43fc87d0af699e3960f7896a",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsZekr_jk3MLwvz3EzDLethicbPLsVJwpnQmV2qlqZMewSHmOZO1VV1--G-9ooRbVccXnfqvbyCT8luLL14g0orBidEA4MFWrJ87GhXFCskH82C_e-TS4ouPHeEKTms7PggU5ZteGbsOy2Msel23kmPcp6_e-n6i6BUy7KdhFvpvruGiZIB17bIWJsrvqrY54bajbBOBVCZ9AnUw9QUpq3Jky-qTOg8vbWz2No6ezqTLOgsGFEruikso6SBZVW2HnzE0xP7a8sePhaemboQKg4TjAVrRSX8bvWy0XlSHSO0I6q83iT3r56opu_j7snJSk9g-MoghrPMJCw10xqYrD359utpn-OQ6kQDMebvga2loTNKFqJ-RyXlUOARu2Vv2KMNVM_GKB3mxnnv60_sddYxC6v-_LTTOFQt0cgcnaqcRNz98XbDA4eGTxM-v3q61QKYunbBGy-4067V2lWj8oWxL_JAwY4pMHV3pncEUifx9uNaq6I8bDDyySG7LGx3FhsU9eFiufKU7FAK53apdsN_jSAhu5ozOY1hrWJJ-pQgR1_ACNHX-Z0vLuKgr_9H6pKVx-hO-S0TZvUwjJebL8rPVdMBG9Tkc6xqiMNHpkv7jPJlk1_eVw-psGaLDlVW0mx22xGQ-9raRYAvXhQ9Ke4vCRuRIkp2yb6FxYRz7t0gIvm1ZLknwH3zpik_pgYu1-SJ2pfwt9s12U6OLEoU3ldLXnYhJR78UlRBbKwwVwt-nU5R4u-25MGshlutmwB4bt1ruok39p7ea1IPLkNz-WObotAc-0Pbn6Kctyg8y_God4XPiPZAhrnnxKvFjEkUtaRM2UKfzRqv9f5CEqmvsOUvURf7xz2vKgvqJT356YY42FBIo1eEChZqssmC9nNfgGfzD4_MiYc09Q_p8sMGAQwdKQnrOua90QBugjmlMYuFLqa5W8UIHqa2UgJ7yOUL58nSzYH6HhtFZ05nf-ty4Z21ArFm-_ZhVIdDd2NugnIpuDiqZYg5W8Ts4Z4jBlgEPubmn6ru34jEX4wPF2YXH3Vem1OwVPpd-RJwjeOg78DwzU2d0Wz38brq3X5-oUzP5vAsvsYXBANMPJTEvaGGCdtdY0w9dn8bq1O89_0aKH0WzqD73-gm83jjEyGGSc2_M8LQDBvlYaMI0G3R6VRCl5iV2fzn7D2FLYh8Idl64Gnci2ZPdKxyjtzmVcsIR_3q5vFGUO-wfx_UMG8Ta34OhbpDnzEP3Qz0ajhg6N6OmNB-U--4emTojbPhWESnHvfBAR1buVq1N5l0m13mA2XzF0O5E_lg5rCgp7z9-U0axwTkfmzpprlJC00Gif_FeotZNOcR2YMVk8BHBDaZVSJx9fU8Vidsqe-mQQ0yemMfl-ZUkBPbaV4-suob944wavB9gRFIABkNhmHL91ysNJUJnNo_6k-_mzXPSP3kwWEBQUwJvKq3m7hq4fOab8VPPvBn4Z1QSkskSeK0zrg4u6j-dYCufBPLnTdhX3RfbL_6rgV091wKlUvH9R-PE_VUuA_S3qG4FVBE0T6TwiJYp7K1qS2s3_vLlSO7m4LTJVEdI6cPY4Y5D8ixLpu0JkcTNmBeOcqio7mtnvbEwEqtWaGlKJqWVJ8BOvBoTFtdgUoJSdRsfwRPdsemMFDqoK7ZG7bCum6vLGQQElNGC70zXVNzXmS1EbFPwGmlX1y4rP7x69B6_QBAg206hakBrGGULoTG8uYsIK2r3NuHuMSBunyyKgGhiVIKwGZ26lov7E2A0rxVDqObwBYFXGhyb4zRovSchwDme6mhlWbu8qJiJztrcYwRo1ldtjgJNc2gp7VqFUIMygpvFRp14KJtxS4WFr3qY80xdhCvSoOSzom0I2MQVKCYmBMRBO5AXOpJZG8zLWOHxgCeo2diqAbWSIvu5uSkUYyivNre-IpaE4fQ-HdzNNY-Se22jwRPJYlBITVFYvEFk4iOTMI8XGaEzjuhhl_NPsGTYoXEwhbAr4M8CdYoBfN1qJHZxjoT-O-gT5LLFRdJVIoyBcB9Fn_CfFIGo8J6MLfCGjU7PCuO8rOAozzw_Vj3b77-pwN7jqSr3LLAaqke1hNx3AkBX22yIzHHiNOWIQT3YbXiqv-60nzEoB_UtWLRmn2C-6j684sJKdbg9DQPR4jrVxhec-TJh-yiatq1-IVLKSmvhbkdYYJxP6yW-6wmWomv54eGr4mzJxes8a4qgBDL4zrSDjQZfkiZiE6hS4Bv3Q8kwxAyfx6EDZCp_iTCW3L9vPh8VVfJacdOJP2hUeSA=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering number formatting**\n\nI need to determine the right code for formatting numbers, especially when it comes to decimals. I should use Python's formatting features to handle commas and negative values correctly, like using `f\"${-123:,.0f}\"` for negatives. To format currency, I could create a function: \n\n```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nThis will help me account for various cases, ensuring clarity in the output, whether for integers or floats."
+          }
+        ]
+      },
+      {
+        "id": "msg_0ccbd9b18cb26ea1006a9ec65deafc87d08199f5a914388222",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)   # \"$4,640,039\"\nformat_currency(-4640039)  # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 69,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 288,
+      "output_tokens_details": {
+        "reasoning_tokens": 211
+      },
+      "total_tokens": 357
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)   # \"$4,640,039\"\nformat_currency(-4640039)  # \"-$4,640,039\"\n```",
+  "reasoning_summary": "**Considering number formatting**\n\nI need to determine the right code for formatting numbers, especially when it comes to decimals. I should use Python's formatting features to handle commas and negative values correctly, like using `f\"${-123:,.0f}\"` for negatives. To format currency, I could create a function: \n\n```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nThis will help me account for various cases, ensuring clarity in the output, whether for integers or floats.",
+  "input_tokens": 69,
+  "output_tokens": 288,
+  "total_tokens": 357,
+  "reasoning_tokens": 211,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "en_human",
+    "sample_idx": 2,
+    "prompt_text": "Write a Python function named `format_currency(n)` that returns `n` formatted as a string with a `$` in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. `4640039` -> \"$4,640,039\")",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.6190385818481445,
+    "generated_at": "2026-09-07T09:12:45"
+  }
+}

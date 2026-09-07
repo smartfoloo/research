@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_05fc29fa279085b8006a9ec4b4979c87d0a58dc8985d506ca9",
+    "object": "response",
+    "created_at": 1788789940,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788789943,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_05fc29fa279085b8006a9ec4b5191887d0853402f038d190c0",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsS3uFCyoH_hR1GfU4sjGQJR0m8In-r4oYsL3Ucs1OBlSxnSJvUqwOLcc2eoPQLlur-nqE1t09jMP79TT2V2wmEhfmNLAMTH3Lao-Dq_RRG3a0e7jXiPxECWpYV1A4p7Z_ry0iQnd5r7SyxlSE23aVibNoZa0v-FRna9gLvNC3vKwI-IHq2LdiWM-WAwC6F1e1twRfYcoOIztFifmjzTnj6pX0ybgflGfj1LIYaHbcoDKcP_zlhC7knO4tl1t_DJ46fylhO68kRtY6Jph3MwzFDsN3PlrrfiLAY82Fvg-aKBRyTA9ZRJ3__up7TfW-dSkb4qkceKsLA55EyHK1ohDbieSGnJOPP4cv5fgphJdMZq5XkywDnfSV-E1e7qJ-UW26-ErEqxRjyh5yScZhkmIJsyyZYOX4KbD4K7T_H1gnjPHdGnvc8cqE8psoaxdoLuvKCwLYOvLwJYz3w4580mG1UT7K9atCMr3WXpscSkwnBsNRI_uhu8jA2aGRku_iTjs-Cf-cQywhgh-Cgi0vohlMahTg4vO9h_6AG0Enalwv6bk6E6K_a37wiXUEsSEMOX2YlGsm1oTEd_u8DhnQ9dHqoAkfYEZES8_PCYSBIEkF9bKuDt1eVfnH2vOKeYd--l17Eth5CTOZmvx25mcECIFSr1pCTWSsGs9IDUVwu-0Xxd7uYTpX16rEkSUXM09uNyf3WlPE-wUBTsBElXUBzzDyoCb0PQROx7oztmUBGsh3qbHkt-K3vk-v1aDN9BqDYXOGmv1zmPLIhEA5sIHI6BL-YIzA2KUcF0A3VSIkoEOKVGtPclepacxipuPn3Cjg9vkvnvAzMlqwIrLFGs0RuHqyjxlfz1-MVheIb8-1tRKjtSRj4bpno9_cJ-iIJfEVW8I4w6V2fIo27FnLQqzrPvPo022tFceZTGhqi_riOflbSOTat1ahfMxci_1wh3w6w1KwyfPgVSzfXspGD2r4NRw-liAoDfDWcQz1jERIdwSQbGC-nAjjKiW_gDlv_VMs9bm7sGdGwkoMUDCrTtikBUNdfEgTtTETv6tQ6AHrvXw-qkC9N3F8OhRfndDRV9nKz6k1-wmDsluIbA6UIcbtmkS1k_lSxZ23vAMnZHy0MeFYVyQVHfzEUjryJMJ7Eg3EkMvh-uxhrZlGu-bHT59kWHk8TM09_OzP8QppSKXLAE44dPP71FWRbglxNLNSF8QsxClDu5Q48-VjbV2HlSERw4OV4itF3NDBSYkFohwg70040vl5z7LQdjRTdIN0eENXQuU0Tcz4ZoNBFZc8hmKGt_DElhcI1Ua6miKXMh8yuS1Pphz2VrQAf5dnomuwlXRLqseLrSqmIu0Rz9Hqd1VXxX_rzp2ODkRBlcXayIq82DCfyewOtIKBkLOhDulJa3YltbcFPNDxk3tCJ2QccD_ziyZjvwcCs06e4wSbr5yzmHGa_6Nb9qlVS_OMhjdfCr8TKmAK_JDg47bh102asmrMHRpoMo1BcL9vAKQsc3z5oqhzN86g7N8fsQBsgYmmFtijA7z12qLQBKzq2AaIXU_q0J5HWLSyQKbbhKV21uUEbgEbnH1q0F9UsLvkUqcT7TDFwus5ta3KCI2WoUzzH9eWkKQEwiMtQELNh0O8tRbQuEm0gVKILN3E_t31LvJWYIZ7rXq1vTMs9G8BCFK7RQFsJBz9hh95QxIXLIUzpTYTI721Wmntg7cNbwbCxGzUUXk5YJIYvhRjBHrnyFBbqin2pQkMSqU8FxAKf65qWiIwIVtZpoOse-eOIEYrf0JprI0g5purL-JWRtpxGhjvKQkWJJeEbMtVes2JClOyRYkxI_hVHQuqkJCFW2VxvYMjUfHhbmSUdNmT0B9E91wGx4kEPg05TAzIlTJTRKyCsksFqIlMNP1z-SY9MwRqKznDt1oMRx1kxfSXZGF4MlnGUoR5n7fXcnhB-P0RjTIEeGgcx1fPuCjI_5CcyD73j3XpxwJOvWfclaJq_nqr4FMkd2UEATYg5RIUhEpY0A8eGl18729LpKWXwCJTmtfcXEMiy5xwEeCdDTQN6WqsxZY8w6uUDVCxc_uBsuB6L-AWTheoqr6wEGkwlqNfSHUWWYrE34gbXBEWVF",
+        "summary": []
+      },
+      {
+        "id": "msg_05fc29fa279085b8006a9ec4b7036087d0811fb7171860ebda",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)   # \"$4,640,039\"\nformat_currency(-4640039)  # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 68,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 239,
+      "output_tokens_details": {
+        "reasoning_tokens": 160
+      },
+      "total_tokens": 307
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\nExample:\n\n```python\nformat_currency(4640039)   # \"$4,640,039\"\nformat_currency(-4640039)  # \"-$4,640,039\"\n```",
+  "reasoning_summary": "",
+  "input_tokens": 68,
+  "output_tokens": 239,
+  "total_tokens": 307,
+  "reasoning_tokens": 160,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "mt_en",
+    "sample_idx": 1,
+    "prompt_text": "Create a Python function called `format_currency(n)` that returns `n` with a `$` at the beginning and every three digits separated by commas. For negative numbers, be sure to include a minus sign before the dollar sign. (Example: `4640039` -> \"$4,640,039\")",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.119588375091553,
+    "generated_at": "2026-09-07T09:05:43"
+  }
+}

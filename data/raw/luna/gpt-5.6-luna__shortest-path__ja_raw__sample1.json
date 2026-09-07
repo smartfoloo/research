@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0153dac48c9b1159006a9ec51a6bd887d0a08f790a11050d58",
+    "object": "response",
+    "created_at": 1788790042,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790050,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0153dac48c9b1159006a9ec51afe2487d0967ef21d28d00757",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsUiQU-LrzXR74bOq9xUT7NLG4kBBONQYBtMR5wwffYadoXQmeS-6U724M7mQ2BhdwfNZNcjRqJ-xOiFWeJRb9ly_WEiURBdk36xq2lQxaAXTd3MZ2t1xExEdP17k8ppsFOVPcaL9XlWxbFNSLZ-ioa2um0m3Wbh44prRSQY4KKEyXaU9oBmoTUHdto-7aa0YMBKUAJAwopbC13BHYCKzYpKCCflibZgF30_7gi9_FUoDJ6GvaGP-hys0YDvfVrk3CwWUzx4HIVy8iL1N22mHsbkWpLPti1XVrq1cIUqkq4Q7CzpEjnKnDIc_qsqYqVT5PGWzfsKFyCi1k4kwfJeAhyiSLUWTnlHs6AjzhNRlMSTNOjXzMSggPhWeDyljl2P3GxeGt0iP-Y5g7ybAthrefWooMs54mqFwhLh8BqzOT5_w10u1XY2Vld-O9h9L0MkAW39tTGuGhMx0Qj-ldTZcErkDDkFYvObBGVJG8eLfUgHyqifH0qVIuk4Mqa3S3QcxRy7LVoQYOgmJcbqTmerclIQfMHaI9UCpJZToSdvXm5lLW1N6t4BflqOKKZEZzPSMNfytAJ8EJHKQQtTljcU4XyCr4WTQcSWwyYvp57UkQo_MmljfSKK0bVvx2_UXKhNdOiyWY1EX-zrMu1-i0zGgFcFaWaY_6v4otCiY_lIj_n2bP2Uzdu06XIeQX71CIEIMROorj_2ITW4hxTv0iFjDCej7KgPxKxpVMFOYcor_B8yr_RcHRjLiJ-X7O0AmO3GHX4TX13Ua7dGG41hN9_FXMX1c-RC5wcQQbktl7Xe61p9KsKk6q5Eecwb3dWW7QodCPvT9GlAy8u-grh6nEGop_1oBITfSDjbslyD3bYBBtH0uDXKlJ6NoZ0nL3sEfBa-f3XHSXMUpue-jdpvLTuyzTc8PhAmDRYF8DBu2D-s2CbYwSGzDzPK2VFW8qDRPW7UGg2M_NQ-CCd_plRSNHAblzPSDWxVHBzCAQmlI49meUZveB5Hm2j39Tg98E4l4j42bCqIoqzprUWg_-Acg7K6KyR9YS0AOqR0kpvkNkN57mXGviWb-utjGN0aZ1kec2TrkSZvN9N3gkX4KRvKinbWIoOCAt4H4WZG60iRd0y2wUynjgnmKDSFFmGngqXuMQEz6sFwutHEu2_IFYu3SxVd3bw3e9camGXw2mnjPtCnCK0jQ_QdC8OTlbxVw8v0u2_ueCvnkOEt_A6loa5QZJa10qT-bverpAOAXrfmkymMeq6qVTkvNBNzJdDWKxzEuOkjeRDHnVD2mvTnEXVbJYUv_qr14W6v9DSHoUJsS-bPtjtzJfw-naVxhjhhDpNQPabpJHOrMwwOvZ-vpZZ9kGrS2vIb37n6jSkdxAo8zuJtX6wre3wfkmDiJR6To5O74ik_54CeQnceMsipv-EEHBuRTL7W7HA-Wtq_DGNf4Us7II8O_tMRmqsa1VB77TNVsWSUe-XjJ3E_j_K4BM23gctXjpYCY-c3KEiWfh-LNkhb8zJtXTzK-Tpe8Y3YloW1Nu0yO0rfVRKZau2zqY_N2aaYuhocwnuV_LsDjgV2gT780t-swFIZGLBHg4soBfyjiRbdw2xf3luN-WAP3RV1YMZAzMQwgvD8SFtq-Gy83HumYvKOnJu12ROHt3-IhZSo7hDohpxayovdLsErFO1xFFjY-gtpk8lnUDdeB63f8f3fgRRNMYKfpIl8oHLB2B__lqnczX_xCR54ScTd4FXMKIDEzIvOEX5jsoPMBchBPHi4Ml2xmrVpQEBPSgoG0AkobikYsVlJNfrYeP25p7LuWoducnNRWODAm6V4_wn3UrI5wgA7KHyjpAqBwlX9jOK2zpChz2ciPEvqG5v8I_hxHkVIbf6AqRkceNGU9ElZ1dQBtSuyjLxXUFqHfcXzdIuF72Skx6CYQHQQcZKnZdA3Wublro80aVxDMFIFjaEtpN_WU0fIxQrT5UFi2lYMC8tX5CAt9zsw8CqnGYc_YcVDJshjgrkKrAzxDaVt0hZ2FC2HDG08he-Coi4TKg-_9edbEjqkYkihHDF0KrqlN_jSYKjfaSS9sT6q50TDw9O_7OJcTjSlRf6-8vCwFbxHgELZ_TM2jHMAd_vdgFt_Mc-wG76g3WB2Uw1EomfifgCfNoE5tVVk4pU_jDYHgJysB8Od-L4K5PiS0VL1l___niO1xuYAwEWufmPuqJRQLricv6aa0LTFJwnOTbgfQifdqP4I9n80wDpn6aOb7PUmnNfaxhTFWCeS9xrmFuagdcROf2fDo4cbtliX1Mh9z-URE84mShI2GRTreFVFgLo2WbMhsACLEjcUuV3yQhWP19cyiOsBDoIhM_4LDuSLSr3xe-J7qC1055Ahv8adp3GpGAk0r2l_lgQZpdfmC9VGhGNzxHnf9tyWp67aIgI32X4tw16yO9vzKY3GH2otKJ2vsEplsETk_bCcweHyV1K2L1JqtTrzVEqrBKbcyZ3XEo61_0gvADQCboe_qAsn2ex94J2s7j4Il2dT2CuU3HC34W6PqUwWWMIdgK1zJxekmT2GpyEcB2JAvPJdzL5_NILRaDeDnU7hh-dEHXHh6xkVCuytlMs0jn_ac1WxzmNoGWIlxii-zbZZNEzqLEQyrgVB4ROOzaEXTDGOy0GrqAyVbknkjC-qCp_9asMwxlK57HQqA70BlX6diodz2Wg_1AoihKEPcSQyNhLovOPO-suLYPdhF1Syw6pqGf0mw_PFKLr0C2Uxj4QRiVOsf-kznyq_1mGGlj1Ng_aBE1exs7spbP6EPVgTrE4-X4i-52wHz8BjxzvdyB42vpAAFTmHGDOlRZ_xYDKwbzePoBg7wcSPDOOVREfbStFd5RuvdOCoBHiOytLydyKrUHCotL7XFMVaGCgcHzvnTO9PuOvMeSEOi83oYt6z3GqJeJDK9-3vhwkwcJCJOYYZZpJfY8zdcXPmDnBqpW8At3RXnMm4PBMiaGLTVul0WKNNfPqsu6ayk3fkZ4l9nfDYRgNJMLMbpNV59rw7Ij0tSb3MqmDKk2mbF8tdbEv4-_qEa-xEKNKw3Y6JUykTa0Iz2dNcBxxeclWMLH9XHahbLYqnofpj7iIoxToZ98KiGkV2gBVBv0FyoX4FzMK_zItKzDKEw4xqY9IdTLK_NTAwKo9DVesJvnhGmNnPebCgnWfkAANi_XYQaqkaz0tOFMJ5nbDnbw388ZpEqz1ayox4Lc97AwWblstv_Qe2Ncm68V2aaFBqudKBVYzP8gsub7yoLrU_g6KoDMvAVpXiTtkLow7sbmUEu21_JneUvc5x53ie8Eg=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Evaluating heap functionality**\n\nI’m realizing that a heap requires comparable nodes when equal distances are involved, and using tuples like `(dist, node)` could cause issues with heterogeneous nodes. A good solution seems to be incorporating a counter as a tiebreaker by creating tuples `(distance, counter, node)`, using `itertools.count`. It’s crucial to validate paths and ensure all edges are verified before execution, especially concerning negative weights, as there’s no need to use Bellman-Ford in this case. Alright, let’s move ahead!"
+          }
+        ]
+      },
+      {
+        "id": "msg_0153dac48c9b1159006a9ec52017f887d080c98f9bfda37c1f",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: weight が負の場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成しつつ、負の重みを検証\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"エッジの weight は負にできません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合に備えて、連番をヒープの第2要素にする\n    sequence = count()\n    heap = [(0, next(sequence), start)]\n\n    while heap:\n        distance, _, current = heapq.heappop(heap)\n\n        # 古い情報は無視\n        if distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph.get(current, []):\n            new_distance = distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    heap,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 209,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 807,
+      "output_tokens_details": {
+        "reasoning_tokens": 318
+      },
+      "total_tokens": 1016
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: weight が負の場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成しつつ、負の重みを検証\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"エッジの weight は負にできません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合に備えて、連番をヒープの第2要素にする\n    sequence = count()\n    heap = [(0, next(sequence), start)]\n\n    while heap:\n        distance, _, current = heapq.heappop(heap)\n\n        # 古い情報は無視\n        if distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph.get(current, []):\n            new_distance = distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    heap,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```",
+  "reasoning_summary": "**Evaluating heap functionality**\n\nI’m realizing that a heap requires comparable nodes when equal distances are involved, and using tuples like `(dist, node)` could cause issues with heterogeneous nodes. A good solution seems to be incorporating a counter as a tiebreaker by creating tuples `(distance, counter, node)`, using `itertools.count`. It’s crucial to validate paths and ensure all edges are verified before execution, especially concerning negative weights, as there’s no need to use Bellman-Ford in this case. Alright, let’s move ahead!",
+  "input_tokens": 209,
+  "output_tokens": 807,
+  "total_tokens": 1016,
+  "reasoning_tokens": 318,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 1,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 10.154557228088379,
+    "generated_at": "2026-09-07T09:07:30"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__ja_raw__sample6.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for transaction in transactions:\n        current_balance += transaction\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 158,
+  "output_tokens": 212,
+  "total_tokens": 370,
+  "reasoning_tokens": 93,
+  "reasoning_summary": "**Clarifying code approach**\n\nI need to focus on answering the coding question related to Japanese programming. It might help to clarify things using a numeric list. I should consider implementing a function for atomic rollback. If the current balance is less than zero after a transaction, I should return the original balance as False. I wonder if the initial balance could be negative? It’s essential to check that after applying transactions. Implementing a loop to add and rollback if the balance is less than zero is a good idea. Type hints could also be useful for numbers.",
+  "graded_at": "2026-09-07T09:28:11"
+}

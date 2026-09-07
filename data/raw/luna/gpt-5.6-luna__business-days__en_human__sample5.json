@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_065ac03b110ba5b0006a9ec5c517f087d0a5c8287084ef698e",
+    "object": "response",
+    "created_at": 1788790213,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790218,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_065ac03b110ba5b0006a9ec5c58d9487d0bca8623fbf445cc6",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsXMPfRkmOKd-a-iYxZMXFtCstLU1_I5TxbD0gnCdY9nDJ7yvvVvuN5dG_xNSfG4SBaCJMA00sxeiff5cMknSXPwFZ-d2gp8L52inKDP3sucsekpePr6QmEFpc2FJHJW4ryVlKiIMpPVKa2xvWCZUhExkMvmQMQvftyXlzZyrbZ1_ndS-WU6KUxZTkN3vn0uNnqN4TljifeLD0mWFgidqz1N9h61f66lSeNlHjYDi0mKYrRW0CxunKhpB-rXOV9Ffz_LFyfsZCPYhljSJ0sy-EWKV32fuD7J9LdOmt1umKJ7xD_0YuMCiKRH1I1LhaefICGf19Wlbm0Sr_gToc5nDOHCI4Koax7c20xbVKO1iv_JQhn8ekpNB7wIp0tW3zYYf6i1SEsgIEc1amBxWD4DZWhShAK4aQfJsB4xFYXSLtCV2L6lp5FRQCwjTQNfYqAPYuVDRj6H-vPK0wHaGs490ctkY0DkwJPNSzopqlsMUCXo22YI81Bv-9wbcoLdh2sJmnZzNO-dYFoa2fV8H28RGhoHI1iZ3RfciL9Fqgn5pgX37DdyQQH8x875nbcXv5wLKuJHCijJW6KpLv4uaqbcrjpmxPbf2T0QKynJ05tqI0Pt-KqgWgnn2DQjS1tnaI9TCtV48EJCTfxpJtyWh-Q6Gcfc53v0pv7M0ubZzY0Lw8LW2uz4Z8oNncjwvu2xiC3lnRKQLElhTQGFYMuXqlQmkVPd2NyOuK212Y8FWqLyJe4DBj8hj9Dk6Rr9YG7BdF1OW-MJuAgHQFr8mSXV9t29VRkuGc4w8ihc-HrEvJhrxtjDO_ISJzh2mFZMykCqyVgrFyWv5vqrXDX4HPbXZdxPfydCNKrbtnG--ppYPiGxCoJtOa3lN7H0weXHzcbSRwmEr5I1FJ9BST1CNiLbqKeAprY2bw971ky9i-iPsLVHYfZ_aI9qX2IVRlqVDa3W4rQ15YJcaiydZKUOnQWD9f1k5G6Ls-VsS7Nt9-_Qe8CCW_UdHT6Cg-IHT_F5lBt7XG17sh6hBoX3LhnHlLFC2N-mmDj6b7bnR5DtmtL2T5KyQuu1txNUJmT_I6J_1APSl6AM-rOrj6dlREZ63To8u0e0sjEVQST3FCb-_6ex6pjfRgvyQLx54kRte9VTtXbPI2PJq5HBrbpl_uoNJ6KMQpta_emJZ0K3aQjWAYB91YnIcxM2S0cOG_AT82PFIchUaXHEniyi3la9rm67dKdR9ItZXijYIliwULmNjilnl7u83QSAnDMj5u4pj9rVRDtv_ECPWTzPvpVHQPDWjYpciZCI4AVqEiqxaLQKcQowKNRJa7ul5_2RoxDZKvtmfA6Ict0SFnsM5kG3umire_ITvoUjSp07vcY230QThyaK7VBw4cRcB7VsPfAZaZojkpmRLuMlw5IePBzoyoCW8zAc3S-h3OOroWal_VdG_f7o_7EMn0IZtEWQw-9Q3psdmKHheBnj8TOuY1_Biu6k-fDSge9NUykK-q2b3PH07RXUZB2mvSheIEah2RN0K9gdfomtuz2qz5yJDfqrnvl5HbgLBSr6Ob8Ov-bXlI3HHu8w-xQrhSL7UiiJDtjyw3R3Ep9YGaInw-_W5gueoNoOV4GN-BGfJ_t5z3sJTt8tm8bw6NVTODlweCd__Ka1Jrqe7O75dS2NY53_WgD1Sp4r9ja1oDxpn8UcZ2_eyLxhkkt3hY7W34BkBjq5j1L5kBGpATsmheLHhgjt6lx9t0fNqBXH1K2jTHmRRSOuUOIgAhQWTKymTc1ujfsFJz7FzAsZKxxmM99XOmmKIjinThyDRI8C0i4D1kX1jsEULNdZEwafNYLUth9Y10a1GDparrJbvCqiwEuMbljJtuPFIJL5GLNc4USmqyNftUSRVLJGuIz92m0l5Y4NAML-SlSucKq28DWa1mMwHo8IcO9HDkx5QNdBEZOF49YCg5-13NWVVrwQzEONVu3MRFK-ygbz_lY-yk1NXUJ8zNXotpAeVuSGn7dsaD_9k-lsYYM-CuE5T6d3GOffxC8I1s3z3G6NFrAqK_6XwxFQcavYHdQoeg7SxUiQWnqqVqC0C57FVk1I-F4DnVy4JCmtBwNz0QqfiNMK9d4QTDyolyzTuHzs-Dc8LR7tAInv4NKbAUIKb2qWob1W2_QywJNtxPJZJfO5OSMlQl6xD16Swxm_l9gzf79Btj2HJj4EWsnwXb2wMr8yN_wxUIn9AWOW8kwjsSkXytBTEy_oNFvMbQPwVU0PeRArxSyEnjI4tqnxMhu7q4VqLIF-ZWgMhN0QllSBf7Ni55NexUdhGauHRESI12IvkGfBckGiUy7mkG0D97EpJasXPLGySWraq16yOzsphGHC1kdENAqAdHPFI2K801yJcoWOTke_6gxQ4TRBU4dtIiru2BKdRWW-BB45qqOrFj13V_JETLloZb-OyYZYCQQbMJGSAQKVmcchBXUmQRHh7RNWtjCd-oHjDfb_o65jI08tggQYmoEfdBJQFlb8wX21sbJw3X5iFnnagje48aT3yqAzicGiqyyJD92ndGh-4LqRFA4LZJ--XDgBHZmipc-qIk_wlv3JCAonQuZ130azDzILgGxL6iU4qwmoSyhrW1D5jB73TTR-7NCsX2nafLqeCj4oZRaK_3u-tIYjaJafRz5FLYURZqTsJqBRXcgI__zl2A9HLH2vpK4J-X3c2uyeJSubiOZvYPAoJE3QBngXy0Pcx_zOWl5xpwDKp-ndZOpbudQ4S7JWDXUj-ZABYEDK36CDz6jlU-p1DbbV3CVyvT2IoAsbWO9Q4lGCnjAPpv_MUmnHNb5_GaaBZFGL",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Considering phrasing and order**\n\nThe phrase \"between\" seems to have a symmetric quality to it, which is interesting! If I'm considering swaps, it’s crucial to think about whether dates need to be in order. Using a set might be a helpful approach here. So, in the end, I want to focus on clarity in the answer and make sure it communicates the necessary information effectively. Keeping it straightforward is key!"
+          }
+        ]
+      },
+      {
+        "id": "msg_065ac03b110ba5b0006a9ec5c9738c87d0a09f8aa98acd0be2",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the range as unordered\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 91,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 454,
+      "output_tokens_details": {
+        "reasoning_tokens": 280
+      },
+      "total_tokens": 545
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the range as unordered\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```",
+  "reasoning_summary": "**Considering phrasing and order**\n\nThe phrase \"between\" seems to have a symmetric quality to it, which is interesting! If I'm considering swaps, it’s crucial to think about whether dates need to be in order. Using a set might be a helpful approach here. So, in the end, I want to focus on clarity in the answer and make sure it communicates the necessary information effectively. Keeping it straightforward is key!",
+  "input_tokens": 91,
+  "output_tokens": 454,
+  "total_tokens": 545,
+  "reasoning_tokens": 280,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 5,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 9.539398908615112,
+    "generated_at": "2026-09-07T09:10:20"
+  }
+}

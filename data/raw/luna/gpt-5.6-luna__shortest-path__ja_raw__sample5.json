@@ -1,0 +1,138 @@
+{
+  "raw_api_response": {
+    "id": "resp_02c0c794b3fadbcd006a9ec8eb7a0087d088c00ab30f958d7e",
+    "object": "response",
+    "created_at": 1788791019,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791029,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_02c0c794b3fadbcd006a9ec8ec1fcc87d0a1ecfae61d839d56",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsj1-1vI1HYDEkyX_rGrBhr47MwmhlM_jPxizhouJ44zs1hsl-V3Hsu7s6s1WcIhrMy9CkPKdvEty0QGO1sQlVTBlnC8-nBtJOufMZbGQjhoJzwHMJopkdZuqCIIWuy_IvTVezjAFxX4RgUWSC2ATC9K8tOTqAY3TpDUUyaWUaXKFF9pu7mpU2N5uKH1wFHClekvG8RY1B5RCdFBM78HHTKhS4GIAjopR777QZzYtSmafJ-Usa_P540pKYQR3o2dJxwvV2hdkegV4gicw20itHDzFaZ1VuMeYprjV7ICIeGJ-19GDRKWKDdE5fuoUMxP-eg9yQWQPL4q2XUePmq4BdGEWX5ZDzry4bS0ahH5VIG0M-8_NDKt8xzsYFr7RjF_RheLwjmwQ9GhzuRXIjEOXqrC6dJzN_WFf87LeA00GwReAvVYG6BpU-49Hlam3nczQQrOA09QqeZu4xCkNFxCoJZ_8InmSpxumKiDJiprMjsfX1-uGVPgO2THai1nZhY5rvIawLmUvhkNaPMI8Pyy7ZI6oaGSkD2pwQWsPICuU-W82i_3TqQvhS1MVAjOcL-7898WoHQkNHtNaB6vfFEIdmesm7UhoSVuPFwKG0520uWI668whMhQDM60EpYPj9LdltUadc1qVB7gBTxdnTxxJsgaj65wkeDLuwFNVdioNaXM5zKTA0bpC1Cm_h_jdHHB5kbxCDqG5-nJrHC3EGA1MUE5K2ANA6y_lGLUFs-312iiNdoL-1tDsKGavdDFwwXLKs-2vYxvG1YJiaYgIwy5rmu-MVBR-3tLLhqG2bKM7Ah0SWm8ZKmVm_nmn7uwLe6bsmp812eIY21laVHWFT4B-bLMAY-xSmhfeU24romsWgNi7xkJj1ulVzLHqQIxGZuD0Xclz60OMCm7GTsxw0GQu4P4gJq-Lrf_z9y1O5NPhdN8kAvuO9qlDNzPy58hhY-UbvXYf_UW7e1Pbvjowz2E2pGhzxIFqc5BDY0lSDDLNnKqfTdra3pqof5HUUO89z5NBOeV-S2KHpyiyY1j8xoTCtfWecEYYXa9jkUNllWJHLRdME3zFnBD6nutHthmYpSZrlP7zQBKk0KCOBXO--vWh117zYRjyHQXqrpmKnp2aDaDxaoThLA0499qz7hcejl37zIJjy_qluW0w1yI85HRC7__cIM8ibmzBihz2osZ9Q-krqfptGKtek4GU01IYtJA5741_H5BM2tgWyKyZuaOppyPXHgw8CBusIYVtMvF67_A6HgZo4691WmsA5pTcFfy92P1fhv_vVcvsFg4ZA_l2bMeAs4BlWiEC3XEXkPl_dWcDVX2WUV-8Oo6YH4U4sXj48CeA1NQeqi1SR_LIi1X8zdcl4zonDoI4b-ICpKj5vZzWsctPD2Vf6YIRYi7yd2E65EeSbSNFLJvaKjHO8lfwkOcVNBmFootQiOOw_1ErjrQZyYpdhzJ-1bhRw4j42k04p6R_rSkCA7styK8E-wIb_ipvhgJoBfiU8fo5eDKpz4vu2Lg8-jT2KCCl6q9DVFR2iqbqgYpLgnCPSPhbNsuHYAnXpAxdxP1oSnEU_8FqK3rJaues4IhAKxcP4cGjQFVmCfEiBZjhHvp32jsBI-mFI1-bbJnqpqrWLStgb_qYGkTzgv5EmB7XrsxW0Uwq48FfdV_0BpJ_Ncd1mBN4NXX-0ZdqbS1ZNC7NaK01Dt_rxVkpw8e75Hsiq92sOJ2Rxh5WbmpXzkmRfj6pk0yKDq-kv-rEFsbJcGrDUUU2VnlBTL-8aMQbTy9MusHi_8b2BttOBQr5RWAH3E2-OWyaYa90B384CpbGWxMrj7Cw-oGMtxBPahkvqWAQi7U48NHqgPTEpJRUxGSmWVaUnEufwYbHa96vf84Cx01gqZgvO13j7kjr1qIBxbNBu6LK1YMWmz-o_JS8NP8Zikg1m96byLUlN7G0MiMLVay2-AzV1GPdHOxQ9yPRGbTlO2xQeVWi7i3AIygKQNCDpWsOhGU_h479CsEHUmxUIEJEaBj93m1QKzoGKrif-pSUsdsIbX6uzofQfaC5azjeUUvGdKz-npXsjlAHypAaUlSqD_aTZ4PeMypyfU28OejJ34Z032sAIVm1RHlHxxMCdvyaIogzj7Lk6o5Jx2G0wodOxWUaOS7ErcthOJIiA6wLapdgaUN4bThxwTHvtfdzswyKG_7i6wHSkdeQlI2XtvRM5HNQVirhmabp5mXX-xbwSQjm-O8L5Xu1ZXzTmQtncNufwc_JGBVi39Y02PNvAww0E3ZJo8oM5n5m3U_8qkAavgSWddWjWMMCf3NAnkSHVgerH9j8TlvXdrb4TZULWZjMjiNOyZYaCQYOVPTbLQEl0ew2A4liV47LuxaZIoZj5m3jH_8DtM6azvzP2K50jGwf5zXUzjbNPqDhzZXMVGFAaRlkxFBtPvzbypjEG04W-FO3FohdfDdC06lEIIQRWyXldkRTuENv7q8i6NreUUUxDWVvgkvaojGqv61RlH2bqqxWFgGt59PHKKr2Kg2fQz1TksCgO_cUlrgDn94ueYvx2ThDkE_yBwDfJ_-Z3x_ZJqRjwR3F7QWiK9kVig-R-kyZ-5hwjcJ4G3B7IFZCe-R0AMKHG0nLo_JngL1ViSuEU2UOxb_Pc9rV5Uq4FuMUAfZBP2kxVZaKrXlqCNsEmwk2GDB7ou3A5fN0_kM4AS3KrX7XuLd6ANsM5s6EvPpaOyDoYpvNDQ9UUTfg8bmfnnbyLqxum4jcJNx6eYjTb7YgykeVmrW09QmsUlhvH_VaSh1x85wE25yFI_P76PFwH0trTJuX20BmpPDB6aBPhvfBSP7iQ2eM9Q9SVa5y_x-7ye3UpJe2JbcQqv-tn2VNY2rHC5UeeyydzAi2maJ-VYIAcajs8iI1n9qA6PGOGe2zR8IasYfLpHdRPkmQgB530VDyEECKvR9inb0Tj-TcCnHaa6vw5wFhEVcCDKATaFUe85C-U-YsAfRphDpsg-eppLiV0NB0tKeTAIOy2SC_6a5H3Q0AzYM5J9b2HbuKbbPDtDM-Ws3YbbWUtSs7PMxuk2bQ0GhxkzizE2G0928kde04HrK_t9ceLJq168xbcY8wXI_7K2Ep64n_A6fsRMA_nNCpJSIiJRTu6tpDEzc8x6UIQChJlMxxpLeQ_BVQeh17fPMVQrC0WUHxbQNiZxKRsjCyQhGUxLlHRKJUtot-uTeG99X12DgmujziXSQZwVLwZ0rj1HJPxQDlySjG1VDA8cyvJj_hem98Er5ccV5mZtgp8Sx7VjcxlR6gMv19QkIobGBtN48HycnRw4Q2DBCgg9aqaTv3rDE-roYNTmweV0VUGNqkjufBzrr7tjlfTlW467bDanxjgNTz2vU3hRgr-ATaWJJ_g-L3QKwGoyujkrjb5wvmBMdupSoKG4auAvYmxTXZH7DKaTXyMpy0BG22yKtX2h4_zFszNT-HOiI_xpSAvEEvgcpT7VEFsueSe3viYnmq9M4H-kwOoDA8YXbOkqDuF2JjDf0zy6IRCOOF5D7fJ2_t8mpJIHOZT7LH0FKk5wLw_liV2olCX0O2XyVMUetG44C0P1_ymV1RQniA0KwAvzQwEtVbNiyvPLowAxL6BL1ENQazMTmha2J0znONHibX2aZs9kcBfieD7uy_xGON9jE-keVvgjmvVv_2_TQhUE3CviH3ERiNstkeAd0Di_2MspHel3aEGY4RXyhgJ2YO4nRG8wz87Nvnlhbr02MR22dUrakg4Y33GrVxX7DK7tt-fEQpiIXX_lVWi8ENeNG4HZXx37aLWACtO57b4-o6jjrNxJKGDooF8M9INdA9mMBUjZaTbsott9pTk-_oGXshoe8un7zDH2Dr9_4E0iced37cuhGzc8f9CoLYD3lzUDlm6E8ysVqwnxScIqGldQRDbAQdptefTu8u-Ly3g1wGWDlNddgY61QVouECKTqFtSr2w56cPBk4IZDawgsbUyEFNzu1sMj9ieVBmK-KLM6UMGWeom3FHwRyOpzeQ0P07DhWjF4pubmROl87E-_f3wi9NS9gS2jXW0mm3vVwvSYktKsyAaOMbNU4Jes1JQVsOb7tVTfTUPYrY9f_bTbUgDudkOa-IykngnnK7K1l2q25Z7iFwz1pueV_6FJFdaaq80hvopiMqCowa62g2VYSKJgqUk70On2WXzf2eq-wMy9uQPc-8I4K306UTBCYCo=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Crafting Dijkstra's algorithm in Python**\n\nI need to focus on constructing an answer regarding a likely code solution using Dijkstra's algorithm, ensuring that all edge weights are non-negative. I should validate this by checking for any negative weights first. I'll implement an adjacency list using `defaultdict(list)` along with tools like `heapq` for priority queue management. It’s important to process nodes so that pathfinding works correctly and to handle potential issues with ties in distances. If the end node is unreachable, I should return none."
+          },
+          {
+            "type": "summary_text",
+            "text": "**Implementing Dijkstra's algorithm**\n\nI'm refining my approach to implementing Dijkstra's algorithm. I need to ensure that I check for negative weights before proceeding, and if any edge is negative, I should return with a ValueError. I want the solution to be concise and informative in Japanese. I’ll organize my adjacency structure properly and rebuild paths using predecessors. If the start and end are the same, I can skip building the graph after validating. I might add type hints and consider how to handle ties in edge weights."
+          },
+          {
+            "type": "summary_text",
+            "text": "**Creating clear Dijkstra's code**\n\nI want to avoid complications with NaN values in my implementation and ensure that the distance outputs are integers. I’ll focus on making my code examples straightforward, particularly for the Japanese audience. Using `defaultdict(list)` may make things a bit complex, so I might simplify that while still providing effective type annotations. Overall, the goal is to deliver a clear and concise solution that users can easily understand and implement."
+          }
+        ]
+      },
+      {
+        "id": "msg_02c0c794b3fadbcd006a9ec8f36e3087d0831cb9ebd0125c93",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n\n    # (距離, タイブレーク用番号, ノード)\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古いキュー要素をスキップ\n        if current_distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\n非連結の場合は `(None, None)`、`start == end` の場合は `(0, [start])` を返します。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 209,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 967,
+      "output_tokens_details": {
+        "reasoning_tokens": 472
+      },
+      "total_tokens": 1176
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom collections import defaultdict\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = defaultdict(list)\n\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n        graph[from_node].append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    counter = count()\n\n    # (距離, タイブレーク用番号, ノード)\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current = heapq.heappop(queue)\n\n        # 古いキュー要素をスキップ\n        if current_distance != distances.get(current):\n            continue\n\n        if current == end:\n            break\n\n        for neighbor, weight in graph[current]:\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\n非連結の場合は `(None, None)`、`start == end` の場合は `(0, [start])` を返します。",
+  "reasoning_summary": "**Crafting Dijkstra's algorithm in Python**\n\nI need to focus on constructing an answer regarding a likely code solution using Dijkstra's algorithm, ensuring that all edge weights are non-negative. I should validate this by checking for any negative weights first. I'll implement an adjacency list using `defaultdict(list)` along with tools like `heapq` for priority queue management. It’s important to process nodes so that pathfinding works correctly and to handle potential issues with ties in distances. If the end node is unreachable, I should return none.\n\n**Implementing Dijkstra's algorithm**\n\nI'm refining my approach to implementing Dijkstra's algorithm. I need to ensure that I check for negative weights before proceeding, and if any edge is negative, I should return with a ValueError. I want the solution to be concise and informative in Japanese. I’ll organize my adjacency structure properly and rebuild paths using predecessors. If the start and end are the same, I can skip building the graph after validating. I might add type hints and consider how to handle ties in edge weights.\n\n**Creating clear Dijkstra's code**\n\nI want to avoid complications with NaN values in my implementation and ensure that the distance outputs are integers. I’ll focus on making my code examples straightforward, particularly for the Japanese audience. Using `defaultdict(list)` may make things a bit complex, so I might simplify that while still providing effective type annotations. Overall, the goal is to deliver a clear and concise solution that users can easily understand and implement.",
+  "input_tokens": 209,
+  "output_tokens": 967,
+  "total_tokens": 1176,
+  "reasoning_tokens": 472,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_raw",
+    "sample_idx": 5,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 12.358502626419067,
+    "generated_at": "2026-09-07T09:23:49"
+  }
+}

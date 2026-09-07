@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "en_human",
   "sample_idx": 3,
-  "extracted_code": "def format_currency(n):\n    # Check if the number is negative to handle the minus sign placement\n    if n < 0:\n        return \"-$\" + f\"{abs(n):,}\"\n    else:\n        return \"$\" + f\"{n:,}\"",
-  "stdout": "PASSED 4/4\n",
+  "extracted_code": "def format_currency(n):\n    # Format the number with commas for thousands and 0 decimal places\n    formatted = f\"{n:,.0f}\"\n\n    # Handle negative numbers to ensure the minus sign comes before the dollar sign\n    if n < 0:\n        # Remove the minus sign from the formatted string and prepend it before '$'\n        return \"-$\" + formatted.replace(\"-\", \"\")\n    else:\n        return \"$\" + formatted\n\n\n# Example usage:\nprint(format_currency(4640039))  # Output: $4,640,039\nprint(format_currency(-1234567.89))  # Output: -$1,234,568",
+  "stdout": "$4,640,039\n-$1,234,568\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 68,
-  "candidates_token_count": 234,
+  "prompt_token_count": 73,
+  "candidates_token_count": 294,
   "thoughts_token_count": null,
-  "total_token_count": 302,
-  "graded_at": "2026-09-06T06:53:07"
+  "total_token_count": 367,
+  "graded_at": "2026-09-07T08:46:09"
 }

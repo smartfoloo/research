@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_directive__sample4.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間にある営業日（月曜日〜金曜日）の数を返す。\n    date1 と date2 自体は含めない。\n    日付の順序が逆の場合は、入れ替えて計算する。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    start, end = sorted((d1, d2))\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        # Monday = 0, ..., Friday = 4\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 121,
+  "output_tokens": 529,
+  "total_tokens": 650,
+  "reasoning_tokens": 254,
+  "reasoning_summary": "**Clarifying date calculations**\n\nI need to develop a function to calculate the number of weekdays between two dates, considering exclusivity. The idea involves using a loop or formula with datetime, specifically excluding endpoints. If date1 is after date2, I might raise a ValueError or return an absolute count. I'll ensure it can handle reversed dates by swapping them if needed. The implementation should include a docstring for clarity, and confirm that the code is presented in Japanese.\n\n**Finalizing implementation details**\n\nI'm feeling good about the progress, though there's always room to optimize further if needed. The user might expect a detailed implementation, so I'll make sure to include an example in the response. I could choose between a formula or a loop for the calculations, but it's essential to ensure that the date inputs are in string format. I'll keep everything clear for the user and provide the response in Japanese as requested.",
+  "graded_at": "2026-09-07T09:28:17"
+}

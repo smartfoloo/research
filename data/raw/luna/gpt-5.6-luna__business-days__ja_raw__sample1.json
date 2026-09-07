@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_01a2b711758ef4b9006a9ec47fc64087d0a0fb012dfe043ec1",
+    "object": "response",
+    "created_at": 1788789887,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788789894,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_01a2b711758ef4b9006a9ec480938087d0a862cfbe452a09e6",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsSGaOONoC2KYf43P8nkf-gkQFtYGxD4y3nxBb88hm3G5nj3hzzTz-crhvKhF463k-4N47TVI0cRhPJ_ZAhS3kbJ2hYjZg92Ixdw9CB6hFiuSql33GWhiJMXgj5msI2lWI9LlES0lSlyuREJp82rwHxzJvJK9IrEyTfdXA4bSs5uQUviJtG8sLQ4FSKkKMJyPI9pJiL-UMXrmAzgcup8TjthNkpqZs08qnoLdQo84VNTLa5oyrd32tkuEpK2fFBJIEant9IulyTW5gSKuqy96MaDE97J6ys4x2rNOH96Wyx7uHr8T2sFkMqAlKGREvvkOsD_RchfXo0dmFt7JE-vS1LHsldcrY_XuvVszVWJCoOYmnEKxCoA5yYBk6eYgLZV7-IqbpBvKfHBfyWnWzq1Zxl3m7eYBGqLLOaNUrMg93cri7Wa-o2zTS3KdnshsMFGiMVo9XzvAWQ7Xp77w-DEsNAx0rx7DWwbTMDLlPuEsss2TSqrR_n3s9z69bgnsGdWRq4FTzeWy65s37U2RAYHCaGp37yBBtJrsGCfLwOm7kgGOKcB3YiSx5JJmk5Iq5ghl5ZlMGutziaiv4RvSweY5Wb_gSjIFJpYhaUHZOGa8Gko62cp7DiCEO20ZAAVsjqJwUjlcwYiVw8ejMmjcnJXoyA7Rqg0nn6jfpHSQSpgJ3nNFU_8lQzQFate2MXLeYBSsi-rGG4jtJA6YGtviBYukQPICyGsJvnWtFQcsscQ4Kgr6fwqZsrs7erQGIYKYuQu362_645EI-TIYKkDL91oISrwKrAhjyssYVuPvU_tsb9T_Wfm1WLZg29PjqWb0J5xksRlIG_NIdqf7aHCparESGRcHaE7iF75bnzri8qObOEf80wSyqzTEdqMc0pC3jnlNl9yLSQraVoyhGHBzS3b_J-wFggLX5DcqUfpfHf_iGxH0TeETRuLz2GcQgHjQnKSkbcNPjAvguHCEMNaVcIawII6OLTysjTYD4txakkKuGISpf6zY6WEVkpO44fuUiIQdAxDyBfx6GPBUHj0PBak0_yPskjFF0Vm39lppw1zOCsaGb0QfDY0EHLTmHrTJFsoNyFdioisxrB4Y5e8bv18ZYbgnAEPco_ezBxq4Qlo0vHCBecrpeczTNMYZ_wco_Rri1bPCXXwnvi1YhlOI2T6TtKVrM70xMUUkwZdF7KCqyml3mnn9hlnDxcII4GiqFKrRPkp2n_i6zut2ySBD5iD7l4E3f0xn-C-iP1smxU6D2ebhIdmk3lowd8VwDnRH4m-mzGzAf3pVzL_5WMnsnZPOptNoFtzKiKRLftzjns4Ogbf4ML1PL6f7ChmXNketDX3X4NcGYwJceLRTcEaPIZ0q47Wk1Kq-_HRp5DgotcHRGFj7mcDwmh6i_7aZMER7VCF4TA_vdnGjo06rE4RnHSlnxwTGmC4VisPt3N1CVRz-omlGms4brcRg3ck-kkr7FfZCodiIFkrJYVIkEvDqGZVK5lC4qF6WTJoql6MVkz4rizi10YaYqRsaoRjck45wLZ7nCoo-A03i7jxZdy_g1tmW0rED8AB0JL9E6kJIxIyvYKa3L1LJlt2JLQKfPo-g2dwpi-XWlgg5A9DbuikJEM-Z1SFgx9mBxGAIY4KFUWcuzestCDfyOhUGuip9-MogsV1fz0egv0pVddZrxZ8ND-7YGjL04XrJA65gXsIgMUu8Tg0PjLkSxS7z2fXhL2HeCphZW2JSiXoZAtofdivGlJp4uf0DCxy22D97anbnmB_BroqcUebsfOE-UInkqjwgtES5HUbX2S2TyHUmgbVpEA2NjQVMdzqsKoYE_cfVMk1nceHUZu4_k4BcUfyvZr6hKYtyL4YnssQC1NWrhHze7apsViXwQ5c_s-5HE78FphzDoEI49kBeGfjDqr5XhUVHd3ZUfYNrNib-U58vcotREjJF3hAix8okszk1A2X5xoW05tA7WurfH1eDblHWEym-teUBuimiMtUfGeSXhUuXPsLr5uHhTDhhtulnZUC1nqb58aUN3gA_5uNWSPvSV5faauT940MKv-uvKYCS_OqiRcREUNoCEKdlgYuAMf2r2qdhv7sHJteGxjhpx7eWwG-GzerGAv-TGF5g08ZAXVCNwanvvkAyt6uQPV_JuA2yk84jJqTgqic0qfNh4lXBkGHWtfn9jKGU8f8hVKDP7CQ36Tfwx1jlA3pWlE-mZk28d62ZuBOyK-BMiYrlkH1ktmWHg8XKuzvH_6Ikb7F3nx-Gj12Vnd2Uzqcp-4o4G1wFCjCnIabN8Fk6VupffFNC54PopRyijthjTpwz5Vk4VnML_4apVsqMzPNKwLwGYVJnC9R6Q3GXuE=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Creating a date function**\n\nI need to provide a solution in Japanese and clarify the order of dates. It seems like I should handle absolute dates and exclude endpoints. For example, counting weekdays between January 1 (Monday) and January 8 (Monday) would result in four weekdays: January 2 to January 5.\n\nI could implement this using Python's datetime library, ensuring to handle cases where date1 might be greater than date2. I'll make sure to raise a ValueError for invalid formats. It looks like including clear examples is essential, and I want to use proper type hints in the code!"
+          }
+        ]
+      },
+      {
+        "id": "msg_01a2b711758ef4b9006a9ec484b9d487d09daa15449f540924",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間にある営業日（月曜日〜金曜日）を返す。\n    date1 と date2 自体は含まない。\n    祝日は考慮しない。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序にかかわらず計算できるようにする\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        # weekday(): 月曜日=0、日曜日=6\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例：\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\n`2024-01-02`〜`2024-01-05`の4日間だけが対象となり、両端の日付は含まれません。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 112,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 489,
+      "output_tokens_details": {
+        "reasoning_tokens": 193
+      },
+      "total_tokens": 601
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    2つの日付の間にある営業日（月曜日〜金曜日）を返す。\n    date1 と date2 自体は含まない。\n    祝日は考慮しない。\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序にかかわらず計算できるようにする\n    if d1 > d2:\n        d1, d2 = d2, d1\n\n    count = 0\n    current = d1 + timedelta(days=1)\n\n    while current < d2:\n        # weekday(): 月曜日=0、日曜日=6\n        if current.weekday() < 5:\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\n使用例：\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\n`2024-01-02`〜`2024-01-05`の4日間だけが対象となり、両端の日付は含まれません。",
+  "reasoning_summary": "**Creating a date function**\n\nI need to provide a solution in Japanese and clarify the order of dates. It seems like I should handle absolute dates and exclude endpoints. For example, counting weekdays between January 1 (Monday) and January 8 (Monday) would result in four weekdays: January 2 to January 5.\n\nI could implement this using Python's datetime library, ensuring to handle cases where date1 might be greater than date2. I'll make sure to raise a ValueError for invalid formats. It looks like including clear examples is essential, and I want to use proper type hints in the code!",
+  "input_tokens": 112,
+  "output_tokens": 489,
+  "total_tokens": 601,
+  "reasoning_tokens": 193,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "ja_raw",
+    "sample_idx": 1,
+    "prompt_text": "2つの日付の間の営業日（月曜日から金曜日）の数を返す business_days(date1, date2) というPython関数を作ってください。日付はどちらも YYYY-MM-DD 形式です。祝日は考慮せずに曜日だけで計算するようにしてください。ただし、2つの日付自体は含まないようにしてください。（例: \"2024-01-01\", \"2024-01-08\" → 4）。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 8.51282024383545,
+    "generated_at": "2026-09-07T09:04:53"
+  }
+}

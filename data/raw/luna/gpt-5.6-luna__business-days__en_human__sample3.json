@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_01c34c69134038ea006a9ec5b3b78887d086cd2928f71a3a68",
+    "object": "response",
+    "created_at": 1788790195,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790200,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_01c34c69134038ea006a9ec5b4c46887d08d8ca27d4c155787",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsW4pZgkdnVK1kISM-eg5dIRFUG11ID_8xi6E2Z6-ASBqHDhO2PgibBqjq8VW3G5svAGSm1NKP7GTGSEhzgNDecPQ2YskI2_DTQ4WGpUuYg4Gil8s8zxADvx77j7hlFsWjf99TWPL3crHDAGlKfzZESjahJWR-7Nr1rdAlQ79QEysqEtuom4OAQ2CCficY798XixhEEFS0Szd0qQz0wAMJma8kK7sMx8g0wCds008H1yHS6s1t5yKMAD65bPL83tBRjDWAfDkLdWdSazqSHbcU3gvfl2P3Bzk9_C-nRgoNSblGa2sGV9ZiUq2PkAex3-G6KgtSwMsmSKaFDNHpPehhXyEGH1dBQxuaTys58KI6Tl-f3k0IeKPcA_C72lnySHlmZpJWeInWGp5W5t8VLyDBAdTTf47gGR1o9O1QwtH1UAwU6wiIG336N1Bh2M-8muicjXfGrglVpxYJfiyDFN3EvDPViTfI0xakg-U2L3QZ5wHIpm2lwnA2jsJ3dZIq_wmgIaaV9RWAwMB9TY2TMb-9uhd2sON4SyC-EKeneHlqHyTl1bXtWxkS4qMYMWP_GHT7bDtY_mOCQNBgYlSV9v4bNJ9Jj1SDCxqsk6WXxYhYcWZJ3dHmQ2cif0b-Stmd_Gwmk07rafH6tlWpdPph8U09uGaQgrocVhuIg7V6aEM2hUwqYuLQKEdngQD13xjuXqGcyzU3Yg8q0U2oLHBUbGaDFbHNQf-A4WpL3B3JshyuTyK3b0oRDh3JYd-493HPvUUatqAULGpDDi6RtM9GDYLivh9VkPejTY65rtbJKlT4W2BUdppa_WBz_WHblxMF72iFbgvEC856Ku08R-20IDgZ7WLC7RV70lxQGi7_Ex3yTVhIc627KmGcCo-j7eHFyI68G4ttoE4AW6j1vryd7KK3iNLtCbbDBrJ6EkbBOultwfIpucUSWRbR2vSRmrEB2CaTNWgUxCtYurVKJvkiIrK_Se03_hHKuPJESS3f3oeTC2JsIatAH4eMQsZR80Jd4bDQKqIVkNWaQloLB2tLb4juuyhQRZBLCj_NnHJLWR-ttNj7x1tu38H2ldyEUYnw09Wp7nt3sYKRZIizM1ub8WpZxEQT_xJYI5R1QP6cHUiZi6uYjHusZAdpSJpaEevmjl-cV15QlEkvFcWhzLfuMQsGPVQsLl8fp7YbnXO9F4OxJo4nl-4K8C6z580WsHcSawQVL4CmAx5ROwwkRmua_Rf9hyzWjv8Oa-QemR4lYIi7swCABE17Ew0w24tdB51qcpopl-XHfKV0UFP9sVwc8WuRKYMnNuecxr-Cz0xc43tQiMvXLOO7AsLwdMTEmdvg7zJwcStAFMEUDe_DhG1tC7oFtaPPbEPK4ABgRq-H-IrUS7jodZsHjIN2WkLB5v1MmgKeCdqqy9lQYFb-NlBoVYRyI0ZzRr_OoQQdlZOyenFUZAT-Ephx4xd3-BfYWf-X31WwU_xdlK1JTQ8Tr9l-RtpK8XrVHvYuGDkvBKKiL0TGyFesEjvxWJyBgFrRvfDKaf54Ga8nCqMpyM7n9BSH-2-pFZ3fv89vkMbjzinMLeYlbjci-YQOoDsIwZ6fjF5rkoh2Qw-nr_9E3k4OaYnA5R3MooxmTMHCrcOZXrHNSoPM3uvZtZcdbAhfwn8ULBysy6__KOxtqVUusWyhyHJpug1kHv4MJMJYQ_uqDwRFBXhRvdTpDps52H3Ugd6YJGVp5OoF2lRjlIOkxfpTyzRw0s60qGu70LVSbB3zjwCIwOPTzYX1aSFcUpgCvLoxcFmAFSGwLIZuPiHQm9fPIy0CAINASGFPGpNWrtp-vP7HN8swmnoNsotRgHRAZOMdAJ3QRSM0vNfdq9Zbugv1x440V3kiXyVFwLbdMYy8htRija1gDu2ig2FdWvEa-h7ZL9FhqCFFTsmcHv1uo7cMSVAyrqmgkH7vj8hGIpcF1Fj7s1cA1fp93VQ3D8Ce_KJygukwUXTZQjqccrE_Z22CRthx3u4eAbkVCJzSq-UvaN90yfVqt6CtYaHp7m2gwE31VqnIA5OMuyYOVFjeeTiCbQJ_oURhLnxfLibOpQ4G9g2b5XZSHaQAnuhbtYRkBQc7p08aw7VjSsOeVt5d0Z5G6zWtGHBlTIpNiyfe-2ocCmhfgVOFlBg_juXcICzPA6n2h9uJQfdNmStykYWBQ62dAqDKooUcshSgBzIBR3XStbIZNhgZJSEtWpZOzMrfxRcH_mAVj9GHhXbmFg2dJrXIXYgAxFURxv9bLO4RcLaOvH_HIsMK4eE6w-Zdq-PEr64lxrYQlNYi1WHcHrUWcUfr4ApiZLK3xucV_CIXObLbPCyA8spqauLpPpVpOadQVhWlNoTdxqXAnm0on6bn9TZ200xbob-wRQal40j0k-bDYShlLaihN1sTeUz0Bd5_-vflZQ-WcpHSUnmUHSfMTNXYQJQbiEyhUfipxzCHx6Xuwq0AANh8wBmMFcMm_YORD-zSU7VWaaa4c66aaZmuQ686KObW8kQ_FlGzfvg42XgfrOiUUXMqqYuvIA-4QMkwMHgWXH6l879bczZ7TeIrZNzZqxbSr0d6usXrCqVawzmNLJ9Rrrkrov_-pTdCK_V7f3f6KQrbB-s8SHKnWq75Vo337N_DyvB5XhAlrawMo8uibH_4V_RlSPlAUOTmF2szhcR7aSK4dtlRPHRGs4qKTyNFWa52VDGRdnx_dWoMfKvxUkR_DU6vV9J7WIon_QC91w1V5lkf7CyvVQy41ZPWgvmFnb7cptkphmCw==",
+        "summary": []
+      },
+      {
+        "id": "msg_01c34c69134038ea006a9ec5b786d087d0aca34e93b79b8ed2",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the range as unordered\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 91,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 422,
+      "output_tokens_details": {
+        "reasoning_tokens": 248
+      },
+      "total_tokens": 513
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the range as unordered\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0 through Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n```\n\nExample:\n\n```python\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```",
+  "reasoning_summary": "",
+  "input_tokens": 91,
+  "output_tokens": 422,
+  "total_tokens": 513,
+  "reasoning_tokens": 248,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "en_human",
+    "sample_idx": 3,
+    "prompt_text": "Write a Python function named business_days(date1, date2). Both dates are strings in YYYY-MM-DD format. The function should return the number of business days (Monday to Friday) between the two dates, without including the two dates. Don't account for holidays, calculate strictly based on day of the week. (Ex. \"2024-01-01\", \"2024-01-08\" -> 4)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.812496185302734,
+    "generated_at": "2026-09-07T09:10:00"
+  }
+}

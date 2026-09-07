@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__ja_raw__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さは同じである必要があります。\")\n\n    # 単語と句読点をペアにしたまま順序を反転\n    reversed_pairs = list(zip(elements, punctuation))[::-1]\n\n    new_elements = [element for element, _ in reversed_pairs]\n    new_punctuation = [mark for _, mark in reversed_pairs]\n\n    return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 108,
+  "output_tokens": 250,
+  "total_tokens": 358,
+  "reasoning_tokens": 82,
+  "reasoning_summary": "**Considering Japanese symbol pairing**\n\nI need to provide an answer in Japanese. I'll infer the pairing of symbols with original words, reversing those pairs. It seems like a good idea to include a function for validation. The ambiguity punctuation list will likely match in length, so I can implement zip in reverse. If punctuation exists, I might need to handle those as strings and return lists. Also, should I include type hints and consider handling a mismatch ValueError? Finally, I should clarify the function name.",
+  "graded_at": "2026-09-07T09:28:41"
+}

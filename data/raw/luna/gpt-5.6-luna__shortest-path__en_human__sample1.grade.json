@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__en_human__sample1.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    graph = {}\n\n    # Build the graph and reject negative weights.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Edge weights must be non-negative\")\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    sequence = count()\n    queue = [(0, next(sequence), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # Ignore outdated queue entries.\n        if distance != distances[node]:\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    current = end\n\n    while current != start:\n        path.append(current)\n        current = previous[current]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 163,
+  "output_tokens": 697,
+  "total_tokens": 860,
+  "reasoning_tokens": 322,
+  "reasoning_summary": "**Explaining Dijkstra's Algorithm**\n\nI need to craft an answer that explains Dijkstra's algorithm. First, I have to decide whether it can handle negative weights, as that could lead to a ValueError. I should think about start and end nodes, and verify if the weights are numeric. If they’re negative, I’ll raise an error before returning. I'll use a heap and an adjacency list, and check for duplicates. The function should return the distance while managing edge cases for start and end nodes.\n\n**Developing Dijkstra's Implementation**\n\nI need to implement Dijkstra’s algorithm and start with initializing distances for the starting node. I’ll maintain a heap with weights and nodes. However, I must consider potential TypeErrors if the node types are heterogeneous, so I can introduce a counter to break ties using `itertools.count`. When I reach the end node, I can reconstruct the path. If the end is unreachable, I’ll return None. I’ll also need to validate negative edges, even for disconnected graphs. Keeping it straightforward seems fine.",
+  "graded_at": "2026-09-07T09:28:44"
+}

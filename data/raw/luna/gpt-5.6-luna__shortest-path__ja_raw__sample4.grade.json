@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__ja_raw__sample4.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 4,
+  "extracted_code": "import heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノード列を返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジがある場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みをチェック\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    # 距離と直前ノード\n    distances = {start: 0}\n    previous = {}\n\n    # ノード同士が比較できない場合にも対応するため、連番をタイブレーカーにする\n    counter = count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        distance, _, node = heapq.heappop(queue)\n\n        # 古いキュー項目は無視\n        if distance != distances.get(node):\n            continue\n\n        if node == end:\n            break\n\n        for next_node, weight in graph.get(node, []):\n            new_distance = distance + weight\n\n            if (\n                next_node not in distances\n                or new_distance < distances[next_node]\n            ):\n                distances[next_node] = new_distance\n                previous[next_node] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # 経路を復元\n    path = []\n    node = end\n\n    while True:\n        path.append(node)\n        if node == start:\n            break\n        node = previous[node]\n\n    path.reverse()\n    return distances[end], path",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 209,
+  "output_tokens": 835,
+  "total_tokens": 1044,
+  "reasoning_tokens": 303,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:49"
+}

@@ -1,0 +1,134 @@
+{
+  "raw_api_response": {
+    "id": "resp_0d4eb85348a258df006a9ec942cad887d0aa9d7fc240f82294",
+    "object": "response",
+    "created_at": 1788791106,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791115,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0d4eb85348a258df006a9ec94362c887d099d1d5ceb6d35e19",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnslLQRXQAWGBVyp5tgNtfy5CFtuRZ0z3t4jB373BZwLDzKgGnZDqAKq3oKCOB7_WR8Ju7tZpPjfq5MZ0hLWXCwi7tKsM-ZUjDRdwX6-GPcB_viaOlNvb-DDSnz5fm6qhwRqiCaX7f-vSt3Jq2OzmY1Re9YmZ_9oVzve8m7sHIiz8cwh8k4IC6MzBLL1QOB8h3r-Bt4Ep9RgEUmr9Lss93UHJspwmTjzyzplNYafbcW5ST0oJOpCrDOyLKue9JcG7b34PY2t0zMHeCDdKl2bAT435ouqXGaiqx7-ehLyINqMFSJkTE3fT2Lfsw43csxI9loIcYmnGwOzT9eYMw4oC5pvW-eFXxT_A8nK9m6ljs8SxD4B1PDtqWf7T7OK6Nnm3Ksw6fzgXZxzZnaXrTdP4cQViPt5-10lv2W_Ss6rofzv6cRs6FhYr72rz3oZXYO8fuE6SpWaN9QyOTYsREt1BvoLTvGAYAIJLOZ8MOSYmZgB-wqUkb8Yc1yt6EgAlTkeVkGQbimWodZxREuzuPJJYl50yvqoCcBqrYTNKOVp0TIuSO-ltO45AcuKQhhSKP8TC31C5RQqZvJbQ-aDwzXkxOVqNR4DMYwqBXEpSMQbXfS5_gEIYO8FDv7MYkfWV1noyL8aGDfr8EjvM5FR349jP86g_4jpJLEuu0zVxCYUCJMc7DmLruUNabhvDep4jltodFOjYS9eYM0ViSKaPUDZloukqttsXjyOzqRNV-kDkNfk4o6ECe-zUIQut6YEhAqJsmxQOzEyZQMSR8q5EuWuQGvwEaZwkC4VsfUV1xAz8K73mCfhJXuCVHssaInL0UM38ZXPY2vWRH1W1XZVLOfOJa_Rt7zDEYYZ-Ohsy6qmUnxAt6pWNcSMHOAjt0HR91ss4jnd-xVxn8PzbNBeu0nm6QWv8Je04o_Ie55MaREdK5UyQhvCM0lx_m6NAWBWZAB6illN5yEcqQjvCOhg6WRV_pwg9FWMXLNnCshzziOSDO6VNhK92Tcg9-FL013P4Y1PLBuUdRxaL1Nza2kfW04WKhz2y3HPpskm_5fB5DvDpp55wWSuE4bIvhi7Ed3pLVs5TLaZLSdEbZgC_7ThqSNN2acZYbbMBRiorT9BPAvo0AweXgYnye3VBgSSVQhNsY90j7CEsDpuFUryI-mNAyf01Gzdh2-lbPt5Z6uxdTAvY7d95q7Db4xIiPANyc-O_Ryyqxb008zgjf4NsuUxd8Bc3YkjUskJh0FhN1mqpAMLFcPj1FuJPfmdXQLSX4zP3lDJPl2Z0oNopNO2j0xu7a8GfG3DQooMytYgQSBSwcyp6nmc4y2cjS5Si3AXq9e22b00_GZLUHmx8VXRlo9Myw_GMplBqSQS0ORHCc23YN3FFPYhqGoLPFitj-a79-MAeQ0SoQKm1CIh61Yx7idPObePbUH0ZFYapnqLnsaES7z1a6kNW81eEIkRQ6gKh7vNE1uz-iwzkiYJkv0ecyxZJmYWF3B7TCGdb7_ouu01VakY1Q3pn9dVBS4QrAksGexGngUMEjZwLgFbNucAhYTzRf8c5syhCyZiSzIrTgfo94fWhoZJLXHwrFpvvXusI8YjrVMon7jHzhK0ZcVYQy5hSCrY3sz2Ndga-tvNG2J5dNFWwMK4mOINpfpRNCG0UwBER9xyGhorb0tdUMpNf64aB0pHcQi3fHq-KkWxS9qEeWzrkEw8seeA-UIC167EHS1GDGQqxCLBvSdMJ4cfsPJKTNvq6oHoVy88DW3weLbBLIbPQjZvV7ep2V6jy7lbS-3KlCN8JqtK_nDpwtPFEFrZsOaKWRB1UDUEfeV-4kydmUy5wC2Mh9MqY8BYuEuvQdb2t6Sxqxgts--g2_Vv79LUjhaYi8hfAhMOO4MgOBPpD8iAWaJWfbfUtFHxFsGqoHib-AhlSbmqVp-5yrvcxCVW4Ye2nj6XXZBH322xZ_nFA7wmwFJbnHB5wcZJo2zsz3mWD5GxymXmLZ8mRp5vNKkO5rydkcueEJTGdWwihhrIseGOLhPDKM0zsW84Q8HxoeK2tilhlIExtmYWh_5QerbWwXNB1FUwbOswCX2pOwKA45n_ZU7mZGJSLc1JgEs7-BLeA4315ds4-RvYPJZta4pbwx6XnpRZR6AuYLxql548b_aoEaY7BOlUIPJ2P6YaQI8mH1GWQGMRPFRmyV6Y2yhGifztCHGTZ7loOia1MWvoAxoUR7R7PoLMeP-HFZTYGUNt44H4YyHEfbdQ27vr-ojGlUFqbMd5g76qKBwbSfJ90cFGwR7QjjbPTQoSJ5CPbsrjnomECKQmIBUwFEm0qDdRCq75XwcbIxWCIMqNubXLd9FxDK9u22r8ERk1_BLLcdyWtV454SUiyMu92-GwwejDQYw3BjpM7tvkagOWjh16EcDLBMJriNQFx2g25JN1keHmkRM7RDe2LsX5HkNZVb7h0uBhSN5WZze4-HWYc4mYd3AfqSLT8SR6GQkoXWEBBD9ARX5DHmma3GPwdfnKR9i443mtUR1ne40qXEQ0rab2jSUr4qkUBWyZkBzMeapB_3hRmmN2cxe2MvJFbTPJfYkew4mrtCXi-8yZUgvwtNEHafBJftDofDvZia1qJ6kcTRfoCg1w6-5qNMpUARE5-Lvr-fP_UaPmwiQDo9UpqmoHfACduGui_a63VMMTHkfuEO1wgX1LWTtYCC0T2bym9Ui6bf7e7ztmULdt-G08HdttR8tY5Cv-ERXULjdiXfM7PRE_I2UbVudL2A91cyRv-VP9X2Vch_JrZlPcygK8OpFFd3iPBzJfF67ficPzi00qyDN0zNPJNKhYYxI1nnvmAaP1tp4BtSUQrwCE7KSBd9X7S6UBZ12U37CMlZvb_IXD7Xhku3V8jEbQU4r0tVkyULiQ0LLYWiCU-9Arpm-nmbpwHE-riFfRIICLTU-syNiOadrSWHEZgy5X3deaappMDJmZCxAGCDOFI7shqWmQyLzRC483rHbwRf1Oi7azK4fS0O2g5ZZnFBiRqi2YGp2Oi4D_92h1SdSinpD0H6tWIFS64e2FrtZgjJq9pSZ4Cx0YXlf81R3HiYbDintXU2cUBukkmKxKYJ5aIEhZSuhBLiUW0HJDTL-fYWl9AhIP7kgVPeS9vzFsEyPLjX4SC7i7VfYyiBpL77DWlMcFF1CXe60zjDUwNQDviquzgKiYj3W0S_Wxx-TJFhJaUS1IxKufmcXAZZbWpJm-3rOteKgzxv4gVpXTcw6hnQjaIs_Uhg16OIxoGeEqaR1528gvIt6WnSUHvP6QkN3IXcpj-Kb_iZGNNw9RNJmEVtb_yWGHVArlMfDvJqQlxrxSW5qtYZQ0obdcWDvnG_gFaNg==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Crafting an algorithm explanation**\n\nI need to create an explanation for an algorithm, likely Dijkstra's, which is focused on nonnegative weights. I should check for any negative edges before the start and end points. Nodes must be hashable, and I might need to use an edge tuple. It's important to ensure distance returns numeric weights while managing duplicates and unseen sources. I’ll implement a heap and handle potential negative weights, especially prioritizing negative validation. The wording around returning a tuple `(distance, path)` is a bit odd, but I’ll clarify it in my explanation!"
+          },
+          {
+            "type": "summary_text",
+            "text": "**Clarifying code nuances**\n\nWhen coding, I need to consider that if the start and end nodes are the same, and there's a negative edge, it should raise an error. I should validate everything before returning early. There might be instances where predecessors are necessary, especially if the end node has no adjacency. For finding the path, I’ll check if the node is reachable from the start, returning None if it's not. The stored distances must return `dist[end]` and the path. They may expect the return format to be `(distance, path)`, so I’ll clarify that in my explanation."
+          }
+        ]
+      },
+      {
+        "id": "msg_0d4eb85348a258df006a9ec948b2a887d0b2a84972c83e3291",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (shortest_distance, path), where path is a list of nodes.\n\n    Returns (None, None) if no route exists.\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = {}\n\n    # Validate edges and build the adjacency list\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    tie_breaker = count()\n    priority_queue = [(0, next(tie_breaker), start)]\n\n    while priority_queue:\n        current_distance, _, current_node = heapq.heappop(priority_queue)\n\n        # Ignore outdated queue entries\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for neighbor, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current_node\n                heapq.heappush(\n                    priority_queue,\n                    (new_distance, next(tie_breaker), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # Reconstruct the path\n    path = []\n    node = end\n    while node != start:\n        path.append(node)\n        node = previous[node]\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\nExample:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 162,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 761,
+      "output_tokens_details": {
+        "reasoning_tokens": 320
+      },
+      "total_tokens": 923
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (shortest_distance, path), where path is a list of nodes.\n\n    Returns (None, None) if no route exists.\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = {}\n\n    # Validate edges and build the adjacency list\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not allowed\")\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    tie_breaker = count()\n    priority_queue = [(0, next(tie_breaker), start)]\n\n    while priority_queue:\n        current_distance, _, current_node = heapq.heappop(priority_queue)\n\n        # Ignore outdated queue entries\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for neighbor, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = current_node\n                heapq.heappush(\n                    priority_queue,\n                    (new_distance, next(tie_breaker), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # Reconstruct the path\n    path = []\n    node = end\n    while node != start:\n        path.append(node)\n        node = previous[node]\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\nExample:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```",
+  "reasoning_summary": "**Crafting an algorithm explanation**\n\nI need to create an explanation for an algorithm, likely Dijkstra's, which is focused on nonnegative weights. I should check for any negative edges before the start and end points. Nodes must be hashable, and I might need to use an edge tuple. It's important to ensure distance returns numeric weights while managing duplicates and unseen sources. I’ll implement a heap and handle potential negative weights, especially prioritizing negative validation. The wording around returning a tuple `(distance, path)` is a bit odd, but I’ll clarify it in my explanation!\n\n**Clarifying code nuances**\n\nWhen coding, I need to consider that if the start and end nodes are the same, and there's a negative edge, it should raise an error. I should validate everything before returning early. There might be instances where predecessors are necessary, especially if the end node has no adjacency. For finding the path, I’ll check if the node is reachable from the start, returning None if it's not. The stored distances must return `dist[end]` and the path. They may expect the return format to be `(distance, path)`, so I’ll clarify that in my explanation.",
+  "input_tokens": 162,
+  "output_tokens": 761,
+  "total_tokens": 923,
+  "reasoning_tokens": 320,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "mt_en",
+    "sample_idx": 2,
+    "prompt_text": "Create a Python function called `shortest_path(edges, start, end)` that returns the shortest total distance and a list `(distance, path)` of the nodes along the path. `edges` is a list of tuples `(from_node, to_node, weight)` representing a one-way street. If start and end are the same node, return (0, [start]). If the weight of any edge is negative, raise `ValueError`. If the route does not exist, return `(None, None)`. (Example: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 11.073635578155518,
+    "generated_at": "2026-09-07T09:25:15"
+  }
+}

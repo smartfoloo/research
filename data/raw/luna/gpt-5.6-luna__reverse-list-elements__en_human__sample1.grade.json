@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__en_human__sample1.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 1,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements and punctuation must have the same length\")\n\n    pairs = list(zip(elements, punctuation))\n    pairs.reverse()\n\n    new_elements = [element for element, _ in pairs]\n    new_punctuation = [mark for _, mark in pairs]\n\n    return new_elements, new_punctuation",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 235,
+  "total_tokens": 327,
+  "reasoning_tokens": 102,
+  "reasoning_summary": "**Explaining code requirements**\n\nI need to clarify that I should interpret punctuation aligned with the elements, possibly reversing both lists. A potential issue arises when each punctuation mark is attached to the original element, which means I might have to zip the pairs and then reverse them. I wonder if I need a function for validation? The user asks me to write a type-agnostic solution. I think I should ensure not to mutate the original lists and handle cases where lengths may differ. I'll also mention that it raises a ValueError if they do.",
+  "graded_at": "2026-09-07T09:28:37"
+}

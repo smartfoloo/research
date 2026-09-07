@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_02f009ca883974c7006a9ec9b11dd887d086b00b24ad331841",
+    "object": "response",
+    "created_at": 1788791217,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791220,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_02f009ca883974c7006a9ec9b1b29887d0a83fa778f7b9a0a4",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsm0oZF5lYoHIzsZkp41go8JWUtNxBBP9cQaaBPMk99TwrP4VdnMYUvYmkTybBxdn4yh8zKMJcxf1k9EJmfbranE9KKFpf3dQf1MQGSJu0d8xqMZvUTBx_KdLFkSmRu0ZCv52I67l1wizlEEvgUH0RHXaEYRaIHgwi8ef7N-qAQiXxXhJFfe3ZtYVE-HmjXl4sczgTs0NqduVjct3u3xbDUup4SYQDdk2E1ir7V4noxBQ6nd6VZqRDzw1N-QAYKAi6TLY0Q9PEr5t2cLPwlF0KCh2M40hyb3FgAR-s0IkXiyzlXPOLKNkk8S-JQKh-ptLuIXwz67eYW5rEOsqDUgsDoHlGSrGS1G7ioHzuuw0CiQfpjGq_Utuw5OLkyQOTSHfxTvFDZgUzILmgBg0Ix06rFlYf_u7N9FOcy75zTwq8mojDj0QZge1KkU7dJZcpLuwv0wGRFeOqnPImXelvc6T0Y-te5Yk0ce_BPGkXsaRgZeNiMIiCWxUeekVVxlhGHV7B593Mxb47Nuco9kNjgTbbmaxx5i_9Cz1wkz8CfxSuDVjf-yCJhefZdnDmM4w6FnfVf2SdmmEWYf6r57dQjv2kF8U_ibySl7Mz1J4WynnPF-w_IqkT6OFQOeNLGxUYNKTKYGDD__5xmRwYLKscC9lTzMZzqjfWxbwE47C4e2Vo_LYmgBh95Q3-IQ6S09VByKxxCSyh3TjLaymiKNX7-svjJ4oTF_4Q9xobexBsr_rhuytae4_g36iiBeBO8ItZQxXJ8nBDYJodOFpUMZIjtCKYVaKNl_geQ6gMA0f_IOg-Ryr2CNahHIs578b2XgIGrvt4KMuKGQM2tAsv-Xt0PDGypaVZjhaKD-2GDL6CEw7-8KZfNT-xSrRe1flBOmsHiXHiKLAuiHCJgpii5BfzzaLWh60r5yavfaRvYj0q9rMGKJPNazsE6o51QChaAwRCaMm1Iawo_4pNSdKUjV7c5t8a_c4aEKr0it3JixIEf4SrCJFl0scvw3L3hdVD7uR6N3ofCXiJCPZbzkmkK60e76Eb8MPLGogpXz9plnqYl04BycdlOMe4jHBZLSeTvPjliG-POZCF90eXvnL7moyVjx4d4hxzx3iZlGCy-TWr-2BnQ4PyShZpNAwZ5K068d648_bgGgTSFm21WfvvGvgh5U5wTWdsh4NB580EiDPSFDYqW110OFFeCMh8bLeSqJ8skIwuSNJ309ni2lsYFtWyU4cbPPqGtc36CA3nNlmXK_OBq-X-H8xEPV4c8WrH2wMHw_-VVKySCFPBpU3xdM1PvzpXSy1se52iKGRnr6VqDAYoBcl9158Wv8cM3EV08bzPzk4YmXsU0O5xk0v5Sb_aybXBMQUNgAl2Z06b3Aj-WCpSzD_SsKfzXzJYn7qu8ZvDuVdCal-_tL2hLKzmbqECjYXcJ_6lLI-G1fXf4KWwBzZgDfmj9Vf1J2v5Gz9rrm8wbVezfxXHTBTanqrIKbVpEr63_RT_BMwnHg6sFcw6tLuFKP8rFQ4W4JnsFl5-1kOML1_nfOrUXZOWG0CiVQnU29hmsgX6ckfC-qTOW5P3zdhEJBv3vCqEOjA0AgMG0CUDXLENUzpSZChxr0oVqRkulIKhva0KGMK6rvPqj6u37d-Aa8qGerFEW9NK3kiJvTeP8LIla7kB8gbMXSaeci64Mbc4NccXGeoyliMxAH08jENC71K7WWQbiN_2maYlHOcxGoJSXI8rZaeeqeLnD-Nc4ouYytBt0vGicF4RuT2qN5sBs7yf4=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying code approach**\n\nI need to focus on answering the coding question related to Japanese programming. It might help to clarify things using a numeric list. I should consider implementing a function for atomic rollback. If the current balance is less than zero after a transaction, I should return the original balance as False. I wonder if the initial balance could be negative? It’s essential to check that after applying transactions. Implementing a loop to add and rollback if the balance is less than zero is a good idea. Type hints could also be useful for numbers."
+          }
+        ]
+      },
+      {
+        "id": "msg_02f009ca883974c7006a9ec9b3bd3087d08c42e1a9a0cf9b71",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for transaction in transactions:\n        current_balance += transaction\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, -20])\nprint(result)  # (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 158,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 212,
+      "output_tokens_details": {
+        "reasoning_tokens": 93
+      },
+      "total_tokens": 370
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for transaction in transactions:\n        current_balance += transaction\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, -20])\nprint(result)  # (100, True)\n```",
+  "reasoning_summary": "**Clarifying code approach**\n\nI need to focus on answering the coding question related to Japanese programming. It might help to clarify things using a numeric list. I should consider implementing a function for atomic rollback. If the current balance is less than zero after a transaction, I should return the original balance as False. I wonder if the initial balance could be negative? It’s essential to check that after applying transactions. Implementing a loop to add and rollback if the balance is less than zero is a good idea. Type hints could also be useful for numbers.",
+  "input_tokens": 158,
+  "output_tokens": 212,
+  "total_tokens": 370,
+  "reasoning_tokens": 93,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_raw",
+    "sample_idx": 6,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 5.167754411697388,
+    "generated_at": "2026-09-07T09:26:59"
+  }
+}

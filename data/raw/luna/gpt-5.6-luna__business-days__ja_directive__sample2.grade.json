@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_directive__sample2.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 2,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    月曜日〜金曜日のみを営業日とし、両端の日付は含めない。\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の順序が逆でも計算できるようにする\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜=0 ～ 金曜=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 121,
+  "output_tokens": 496,
+  "total_tokens": 617,
+  "reasoning_tokens": 202,
+  "reasoning_summary": "**Interpreting code for weekdays**\n\nI need to find a way to count weekdays between two dates, considering the order of those dates. The user likely wants a Python function that handles this using datetime. I should ensure the function can handle cases where dates are in reverse order and check for the exact format with datetime.strptime. The goal is to provide clear code and examples, where the weekday count excludes the end date, using a while loop to increment through the days.",
+  "graded_at": "2026-09-07T09:28:16"
+}

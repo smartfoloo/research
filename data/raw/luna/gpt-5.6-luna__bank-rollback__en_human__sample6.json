@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0855ec3a38e8f8c7006a9ec998fea887d0badc1d8edc86b8f5",
+    "object": "response",
+    "created_at": 1788791193,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791195,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0855ec3a38e8f8c7006a9ec999595887d0bf351b2fdd62d824",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsmbOivJCNRIG4puvq-p-oXoBZVIh9WQ3u9xq51NjbFzY6r8Rjv8JfJflsf1ouwk8DtoyxbHIfEsGVDRYcG6ieh8BHfZMimn9Ih9iic1Qq1aRpI82Beb-PfZiGIDmywqlVzh95qcp0wyTO9nDCmegTexN0UHcY2QizFGGUCC5k6-LxMOvU6MKDjNLCpT_2wvA5ywqrj59eeP1F_ai9Ill_ak_n8FF5Kw1l9Gmen-_zH_4siTNeNVCYbCUWPRi5CWEFhepvGTkJmm3lfiGgRKOAH0oL3naqh6IEUFb0p0bK-n0U9V5OIfRRXjdb3j5mGbcRdW6ll7_cLrMa2qAb4cThcXzhs5KUqw-Vo11L1QROKhfH29pW8-Emfop7LNtkYu_1MIUWATwhuglrTVPGOHUI-nUt8KbOs1y2t8VZoVX9CuS9OezN1IlHREsvpJ0Eh2bFH6bLx9KtM-FPchzy-BO4G7LLgJ-w4CkWLJg9TPt1jDI1kL7z7RPJ3axwOSw9sRzSUiodMwBAOB0K3XDb0hQkTr-Y7fBtI0dwbo2GR9nJpRz4aPeEL1LBl_4Cy4NqgwY6WCDkvyMZmlMpEPonkHEJzWu8XD-mZXT27HrlCwN9WN1QCH0fj_JxD7tnpHSVhEw2AfJLc2h1Reu46RxTQ8hXkwcA6TV4fafIl8ahCS396YhaFF_Dx86BaK0aiDV74_HhgwHYdx8QI_p2DpdthVBDmgJXeh9lbtLA-NnRePvisrYRAZWWgqwI003bmX1DsEMkfJlDYTzJifGnROPo8wotaWYfIbp0ntYntJvdp9K1CRHSE37LcRfjEzdgTA6Z5cp-ytJoNsAvhBE9YKjaweg3Ek7Qeq_UfUjmGHvHK2d0Qq3e2jV4gXWL0K1fQiSufCh2OsRQeh6VHy88HzHI6TFScmcFlOTO9vTTMa4UGdfKMroNzxXU-VHY3vi9cUVw09mHAh6H65linOEJbBxctAB_nSPKRmtcn6BWFJSXZQB6Kjf123qd9IDjxSRYamJP_b1FVUKpL7yHX5cydeTUQSl5FxQUHj2eHAQkV06tNzw3ivKegILtf1CoFuHQm7-A2QHq-lOOzZnKGzYYkV2kVVS5Pyg50bGiFadSwYxZbX-jimdwnRPEnma4HgfEEt2tHIPeVWHpY4xc_20_S3MDLiEpN2Sn8bzEPfNd7PMAelQf33IXkuwojeBd-HvKLmkGLkZMpBDZYQ83oHu_yCo6rW18w409QNn21peJscnK3xCO3duT3e70J0WLR25qLWFWRANxfAR8lMg41cBckzMbVXi--vV_hibAf_gbS351sneBiR3Igx4TYhOntnGvHeD5Gv7av1kAHPboR9G4F5L8kGqFVH_ax6qEa1zH6KGiOpF1v_TW9mFoE-BypgeompT049mHpSgQ3dPtEaz0v2bekUix0Zl7yIutTUrWQIwn3QppK4-TaUMYTNzyRcIiHKek3u4vlhyREQOZNy_Oo1J39ZllrNvGv-4nraeo9YGTL2UgoO4x--obftcN4t3hH-5l4T7SoMn74gYshZVymDOje8pcburXhsk2VAglE8uNA7aDm66vTzDLHypIFwEAWbQFPZEW2d4rAEa-CpDmH5-jlT13GUjaC22N_N3fJR4Y4oRbgF9mM=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying transaction code**\n\nI need to explain the answer code more clearly. I should consider how transaction semantics impact balance, like how positive amounts add and negative amounts withdraw. It’s important to preserve the original balance without causing it to go negative. I’m thinking about using a Python function with a number list, maybe utilizing Decimal for accuracy. I might include type hints, and while I don’t need to validate inputs, I have to avoid mutating any values."
+          }
+        ]
+      },
+      {
+        "id": "msg_0855ec3a38e8f8c7006a9ec99b0ae887d0be9514a61829dd4a",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\nExample:\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 105,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 173,
+      "output_tokens_details": {
+        "reasoning_tokens": 65
+      },
+      "total_tokens": 278
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\nExample:\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Clarifying transaction code**\n\nI need to explain the answer code more clearly. I should consider how transaction semantics impact balance, like how positive amounts add and negative amounts withdraw. It’s important to preserve the original balance without causing it to go negative. I’m thinking about using a Python function with a number list, maybe utilizing Decimal for accuracy. I might include type hints, and while I don’t need to validate inputs, I have to avoid mutating any values.",
+  "input_tokens": 105,
+  "output_tokens": 173,
+  "total_tokens": 278,
+  "reasoning_tokens": 65,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 6,
+    "prompt_text": "Write a Python function named `bank_rollback(balance, transactions)` where `transactions` is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return `(balance, False)` where `balance` is the original balance. Otherwise return `(final_balance, True)`. (Ex. `balance=100, transactions=[50, -30, -200]` -> `(100, False)`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 4.464343786239624,
+    "generated_at": "2026-09-07T09:26:34"
+  }
+}

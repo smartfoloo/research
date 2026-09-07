@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0cd2b3852435eedb006a9ec653654887d0b1ec1496817c1e7b",
+    "object": "response",
+    "created_at": 1788790355,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790359,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0cd2b3852435eedb006a9ec65427b087d0bc243de6ea655a7a",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsZXVp-1yrEk5rDCsRhsg-u-a6ntlXA6E0N82j9-nPGJhqbLihlf38CQsxR4UOVMxgXf9VerkjcRDFVj85THr_l2Ji6SLWd3XQtaKBU5xG51y2gjGTbjpmRDmvyMrrosle7K5dqRvC8eZ6rmupq5zM0vwZ4EFSDhYmFwZqpteq283QdmiHsHhuJrfc8OxWHrUGry2OmxSe-QedKjq61KIjbM9MPPthpPtIC_qU1mAfQqu08MLkgiPcGzTh9enOt46CcW4QozHE13mowYz37zWOyQGNttH7nHqbb6PnbOnbwbFglgSYz-hncNZX4DKprnv6kvepWZiK5DTHBRpzsqhqCvDhI39OV8UMR___yFRYu9XW4G1HGkUfRzP7MFl34ERQj7HuSCAsue_fWMOD03zcIR0rH-RFoN9p_3W3rjr7xcHqZDp8Z4I2gj0qawv08T3wDxb4K1ouV4is5g-lv-YgNEqqHfXBZZL5-Q4I0EAXdC6lIGbtPx890TcZXsqbL-NlegJmhaUNHETZmf9RCX3sKCLrN-BDvefbgZDtBodl9kwaGAGX_3n1vFXAM3ggK63pl3HUm4UVlU_3-znDJluMY2YoxBvg4zqAzC-hucHeEhv-jRrsBqrMxNZ5B9gtq1eMTZ_6oxuwFIios-ua3hS44shzUI6Tm_fkdkdTBXWqcFtLw19uRSF1p_yd6XXYUTz78SAMGWrB4lw4xGE7FPftosaDDCQ7Yl_ftmj_77a-fwMAkZm_90oUbFUChcC_cy0xfCtZacuN6PPEEQKKy1mBfeqSh7fD0ACLyxedAdw2bSEEpVqXZIIGuDqme7SSolpwlcwpDa8Zz6CpbMbC4bXe3grav8M7qtUwqL0GqJIyf4hr5_9cShQqSU1A9Z2qESZSGWS7qZj_MoD8txIwbf1wlcaWUK3xjuTbb_0Co5M9zUG_l6bm2R4emZFgt-LRkFv5O96TjH9uN0fcuf9dSB1rTZws0Ir9S3xUDC0JI5vXPfC1MKgPbFhwua7qxHBf0twsY5kE0T69wVWWvdS2DKNOmYSrOuN2xZHSSM_El4dCFqxYi0rKv3HYZ61PdVghM1C_mS9DiDAXUReC8DnlI4Nz8eghs3ailQUAvgkBKczGRN4MsC2jUX2CSn1Qs-qx-C63dcYQPWKZmH0k12fszY32DupIybY9j7f0G414prekPJUYuoZLLCpEycX7b080g4Jiao9ccpneOAA2IUScDkIed9SyZWbGePH9E15o1deCNZuNyZjLMuTtngrpgCC6a1AjI9apFJnFcmPKOtzQIoyIlEsb4oRTiOGcLEklM-dlvPdHbH12bchLLdP0OVhdEKFhoaSKr9SGnJ_QKJWYgFktVCPCmJzJ4Gu0jGJGAW7xTIxI4jo7U3u_KZdkOc64rThvd5R9qTUqr73vqMkUpNWVk9s08C9crkfKEja6uq4dypD-iUsYOO1ubMicMhcfmvDGsvdHxZkEwhevcNq9CD9kqOT83_gLLwvC3OrGR1vNP0DCYaBgvnPXB6QidF5vvVBOmHKdoLA5Ok56yylSf557TRGuRQC9Y04hnw_Vf9DEe1akrKuqdLgt4t8t8lZjailXNOnKv3BIf3vg2uOYtU_bYExyz44kR7PJiWhLzvruu4GydzGh3M4mR2dg44Ic6PP7xQtIEyh_dtw6emwHzdFTzJI7oOG9AZ-fEkO7K9Sb8zyp7QOl2EOTyNXPPfRXGBWGyLhlJsEH7qxQSSA0XC5SK4vDEuz4Hx-15AbfPK-UUpwcW0TfzYIGQAq147lcLcf0mL90fDqTce31FLfeh-hfXJHhvlyMP7K5dzu91kCa9W5TzwTjXwL-_PB0_N9y1myaks7pdJA8wCmd4_qdzTDz_nnSJDnSBWORwOzn8d4zNCw-qemf4zOW7zkRQSRu5FPJGXIoM8B1rG0fE3nDm7sW40z3NmA6b1AS1xXmmBF_GiuEgYPHhFn7uU_vKoiTQeKa2RXa-r3boWPmJHr7dQsLlyGEe4erDwHgQnIwv-UAVVIsSL3PvN9tUfxlGVQ0aLbo9D71u6S6oS5SySZ8OLrIyR_DDGlEAEsieLHn3rLH97DXKc0sfCFvKSnztwHV2SltxzzofhHeGHSD7RBuVWa81G_zAgoyLictdtXN9OP9K8IxPAWGAnHl7Ep3_LpF-HDNSGAlJmOpN8Bjsq74i6WGmdhsw4IMZvpNJrvajrLzhxIgCHprNspjSh70t4c7CnKzgLQLMVBI1ureqrkDShVaNrFQ==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Clarifying date calculations**\n\nI need to explain how to code for calculating the number of weekdays between two dates, specifically from January 1st to January 8th, which would give us four weekdays excluding weekends. I’m considering whether to handle the order of dates by swapping them if necessary and returning a signed result. The function could use `datetime.strptime` and `timedelta`, and it should raise a ValueError for invalid dates. I'll ensure to include examples for clarity."
+          }
+        ]
+      },
+      {
+        "id": "msg_0cd2b3852435eedb006a9ec656e70487d0be1b8ab9daa8b431",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of weekdays strictly between two dates.\n    Dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0, Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nThe two input dates are excluded, and only Monday through Friday are counted."
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 92,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 361,
+      "output_tokens_details": {
+        "reasoning_tokens": 161
+      },
+      "total_tokens": 453
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nfrom datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"\n    Return the number of weekdays strictly between two dates.\n    Dates must be in YYYY-MM-DD format.\n    \"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0, Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count\n\n\nprint(business_days(\"2024-01-01\", \"2024-01-08\"))\n# 4\n```\n\nThe two input dates are excluded, and only Monday through Friday are counted.",
+  "reasoning_summary": "**Clarifying date calculations**\n\nI need to explain how to code for calculating the number of weekdays between two dates, specifically from January 1st to January 8th, which would give us four weekdays excluding weekends. I’m considering whether to handle the order of dates by swapping them if necessary and returning a signed result. The function could use `datetime.strptime` and `timedelta`, and it should raise a ValueError for invalid dates. I'll ensure to include examples for clarity.",
+  "input_tokens": 92,
+  "output_tokens": 361,
+  "total_tokens": 453,
+  "reasoning_tokens": 161,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "business-days",
+    "condition": "mt_en",
+    "sample_idx": 6,
+    "prompt_text": "Create a Python function called business_days(date1, date2) that returns the number of business days (Monday to Friday) between two dates. Both dates are in YYYY-MM-DD format. Please calculate only the days of the week without taking into account holidays. However, please do not include the two dates themselves. (Example: \"2024-01-01\", \"2024-01-08\" → 4).",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.369385004043579,
+    "generated_at": "2026-09-07T09:12:39"
+  }
+}

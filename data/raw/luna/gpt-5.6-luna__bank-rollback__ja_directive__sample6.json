@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_01954e81ecafe117006a9ec9cb793087d0aa494c07d0d42434",
+    "object": "response",
+    "created_at": 1788791243,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791246,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_01954e81ecafe117006a9ec9cbf0d887d0bffafe4e2e3cdce5",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsnOg_naYe8oliXGgrEnj0tr8MOugTucaiYvmw8Uz_MwKqnL84cP1Hj0dDUA5jR4whXbVwes1oxOltMffPe1on-RjIZMGHKUyzLvCUjfeT4-5HOo4DQ9zqlwdGyWlj-Z5RFVsNwo1wJm0mmFlMcmhx7Ykl04uAz2bRYc_T23HS-QOagQaDDM1ODMD8R-agHzhUU9LZTTFi5Qg1ev9sYzyJPx6ozNkh6VjOTYFHTa5E5jCQmtwJQfMnvokwb6kOSpvg7Cxab5jn7T_RVTFIq6rBOUtTRH5axClU8Owea06kgMIadMC_vafQ-c4Qlr8PPplQ3Xy1gBy_buDugOPeWtYJltWamU-ruRDnJo9BPPDrYLRg3N_WpOBZ3J1mvENAsbuHSipshuNJtmt7eZ35HoluqZhQi0zuZzfCdJNlq5NL5XWJOpjKgjf9vSHDUDdQpJtqGRRUDFXgSqSU6jTXq-0kKmAqwTyNF2FQsLNnvkpHgxO8yFobiWNLarxqRIrXrxYZQHTMHVR1cxykzsacYj0cJTnjwGUFToaz3k1IwPFrSU2hZFmSnLQIQGe2aZ-PfNZn64PbB1XqqKUXR6phtzfScMQjwuJdaiVSNH-4aAb6vzVPg6Yc4wJd0h73bjrDuEbWwPF0psy19upLc5jS9JifB5SiDGBujJkWb_MV7FnRHS06o2PXpcc5M027xkr3eFqVJ-JLSuQUsz4VOXG6_3BqZGbCeGnhqcMCm9BwZoabDrqlK5zLcereEqJ8hDavzLiGXdBbmXuVZgRDqeQEp9pGmICvHE8mrmQo-_4wY_htlmpsX1wCcNJ5ivKSe6IeOe3taHaz2tKDZ2czq4d_RXV4hWt1i2T2EqUO-qxR4JYgyhA3K0sKNX2AWreudpW_aqV4248k94sfLDRNaM86pRZz_fqB8as4sfMiO1PiHXX27TgTwdGPG9vcphkXSPUDw5L_G9B9wAYkossLkGXgg4PiUUoC7Ff8O4aNovXGcJIStvyJpaZkjiEy6motzVwxQFbial1z54OvY4Vl2Nuux-lBSyLS8sArEnl2dli0qOWC9PKJ9uX8UcNTEk_GTaUkCmNQaOQZKL__E84P9L5xcN3PWVFoo1mCsppMJad2Czl8wuT_TwlLtQgfOsP9W9XJGMRJr66yPoc-1zsZwntX_TVWfHH6yKdG46ohrjvHy4SAgUpFnGENqlsSqTp8-sC4sF4e1-2nmETiQcOdz8nbmMeiXHL8pBRmLYgfcHXiZqcmGPvw9WERs0Fu7OLT7T2qIRmXAlwSEjLO1_XoImCA2E-I72EoThDUBYvfIVyyarBXVtMIcn_vJzFqxvaVAIBHFa3pddl9n3MI57RZaIsqhg6xF68EzcpjXPpWJdC4K8TrVZ3hwpscCEYHTLK4Wk4zvnWXt5zZZfdUApbdO-y6R4if21QRT0ktpn5-77gZfl1grn1f7iaGMRqOAl4c5iM8ygGT9Mb2fWNPF45Z5wt4ue_Zd8NyINlUS0IP4T8G2nqvtf2ldJbRKCDA-AwfAAyd2bQ9S1z8stOB7ex2G_WkjYCY7B2cLIzS2_eud1FKwrEbMICn0=",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Creating a function in Japanese**\n\nI need to respond to a request in Japanese that asks for a function creation. It seems the user prefers an explanation in English too, with some hidden reasoning. I want to clarify that I'll use a numeric list in my response. I'll make sure to implement the function without mutation and keep the possibility of an early return. There might be some valid concerns, but for now, I won’t address potential invalid scenarios. And I’ll include the code!"
+          }
+        ]
+      },
+      {
+        "id": "msg_01954e81ecafe117006a9ec9cd916887d0b950fc4a9a90a323",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, -20])\nprint(result)  # (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 167,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 180,
+      "output_tokens_details": {
+        "reasoning_tokens": 61
+      },
+      "total_tokens": 347
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\n使用例：\n\n```python\nresult = bank_rollback(100, [50, -30, -200])\nprint(result)  # (100, False)\n\nresult = bank_rollback(100, [50, -30, -20])\nprint(result)  # (100, True)\n```",
+  "reasoning_summary": "**Creating a function in Japanese**\n\nI need to respond to a request in Japanese that asks for a function creation. It seems the user prefers an explanation in English too, with some hidden reasoning. I want to clarify that I'll use a numeric list in my response. I'll make sure to implement the function without mutation and keep the possibility of an early return. There might be some valid concerns, but for now, I won’t address potential invalid scenarios. And I’ll include the code!",
+  "input_tokens": 167,
+  "output_tokens": 180,
+  "total_tokens": 347,
+  "reasoning_tokens": 61,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "ja_directive",
+    "sample_idx": 6,
+    "prompt_text": "`bank_rollback(balance, transactions)` という Python 関数を作成してください。`transactions` は取引額を並べた数値のリストです。与えられた取引を順番に適用して、計算した最終的な残高を返すようにしてください。計算中でも残高がマイナスになる場合は、計算をやめて元の残高である `balance` を用いて `(balance, False)` を返してください。そうでない場合は、`(final_balance, True)` を返してください。（例：`balance=100, transactions=[50, -30, -200]` -> `(100, False)`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 4.91387677192688,
+    "generated_at": "2026-09-07T09:27:25"
+  }
+}

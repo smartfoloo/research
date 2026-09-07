@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0fed73bf6ffa8d23006a9ec53d353887d094cd72a1589a5e66",
+    "object": "response",
+    "created_at": 1788790077,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790080,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0fed73bf6ffa8d23006a9ec53db48c87d08a292c26502dab39",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsVBruhfpdLSHrMJ2GOdGfEGY_kwtSHpcRJcN7Yigr7MmqwfNEw7hglnW6Mb79qsWQ5-qT7u-R8ub-xbSQ5kxbUmtByZd-3-x8OhEAdSTPV6D0rl6omUUi-SXHHJWJQamnNrIoWmjWj8REpOlGteYQDPdghz5r9ys5e6sYiD1FQKzQg-nglW8zYlrIMv_Runk7isk_1QCr5MLidAyd1kG-kmvO6OT2-LoDNDzMVFaKjhcqwVWFYS_C3g2A9B5arR3tOqTTPmoZLhPZNpY8t7oBfMU5sZ35RzZqQz7nhAVqmB8s09iBiQ5oJ9wuGHxcfGTshbh2oYv-1L-3N2v030a-Cz_53vtapdzBF9H13XSj-yzKcX5pQ2v_nrvOVWTz71EqGbTPq_9wbgMS9VJFQT20l7aWsjzDoQc08cp66xlZ95HsGJvcBuL_iZRZXAE7bwiCjRiBHjmlU2aw5mnqbwu4YrSYCNeeKMVXIYF4JFboF-66kvGsrT86zzbBh5lo_9zdLDh6JbkgXir8FmRLfnOlUfG5xYT_tIPl1Ib3W9eGr17wnVHLkcp1eoaDbnpVdl0TYE_DEyDx_cN6NVB3RGzODbFJA0vCJ_o20qsc_g0hacNUb8McDjoJiSQTLgIn2cEUqq59q1u3ea7JNuoU9bxwBqanLHEKm6w9iXVvzyymahFlAKmZon9B67vTrW338a2Fbc36m60sYE0nPBW88B0wlXJtiKHcDCsOlQRdtJ0NuSpYpi2qbxHrMMmMTQ4FAHztkZEhDC5OpFa0fqAzebRk1b73L6NxpAIBpkX2Wvdch2PPT_h4Nsd1_cobYkxbLYWMRaDu795pxPAeTwPihVddFvNvIy9F-pF7k3AlqKKZS29USYoUTQNSyA2c5KnRiXP9NNK6mRRG30g4_ggFTSSwcNVwscOKw2rBJTTWDCkzoVZCkqOAqIxJbuUAG_QDSHdH3oUoDGQubil0olV06RBohGN8_W1OMIIM5gvKEnQUWOBHqkSE1padUjxpeuL7tM-ILFjY_hOsM3fmRcrKw2UenQp1M2BsHVbF5Y8KN3SNFw_5I-1gnepDttVmCIrpj90SwtNtfZ9d7Q_vZwO5advbCxHOnGsI3I8sfyOx_mXoDF2ce9xVRKyeSjtRysUfxBogeocgxmkXvXfhLGKu9Vfy6zWx3S-Op-18AAiT_At75MUAh2lMhdZ29dQP2fY6PKdkMPQfOudiTvOxA1QHc-OcOKfW9AEJby104ZmtR0n7mkWovVFu5ZlXS_rH_RsY5WhQ0uccJOHHSLTkqduDfzE-vIrPnXCaodHpqWmZX_W96Ax8pwjeKM6TW8fuv3UUTqcCD9CmFmwWEh9hwIddqxnb6KeHKwEKgg2b29866aVQtu__UdARlFFPP9PLP_hrt2NeZTuELjJi-zd2wrqoMmJ94Mt3YwEH9gD7rvT_XSmznrAZWZlhbHXKbNfigNgeKrAYYxxFbH2wA-6uVolcVdRx4OWigKV-wpmqw4weoX1T49XA5wnbll0-DNPm7NJtPD8QXi0xSv-t8LIL7tZCP3WgHb_trTKlXC2pxIekBRjiH0DH6osxPWyw2O7BQ2-eE1EOzqY3zwyLae6s2iIIPz7H-mxW8MCB8iJlWFgGCpobwFMIqr4Jskzzq2op9bqP_Fs1hMjH52tqRoMIlVP64fnv8CtZ4t7p2oBYRY8iPy9TveseoCxAEkQaNWL5QNyfw3eS6B4VCySqIOJ85LUweYEADmkNxHwlVWTKVWHVmUAmd-ce-5XrdMvhGVAXEjbFNntxUDiQc7WrX1DzJj719arjTKJapM-qguhfCGxK1e_KgzAe1qysjENg0ieWXA4WINk8EnKtj_pcdOebMBPWLgNNwtwkzrQH3UaEl7Ao1WhPWXkeAJDS9FmfMtNjkGQN-Bnx1UWD0LagO90xABnU487mglCuPkovtpUgFzZNN7arKrrkhhJ4ZYymK8mGA6HSNdH-dHa5ZMJ8_nOA0JC9jhuoPjNcgQtZJDZmQ5QIN81AMhJBSKz7ZZaFZIO_aXofIL90Nq",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Evaluating transaction code**\n\nI need to explain code for handling transactions that might make the balance negative. I'm focusing on a Python function that processes a list of transaction amounts. The function needs to ensure that the balance remains unchanged if it becomes negative during processing.\n\nHere's the code:\n\n```python\ndef bank_rollback(balance, transactions):\n    new_balance = balance\n    for amount in transactions:\n        new_balance += amount\n        if new_balance < 0:\n            return balance, False\n    return new_balance, True\n```\n\nThis function assumes that positive amounts are deposits and negative amounts are withdrawals."
+          }
+        ]
+      },
+      {
+        "id": "msg_0fed73bf6ffa8d23006a9ec540831487d09c9a9c1837ccd8f8",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\nExample:\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 105,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 241,
+      "output_tokens_details": {
+        "reasoning_tokens": 133
+      },
+      "total_tokens": 346
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True\n```\n\nExample:\n\n```python\nprint(bank_rollback(100, [50, -30, -200]))\n# (100, False)\n\nprint(bank_rollback(100, [50, -30, -20]))\n# (100, True)\n```",
+  "reasoning_summary": "**Evaluating transaction code**\n\nI need to explain code for handling transactions that might make the balance negative. I'm focusing on a Python function that processes a list of transaction amounts. The function needs to ensure that the balance remains unchanged if it becomes negative during processing.\n\nHere's the code:\n\n```python\ndef bank_rollback(balance, transactions):\n    new_balance = balance\n    for amount in transactions:\n        new_balance += amount\n        if new_balance < 0:\n            return balance, False\n    return new_balance, True\n```\n\nThis function assumes that positive amounts are deposits and negative amounts are withdrawals.",
+  "input_tokens": 105,
+  "output_tokens": 241,
+  "total_tokens": 346,
+  "reasoning_tokens": 133,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "bank-rollback",
+    "condition": "en_human",
+    "sample_idx": 1,
+    "prompt_text": "Write a Python function named `bank_rollback(balance, transactions)` where `transactions` is an ordered number list of transaction amounts. Apply them in order in a single turn. If any transaction make the balance negative, just reject the entire list and return `(balance, False)` where `balance` is the original balance. Otherwise return `(final_balance, True)`. (Ex. `balance=100, transactions=[50, -30, -200]` -> `(100, False)`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 6.232077121734619,
+    "generated_at": "2026-09-07T09:08:00"
+  }
+}

@@ -5,16 +5,16 @@
   "provider": "google_ai_studio",
   "condition": "mt_en",
   "sample_idx": 3,
-  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements and pairs them with the reversed punctuation.\n\n    Example:\n    elements = [\"Hello\", \"world\"], punctuation = [\"\", \"!\"]\n    Returns: ([\"world\", \"Hello\"], [\"!\", \"\"])\n    \"\"\"\n    # Reverse both lists\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n\n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n    print((new_elements, new_punctuation))\n    # Output: (['world', 'Hello'], ['!', ''])",
-  "stdout": "(['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"Reverses the order of elements while maintaining the pairing\n\n    with the punctuation list, but also reverses the punctuation list itself\n    so that punctuation stays attached to the correct relative position,\n    or matches the example's behavior of pairing reversed words with\n    reversed punctuation.\n\n    Example:\n    elements = [\"Hello\", \"world\"], punctuation = [\"\", \"!\"]\n    Returns: ([\"world\", \"Hello\"], [\"!\", \"\"])\n    \"\"\"\n    # Reverse both the elements and the punctuation lists\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# --- Example Usage ---\nif __name__ == \"__main__\":\n    elements = [\"Hello\", \"world\"]\n    punctuation = [\"\", \"!\"]\n\n    new_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n    print(f\"Elements: {new_elements}\")\n    print(f\"Punctuation: {new_punctuation}\")",
+  "stdout": "Elements: ['world', 'Hello']\nPunctuation: ['!', '']\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_token_count": 78,
-  "candidates_token_count": 342,
+  "prompt_token_count": 86,
+  "candidates_token_count": 341,
   "thoughts_token_count": null,
-  "total_token_count": 420,
-  "graded_at": "2026-09-06T06:53:27"
+  "total_token_count": 427,
+  "graded_at": "2026-09-07T08:46:18"
 }

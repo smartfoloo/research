@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_099216b0bf25e12c006a9ec9636fac87d0ae7ee7f6047b4879",
+    "object": "response",
+    "created_at": 1788791139,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788791147,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_099216b0bf25e12c006a9ec964179887d09632f4169a4c2b68",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnslr0AznDaZRPzGBqX-GSftXycTXOh5NKm7_-eTWYFqEG1udssiOgkJQYI6mZStkjZjrdXBC4Z67VnuHYqeQXIcr170cLnmVX4rbvdqiDL4V2F-xDlEUp7Vu3kQrM2GGFovS24Wzd_mAFsatruLKF4UZsHSJFrrNUq5Cr3BVoQ9HTLjMPxOgmHnGnWivA6pI3qK4fp1MU4K7zcnKwKfNbIHUlrD3DSmg_HD0STA_26yYif37OXL1-xBsZumPVdh8ifdVq6CFlfiBX-HqwC_06dl-ZzHhHDDX1vLVQ9OOzljxGPIJwZMU5Xp3CZ8jZIhDvvF9chN106TUNsOABs0caMNMrXDRP6lZCAlW-ri3OjCnEOrypl9SC-QQpDrRaaZH0oE00y9fUdgko3vTMOvczjFTVnmF9NnJbkJq4dPTYGH0K0C0Qbv4dpQ7L3SnLZV7dVFJ-wJOpcmfYK1seZewKZLZkpVqt5dHBnbGDecKQVjMczRbkLrp8PvDACudRmJkwu4t5gme_owkZQ6DNDb77W2uGK5B2PmqgGZ1JOG91tpmK5ijCNk4qGhKBXLnLiv-XtrT0QUy-McwOqTF8TZiQfU4ITv0TT26lSNhuZnObUrWxEbh2Pn1r2a-83mRvB7FQ4WmjiPkrXrKfX_65-R4ShraZpIZ3hjNMWaAnFtLC0sTYDFCw4DZUr95kJ2t5j6aiMPOOssLVVkmQSmTFFZJn8L5a6ifrao1kxMt_L57TmuH1S9xlWTp6OfeCl2-G5tMSp3RApr6Oo006fCB8IbEl8ChmqG8iEISaW0agMEjCI_6v8_XNm6j28-cS7unEjsNkgRDmpqMDIJah7M7-WHbfrVi2SYkUIJusjSHiq205sbj5XaoXBSgvCStTYZwoveylYp9ulR5TIC03x5Tj29DDPr31sBZqoOzUZB0kKDSekDytgmjC8elbZgtFOJUEUTs9OGdgqJ3heV-KHsAgE17WCn03o0zEmrOxZGFnKX8mck7lHCe1vQR3gMiv7C-Im8JqRAC1aIU7MmsR8hVeNSFuo8Y0yLKk4-qxvym2ng9DRhuRE_DonstMWa-tlrsGdevmdKW--cHZ2FjDtqNuTI0HE3vJf89eTZVD53F7-4Bb_T0AqeVklO_W5_qcJoAGC9sLWcI2M5DhTusTf1HHMPeP8DjC99O8Y8wAWvdOnqZs3R3hNY2UbrDDVmTIum1rvGpMkKZ3JLCPFieE2mX1fKhPuDsGjoD-EdYq6zkcFxtrirDGGQfSmeUwDjpW96ivBJ19BxWcTJCljbkRZ1AI-x6vr1PaG31wZxQGpFJIgWdad2WjXzX1WlPlvGde-xww3ZdAu0Dwa-OKYsRZnNhVG1CRMDa3gwQKnDpK0uMwLLnDQOwIK1GQoqAdtaKM76m3H0e3GAeaDzcmuVjA3AvOZZFwHUl7LxIAkZTBjKkjQOHp1nnsAFHu9g_VKXEhRqw6EVbZkCUd7AQhlEZte1TMV-sDw_1B0lu-I2XooPwPjPTsCWUQoxR4HaPHhmsIHtqM9eLSRyrUCfRp6KpMy3yoo7rwSQDsmQwy9wFBC4bI-iA2QsQJpXD35pPedVFJhnbbjLbgTFBsX1Fa7SFLv8Sw-Ln5Wm-dBJPeDYs-riGBLIycv9hpQw4HnfzgXA2bfeDpp8hVhco88wuAxUJlzqg6gxux79nN_wGpeEWdfhZOUtsN9-AYU6DYpkHymB46pQSsORPtaJNnuKrAPC1EoBDgApnlhNxsl5OCW_AjM0ZHF1K8dln6O05pXUWN5_DDekTchZ-8WGzr9yAI_rTKYlt2WXZ5ZePyXxM3RVWRPKbpYxZmQhMk8wcEJq7fucCAHOw_to_xgYtrfG5CtLBoTVqsQm8VN9jlacJgXtNWFiRVrwKb9HHY1NA3Ps3tdhauQbOpDM05B4J8LeH1qfhrj2mm0kxFuZ8hsIeJaOpG-HGpQ8tgWNX0MHkVg2xi9a_lf1C058l9vlP6hYFEoh9Dc0PR7xAnM0NQlV1ZPR5-B2Ju5K49i_07GdPjKWzhx-wqPldUzzQCdGRw_1y1uV3VVoxQK6MUqkw4SXckdmqhnhZqBeAUn_dnBbkphWZ7mtS6QZm5DmNRg7VjPP8ZNgKnxVRtVf-20e6kYDz7Vp8aAkS6dz-ZibB2GTvte07Xm9CsCK-e9SENUZW9uEZfDQ3hyskhEO-sDRtNC-Oow1Ad5INhg5SMKTLjTsNRhwrfIbcB9TldZuE1uspsqP2DTXPxUr5OoI3nUPZURqYGP81IKQV5x7xh55iMPsTsX2w3y9goP8yZrel6SLJLuZ3FY9Z9rgT5HKb-ImzQR0fflRLLC3J3VjWRehSVtNzkfv0cY8-9MSUs4ERHZrjcP3CDF_NTUE6eZLJvksGfUclTuoZQRusIm-TqAceef_ZPAvcXvD-CrvASAQ6s9l7rC41b0N0JMkIvrwii6IJT874DI1P47ogVcj5pdE91bm3R4La2AYdw-b4y15ltr999ui40tFBu8PoKGH1naDLipIrHD9Wx6rtXMZoO8Qx0P_YXgNeYaroh-6qllqD04OJnz_K9XfjIVcg6jqfbCad5po3yBqh_UVySjD7wHEUlUfPUrmqi3ISK21eyI2m53j_b_rZkqWpyGLo-BoDMfkllvmzr_wQuE0Cq8AM5sxoSh9S1ofqFW-Nawb0hwaOYvtTvty99BkTxLa4KGSY7uxjYOb-sPx1zv8WKHX1_pUwbKOLVzhZeF3ZE4F746sSR5GkdOKpvnfJ2QmW2RjL-qPvL-K5sJ3gJnuujT2m1pmHBNedswa1WC_6WdqFonxEfZaVI9JcfFFa-Q4v5xoUp515rJj2x8lV02nRM1uQQ9Zv31eZW5JlskH6kh_QH1HUWL83PA8O4bOJNhWqOi3RzlSfnq7jnEGxPZJb_nBiyAxCOsPq9d3t2LxZpjIUH_DB8u1-d2OFH5FZ7lpFOc4sPeFTs9fpparVVBMAjxdKYzDS-vCcV2UEdOxkrCMpba2oizgjIeJNj4P1hEe0geLJU9RaTs1N7EHlalj9BqGX_SYzqKcGO70LTqrPNU1-QqxuScvdxydZHFPSeq6uxpFAgjXBD0kj7vVT9JCEx-IPLfupN0NaKZhls3bHwQ21P6z-7Qa8Vxnau4LEzWqJBm1WnuTKzqT6VBrM1x4yr0cZwtomGr1i_suDVWJsJcQTJAlRbSyVxmYHrBOnDISm9zuM2n53pIXVIdODn-TZ1-t1EXL4vypJvk9qbqBulM1sQ43llABPTBAIxoxOIIr4W-2siu4LgQRYYh8xVXVUwAAOGYQB4XtOhijFRdQultOGZifrzlC0bkhkADyxCZDjFz8KmreBw7CrvcxZt-aa_j2rK0jBpZFnATPNggYo_ZczaF3bvZ0d8iMo3TCdwzN6EvOvFe4eDzLe3dbBDQRpM8bsEb0eMxnkDMNzMPKx3RS3mx1_NEhgT99MA9gYvKj3TontWhZBeKDymzJn23DO4d8VUmnumXkLX5J87A_3XDH-7CRePVznWL1flsomAJFTgMDUNpifVnLwZfWxZ9Ym2ragmdUPu99RL4sJ7AIwJQHpJzZ07yvOCOdm8PVTAjQbU42BybZSDWgsPHdSJEqkG-WEsxbaLmmRYAe7cQeX_xUrFZwOIefkFrSBGr8IfagGaTgYOHoQDQ==",
+        "summary": []
+      },
+      {
+        "id": "msg_099216b0bf25e12c006a9ec968f2ec87d08e9e62ddc10c1ece",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (distance, path) for the shortest route from start to end.\n\n    If no route exists, return (None, None).\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = {}\n\n    # Validate weights and build the adjacency list.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported\")\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    sequence = count()\n    queue = [(0, next(sequence), start)]\n\n    while queue:\n        current_distance, _, node = heapq.heappop(queue)\n\n        if current_distance > distances.get(node, float(\"inf\")):\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\nExample:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, [\"A\", \"B\", \"C\"])\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 162,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 785,
+      "output_tokens_details": {
+        "reasoning_tokens": 371
+      },
+      "total_tokens": 947
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nfrom itertools import count\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    Return (distance, path) for the shortest route from start to end.\n\n    If no route exists, return (None, None).\n    Raises ValueError if any edge has a negative weight.\n    \"\"\"\n    graph = {}\n\n    # Validate weights and build the adjacency list.\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"Negative edge weights are not supported\")\n        graph.setdefault(from_node, []).append((to_node, weight))\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    previous = {}\n    sequence = count()\n    queue = [(0, next(sequence), start)]\n\n    while queue:\n        current_distance, _, node = heapq.heappop(queue)\n\n        if current_distance > distances.get(node, float(\"inf\")):\n            continue\n\n        if node == end:\n            break\n\n        for neighbor, weight in graph.get(node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(neighbor, float(\"inf\")):\n                distances[neighbor] = new_distance\n                previous[neighbor] = node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(sequence), neighbor)\n                )\n\n    if end not in distances:\n        return None, None\n\n    path = []\n    node = end\n\n    while node != start:\n        path.append(node)\n        node = previous[node]\n\n    path.append(start)\n    path.reverse()\n\n    return distances[end], path\n```\n\nExample:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, [\"A\", \"B\", \"C\"])\n```",
+  "reasoning_summary": "",
+  "input_tokens": 162,
+  "output_tokens": 785,
+  "total_tokens": 947,
+  "reasoning_tokens": 371,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "mt_en",
+    "sample_idx": 5,
+    "prompt_text": "Create a Python function called `shortest_path(edges, start, end)` that returns the shortest total distance and a list `(distance, path)` of the nodes along the path. `edges` is a list of tuples `(from_node, to_node, weight)` representing a one-way street. If start and end are the same node, return (0, [start]). If the weight of any edge is negative, raise `ValueError`. If the route does not exist, return `(None, None)`. (Example: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`)",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 10.279040575027466,
+    "generated_at": "2026-09-07T09:25:47"
+  }
+}

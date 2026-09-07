@@ -1,0 +1,130 @@
+{
+  "raw_api_response": {
+    "id": "resp_0a70986399476f94006a9ec675247487d08b1a589ab965eb1a",
+    "object": "response",
+    "created_at": 1788790389,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790393,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0a70986399476f94006a9ec6757ef087d0965e89d7fbd45a9a",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsZ6D1e_BsRDeoZbg0sHQ3scr9bKMl8OLnakv37yngGpTY-3vIBHMfaOYQS9FWbI2-QvMjfnR-VMV6-UjDoWDztlc--KTFukhMByFATvuyEX-bIoWlKTUCc3W6gTfeYEHO28flBmF5cgJu_r-SupFzs6fzAu49F4_QrAPb4M4mSyefG0FvS3YeY7HYA8pbqqpuQShSKF2GOaq0G7uYJkPtvGoOwKE3DUFeJQizR5FVfTUFxF6aVjkIwxx0GhICynJTB8DQI7yet11I_swy4fnIvO1VoznlAakSCjZjNnIW3GD6sVyGJ1KqOv_wemoN42XPmDecf5IMFcDNQfQfXcwusvper6ohhE66Z2aYUcJr9vvSvIt8JLAy6O29lAy9h8QCeGt5xSlPSkdv27jN_gwqRHiOaeO4mD3bIUzM4TZb0V6iAyPnCv5KbhWtHVCcPFqD_mcrz_DVoHKlVOFqAjsXU63UkMYEZyJra5pX2Ggcev4UDhumtik0N1BuaeThOaRSts-Xh4aJziuiuspmsCvMhJmlGEpTcV_KeUgnEDKfe185vvQyXfuQ7Tl644Aa5OjujtlnyhFZOCzQNBYZg1zt86sk2GLGO0roSFuIgri1bqaV7sTAiweghTO0xVwH63PqKAdfIQc_E2EGBu60tXRm5ckqVIPlNutfM3RNRnNnKon7jStmZ-XnbeKv7HBY4C9G6g4RULbXLbHZZ3MqaS8MWbXnQpLOAucXL81NgtGjS3wdCnMTbEnkOOn-BuFACPjAzvM5jpg2qwdIFZkKgYOsfS-xKGOn4V0JXdUnCqBQRCCdLiGci0_LNMvE2_IepMSKvCz-Yv7Pu_nrKFg_iixiYSQToMWinwQSrT0-JQe0sQqqcJijGpttLFzoYLBV9RkHph_d-0c6adLzeKByULt1A960lBgWmNZch82HghzKmKHhdoKFzMyd-0iGR44GZWJJQwDJVCSUhq8f5NDR58Ng7wlcvIzaTHN_yc9sEyv3G4dgtQ1OT9CcE_0w6bfQpleSU1LRQgRTEIWMFOzvzXh0fAImQuk5ey8UQ64cNqQ5ZNxmQmlBmXfchePOzK2rGzpoo2lLf56r0pjad0iJEsUFs_hxBwEKRc5HBwD2-wSt_zzU1Co1F0GJvno8FrUC6Wzp8ZEQdeDnGi0_WYFPCescJzLITtTqToFNNjB72zZsVk_k4KmyBApPNjlENAOnejDt0eE9o3ZO3jiUEzuAd7K3HdNy-vF9KeCEEozYrfoAnPVfZgrznL25LdyI8Y6lEbq3gLPYcGqe5OaoH9eP0hHzpqugRbiIYmF0_g2e0TD2sNzfaDaKNclXY597sgA7wx9sI8_b_YRwb4GIggVPE9Bwyf5xxx2JYFkUW9kcTEuTYILDwZ-7a58GI_7nvPMJxUjGIQlYVIybs1xvREw69Xbo9QJeNhOpqRMSkUfN2cbYQxQIDcBxDRchXaM8tWDUb2sUD3tjNs1oqfgH1cR97nsf9RfeoqvNErII2HiMtC6N6I8g3Dum1-j0LMzuRNeQoIp0ohZH0EoK6JFYkFD7e1UN18JgKqg1yqAsMDKdAVsZ31OY954gFOna73CF8jVzICEw3jO7Ri1GSALTCm6H7pCosgGQETMAMJ5zJovKzK9EPOS0JF9nligY6WOi6zKmWwn5zC1YQOS7YQ4I6LrgzKyKA5y60c1cpw44-aUv3jep76ZhSnh8oikyHqk5OnXH9VbbzVMx6wpn0eAh7bkzkGVm6h5YlQzYqwialOLWcUmvBu7v5feaa6RVa_c4aa97fMlhbTihHgALO7OcI2_QPTlSLpEQnR7FRH5Pc97eFhkVaj9V42iYeEP_6N7KNRPhpyfLhT5LP7Hu7SRUtoGYIIjwXnM85OrcfDMDRC7ANDi9OIDr_aRMGjxuO6-VRipVI8Abv75pPAZpR0oLU8q3oRf4P9P6kOrVBRWDYIqhTss1E8Xp4b2GsWMR4Ha8vIVRrYxn2JTLmRTDa5w3MamzJ6U3UCTYn8WKNfUr_O1h_If474l-zRvrLGoMYPOGJWoha7ybVN2uNLSrLhfrIMHuJ-sxXcAvmSTRQQfWdNgr-7JVERL5h71PcQIKvujYzIfpXr9EEuJRT9SJEjyilfYOLpEk6pngP6daNwI1D3T0c31lWK1P90Q_lEZZXPWjFJV0b7Zjgdp1vLSqvUpGMWSIqw7ppI_xaoU8h4th-9igQqNCh0aL6FXphQl9hXN3RBjS77RC6cGJuo7BAIKnRug2jv-zOMWEcYQ5YRN5C_tnC0qXvewF7aUOimitnWE22nEIaq0PYIAIBlfFtTvN-mUjdl9UNntB4FubcDZ-i7Fv6QVKqLCRsnrM3XiVOo0Fl-QcTUNEmG",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Formatting currency in Python**\n\nI need to think about how to format currency with decimals in Python. The standard format is f\"${n:,.2f}\" for negatives, which gives the appropriate dollar sign, but I also need to ensure negatives are handled properly. If I define a function like `def format_currency(n)`, that could work. I'll include commas for every three digits and handle both integers and floats. A concise answer with examples will keep it clear and helpful!"
+          }
+        ]
+      },
+      {
+        "id": "msg_0a70986399476f94006a9ec679a57487d08a375775d28e3592",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExamples:\n\n```python\nformat_currency(4640039)    # \"$4,640,039\"\nformat_currency(-4640039)   # \"-$4,640,039\"\nformat_currency(1234.56)    # \"$1,234.56\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 69,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 313,
+      "output_tokens_details": {
+        "reasoning_tokens": 219
+      },
+      "total_tokens": 382
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${abs(n):,}\"\n```\n\nExamples:\n\n```python\nformat_currency(4640039)    # \"$4,640,039\"\nformat_currency(-4640039)   # \"-$4,640,039\"\nformat_currency(1234.56)    # \"$1,234.56\"\n```",
+  "reasoning_summary": "**Formatting currency in Python**\n\nI need to think about how to format currency with decimals in Python. The standard format is f\"${n:,.2f}\" for negatives, which gives the appropriate dollar sign, but I also need to ensure negatives are handled properly. If I define a function like `def format_currency(n)`, that could work. I'll include commas for every three digits and handle both integers and floats. A concise answer with examples will keep it clear and helpful!",
+  "input_tokens": 69,
+  "output_tokens": 313,
+  "total_tokens": 382,
+  "reasoning_tokens": 219,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "en_human",
+    "sample_idx": 6,
+    "prompt_text": "Write a Python function named `format_currency(n)` that returns `n` formatted as a string with a `$` in front of it and commas every 3 digits. For negative numbers, put a minus sign before the dollar sign. (Ex. `4640039` -> \"$4,640,039\")",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 7.0720226764678955,
+    "generated_at": "2026-09-07T09:13:13"
+  }
+}

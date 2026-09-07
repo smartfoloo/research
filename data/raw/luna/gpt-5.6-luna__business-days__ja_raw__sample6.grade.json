@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_raw__sample6.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 6,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    date1 と date2 の間にある営業日数を返す。\n    営業日は月曜日〜金曜日とし、両端の日付は含めない。\n    \"\"\"\n\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # 日付の前後関係にかかわらず計算できるようにする\n    start, end = sorted((d1, d2))\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # 月曜=0, ..., 金曜=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 112,
+  "output_tokens": 498,
+  "total_tokens": 610,
+  "reasoning_tokens": 211,
+  "reasoning_summary": "**Determining date functionality**\n\nI need to provide a clear answer in Japanese related to coding. There’s a potential for confusion around the order of dates, especially with endpoints—like counting dates between January 2 and January 5, which would exclude the endpoints, right? I should implement a function to return the count of days, considering validations, and maybe include the logic to handle date ranges symmetrically. Also, I might need type annotations and to explain any holidays being omitted in the count.",
+  "graded_at": "2026-09-07T09:28:19"
+}

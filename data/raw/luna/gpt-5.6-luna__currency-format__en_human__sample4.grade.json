@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__currency-format__en_human__sample4.json",
+  "task": "currency-format",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "en_human",
+  "sample_idx": 4,
+  "extracted_code": "def format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 69,
+  "output_tokens": 267,
+  "total_tokens": 336,
+  "reasoning_tokens": 188,
+  "reasoning_summary": "**Formatting negative numbers**\n\nI need to formulate how to code a solution for formatting numbers, particularly considering decimals. The Python format f\"${n:,.2f}\" doesn't position the minus sign correctly, so I might need to use `abs()` and account for the sign separately. Preserving decimals is important, and I can format integers and floats to display commas every three digits. I’ll create a function named to handle negative numbers too, positioning the sign correctly before the dollar sign. Let's figure this out!",
+  "graded_at": "2026-09-07T09:28:23"
+}

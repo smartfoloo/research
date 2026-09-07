@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__mt_en__sample4.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 4,
+  "extracted_code": "from datetime import datetime, timedelta\n\ndef business_days(date1, date2):\n    \"\"\"Return the number of Monday–Friday days strictly between two dates.\"\"\"\n    start = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    end = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the range as unordered\n    if start > end:\n        start, end = end, start\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0, ..., Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 343,
+  "total_tokens": 435,
+  "reasoning_tokens": 153,
+  "reasoning_summary": "**Explaining date counting logic**\n\nI need to provide code and an explanation on calculating business days between two dates. For example, counting from January 1 to January 8 should include the 2nd through the 5th, giving us four days in between. So, I should clarify whether we want absolute values or relative ones. If the user wants the number of business days without the endpoints, I might implement a loop to count, ensuring the date formats are correct first. Also, I’ll consider if holidays apply. Let's formulate that code!",
+  "graded_at": "2026-09-07T09:28:21"
+}

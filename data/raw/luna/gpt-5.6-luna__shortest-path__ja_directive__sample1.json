@@ -1,0 +1,134 @@
+{
+  "raw_api_response": {
+    "id": "resp_0f4a3a8b0282874d006a9ec524872887d0859f202491fd0906",
+    "object": "response",
+    "created_at": 1788790052,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790062,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0f4a3a8b0282874d006a9ec524f03487d093b536a1016f0417",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsUuYse8vmylhRdE8IqswOxDz3krjVrThBF5rkkkU_TrVfp_2bsqnRLILjDc3QRKe_P_NritpmT2fe5dP1A0KjgMZj7ouN6wM9Ze_DTfLu-UD4iG9GrGHSCiUn0y8EGxci142wuCNkfdsZBYLjFrga_yQWTSB1tPDEtvdUWUEa5Foq2vAW8bNETLJdNjLX29SaTkSko5i212iF3Tif7EsNPAiuG2liyjscusf5ok2HgCkoWWSWhnvzYMH6FquHudLjlYPjqmwbVRx7roxCak1EPQvvjrBPDcLEr04cVxehJ4N4yrz6yfG6umcW5gywhkjGMAhy4qoXWJRPMYLSgJEg9mkmQGkoqtOizmLdxbE6hVhwH6cn39B2G04yMEHW06IAAGJHqchlKCEpmawvuQcSEYsnxu_d-eTzJF0vP5Iln_rokb71fI9GV18O7WxgVU1U5I-oBWEHtclfm4IUrh0jsTVsaYGCM22qDtV_eqCgqornGdCujA1x7qaO1k5g1v-S_6zg6FW52-dvpz7TRlEmRRiW5kTE6wGb2aDx6mguS1JqPgSq65_e6QvuX9ew5g4fnLuArHiEdh6_YEN3bbH89WsP-2Lap8SZxczXvmbhfJddQOxI3LZMI5AmyTI6zvyrsGr9OFlflsmXOK10spcwtvwkrJGVJOhFuJ2NgaJ1ds5llGbgUHeB8r8i1G1Tg_hzoRPFBw33ggU2_GnRE-t_EDxOsgfKk52rNyu5BSPpp-7h6j2DlIMwLu4Gxp4_APdmqqHx0rmIz-156JV26SIj_z36ac5GE0lnoUchtn5tB3vjpzux-qLmyiER7UAaDa10vTREkXfGlMVuWAPl0vA-lrLYSY-i_trPumb3ouB1plO0B43BucvqCATkDXWy2VrAd-hmC3Lu5eJh5Z9txW8PwiZG0W-8rK4TbUxzOO6ioWFitt3MDUbxZTGMmHdG7yDe8-cGdGexe-sxKycJ1Ve5Of9PYdQJw6FEHngxnRoxGGKPavjV-0zNohWeHTWri3t_TI_RrKbGm2N6cPD7ctnlP14RMvJVm1ZzpOd-p_ke3yTtSyGrTk40svvHU4D6A74Ni5pNXCThFW8RgzhpKSNMqDRBQxlmeV7KZJE6w3m54dwRZs4qJT9cm0A1fRx6s_J0nkd8odoeAlzvOA5WD1h6ctLvvDlS0FUwAguwD_MwvYBCj8PYILyqEBI8PsGsZblj0RZhTbVEfg1KxSYUNGq8YQ8nxpBaRhjWvqgDC5g4Y6yW3P6H6FCQekmurIAYv_9Iy3cOyXMETq-E0tBw-N5JlLTJkaxyTtC2TDXdSfjxox6ZNcGqlPHfkGeZW-BL16BJ_Qdotz4TKmMauUgDCO6Jl9Ck3nC2QUi8xtSgrPWlkZpeajDAdaxZp6J6SdpBgeuhsOoffYpjAxI425yZrepIUcdq9zs9irGUYcnJ9NrsVAl9rTUUAL-2U4-uHyaRHKGL_Up4IiKX1hPwK9u9JMowaP2IPrH8RRl1TXHcW-M9-JoboeMJxSol9hHyh6sB8Ry_x7SYnq2yRJejn8hPn6IwoY9GcvMqSzHZnUdZ7AOG_IN-iZOsmKkPs4eRMh0nzLHHLKx45H-rn8DBoYnqt69vkwxLtHgO8VhPe4FY3EFuAXL11kOHxFEa-dhGSWJvuyR37_rPNtlk20XqQ6zIGeAuD8aEpng_vU2Z3xzIXq9SRMrTIA3J5sYJGzoBY4eCUIJTBZOUoDOkF-SnMrWWlqI1M6cXbFn1_7wnuTqczMiXk-9E5_aK_4PIS_uCJP6clhNpF6rJGno-qh4i_nGnmZ5oIPoGeWgPd1yzqxa5eZqPYt1koHUsphyX7B2VsSSvIVs1CusDf79H6A-Zq-CZyPaQcWdFzcY3CwObqacIZCSorcB-ro-ZMXnRUQ00yUS_e80Ih97m1pZLPAnO1VtOa0nKfEdD_dXVMn9TFzv0DGdMyx4sllODpeFTJHH2t9etyOSfNC8WGFth-xUHBRs5sdqBUFAU8X816Cyre6MGDmCWuKnoFajqqNoE9AN9Ztow9OhDL0XZHmEuNUuwtNhQp6WP45sFcbm30I0OE3G7y_9lyIZ3qiOSDQm2BKb-qHY1nRGASz8AuY1THRYeymHkAzanPD_b1GM21uDrg_kQP9wv9YYcfVUxDtmjKCD5KV-G8fFnqG4NARUz38PrmBmk3QEFSAwVz2ERfd3NaXbBiJwklV5hu6HN6PPYdy2R4a5eId4XMYETevIxJdTgeuAw9RC3CUj1C788UrZqth7AlsXZhkgWC5pHS9rzPxvWve_dLID7xrfqo_Dr6QVG293g1OXdI5fETLse1Rdzw-Q4qylSzdWkTsfYM7TeNdU_Aq6LdWx-X0ob1UcxIJn_fvBpXd0Gmr6F6J-CEORSr0d1tp3wPgykr3b4yyMX-T02fyAoXEG6h_BWI4RimEzuBcAprcI6DocLHejfH8qG2hn9wU9X0nt-K5sXXrPPCjQopxJ2yy7ILrd3CqpzWKxFKB2MVfyf8jqP4BmG63NeWo4NM8NbBE0fmotAGbzY3383EVXXQ7_X0dMhcARy7s6BSdhGXD51k3IR7Fv-xKxaHrLUD1JkLCoqQiGa1m8-GCTEz1lhiors5plWus6VCBK2o_aM0rclRPb4OPhy9nlJRtgwdEdMTLsfxmsTFeG0Qv2ZF_Y4yXXo0KwnBdbOu1COdeW4v9NFrCTJZpiimuWmc0vHYuMlpXCvrY-gWW0fKWxvG-x6p9ATnmUxlpH_WtfQOA0vDzmOYbinBaSEjg58NUW-l5zMY33kUlgkl8R430E3h6Qe9qxbB098yHCEAJnWsyfO_MLlHT-v5ulZ6zuP2sL49PKDKGi4Js_EfYdMdbUxamImVvFslglMPXqC5ns3v3N1UUer1QIUE_IdLBdIPI-ZByFu-zHgJV6avmLwf3AmMI9g2FSYZVTZyM1x8QZk5lcsUDUEPYrWAQuPWv0rmh8ZlatPKX6rqDZ9i6fWzjzj73tYqKKvabBUcWbuUjNUISyusGY-nrJgshbkU8jSP1DN9CoRj1cYiSGZ-3fTlHOXI1bCmW1RI0zHAmSQPwc0tQfaW82lyNQJCAhJmv4HNAp2Nd-9I1ZcYg03h1jbzFO4B7yqjrtpyGqkQoR4e0DZldh4A42nbEWg==",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "**Addressing a Japanese request**\n\nI need to implement a code solution, considering whether weights should be numeric. I must validate negative values as Dijkstra’s algorithm typically assumes nonnegative edge weights. I should handle edge cases, including how to address any negative weights raised, especially when the start and end nodes are the same. Additionally, I need to explain the complexity involved, including the use of data structures like heaps and how to reconstruct paths after validation."
+          },
+          {
+            "type": "summary_text",
+            "text": "**Formulating a response in Japanese**\n\nI need to answer in Japanese, making sure not to reveal my thought process. I could use heapq for entries like (distance, sequence, node), but I should ensure that numerical values are treated correctly. If there are equal distances, I want to make sure updates are strict, so the first found is deterministic. I also need to build adjacency lists and validate all edges thoroughly. If anything is malformed, I should clarify one-way phrases in my formulation."
+          }
+        ]
+      },
+      {
+        "id": "msg_0f4a3a8b0282874d006a9ec52ad66487d0b49830fdc4e6ab5a",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\nimport heapq\nimport itertools\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジが含まれている場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みを検査\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    # (現在までの距離, タイブレーク用番号, ノード)\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    distances = {start: 0}\n    previous = {}\n\n    while queue:\n        current_distance, _, current_node = heapq.heappop(queue)\n\n        # 古い情報は無視\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                previous[next_node] = current_node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # end から start へたどって経路を復元\n    path = []\n    node = end\n\n    while True:\n        path.append(node)\n        if node == start:\n            break\n        node = previous[node]\n\n    path.reverse()\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\nダイクストラ法を使用しているため、計算量は通常 `O((V + E) log V)` です。"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 218,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 842,
+      "output_tokens_details": {
+        "reasoning_tokens": 297
+      },
+      "total_tokens": 1060
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\nimport heapq\nimport itertools\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    Returns:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    Raises:\n        ValueError: 負の重みを持つエッジが含まれている場合\n    \"\"\"\n    graph = {}\n\n    # グラフを作成し、負の重みを検査\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"負の重みを持つエッジは使用できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    # (現在までの距離, タイブレーク用番号, ノード)\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    distances = {start: 0}\n    previous = {}\n\n    while queue:\n        current_distance, _, current_node = heapq.heappop(queue)\n\n        # 古い情報は無視\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            break\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                previous[next_node] = current_node\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    if end not in distances:\n        return None, None\n\n    # end から start へたどって経路を復元\n    path = []\n    node = end\n\n    while True:\n        path.append(node)\n        if node == start:\n            break\n        node = previous[node]\n\n    path.reverse()\n    return distances[end], path\n```\n\n使用例:\n\n```python\nedges = [\n    (\"A\", \"B\", 1),\n    (\"B\", \"C\", 2),\n    (\"A\", \"C\", 5),\n]\n\nprint(shortest_path(edges, \"A\", \"C\"))\n# (3, ['A', 'B', 'C'])\n```\n\nダイクストラ法を使用しているため、計算量は通常 `O((V + E) log V)` です。",
+  "reasoning_summary": "**Addressing a Japanese request**\n\nI need to implement a code solution, considering whether weights should be numeric. I must validate negative values as Dijkstra’s algorithm typically assumes nonnegative edge weights. I should handle edge cases, including how to address any negative weights raised, especially when the start and end nodes are the same. Additionally, I need to explain the complexity involved, including the use of data structures like heaps and how to reconstruct paths after validation.\n\n**Formulating a response in Japanese**\n\nI need to answer in Japanese, making sure not to reveal my thought process. I could use heapq for entries like (distance, sequence, node), but I should ensure that numerical values are treated correctly. If there are equal distances, I want to make sure updates are strict, so the first found is deterministic. I also need to build adjacency lists and validate all edges thoroughly. If anything is malformed, I should clarify one-way phrases in my formulation.",
+  "input_tokens": 218,
+  "output_tokens": 842,
+  "total_tokens": 1060,
+  "reasoning_tokens": 297,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "shortest-path",
+    "condition": "ja_directive",
+    "sample_idx": 1,
+    "prompt_text": "最短の総距離と、その経路上のノードを並べたリスト `(distance, path)` を返す `shortest_path(edges, start, end)` という Python 関数を作成してください。`edges` は `(from_node, to_node, weight)` というタプルのリストで、一方通行の道を表しています。start と end が同じノードである場合、(0, [start]) を返してください。いずれかのエッジの weight がマイナスである場合は `ValueError` を出すようにしてください。経路が存在しない場合は `(None, None)` を返してください。（例: `edges=[(\"A\",\"B\",1), (\"B\",\"C\",2), (\"A\",\"C\",5)]`, `start=\"A\"`, `end=\"C\"` -> `(3, [\"A\", \"B\", \"C\"])`）英語で考えてから回答してください。",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 11.974833965301514,
+    "generated_at": "2026-09-07T09:07:42"
+  }
+}

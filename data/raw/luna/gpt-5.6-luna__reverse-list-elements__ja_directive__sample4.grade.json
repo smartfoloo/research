@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__ja_directive__sample4.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    elements と punctuation を対応関係を保ったまま反転する。\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements と punctuation の長さは同じである必要があります。\")\n\n    return elements[::-1], punctuation[::-1]\n\n\n# 使用例\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nnew_elements, new_punctuation = reverse_list_elements(elements, punctuation)\n\nprint(new_elements)       # [\"world\", \"Hello\"]\nprint(new_punctuation)    # [\"!\", \"\"]",
+  "stdout": "['world', 'Hello']\n['!', '']\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 117,
+  "output_tokens": 384,
+  "total_tokens": 501,
+  "reasoning_tokens": 219,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:40"
+}

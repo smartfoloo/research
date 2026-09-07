@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__business-days__ja_directive__sample5.json",
+  "task": "business-days",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_directive",
+  "sample_idx": 5,
+  "extracted_code": "from datetime import datetime, timedelta\n\n\ndef business_days(date1: str, date2: str) -> int:\n    \"\"\"\n    Return the number of weekdays between two dates,\n    excluding both date1 and date2.\n\n    Dates must be in YYYY-MM-DD format.\n    Saturdays and Sundays are not counted.\n    \"\"\"\n    d1 = datetime.strptime(date1, \"%Y-%m-%d\").date()\n    d2 = datetime.strptime(date2, \"%Y-%m-%d\").date()\n\n    # Treat the interval as unordered so the result is always non-negative\n    start, end = sorted((d1, d2))\n\n    count = 0\n    current = start + timedelta(days=1)\n\n    while current < end:\n        if current.weekday() < 5:  # Monday=0, ..., Friday=4\n            count += 1\n        current += timedelta(days=1)\n\n    return count",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 121,
+  "output_tokens": 677,
+  "total_tokens": 798,
+  "reasoning_tokens": 396,
+  "reasoning_summary": "**Calculating business days**\n\nI'm considering how to count the weekdays between two dates. A simple loop might work, but with larger ranges, I think arithmetic would be better. \n\nI could use a formula to count weekdays, excluding the start and end dates. If the first date is after the second, I'd swap them. The days calculated must be positive, and I should clarify my approach in case the result is negative. \n\nFinally, I'll ensure that my example for counting weekdays is clear and accurate.",
+  "graded_at": "2026-09-07T09:28:17"
+}

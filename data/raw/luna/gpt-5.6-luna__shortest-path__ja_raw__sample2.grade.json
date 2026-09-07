@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__shortest-path__ja_raw__sample2.json",
+  "task": "shortest-path",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "import heapq\nimport itertools\n\n\ndef shortest_path(edges, start, end):\n    \"\"\"\n    最短距離と、その経路上のノードのリストを返す。\n\n    戻り値:\n        (distance, path)\n        経路が存在しない場合は (None, None)\n\n    負の重みを持つエッジがある場合:\n        ValueError\n    \"\"\"\n\n    graph = {}\n\n    # 先に全エッジを検査し、グラフを作成する\n    for from_node, to_node, weight in edges:\n        if weight < 0:\n            raise ValueError(\"エッジの重みには負の値を指定できません\")\n\n        graph.setdefault(from_node, []).append((to_node, weight))\n        graph.setdefault(to_node, [])\n\n    if start == end:\n        return 0, [start]\n\n    distances = {start: 0}\n    paths = {start: [start]}\n\n    # ノード同士を比較できない型でも動作するよう、連番をタイブレーカーに使う\n    counter = itertools.count()\n    queue = [(0, next(counter), start)]\n\n    while queue:\n        current_distance, _, current_node = heapq.heappop(queue)\n\n        # 古いキュー要素は無視する\n        if current_distance != distances.get(current_node):\n            continue\n\n        if current_node == end:\n            return current_distance, paths[current_node]\n\n        for next_node, weight in graph.get(current_node, []):\n            new_distance = current_distance + weight\n\n            if new_distance < distances.get(next_node, float(\"inf\")):\n                distances[next_node] = new_distance\n                paths[next_node] = paths[current_node] + [next_node]\n                heapq.heappush(\n                    queue,\n                    (new_distance, next(counter), next_node)\n                )\n\n    return None, None",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 209,
+  "output_tokens": 834,
+  "total_tokens": 1043,
+  "reasoning_tokens": 324,
+  "reasoning_summary": "",
+  "graded_at": "2026-09-07T09:28:48"
+}

@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__mt_en__sample3.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverse elements while keeping each punctuation mark associated\n    with its original element.\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements and punctuation must have the same length\")\n\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# Example\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nresult = reverse_list_elements(elements, punctuation)\nprint(result)\n# ([\"world\", \"Hello\"], [\"!\", \"\"])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 254,
+  "total_tokens": 346,
+  "reasoning_tokens": 123,
+  "reasoning_summary": "**Crafting code for punctuation**\n\nI'm needing to create code to interpret punctuation, possibly reversing both the words and the punctuation. The goal seems to involve combining symbols with their original words through zip pairing and then reversing them, which sounds a bit complex. I should think about validation and how to avoid mutating the original strings. Plus, there's an idea that if the punctuation length changes, it should align accordingly. Maybe I should just return lists or consider whether punctuation might be treated as a string?",
+  "graded_at": "2026-09-07T09:28:43"
+}

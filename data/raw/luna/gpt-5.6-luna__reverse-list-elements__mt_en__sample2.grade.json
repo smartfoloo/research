@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__reverse-list-elements__mt_en__sample2.json",
+  "task": "reverse-list-elements",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "mt_en",
+  "sample_idx": 2,
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverse elements while keeping each punctuation mark paired\n    with its original element.\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements and punctuation must have the same length\")\n\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n\n    return new_elements, new_punctuation\n\n\n# Example\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nresult = reverse_list_elements(elements, punctuation)\nprint(result)\n# ([\"world\", \"Hello\"], [\"!\", \"\"])",
+  "stdout": "(['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 92,
+  "output_tokens": 277,
+  "total_tokens": 369,
+  "reasoning_tokens": 146,
+  "reasoning_summary": "**Interpreting code requirements**\n\nI need to interpret the user's request, focusing on the ambiguity regarding \"set symbols included in punctuation with original word.\" This likely means reversing paired elements and punctuation while preserving their original positions. I should validate this by ensuring the function returns the reversed lists with punctuation. An example might involve reversing elements along with punctuation. I want to implement this carefully, so the original list remains unchanged and possibly include type hints. If there's a mismatch in length, a ValueError should be raised.",
+  "graded_at": "2026-09-07T09:28:43"
+}

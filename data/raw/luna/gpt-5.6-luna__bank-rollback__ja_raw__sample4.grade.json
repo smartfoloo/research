@@ -1,0 +1,21 @@
+{
+  "raw_file": "gpt-5.6-luna__bank-rollback__ja_raw__sample4.json",
+  "task": "bank-rollback",
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "condition": "ja_raw",
+  "sample_idx": 4,
+  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n\n    for amount in transactions:\n        current_balance += amount\n\n        if current_balance < 0:\n            return balance, False\n\n    return current_balance, True",
+  "stdout": "PASSED 4/4\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 4,
+  "total_cases": 4,
+  "all_passed": true,
+  "input_tokens": 158,
+  "output_tokens": 159,
+  "total_tokens": 317,
+  "reasoning_tokens": 50,
+  "reasoning_summary": "**Explaining Japanese code validation**\n\nAlright, I need to address how to validate Japanese codes. It seems like we're focusing on function without causing any mutation. I should explain the steps clearly, using a numeric list. It’s important to ensure that if there's any intermediate negative, we can roll back effectively. A tuple might be the right return type, and I’m considering whether a current state boolean is necessary. I'll include an example to clarify things further!",
+  "graded_at": "2026-09-07T09:28:11"
+}

@@ -1,0 +1,125 @@
+{
+  "raw_api_response": {
+    "id": "resp_02aee15d7044dc29006a9ec692325087d0959044c8d8cd0319",
+    "object": "response",
+    "created_at": 1788790418,
+    "status": "completed",
+    "background": false,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1788790420,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": null,
+    "max_output_tokens": 8000,
+    "max_tool_calls": null,
+    "model": "gpt-5.6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_02aee15d7044dc29006a9ec6929d8087d0b5865fd5558a78d5",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqnsaUrkQ8wT37Nd47b6wSf9qHrY59j8-3h5yMoHeauvwD9-fPwH0d26Ev7ckjk5ErSwOl8cqkPe_T2bVwbUFhcLbAwFka3S9hWT_c4N7FG04rXD7WxK4k4-IEFeajurrr4XbRoeSK7XofYERUYJkUSBb4GchIz7jU6JRaeeazME-VrNumTT4ScIzCKtbvO4U0VLnEkkqcijplT6z4attaE9ZKr2FxDfmoZX-8FaLiD7-yQ9G7KfE2KkLveNHMvXbbCDVY19azlgp1eXd_N2KUNIwFtEclmTuA8agaZ4sWQuHB34BEkJG0HISJaeOfdnn7EidjBGA11bxkET2xjsLePthKGwpRq7XQr42MfnPqZAcKe9vXpUt0WtcLFEEiS6zg6zehXozkmYsM3TlPtRdNzIIi_DiH1Jlc13RCe9IJbWSsh3KYzQX2Snvv-9n4P7WJDDnTYPRIxKzrHAcQcYq8T4McTZ9ihG3C2XdlUegrF9bzwHIxQOWOyn8LzSYg_O6xSS0Y6BCZJvf8MvelIAQBLNN6DO4bprsVjmEhMrBP-bKq09GhGkaVMP6BRxrfMc2Ify15Pyb8Qz9c9RI5RFyaaq9zrJpwRpXuqQKK6IidORGyqmun5wnyAL4xYTafdMrcvyg1XT_Y86kvrMdbsdhiE5hAirA2uEFwF3RQPgR1kQaC625Lc6j7Nf3euMbUqk8MQkgGxuCF7RJnnzfY6pCOR194hVLg0X7LfXCx_biCr3Yl2Bmhuho5-1y10JMCf3snjf_fYj9NtOMNbKNuskNNS0Pww8XEMFhtggwqoNCe6pB1CkgHUJUGM_JyYCfU2YJuCqzMLwiea2Dc4r9rKlrG1ZguvV-uBejG1mrB0VGiMTZLoNXCzlm3nACR0-4OtL4BBVOY_3TT8WWehKWRZo7d1GFn-69vC5P6iAneBNvye1imbsmUSwT1JV7PoRW-qwyHnX-Nk0aeupKKc6140vZZjmN8FIxvMmbljalruj7hrL-xuZb3GenIrBwmWd7HWYuYorMrtJv4kewcvhwi2DEmdYgFy-mUsk67JI-35x_LwWInLtwwNEExF6gBwCXr8psyJAfIKxeD_2j6yU6Ow1cuWlJRPZppXXJT0I8k-ulWOTGuo3Ac1k_aczcw8OoErqnjnSJFsmqPEAUYQNgM280QmVeq3Zo4rrJJ5G29HLcS8vs19KehT6HL2hFCahCl2rTZPiOvqH6cum1rqrHbsHIZfOHFfCCD7FoF02JGsimPxsS0WbEvQAQlrn_EsASFEiD53Ho6ATvfEKl2xeyxb5-i6sqRff2hSuR3fe_0CktJEOLjm2UYbbBXc8WnREoP3pjJphXUTWgn6N6ABshJki-_LsNW9dve06A2u1XoLVnAKLHdaBCSuBlcJ7IsUOTfCWInb-X1BmliuDgJccSDPwQ_qna1AqjeIV3mx76MThdx4onr4sGuXX0LvgfE90WuPIhl5tHoJo6uYibu7GM5-SmoNuG6yn-NGJAmVfy-Gy3Mo4cJZQOZtZ9smQn9JOLgLx_9sNNV-fsMZDnqMTg_Q81Hjl2nb9mcYoEJFEkmhw4T-vKhwIT8vsuKAZjzDSPDufxLkUgx0hmS6fqOV9GxEMT4SPFNEmYDPnrUlY9TKcR0643E4Mq0AzaVR-00b6-FfpbFcBVjbqr_RicaPednuVGUbJcaJo8exjdPSAkAXtu2eRF6HjxVpBIQylIyzl_LnevpqZ6Ade2-mnHirM-MqzraiNsU2-xZEzLEFZQgYUUxMY_a1tIxcR9RFJzDGUNmZE5MvQsLPuMEcsOCZOUzbi__O6L042ZwH92RtLYYwAziRNeHlnWsrbYqn-euy7b_ap3v_Z82",
+        "summary": []
+      },
+      {
+        "id": "msg_02aee15d7044dc29006a9ec6946df887d094c0ff37e7677f95",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\n使用例:\n\n```python\nprint(format_currency(4640039))   # \"$4,640,039\"\nprint(format_currency(-4640039))  # \"-$4,640,039\"\n```"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": "detailed"
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": true,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 205,
+      "output_tokens_details": {
+        "reasoning_tokens": 123
+      },
+      "total_tokens": 299
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "final_text": "```python\ndef format_currency(n):\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    return f\"${n:,}\"\n```\n\n使用例:\n\n```python\nprint(format_currency(4640039))   # \"$4,640,039\"\nprint(format_currency(-4640039))  # \"-$4,640,039\"\n```",
+  "reasoning_summary": "",
+  "input_tokens": 94,
+  "output_tokens": 205,
+  "total_tokens": 299,
+  "reasoning_tokens": 123,
+  "system_fingerprint": null,
+  "_meta": {
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "task": "currency-format",
+    "condition": "ja_raw",
+    "sample_idx": 6,
+    "prompt_text": "`n` の先頭に `$` を付け、3桁ごとにカンマで区切ったものを返す `format_currency(n)` という Python 関数を作ってください。負の数の場合は、ドル記号の前にマイナス記号を付けるようにしてください。（例: `4640039` -> \"$4,640,039\"）",
+    "reasoning_effort": "medium",
+    "reasoning_summary_setting": "auto",
+    "temperature": 1,
+    "seed": null,
+    "max_output_tokens": 8000,
+    "elapsed_seconds": 4.850334405899048,
+    "generated_at": "2026-09-07T09:13:40"
+  }
+}
