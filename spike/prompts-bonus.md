@@ -5,11 +5,10 @@ Status). **Not part of the main 6-task claim-bearing result** — kept in this
 file, separate from `prompts.json`, so they aren't picked up by any arm's
 `generate.py` until deliberately wired in (test cases still needed first).
 
-All 4 conditions locked for both tasks. `en_human` is written plain (no
-backticks), matching the core 6 tasks' `en_human` style. `ja_raw`/
-`ja_directive` are backtick-formatted (function signatures, parameter names,
-literal values) to match 5 of the 6 core tasks — `business-days` is the
-actual outlier in the core set (plain JA, and a stray `。` before the
+All 4 conditions locked for both tasks. `en_human`/`ja_raw`/`ja_directive`
+are backtick-formatted (function signatures, parameter names, literal
+values) to match 5 of the 6 core tasks — `business-days` is the actual
+outlier in the core set (plain EN and JA, and a stray `。` before the
 `ja_directive` append that the other 5 don't have); these two bonus tasks
 were revised 2026-09-07 to follow the 5-task majority instead, since that's
 the dominant convention, not `business-days`. `mt_en` keeps the
@@ -21,9 +20,9 @@ for style would violate the "verbatim, not polished" rule.
 
 ### en_human
 
-Write a Python function named simulate_snake(board_size, snake, food, moves). board_size should be a tuple (width, height). Valid coordinates range from (0, 0) to (width-1, height-1). snake should be a list of (x, y) tuples representing the snake's body and the head should be first. food should be an ordered list of (x, y) tuples where only the first one is "active". When the snake's head touches it, the snake length should grow by one and the next item in food should become active (if food runs out, the snake keeps moving but stops growing). moves should be a list of strings with "UP", "DOWN", "LEFT", and "RIGHT".
+Write a Python function named `simulate_snake(board_size, snake, food, moves)`. `board_size` should be a tuple `(width, height)`. Valid coordinates range from `(0, 0)` to `(width-1, height-1)`. `snake` should be a list of `(x, y)` tuples representing the snake's body and the head should be first. `food` should be an ordered list of `(x, y)` tuples where only the first one is "active". When the snake's head touches it, the snake length should grow by one and the next item in `food` should become active (if `food` runs out, the snake keeps moving but stops growing). `moves` should be a list of strings with `"UP"`, `"DOWN"`, `"LEFT"`, and `"RIGHT"`.
 From an experience perspective, the function should work like this: the head moves one cell in the given direction, and each body segment moves into the cell the segment in front of it just left. However, if the snake just ate, then the tail should stay in the same spot and the snake should get one segment longer. If the new head position goes outside the board, or would touch any of the snake's own body segments (except for a tail cell that's about to move away on a step that's not growing), the snake should die and no further moves should be worked out. If the movement being applied is opposite to the snake's current movement, then just move the snake one cell with its current movement direction.
-At the end, return (final_snake, alive, food_eaten). (Ex. board_size=(5,5), snake=[(2,2),(1,2)], food=[(3,2)], moves=["RIGHT","RIGHT"] -> ([(4,2),(3,2),(2,2)], True, 1))
+At the end, return `(final_snake, alive, food_eaten)`. (Ex. `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=["RIGHT","RIGHT"]` -> `([(4,2),(3,2),(2,2)], True, 1)`)
 
 ### ja_raw
 
@@ -47,11 +46,11 @@ After performing these operations, return `(final_snake, alive, food_eaten)`. (E
 
 ### en_human
 
-Write a Python function named apply_rewrite_rules(rules, urls). The argument rules must be an ordered list of dictionaries, each containing a match_type (which can be "path_prefix", "host", or "query_param"), a match_value, an action (this can be "strip_prefix", "redirect_host", "add_query_param", or "block"), and an action_value (this element is omitted when the action is "block"). The argument urls should be a list of URLs. For the given URL, go through the rules listed below in order and apply only the first one that applies, and stop after applying one. If none of the rules apply, then return the URL unchanged.
-   * "path_prefix" matches if the URL's path starts with match_value, "strip_prefix" removes action_value from the start of the path (if that empties the path, use "/").
-   * "host" matches if the URL's host equals match_value exactly, or if match_value starts with "*.", if the host is a strict subdomain of what follows (the domain itself does not count). "redirect_host" replaces the URL's host with action_value, leaving the scheme, port, path, and query unchanged.
-   * "query_param" matches if the URL's query string already has a parameter named match_value, "add_query_param" appends action_value (Ex. "key=value") to the query string.
-For each input URL return one entry in the same order. Regardless of which of the three rules above matched, if that rule's action is "block", return None for that URL instead of a rewritten URL. (Ex. rules=[{"match_type": "path_prefix", "match_value": "/old-api/", "action": "strip_prefix", "action_value": "/old-api"}] and urls=["http://api.example.com/old-api/users"] -> ["http://api.example.com/users"])
+Write a Python function named `apply_rewrite_rules(rules, urls)`. The argument `rules` must be an ordered list of dictionaries, each containing a `match_type` (which can be `"path_prefix"`, `"host"`, or `"query_param"`), a `match_value`, an `action` (this can be `"strip_prefix"`, `"redirect_host"`, `"add_query_param"`, or `"block"`), and an `action_value` (this element is omitted when the action is `"block"`). The argument `urls` should be a list of URLs. For the given URL, go through the rules listed below in order and apply only the first one that applies, and stop after applying one. If none of the rules apply, then return the URL unchanged.
+   * `"path_prefix"` matches if the URL's path starts with `match_value`, `"strip_prefix"` removes `action_value` from the start of the path (if that empties the path, use `"/"`).
+   * `"host"` matches if the URL's host equals `match_value` exactly, or if `match_value` starts with `"*."`, if the host is a strict subdomain of what follows (the domain itself does not count). `"redirect_host"` replaces the URL's host with `action_value`, leaving the scheme, port, path, and query unchanged.
+   * `"query_param"` matches if the URL's query string already has a parameter named `match_value`, `"add_query_param"` appends `action_value` (Ex. `"key=value"`) to the query string.
+For each input URL return one entry in the same order. Regardless of which of the three rules above matched, if that rule's action is `"block"`, return `None` for that URL instead of a rewritten URL. (Ex. `rules=[{"match_type": "path_prefix", "match_value": "/old-api/", "action": "strip_prefix", "action_value": "/old-api"}]`, `urls=["http://api.example.com/old-api/users"]` -> `["http://api.example.com/users"]`)
 
 ### ja_raw
 

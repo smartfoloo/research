@@ -101,6 +101,35 @@ previously lived at `parked/design-program.md`. Deleted during a repo cleanup
 scooped, just not being worked on; that hasn't changed, only its presence in
 this repo has.
 
+**2026-09-07 — en_human/ja_raw backtick-formatting inconsistency found and
+fixed, with a reproducibility caveat.** Auditing `prompts.json` vs
+`prompts-bonus.md` for formatting drift (prompted by adding the 2 bonus
+tasks) surfaced that `en_human` was plain text while `ja_raw`/`ja_directive`
+used backtick-formatted identifiers/values in 5 of the 6 core tasks — a
+typographic prompt-equivalence gap, lower-severity than a wording/structure
+mismatch but still exactly what Method 3.2 gets checked for. Fixed by adding
+matching backticks to `en_human` for those 5 tasks (not `business-days`,
+which is plain in both EN and JA already — left alone) and both bonus
+tasks, rather than stripping backticks from `ja_raw` — English competitive-
+programming prompts (LeetCode/HackerRank-style) commonly backtick-format
+identifiers too, so this brings `en_human` in line with realistic register
+rather than making it artificial.
+
+**Reproducibility caveat this creates:** the 5 affected core tasks'
+`en_human` text already produced 144 real, graded samples (36 × 4 arms —
+qwen3.5, gemma, flash-lite, groq) whose pass rates are published in
+`RESULTS.md`. Those generations were made against the *old* (non-backtick)
+`en_human` text. `prompts.json` no longer matches the text that actually
+produced those numbers. The raw data stays internally honest — every
+generation file's `_meta.prompt_text` records exactly what was sent — but
+re-running the pipeline from current `prompts.json` will not reproduce
+`RESULTS.md`'s exact `en_human` numbers until/unless those samples are
+regenerated. Not regenerated as part of this fix (144 samples, free-tier
+API time, not obviously worth it for spike-stage results already superseded
+by the real study's protocol) — flagging so this isn't rediscovered as a
+mystery later. Real study must not carry this forward: freeze prompt text
+formatting before any generation happens, not after.
+
 ## The question
 
 > Non-English speakers get measurably worse code generation from the same models
