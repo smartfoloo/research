@@ -11,10 +11,15 @@ values) to match 5 of the 6 core tasks — `business-days` is the actual
 outlier in the core set (plain EN and JA, and a stray `。` before the
 `ja_directive` append that the other 5 don't have); these two bonus tasks
 were revised 2026-09-07 to follow the 5-task majority instead, since that's
-the dominant convention, not `business-days`. `mt_en` keeps the
-backticks/emphasis Google Translate actually produced — confirmed live
-against translate.google.com on 2026-09-07 — since editing an MT condition
-for style would violate the "verbatim, not polished" rule.
+the dominant convention, not `business-days`. `mt_en` is meant to be raw,
+verbatim Google Translate output (per the "verbatim, not polished" rule),
+but the versions first written here were actually paraphrased — not what
+Google Translate produces. Re-verified live against translate.google.com
+on 2026-09-07 and replaced with the literal output, including the MT
+artifacts it produces on these two prompts (an unclosed backtick before
+each comma in simulate-snake's `"UP"/"DOWN"/"LEFT"/"RIGHT"` list; a stray
+") is included." fragment mid-sentence in apply-rewrite-rules). Kept as-is
+per the verbatim rule rather than cleaned up.
 
 ## simulate-snake
 
@@ -38,9 +43,9 @@ At the end, return `(final_snake, alive, food_eaten)`. (Ex. `board_size=(5,5)`, 
 
 ### mt_en
 
-Please create a Python function named `simulate_snake(board_size, snake, food, moves)`. `board_size` should be a tuple `(width, height)`, with valid coordinates ranging from `(0, 0)` to `(width-1, height-1)`. `snake` is a list of `(x, y)` tuples representing the snake's body, where the first element is the head's coordinates. `food` is a list of `(x, y)` tuples (preserving order), where only the first element is considered "active." `moves` is a list of strings: "UP", "DOWN", "LEFT", and "RIGHT".
-Regarding the mechanics: first, move the head one square in the specified direction, and shift each body segment to the square previously occupied by the segment ahead of it. If the specified move direction is the exact opposite of the snake's current direction, move one square in the *current* direction instead. However, if the snake has just eaten food, the tail remains in its current position, increasing the snake's length by one square. When the snake's head touches the active food, the snake's length increases by one, and the next element in the `food` list becomes active (if the `food` list is exhausted, the snake continues moving but its length no longer increases). If the new head position goes outside the board boundaries or touches the snake's own body (excluding the tail square that is about to be vacated), the game ends, and no further processing should occur.
-After performing these operations, return `(final_snake, alive, food_eaten)`. (Example: `board_size=(5,5), snake=[(2,2),(1,2)], food=[(3,2)], moves=["RIGHT","RIGHT"]` -> `([(4,2),(3,2),(2,2)], True, 1)`)
+Create a Python function called `simulate_snake(board_size, snake, food, moves)`. `board_size` should be a tuple `(width, height)`, with valid coordinates in the range `(0, 0)` to `(width-1, height-1)`. `snake` is a list of `(x, y)` tuples representing the snake's body, and the first element of the list should be the coordinates of the snake's head. `food` is a list of `(x, y)` tuples (order is taken into account), of which only the first element is considered "active". Let `moves` be a list containing the strings `"UP", `"DOWN", `"LEFT", and `"RIGHT".
+As for how it works, first, the head moves one square in the specified direction, and each part of the body moves to the square where the previous part was. If the specified movement direction is opposite to the snake's current direction, move it one square in the current movement direction. However, if the snake has just eaten, the tail will remain in place, increasing the snake's length by one square. When the snake's head touches its valid food, the snake's length increases by 1 and the next element in the `food` list becomes active (if `food` is exhausted, the snake continues to move, but its length no longer increases). If the new head position goes out of bounds of the board or touches any part of the snake's own body (other than the tail square it is about to move), the game is over and no further action should be taken.
+After processing like this, return `(final_snake, alive, food_eaten)` at the end. (Example: `board_size=(5,5)`, `snake=[(2,2),(1,2)]`, `food=[(3,2)]`, `moves=["RIGHT","RIGHT"]` -> `([(4,2),(3,2),(2,2)], True, 1)`)
 
 ## apply-rewrite-rules
 
@@ -70,8 +75,8 @@ For each input URL return one entry in the same order. Regardless of which of th
 
 ### mt_en
 
-Please create a Python function named `apply_rewrite_rules(rules, urls)`. The `rules` argument should be an ordered list of dictionaries. Each dictionary contains `match_type` (one of "path_prefix", "host", or "query_param"), `match_value`, `action` (one of "strip_prefix", "redirect_host", "add_query_param", or "block"), and `action_value` (omitted if the action is "block"). The `urls` argument is a list of URLs. For each given URL, check the rules in the list sequentially and process it using only the first matching rule. If no rule matches, return the URL unchanged.
-"path_prefix": Matches if the URL path starts with `match_value`. "strip_prefix" removes `action_value` from the beginning of the path (use "/" if the path becomes empty after removal).
-"host": Matches if the URL host exactly matches `match_value`, or if `match_value` starts with "*." and the host is a strict subdomain of the part following "*." (excluding the domain itself). "redirect_host" replaces the URL host with `action_value` (do not change the scheme, port, path, or query).
-"query_param": Matches if a parameter named `match_value` already exists in the URL query. "add_query_param" appends `action_value` (e.g., "key=value") to the query.
-Return one result for each given URL. Regardless of which of the three rules matches, if that rule's action is "block", return `None` instead of the rewritten URL. (Example: `rules=[{"match_type": "path_prefix", "match_value": "/old-api/", "action": "strip_prefix", "action_value": "/old-api"}]` and `urls=["http://api.example.com/old-api/users"]` -> `["http://api.example.com/users"]`)
+Create a Python function called `apply_rewrite_rules(rules, urls)`. `rules` should be an ordered list of dictionaries. Each dictionary contains `match_type` (either `"path_prefix"`, `"host"`, `"query_param"`), `match_value`, `action` (if `"strip_prefix"`, `"redirect_host"`, `"add_query_param"`, `"block"`), and `action_value` (if `action` is `"block"`). ) is included. Let `urls` be a list of URLs. For a given URL, check the rules in the list in order and use only the first rule that matches. If it doesn't match any of the rules, just return the URL unchanged.
+* `"path_prefix"`: Matches if the URL path starts with `match_value`. `"strip_prefix"` removes `action_value` from the beginning of the path (use `"/"` if the removal results in an empty path).
+* `"host"`: Matches if the host of the URL exactly matches `match_value`, or if `match_value` begins with `"*."` and the host is an exact subdomain of whatever follows (but not the domain itself). `"redirect_host"` replaces the host in the URL with `action_value` (leaving the scheme, port, path, and query unchanged).
+* `"query_param"`: Matches if a parameter named `match_value` already exists in the URL's query. `"add_query_param"` adds `action_value` (e.g. `"key=value"`) to the query.
+Return one result for each URL given. Regardless of which of the three rules above is matched, if the `action` of that rule is `"block"`, return `None` instead of the rewritten URL. (Example: `rules=[{"match_type": "path_prefix", "match_value": "/old-api/", "action": "strip_prefix", "action_value": "/old-api"}]`, `urls=["http://api.example.com/old-api/users"]` -> `["http://api.example.com/users"]`)
