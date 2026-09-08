@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "mt_en",
   "sample_idx": 6,
-  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements and converts punctuation to a set.\n    \n    Args:\n        elements (list): List of string elements to reverse.\n        punctuation (list): List of punctuation symbols (can include empty strings).\n\n    Returns:\n        tuple: A tuple containing (reversed_elements, punctuation_set)\n    \"\"\"\n    # Reverse the elements list\n    new_elements = list(reversed(elements))\n    \n    # Convert punctuation list to a set (automatically removes duplicates)\n    new_punctuation = set(punctuation)\n    \n    return (new_elements, new_punctuation)",
-  "stdout": "FAIL case 0: expected [['world', 'Hello'], ['!', '']], got (['world', 'Hello'], {'', '!'})\nFAIL case 1: expected [['only'], ['']], got (['only'], {''})\nFAIL case 2: expected [[], []], got ([], set())\nFAIL case 3: expected [['c', 'b', 'a'], ['.', ',', ',']], got (['c', 'b', 'a'], {',', '.'})\nPASSED 0/4\n",
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements and returns both reversed lists \n    maintaining original associations between elements and punctuation.\n\n    Parameters:\n        elements (list[str]): List of element strings to be reversed.\n        punctuation (list[str]): List of punctuation symbols associated with each element.\n\n    Returns:\n        tuple: A tuple containing:\n            - Reversed list of elements (list[str])\n            - Reversed list of punctuation marks (list[str])\n    \n    Example:\n        reverse_list_elements([\"Hello\", \"world\"], [\"\", \"!\"]) \n        -> ([[\"world\", \"Hello\"], [\"!\", \"\"]])\n    \"\"\"\n    reversed_elements = elements[::-1]\n    reversed_punctuation = punctuation[::-1]\n    return (reversed_elements, reversed_punctuation)",
+  "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
-  "passed_cases": 0,
+  "passed_cases": 4,
   "total_cases": 4,
-  "all_passed": false,
-  "prompt_eval_count": 85,
-  "eval_count": 1130,
-  "graded_at": "2026-09-06T03:04:31"
+  "all_passed": true,
+  "prompt_eval_count": 94,
+  "eval_count": 790,
+  "graded_at": "2026-09-08T01:57:00"
 }

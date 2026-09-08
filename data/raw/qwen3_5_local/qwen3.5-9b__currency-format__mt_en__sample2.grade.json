@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "mt_en",
   "sample_idx": 2,
-  "extracted_code": "def format_currency(n):\n    return f\"${n:,}\"",
-  "stdout": "FAIL case 1: expected '-$1,234', got '$-1,234'\nPASSED 3/4\n",
+  "extracted_code": "def format_currency(n):\n    \"\"\"Format a number as currency with dollar signs and thousand separators.\"\"\"\n    if n < 0:\n        sign = \"-\"\n        value = -n\n    else:\n        sign = \"\"\n        value = abs(n)\n    \n    # Use Python's built-in formatting to add commas\n    formatted_num = f\"{value:,}\"\n    \n    return f\"{sign}${formatted_num}\"",
+  "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
-  "passed_cases": 3,
+  "passed_cases": 4,
   "total_cases": 4,
-  "all_passed": false,
-  "prompt_eval_count": 74,
-  "eval_count": 1027,
-  "graded_at": "2026-09-05T21:40:29"
+  "all_passed": true,
+  "prompt_eval_count": 80,
+  "eval_count": 1026,
+  "graded_at": "2026-09-08T01:56:36"
 }

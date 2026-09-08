@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__simulate-snake__ja_directive__sample4.json",
+  "task": "simulate-snake",
+  "model": "qwen3.5:9b",
+  "condition": "ja_directive",
+  "sample_idx": 4,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    蛇のシミュレーションを行う関数。\n    \n    引数:\n        board_size: (width, height) のタプル。\n        snake: ヘビの体を表す (x, y) タプルのリストで、最初の要素が頭。\n        food: 食べ物の位置を含むリスト（最初の要素のみ有効）。\n        moves: \"UP\", \"DOWN\", \"LEFT\", \"RIGHT\" の文字列リスト。\n\n    戻り値:\n        (final_snake, alive, food_eaten): \n        final_snake: シミュレーション終了時の蛇の位置リスト\n        alive: ゲームが継続できたかどうか（ゲームオーバーになった場合は False）\n        food_eaten: このシミュレーション中に食べた餌の数\n    \"\"\"\n\n    width, height = board_size\n    \n    # 移動方向の相関マップと逆転対応の辞書\n    direction_map = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    opposite_map = {\n        \"UP\": \"DOWN\",\n        \"DOWN\": \"UP\",\n        \"LEFT\": \"RIGHT\",\n        \"RIGHT\": \"LEFT\"\n    }\n    \n    # 内部状態用変数\n    current_snake = list(snake)\n    food_queue = list(food)\n    current_direction = None  # 現在の移動方向（最初は未定義）\n    alive = True\n    food_eaten = 0\n    \n    for move in moves:\n        if not alive:\n            break\n            \n        # 指定された方向と現在の方向の一致チェック\n        curr_dir_opposite = opposite_map.get(current_direction)\n        \n        # 逆方向の場合は現在の方向を維持、それ以外は指定方向を採用して方向を更新する\n        if current_direction is None or curr_dir_opposite != move:\n            current_direction = move\n            dx, dy = direction_map[move]\n        else:\n            # 逆方向の場合は「現在の移動方向のまま」処理を行う\n            dx, dy = direction_map[current_direction]\n            \n        # 新しい頭の位置を計算\n        new_head_x = current_snake[0][0] + dx\n        new_head_y = current_snake[0][1] + dy\n        new_head = (new_head_x, new_head_y)\n        \n        # ボード範囲外チェック\n        if not (0 <= new_head_x < width and 0 <= new_head_y < height):\n            alive = False\n            final_snake = current_snake\n            break\n            \n        # ヘビ自身との衝突チェック（移動しようとしている尻尾の位置を除く）\n        # 現在のスネークリストの最後の要素（尻尾）を除外してチェック対象とする\n        body_check_list = current_snake[:-1] \n        if new_head in body_check_list:\n            alive = False\n            final_snake = current_snake\n            break\n            \n        # 頭を新しい位置に移動させる（リストの先頭に追加）\n        current_snake.insert(0, new_head)\n        \n        # 餌を食べたかの判定\n        active_food_pos = None\n        if len(food_queue) > 0:\n            active_food_pos = food_queue[0]\n            \n        ate_food = (new_head == active_food_pos)\n        \n        if ate_food:\n            food_eaten += 1\n            # 食べ物をリストから削除（次の要素が有効になる）\n            food_queue.pop(0)\n        else:\n            # 餌を食べなかった場合、尻尾を移動させるためリスト末尾を削除\n            current_snake.pop()\n            \n    return (current_snake, alive, food_eaten)",
+  "stdout": "FAIL case 5: expected ([(3, 2), (2, 2)], True, 0), got ([(1, 2), (2, 2)], True, 0)\nPASSED 5/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 5,
+  "total_cases": 6,
+  "all_passed": false,
+  "prompt_eval_count": 448,
+  "eval_count": 23473,
+  "graded_at": "2026-09-08T01:57:19"
+}

@@ -67,7 +67,16 @@ def generate(model, prompt):
             # it doesn't affect the 71 samples already generated under 8192.
             "options": {"num_ctx": 32768},
         },
-        timeout=600,
+        # 600s wasn't always enough: the 2 bonus tasks (simulate-snake,
+        # apply-rewrite-rules) hit 11 real HTTP read timeouts at exactly
+        # 600s across this run, concentrated on ja_directive but not
+        # exclusive to it (also en_human, mt_en) -- these are genuinely
+        # slow generations on this hardware, not hangs (the ones that did
+        # complete before a timeout sometimes took 100-200+ seconds even in
+        # the "normal" case). Raised rather than tuned finer -- a retry
+        # that also times out just wastes another 10-20 minutes for
+        # nothing.
+        timeout=1200,
     )
     resp.raise_for_status()
     return resp.json()

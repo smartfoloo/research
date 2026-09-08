@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "mt_en",
   "sample_idx": 3,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Apply a sequence of transactions to a balance and check if the balance stays non-negative.\n    If the balance becomes negative at any point during transaction processing,\n    the function returns the original balance with False. Otherwise, it returns\n    the final balance with True.\n\n    Args:\n        balance (float or int): Initial account balance\n        transactions (list of float or int): List of transaction amounts in order\n\n    Returns:\n        tuple: (final_or_original_balance, success) where:\n               - If all transactions are valid: (final_balance, True)\n               - If balance goes negative: (original_balance, False)\n    \"\"\"\n    current_balance = balance\n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions to the account balance in order.\n    If balance becomes negative at any point during processing, \n    return (original_balance, False).\n    \n    Args:\n        balance (int/float): Initial account balance\n        transactions (list of int/float): List of transaction amounts\n    \n    Returns:\n        tuple: (final_balance or original_balance, success_flag)\n               - If all transactions succeed without balance going negative:\n                 (final_balance, True)\n               - If balance becomes negative during processing:\n                 (original_balance, False)\n    \"\"\"\n    current_balance = balance\n    \n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n    \n    return (current_balance, True)",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 113,
-  "eval_count": 895,
-  "graded_at": "2026-09-05T21:40:22"
+  "prompt_eval_count": 120,
+  "eval_count": 1013,
+  "graded_at": "2026-09-08T01:56:32"
 }

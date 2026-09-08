@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 6,
-  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements and punctuation while keeping each punctuation \n    mark attached to its original element based on position.\n\n    Args:\n        elements (list): List of string elements\n        punctuation (list): List of punctuation marks corresponding to elements\n\n    Returns:\n        tuple: (reversed_elements, reversed_punctuation)\n    \"\"\"\n    # Reverse both lists and return as a tuple\n    reversed_elements = elements[::-1]\n    reversed_punctuation = punctuation[::-1]\n\n    return reversed_elements, reversed_punctuation",
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements and their associated punctuation marks.\n\n    Args:\n        elements (list): List of strings representing the main elements.\n        punctuation (list): List of strings representing punctuation marks for each element.\n\n    Returns:\n        tuple: A tuple containing two lists:\n            - new_elements: Reversed list of elements.\n            - new_punctuation: Reversed list of punctuation marks corresponding to elements.\n    \"\"\"\n    return (elements[::-1], punctuation[::-1])",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 82,
-  "eval_count": 881,
-  "graded_at": "2026-09-06T03:04:28"
+  "prompt_eval_count": 94,
+  "eval_count": 816,
+  "graded_at": "2026-09-08T01:56:54"
 }

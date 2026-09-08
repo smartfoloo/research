@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "mt_en",
   "sample_idx": 6,
-  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Format a number as currency with $ and thousand separators.\n\n    Args:\n        n (int or float): The numeric value to format.\n\n    Returns:\n        str: A formatted string like \"$4,640,039\" or \"-$4,640,039\".\n\n    Examples:\n        >>> format_currency(4640039)\n        '$4,640,039'\n        >>> format_currency(-4640039)\n        '-$4,640,039'\n        >>> format_currency(1234)\n        '$1,234'\n        >>> format_currency(0)\n        '$0'\n    \"\"\"\n    return f\"${n:,}\"",
-  "stdout": "FAIL case 1: expected '-$1,234', got '$-1,234'\nPASSED 3/4\n",
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Formats a number as currency with $, commas for every three digits,\n    and handles negative numbers by placing the minus sign before $.\n    \n    Args:\n        n (int or float): The numeric value to format.\n        \n    Returns:\n        str: Formatted currency string.\n    \"\"\"\n    if n < 0:\n        return '-' + f'${-n:,.2f}'\n    else:\n        return f'${n:,.2f}'",
+  "stdout": "FAIL case 0: expected '$1,234,567', got '$1,234,567.00'\nFAIL case 1: expected '-$1,234', got '-$1,234.00'\nFAIL case 2: expected '$0', got '$0.00'\nFAIL case 3: expected '$999', got '$999.00'\nPASSED 0/4\n",
   "stderr": "",
   "docker_returncode": 0,
-  "passed_cases": 3,
+  "passed_cases": 0,
   "total_cases": 4,
   "all_passed": false,
-  "prompt_eval_count": 74,
-  "eval_count": 932,
-  "graded_at": "2026-09-06T03:07:50"
+  "prompt_eval_count": 80,
+  "eval_count": 1543,
+  "graded_at": "2026-09-08T01:56:39"
 }

@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 6,
-  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Formats a number as a string with a $ in front of it, commas every 3 digits,\n    and a minus sign before the dollar sign for negative numbers.\n\n    Examples:\n        format_currency(4640039)       -> \"$4,640,039\"\n        format_currency(-4640039)      -> \"-$4,640,039\"\n        format_currency(1234567890)    -> \"$1,234,567,890\"\n        format_currency(-1234567890)   -> \"-$1,234,567,890\"\n    \"\"\"\n    if n < 0:\n        return f\"-${-n:,}\"\n    else:\n        return f\"${n:,}\"",
+  "extracted_code": "def format_currency(n):\n    \"\"\"Format a number as currency string with dollar sign and thousand separators.\"\"\"\n    sign = \"-\" if n < 0 else \"\"\n    value = abs(n)\n    return f\"{sign}${value:,}\"",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 76,
-  "eval_count": 873,
-  "graded_at": "2026-09-06T03:04:21"
+  "prompt_eval_count": 81,
+  "eval_count": 1023,
+  "graded_at": "2026-09-08T01:56:35"
 }

@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 4,
-  "extracted_code": "def format_currency(n):\n    \"\"\"Format a number as a currency string with $ and thousand separators.\"\"\"\n    if n < 0:\n        return f\"-${abs(n):,}\"\n    else:\n        return f\"${n:,}\"",
-  "stdout": "PASSED 4/4\n",
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Formats a number as currency with a $ sign and thousands separators.\n\n    Args:\n        n (int or float): The number to format\n\n    Returns:\n        str: Formatted string with $ and commas, e.g., \"$4,640,039\" or \"-$4,640,039\"\n    \"\"\"\n    if n < 0:\n        return f'-${n_abs:n}'\n    else:\n        return f'${n:n}'",
+  "stdout": "FAIL case 0: expected '$1,234,567', got '$1234567'\nFAIL case 1: raised NameError: name 'n_abs' is not defined\nPASSED 2/4\n",
   "stderr": "",
   "docker_returncode": 0,
-  "passed_cases": 4,
+  "passed_cases": 2,
   "total_cases": 4,
-  "all_passed": true,
-  "prompt_eval_count": 76,
-  "eval_count": 1000,
-  "graded_at": "2026-09-06T03:04:20"
+  "all_passed": false,
+  "prompt_eval_count": 81,
+  "eval_count": 1124,
+  "graded_at": "2026-09-08T01:56:34"
 }

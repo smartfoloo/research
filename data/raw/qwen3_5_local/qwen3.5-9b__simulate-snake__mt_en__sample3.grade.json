@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__simulate-snake__mt_en__sample3.json",
+  "task": "simulate-snake",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 3,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    Simulates Snake game movements and returns final state after processing all moves.\n\n    Args:\n        board_size: Tuple (width, height) defining valid board bounds.\n        snake: List of (x, y) tuples; head at index 0.\n        food: List of (x, y) tuples; only first is active.\n        moves: List of move strings (\"UP\", \"DOWN\", \"LEFT\", \"RIGHT\").\n\n    Returns:\n        Tuple: (final_snake, alive, food_eaten)\n    \"\"\"\n    width, height = board_size\n\n    # Current direction based on initial head and body movement\n    current_dir = None\n\n    def get_direction(dx, dy):\n        if dx == 1: return \"RIGHT\"\n        if dx == -1: return \"LEFT\"\n        if dy == 1: return \"DOWN\"\n        if dy == -1: return \"UP\"\n        return None\n\n    # Determine initial direction (from head to body)\n    if len(snake) > 1:\n        x_diff = snake[0][0] - snake[1][0]\n        y_diff = snake[0][1] - snake[1][1]\n        current_dir = get_direction(x_diff, y_diff)\n\n    # Active food index\n    active_food_idx = 0 if food else -1\n    foods_eaten = 0\n\n    for move in moves:\n        dx, dy = 0, 0\n        # Determine direction based on move string or current direction\n        if move not in [current_dir] if current_dir else True:\n            if move == \"UP\": dy = -1\n            elif move == \"DOWN\": dy = 1\n            elif move == \"LEFT\": dx = -1\n            elif move == \"RIGHT\": dx = 1\n        else:\n            # Ignore opposite move\n            if current_dir == \"UP\": continue\n            elif current_dir == \"DOWN\": continue\n            elif current_dir == \"LEFT\": continue\n            elif current_dir == \"RIGHT\": continue\n\n        # Compute new head position\n        new_head = (snake[0][0] + dx, snake[0][1] + dy)\n\n        # Check if within bounds\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            return (list(snake), False, foods_eaten)\n\n        # Check collision with body (excluding tail if it will move)\n        body_parts = snake[:-1] if active_food_idx == 0 else snake\n        for segment in body_parts:\n            if new_head == segment:\n                return (list(snake), False, foods_eaten)\n\n        # Update snake position\n        if active_food_idx != -1 and food[active_food_idx] == new_head:\n            # Snake eats food — grow by keeping tail in place\n            foods_eaten += 1\n            if len(food) > active_food_idx + 1:\n                active_food_idx += 1\n            else:\n                active_food_idx = -1  # All food consumed\n\n        # Remove tail, insert new head (or keep tail if eating food)\n        snake.insert(0, new_head)\n        if not (active_food_idx == 0 and new_head == food[active_food_idx]):\n            snake.pop()\n        else:\n            # Stayed at end after eating; no need to pop\n\n    return (list(snake), True, foods_eaten)",
+  "stdout": "",
+  "stderr": "  File \"/app/test_script.py\", line 81\n    return (list(snake), True, foods_eaten)\nIndentationError: expected an indented block after 'else' statement on line 78\n",
+  "docker_returncode": 1,
+  "passed_cases": null,
+  "total_cases": null,
+  "all_passed": false,
+  "prompt_eval_count": 422,
+  "eval_count": 1539,
+  "graded_at": "2026-09-08T01:57:28"
+}

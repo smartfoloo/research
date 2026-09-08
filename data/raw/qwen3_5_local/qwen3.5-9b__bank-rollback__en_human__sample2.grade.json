@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 2,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Apply transactions in order. If any transaction causes balance to go negative,\n    reject all and return original balance with False. Otherwise return final \n    balance with True.\n\n    Args:\n        balance (float): Current account balance\n        transactions (list of float): Ordered list of transaction amounts\n\n    Returns:\n        tuple: (final_balance_or_original, success_flag)\n    \"\"\"\n    original_balance = balance\n    \n    for transaction in transactions:\n        new_balance = balance + transaction\n        if new_balance < 0:\n            return (original_balance, False)\n        balance = new_balance\n\n    return (balance, True)",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Process a sequence of transactions on a given balance.\n    If any transaction makes the balance negative, all transactions are rejected.\n\n    Args:\n        balance (float or int): Initial account balance.\n        transactions (list of float or int): Ordered list of transaction amounts.\n\n    Returns:\n        tuple: (final_balance, success), where:\n               - final_balance is the original balance if any rejection occurs,\n                 otherwise it's the updated balance after all transactions.\n               - success is True if all transactions succeed without negative balance.\n    \"\"\"\n    current_balance = balance\n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 108,
-  "eval_count": 774,
-  "graded_at": "2026-09-05T21:40:19"
+  "prompt_eval_count": 117,
+  "eval_count": 970,
+  "graded_at": "2026-09-08T01:56:30"
 }

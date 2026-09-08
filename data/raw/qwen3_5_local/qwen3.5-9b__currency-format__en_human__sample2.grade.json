@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 2,
-  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Format a number as currency string with $ prefix and commas every 3 digits.\n    For negative numbers, put the minus sign before the dollar sign (e.g., -$4,640,039).\n\n    Example:\n        format_currency(4640039) -> \"$4,640,039\"\n        format_currency(-4640039) -> \"-$4,640,039\"\n        format_currency(0) -> \"$0.00\" or \"$0\" (depends on decimal preference)\n    \"\"\"\n    formatted = f\"{n:,.2f}\"  # Format number with commas and two decimal places\n\n    if n < 0:\n        return f\"${formatted.lstrip('-')}\"  # Add minus before $\n\n    return formatted.replace(\" \", \"$\")",
-  "stdout": "FAIL case 0: expected '$1,234,567', got '1,234,567.00'\nFAIL case 1: expected '-$1,234', got '$1,234.00'\nFAIL case 2: expected '$0', got '0.00'\nFAIL case 3: expected '$999', got '999.00'\nPASSED 0/4\n",
+  "extracted_code": "def format_currency(n):\n    is_negative = n < 0\n    n_str = str(abs(n))\n    \n    parts = []\n    for i in range(0, len(n_str), 3):\n        parts.append(n_str[i:i + 3])\n    formatted = ','.join(reversed(parts))\n    \n    sign = \"-\" if is_negative else \"\"\n    return f\"{sign}${formatted}\"",
+  "stdout": "FAIL case 0: expected '$1,234,567', got '$7,456,123'\nFAIL case 1: expected '-$1,234', got '-$4,123'\nPASSED 2/4\n",
   "stderr": "",
   "docker_returncode": 0,
-  "passed_cases": 0,
+  "passed_cases": 2,
   "total_cases": 4,
   "all_passed": false,
-  "prompt_eval_count": 76,
-  "eval_count": 1793,
-  "graded_at": "2026-09-05T21:40:27"
+  "prompt_eval_count": 81,
+  "eval_count": 737,
+  "graded_at": "2026-09-08T01:56:34"
 }

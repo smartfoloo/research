@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__simulate-snake__mt_en__sample6.json",
+  "task": "simulate-snake",
+  "model": "qwen3.5:9b",
+  "condition": "mt_en",
+  "sample_idx": 6,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    width, height = board_size\n    \n    # Helper to validate coordinates\n    def valid_pos(x, y):\n        return 0 <= x < width and 0 <= y < height\n    \n    # Helper to check head collision with body (except tail)\n    def collide_with_body(head_x, head_y, snake_body):\n        if not valid_pos(head_x, head_y):\n            return True\n        for part in snake_body[:-1]:\n            if head_x == part[0] and head_y == part[1]:\n                return True\n        return False\n    \n    food_eaten_count = 0\n    direction_map = {\n        \"UP\": (-1, 0),\n        \"DOWN\": (1, 0),\n        \"LEFT\": (0, -1),\n        \"RIGHT\": (0, 1)\n    }\n    snake_directions = {\"UP\", \"DOWN\", \"LEFT\", \"RIGHT\"}\n    \n    last_direction = None\n    tail_index = len(snake) - 1\n    \n    for move in moves:\n        dx, dy = direction_map.get(move, (0, 0))\n        \n        # Prevent reversing current direction\n        if last_direction is not None:\n            prev_dx, prev_dy = direction_map[last_direction]\n            if (dx == -prev_dx and dy == -prev_dy):\n                continue\n        \n        new_head_x, new_head_y = snake[0][0] + dx, snake[0][1] + dy\n        \n        # Check if head is about to hit its own body or go out of bounds\n        if collide_with_body(new_head_x, new_head_y, snake):\n            break\n        \n        # Move snake forward (remove tail unless just ate)\n        will_eat = False\n        if food and food[0] == (new_head_x, new_head_y):\n            will_eat = True\n            food.pop(0)\n            food.append(None)\n            food_eaten_count += 1\n        \n        # Grow snake if eating\n        new_snake = [snake[0]] + snake[:-1] + ([new_head_x, new_head_y] if not will_eat else snake[-1])\n        if will_eat:\n            new_snake.append(snake[-1])\n        else:\n            new_snake.pop()\n        \n        # Update snake and direction\n        snake = new_snake\n        last_direction = move\n        tail_index += 1\n    \n    alive = len(food) > 0 or food_eaten_count < len(moves) if moves else True\n    return (snake, alive, food_eaten_count)",
+  "stdout": "FAIL case 0: expected ([(4, 2), (3, 2), (2, 2)], True, 1), got ([(2, 2), (2, 2), (2, 2), 2], True, 0)\nFAIL case 1: expected ([(4, 0), (3, 0), (2, 0), (1, 0)], True, 2), got ([(1, 0), (1, 0), (1, 0), (1, 0), 1], True, 0)\nFAIL case 2: expected ([(0, 1), (1, 1)], False, 0), got ([(1, 1), (1, 1), (1, 1), 1], True, 0)\nFAIL case 3: expected ([(1, 2), (2, 2), (2, 1), (1, 1)], True, 0), got ([(2, 2), (2, 1), (1, 1), (1, 2)], True, 0)\nFAIL case 4: expected ([(2, 2), (2, 3), (1, 3), (1, 2), (1, 1)], False, 0), got ([(2, 2), (2, 2), (2, 3), (1, 3), (1, 2), 2], True, 0)\nFAIL case 5: expected ([(3, 2), (2, 2)], True, 0), got ([(2, 2), (2, 2), 2], True, 0)\nPASSED 0/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 0,
+  "total_cases": 6,
+  "all_passed": false,
+  "prompt_eval_count": 422,
+  "eval_count": 1237,
+  "graded_at": "2026-09-08T01:57:31"
+}

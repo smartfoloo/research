@@ -1,0 +1,17 @@
+{
+  "raw_file": "qwen3.5-9b__simulate-snake__ja_raw__sample2.json",
+  "task": "simulate-snake",
+  "model": "qwen3.5:9b",
+  "condition": "ja_raw",
+  "sample_idx": 2,
+  "extracted_code": "def simulate_snake(board_size, snake, food, moves):\n    \"\"\"\n    ヘビのシミュレーション関数です。\n    \n    :param board_size: (width, height) のタプル\n    :param snake: (x, y) タプルのリストでヘビの体（0番目が頭）\n    :param food: (x, y) タプルのリスト（1つしか食べられない状態を想定、最初の要素が有効）\n    :param moves: 移動方向（\"UP\", \"DOWN\", \"LEFT\", \"RIGHT\"）のリスト\n    :return: (final_snake, alive, food_eaten) のタプル\n    \n    alive: True/False（ゲームオーバーかどうか）\n    food_eaten: 全行程で食べた餌の数\n    \"\"\"\n    \n    width, height = board_size\n    \n    # 入力データの内部処理用コピーを作成する（snake はリストとして扱うため）\n    snake_list = list(snake)\n    food_list = list(food)\n    \n    # 移動方向と座標の変化量\n    # x は横（列）、y は縦（行）。通常、UP は y が減る、DOWN は y が増えるなど。\n    # ただしグリッドゲームで (0,0) が左上の場合と下左の場合があるが、\n    # 問題文の定義「(0, 0) から (width-1, height-1)」は一般的に x, y 座標系として捉える。\n    # ここでは x は横方向、y は縦方向（通常数学的またはスクリーン座標で y=0 が下）とするか？\n    # Pygame や一般的なグリッドゲームでは (x, y) で y=0 が上の場合があるが、\n    # 一般的には UP=(0,-1), DOWN=(0,1) と定義するのが安全（y の増大方向は「下」または「右」のどちらか？）。\n    # ここで x,y は通常の平面座標と仮定し、UP は y を -1 へ減少させる、DOWN は +1 とする。\n    # （x=0, y=0 が左下の場合）ただし、多くのゲームエンジンでは (0,0) が左上（y 増加＝下）となるが、\n    # ここでは x,y の変化量に符号を付けて実装し、UP を y-1 とする（一般的な数学的座標やスクリーン上方向への移動）。\n    directions = {\n        \"UP\": (0, -1),\n        \"DOWN\": (0, 1),\n        \"LEFT\": (-1, 0),\n        \"RIGHT\": (1, 0)\n    }\n    \n    food_eaten_count = 0\n    alive = True\n    \n    for move in moves:\n        # ゲームオーバーの状態ならループをbreakして処理を終了させる（関数内で例外処理より）\n        if not alive:\n            break\n        \n        dx, dy = directions[move]\n        \n        # 新しい頭の位置を計算\n        head_x, head_y = snake_list[0]\n        new_head = (head_x + dx, head_y + dy)\n        \n        # 1. ブオーダーチェック\n        if not (0 <= new_head[0] < width and 0 <= new_head[1] < height):\n            alive = False\n            return tuple(snake_list), alive, food_eaten_count\n        \n        # 2. セル自身との衝突チェック（ヘビの体）\n        # ルール：「ちょうど移動しようとしている尻尾のマスを除く」\n        # 現在の体の座標集合を、頭の座標と現在のお尻の座標を除いたものとする。\n        # （もし餌を食べた場合はお尻が動かないのでその位置は占有されるが、通常食物と体は重ならない前提なので安全）\n        # しかし、厳密に「移動するお尻」を除く場合でも、食べる時はお尻が動かないため\n        # その位置も衝突判定対象か？ 問題文より「ヘビの長さが1マスタイム長く（お尻はその場にとどまる）」\n        # この場合はお尻が動くわけではないので、お尻の場所は危険だが、通常food!=bodyなので問題ない。\n        # ここではsnake[1:-1]を衝突判定対象とする（現在の体の中間部分のみ）。\n        \n        current_body_parts = set(snake_list[1:-1])\n        \n        if new_head in current_body_parts:\n            alive = False\n            return tuple(snake_list), alive, food_eaten_count\n            \n        # 3. 移動後の状態の更新\n        is_eating = False\n        if food_list and new_head == food_list[0]:\n            is_eating = True\n            \n        # ヘビの体を更新\n        if is_eating:\n            # 餌を食べた場合：お尻が動かないため、元の蛇リストをそのまま追加（先頭に新しい頭）\n            snake_list = [new_head] + snake_list\n            # 食べられた分カウントアップし、現在の有効なfoodリストの最初の要素を除去\n            food_eaten_count += 1\n            food_list.pop(0)\n        else:\n            # 餌を食べない場合：お尻が移動する（リスト末尾を除く）\n            snake_list = [new_head] + snake_list[:-1]\n\n    return tuple(snake_list), alive, food_eaten_count",
+  "stdout": "FAIL case 5: expected ([(3, 2), (2, 2)], True, 0), got (((1, 2), (2, 2)), True, 0)\nPASSED 5/6\n",
+  "stderr": "",
+  "docker_returncode": 0,
+  "passed_cases": 5,
+  "total_cases": 6,
+  "all_passed": false,
+  "prompt_eval_count": 441,
+  "eval_count": 14181,
+  "graded_at": "2026-09-08T01:57:22"
+}

@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 6,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Process a series of financial transactions on an account balance.\n\n    Applies each transaction in order. If any transaction causes the balance\n    to go negative, all transactions are rejected and the original balance is returned.\n\n    Args:\n        balance (float or int): The current account balance\n        transactions (list of float or int): List of transaction amounts in order\n\n    Returns:\n        tuple: (final_balance, success_flag) where:\n            - final_balance is the account balance after all successful transactions\n              or the original balance if any transaction failed\n            - success_flag is True if all transactions succeeded, False otherwise\n    \"\"\"\n    current_balance = balance\n    for transaction in transactions:\n        current_balance += transaction\n        if current_balance < 0:\n            return (balance, False)\n\n    return (current_balance, True)",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    original_balance = balance\n    for amount in transactions:\n        balance += amount\n        if balance < 0:\n            return (original_balance, False)\n    return (balance, True)",
   "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 108,
-  "eval_count": 1157,
-  "graded_at": "2026-09-06T03:04:09"
+  "prompt_eval_count": 117,
+  "eval_count": 694,
+  "graded_at": "2026-09-08T01:56:31"
 }

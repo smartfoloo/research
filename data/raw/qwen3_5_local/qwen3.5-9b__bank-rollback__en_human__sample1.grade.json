@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 1,
-  "extracted_code": "def bank_rollback(balance, transactions):\n    current_balance = balance\n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return (balance, False)\n    return (current_balance, True)",
-  "stdout": "PASSED 4/4\n",
+  "extracted_code": "def bank_rollback(balance, transactions):\n    \"\"\"\n    Process a list of banking transactions sequentially.\n    \n    If any transaction causes the balance to go negative at any point,\n    all transactions are rejected and the original balance is returned.\n    \n    Args:\n        balance (float or int): Starting account balance\n        transactions (list of float or int): Ordered list of transaction amounts\n    \n    Returns:\n        tuple: (final_balance_or_original, success_flag)\n               If any transaction fails: (original_balance, False)\n               If all succeed: (final_balance, True)\n    \"\"\"\n    current_balance = balance\n    \n    for amount in transactions:\n        current_balance += amount\n        if current_balance < 0:\n            return (balance, False)\n    \n    return (current_balance, True)\n\n\n# Test cases\nif __name__ == \"__main__\":\n    # Example from the problem\n    print(bank_rollback(100, [50, -30, -200]))  # (100, False)\n    \n    # All transactions succeed\n    print(bank_rollback(100, [50, -30, -20]))   # (95, True)\n    \n    # First transaction fails\n    print(bank_rollback(100, [-50, 100]))       # (100, False)\n    \n    # Empty transactions list\n    print(bank_rollback(100, []))               # (100, True)\n    \n    # Single successful transaction\n    print(bank_rollback(100, [50]))             # (150, True)",
+  "stdout": "(100, False)\n(100, True)\n(150, True)\n(100, True)\n(150, True)\nPASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 108,
-  "eval_count": 844,
-  "graded_at": "2026-09-05T21:40:19"
+  "prompt_eval_count": 117,
+  "eval_count": 826,
+  "graded_at": "2026-09-08T01:56:30"
 }

@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "en_human",
   "sample_idx": 4,
-  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements while keeping each punctuation mark \n    attached to its original element.\n\n    Args:\n        elements: List of string elements\n        punctuation: List of punctuation marks corresponding to each element\n\n    Returns:\n        A tuple (new_elements, new_punctuation) with both lists reversed.\n\n    Raises:\n        ValueError: If the lengths of elements and punctuation do not match.\n    \"\"\"\n    if len(elements) != len(punctuation):\n        raise ValueError(\"elements and punctuation must have the same length\")\n    \n    # Reverse each list while maintaining the original pairings\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n    \n    return (new_elements, new_punctuation)\n\n\n# Example usage:\nelements = [\"Hello\", \"world\"]\npunctuation = [\"\", \"!\"]\n\nresult = reverse_list_elements(elements, punctuation)\nprint(f\"Result: {result}\")  # Output: (['world', 'Hello'], ['!', ''])",
-  "stdout": "Result: (['world', 'Hello'], ['!', ''])\nPASSED 4/4\n",
+  "extracted_code": "def reverse_list_elements(elements, punctuation):\n    \"\"\"\n    Reverses the order of elements while maintaining the associated punctuation.\n\n    Args:\n        elements (list): List of elements (strings)\n        punctuation (list): List of punctuation marks corresponding to each element\n\n    Returns:\n        tuple: (new_elements, new_punctuation) - both lists reversed\n    \"\"\"\n    # Reverse both lists while maintaining their index pairing\n    new_elements = elements[::-1]\n    new_punctuation = punctuation[::-1]\n    \n    return (new_elements, new_punctuation)",
+  "stdout": "PASSED 4/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 4,
   "total_cases": 4,
   "all_passed": true,
-  "prompt_eval_count": 82,
-  "eval_count": 996,
-  "graded_at": "2026-09-06T03:04:27"
+  "prompt_eval_count": 94,
+  "eval_count": 1228,
+  "graded_at": "2026-09-08T01:56:53"
 }

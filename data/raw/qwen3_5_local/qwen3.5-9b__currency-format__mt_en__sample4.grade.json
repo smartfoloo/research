@@ -4,14 +4,14 @@
   "model": "qwen3.5:9b",
   "condition": "mt_en",
   "sample_idx": 4,
-  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Format a number as currency with $ prefix and thousand separators.\n    \n    Args:\n        n (int or float): The number to format.\n        \n    Returns:\n        str: Formatted currency string.\n    \"\"\"\n    sign = '-' if n < 0 else ''\n    abs_n = abs(n)\n    formatted = f'{abs_n:,}'\n    return f'${sign}{formatted}'",
-  "stdout": "FAIL case 1: expected '-$1,234', got '$-1,234'\nPASSED 3/4\n",
+  "extracted_code": "def format_currency(n):\n    \"\"\"\n    Formats a number as currency with a '$' symbol and comma separators.\n    \n    Args:\n        n (int or float): The numeric amount to format.\n    \n    Returns:\n        str: Formatted string like \"$4,640,039\" or \"-$12,345\".\n    \"\"\"\n    return \"${:,}\".format(abs(n) if isinstance(n, (int, float)) else n) + \"\" * (1 if n < 0 else 0)\n\ndef format_currency_v2(n):\n    # Alternative, clearer implementation\n    formatted = \"{:,}\".format(abs(n))\n    sign = \"-\" if n < 0 else \"\"\n    return f\"{sign}${formatted}\"",
+  "stdout": "FAIL case 1: expected '-$1,234', got '$1,234'\nPASSED 3/4\n",
   "stderr": "",
   "docker_returncode": 0,
   "passed_cases": 3,
   "total_cases": 4,
   "all_passed": false,
-  "prompt_eval_count": 74,
-  "eval_count": 765,
-  "graded_at": "2026-09-06T03:04:23"
+  "prompt_eval_count": 80,
+  "eval_count": 1213,
+  "graded_at": "2026-09-08T01:56:37"
 }
